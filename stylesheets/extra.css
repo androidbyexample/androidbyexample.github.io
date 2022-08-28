@@ -84,7 +84,13 @@ html {
 }
 
 .sas1-single-row-column {
+    padding: 10px;
     flex: 1 1 0;
+}
+
+.sas1-caption {
+    font-style: italic;
+    font-size: smaller;
 }
 
 .sas1-top {
