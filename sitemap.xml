@@ -6,6 +6,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://androidbyexample.com/LICENSE-Code.html</loc>
+         <lastmod>2022-08-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://androidbyexample.com/LICENSE-Content.html</loc>
+         <lastmod>2022-08-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://androidbyexample.com/contact.html</loc>
          <lastmod>2022-08-28</lastmod>
          <changefreq>daily</changefreq>
