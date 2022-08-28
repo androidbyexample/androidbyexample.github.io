@@ -78,6 +78,15 @@ html {
     box-sizing: border-box;
 }
 
+.sas1-single-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.sas1-single-row-column {
+    flex: 1 1 0;
+}
+
 .sas1-top {
 }
 
