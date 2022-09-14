@@ -2881,6 +2881,7 @@
 <p>This ends up running two queries. First, get all the <code>Person</code> entities.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>SELECT * FROM Person
 </code></pre></div>
+<p>Room now has all the <code>Person</code> data, including the <code>ids</code> of each <code>Person</code>. Room will now run its second query, passing those ids (I'm representing them as <code>$personIds</code> in this query).</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>SELECT 
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    Address.id, Address.street, Address.city, 
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    Address.state, Address.zip, PersonAddress.movieId
