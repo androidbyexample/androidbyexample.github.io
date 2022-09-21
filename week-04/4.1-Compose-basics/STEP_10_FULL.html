@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://androidbyexample.com/week-05/5.4-Navigation/index.html">
+        <link rel="canonical" href="https://androidbyexample.com/week-04/4.1-Compose-basics/STEP_10_FULL.html">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
     
     
       
-        <title>Navigation - Android By Example</title>
+        <title>Writing Composable Functions - Android By Example</title>
       
     
     
@@ -81,6 +81,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#where-to-start" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -109,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Navigation
+              Writing Composable Functions
             
           </span>
         </div>
@@ -1056,14 +1061,16 @@
 
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
       
       
       
@@ -1084,12 +1091,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_1" type="checkbox" id="__nav_8_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_1" type="checkbox" id="__nav_8_1" checked>
       
       
       
@@ -1112,8 +1121,149 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-04/4.1-Compose-basics/index.html" class="md-nav__link">
+      <a href="index.html" class="md-nav__link">
         Compose Basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Writing Composable Functions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="STEP_10_FULL.html" class="md-nav__link md-nav__link--active">
+        Writing Composable Functions
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#where-to-start" class="md-nav__link">
+    Where to Start
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-view-model" class="md-nav__link">
+    The View Model
+  </a>
+  
+    <nav class="md-nav" aria-label="The View Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration-changes" class="md-nav__link">
+    Configuration Changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keeping-data-via-viewmodel" class="md-nav__link">
+    Keeping Data via ViewModel
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-view-model" class="md-nav__link">
+    Sample View Model
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_20_FULL.html" class="md-nav__link">
+        Collecting Flows
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_30_FULL.html" class="md-nav__link">
+        Calling View Model Actions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_40_FULL.html" class="md-nav__link">
+        Calling View Model Accessors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_50_FULL.html" class="md-nav__link">
+        View Model Buckets
       </a>
     </li>
   
@@ -1142,14 +1292,14 @@
       
       
         <label class="md-nav__link" for="__nav_8_2">
-          4.2 Compose state
+          4.2 Movie Ui 1
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="4.2 Compose state" data-md-level="2">
+      <nav class="md-nav" aria-label="4.2 Movie Ui 1" data-md-level="2">
         <label class="md-nav__title" for="__nav_8_2">
           <span class="md-nav__icon md-icon"></span>
-          4.2 Compose state
+          4.2 Movie Ui 1
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1159,8 +1309,148 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-04/4.2-Compose-state/index.html" class="md-nav__link">
-        Compose State
+      <a href="../4.2-Movie-Ui-1/index.html" class="md-nav__link">
+        Movie UI, part 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.2-Movie-Ui-1/STEP_010_REPO.html" class="md-nav__link">
+        Start with Movies Database
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.2-Movie-Ui-1/STEP_020_REPO.html" class="md-nav__link">
+        Update AGP Version
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.2-Movie-Ui-1/STEP_025_FULL.html" class="md-nav__link">
+        Application Navigation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.2-Movie-Ui-1/STEP_030_REPO.html" class="md-nav__link">
+        Screen State
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.2-Movie-Ui-1/STEP_040_REPO.html" class="md-nav__link">
+        Basic Navigation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.2-Movie-Ui-1/STEP_050_REPO.html" class="md-nav__link">
+        Actors <-> Movies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.2-Movie-Ui-1/STEP_055_FULL.html" class="md-nav__link">
+        Scaffold - A Slotted API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.2-Movie-Ui-1/STEP_060_REPO.html" class="md-nav__link">
+        UI From the Outside
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.2-Movie-Ui-1/STEP_070_REPO.html" class="md-nav__link">
+        Copying Extended Icons
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.2-Movie-Ui-1/STEP_080_FULL.html" class="md-nav__link">
+        Wrap Up
       </a>
     </li>
   
@@ -1186,16 +1476,14 @@
 
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
       
       
       
@@ -1227,14 +1515,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_1">
-          5.1 Compose lists
+          5.1 Compose Lists
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="5.1 Compose lists" data-md-level="2">
+      <nav class="md-nav" aria-label="5.1 Compose Lists" data-md-level="2">
         <label class="md-nav__title" for="__nav_9_1">
           <span class="md-nav__icon md-icon"></span>
-          5.1 Compose lists
+          5.1 Compose Lists
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1244,7 +1532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../5.1-Compose-lists/index.html" class="md-nav__link">
+      <a href="../../week-05/5.1-Compose-Lists/index.html" class="md-nav__link">
         Compose Lists
       </a>
     </li>
@@ -1274,14 +1562,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_2">
-          5.2 Compose layouts
+          5.2 Navigation
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="5.2 Compose layouts" data-md-level="2">
+      <nav class="md-nav" aria-label="5.2 Navigation" data-md-level="2">
         <label class="md-nav__title" for="__nav_9_2">
           <span class="md-nav__icon md-icon"></span>
-          5.2 Compose layouts
+          5.2 Navigation
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1291,8 +1579,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../5.2-Compose-layouts/index.html" class="md-nav__link">
-        Compose Layouts
+      <a href="../../week-05/5.2-Navigation/index.html" class="md-nav__link">
+        Navigation
       </a>
     </li>
   
@@ -1321,14 +1609,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_3">
-          5.3 Compose toast snackbar dialog
+          5.3 Compose Toast Snackbar Dialog
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="5.3 Compose toast snackbar dialog" data-md-level="2">
+      <nav class="md-nav" aria-label="5.3 Compose Toast Snackbar Dialog" data-md-level="2">
         <label class="md-nav__title" for="__nav_9_3">
           <span class="md-nav__icon md-icon"></span>
-          5.3 Compose toast snackbar dialog
+          5.3 Compose Toast Snackbar Dialog
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1338,7 +1626,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../5.3-Compose-toast-snackbar-dialog/index.html" class="md-nav__link">
+      <a href="../../week-05/5.3-Compose-Toast-Snackbar-Dialog/index.html" class="md-nav__link">
         Compose Toast Snackbar Dialog
       </a>
     </li>
@@ -1357,27 +1645,25 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_4" type="checkbox" id="__nav_9_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_4" type="checkbox" id="__nav_9_4" >
       
       
       
       
         <label class="md-nav__link" for="__nav_9_4">
-          5.4 Navigation
+          5.4 Movie Ui 2
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="5.4 Navigation" data-md-level="2">
+      <nav class="md-nav" aria-label="5.4 Movie Ui 2" data-md-level="2">
         <label class="md-nav__title" for="__nav_9_4">
           <span class="md-nav__icon md-icon"></span>
-          5.4 Navigation
+          5.4 Movie Ui 2
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1385,19 +1671,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
-        Navigation
+    <li class="md-nav__item">
+      <a href="../../week-05/5.4-Movie-Ui-2/index.html" class="md-nav__link">
+        Movie UI 2
       </a>
-      
     </li>
   
 
@@ -1646,6 +1924,53 @@
     <li class="md-nav__item">
       <a href="../../week-08/8.1-Rest/index.html" class="md-nav__link">
         Rest
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_2" type="checkbox" id="__nav_12_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_12_2">
+          8.2 Compose Layouts
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="8.2 Compose Layouts" data-md-level="2">
+        <label class="md-nav__title" for="__nav_12_2">
+          <span class="md-nav__icon md-icon"></span>
+          8.2 Compose Layouts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week-08/8.2-Compose-Layouts/index.html" class="md-nav__link">
+        Compose Layouts
       </a>
     </li>
   
@@ -2605,16 +2930,190 @@
 
   
 
-<h1>5.4 Navigation</h1>
+<h1>4.1 Compose basics</h1>
 
 <div class="sas1-text-column">
 
-<h2>Navigation</h2>
+<h2>Writing Composable Functions</h2>
   
 <div class="sas1-text-area">
             
-<p>(Under Development)</p>
-<p>Example Source: <a href="https://gitlab.com/android-development-2022-refresh/navigation">https://gitlab.com/android-development-2022-refresh/navigation</a></p>
+<p>Let's write some composable functions and learn more about them. We'll do a full walkthrough for the Movie example in a later module.</p>
+<h2 id="where-to-start">Where to Start</h2>
+<p>Jetpack Compose defines an extension function <code>ComponentActivity.setContent</code>. This is your starting point for declaring your user interface.</p>
+<p>A typical Jetpack Compose activity looks like</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">class</span><span class="w"> </span><span class="nc">MainActivity</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ComponentActivity</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span><span class="w"> </span><span class="n">Bundle?)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">        </span><span class="k">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span><span class="n">setContent</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">            </span><span class="n">DeleteMe5Theme</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">                </span><span class="n">Surface</span><span class="p">(</span><span class="w"></span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">                    </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">fillMaxSize</span><span class="p">(),</span><span class="w"></span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">                    </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MaterialTheme</span><span class="p">.</span><span class="na">colors</span><span class="p">.</span><span class="na">background</span><span class="w"></span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">                </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">                    </span><span class="n">Greeting</span><span class="p">(</span><span class="s">&quot;Android&quot;</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">                </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">            </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="nd">@Composable</span><span class="w"></span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">Greeting</span><span class="p">(</span><span class="w"></span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="n">Text</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello </span><span class="si">$</span><span class="n">name</span><span class="s">!&quot;</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>The <code>onCreate</code> function is called when the Android framework is ready for us to declare the user interface. In the old view-based framework, <code>onCreate</code> would be used to read an XML file describing the user interface and instantiate the classes needed to run that UI. For Compose, it's much simpler; we just write functions.</p>
+<p>What does the above do?</p>
+<ul>
+<li><code>onCreate</code> calls <code>setContent</code> passing a composable lambda that calls other composable functions to declare the user interface.</li>
+<li><code>DeleteMe5Theme</code> is a composable function that sets up the <code>MaterialTheme</code> composition local. This makes its colors and fonts available to all composable functions called from its lamba.</li>
+<li><code>Surface</code> declares the background of the UI, filling the available activity area. It calls <code>Greeting</code> to declare what the UI looks like.</li>
+<li><code>Greeting</code> is a composable function that's defined by this application, which calls <code>Text</code> to display the text "Hello Android"</li>
+</ul>
+<p>Running the above results in</p>
+<p><img alt="Displaying &quot;Hello Android&quot;" src="screenshots/run1.png" /></p>
+<p>Not the most interesting user interface, but it's a start!</p>
+<h2 id="the-view-model">The View Model</h2>
+<p>Static user interfaces are rarely useful; we really need dynamic data.</p>
+<p>We've talked about the <strong>Data Layer</strong> exposing data, directly via one-shot functions, or using <code>Flows</code> to emit a stream of values. We need to expose them in the <strong>User Interface Layer</strong>.</p>
+<p>There are many ways to do this; we'll use a <strong>View Model</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The concept of a "View Model" is the set of objects that provide data and logic needed for a user interface. Some logic is "business logic", and is necessary for any use of the data. Other logic is only necessary for specific user interface implementations. Consider a web-based application, a desktop application and a mobile application that all expose the same data. Each type of user interface needs some logic to prepare the data for use in that user interface, but they can all share business logic (in the <strong>Data Layer</strong> or <strong>Domain Layer</strong>) to manage the data itself.</p>
+<p>The "Android Architecture Components" (AAC) define a specific class called <code>ViewModel</code> which can be used as part of the conceptual "View Model" in our application, but has specific lifecycle tie-ins (for better or worse). We'll use an AAC <code>ViewModel</code>, but keep in mind that there are debates in the community about it, some saying we don't need it.</p>
+<p>The user-interface logic needs to exist <em>somewhere</em>, and until we've got better guidance, we'll stick with the AAC <code>ViewModel</code>. Please keep your eyes posted for alternative recommendations!</p>
+</div>
+<h3 id="configuration-changes">Configuration Changes</h3>
+<p>One of the big "gotchas" in Android application development is a "configuration change". The current configuration of a device includes</p>
+<ul>
+<li>Device orientation</li>
+<li>Language and region</li>
+<li>Screen width and height</li>
+<li>Android API level</li>
+<li>Screen density</li>
+<li>Day/Night mode</li>
+<li>UI Mode (phone, car, desktop, tv etc)</li>
+</ul>
+<p>Some aspects of the configuration can change, such as the user selecting a different language, or, more commonly, rotating the device.</p>
+<p>When an Activity is started, any resources it references are selected based on the current configuration. Strings are a good example here. If you define your user-visible strings in</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>src/
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>   main/
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>      res/
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>         values/
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>            strings.xml
+</code></pre></div>
+<p>and reference the string in your Activity (we'll do that using Compose's <code>stringResource</code> function), it's pulled from the best-matching <code>values</code> directory. The above directory structure represents where the <strong>default</strong> string values reside. By adding a suffix on the <code>values</code> directory, we can set up more-specific overrides. For example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>src/
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>   main/
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>      res/
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>         values/
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>            strings.xml
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>         values-land/
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>            strings.xml
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>         values-es/
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>            strings.xml
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>         values-fr-rFR/
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>            strings.xml
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>         values-fr-rCA/
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>            strings.xml
+</code></pre></div>
+<p>The <code>values-es</code> directory will take precedence when the language is Spanish. The <code>values-fr-rFR</code> and <code>values-FR-rCA</code> will take precedence when the language is French ahd the region is France or Canada.</p>
+<p>Other resource directories, such as <code>drawable</code> might be modified based on available screen space: <code>drawable-w720dp</code> would take precedence over <code>drawable</code> when there are at least 720 density-independent pixels available in the current screen width.</p>
+<p>Users can change some aspects of a configuration while an application is running, and we may need to refresh the user interface in response. To make this easy, Android (by default) destroys the Activity instance and recreates it, choosing the new best-batch resources when requested.</p>
+<p>Because the Activity is destroyed, <em>any data residing inside it is lost</em> unless you do something specific to save that data. Some data is persistent (saved in the <strong>Data Layer</strong>) and can easily be re-fetched, but other data, such as "which <code>Person</code> is displayed on the screen, may only needed while the application is running.</p>
+<h3 id="keeping-data-via-viewmodel">Keeping Data via ViewModel</h3>
+<p>The AAC <code>ViewModel</code> stays alive as long as any instance of the Activity is alive, and can hold any data you want to survive a configuration change. During a configuration change, the new instance of the Activity is created <em>before</em> the old instance is destroyed. The same <code>ViewModel</code> instance is supplied to the new Activity, making the existing data available to it.</p>
+<p>Remember how our <code>ViewModel</code> fits into our architecture?</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Without Domain Layer</label><label for="__tabbed_1_2">With Domain Layer</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<pre class="mermaid"><code>flowchart LR
+    subgraph User Interface Layer
+    ui[User Interface] --&gt; vm[View Model]
+    end
+    vm --&gt; repo
+    ds1 --&gt; db[(Database)]
+    ds2 --&gt; file(((File)))
+    ds3 --&gt; ws(((Web Service)))
+    subgraph Data Layer
+    direction LR
+    repo[Repository] --&gt; ds1[Data Source 1]
+    repo[Repository] --&gt; ds2[Data Source 2]
+    repo[Repository] --&gt; ds3[Data Source 3]
+    end</code></pre>
+</div>
+<div class="tabbed-block">
+<pre class="mermaid"><code>flowchart LR
+    subgraph User Interface Layer
+    ui[User Interface] --&gt; vm[View Model]
+    end
+    vm --&gt; uc1
+    vm --&gt; uc2
+    vm --&gt; uc3
+    vm --&gt; data
+    uc1 --&gt; repo
+    uc2 --&gt; repo
+    uc3 --&gt; repo
+    data --&gt; repo
+    ds1 --&gt; db[(Database)]
+    ds2 --&gt; file(((File)))
+    ds3 --&gt; ws(((Web Service)))
+    subgraph Domain Layer
+    direction LR
+    data[Data]
+    uc1[Use Case 1]
+    uc2[Use Case 2]
+    uc3[Use Case 3]
+    end
+    subgraph Data Layer
+    direction LR
+    repo[Repository] --&gt; ds1[Data Source 1]
+    repo[Repository] --&gt; ds2[Data Source 2]
+    repo[Repository] --&gt; ds3[Data Source 3]
+    end</code></pre>
+</div>
+</div>
+</div>
+<p>Let's define a <code>ViewModel</code> and use it in a composable function.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Only the <em>top level</em> of composable functions should touch the view model! All other composable functions should be passed data that was made available in the view model.</p>
+<p>The top-level composable will get data from thew view model and call view-model functions in response to events passed up from called composable functions.</p>
+</div>
+<h2 id="sample-view-model">Sample View Model</h2>
+<p>Suppose we have defined a <code>PersonRepository</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">interface</span><span class="w"> </span><span class="nc">PersonRepository</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">peopleFlow</span><span class="p">:</span><span class="w"> </span><span class="n">Flow</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">PersonDto</span><span class="o">&gt;&gt;</span><span class="w"></span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getPerson</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">):</span><span class="w"> </span><span class="n">PersonDto</span><span class="w"></span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">people</span><span class="p">:</span><span class="w"> </span><span class="n">PersonDto</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">people</span><span class="p">:</span><span class="w"> </span><span class="n">PersonDto</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">people</span><span class="p">:</span><span class="w"> </span><span class="n">PersonDto</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>A simple view model using this might look like</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">class</span><span class="w"> </span><span class="nc">PersonViewModel</span><span class="p">(</span><span class="w"></span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="n">application</span><span class="p">:</span><span class="w"> </span><span class="n">Application</span><span class="w"></span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">AndroidViewModel</span><span class="p">(</span><span class="n">application</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">repository</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">        </span><span class="n">PersonDatabaseRepository</span><span class="p">(</span><span class="n">application</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">peopleFlow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">repository</span><span class="p">.</span><span class="na">peopleFlow</span><span class="w"></span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getPerson</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">        </span><span class="n">repository</span><span class="p">.</span><span class="na">getPerson</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">    </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">people</span><span class="p">:</span><span class="w"> </span><span class="n">PersonDto</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">        </span><span class="n">repository</span><span class="p">.</span><span class="na">insert</span><span class="p">(</span><span class="o">*</span><span class="n">people</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">people</span><span class="p">:</span><span class="w"> </span><span class="n">PersonDto</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">        </span><span class="n">repository</span><span class="p">.</span><span class="na">update</span><span class="p">(</span><span class="o">*</span><span class="n">people</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">    </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">people</span><span class="p">:</span><span class="w"> </span><span class="n">PersonDto</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">        </span><span class="n">repository</span><span class="p">.</span><span class="na">delete</span><span class="p">(</span><span class="o">*</span><span class="n">people</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>This view model only acts as a handle for the repository and passes-through all functions. But most view models will add more functionality (we'll see some later).</p>
   
 </div>
   
@@ -2642,7 +3141,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../5.3-Compose-toast-snackbar-dialog/index.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Compose Toast Snackbar Dialog" rel="prev">
+        <a href="index.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Compose Basics" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -2651,20 +3150,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Compose Toast Snackbar Dialog
+              Compose Basics
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../week-06/6.1-Compose-graphics-1/index.html" class="md-footer__link md-footer__link--next" aria-label="Next: Compose Graphics 1" rel="next">
+        <a href="STEP_20_FULL.html" class="md-footer__link md-footer__link--next" aria-label="Next: Collecting Flows" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Compose Graphics 1
+              Collecting Flows
             </div>
           </div>
           <div class="md-footer__button md-icon">
