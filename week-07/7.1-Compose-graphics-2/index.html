@@ -81,6 +81,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#introduction" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1774,9 +1779,72 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Compose Graphics 2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="index.html" class="md-nav__link md-nav__link--active">
         Compose Graphics 2
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos" class="md-nav__link">
+    Videos
+  </a>
+  
+    <nav class="md-nav" aria-label="Videos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jetpack-compose-graphics-blinking-and-internal-compiler-errors-fall-2021-5255" class="md-nav__link">
+    Jetpack Compose Graphics: Blinking and Internal Compiler Errors (Fall 2021) (52:55)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jetpack-compose-graphics-dragging-and-connecting-fall-2021-10433" class="md-nav__link">
+    Jetpack Compose Graphics: Dragging and Connecting (Fall 2021) (1:04:33)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-source" class="md-nav__link">
+    Example Source
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2921,8 +2989,24 @@
   
 <div class="sas1-text-area">
             
-<p>(Under Development)</p>
-<p>Example Source: <a href="https://gitlab.com/android-development-2022-refresh/compose-graphics-2">https://gitlab.com/android-development-2022-refresh/compose-graphics-2</a></p>
+<h2 id="introduction">Introduction</h2>
+<p>We continue our Graph editor application, adding support for
+* Blinking like-typed shapes when clicked
+* Dragging shapes
+* Drawing lines between objects (that stay connected when the shapes are moved)</p>
+<blockquote>
+<p>Note that I walk through several intentional errors during these videos and explain why they occur/how to fix them. The user tap/drag interaction can be trickier to get right than it seems, so I wanted to highlight common problems and show that sometimes an "obvious" design may not be correct...</p>
+</blockquote>
+<h2 id="videos">Videos</h2>
+<p>Total video time for this module: 1:57:28</p>
+<h3 id="jetpack-compose-graphics-blinking-and-internal-compiler-errors-fall-2021-5255">Jetpack Compose Graphics: Blinking and Internal Compiler Errors (Fall 2021) (52:55)</h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4UZt1KOd8ow" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h3 id="jetpack-compose-graphics-dragging-and-connecting-fall-2021-10433">Jetpack Compose Graphics: Dragging and Connecting (Fall 2021) (1:04:33)</h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SqscYM8G8KY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h2 id="example-source">Example Source</h2>
+<p>See: <a href="https://gitlab.com/android-development-2022-refresh/compose-graphics-2">https://gitlab.com/android-development-2022-refresh/compose-graphics-2</a></p>
   
 </div>
   
