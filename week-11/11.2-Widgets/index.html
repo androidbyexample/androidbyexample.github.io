@@ -81,6 +81,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#introduction" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -2388,9 +2393,72 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Widgets
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="index.html" class="md-nav__link md-nav__link--active">
         Widgets
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos" class="md-nav__link">
+    Videos
+  </a>
+  
+    <nav class="md-nav" aria-label="Videos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#widgets-lecture-spring-2016-1032" class="md-nav__link">
+    Widgets: Lecture (Spring 2016) (10:32)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#widgets-example-spring-2016-3200" class="md-nav__link">
+    Widgets: Example (Spring 2016) (32:00)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-source" class="md-nav__link">
+    Example Source
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2650,7 +2718,7 @@
   
     <li class="md-nav__item">
       <a href="../../week-13/13.2-Nfc/index.html" class="md-nav__link">
-        Nfc
+        NFC
       </a>
     </li>
   
@@ -2921,8 +2989,29 @@
   
 <div class="sas1-text-area">
             
-<p>(Under Development)</p>
-<p>Example Source: <a href="https://gitlab.com/android-development-2022-refresh/widgets">https://gitlab.com/android-development-2022-refresh/widgets</a></p>
+<h2 id="introduction">Introduction</h2>
+<p>Users can personalize their home screens by adding "widgets", small user interfaces that interact with installed applications.</p>
+<p>In this module, we'll create a simple application that manages a list of names and displays those names on a homescreen widget.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that the videos for this module use the old Android Views approach for the activity's user interface. I have updated the example code to use
+Jetpack compose for this (and Flows rather than LiveData), but unfortunately, Compose cannot yet be used to create homescreen widgets.
+When creating a widget user interface, you'll still need to use xml-defined layouts as described in the video and communicate with them using the "remote views" API.</p>
+<p>The new support for Jetpack Compose widgets is called "Glance" and is currently in Alpha. If you're interested, take a look here: <a href="https://developer.android.com/jetpack/androidx/releases/glance">https://developer.android.com/jetpack/androidx/releases/glance</a></p>
+<p>As an interesting aside... Note how much simpler the list of names UI is to implement in Jetpack Compose than the old RecyclerView!</p>
+</div>
+<h2 id="videos">Videos</h2>
+<p>Total video time for this module: 42:32</p>
+<h3 id="widgets-lecture-spring-2016-1032">Widgets: Lecture (Spring 2016) (10:32)</h3>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/DY2Ij0lhDsE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<h3 id="widgets-example-spring-2016-3200">Widgets: Example (Spring 2016) (32:00)</h3>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/YtMB1HufaFY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h2 id="example-source">Example Source</h2>
+<p>See: <a href="https://gitlab.com/android-development-2022-refresh/widgets">https://gitlab.com/android-development-2022-refresh/widgets</a></p>
   
 </div>
   

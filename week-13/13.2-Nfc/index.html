@@ -15,7 +15,7 @@
     
     
       
-        <title>Nfc - Android By Example</title>
+        <title>NFC - Android By Example</title>
       
     
     
@@ -81,6 +81,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#introduction" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -109,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Nfc
+              NFC
             
           </span>
         </div>
@@ -2648,9 +2653,79 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          NFC
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="index.html" class="md-nav__link md-nav__link--active">
-        Nfc
+        NFC
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos" class="md-nav__link">
+    Videos
+  </a>
+  
+    <nav class="md-nav" aria-label="Videos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#near-field-communication-lecture-spring-2016-1911" class="md-nav__link">
+    Near-Field Communication: Lecture (Spring 2016) (19:11)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#near-field-communication-reading-example-spring-2016-1616" class="md-nav__link">
+    Near-Field Communication: Reading Example (Spring 2016) (16:16)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#near-field-communication-writing-example-spring-2016-1526" class="md-nav__link">
+    Near-Field Communication: Writing Example (Spring 2016) (15:26)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-source" class="md-nav__link">
+    Example Source
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2917,12 +2992,33 @@
 
 <div class="sas1-text-column">
 
-<h2>Nfc</h2>
+<h2>NFC</h2>
   
 <div class="sas1-text-area">
             
-<p>(Under Development)</p>
-<p>Example Source: <a href="https://gitlab.com/android-development-2022-refresh/nfc">https://gitlab.com/android-development-2022-refresh/nfc</a></p>
+<h2 id="introduction">Introduction</h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that these videos are from 2016 and were based in Java using Android Views for the UI. I have updated the example to Kotlin using Jetpack Compose for the UI.
+The concepts in the lecture and example videos still apply. (It also might be interesting to watch these older videos to see how Android development looks in Java compared to Kotlin).</p>
+<p>Also note that these examples will not run on the emulator; you can only use NFC on a device that supports it. I would have loved to include an assignment on NFC, but not all students
+will have Android devices, or Android devices with NFC.</p>
+</div>
+<p>Near-Field Communication (NFC) allows your application to read and write hardware tags with a small chunk of data. This data can be plain text, a URI, contact information, or any other data format you would like.
+This can be useful, for example, to read data from a poster or business card or write data to a bag describing its contents.</p>
+<h2 id="videos">Videos</h2>
+<p>Total video time for this module: 50:53</p>
+<h3 id="near-field-communication-lecture-spring-2016-1911">Near-Field Communication: Lecture (Spring 2016) (19:11)</h3>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/wXEjjljdNWI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h3 id="near-field-communication-reading-example-spring-2016-1616">Near-Field Communication: Reading Example (Spring 2016) (16:16)</h3>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/QzphwRdJ7r0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h3 id="near-field-communication-writing-example-spring-2016-1526">Near-Field Communication: Writing Example (Spring 2016) (15:26)</h3>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/mUVdV9EmIQs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h2 id="example-source">Example Source</h2>
+<p>See: <a href="https://gitlab.com/android-development-2022-refresh/nfc">https://gitlab.com/android-development-2022-refresh/nfc</a></p>
   
 </div>
   

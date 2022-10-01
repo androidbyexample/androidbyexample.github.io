@@ -81,6 +81,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#introduction" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -2164,9 +2169,86 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Reading Writing Files
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="index.html" class="md-nav__link md-nav__link--active">
         Reading Writing Files
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos" class="md-nav__link">
+    Videos
+  </a>
+  
+    <nav class="md-nav" aria-label="Videos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#files-lecture-summer-2021-2729" class="md-nav__link">
+    Files: Lecture (Summer 2021) (27:29)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#files-example-1-private-files-summer-2021-3504" class="md-nav__link">
+    Files: Example 1 - Private Files (Summer 2021) (35:04)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#files-example-2-sd-card-private-files-and-mediastore-summer-2021-3552" class="md-nav__link">
+    Files: Example 2 - SD Card Private Files and MediaStore (Summer 2021) (35:52)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#files-example-3-storage-access-framework-summer-2021-2132" class="md-nav__link">
+    Files: Example 3 - Storage Access Framework (Summer 2021) (21:32)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-source" class="md-nav__link">
+    Example Source
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2650,7 +2732,7 @@
   
     <li class="md-nav__item">
       <a href="../../week-13/13.2-Nfc/index.html" class="md-nav__link">
-        Nfc
+        NFC
       </a>
     </li>
   
@@ -2921,8 +3003,30 @@
   
 <div class="sas1-text-area">
             
-<p>(Under Development)</p>
-<p>Example Source: <a href="https://gitlab.com/android-development-2022-refresh/reading-writing-files">https://gitlab.com/android-development-2022-refresh/reading-writing-files</a></p>
+<h2 id="introduction">Introduction</h2>
+<p>Many programs need to save or load data to/from files. Android file I/O is similar to Java I/O (using the same APIs), but depending on where you want to save/load files, you may need to jump through a few hoops in the name of user privacy and protection.</p>
+<p>In this module, we'll look at simple file I/O in private directories on a device or SD card, and more complex Storage-Access Framework file I/O.</p>
+<blockquote>
+<p>Note: Due to out-of-town trips, I decided to edit a recording of a live lecture that I gave Summer 2021.</p>
+</blockquote>
+<h2 id="videos">Videos</h2>
+<p>Total video time for this module: 1:59:57</p>
+<h3 id="files-lecture-summer-2021-2729">Files: Lecture (Summer 2021) (27:29)</h3>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/8mR8lqTETtE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<h3 id="files-example-1-private-files-summer-2021-3504">Files: Example 1 - Private Files (Summer 2021) (35:04)</h3>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/4g3ScXm31tg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h3 id="files-example-2-sd-card-private-files-and-mediastore-summer-2021-3552">Files: Example 2 - SD Card Private Files and MediaStore (Summer 2021) (35:52)</h3>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/EAJPl4xdAxY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h3 id="files-example-3-storage-access-framework-summer-2021-2132">Files: Example 3 - Storage Access Framework (Summer 2021) (21:32)</h3>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/Fr_XW94jPIQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h2 id="example-source">Example Source</h2>
+<p>See: <a href="https://gitlab.com/android-development-2022-refresh/reading-writing-files">https://gitlab.com/android-development-2022-refresh/reading-writing-files</a></p>
   
 </div>
   
