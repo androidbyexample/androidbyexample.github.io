@@ -145,7 +145,7 @@ html {
     padding-top: 0px;
     padding-bottom: 10px;
     padding-left: 20px;
-    padding-right: 40px;
+    padding-right: 30px;
     display: flex;
     flex-direction: column;
     flex: 4 1 0;
@@ -153,6 +153,7 @@ html {
 .sas1-code-area {
     flex: 1 1 0;
     overflow: auto;
+    padding-right: 10px;
 }
 
 .sas1-text-area {
