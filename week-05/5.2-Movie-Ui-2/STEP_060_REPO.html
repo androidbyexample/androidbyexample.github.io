@@ -2858,24 +2858,16 @@
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
-  
-<div class="sas1-content-column">
-
-  
-  
-
-
-
-<h1>5.2 Movie Ui 2</h1>
-
-<div class="sas1-content-row">
+  <div class="sas1-content-row">
   
 <div class="sas1-text-column">
 
-<h2>Referential Integrity</h2>
-  
 <div class="sas1-text-area">
             
+<h1>5.2 Movie Ui 2</h1>
+
+<h2>Referential Integrity</h2>
+    
 <p>One solution would be to explicitly delete any <code>Roles</code> that reference <code>Movies</code> or <code>Actors</code> that we're deleting. A good bit of work...</p>
 <p>Fortunately, there's another solution that Room (and the database behind it) support: Referential Integrity.</p>
 <p>We can define some rules to either automatically delete entities that reference deleted data, or disallow deleting the referenced items until the references are deleted. We'll go the first route.</p>
@@ -2938,9 +2930,9 @@
   
 <div class="sas1-code-column">
   
-<h2>Code Changes</h2>
-  
 <div class="sas1-code-area">
+  
+<h2>Code Changes</h2>
   
 <details class="example" open>
 <summary>CHANGED: \data\src\main\java\com\javadude\movies\data\Role.kt</summary>
@@ -2987,7 +2979,6 @@
 </div>
 </div>
 </div>
-</div>
 
             </article>
             
@@ -3023,6 +3014,24 @@
           </div>
         </a>
       
+      <div class="md-footer-meta md-typeset">
+        <div class="md-footer-meta__inner md-grid">
+          <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 Scott Stanchfield. All content licensed <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+          
+        </div>
+      </div>    
       
         
         <a href="STEP_070_REPO.html" class="md-footer__link md-footer__link--next" aria-label="Next: Editing Entities" rel="next">
@@ -3041,24 +3050,6 @@
       
     </nav>
   
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
-  
-    <div class="md-copyright__highlight">
-      Copyright &copy; 2022 Scott Stanchfield. All content licensed Creative Commons Attribution 4.0 International (CC BY 4.0) - https://creativecommons.org/licenses/by/4.0/
-    </div>
-  
-  
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
-  
-</div>
-      
-    </div>
-  </div>
 </footer>
       
     </div>
