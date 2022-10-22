@@ -12,7 +12,7 @@
 }
 
 .md-footer__link {
-    flex-grow: 0.5;
+    flex-grow: 1;
     flex-shrink: 0;
     padding: 8px;
 }
@@ -22,7 +22,7 @@
 }
 
 .md-copyright {
-    flex: 1 1 0;
+    flex: 0 0 1;
 }
 
 .md-typeset h1 {
