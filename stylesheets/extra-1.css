@@ -93,9 +93,16 @@ html {
     flex-direction: row;
 }
 
+.md-sidebar {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
 .md-sidebar--primary {
     flex: 0 0 auto;
     top: 0;
+    height: 100%;
+    overflow: auto;
 }
 
 * {
@@ -135,8 +142,8 @@ html {
 .sas1-text-column {
     padding-top: 0px;
     padding-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
     display: flex;
     flex-direction: column;
     flex: 3 1 0;
@@ -144,8 +151,8 @@ html {
 .sas1-code-column {
     padding-top: 0px;
     padding-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 30px;
+    padding-left: 10px;
+    padding-right: 40px;
     display: flex;
     flex-direction: column;
     flex: 4 1 0;
@@ -153,7 +160,7 @@ html {
 .sas1-code-area {
     flex: 1 1 0;
     overflow: auto;
-    padding-right: 10px;
+    padding-right: 20px;
 }
 
 .sas1-text-area {
