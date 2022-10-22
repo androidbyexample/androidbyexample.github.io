@@ -80,6 +80,12 @@ html {
 }
 .md-content__inner {
     margin: 0px;
+    margin-left: 0px;
+}
+
+[dir=ltr] .md-sidebar--primary:not([hidden])~.md-content>.md-content__inner {
+    margin-left: 0px;
+    padding-top: 0px;
 }
 
 .md-content, .md-content__inner {
@@ -88,19 +94,22 @@ html {
     max-height: 100%;
 }
 
+.md-main {
+    padding: 8px;
+}
+
 .md-content__inner {
     display: flex;
     flex-direction: row;
 }
 
 .md-sidebar {
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
 .md-sidebar--primary {
     flex: 0 0 auto;
-    top: 0;
     height: 100%;
     overflow: auto;
 }
@@ -142,7 +151,7 @@ html {
 .sas1-text-column {
     padding-top: 0px;
     padding-bottom: 10px;
-    padding-left: 10px;
+    padding-left: 20px;
     padding-right: 10px;
     display: flex;
     flex-direction: column;
@@ -152,7 +161,6 @@ html {
     padding-top: 0px;
     padding-bottom: 10px;
     padding-left: 10px;
-    padding-right: 40px;
     display: flex;
     flex-direction: column;
     flex: 4 1 0;
@@ -183,4 +191,22 @@ del {
 ins {
     background-color: var(--md-typeset-ins-color);
     text-decoration: none;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: lightGray;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: var(--md-primary-fg-color);
 }
