@@ -210,3 +210,62 @@ ins {
     border-radius: 10px;
     background: var(--md-primary-fg-color);
 }
+
+a.find-button {
+  color: black;
+}
+
+.find-button {
+  background-color: #A0CFEC;
+  color: black;
+  padding: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 2px;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.find {
+    position:relative;
+    display:inline-block;
+    vertical-align: middle;
+}
+
+.find-button::after {
+    font-family: 'Material Symbols Outlined';
+    content: "pageview";
+    padding-left: 4px;
+    vertical-align: middle;
+    -webkit-font-feature-settings: 'liga';
+}
+
+a:active {
+    background-color: yellow;
+}
+
+*:target {
+    background-color: #ffa;
+    -webkit-transition: all 0.5s linear;
+    font-size: larger;
+    border: 1px #777 solid;
+    border-radius: 10px;
+    margin: 8px;
+    padding: 10px;
+}
+
+*:target::after {
+    content: 'Current File: ' var(--sas1-file-name) '\A';
+    background-color: var(--md-primary-bg-color);
+    float: right;
+    font-style: italic;
+    font-size: 80%;
+    padding: 4px;
+    border: 1px solid black;
+    border-radius: 4px;
+    white-space: pre-wrap;
+}
