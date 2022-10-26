@@ -15,7 +15,7 @@
     
     
       
-        <title>Google Map - Android By Example</title>
+        <title>Google Maps - Android By Example</title>
       
     
     
@@ -55,7 +55,7 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra-3.css">
+      <link rel="stylesheet" href="../../stylesheets/extra-4.css">
     
     <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Google Map
+              Google Maps
             
           </span>
         </div>
@@ -2037,9 +2037,93 @@
       
       
       <a href="index.html" class="md-nav__link md-nav__link--active">
-        Google Map
+        Google Maps
       </a>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_010_REPO.html" class="md-nav__link">
+        Initial Project
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_020_REPO.html" class="md-nav__link">
+        Update versions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_022_FULL.html" class="md-nav__link">
+        Find Your Fingerprint
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_025_FULL.html" class="md-nav__link">
+        Google Console Project
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_030_REPO.html" class="md-nav__link">
+        Set up a map
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_040_FULL.html" class="md-nav__link">
+        Restrict the Key
+      </a>
     </li>
   
 
@@ -2086,81 +2170,6 @@
     <li class="md-nav__item">
       <a href="../9.2-Speech/index.html" class="md-nav__link">
         Speech
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_3" type="checkbox" id="__nav_13_3" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_13_3">
-          9.3 Sample 1
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="9.3 Sample 1" data-md-level="2">
-        <label class="md-nav__title" for="__nav_13_3">
-          <span class="md-nav__icon md-icon"></span>
-          9.3 Sample 1
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../9.3-Sample-1/index.html" class="md-nav__link">
-        Sample 1
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../9.3-Sample-1/STEP_010_REPO.html" class="md-nav__link">
-        Simple UI
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../9.3-Sample-1/STEP_020_REPO.html" class="md-nav__link">
-        Adding padding and todos
       </a>
     </li>
   
@@ -2939,9 +2948,25 @@
             
 <h1>9.1 Google map</h1>
 
-<h2>Google Map</h2>
+<h2>Google Maps</h2>
   
-<p>(Under Development)</p>
+<p>Some applications become much more useful by displaying a Map. You might be displaying a location or area, or letting the user explore. The map could be central to your application's functionality, or a nice, optional extra. The map may or may not display the user's current location.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>User privacy is a huge concern for your application. PII includes any information that can identify a user, such as name, address, email, phone number (among many others). Photos, contacts and files can also be sources of identifying information. Whenever this type of data is accessed, you <em>must</em> ask the user if it's ok for the application to use it. Providers of such information are usually protected by Android Permissions that are marked as "dangerous" to indicate that they have the potential to expose PII or other private information. Device features such as location, phone and biometrics could also be used to expose PII or other personal information.</p>
+<p>Dangerous permissions must be requested of the user at run time. We'll see this in action when we request the user's current location.</p>
+<p>Note that when you publish your application to the Google Play Store, you're required to provide a Privacy Policy stating what data you use and how you use it. Regardless of where you publish your application, many states and countries have laws regarding how PII can be used and what types of information must appear in a Privacy Policy. There are many web sites that can assist in generation of a Privacy Policy (I have not researched any in detail and cannot recommend specific generators; I recommend you do some research before choosing one to ensure it generates a propery policy, and/or consult with a lawyer who knows privacy law.)</p>
+</div>
+<p>The map itself doesn't use any PII, but using Location Services to gather the user's current location does.</p>
+<p>Setting up Google Maps requires:</p>
+<ol>
+<li>Add Google Maps Dependencies</li>
+<li>Set up a project in the Google Developer's Console</li>
+<li>Enable the Maps API in that project (to access map tiles and other mapping information such as POIs and address search)</li>
+<li>Create an API key to use in your application</li>
+<li>Add the key to your project </li>
+</ol>
+<p>Let's start by creating an empty project.</p>
 <p>Example Source: <a href="https://gitlab.com/android-development-2022-refresh/google-map">https://gitlab.com/android-development-2022-refresh/google-map</a></p>
   
 </div>
@@ -3002,13 +3027,13 @@
       </div>    
       
         
-        <a href="../9.2-Speech/index.html" class="md-footer__link md-footer__link--next" aria-label="Next: Speech" rel="next">
+        <a href="STEP_010_REPO.html" class="md-footer__link md-footer__link--next" aria-label="Next: Initial Project" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Speech
+              Initial Project
             </div>
           </div>
           <div class="md-footer__button md-icon">
