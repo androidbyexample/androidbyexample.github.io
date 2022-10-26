@@ -231,6 +231,8 @@ a.find-button {
 *:target::after {
     content: 'Current File: ' var(--sas1-file-name) '\A';
     background-color: var(--md-primary-bg-color);
+    position: relative;
+    z-index: 100;
     float: right;
     font-style: italic;
     font-size: 80%;

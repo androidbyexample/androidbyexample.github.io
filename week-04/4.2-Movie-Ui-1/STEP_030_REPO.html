@@ -55,7 +55,7 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra-6.css">
+      <link rel="stylesheet" href="../../stylesheets/extra-7.css">
     
     <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -3189,77 +3189,77 @@
 <details class="example" open>
 <summary>CHANGED: /app/src/main/java/com/javadude/movies/MovieViewModel.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/java/com/javadude/movies/MovieViewModel.kt';">
-<div class="highlight"><pre><span></span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies</span><span class="w"></span>
-
-<span class="k">import</span><span class="w"> </span><span class="nn">android.app.Application</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.getValue</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.mutableStateOf</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.setValue</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.lifecycle.AndroidViewModel</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.lifecycle.viewModelScope</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.repository.MovieDatabaseRepository</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.repository.MovieRepository</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nn">kotlinx.coroutines.launch</span><span class="w"></span>
-
-<span class="kd">sealed</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="nc">Screen</span><span class="w"></span>
-<ins></ins>
-<span class="kd">object</span><span class="w"> </span><span class="nc">RatingList</span><span class="p">:</span><span class="w"> </span><span class="n">Screen</span><span class="w"></span>
-<span class="kd">object</span><span class="w"> </span><span class="nc">MovieList</span><span class="p">:</span><span class="w"> </span><span class="n">Screen</span><span class="w"></span>
-<span class="kd">object</span><span class="w"> </span><span class="nc">ActorList</span><span class="p">:</span><span class="w"> </span><span class="n">Screen</span><span class="w"></span>
-<del>//<span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">RatingScreen</span><span class="p">(</span><span class="w"></span></del>
-<ins></ins>
-<ins><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">RatingDisplay</span><span class="p">(</span><span class="w"></span></ins>
-<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">id</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="w"></span>
-<span class="p">):</span><span class="w"> </span><span class="n">Screen</span><span class="w"></span>
-<ins><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">ActorDisplay</span><span class="p">(</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">id</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="w"></span></ins>
-<ins><span class="p">):</span><span class="w"> </span><span class="n">Screen</span><span class="w"></span></ins>
-<ins><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">MovieDisplay</span><span class="p">(</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">id</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="w"></span></ins>
-<ins><span class="p">):</span><span class="w"> </span><span class="n">Screen</span><span class="w"></span></ins>
-
-<span class="kd">class</span><span class="w"> </span><span class="nc">MovieViewModel</span><span class="p">(</span><span class="n">application</span><span class="p">:</span><span class="w"> </span><span class="n">Application</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">AndroidViewModel</span><span class="p">(</span><span class="n">application</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">repository</span><span class="p">:</span><span class="w"> </span><span class="n">MovieRepository</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MovieDatabaseRepository</span><span class="p">(</span><span class="n">application</span><span class="p">)</span><span class="w"></span>
-
-<del>//<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nv">screen</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">mutableStateOf</span><span class="o">&lt;</span><span class="n">Screen</span><span class="o">&gt;</span><span class="p">(</span><span class="n">RatingList</span><span class="p">)</span><span class="w"></span></del>
-<ins><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">screenStack</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Screen</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listOf</span><span class="p">(</span><span class="n">MovieList</span><span class="p">)</span><span class="w"></span></ins>
-<ins><span class="w">        </span><span class="k">set</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></ins>
-<ins><span class="w">            </span><span class="n">field</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="w"></span></ins>
-<ins><span class="w">            </span><span class="n">screen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">.</span><span class="na">lastOrNull</span><span class="p">()</span><span class="w"></span></ins>
-<ins><span class="w">        </span><span class="p">}</span><span class="w"></span></ins>
-<ins></ins>
-<ins><span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">pushScreen</span><span class="p">(</span><span class="n">screen</span><span class="p">:</span><span class="w"> </span><span class="n">Screen</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></ins>
-<ins><span class="w">        </span><span class="n">screenStack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">screenStack</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">screen</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="p">}</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">popScreen</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span></ins>
-<ins><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">screenStack</span><span class="p">.</span><span class="na">isNotEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span></ins>
-<ins><span class="w">            </span><span class="n">screenStack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">screenStack</span><span class="p">.</span><span class="na">dropLast</span><span class="p">(</span><span class="m">1</span><span class="p">)</span><span class="w"></span></ins>
-<ins><span class="w">        </span><span class="p">}</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="p">}</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">setScreenStack</span><span class="p">(</span><span class="n">screen</span><span class="p">:</span><span class="w"> </span><span class="n">Screen</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></ins>
-<ins><span class="w">        </span><span class="n">screenStack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listOf</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="p">}</span><span class="w"></span></ins>
-<ins></ins>
-<ins><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">screen</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">mutableStateOf</span><span class="o">&lt;</span><span class="n">Screen?&gt;</span><span class="p">(</span><span class="n">MovieList</span><span class="p">)</span><span class="w"></span></ins>
-<span class="w">        </span><span class="n">private</span><span class="w"> </span><span class="k">set</span><span class="w"></span>
-
-<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">ratingsFlow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">repository</span><span class="p">.</span><span class="na">ratingsFlow</span><span class="w"></span>
-<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">moviesFlow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">repository</span><span class="p">.</span><span class="na">moviesFlow</span><span class="w"></span>
-<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">actorsFlow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">repository</span><span class="p">.</span><span class="na">actorsFlow</span><span class="w"></span>
-
-<span class="w">    </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getRatingWithMovies</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
-<span class="w">        </span><span class="n">repository</span><span class="p">.</span><span class="na">getRatingWithMovies</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"></span>
-
-<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">switchTo</span><span class="p">(</span><span class="n">screen</span><span class="p">:</span><span class="w"> </span><span class="n">Screen</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">screen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">screen</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-
-<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">resetDatabase</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">viewModelScope</span><span class="p">.</span><span class="na">launch</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="n">repository</span><span class="p">.</span><span class="na">resetDatabase</span><span class="p">()</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies</span><span class="w">                                                       </span>
+<span class="w">                                                                                    </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">android.app.Application</span><span class="w">                                                    </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.getValue</span><span class="w">                                          </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.mutableStateOf</span><span class="w">                                    </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.setValue</span><span class="w">                                          </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.lifecycle.AndroidViewModel</span><span class="w">                                        </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.lifecycle.viewModelScope</span><span class="w">                                          </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.repository.MovieDatabaseRepository</span><span class="w">                     </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.repository.MovieRepository</span><span class="w">                             </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">kotlinx.coroutines.launch</span><span class="w">                                                  </span>
+<span class="w">                                                                                    </span>
+<span class="w">  </span><span class="kd">sealed</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="nc">Screen</span><span class="w">                                                           </span>
+<ins><span class="w">                                                                                    </span></ins>
+<span class="w">  </span><span class="kd">object</span><span class="w"> </span><span class="nc">RatingList</span><span class="p">:</span><span class="w"> </span><span class="n">Screen</span><span class="w">                                                         </span>
+<span class="w">  </span><span class="kd">object</span><span class="w"> </span><span class="nc">MovieList</span><span class="p">:</span><span class="w"> </span><span class="n">Screen</span><span class="w">                                                          </span>
+<span class="w">  </span><span class="kd">object</span><span class="w"> </span><span class="nc">ActorList</span><span class="p">:</span><span class="w"> </span><span class="n">Screen</span><span class="w">                                                          </span>
+<del>//<span class="w"></span><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">RatingScreen</span><span class="p">(</span><span class="w">                                                          </span></del>
+<ins><span class="w">                                                                                    </span></ins>
+<ins><span class="w">  </span><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">RatingDisplay</span><span class="p">(</span><span class="w">                                                         </span></ins>
+<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">id</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="w">                                                                </span>
+<span class="w">  </span><span class="p">):</span><span class="w"> </span><span class="n">Screen</span><span class="w">                                                                         </span>
+<ins><span class="w">  </span><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">ActorDisplay</span><span class="p">(</span><span class="w">                                                          </span></ins>
+<ins><span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">id</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="w">                                                                </span></ins>
+<ins><span class="w">  </span><span class="p">):</span><span class="w"> </span><span class="n">Screen</span><span class="w">                                                                         </span></ins>
+<ins><span class="w">  </span><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">MovieDisplay</span><span class="p">(</span><span class="w">                                                          </span></ins>
+<ins><span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">id</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="w">                                                                </span></ins>
+<ins><span class="w">  </span><span class="p">):</span><span class="w"> </span><span class="n">Screen</span><span class="w">                                                                         </span></ins>
+<span class="w">                                                                                    </span>
+<span class="w">  </span><span class="kd">class</span><span class="w"> </span><span class="nc">MovieViewModel</span><span class="p">(</span><span class="n">application</span><span class="p">:</span><span class="w"> </span><span class="n">Application</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">AndroidViewModel</span><span class="p">(</span><span class="n">application</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<span class="w">      </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">repository</span><span class="p">:</span><span class="w"> </span><span class="n">MovieRepository</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MovieDatabaseRepository</span><span class="p">(</span><span class="n">application</span><span class="p">)</span><span class="w"></span>
+<span class="w">                                                                                    </span>
+<del>//<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">screen</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">mutableStateOf</span><span class="o">&lt;</span><span class="n">Screen</span><span class="o">&gt;</span><span class="p">(</span><span class="n">RatingList</span><span class="p">)</span><span class="w">                              </span></del>
+<ins><span class="w">      </span><span class="kd">private</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">screenStack</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Screen</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listOf</span><span class="p">(</span><span class="n">MovieList</span><span class="p">)</span><span class="w">                     </span></ins>
+<ins><span class="w">          </span><span class="k">set</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                              </span></ins>
+<ins><span class="w">              </span><span class="n">field</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="w">                                                         </span></ins>
+<ins><span class="w">              </span><span class="n">screen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">.</span><span class="na">lastOrNull</span><span class="p">()</span><span class="w">                                           </span></ins>
+<ins><span class="w">          </span><span class="p">}</span><span class="w">                                                                         </span></ins>
+<ins><span class="w">                                                                                    </span></ins>
+<ins><span class="w">      </span><span class="kd">fun</span><span class="w"> </span><span class="nf">pushScreen</span><span class="p">(</span><span class="n">screen</span><span class="p">:</span><span class="w"> </span><span class="n">Screen</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                              </span></ins>
+<ins><span class="w">          </span><span class="n">screenStack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">screenStack</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">screen</span><span class="w">                                        </span></ins>
+<ins><span class="w">      </span><span class="p">}</span><span class="w">                                                                             </span></ins>
+<ins><span class="w">      </span><span class="kd">fun</span><span class="w"> </span><span class="nf">popScreen</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">                                                             </span></ins>
+<ins><span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">screenStack</span><span class="p">.</span><span class="na">isNotEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">                                           </span></ins>
+<ins><span class="w">              </span><span class="n">screenStack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">screenStack</span><span class="p">.</span><span class="na">dropLast</span><span class="p">(</span><span class="m">1</span><span class="p">)</span><span class="w">                                 </span></ins>
+<ins><span class="w">          </span><span class="p">}</span><span class="w">                                                                         </span></ins>
+<ins><span class="w">      </span><span class="p">}</span><span class="w">                                                                             </span></ins>
+<ins><span class="w">      </span><span class="kd">fun</span><span class="w"> </span><span class="nf">setScreenStack</span><span class="p">(</span><span class="n">screen</span><span class="p">:</span><span class="w"> </span><span class="n">Screen</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                          </span></ins>
+<ins><span class="w">          </span><span class="n">screenStack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listOf</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span><span class="w">                                              </span></ins>
+<ins><span class="w">      </span><span class="p">}</span><span class="w">                                                                             </span></ins>
+<ins><span class="w">                                                                                    </span></ins>
+<ins><span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">screen</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">mutableStateOf</span><span class="o">&lt;</span><span class="n">Screen?&gt;</span><span class="p">(</span><span class="n">MovieList</span><span class="p">)</span><span class="w">                              </span></ins>
+<span class="w">          </span><span class="n">private</span><span class="w"> </span><span class="k">set</span><span class="w">                                                               </span>
+<span class="w">                                                                                    </span>
+<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">ratingsFlow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">repository</span><span class="p">.</span><span class="na">ratingsFlow</span><span class="w">                                      </span>
+<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">moviesFlow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">repository</span><span class="p">.</span><span class="na">moviesFlow</span><span class="w">                                        </span>
+<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">actorsFlow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">repository</span><span class="p">.</span><span class="na">actorsFlow</span><span class="w">                                        </span>
+<span class="w">                                                                                    </span>
+<span class="w">      </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getRatingWithMovies</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w">                                 </span>
+<span class="w">          </span><span class="n">repository</span><span class="p">.</span><span class="na">getRatingWithMovies</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w">                                        </span>
+<span class="w">                                                                                    </span>
+<span class="w">      </span><span class="kd">fun</span><span class="w"> </span><span class="nf">switchTo</span><span class="p">(</span><span class="n">screen</span><span class="p">:</span><span class="w"> </span><span class="n">Screen</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                </span>
+<span class="w">          </span><span class="k">this</span><span class="p">.</span><span class="na">screen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">screen</span><span class="w">                                                      </span>
+<span class="w">      </span><span class="p">}</span><span class="w">                                                                             </span>
+<span class="w">                                                                                    </span>
+<span class="w">      </span><span class="kd">fun</span><span class="w"> </span><span class="nf">resetDatabase</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">                                                         </span>
+<span class="w">          </span><span class="n">viewModelScope</span><span class="p">.</span><span class="na">launch</span><span class="w"> </span><span class="p">{</span><span class="w">                                                   </span>
+<span class="w">              </span><span class="n">repository</span><span class="p">.</span><span class="na">resetDatabase</span><span class="p">()</span><span class="w">                                            </span>
+<span class="w">          </span><span class="p">}</span><span class="w">                                                                         </span>
+<span class="w">      </span><span class="p">}</span><span class="w">                                                                             </span>
+<span class="w">  </span><span class="p">}</span><span class="w">                                                                                 </span>
 </pre></div>
 </div>
 </details>

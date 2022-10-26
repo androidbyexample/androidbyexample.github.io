@@ -55,7 +55,7 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra-6.css">
+      <link rel="stylesheet" href="../../stylesheets/extra-7.css">
     
     <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -3186,265 +3186,265 @@
 <details class="example" open>
 <summary>CHANGED: /app/build.gradle</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/build.gradle';">
-<div class="highlight"><pre><span></span><span class="n">plugins</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="s1">&#39;com.android.application&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="s1">&#39;org.jetbrains.kotlin.android&#39;</span><span class="w"></span>
-<span class="o">}</span><span class="w"></span>
-
-<span class="n">android</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">namespace</span><span class="w"> </span><span class="s1">&#39;com.javadude.movies&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="n">compileSdk</span><span class="w"> </span><span class="mi">33</span><span class="w"></span>
-
-<span class="w">    </span><span class="n">defaultConfig</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">applicationId</span><span class="w"> </span><span class="s2">&quot;com.javadude.movies&quot;</span><span class="w"></span>
-<span class="w">        </span><span class="n">minSdk</span><span class="w"> </span><span class="mi">21</span><span class="w"></span>
-<span class="w">        </span><span class="n">targetSdk</span><span class="w"> </span><span class="mi">33</span><span class="w"></span>
-<span class="w">        </span><span class="n">versionCode</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="w">        </span><span class="n">versionName</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="w"></span>
-
-<span class="w">        </span><span class="n">testInstrumentationRunner</span><span class="w"> </span><span class="s2">&quot;androidx.test.runner.AndroidJUnitRunner&quot;</span><span class="w"></span>
-<span class="w">        </span><span class="n">vectorDrawables</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
-<span class="w">            </span><span class="n">useSupportLibrary</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
-<span class="w">        </span><span class="o">}</span><span class="w"></span>
-<span class="w">    </span><span class="o">}</span><span class="w"></span>
-
-<span class="w">    </span><span class="n">buildTypes</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">release</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
-<span class="w">            </span><span class="n">minifyEnabled</span><span class="w"> </span><span class="kc">false</span><span class="w"></span>
-<span class="w">            </span><span class="n">proguardFiles</span><span class="w"> </span><span class="n">getDefaultProguardFile</span><span class="o">(</span><span class="s1">&#39;proguard-android-optimize.txt&#39;</span><span class="o">),</span><span class="w"> </span><span class="s1">&#39;proguard-rules.pro&#39;</span><span class="w"></span>
-<span class="w">        </span><span class="o">}</span><span class="w"></span>
-<span class="w">    </span><span class="o">}</span><span class="w"></span>
-<span class="w">    </span><span class="n">compileOptions</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">sourceCompatibility</span><span class="w"> </span><span class="n">JavaVersion</span><span class="o">.</span><span class="na">VERSION_1_8</span><span class="w"></span>
-<span class="w">        </span><span class="n">targetCompatibility</span><span class="w"> </span><span class="n">JavaVersion</span><span class="o">.</span><span class="na">VERSION_1_8</span><span class="w"></span>
-<span class="w">    </span><span class="o">}</span><span class="w"></span>
-<span class="w">    </span><span class="n">kotlinOptions</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">jvmTarget</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;1.8&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="o">}</span><span class="w"></span>
-<span class="w">    </span><span class="n">buildFeatures</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">compose</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
-<span class="w">    </span><span class="o">}</span><span class="w"></span>
-<span class="w">    </span><span class="n">composeOptions</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">kotlinCompilerExtensionVersion</span><span class="w"> </span><span class="n">compose_compiler_version</span><span class="w"></span>
-<span class="w">    </span><span class="o">}</span><span class="w"></span>
-<span class="w">    </span><span class="n">packagingOptions</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">resources</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
-<span class="w">            </span><span class="n">excludes</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s1">&#39;/META-INF/{AL2.0,LGPL2.1}&#39;</span><span class="w"></span>
-<span class="w">        </span><span class="o">}</span><span class="w"></span>
-<span class="w">    </span><span class="o">}</span><span class="w"></span>
-<span class="o">}</span><span class="w"></span>
-
-<span class="n">dependencies</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">implementation</span><span class="w"> </span><span class="n">project</span><span class="o">(</span><span class="s2">&quot;:repository&quot;</span><span class="o">)</span><span class="w"></span>
-
-<ins><span class="w">    </span><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1&#39;</span><span class="w"></span></ins>
-<span class="w">    </span><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;androidx.core:core-ktx:1.9.0&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;androidx.lifecycle:lifecycle-runtime-ktx:2.5.1&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;androidx.activity:activity-compose:1.5.1&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="n">implementation</span><span class="w"> </span><span class="s2">&quot;androidx.compose.ui:ui:$compose_ui_version&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="n">implementation</span><span class="w"> </span><span class="s2">&quot;androidx.compose.ui:ui-tooling-preview:$compose_ui_version&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;androidx.compose.material:material:1.2.1&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="n">testImplementation</span><span class="w"> </span><span class="s1">&#39;junit:junit:4.13.2&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="n">androidTestImplementation</span><span class="w"> </span><span class="s1">&#39;androidx.test.ext:junit:1.1.3&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="n">androidTestImplementation</span><span class="w"> </span><span class="s1">&#39;androidx.test.espresso:espresso-core:3.4.0&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="n">androidTestImplementation</span><span class="w"> </span><span class="s2">&quot;androidx.compose.ui:ui-test-junit4:$compose_ui_version&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="n">debugImplementation</span><span class="w"> </span><span class="s2">&quot;androidx.compose.ui:ui-tooling:$compose_ui_version&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="n">debugImplementation</span><span class="w"> </span><span class="s2">&quot;androidx.compose.ui:ui-test-manifest:$compose_ui_version&quot;</span><span class="w"></span>
-<span class="o">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="n">plugins</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                              </span>
+<span class="w">      </span><span class="n">id</span><span class="w"> </span><span class="s1">&#39;com.android.application&#39;</span><span class="w">                                                                       </span>
+<span class="w">      </span><span class="n">id</span><span class="w"> </span><span class="s1">&#39;org.jetbrains.kotlin.android&#39;</span><span class="w">                                                                  </span>
+<span class="w">  </span><span class="o">}</span><span class="w">                                                                                                      </span>
+<span class="w">                                                                                                         </span>
+<span class="w">  </span><span class="n">android</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                              </span>
+<span class="w">      </span><span class="n">namespace</span><span class="w"> </span><span class="s1">&#39;com.javadude.movies&#39;</span><span class="w">                                                                    </span>
+<span class="w">      </span><span class="n">compileSdk</span><span class="w"> </span><span class="mi">33</span><span class="w">                                                                                      </span>
+<span class="w">                                                                                                         </span>
+<span class="w">      </span><span class="n">defaultConfig</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                    </span>
+<span class="w">          </span><span class="n">applicationId</span><span class="w"> </span><span class="s2">&quot;com.javadude.movies&quot;</span><span class="w">                                                            </span>
+<span class="w">          </span><span class="n">minSdk</span><span class="w"> </span><span class="mi">21</span><span class="w">                                                                                      </span>
+<span class="w">          </span><span class="n">targetSdk</span><span class="w"> </span><span class="mi">33</span><span class="w">                                                                                   </span>
+<span class="w">          </span><span class="n">versionCode</span><span class="w"> </span><span class="mi">1</span><span class="w">                                                                                  </span>
+<span class="w">          </span><span class="n">versionName</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="w">                                                                              </span>
+<span class="w">                                                                                                         </span>
+<span class="w">          </span><span class="n">testInstrumentationRunner</span><span class="w"> </span><span class="s2">&quot;androidx.test.runner.AndroidJUnitRunner&quot;</span><span class="w">                            </span>
+<span class="w">          </span><span class="n">vectorDrawables</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                              </span>
+<span class="w">              </span><span class="n">useSupportLibrary</span><span class="w"> </span><span class="kc">true</span><span class="w">                                                                     </span>
+<span class="w">          </span><span class="o">}</span><span class="w">                                                                                              </span>
+<span class="w">      </span><span class="o">}</span><span class="w">                                                                                                  </span>
+<span class="w">                                                                                                         </span>
+<span class="w">      </span><span class="n">buildTypes</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                       </span>
+<span class="w">          </span><span class="n">release</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                      </span>
+<span class="w">              </span><span class="n">minifyEnabled</span><span class="w"> </span><span class="kc">false</span><span class="w">                                                                        </span>
+<span class="w">              </span><span class="n">proguardFiles</span><span class="w"> </span><span class="n">getDefaultProguardFile</span><span class="o">(</span><span class="s1">&#39;proguard-android-optimize.txt&#39;</span><span class="o">),</span><span class="w"> </span><span class="s1">&#39;proguard-rules.pro&#39;</span><span class="w"></span>
+<span class="w">          </span><span class="o">}</span><span class="w">                                                                                              </span>
+<span class="w">      </span><span class="o">}</span><span class="w">                                                                                                  </span>
+<span class="w">      </span><span class="n">compileOptions</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                   </span>
+<span class="w">          </span><span class="n">sourceCompatibility</span><span class="w"> </span><span class="n">JavaVersion</span><span class="o">.</span><span class="na">VERSION_1_8</span><span class="w">                                                    </span>
+<span class="w">          </span><span class="n">targetCompatibility</span><span class="w"> </span><span class="n">JavaVersion</span><span class="o">.</span><span class="na">VERSION_1_8</span><span class="w">                                                    </span>
+<span class="w">      </span><span class="o">}</span><span class="w">                                                                                                  </span>
+<span class="w">      </span><span class="n">kotlinOptions</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                    </span>
+<span class="w">          </span><span class="n">jvmTarget</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;1.8&#39;</span><span class="w">                                                                              </span>
+<span class="w">      </span><span class="o">}</span><span class="w">                                                                                                  </span>
+<span class="w">      </span><span class="n">buildFeatures</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                    </span>
+<span class="w">          </span><span class="n">compose</span><span class="w"> </span><span class="kc">true</span><span class="w">                                                                                   </span>
+<span class="w">      </span><span class="o">}</span><span class="w">                                                                                                  </span>
+<span class="w">      </span><span class="n">composeOptions</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                   </span>
+<span class="w">          </span><span class="n">kotlinCompilerExtensionVersion</span><span class="w"> </span><span class="n">compose_compiler_version</span><span class="w">                                        </span>
+<span class="w">      </span><span class="o">}</span><span class="w">                                                                                                  </span>
+<span class="w">      </span><span class="n">packagingOptions</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                 </span>
+<span class="w">          </span><span class="n">resources</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                    </span>
+<span class="w">              </span><span class="n">excludes</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s1">&#39;/META-INF/{AL2.0,LGPL2.1}&#39;</span><span class="w">                                                    </span>
+<span class="w">          </span><span class="o">}</span><span class="w">                                                                                              </span>
+<span class="w">      </span><span class="o">}</span><span class="w">                                                                                                  </span>
+<span class="w">  </span><span class="o">}</span><span class="w">                                                                                                      </span>
+<span class="w">                                                                                                         </span>
+<span class="w">  </span><span class="n">dependencies</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                         </span>
+<span class="w">      </span><span class="n">implementation</span><span class="w"> </span><span class="n">project</span><span class="o">(</span><span class="s2">&quot;:repository&quot;</span><span class="o">)</span><span class="w">                                                              </span>
+<span class="w">                                                                                                         </span>
+<ins><span class="w">      </span><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1&#39;</span><span class="w">                              </span></ins>
+<span class="w">      </span><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;androidx.core:core-ktx:1.9.0&#39;</span><span class="w">                                                      </span>
+<span class="w">      </span><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;androidx.lifecycle:lifecycle-runtime-ktx:2.5.1&#39;</span><span class="w">                                    </span>
+<span class="w">      </span><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;androidx.activity:activity-compose:1.5.1&#39;</span><span class="w">                                          </span>
+<span class="w">      </span><span class="n">implementation</span><span class="w"> </span><span class="s2">&quot;androidx.compose.ui:ui:$compose_ui_version&quot;</span><span class="w">                                        </span>
+<span class="w">      </span><span class="n">implementation</span><span class="w"> </span><span class="s2">&quot;androidx.compose.ui:ui-tooling-preview:$compose_ui_version&quot;</span><span class="w">                        </span>
+<span class="w">      </span><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;androidx.compose.material:material:1.2.1&#39;</span><span class="w">                                          </span>
+<span class="w">      </span><span class="n">testImplementation</span><span class="w"> </span><span class="s1">&#39;junit:junit:4.13.2&#39;</span><span class="w">                                                            </span>
+<span class="w">      </span><span class="n">androidTestImplementation</span><span class="w"> </span><span class="s1">&#39;androidx.test.ext:junit:1.1.3&#39;</span><span class="w">                                          </span>
+<span class="w">      </span><span class="n">androidTestImplementation</span><span class="w"> </span><span class="s1">&#39;androidx.test.espresso:espresso-core:3.4.0&#39;</span><span class="w">                             </span>
+<span class="w">      </span><span class="n">androidTestImplementation</span><span class="w"> </span><span class="s2">&quot;androidx.compose.ui:ui-test-junit4:$compose_ui_version&quot;</span><span class="w">                 </span>
+<span class="w">      </span><span class="n">debugImplementation</span><span class="w"> </span><span class="s2">&quot;androidx.compose.ui:ui-tooling:$compose_ui_version&quot;</span><span class="w">                           </span>
+<span class="w">      </span><span class="n">debugImplementation</span><span class="w"> </span><span class="s2">&quot;androidx.compose.ui:ui-test-manifest:$compose_ui_version&quot;</span><span class="w">                     </span>
+<span class="w">  </span><span class="o">}</span><span class="w">                                                                                                      </span>
 </pre></div>
 </div>
 </details>
 <details class="example" open>
 <summary>CHANGED: /app/src/main/java/com/javadude/movies/MainActivity.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/java/com/javadude/movies/MainActivity.kt';">
-<div class="highlight"><pre><span></span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies</span><span class="w"></span>
-
-<span class="k">import</span><span class="w"> </span><span class="nn">android.os.Bundle</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.activity.ComponentActivity</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.activity.compose.setContent</span><span class="w"></span>
-<ins><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.Column</span><span class="w"></span></ins>
-<ins><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.Row</span><span class="w"></span></ins>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.fillMaxSize</span><span class="w"></span>
-<ins><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.padding</span><span class="w"></span></ins>
-<ins><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.material.Button</span><span class="w"></span></ins>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.material.MaterialTheme</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.material.Surface</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.material.Text</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.Composable</span><span class="w"></span>
-<ins><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.collectAsState</span><span class="w"></span></ins>
-<ins><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.getValue</span><span class="w"></span></ins>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.Modifier</span><span class="w"></span>
-<del>//<span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.tooling.preview.Preview</span><span class="w"></span></del>
-<ins><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.unit.dp</span><span class="w"></span></ins>
-<ins><span class="k">import</span><span class="w"> </span><span class="nn">androidx.lifecycle.viewmodel.compose.viewModel</span><span class="w"></span></ins>
-<ins><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.repository.ActorDto</span><span class="w"></span></ins>
-<ins><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.repository.MovieDto</span><span class="w"></span></ins>
-<ins><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.repository.RatingDto</span><span class="w"></span></ins>
-<span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.ui.theme.MoviesTheme</span><span class="w"></span>
-
-<span class="kd">class</span><span class="w"> </span><span class="nc">MainActivity</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ComponentActivity</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span><span class="w"> </span><span class="n">Bundle?)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="n">setContent</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="n">MoviesTheme</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="c1">// A surface container using the &#39;background&#39; color from the theme</span><span class="w"></span>
-<span class="w">                </span><span class="n">Surface</span><span class="p">(</span><span class="w"></span>
-<span class="w">                    </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">fillMaxSize</span><span class="p">(),</span><span class="w"></span>
-<span class="w">                    </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MaterialTheme</span><span class="p">.</span><span class="na">colors</span><span class="p">.</span><span class="na">background</span><span class="w"></span>
-<span class="w">                </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<del>//<span class="w">                  </span><span class="n">Greeting</span><span class="p">(</span><span class="s">&quot;Android&quot;</span><span class="p">)</span><span class="w"></span></del>
-<ins><span class="w">                    </span><span class="n">TestScreen</span><span class="p">()</span><span class="w"></span></ins>
-<span class="w">                </span><span class="p">}</span><span class="w"></span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="nd">@Composable</span><span class="w"></span>
-<del>//<span class="kd">fun</span><span class="w"> </span><span class="nf">Greeting</span><span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></del>
-<del>//<span class="w">  </span><span class="n">Text</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello </span><span class="si">$</span><span class="n">name</span><span class="s">!&quot;</span><span class="p">)</span><span class="w"></span></del>
-<ins><span class="kd">fun</span><span class="w"> </span><span class="nf">SimpleButton</span><span class="p">(</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="n">text</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="n">onClick</span><span class="p">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">,</span><span class="w"></span></ins>
-<ins><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="n">Button</span><span class="p">(</span><span class="n">onClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">onClick</span><span class="p">,</span><span class="w"> </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">padding</span><span class="p">(</span><span class="m">8.</span><span class="n">dp</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span></ins>
-<ins><span class="w">        </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">text</span><span class="p">)</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="p">}</span><span class="w"></span></ins>
-<ins></ins>
-<ins><span class="nd">@Composable</span><span class="w"></span></ins>
-<ins><span class="kd">fun</span><span class="w"> </span><span class="nf">SimpleText</span><span class="p">(</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="n">text</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"></span></ins>
-<ins><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="n">Text</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">padding</span><span class="p">(</span><span class="m">8.</span><span class="n">dp</span><span class="p">))</span><span class="w"></span></ins>
-<ins></ins>
-<ins><span class="nd">@Composable</span><span class="w"></span></ins>
-<ins><span class="kd">fun</span><span class="w"> </span><span class="nf">TestScreen</span><span class="p">(</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="n">viewModel</span><span class="p">:</span><span class="w"> </span><span class="n">MovieViewModel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">viewModel</span><span class="p">()</span><span class="w"></span></ins>
-<ins><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="c1">// This is a hideous, but simple simple test screen</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="c1">//   (There are some bad things happening here... We&#39;ll fix it!)</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="c1">// Don&#39;t worry about how it does its job; we&#39;ll cover that soon!</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="n">Column</span><span class="w"> </span><span class="p">{</span><span class="w"></span></ins>
-<ins><span class="w">        </span><span class="n">Row</span><span class="w"> </span><span class="p">{</span><span class="w"></span></ins>
-<ins><span class="w">            </span><span class="n">SimpleButton</span><span class="p">(</span><span class="s">&quot;Reset&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></ins>
-<ins><span class="w">                </span><span class="n">viewModel</span><span class="p">.</span><span class="na">resetDatabase</span><span class="p">()</span><span class="w"></span></ins>
-<ins><span class="w">            </span><span class="p">}</span><span class="w"></span></ins>
-<ins><span class="w">            </span><span class="n">SimpleButton</span><span class="p">(</span><span class="s">&quot;Ratings&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></ins>
-<ins><span class="w">                </span><span class="n">viewModel</span><span class="p">.</span><span class="na">switchTo</span><span class="p">(</span><span class="n">RatingList</span><span class="p">)</span><span class="w"></span></ins>
-<ins><span class="w">            </span><span class="p">}</span><span class="w"></span></ins>
-<ins><span class="w">        </span><span class="p">}</span><span class="w"></span></ins>
-<ins><span class="w">        </span><span class="n">Row</span><span class="w"> </span><span class="p">{</span><span class="w"></span></ins>
-<ins><span class="w">            </span><span class="n">SimpleButton</span><span class="p">(</span><span class="s">&quot;Movies&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></ins>
-<ins><span class="w">                </span><span class="n">viewModel</span><span class="p">.</span><span class="na">switchTo</span><span class="p">(</span><span class="n">MovieList</span><span class="p">)</span><span class="w"></span></ins>
-<ins><span class="w">            </span><span class="p">}</span><span class="w"></span></ins>
-<ins><span class="w">            </span><span class="n">SimpleButton</span><span class="p">(</span><span class="s">&quot;Actors&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></ins>
-<ins><span class="w">                </span><span class="n">viewModel</span><span class="p">.</span><span class="na">switchTo</span><span class="p">(</span><span class="n">ActorList</span><span class="p">)</span><span class="w"></span></ins>
-<ins><span class="w">            </span><span class="p">}</span><span class="w"></span></ins>
-<ins><span class="w">        </span><span class="p">}</span><span class="w"></span></ins>
-<ins></ins>
-<ins><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">ratings</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">viewModel</span><span class="p">.</span><span class="na">ratingsFlow</span><span class="p">.</span><span class="na">collectAsState</span><span class="p">(</span><span class="n">initial</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">emptyList</span><span class="p">())</span><span class="w"></span></ins>
-<ins><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">movies</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">viewModel</span><span class="p">.</span><span class="na">moviesFlow</span><span class="p">.</span><span class="na">collectAsState</span><span class="p">(</span><span class="n">initial</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">emptyList</span><span class="p">())</span><span class="w"></span></ins>
-<ins><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">actors</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">viewModel</span><span class="p">.</span><span class="na">actorsFlow</span><span class="p">.</span><span class="na">collectAsState</span><span class="p">(</span><span class="n">initial</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">emptyList</span><span class="p">())</span><span class="w"></span></ins>
-<ins></ins>
-<ins><span class="w">        </span><span class="k">when</span><span class="p">(</span><span class="n">viewModel</span><span class="p">.</span><span class="na">screen</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></ins>
-<ins><span class="w">            </span><span class="n">RatingList</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">RatingList</span><span class="p">(</span><span class="n">ratings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ratings</span><span class="p">)</span><span class="w"></span></ins>
-<ins><span class="w">            </span><span class="n">MovieList</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">MovieList</span><span class="p">(</span><span class="n">movies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">movies</span><span class="p">)</span><span class="w"></span></ins>
-<ins><span class="w">            </span><span class="n">ActorList</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">ActorList</span><span class="p">(</span><span class="n">actors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actors</span><span class="p">)</span><span class="w"></span></ins>
-<ins><span class="w">        </span><span class="p">}</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="p">}</span><span class="w"></span></ins>
-<span class="p">}</span><span class="w"></span>
-
-<del>//<span class="nd">@Preview</span><span class="p">(</span><span class="n">showBackground</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span><span class="w"></span></del>
-<span class="nd">@Composable</span><span class="w"></span>
-<del>//<span class="kd">fun</span><span class="w"> </span><span class="nf">DefaultPreview</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span></del>
-<del>//<span class="w">  </span><span class="n">MoviesTheme</span><span class="w"> </span><span class="p">{</span><span class="w"></span></del>
-<del>//<span class="w">      </span><span class="n">Greeting</span><span class="p">(</span><span class="s">&quot;Android&quot;</span><span class="p">)</span><span class="w"></span></del>
-<ins><span class="kd">fun</span><span class="w"> </span><span class="nf">RatingList</span><span class="p">(</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="n">ratings</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">RatingDto</span><span class="o">&gt;</span><span class="w"></span></ins>
-<ins><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Ratings&quot;</span><span class="p">)</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="n">ratings</span><span class="p">.</span><span class="na">forEach</span><span class="w"> </span><span class="p">{</span><span class="w"></span></ins>
-<ins><span class="w">        </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">it</span><span class="p">.</span><span class="na">name</span><span class="p">)</span><span class="w"></span></ins>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-<ins></ins>
-<ins><span class="nd">@Composable</span><span class="w"></span></ins>
-<ins><span class="kd">fun</span><span class="w"> </span><span class="nf">MovieList</span><span class="p">(</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="n">movies</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">MovieDto</span><span class="o">&gt;</span><span class="w"></span></ins>
-<ins><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Movies&quot;</span><span class="p">)</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="n">movies</span><span class="p">.</span><span class="na">forEach</span><span class="w"> </span><span class="p">{</span><span class="w"></span></ins>
-<ins><span class="w">        </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">it</span><span class="p">.</span><span class="na">title</span><span class="p">)</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="p">}</span><span class="w"></span></ins>
-<ins><span class="p">}</span><span class="w"></span></ins>
-<ins></ins>
-<ins><span class="nd">@Composable</span><span class="w"></span></ins>
-<ins><span class="kd">fun</span><span class="w"> </span><span class="nf">ActorList</span><span class="p">(</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="n">actors</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">ActorDto</span><span class="o">&gt;</span><span class="w"></span></ins>
-<ins><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Actors&quot;</span><span class="p">)</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="n">actors</span><span class="p">.</span><span class="na">forEach</span><span class="w"> </span><span class="p">{</span><span class="w"></span></ins>
-<ins><span class="w">        </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">it</span><span class="p">.</span><span class="na">name</span><span class="p">)</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="p">}</span><span class="w"></span></ins>
-<ins><span class="p">}</span><span class="w"></span></ins>
-<ins></ins>
-<ins><span class="nd">@Composable</span><span class="w"></span></ins>
-<ins><span class="kd">fun</span><span class="w"> </span><span class="nf">MovieDisplay</span><span class="p">(</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="n">movie</span><span class="p">:</span><span class="w"> </span><span class="n">MovieDto</span><span class="w"></span></ins>
-<ins><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Movie&quot;</span><span class="p">)</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="n">Row</span><span class="w"> </span><span class="p">{</span><span class="w"></span></ins>
-<ins><span class="w">        </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Title&quot;</span><span class="p">)</span><span class="w"></span></ins>
-<ins><span class="w">        </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">movie</span><span class="p">.</span><span class="na">title</span><span class="p">)</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="p">}</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="n">Row</span><span class="w"> </span><span class="p">{</span><span class="w"></span></ins>
-<ins><span class="w">        </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Description&quot;</span><span class="p">)</span><span class="w"></span></ins>
-<ins><span class="w">        </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">movie</span><span class="p">.</span><span class="na">description</span><span class="p">)</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="p">}</span><span class="w"></span></ins>
-<ins><span class="p">}</span><span class="w"></span></ins>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies</span><span class="w">                                                       </span>
+<span class="w">                                                                                    </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">android.os.Bundle</span><span class="w">                                                          </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.activity.ComponentActivity</span><span class="w">                                        </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.activity.compose.setContent</span><span class="w">                                       </span>
+<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.Column</span><span class="w">                                  </span></ins>
+<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.Row</span><span class="w">                                     </span></ins>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.fillMaxSize</span><span class="w">                             </span>
+<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.padding</span><span class="w">                                 </span></ins>
+<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.material.Button</span><span class="w">                                           </span></ins>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.material.MaterialTheme</span><span class="w">                                    </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.material.Surface</span><span class="w">                                          </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.material.Text</span><span class="w">                                             </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.Composable</span><span class="w">                                        </span>
+<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.collectAsState</span><span class="w">                                    </span></ins>
+<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.getValue</span><span class="w">                                          </span></ins>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.Modifier</span><span class="w">                                               </span>
+<del>//<span class="w"></span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.tooling.preview.Preview</span><span class="w">                                </span></del>
+<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.unit.dp</span><span class="w">                                                </span></ins>
+<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.lifecycle.viewmodel.compose.viewModel</span><span class="w">                             </span></ins>
+<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.repository.ActorDto</span><span class="w">                                    </span></ins>
+<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.repository.MovieDto</span><span class="w">                                    </span></ins>
+<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.repository.RatingDto</span><span class="w">                                   </span></ins>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.ui.theme.MoviesTheme</span><span class="w">                                   </span>
+<span class="w">                                                                                    </span>
+<span class="w">  </span><span class="kd">class</span><span class="w"> </span><span class="nc">MainActivity</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ComponentActivity</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">                                        </span>
+<span class="w">      </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span><span class="w"> </span><span class="n">Bundle?)</span><span class="w"> </span><span class="p">{</span><span class="w">                          </span>
+<span class="w">          </span><span class="k">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span><span class="w">                                        </span>
+<span class="w">          </span><span class="n">setContent</span><span class="w"> </span><span class="p">{</span><span class="w">                                                              </span>
+<span class="w">              </span><span class="n">MoviesTheme</span><span class="w"> </span><span class="p">{</span><span class="w">                                                         </span>
+<span class="w">                  </span><span class="c1">// A surface container using the &#39;background&#39; color from the theme</span><span class="w"></span>
+<span class="w">                  </span><span class="n">Surface</span><span class="p">(</span><span class="w">                                                          </span>
+<span class="w">                      </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">fillMaxSize</span><span class="p">(),</span><span class="w">                            </span>
+<span class="w">                      </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MaterialTheme</span><span class="p">.</span><span class="na">colors</span><span class="p">.</span><span class="na">background</span><span class="w">                       </span>
+<span class="w">                  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                               </span>
+<del>//<span class="w">                    </span><span class="n">Greeting</span><span class="p">(</span><span class="s">&quot;Android&quot;</span><span class="p">)</span><span class="w">                                           </span></del>
+<ins><span class="w">                      </span><span class="n">TestScreen</span><span class="p">()</span><span class="w">                                                  </span></ins>
+<span class="w">                  </span><span class="p">}</span><span class="w">                                                                 </span>
+<span class="w">              </span><span class="p">}</span><span class="w">                                                                     </span>
+<span class="w">          </span><span class="p">}</span><span class="w">                                                                         </span>
+<span class="w">      </span><span class="p">}</span><span class="w">                                                                             </span>
+<span class="w">  </span><span class="p">}</span><span class="w">                                                                                 </span>
+<span class="w">                                                                                    </span>
+<span class="w">  </span><span class="nd">@Composable</span><span class="w">                                                                       </span>
+<del>//<span class="w"></span><span class="kd">fun</span><span class="w"> </span><span class="nf">Greeting</span><span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                      </span></del>
+<del>//<span class="w">    </span><span class="n">Text</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello </span><span class="si">$</span><span class="n">name</span><span class="s">!&quot;</span><span class="p">)</span><span class="w">                                                   </span></del>
+<ins><span class="w">  </span><span class="kd">fun</span><span class="w"> </span><span class="nf">SimpleButton</span><span class="p">(</span><span class="w">                                                                 </span></ins>
+<ins><span class="w">      </span><span class="n">text</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                                                                 </span></ins>
+<ins><span class="w">      </span><span class="n">onClick</span><span class="p">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">,</span><span class="w">                                                          </span></ins>
+<ins><span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w">                                                                               </span></ins>
+<ins><span class="w">      </span><span class="n">Button</span><span class="p">(</span><span class="n">onClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">onClick</span><span class="p">,</span><span class="w"> </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">padding</span><span class="p">(</span><span class="m">8.</span><span class="n">dp</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">                </span></ins>
+<ins><span class="w">          </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">text</span><span class="p">)</span><span class="w">                                                   </span></ins>
+<ins><span class="w">      </span><span class="p">}</span><span class="w">                                                                             </span></ins>
+<ins><span class="w">                                                                                    </span></ins>
+<ins><span class="w">  </span><span class="nd">@Composable</span><span class="w">                                                                       </span></ins>
+<ins><span class="w">  </span><span class="kd">fun</span><span class="w"> </span><span class="nf">SimpleText</span><span class="p">(</span><span class="w">                                                                   </span></ins>
+<ins><span class="w">      </span><span class="n">text</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                                                                 </span></ins>
+<ins><span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w">                                                                               </span></ins>
+<ins><span class="w">      </span><span class="n">Text</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">padding</span><span class="p">(</span><span class="m">8.</span><span class="n">dp</span><span class="p">))</span><span class="w">                          </span></ins>
+<ins><span class="w">                                                                                    </span></ins>
+<ins><span class="w">  </span><span class="nd">@Composable</span><span class="w">                                                                       </span></ins>
+<ins><span class="w">  </span><span class="kd">fun</span><span class="w"> </span><span class="nf">TestScreen</span><span class="p">(</span><span class="w">                                                                   </span></ins>
+<ins><span class="w">      </span><span class="n">viewModel</span><span class="p">:</span><span class="w"> </span><span class="n">MovieViewModel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">viewModel</span><span class="p">()</span><span class="w">                                       </span></ins>
+<ins><span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                               </span></ins>
+<ins><span class="w">      </span><span class="c1">// This is a hideous, but simple simple test screen                           </span><span class="w"></span></ins>
+<ins><span class="w">      </span><span class="c1">//   (There are some bad things happening here... We&#39;ll fix it!)              </span><span class="w"></span></ins>
+<ins><span class="w">      </span><span class="c1">// Don&#39;t worry about how it does its job; we&#39;ll cover that soon!              </span><span class="w"></span></ins>
+<ins><span class="w">      </span><span class="n">Column</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                      </span></ins>
+<ins><span class="w">          </span><span class="n">Row</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                     </span></ins>
+<ins><span class="w">              </span><span class="n">SimpleButton</span><span class="p">(</span><span class="s">&quot;Reset&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                               </span></ins>
+<ins><span class="w">                  </span><span class="n">viewModel</span><span class="p">.</span><span class="na">resetDatabase</span><span class="p">()</span><span class="w">                                         </span></ins>
+<ins><span class="w">              </span><span class="p">}</span><span class="w">                                                                     </span></ins>
+<ins><span class="w">              </span><span class="n">SimpleButton</span><span class="p">(</span><span class="s">&quot;Ratings&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                             </span></ins>
+<ins><span class="w">                  </span><span class="n">viewModel</span><span class="p">.</span><span class="na">switchTo</span><span class="p">(</span><span class="n">RatingList</span><span class="p">)</span><span class="w">                                    </span></ins>
+<ins><span class="w">              </span><span class="p">}</span><span class="w">                                                                     </span></ins>
+<ins><span class="w">          </span><span class="p">}</span><span class="w">                                                                         </span></ins>
+<ins><span class="w">          </span><span class="n">Row</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                     </span></ins>
+<ins><span class="w">              </span><span class="n">SimpleButton</span><span class="p">(</span><span class="s">&quot;Movies&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                              </span></ins>
+<ins><span class="w">                  </span><span class="n">viewModel</span><span class="p">.</span><span class="na">switchTo</span><span class="p">(</span><span class="n">MovieList</span><span class="p">)</span><span class="w">                                     </span></ins>
+<ins><span class="w">              </span><span class="p">}</span><span class="w">                                                                     </span></ins>
+<ins><span class="w">              </span><span class="n">SimpleButton</span><span class="p">(</span><span class="s">&quot;Actors&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                              </span></ins>
+<ins><span class="w">                  </span><span class="n">viewModel</span><span class="p">.</span><span class="na">switchTo</span><span class="p">(</span><span class="n">ActorList</span><span class="p">)</span><span class="w">                                     </span></ins>
+<ins><span class="w">              </span><span class="p">}</span><span class="w">                                                                     </span></ins>
+<ins><span class="w">          </span><span class="p">}</span><span class="w">                                                                         </span></ins>
+<ins><span class="w">                                                                                    </span></ins>
+<ins><span class="w">          </span><span class="kd">val</span><span class="w"> </span><span class="nv">ratings</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">viewModel</span><span class="p">.</span><span class="na">ratingsFlow</span><span class="p">.</span><span class="na">collectAsState</span><span class="p">(</span><span class="n">initial</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">emptyList</span><span class="p">())</span><span class="w"></span></ins>
+<ins><span class="w">          </span><span class="kd">val</span><span class="w"> </span><span class="nv">movies</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">viewModel</span><span class="p">.</span><span class="na">moviesFlow</span><span class="p">.</span><span class="na">collectAsState</span><span class="p">(</span><span class="n">initial</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">emptyList</span><span class="p">())</span><span class="w">  </span></ins>
+<ins><span class="w">          </span><span class="kd">val</span><span class="w"> </span><span class="nv">actors</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">viewModel</span><span class="p">.</span><span class="na">actorsFlow</span><span class="p">.</span><span class="na">collectAsState</span><span class="p">(</span><span class="n">initial</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">emptyList</span><span class="p">())</span><span class="w">  </span></ins>
+<ins><span class="w">                                                                                    </span></ins>
+<ins><span class="w">          </span><span class="k">when</span><span class="p">(</span><span class="n">viewModel</span><span class="p">.</span><span class="na">screen</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                  </span></ins>
+<ins><span class="w">              </span><span class="n">RatingList</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">RatingList</span><span class="p">(</span><span class="n">ratings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ratings</span><span class="p">)</span><span class="w">                           </span></ins>
+<ins><span class="w">              </span><span class="n">MovieList</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">MovieList</span><span class="p">(</span><span class="n">movies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">movies</span><span class="p">)</span><span class="w">                               </span></ins>
+<ins><span class="w">              </span><span class="n">ActorList</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">ActorList</span><span class="p">(</span><span class="n">actors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actors</span><span class="p">)</span><span class="w">                               </span></ins>
+<ins><span class="w">          </span><span class="p">}</span><span class="w">                                                                         </span></ins>
+<ins><span class="w">      </span><span class="p">}</span><span class="w">                                                                             </span></ins>
+<span class="w">  </span><span class="p">}</span><span class="w">                                                                                 </span>
+<span class="w">                                                                                    </span>
+<del>//<span class="w"></span><span class="nd">@Preview</span><span class="p">(</span><span class="n">showBackground</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span><span class="w">                                                   </span></del>
+<span class="w">  </span><span class="nd">@Composable</span><span class="w">                                                                       </span>
+<del>//<span class="w"></span><span class="kd">fun</span><span class="w"> </span><span class="nf">DefaultPreview</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">                                                            </span></del>
+<del>//<span class="w">    </span><span class="n">MoviesTheme</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                 </span></del>
+<del>//<span class="w">        </span><span class="n">Greeting</span><span class="p">(</span><span class="s">&quot;Android&quot;</span><span class="p">)</span><span class="w">                                                       </span></del>
+<ins><span class="w">  </span><span class="kd">fun</span><span class="w"> </span><span class="nf">RatingList</span><span class="p">(</span><span class="w">                                                                   </span></ins>
+<ins><span class="w">      </span><span class="n">ratings</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">RatingDto</span><span class="o">&gt;</span><span class="w">                                                      </span></ins>
+<ins><span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                               </span></ins>
+<ins><span class="w">      </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Ratings&quot;</span><span class="p">)</span><span class="w">                                                  </span></ins>
+<ins><span class="w">      </span><span class="n">ratings</span><span class="p">.</span><span class="na">forEach</span><span class="w"> </span><span class="p">{</span><span class="w">                                                             </span></ins>
+<ins><span class="w">          </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">it</span><span class="p">.</span><span class="na">name</span><span class="p">)</span><span class="w">                                                </span></ins>
+<span class="w">      </span><span class="p">}</span><span class="w">                                                                             </span>
+<span class="w">  </span><span class="p">}</span><span class="w">                                                                                 </span>
+<ins><span class="w">                                                                                    </span></ins>
+<ins><span class="w">  </span><span class="nd">@Composable</span><span class="w">                                                                       </span></ins>
+<ins><span class="w">  </span><span class="kd">fun</span><span class="w"> </span><span class="nf">MovieList</span><span class="p">(</span><span class="w">                                                                    </span></ins>
+<ins><span class="w">      </span><span class="n">movies</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">MovieDto</span><span class="o">&gt;</span><span class="w">                                                        </span></ins>
+<ins><span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                               </span></ins>
+<ins><span class="w">      </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Movies&quot;</span><span class="p">)</span><span class="w">                                                   </span></ins>
+<ins><span class="w">      </span><span class="n">movies</span><span class="p">.</span><span class="na">forEach</span><span class="w"> </span><span class="p">{</span><span class="w">                                                              </span></ins>
+<ins><span class="w">          </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">it</span><span class="p">.</span><span class="na">title</span><span class="p">)</span><span class="w">                                               </span></ins>
+<ins><span class="w">      </span><span class="p">}</span><span class="w">                                                                             </span></ins>
+<ins><span class="w">  </span><span class="p">}</span><span class="w">                                                                                 </span></ins>
+<ins><span class="w">                                                                                    </span></ins>
+<ins><span class="w">  </span><span class="nd">@Composable</span><span class="w">                                                                       </span></ins>
+<ins><span class="w">  </span><span class="kd">fun</span><span class="w"> </span><span class="nf">ActorList</span><span class="p">(</span><span class="w">                                                                    </span></ins>
+<ins><span class="w">      </span><span class="n">actors</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">ActorDto</span><span class="o">&gt;</span><span class="w">                                                        </span></ins>
+<ins><span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                               </span></ins>
+<ins><span class="w">      </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Actors&quot;</span><span class="p">)</span><span class="w">                                                   </span></ins>
+<ins><span class="w">      </span><span class="n">actors</span><span class="p">.</span><span class="na">forEach</span><span class="w"> </span><span class="p">{</span><span class="w">                                                              </span></ins>
+<ins><span class="w">          </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">it</span><span class="p">.</span><span class="na">name</span><span class="p">)</span><span class="w">                                                </span></ins>
+<ins><span class="w">      </span><span class="p">}</span><span class="w">                                                                             </span></ins>
+<ins><span class="w">  </span><span class="p">}</span><span class="w">                                                                                 </span></ins>
+<ins><span class="w">                                                                                    </span></ins>
+<ins><span class="w">  </span><span class="nd">@Composable</span><span class="w">                                                                       </span></ins>
+<ins><span class="w">  </span><span class="kd">fun</span><span class="w"> </span><span class="nf">MovieDisplay</span><span class="p">(</span><span class="w">                                                                 </span></ins>
+<ins><span class="w">      </span><span class="n">movie</span><span class="p">:</span><span class="w"> </span><span class="n">MovieDto</span><span class="w">                                                               </span></ins>
+<ins><span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                               </span></ins>
+<ins><span class="w">      </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Movie&quot;</span><span class="p">)</span><span class="w">                                                    </span></ins>
+<ins><span class="w">      </span><span class="n">Row</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                         </span></ins>
+<ins><span class="w">          </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Title&quot;</span><span class="p">)</span><span class="w">                                                </span></ins>
+<ins><span class="w">          </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">movie</span><span class="p">.</span><span class="na">title</span><span class="p">)</span><span class="w">                                            </span></ins>
+<ins><span class="w">      </span><span class="p">}</span><span class="w">                                                                             </span></ins>
+<ins><span class="w">      </span><span class="n">Row</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                         </span></ins>
+<ins><span class="w">          </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Description&quot;</span><span class="p">)</span><span class="w">                                          </span></ins>
+<ins><span class="w">          </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">movie</span><span class="p">.</span><span class="na">description</span><span class="p">)</span><span class="w">                                      </span></ins>
+<ins><span class="w">      </span><span class="p">}</span><span class="w">                                                                             </span></ins>
+<ins><span class="w">  </span><span class="p">}</span><span class="w">                                                                                 </span></ins>
 </pre></div>
 </div>
 </details>
 <details class="example" open>
 <summary>CHANGED: /app/src/main/java/com/javadude/movies/MovieViewModel.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/java/com/javadude/movies/MovieViewModel.kt';">
-<div class="highlight"><pre><span></span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies</span><span class="w"></span>
-
-<span class="k">import</span><span class="w"> </span><span class="nn">android.app.Application</span><span class="w"></span>
-<ins><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.getValue</span><span class="w"></span></ins>
-<ins><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.mutableStateOf</span><span class="w"></span></ins>
-<ins><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.setValue</span><span class="w"></span></ins>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.lifecycle.AndroidViewModel</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.lifecycle.viewModelScope</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.repository.MovieDatabaseRepository</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.repository.MovieRepository</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nn">kotlinx.coroutines.launch</span><span class="w"></span>
-
-<ins><span class="kd">sealed</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="nc">Screen</span><span class="w"></span></ins>
-<ins><span class="kd">object</span><span class="w"> </span><span class="nc">RatingList</span><span class="p">:</span><span class="w"> </span><span class="n">Screen</span><span class="w"></span></ins>
-<ins><span class="kd">object</span><span class="w"> </span><span class="nc">MovieList</span><span class="p">:</span><span class="w"> </span><span class="n">Screen</span><span class="w"></span></ins>
-<ins><span class="kd">object</span><span class="w"> </span><span class="nc">ActorList</span><span class="p">:</span><span class="w"> </span><span class="n">Screen</span><span class="w"></span></ins>
-<ins></ins>
-<span class="kd">class</span><span class="w"> </span><span class="nc">MovieViewModel</span><span class="p">(</span><span class="n">application</span><span class="p">:</span><span class="w"> </span><span class="n">Application</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">AndroidViewModel</span><span class="p">(</span><span class="n">application</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">repository</span><span class="p">:</span><span class="w"> </span><span class="n">MovieRepository</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MovieDatabaseRepository</span><span class="p">(</span><span class="n">application</span><span class="p">)</span><span class="w"></span>
-
-<ins><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">screen</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">mutableStateOf</span><span class="o">&lt;</span><span class="n">Screen</span><span class="o">&gt;</span><span class="p">(</span><span class="n">RatingList</span><span class="p">)</span><span class="w"></span></ins>
-<ins><span class="w">        </span><span class="n">private</span><span class="w"> </span><span class="k">set</span><span class="w"></span></ins>
-<ins></ins>
-<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">ratingsFlow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">repository</span><span class="p">.</span><span class="na">ratingsFlow</span><span class="w"></span>
-<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">moviesFlow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">repository</span><span class="p">.</span><span class="na">moviesFlow</span><span class="w"></span>
-<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">actorsFlow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">repository</span><span class="p">.</span><span class="na">actorsFlow</span><span class="w"></span>
-
-<ins><span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">switchTo</span><span class="p">(</span><span class="n">screen</span><span class="p">:</span><span class="w"> </span><span class="n">Screen</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></ins>
-<ins><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">screen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">screen</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="p">}</span><span class="w"></span></ins>
-<ins></ins>
-<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">resetDatabase</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">viewModelScope</span><span class="p">.</span><span class="na">launch</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="n">repository</span><span class="p">.</span><span class="na">resetDatabase</span><span class="p">()</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies</span><span class="w">                                                       </span>
+<span class="w">                                                                                    </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">android.app.Application</span><span class="w">                                                    </span>
+<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.getValue</span><span class="w">                                          </span></ins>
+<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.mutableStateOf</span><span class="w">                                    </span></ins>
+<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.setValue</span><span class="w">                                          </span></ins>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.lifecycle.AndroidViewModel</span><span class="w">                                        </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.lifecycle.viewModelScope</span><span class="w">                                          </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.repository.MovieDatabaseRepository</span><span class="w">                     </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.repository.MovieRepository</span><span class="w">                             </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">kotlinx.coroutines.launch</span><span class="w">                                                  </span>
+<span class="w">                                                                                    </span>
+<ins><span class="w">  </span><span class="kd">sealed</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="nc">Screen</span><span class="w">                                                           </span></ins>
+<ins><span class="w">  </span><span class="kd">object</span><span class="w"> </span><span class="nc">RatingList</span><span class="p">:</span><span class="w"> </span><span class="n">Screen</span><span class="w">                                                         </span></ins>
+<ins><span class="w">  </span><span class="kd">object</span><span class="w"> </span><span class="nc">MovieList</span><span class="p">:</span><span class="w"> </span><span class="n">Screen</span><span class="w">                                                          </span></ins>
+<ins><span class="w">  </span><span class="kd">object</span><span class="w"> </span><span class="nc">ActorList</span><span class="p">:</span><span class="w"> </span><span class="n">Screen</span><span class="w">                                                          </span></ins>
+<ins><span class="w">                                                                                    </span></ins>
+<span class="w">  </span><span class="kd">class</span><span class="w"> </span><span class="nc">MovieViewModel</span><span class="p">(</span><span class="n">application</span><span class="p">:</span><span class="w"> </span><span class="n">Application</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">AndroidViewModel</span><span class="p">(</span><span class="n">application</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<span class="w">      </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">repository</span><span class="p">:</span><span class="w"> </span><span class="n">MovieRepository</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MovieDatabaseRepository</span><span class="p">(</span><span class="n">application</span><span class="p">)</span><span class="w"></span>
+<span class="w">                                                                                    </span>
+<ins><span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">screen</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">mutableStateOf</span><span class="o">&lt;</span><span class="n">Screen</span><span class="o">&gt;</span><span class="p">(</span><span class="n">RatingList</span><span class="p">)</span><span class="w">                              </span></ins>
+<ins><span class="w">          </span><span class="n">private</span><span class="w"> </span><span class="k">set</span><span class="w">                                                               </span></ins>
+<ins><span class="w">                                                                                    </span></ins>
+<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">ratingsFlow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">repository</span><span class="p">.</span><span class="na">ratingsFlow</span><span class="w">                                      </span>
+<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">moviesFlow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">repository</span><span class="p">.</span><span class="na">moviesFlow</span><span class="w">                                        </span>
+<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">actorsFlow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">repository</span><span class="p">.</span><span class="na">actorsFlow</span><span class="w">                                        </span>
+<span class="w">                                                                                    </span>
+<ins><span class="w">      </span><span class="kd">fun</span><span class="w"> </span><span class="nf">switchTo</span><span class="p">(</span><span class="n">screen</span><span class="p">:</span><span class="w"> </span><span class="n">Screen</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                </span></ins>
+<ins><span class="w">          </span><span class="k">this</span><span class="p">.</span><span class="na">screen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">screen</span><span class="w">                                                      </span></ins>
+<ins><span class="w">      </span><span class="p">}</span><span class="w">                                                                             </span></ins>
+<ins><span class="w">                                                                                    </span></ins>
+<span class="w">      </span><span class="kd">fun</span><span class="w"> </span><span class="nf">resetDatabase</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">                                                         </span>
+<span class="w">          </span><span class="n">viewModelScope</span><span class="p">.</span><span class="na">launch</span><span class="w"> </span><span class="p">{</span><span class="w">                                                   </span>
+<span class="w">              </span><span class="n">repository</span><span class="p">.</span><span class="na">resetDatabase</span><span class="p">()</span><span class="w">                                            </span>
+<span class="w">          </span><span class="p">}</span><span class="w">                                                                         </span>
+<span class="w">      </span><span class="p">}</span><span class="w">                                                                             </span>
+<span class="w">  </span><span class="p">}</span><span class="w">                                                                                 </span>
 </pre></div>
 </div>
 </details>

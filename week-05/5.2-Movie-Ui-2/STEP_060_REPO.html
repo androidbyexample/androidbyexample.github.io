@@ -55,7 +55,7 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra-6.css">
+      <link rel="stylesheet" href="../../stylesheets/extra-7.css">
     
     <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -3167,41 +3167,54 @@
 <details class="example" open>
 <summary>CHANGED: /data/src/main/java/com/javadude/movies/data/Role.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/data/src/main/java/com/javadude/movies/data/Role.kt';">
-<div class="highlight"><pre><span></span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.data</span><span class="w"></span>
-
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Entity</span><span class="w"></span>
-<ins><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.ForeignKey</span><span class="w"></span></ins>
-<ins><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Index</span><span class="w"></span></ins>
-
-<span class="nd">@Entity</span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="n">primaryKeys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s">&quot;actorId&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;movieId&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
-<ins><span class="w">    </span><span class="n">indices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="w"></span></ins>
-<ins><span class="w">        </span><span class="n">Index</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s">&quot;movieId&quot;</span><span class="o">]</span><span class="p">),</span><span class="w"></span></ins>
-<ins><span class="w">        </span><span class="n">Index</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s">&quot;actorId&quot;</span><span class="o">]</span><span class="p">),</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="o">]</span><span class="p">,</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="n">foreignKeys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="w"></span></ins>
-<ins><span class="w">        </span><span class="n">ForeignKey</span><span class="p">(</span><span class="w"></span></ins>
-<ins><span class="w">            </span><span class="n">entity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Actor</span><span class="o">::</span><span class="n">class</span><span class="p">,</span><span class="w"></span></ins>
-<ins><span class="w">            </span><span class="n">parentColumns</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s">&quot;id&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span></ins>
-<ins><span class="w">            </span><span class="n">childColumns</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s">&quot;actorId&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span></ins>
-<ins><span class="w">            </span><span class="n">onUpdate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ForeignKey</span><span class="p">.</span><span class="na">CASCADE</span><span class="p">,</span><span class="w"></span></ins>
-<ins><span class="w">            </span><span class="n">onDelete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ForeignKey</span><span class="p">.</span><span class="na">CASCADE</span><span class="p">,</span><span class="w"></span></ins>
-<ins><span class="w">        </span><span class="p">),</span><span class="w"></span></ins>
-<ins><span class="w">        </span><span class="n">ForeignKey</span><span class="p">(</span><span class="w"></span></ins>
-<ins><span class="w">            </span><span class="n">entity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Movie</span><span class="o">::</span><span class="n">class</span><span class="p">,</span><span class="w"></span></ins>
-<ins><span class="w">            </span><span class="n">parentColumns</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s">&quot;id&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span></ins>
-<ins><span class="w">            </span><span class="n">childColumns</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s">&quot;movieId&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span></ins>
-<ins><span class="w">            </span><span class="n">onUpdate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ForeignKey</span><span class="p">.</span><span class="na">CASCADE</span><span class="p">,</span><span class="w"></span></ins>
-<ins><span class="w">            </span><span class="n">onDelete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ForeignKey</span><span class="p">.</span><span class="na">CASCADE</span><span class="p">,</span><span class="w"></span></ins>
-<ins><span class="w">        </span><span class="p">),</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="o">]</span><span class="w"></span></ins>
-<span class="p">)</span><span class="w"></span>
-<span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Role</span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">movieId</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">actorId</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">character</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">orderInCredits</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">,</span><span class="w"></span>
-<span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><del>//<span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.data</span><span class="w">         </span></del>
+<del>//<span class="w">                                         </span></del>
+<del>//<span class="w"></span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Entity</span><span class="w">              </span></del>
+<del>//<span class="w">                                         </span></del>
+<del>//<span class="w"></span><span class="nd">@Entity</span><span class="p">(</span><span class="w">                                 </span></del>
+<del>//<span class="w">    </span><span class="n">primaryKeys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s">&quot;actorId&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;movieId&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span></del>
+<del>//<span class="w"></span><span class="p">)</span><span class="w">                                        </span></del>
+<del>//<span class="w"></span><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Role</span><span class="p">(</span><span class="w">                         </span></del>
+<del>//<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">movieId</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                 </span></del>
+<del>//<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">actorId</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                 </span></del>
+<del>//<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">character</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">               </span></del>
+<del>//<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">orderInCredits</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">,</span><span class="w">             </span></del>
+<del>//<span class="w"></span><span class="p">)</span><span class="w">                                        </span></del>
+<ins><div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.data</span><span class="w">          </span></ins>
+<ins><span class="w">                                            </span></ins>
+<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Entity</span><span class="w">               </span></ins>
+<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.ForeignKey</span><span class="w">           </span></ins>
+<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Index</span><span class="w">                </span></ins>
+<ins><span class="w">                                            </span></ins>
+<ins><span class="w">  </span><span class="nd">@Entity</span><span class="p">(</span><span class="w">                                  </span></ins>
+<ins><span class="w">      </span><span class="n">primaryKeys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s">&quot;actorId&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;movieId&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"> </span></ins>
+<ins><span class="w">      </span><span class="n">indices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="w">                           </span></ins>
+<ins><span class="w">          </span><span class="n">Index</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s">&quot;movieId&quot;</span><span class="o">]</span><span class="p">),</span><span class="w">       </span></ins>
+<ins><span class="w">          </span><span class="n">Index</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s">&quot;actorId&quot;</span><span class="o">]</span><span class="p">),</span><span class="w">       </span></ins>
+<ins><span class="w">      </span><span class="o">]</span><span class="p">,</span><span class="w">                                    </span></ins>
+<ins><span class="w">      </span><span class="n">foreignKeys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="w">                       </span></ins>
+<ins><span class="w">          </span><span class="n">ForeignKey</span><span class="p">(</span><span class="w">                       </span></ins>
+<ins><span class="w">              </span><span class="n">entity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Actor</span><span class="o">::</span><span class="n">class</span><span class="p">,</span><span class="w">        </span></ins>
+<ins><span class="w">              </span><span class="n">parentColumns</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s">&quot;id&quot;</span><span class="o">]</span><span class="p">,</span><span class="w">       </span></ins>
+<ins><span class="w">              </span><span class="n">childColumns</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s">&quot;actorId&quot;</span><span class="o">]</span><span class="p">,</span><span class="w">   </span></ins>
+<ins><span class="w">              </span><span class="n">onUpdate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ForeignKey</span><span class="p">.</span><span class="na">CASCADE</span><span class="p">,</span><span class="w"></span></ins>
+<ins><span class="w">              </span><span class="n">onDelete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ForeignKey</span><span class="p">.</span><span class="na">CASCADE</span><span class="p">,</span><span class="w"></span></ins>
+<ins><span class="w">          </span><span class="p">),</span><span class="w">                                </span></ins>
+<ins><span class="w">          </span><span class="n">ForeignKey</span><span class="p">(</span><span class="w">                       </span></ins>
+<ins><span class="w">              </span><span class="n">entity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Movie</span><span class="o">::</span><span class="n">class</span><span class="p">,</span><span class="w">        </span></ins>
+<ins><span class="w">              </span><span class="n">parentColumns</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s">&quot;id&quot;</span><span class="o">]</span><span class="p">,</span><span class="w">       </span></ins>
+<ins><span class="w">              </span><span class="n">childColumns</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s">&quot;movieId&quot;</span><span class="o">]</span><span class="p">,</span><span class="w">   </span></ins>
+<ins><span class="w">              </span><span class="n">onUpdate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ForeignKey</span><span class="p">.</span><span class="na">CASCADE</span><span class="p">,</span><span class="w"></span></ins>
+<ins><span class="w">              </span><span class="n">onDelete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ForeignKey</span><span class="p">.</span><span class="na">CASCADE</span><span class="p">,</span><span class="w"></span></ins>
+<ins><span class="w">          </span><span class="p">),</span><span class="w">                                </span></ins>
+<ins><span class="w">      </span><span class="o">]</span><span class="w">                                     </span></ins>
+<ins><span class="w">  </span><span class="p">)</span><span class="w">                                         </span></ins>
+<ins><span class="w">  </span><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Role</span><span class="p">(</span><span class="w">                          </span></ins>
+<ins><span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">movieId</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                  </span></ins>
+<ins><span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">actorId</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                  </span></ins>
+<ins><span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">character</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                </span></ins>
+<ins><span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">orderInCredits</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">,</span><span class="w">              </span></ins>
+<ins><span class="w">  </span><span class="p">)</span><span class="w">                                         </span></ins>
 </pre></div>
 </div>
 </details>

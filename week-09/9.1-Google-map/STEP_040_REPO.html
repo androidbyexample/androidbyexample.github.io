@@ -55,7 +55,7 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra-6.css">
+      <link rel="stylesheet" href="../../stylesheets/extra-7.css">
     
     <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -3126,66 +3126,66 @@ and <a class="find-button" href="#040-factor-map">Simplify the Caller</a>.</p>
 <details class="example" open>
 <summary>CHANGED: /app/src/main/java/com/javadude/carfinder/MainActivity.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/java/com/javadude/carfinder/MainActivity.kt';">
-<div class="highlight"><pre><span></span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.carfinder</span><span class="w"></span>
-
-<span class="k">import</span><span class="w"> </span><span class="nn">android.os.Bundle</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.activity.ComponentActivity</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.activity.compose.setContent</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.fillMaxSize</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.material.MaterialTheme</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.material.Surface</span><span class="w"></span>
-<ins><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.Composable</span><span class="w"></span></ins>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.Modifier</span><span class="w"></span>
-<ins><span class="k">import</span><span class="w"> </span><span class="nn">com.google.android.gms.maps.model.LatLng</span><span class="w"></span></ins>
-<span class="k">import</span><span class="w"> </span><span class="nn">com.google.maps.android.compose.GoogleMap</span><span class="w"></span>
-<ins><span class="k">import</span><span class="w"> </span><span class="nn">com.google.maps.android.compose.MarkerInfoWindowContent</span><span class="w"></span></ins>
-<ins><span class="k">import</span><span class="w"> </span><span class="nn">com.google.maps.android.compose.rememberMarkerState</span><span class="w"></span></ins>
-<span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.carfinder.ui.theme.CarFinderTheme</span><span class="w"></span>
-
-<ins><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">googleHQ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LatLng</span><span class="p">(</span><span class="m">37.42423291057923</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="m">122.08811454627153</span><span class="p">)</span><span class="w"></span></ins>
-<ins></ins>
-<span class="kd">class</span><span class="w"> </span><span class="nc">MainActivity</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ComponentActivity</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span><span class="w"> </span><span class="n">Bundle?)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="n">setContent</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="n">CarFinderTheme</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="c1">// A surface container using the &#39;background&#39; color from the theme</span><span class="w"></span>
-<span class="w">                </span><span class="n">Surface</span><span class="p">(</span><span class="w"></span>
-<span class="w">                    </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">fillMaxSize</span><span class="p">(),</span><span class="w"></span>
-<span class="w">                    </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MaterialTheme</span><span class="p">.</span><span class="na">colors</span><span class="p">.</span><span class="na">background</span><span class="w"></span>
-<span class="w">                </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<div id="040-factor-map"><del>//<span class="w">                  </span><span class="n">GoogleMap</span><span class="p">(</span><span class="w"></span></del>
-<ins><span class="w">                    </span><span class="n">GoogleMapDisplay</span><span class="p">(</span><span class="w"></span></ins>
-<ins><span class="w">                        </span><span class="n">place</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">googleHQ</span><span class="p">,</span><span class="w"></span></ins>
-<ins><span class="w">                        </span><span class="n">placeDescription</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Google HQ&quot;</span><span class="p">,</span><span class="w"></span></ins>
-<span class="w">                        </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">fillMaxSize</span><span class="p">(),</span><span class="w"></span>
-<del>//<span class="w">                  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></del>
-<del>//<span class="w">                      </span><span class="c1">// no content yet</span><span class="w"></span></del>
-<del>//<span class="w">                  </span><span class="p">}</span><span class="w"></span></del>
-<ins><span class="w">                    </span><span class="p">)</span><span class="w"></span></ins>
-</div><span class="w">                </span><span class="p">}</span><span class="w"></span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-<ins></ins>
-<div id="040-new-map-composable"><ins><span class="nd">@Composable</span><span class="w"></span></ins>
-<ins><span class="kd">fun</span><span class="w"> </span><span class="nf">GoogleMapDisplay</span><span class="p">(</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="n">place</span><span class="p">:</span><span class="w"> </span><span class="n">LatLng</span><span class="p">,</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="n">placeDescription</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"></span></ins>
-<ins><span class="w">    </span><span class="n">modifier</span><span class="p">:</span><span class="w"> </span><span class="n">Modifier</span><span class="p">,</span><span class="w"></span></ins>
-<ins><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></ins>
-<div id="040-marker-state-holder"><ins><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">placeState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rememberMarkerState</span><span class="p">(</span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">place</span><span class="p">.</span><span class="na">toString</span><span class="p">(),</span><span class="w"> </span><span class="n">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">place</span><span class="p">)</span><span class="w"></span></ins>
-</div><ins></ins>
-<ins><span class="w">    </span><span class="n">GoogleMap</span><span class="p">(</span><span class="w"></span></ins>
-<div id="040-map-modifier"><ins><span class="w">        </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">modifier</span><span class="p">,</span><span class="w"></span></ins>
-</div><ins><span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></ins>
-<div id="040-marker"><ins><span class="w">        </span><span class="n">MarkerInfoWindowContent</span><span class="p">(</span><span class="w"></span></ins>
-<ins><span class="w">            </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">placeState</span><span class="p">,</span><span class="w"></span></ins>
-<ins><span class="w">            </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">placeDescription</span><span class="p">,</span><span class="w"></span></ins>
-<ins><span class="w">        </span><span class="p">)</span><span class="w"></span></ins>
-</div><ins><span class="w">    </span><span class="p">}</span><span class="w"></span></ins>
-<ins><span class="p">}</span><span class="w"></span></ins>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.carfinder</span><span class="w">                                                    </span>
+<span class="w">                                                                                    </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">android.os.Bundle</span><span class="w">                                                          </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.activity.ComponentActivity</span><span class="w">                                        </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.activity.compose.setContent</span><span class="w">                                       </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.fillMaxSize</span><span class="w">                             </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.material.MaterialTheme</span><span class="w">                                    </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.material.Surface</span><span class="w">                                          </span>
+<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.Composable</span><span class="w">                                        </span></ins>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.Modifier</span><span class="w">                                               </span>
+<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.google.android.gms.maps.model.LatLng</span><span class="w">                                   </span></ins>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.google.maps.android.compose.GoogleMap</span><span class="w">                                  </span>
+<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.google.maps.android.compose.MarkerInfoWindowContent</span><span class="w">                    </span></ins>
+<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.google.maps.android.compose.rememberMarkerState</span><span class="w">                        </span></ins>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.carfinder.ui.theme.CarFinderTheme</span><span class="w">                             </span>
+<span class="w">                                                                                    </span>
+<ins><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">googleHQ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LatLng</span><span class="p">(</span><span class="m">37.42423291057923</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="m">122.08811454627153</span><span class="p">)</span><span class="w">             </span></ins>
+<ins><span class="w">                                                                                    </span></ins>
+<span class="w">  </span><span class="kd">class</span><span class="w"> </span><span class="nc">MainActivity</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ComponentActivity</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">                                        </span>
+<span class="w">      </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span><span class="w"> </span><span class="n">Bundle?)</span><span class="w"> </span><span class="p">{</span><span class="w">                          </span>
+<span class="w">          </span><span class="k">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span><span class="w">                                        </span>
+<span class="w">          </span><span class="n">setContent</span><span class="w"> </span><span class="p">{</span><span class="w">                                                              </span>
+<span class="w">              </span><span class="n">CarFinderTheme</span><span class="w"> </span><span class="p">{</span><span class="w">                                                      </span>
+<span class="w">                  </span><span class="c1">// A surface container using the &#39;background&#39; color from the theme</span><span class="w"></span>
+<span class="w">                  </span><span class="n">Surface</span><span class="p">(</span><span class="w">                                                          </span>
+<span class="w">                      </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">fillMaxSize</span><span class="p">(),</span><span class="w">                            </span>
+<span class="w">                      </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MaterialTheme</span><span class="p">.</span><span class="na">colors</span><span class="p">.</span><span class="na">background</span><span class="w">                       </span>
+<span class="w">                  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                               </span>
+<div id="040-factor-map"><del>//<span class="w">                    </span><span class="n">GoogleMap</span><span class="p">(</span><span class="w">                                                    </span></del>
+<ins><span class="w">                      </span><span class="n">GoogleMapDisplay</span><span class="p">(</span><span class="w">                                             </span></ins>
+<ins><span class="w">                          </span><span class="n">place</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">googleHQ</span><span class="p">,</span><span class="w">                                         </span></ins>
+<ins><span class="w">                          </span><span class="n">placeDescription</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Google HQ&quot;</span><span class="p">,</span><span class="w">                           </span></ins>
+<span class="w">                          </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">fillMaxSize</span><span class="p">(),</span><span class="w">                        </span>
+<del>//<span class="w">                    </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                           </span></del>
+<del>//<span class="w">                        </span><span class="c1">// no content yet                                         </span><span class="w"></span></del>
+<del>//<span class="w">                    </span><span class="p">}</span><span class="w">                                                             </span></del>
+<ins><span class="w">                      </span><span class="p">)</span><span class="w">                                                             </span></ins>
+</div><span class="w">                  </span><span class="p">}</span><span class="w">                                                                 </span>
+<span class="w">              </span><span class="p">}</span><span class="w">                                                                     </span>
+<span class="w">          </span><span class="p">}</span><span class="w">                                                                         </span>
+<span class="w">      </span><span class="p">}</span><span class="w">                                                                             </span>
+<span class="w">  </span><span class="p">}</span><span class="w">                                                                                 </span>
+<ins><span class="w">                                                                                    </span></ins>
+<div id="040-new-map-composable"><ins><span class="w">  </span><span class="nd">@Composable</span><span class="w">                                                                       </span></ins>
+<ins><span class="w">  </span><span class="kd">fun</span><span class="w"> </span><span class="nf">GoogleMapDisplay</span><span class="p">(</span><span class="w">                                                             </span></ins>
+<ins><span class="w">      </span><span class="n">place</span><span class="p">:</span><span class="w"> </span><span class="n">LatLng</span><span class="p">,</span><span class="w">                                                                </span></ins>
+<ins><span class="w">      </span><span class="n">placeDescription</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                                                     </span></ins>
+<ins><span class="w">      </span><span class="n">modifier</span><span class="p">:</span><span class="w"> </span><span class="n">Modifier</span><span class="p">,</span><span class="w">                                                           </span></ins>
+<ins><span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                               </span></ins>
+<div id="040-marker-state-holder"><ins><span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">placeState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rememberMarkerState</span><span class="p">(</span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">place</span><span class="p">.</span><span class="na">toString</span><span class="p">(),</span><span class="w"> </span><span class="n">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">place</span><span class="p">)</span><span class="w"></span></ins>
+</div><ins><span class="w">                                                                                    </span></ins>
+<ins><span class="w">      </span><span class="n">GoogleMap</span><span class="p">(</span><span class="w">                                                                    </span></ins>
+<div id="040-map-modifier"><ins><span class="w">          </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">modifier</span><span class="p">,</span><span class="w">                                                      </span></ins>
+</div><ins><span class="w">      </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                           </span></ins>
+<div id="040-marker"><ins><span class="w">          </span><span class="n">MarkerInfoWindowContent</span><span class="p">(</span><span class="w">                                                  </span></ins>
+<ins><span class="w">              </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">placeState</span><span class="p">,</span><span class="w">                                                   </span></ins>
+<ins><span class="w">              </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">placeDescription</span><span class="p">,</span><span class="w">                                             </span></ins>
+<ins><span class="w">          </span><span class="p">)</span><span class="w">                                                                         </span></ins>
+</div><ins><span class="w">      </span><span class="p">}</span><span class="w">                                                                             </span></ins>
+<ins><span class="w">  </span><span class="p">}</span><span class="w">                                                                                 </span></ins>
 </div></pre></div>
 </div>
 </details>

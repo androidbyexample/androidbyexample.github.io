@@ -55,7 +55,7 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra-6.css">
+      <link rel="stylesheet" href="../../stylesheets/extra-7.css">
     
     <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -3349,182 +3349,182 @@
 <details class="success" open>
 <summary>ADDED: /data/src/main/java/com/javadude/movies/data/Actor.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/data/src/main/java/com/javadude/movies/data/Actor.kt';">
-<div class="highlight"><pre><span></span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.data</span><span class="w"></span>
-
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Entity</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.PrimaryKey</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nn">java.util.UUID</span><span class="w"></span>
-
-<span class="nd">@Entity</span><span class="w"></span>
-<span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Actor</span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="nd">@PrimaryKey</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">id</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UUID</span><span class="p">.</span><span class="na">randomUUID</span><span class="p">().</span><span class="na">toString</span><span class="p">(),</span><span class="w"></span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">name</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"></span>
-<span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.data</span><span class="w">                              </span>
+<span class="w">                                                                </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Entity</span><span class="w">                                   </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.PrimaryKey</span><span class="w">                               </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">java.util.UUID</span><span class="w">                                         </span>
+<span class="w">                                                                </span>
+<span class="w">  </span><span class="nd">@Entity</span><span class="w">                                                       </span>
+<span class="w">  </span><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Actor</span><span class="p">(</span><span class="w">                                             </span>
+<span class="w">      </span><span class="nd">@PrimaryKey</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">id</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UUID</span><span class="p">.</span><span class="na">randomUUID</span><span class="p">().</span><span class="na">toString</span><span class="p">(),</span><span class="w"></span>
+<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">name</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                                         </span>
+<span class="w">  </span><span class="p">)</span><span class="w">                                                             </span>
 </pre></div>
 </div>
 </details>
 <details class="success" open>
 <summary>ADDED: /data/src/main/java/com/javadude/movies/data/DatabaseBuilder.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/data/src/main/java/com/javadude/movies/data/DatabaseBuilder.kt';">
-<div class="highlight"><pre><span></span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.data</span><span class="w"></span>
-
-<span class="k">import</span><span class="w"> </span><span class="nn">android.content.Context</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Room</span><span class="w"></span>
-
-<span class="kd">fun</span><span class="w"> </span><span class="nf">createDao</span><span class="p">(</span><span class="n">context</span><span class="p">:</span><span class="w"> </span><span class="n">Context</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
-<span class="w">    </span><span class="n">Room</span><span class="p">.</span><span class="na">databaseBuilder</span><span class="p">(</span><span class="w"></span>
-<span class="w">        </span><span class="n">context</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="n">MovieDatabase</span><span class="o">::</span><span class="n">class</span><span class="p">.</span><span class="na">java</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="s">&quot;MOVIES&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">)</span><span class="w"></span>
-<span class="c1">// uncomment the following to see the SQL queries that are run</span><span class="w"></span>
-<span class="c1">//        .setQueryCallback(</span><span class="w"></span>
-<span class="c1">//            { sqlQuery, bindArgs -&gt;</span><span class="w"></span>
-<span class="c1">//                Log.d(&quot;!!!SQL&quot;, &quot;SQL Query: $sqlQuery SQL Args: $bindArgs&quot;)</span><span class="w"></span>
-<span class="c1">//            }, Executors.newSingleThreadExecutor()</span><span class="w"></span>
-<span class="c1">//        )</span><span class="w"></span>
-<span class="w">        </span><span class="p">.</span><span class="na">build</span><span class="p">()</span><span class="w"></span>
-<span class="w">        </span><span class="p">.</span><span class="na">dao</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.data</span><span class="w">                                             </span>
+<span class="w">                                                                               </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">android.content.Context</span><span class="w">                                               </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Room</span><span class="w">                                                    </span>
+<span class="w">                                                                               </span>
+<span class="w">  </span><span class="kd">fun</span><span class="w"> </span><span class="nf">createDao</span><span class="p">(</span><span class="n">context</span><span class="p">:</span><span class="w"> </span><span class="n">Context</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w">                                            </span>
+<span class="w">      </span><span class="n">Room</span><span class="p">.</span><span class="na">databaseBuilder</span><span class="p">(</span><span class="w">                                                    </span>
+<span class="w">          </span><span class="n">context</span><span class="p">,</span><span class="w">                                                             </span>
+<span class="w">          </span><span class="n">MovieDatabase</span><span class="o">::</span><span class="n">class</span><span class="p">.</span><span class="na">java</span><span class="p">,</span><span class="w">                                           </span>
+<span class="w">          </span><span class="s">&quot;MOVIES&quot;</span><span class="w">                                                             </span>
+<span class="w">      </span><span class="p">)</span><span class="w">                                                                        </span>
+<span class="w">  </span><span class="c1">// uncomment the following to see the SQL queries that are run               </span><span class="w"></span>
+<span class="w">  </span><span class="c1">//        .setQueryCallback(                                                 </span><span class="w"></span>
+<span class="w">  </span><span class="c1">//            { sqlQuery, bindArgs -&gt;                                        </span><span class="w"></span>
+<span class="w">  </span><span class="c1">//                Log.d(&quot;!!!SQL&quot;, &quot;SQL Query: $sqlQuery SQL Args: $bindArgs&quot;)</span><span class="w"></span>
+<span class="w">  </span><span class="c1">//            }, Executors.newSingleThreadExecutor()                         </span><span class="w"></span>
+<span class="w">  </span><span class="c1">//        )                                                                  </span><span class="w"></span>
+<span class="w">          </span><span class="p">.</span><span class="na">build</span><span class="p">()</span><span class="w">                                                             </span>
+<span class="w">          </span><span class="p">.</span><span class="na">dao</span><span class="w">                                                                 </span>
 </pre></div>
 </div>
 </details>
 <details class="success" open>
 <summary>ADDED: /data/src/main/java/com/javadude/movies/data/Movie.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/data/src/main/java/com/javadude/movies/data/Movie.kt';">
-<div class="highlight"><pre><span></span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.data</span><span class="w"></span>
-
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Entity</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.ForeignKey</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Index</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.PrimaryKey</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nn">java.util.UUID</span><span class="w"></span>
-
-<span class="nd">@Entity</span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="n">indices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="w"></span>
-<span class="w">        </span><span class="n">Index</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s">&quot;ratingId&quot;</span><span class="o">]</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="o">]</span><span class="p">,</span><span class="w"></span>
-<span class="p">)</span><span class="w"></span>
-<span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Movie</span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="nd">@PrimaryKey</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">id</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UUID</span><span class="p">.</span><span class="na">randomUUID</span><span class="p">().</span><span class="na">toString</span><span class="p">(),</span><span class="w"></span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">title</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">description</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">ratingId</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"></span>
-<span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.data</span><span class="w">                              </span>
+<span class="w">                                                                </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Entity</span><span class="w">                                   </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.ForeignKey</span><span class="w">                               </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Index</span><span class="w">                                    </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.PrimaryKey</span><span class="w">                               </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">java.util.UUID</span><span class="w">                                         </span>
+<span class="w">                                                                </span>
+<span class="w">  </span><span class="nd">@Entity</span><span class="p">(</span><span class="w">                                                      </span>
+<span class="w">      </span><span class="n">indices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="w">                                               </span>
+<span class="w">          </span><span class="n">Index</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s">&quot;ratingId&quot;</span><span class="o">]</span><span class="p">)</span><span class="w">                           </span>
+<span class="w">      </span><span class="o">]</span><span class="p">,</span><span class="w">                                                        </span>
+<span class="w">  </span><span class="p">)</span><span class="w">                                                             </span>
+<span class="w">  </span><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Movie</span><span class="p">(</span><span class="w">                                             </span>
+<span class="w">      </span><span class="nd">@PrimaryKey</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">id</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UUID</span><span class="p">.</span><span class="na">randomUUID</span><span class="p">().</span><span class="na">toString</span><span class="p">(),</span><span class="w"></span>
+<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">title</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                                        </span>
+<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">description</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                                  </span>
+<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">ratingId</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                                     </span>
+<span class="w">  </span><span class="p">)</span><span class="w">                                                             </span>
 </pre></div>
 </div>
 </details>
 <details class="success" open>
 <summary>ADDED: /data/src/main/java/com/javadude/movies/data/MovieDAO.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/data/src/main/java/com/javadude/movies/data/MovieDAO.kt';">
-<div class="highlight"><pre><span></span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.data</span><span class="w"></span>
-
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Dao</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Delete</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Insert</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Query</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Transaction</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Update</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nn">kotlinx.coroutines.flow.Flow</span><span class="w"></span>
-
-<span class="nd">@Dao</span><span class="w"></span>
-<span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">MovieDAO</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;SELECT * FROM Rating&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getRatingsFlow</span><span class="p">():</span><span class="w"> </span><span class="n">Flow</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Rating</span><span class="o">&gt;&gt;</span><span class="w"></span>
-
-<span class="w">    </span><span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;SELECT * FROM Movie&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getMoviesFlow</span><span class="p">():</span><span class="w"> </span><span class="n">Flow</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Movie</span><span class="o">&gt;&gt;</span><span class="w"></span>
-
-<span class="w">    </span><span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;SELECT * FROM Actor&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getActorsFlow</span><span class="p">():</span><span class="w"> </span><span class="n">Flow</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Actor</span><span class="o">&gt;&gt;</span><span class="w"></span>
-
-<span class="w">    </span><span class="nd">@Insert</span><span class="w"></span>
-<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">ratings</span><span class="p">:</span><span class="w"> </span><span class="n">Rating</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="nd">@Insert</span><span class="w"></span>
-<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">movies</span><span class="p">:</span><span class="w"> </span><span class="n">Movie</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="nd">@Insert</span><span class="w"></span>
-<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">actors</span><span class="p">:</span><span class="w"> </span><span class="n">Actor</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="nd">@Insert</span><span class="w"></span>
-<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">roles</span><span class="p">:</span><span class="w"> </span><span class="n">Role</span><span class="p">)</span><span class="w"></span>
-
-<span class="w">    </span><span class="nd">@Update</span><span class="w"></span>
-<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">ratings</span><span class="p">:</span><span class="w"> </span><span class="n">Rating</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="nd">@Update</span><span class="w"></span>
-<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">movies</span><span class="p">:</span><span class="w"> </span><span class="n">Movie</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="nd">@Update</span><span class="w"></span>
-<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">actors</span><span class="p">:</span><span class="w"> </span><span class="n">Actor</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="nd">@Update</span><span class="w"></span>
-<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">roles</span><span class="p">:</span><span class="w"> </span><span class="n">Role</span><span class="p">)</span><span class="w"></span>
-
-<span class="w">    </span><span class="nd">@Delete</span><span class="w"></span>
-<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">ratings</span><span class="p">:</span><span class="w"> </span><span class="n">Rating</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="nd">@Delete</span><span class="w"></span>
-<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">movies</span><span class="p">:</span><span class="w"> </span><span class="n">Movie</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="nd">@Delete</span><span class="w"></span>
-<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">actors</span><span class="p">:</span><span class="w"> </span><span class="n">Actor</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="nd">@Delete</span><span class="w"></span>
-<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">roles</span><span class="p">:</span><span class="w"> </span><span class="n">Role</span><span class="p">)</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.data</span><span class="w">                       </span>
+<span class="w">                                                         </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Dao</span><span class="w">                               </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Delete</span><span class="w">                            </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Insert</span><span class="w">                            </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Query</span><span class="w">                             </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Transaction</span><span class="w">                       </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Update</span><span class="w">                            </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">kotlinx.coroutines.flow.Flow</span><span class="w">                    </span>
+<span class="w">                                                         </span>
+<span class="w">  </span><span class="nd">@Dao</span><span class="w">                                                   </span>
+<span class="w">  </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">MovieDAO</span><span class="w"> </span><span class="p">{</span><span class="w">                              </span>
+<span class="w">      </span><span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;SELECT * FROM Rating&quot;</span><span class="p">)</span><span class="w">                     </span>
+<span class="w">      </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getRatingsFlow</span><span class="p">():</span><span class="w"> </span><span class="n">Flow</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Rating</span><span class="o">&gt;&gt;</span><span class="w">  </span>
+<span class="w">                                                         </span>
+<span class="w">      </span><span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;SELECT * FROM Movie&quot;</span><span class="p">)</span><span class="w">                      </span>
+<span class="w">      </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getMoviesFlow</span><span class="p">():</span><span class="w"> </span><span class="n">Flow</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Movie</span><span class="o">&gt;&gt;</span><span class="w">    </span>
+<span class="w">                                                         </span>
+<span class="w">      </span><span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;SELECT * FROM Actor&quot;</span><span class="p">)</span><span class="w">                      </span>
+<span class="w">      </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getActorsFlow</span><span class="p">():</span><span class="w"> </span><span class="n">Flow</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Actor</span><span class="o">&gt;&gt;</span><span class="w">    </span>
+<span class="w">                                                         </span>
+<span class="w">      </span><span class="nd">@Insert</span><span class="w">                                            </span>
+<span class="w">      </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">ratings</span><span class="p">:</span><span class="w"> </span><span class="n">Rating</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="nd">@Insert</span><span class="w">                                            </span>
+<span class="w">      </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">movies</span><span class="p">:</span><span class="w"> </span><span class="n">Movie</span><span class="p">)</span><span class="w">  </span>
+<span class="w">      </span><span class="nd">@Insert</span><span class="w">                                            </span>
+<span class="w">      </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">actors</span><span class="p">:</span><span class="w"> </span><span class="n">Actor</span><span class="p">)</span><span class="w">  </span>
+<span class="w">      </span><span class="nd">@Insert</span><span class="w">                                            </span>
+<span class="w">      </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">roles</span><span class="p">:</span><span class="w"> </span><span class="n">Role</span><span class="p">)</span><span class="w">    </span>
+<span class="w">                                                         </span>
+<span class="w">      </span><span class="nd">@Update</span><span class="w">                                            </span>
+<span class="w">      </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">ratings</span><span class="p">:</span><span class="w"> </span><span class="n">Rating</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="nd">@Update</span><span class="w">                                            </span>
+<span class="w">      </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">movies</span><span class="p">:</span><span class="w"> </span><span class="n">Movie</span><span class="p">)</span><span class="w">  </span>
+<span class="w">      </span><span class="nd">@Update</span><span class="w">                                            </span>
+<span class="w">      </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">actors</span><span class="p">:</span><span class="w"> </span><span class="n">Actor</span><span class="p">)</span><span class="w">  </span>
+<span class="w">      </span><span class="nd">@Update</span><span class="w">                                            </span>
+<span class="w">      </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">roles</span><span class="p">:</span><span class="w"> </span><span class="n">Role</span><span class="p">)</span><span class="w">    </span>
+<span class="w">                                                         </span>
+<span class="w">      </span><span class="nd">@Delete</span><span class="w">                                            </span>
+<span class="w">      </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">ratings</span><span class="p">:</span><span class="w"> </span><span class="n">Rating</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="nd">@Delete</span><span class="w">                                            </span>
+<span class="w">      </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">movies</span><span class="p">:</span><span class="w"> </span><span class="n">Movie</span><span class="p">)</span><span class="w">  </span>
+<span class="w">      </span><span class="nd">@Delete</span><span class="w">                                            </span>
+<span class="w">      </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">actors</span><span class="p">:</span><span class="w"> </span><span class="n">Actor</span><span class="p">)</span><span class="w">  </span>
+<span class="w">      </span><span class="nd">@Delete</span><span class="w">                                            </span>
+<span class="w">      </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">roles</span><span class="p">:</span><span class="w"> </span><span class="n">Role</span><span class="p">)</span><span class="w">    </span>
+<span class="w">  </span><span class="p">}</span><span class="w">                                                      </span>
 </pre></div>
 </div>
 </details>
 <details class="success" open>
 <summary>ADDED: /data/src/main/java/com/javadude/movies/data/MovieDatabase.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/data/src/main/java/com/javadude/movies/data/MovieDatabase.kt';">
-<div class="highlight"><pre><span></span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.data</span><span class="w"></span>
-
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Database</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.RoomDatabase</span><span class="w"></span>
-
-<span class="nd">@Database</span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">entities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="w"></span>
-<span class="w">        </span><span class="n">Movie</span><span class="o">::</span><span class="n">class</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="n">Actor</span><span class="o">::</span><span class="n">class</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="n">Role</span><span class="o">::</span><span class="n">class</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="n">Rating</span><span class="o">::</span><span class="n">class</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="o">]</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">exportSchema</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="w"></span>
-<span class="p">)</span><span class="w"></span>
-<span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">MovieDatabase</span><span class="p">:</span><span class="w"> </span><span class="n">RoomDatabase</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">dao</span><span class="p">:</span><span class="w"> </span><span class="n">MovieDAO</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.data</span><span class="w">              </span>
+<span class="w">                                                </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Database</span><span class="w">                 </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.RoomDatabase</span><span class="w">             </span>
+<span class="w">                                                </span>
+<span class="w">  </span><span class="nd">@Database</span><span class="p">(</span><span class="w">                                    </span>
+<span class="w">      </span><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w">                              </span>
+<span class="w">      </span><span class="n">entities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="w">                              </span>
+<span class="w">          </span><span class="n">Movie</span><span class="o">::</span><span class="n">class</span><span class="p">,</span><span class="w">                         </span>
+<span class="w">          </span><span class="n">Actor</span><span class="o">::</span><span class="n">class</span><span class="p">,</span><span class="w">                         </span>
+<span class="w">          </span><span class="n">Role</span><span class="o">::</span><span class="n">class</span><span class="p">,</span><span class="w">                          </span>
+<span class="w">          </span><span class="n">Rating</span><span class="o">::</span><span class="n">class</span><span class="p">,</span><span class="w">                        </span>
+<span class="w">      </span><span class="o">]</span><span class="p">,</span><span class="w">                                        </span>
+<span class="w">      </span><span class="n">exportSchema</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="w">                      </span>
+<span class="w">  </span><span class="p">)</span><span class="w">                                             </span>
+<span class="w">  </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">MovieDatabase</span><span class="p">:</span><span class="w"> </span><span class="n">RoomDatabase</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">dao</span><span class="p">:</span><span class="w"> </span><span class="n">MovieDAO</span><span class="w">                </span>
+<span class="w">  </span><span class="p">}</span><span class="w">                                             </span>
 </pre></div>
 </div>
 </details>
 <details class="success" open>
 <summary>ADDED: /data/src/main/java/com/javadude/movies/data/Rating.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/data/src/main/java/com/javadude/movies/data/Rating.kt';">
-<div class="highlight"><pre><span></span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.data</span><span class="w"></span>
-
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Entity</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.PrimaryKey</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nn">java.util.UUID</span><span class="w"></span>
-
-<span class="nd">@Entity</span><span class="w"></span>
-<span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Rating</span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="nd">@PrimaryKey</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">id</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UUID</span><span class="p">.</span><span class="na">randomUUID</span><span class="p">().</span><span class="na">toString</span><span class="p">(),</span><span class="w"></span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">name</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">description</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"></span>
-<span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.data</span><span class="w">                              </span>
+<span class="w">                                                                </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Entity</span><span class="w">                                   </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.PrimaryKey</span><span class="w">                               </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">java.util.UUID</span><span class="w">                                         </span>
+<span class="w">                                                                </span>
+<span class="w">  </span><span class="nd">@Entity</span><span class="w">                                                       </span>
+<span class="w">  </span><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Rating</span><span class="p">(</span><span class="w">                                            </span>
+<span class="w">      </span><span class="nd">@PrimaryKey</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">id</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UUID</span><span class="p">.</span><span class="na">randomUUID</span><span class="p">().</span><span class="na">toString</span><span class="p">(),</span><span class="w"></span>
+<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">name</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                                         </span>
+<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">description</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                                  </span>
+<span class="w">  </span><span class="p">)</span><span class="w">                                                             </span>
 </pre></div>
 </div>
 </details>
 <details class="success" open>
 <summary>ADDED: /data/src/main/java/com/javadude/movies/data/Role.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/data/src/main/java/com/javadude/movies/data/Role.kt';">
-<div class="highlight"><pre><span></span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.data</span><span class="w"></span>
-
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Entity</span><span class="w"></span>
-
-<span class="nd">@Entity</span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="n">primaryKeys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s">&quot;actorId&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;movieId&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
-<span class="p">)</span><span class="w"></span>
-<span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Role</span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">movieId</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">actorId</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">character</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">orderInCredits</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">,</span><span class="w"></span>
-<span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.data</span><span class="w">         </span>
+<span class="w">                                           </span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Entity</span><span class="w">              </span>
+<span class="w">                                           </span>
+<span class="w">  </span><span class="nd">@Entity</span><span class="p">(</span><span class="w">                                 </span>
+<span class="w">      </span><span class="n">primaryKeys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s">&quot;actorId&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;movieId&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="p">)</span><span class="w">                                        </span>
+<span class="w">  </span><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Role</span><span class="p">(</span><span class="w">                         </span>
+<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">movieId</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                 </span>
+<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">actorId</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                 </span>
+<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">character</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">               </span>
+<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">orderInCredits</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">,</span><span class="w">             </span>
+<span class="w">  </span><span class="p">)</span><span class="w">                                        </span>
 </pre></div>
 </div>
 </details>
