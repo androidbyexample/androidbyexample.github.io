@@ -33,10 +33,6 @@
     margin-top: 0.5em;
 }
 
-/* .md-typeset .sas1-binary summary:after {
-    display: none;
-} */
-
 .sas1-binary summary::after {
     content: none;
 }
@@ -133,56 +129,36 @@ html {
     font-size: smaller;
 }
 
-.sas1-top {
-}
-
 .sas1-content-column {
     flex: 1 1 0;
     display: flex;
     flex-direction: column;
 }
 
-.sas1-content-row {
-    flex: 1 1 0;
-    display: flex;
-    flex-direction: row;
-}
-
 .sas1-text-column {
-    display: flex;
-    flex-direction: column;
+    display: block;
     flex: 3 1 0;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: auto;
 }
 .sas1-code-column {
-    display: flex;
-    flex-direction: column;
+    display: block;
     flex: 4 1 0;
-}
-
-.sas1-code-area {
-    flex: 1 1 0;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     padding-top: 0px;
     padding-bottom: 0px;
     padding-left: 20px;
     padding-right: 20px;
-}
-
-.sas1-text-area {
-    flex: 1 1 0;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    padding-left: 20px;
-    padding-right: 20px;
-    overflow: auto;
 }
 
 .sas1-code-file {
-//    margin: 0px;
-//    padding: 10px;
     font-feature-settings: "kern";
     font-family: var(--md-code-font-family);
-//    overflow: auto;
+    overflow: auto;
 }
 
 del {
@@ -247,7 +223,6 @@ a.find-button {
 *:target {
     background-color: #ffa;
     -webkit-transition: all 0.5s linear;
-//    font-size: larger;
     border: 1px #777 solid;
     border-radius: 10px;
     margin-top: 8px;

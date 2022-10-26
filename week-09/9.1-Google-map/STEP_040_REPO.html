@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://androidbyexample.com/week-09/9.1-Google-map/STEP_040_FULL.html">
+        <link rel="canonical" href="https://androidbyexample.com/week-09/9.1-Google-map/STEP_040_REPO.html">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
     
     
       
-        <title>Restrict the Key - Android By Example</title>
+        <title>Add a Marker - Android By Example</title>
       
     
     
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Restrict the Key
+              Add a Marker
             
           </span>
         </div>
@@ -2120,10 +2120,164 @@
       
       
       
-      <a href="STEP_040_FULL.html" class="md-nav__link md-nav__link--active">
-        Restrict the Key
+      <a href="STEP_040_REPO.html" class="md-nav__link md-nav__link--active">
+        Add a Marker
       </a>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_050_REPO.html" class="md-nav__link">
+        Initial Position
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_060_REPO.html" class="md-nav__link">
+        Loading Spinner
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_070_REPO.html" class="md-nav__link">
+        Map Types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_080_REPO.html" class="md-nav__link">
+        Current Location
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_090_REPO.html" class="md-nav__link">
+        Jump to Current Location
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_100_REPO.html" class="md-nav__link">
+        Add Top Bar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_110_REPO.html" class="md-nav__link">
+        Copy Icons
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_120_REPO.html" class="md-nav__link">
+        Manage Car Location
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_130_REPO.html" class="md-nav__link">
+        Dragging a Marker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_140_REPO.html" class="md-nav__link">
+        Navigating
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_150_REPO.html" class="md-nav__link">
+        Lat/Lon Bounds
+      </a>
     </li>
   
 
@@ -2942,19 +3096,99 @@
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
-  <div class="sas1-text-column">
+<div class="sas1-text-column">
 
-<div class="sas1-text-area">
-            
 <h1>9.1 Google map</h1>
 
-<h2>Restrict the Key</h2>
-  
-<p>Get Signing Fingerprint</p>
-<p>Get Application id</p>
-<p>Restrict in Google Developer Console</p>
+<h2>Add a Marker</h2>
+    
+<p>A map by itself is useful for exploring, but what if you want to tell the user where something is?</p>
+<p>That's where markers come in, and where the <code>GoogleMap</code> content parameter becomes useful.</p>
+<p>Our <code>GoogleMap</code> call is going to get more complex over the next several steps. By 
+<a class="find-button" href="#040-new-map-composable">Creating a new @Composable</a> to hold the map, we can set up parameters
+and <a class="find-button" href="#040-factor-map">Simplify the Caller</a>.</p>
+<p>Our new @Composable takes a <code>LatLng</code> for the place to display the marker, a <code>String</code> description of the marker, and a <code>Modifier</code>. It's a great habit to pass <code>Modifiers</code> into your Composable functions; this allows the caller more control over how the called Composable is placed. You'll want to <a class="find-button" href="#040-map-modifier">Pass the Modifier</a> to the top-level Composable that your function calls, or use it as a base modifier (rather than passing <code>Modifier.xxx()</code>, you'll pass <code>modifier.xxx()</code> to start with the passed-in <code>Modifier</code>).</p>
+<p>Now for the marker. We need to set up the data for the Marker - we use <a class="find-button" href="#040-marker-state-holder">rememberMarkerState</a> to create and <code>remember</code> a <code>MarkerState</code> instance. This instance will be re-created whenever the <code>key</code> passed to it is changed. In this example, we want to change the position whenever the <code>LatLng</code> changes. <code>rememberMarkerState</code> takes a <code>String</code> as a key, so we just convert the <code>LatLng</code> to a <code>String</code>.</p>
+<p>Once we have data, we can <a class="find-button" href="#040-marker">Create the Marker</a> in the <code>GoogleMap</code> content.</p>
+<p>Running the application is a bit disappointing; we're still centered at 0.0, 0.0. If we pan over we'll see the marker:</p>
+<p><img alt="We have a Marker!" src="screenshots/marker-1.png" width="400" /></p>
+<p>You can zoom by double-tapping, pinching, or tapping the "+" button to see</p>
+<p><img alt="Zooming in" src="screenshots/marker-2.png" width="400" /></p>
+<p>If you tap on the marker, its description is displayed and the map centers on the marker:</p>
+<p><img alt="Marker Description" src="screenshots/marker-3.png" width="400" /></p>
   
 </div>
+  
+<div class="sas1-code-column">
+  
+<h2>Code Changes</h2>
+  
+<details class="example" open>
+<summary>CHANGED: /app/src/main/java/com/javadude/carfinder/MainActivity.kt</summary>
+<div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/java/com/javadude/carfinder/MainActivity.kt';">
+<div class="highlight"><pre><span></span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.carfinder</span><span class="w"></span>
+
+<span class="k">import</span><span class="w"> </span><span class="nn">android.os.Bundle</span><span class="w"></span>
+<span class="k">import</span><span class="w"> </span><span class="nn">androidx.activity.ComponentActivity</span><span class="w"></span>
+<span class="k">import</span><span class="w"> </span><span class="nn">androidx.activity.compose.setContent</span><span class="w"></span>
+<span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.fillMaxSize</span><span class="w"></span>
+<span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.material.MaterialTheme</span><span class="w"></span>
+<span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.material.Surface</span><span class="w"></span>
+<ins><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.Composable</span><span class="w"></span></ins>
+<span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.Modifier</span><span class="w"></span>
+<ins><span class="k">import</span><span class="w"> </span><span class="nn">com.google.android.gms.maps.model.LatLng</span><span class="w"></span></ins>
+<span class="k">import</span><span class="w"> </span><span class="nn">com.google.maps.android.compose.GoogleMap</span><span class="w"></span>
+<ins><span class="k">import</span><span class="w"> </span><span class="nn">com.google.maps.android.compose.MarkerInfoWindowContent</span><span class="w"></span></ins>
+<ins><span class="k">import</span><span class="w"> </span><span class="nn">com.google.maps.android.compose.rememberMarkerState</span><span class="w"></span></ins>
+<span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.carfinder.ui.theme.CarFinderTheme</span><span class="w"></span>
+
+<ins><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">googleHQ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LatLng</span><span class="p">(</span><span class="m">37.42423291057923</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="m">122.08811454627153</span><span class="p">)</span><span class="w"></span></ins>
+<ins></ins>
+<span class="kd">class</span><span class="w"> </span><span class="nc">MainActivity</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ComponentActivity</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span><span class="w"> </span><span class="n">Bundle?)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="n">setContent</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">CarFinderTheme</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="c1">// A surface container using the &#39;background&#39; color from the theme</span><span class="w"></span>
+<span class="w">                </span><span class="n">Surface</span><span class="p">(</span><span class="w"></span>
+<span class="w">                    </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">fillMaxSize</span><span class="p">(),</span><span class="w"></span>
+<span class="w">                    </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MaterialTheme</span><span class="p">.</span><span class="na">colors</span><span class="p">.</span><span class="na">background</span><span class="w"></span>
+<span class="w">                </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div id="040-factor-map"><del>//<span class="w">                  </span><span class="n">GoogleMap</span><span class="p">(</span><span class="w"></span></del>
+<ins><span class="w">                    </span><span class="n">GoogleMapDisplay</span><span class="p">(</span><span class="w"></span></ins>
+<ins><span class="w">                        </span><span class="n">place</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">googleHQ</span><span class="p">,</span><span class="w"></span></ins>
+<ins><span class="w">                        </span><span class="n">placeDescription</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Google HQ&quot;</span><span class="p">,</span><span class="w"></span></ins>
+<span class="w">                        </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">fillMaxSize</span><span class="p">(),</span><span class="w"></span>
+<del>//<span class="w">                  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></del>
+<del>//<span class="w">                      </span><span class="c1">// no content yet</span><span class="w"></span></del>
+<del>//<span class="w">                  </span><span class="p">}</span><span class="w"></span></del>
+<ins><span class="w">                    </span><span class="p">)</span><span class="w"></span></ins>
+</div><span class="w">                </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<ins></ins>
+<div id="040-new-map-composable"><ins><span class="nd">@Composable</span><span class="w"></span></ins>
+<ins><span class="kd">fun</span><span class="w"> </span><span class="nf">GoogleMapDisplay</span><span class="p">(</span><span class="w"></span></ins>
+<ins><span class="w">    </span><span class="n">place</span><span class="p">:</span><span class="w"> </span><span class="n">LatLng</span><span class="p">,</span><span class="w"></span></ins>
+<ins><span class="w">    </span><span class="n">placeDescription</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"></span></ins>
+<ins><span class="w">    </span><span class="n">modifier</span><span class="p">:</span><span class="w"> </span><span class="n">Modifier</span><span class="p">,</span><span class="w"></span></ins>
+<ins><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></ins>
+<div id="040-marker-state-holder"><ins><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">placeState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rememberMarkerState</span><span class="p">(</span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">place</span><span class="p">.</span><span class="na">toString</span><span class="p">(),</span><span class="w"> </span><span class="n">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">place</span><span class="p">)</span><span class="w"></span></ins>
+</div><ins></ins>
+<ins><span class="w">    </span><span class="n">GoogleMap</span><span class="p">(</span><span class="w"></span></ins>
+<div id="040-map-modifier"><ins><span class="w">        </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">modifier</span><span class="p">,</span><span class="w"></span></ins>
+</div><ins><span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span></ins>
+<div id="040-marker"><ins><span class="w">        </span><span class="n">MarkerInfoWindowContent</span><span class="p">(</span><span class="w"></span></ins>
+<ins><span class="w">            </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">placeState</span><span class="p">,</span><span class="w"></span></ins>
+<ins><span class="w">            </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">placeDescription</span><span class="p">,</span><span class="w"></span></ins>
+<ins><span class="w">        </span><span class="p">)</span><span class="w"></span></ins>
+</div><ins><span class="w">    </span><span class="p">}</span><span class="w"></span></ins>
+<ins><span class="p">}</span><span class="w"></span></ins>
+</div></pre></div>
+</div>
+</details>
   
 </div>
 
@@ -3012,13 +3246,13 @@
       </div>    
       
         
-        <a href="../9.2-Speech/index.html" class="md-footer__link md-footer__link--next" aria-label="Next: Speech" rel="next">
+        <a href="STEP_050_REPO.html" class="md-footer__link md-footer__link--next" aria-label="Next: Initial Position" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Speech
+              Initial Position
             </div>
           </div>
           <div class="md-footer__button md-icon">

@@ -2121,8 +2121,162 @@
   
   
     <li class="md-nav__item">
-      <a href="STEP_040_FULL.html" class="md-nav__link">
-        Restrict the Key
+      <a href="STEP_040_REPO.html" class="md-nav__link">
+        Add a Marker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_050_REPO.html" class="md-nav__link">
+        Initial Position
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_060_REPO.html" class="md-nav__link">
+        Loading Spinner
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_070_REPO.html" class="md-nav__link">
+        Map Types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_080_REPO.html" class="md-nav__link">
+        Current Location
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_090_REPO.html" class="md-nav__link">
+        Jump to Current Location
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_100_REPO.html" class="md-nav__link">
+        Add Top Bar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_110_REPO.html" class="md-nav__link">
+        Copy Icons
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_120_REPO.html" class="md-nav__link">
+        Manage Car Location
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_130_REPO.html" class="md-nav__link">
+        Dragging a Marker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_140_REPO.html" class="md-nav__link">
+        Navigating
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_150_REPO.html" class="md-nav__link">
+        Lat/Lon Bounds
       </a>
     </li>
   
@@ -2957,31 +3111,31 @@
 <p>Map tiles are only free up to a point (at this point, $200 worth of tiles per month)... It's important that you restrict the key you'll create to your application, or someone else could use it with their application and charge you for the map tiles!!! If you're looking to create and sell a mapping application that will likely have lots of tile loads, see <a href="https://mapsplatform.google.com/pricing/">Pricing</a> and set up billing for your project.</p>
 </div>
 <p>Once you're into the console, create a new project to host </p>
-<p><img alt="" src="screenshots/console-01.png" /></p>
+<p><img alt="" src="screenshots/console-01.png" width="400" /></p>
 <p>And give it a name</p>
-<p><img alt="" src="screenshots/console-02.png" /></p>
+<p><img alt="" src="screenshots/console-02.png" width="400" /></p>
 <p>Enable the Maps API in your project (to access map tiles and other mapping information such as POIs and address search)</p>
-<p><img alt="" src="screenshots/console-03.png" /></p>
+<p><img alt="" src="screenshots/console-03.png" width="400" /></p>
 <p>Choose "Maps SDK for Android" (if you don't see it, search for it)</p>
-<p><img alt="" src="screenshots/console-04.png" /></p>
+<p><img alt="" src="screenshots/console-04.png" width="400" /></p>
 <p>And enable it</p>
-<p><img alt="" src="screenshots/console-05.png" /></p>
+<p><img alt="" src="screenshots/console-05.png" width="400" /></p>
 <p>Create an API key to use in your application by going to "Credentials"</p>
-<p><img alt="" src="screenshots/console-06.png" /></p>
+<p><img alt="" src="screenshots/console-06.png" width="400" /></p>
 <p>Press "Create Credentials"</p>
-<p><img alt="" src="screenshots/console-07.png" /></p>
+<p><img alt="" src="screenshots/console-07.png" width="400" /></p>
 <p>Choose "API Key"</p>
-<p><img alt="" src="screenshots/console-08.png" /></p>
+<p><img alt="" src="screenshots/console-08.png" width="400" /></p>
 <p>And poof! API key created! (It even says so!)</p>
 <p>Copy the key and save it somewhere; we'll need it in the Android application later.</p>
 <p>Click "Edit API Key" so we can restrict it to only be used by your application.</p>
-<p><img alt="" src="screenshots/console-09.png" /></p>
+<p><img alt="" src="screenshots/console-09.png" width="400" /></p>
 <p>Under Application Restrictions, choose "Android Apps". This will show the "Add an Item" button. Press it.</p>
-<p><img alt="" src="screenshots/console-10.png" /></p>
+<p><img alt="" src="screenshots/console-10.png" width="400" /></p>
 <p>Enter your application ID and SHA-1 fingerprint that we found in the last step, then press "Done"</p>
-<p><img alt="" src="screenshots/console-11.png" /></p>
+<p><img alt="" src="screenshots/console-11.png" width="400" /></p>
 <p>Don't forget to save everything! Note that it may take a few minutes for the key to be available to your application. This is usually apparent if the map doesn't show on the screen.</p>
-<p><img alt="" src="screenshots/console-12.png" /></p>
+<p><img alt="" src="screenshots/console-12.png" width="400" /></p>
   
 </div>
   
