@@ -198,6 +198,7 @@ a.find-button {
   padding-bottom: 0px;
   padding-left: 6px;
   padding-right: 6px;
+  margin: 2px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
