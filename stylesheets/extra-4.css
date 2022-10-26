@@ -192,18 +192,17 @@ a.find-button {
 }
 
 .find-button {
-  background-color: #A0CFEC;
+  background-color: #bbdefb;
   color: black;
-  padding: 2px;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 6px;
+  padding-right: 6px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  margin: 2px;
   cursor: pointer;
-  border: 1px solid black;
-  border-radius: 4px;
+  border-radius: 16px;
 }
 
 .find {
@@ -222,13 +221,10 @@ a.find-button {
 
 *:target {
     background-color: #ffa;
-    -webkit-transition: all 0.5s linear;
-    border: 1px #777 solid;
-    border-radius: 10px;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    border: 2px #777 solid;
+    border-radius: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 *:target::after {
