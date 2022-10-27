@@ -55,7 +55,7 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra-7.css">
+      <link rel="stylesheet" href="../../stylesheets/extra-8.css">
     
     <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -877,22 +877,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-03/3.2-Movie-Database/STEP_010_REPO.html" class="md-nav__link">
-        Starter Project
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../week-03/3.2-Movie-Database/STEP_020_REPO.html" class="md-nav__link">
-        Update Versions
+        Project Setup
       </a>
     </li>
   
@@ -1249,22 +1235,8 @@
   
   
     <li class="md-nav__item">
-      <a href="STEP_010_REPO.html" class="md-nav__link">
-        Start with Movies Database
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="STEP_020_REPO.html" class="md-nav__link">
-        Update AGP Version
+        Project Setup
       </a>
     </li>
   
@@ -1515,20 +1487,6 @@
     <li class="md-nav__item">
       <a href="../../week-05/5.2-Movie-Ui-2/index.html" class="md-nav__link">
         Movie UI, part 2
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../week-05/5.2-Movie-Ui-2/STEP_010_REPO.html" class="md-nav__link">
-        Start with Movies UI, Part 1
       </a>
     </li>
   
@@ -2051,22 +2009,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-09/9.1-Google-map/STEP_010_REPO.html" class="md-nav__link">
-        Initial Project
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../week-09/9.1-Google-map/STEP_020_REPO.html" class="md-nav__link">
-        Update versions
+        Project Setup
       </a>
     </li>
   
@@ -3149,200 +3093,202 @@
 <details class="example" open>
 <summary>CHANGED: /app/build.gradle</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/build.gradle';">
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="n">plugins</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                              </span>
-<span class="w">      </span><span class="n">id</span><span class="w"> </span><span class="s1">&#39;com.android.application&#39;</span><span class="w">                                                                       </span>
-<span class="w">      </span><span class="n">id</span><span class="w"> </span><span class="s1">&#39;org.jetbrains.kotlin.android&#39;</span><span class="w">                                                                  </span>
-<span class="w">  </span><span class="o">}</span><span class="w">                                                                                                      </span>
-<span class="w">                                                                                                         </span>
-<span class="w">  </span><span class="n">android</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                              </span>
-<span class="w">      </span><span class="n">namespace</span><span class="w"> </span><span class="s1">&#39;com.javadude.movies&#39;</span><span class="w">                                                                    </span>
-<span class="w">      </span><span class="n">compileSdk</span><span class="w"> </span><span class="mi">33</span><span class="w">                                                                                      </span>
-<span class="w">                                                                                                         </span>
-<span class="w">      </span><span class="n">defaultConfig</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                    </span>
-<span class="w">          </span><span class="n">applicationId</span><span class="w"> </span><span class="s2">&quot;com.javadude.movies&quot;</span><span class="w">                                                            </span>
-<span class="w">          </span><span class="n">minSdk</span><span class="w"> </span><span class="mi">21</span><span class="w">                                                                                      </span>
-<span class="w">          </span><span class="n">targetSdk</span><span class="w"> </span><span class="mi">33</span><span class="w">                                                                                   </span>
-<span class="w">          </span><span class="n">versionCode</span><span class="w"> </span><span class="mi">1</span><span class="w">                                                                                  </span>
-<span class="w">          </span><span class="n">versionName</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="w">                                                                              </span>
-<span class="w">                                                                                                         </span>
-<span class="w">          </span><span class="n">testInstrumentationRunner</span><span class="w"> </span><span class="s2">&quot;androidx.test.runner.AndroidJUnitRunner&quot;</span><span class="w">                            </span>
-<span class="w">          </span><span class="n">vectorDrawables</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                              </span>
-<span class="w">              </span><span class="n">useSupportLibrary</span><span class="w"> </span><span class="kc">true</span><span class="w">                                                                     </span>
-<span class="w">          </span><span class="o">}</span><span class="w">                                                                                              </span>
-<span class="w">      </span><span class="o">}</span><span class="w">                                                                                                  </span>
-<span class="w">                                                                                                         </span>
-<span class="w">      </span><span class="n">buildTypes</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                       </span>
-<span class="w">          </span><span class="n">release</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                      </span>
-<span class="w">              </span><span class="n">minifyEnabled</span><span class="w"> </span><span class="kc">false</span><span class="w">                                                                        </span>
-<span class="w">              </span><span class="n">proguardFiles</span><span class="w"> </span><span class="n">getDefaultProguardFile</span><span class="o">(</span><span class="s1">&#39;proguard-android-optimize.txt&#39;</span><span class="o">),</span><span class="w"> </span><span class="s1">&#39;proguard-rules.pro&#39;</span><span class="w"></span>
-<span class="w">          </span><span class="o">}</span><span class="w">                                                                                              </span>
-<span class="w">      </span><span class="o">}</span><span class="w">                                                                                                  </span>
-<span class="w">      </span><span class="n">compileOptions</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                   </span>
-<span class="w">          </span><span class="n">sourceCompatibility</span><span class="w"> </span><span class="n">JavaVersion</span><span class="o">.</span><span class="na">VERSION_1_8</span><span class="w">                                                    </span>
-<span class="w">          </span><span class="n">targetCompatibility</span><span class="w"> </span><span class="n">JavaVersion</span><span class="o">.</span><span class="na">VERSION_1_8</span><span class="w">                                                    </span>
-<span class="w">      </span><span class="o">}</span><span class="w">                                                                                                  </span>
-<span class="w">      </span><span class="n">kotlinOptions</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                    </span>
-<span class="w">          </span><span class="n">jvmTarget</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;1.8&#39;</span><span class="w">                                                                              </span>
-<span class="w">      </span><span class="o">}</span><span class="w">                                                                                                  </span>
-<span class="w">      </span><span class="n">buildFeatures</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                    </span>
-<span class="w">          </span><span class="n">compose</span><span class="w"> </span><span class="kc">true</span><span class="w">                                                                                   </span>
-<span class="w">      </span><span class="o">}</span><span class="w">                                                                                                  </span>
-<span class="w">      </span><span class="n">composeOptions</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                   </span>
-<span class="w">          </span><span class="n">kotlinCompilerExtensionVersion</span><span class="w"> </span><span class="n">compose_compiler_version</span><span class="w">                                        </span>
-<span class="w">      </span><span class="o">}</span><span class="w">                                                                                                  </span>
-<span class="w">      </span><span class="n">packagingOptions</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                 </span>
-<span class="w">          </span><span class="n">resources</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                    </span>
-<span class="w">              </span><span class="n">excludes</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s1">&#39;/META-INF/{AL2.0,LGPL2.1}&#39;</span><span class="w">                                                    </span>
-<span class="w">          </span><span class="o">}</span><span class="w">                                                                                              </span>
-<span class="w">      </span><span class="o">}</span><span class="w">                                                                                                  </span>
-<span class="w">  </span><span class="o">}</span><span class="w">                                                                                                      </span>
-<span class="w">                                                                                                         </span>
-<span class="w">  </span><span class="n">dependencies</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                         </span>
-<span class="w">      </span><span class="n">implementation</span><span class="w"> </span><span class="n">project</span><span class="o">(</span><span class="s2">&quot;:repository&quot;</span><span class="o">)</span><span class="w">                                                              </span>
-<span class="w">                                                                                                         </span>
-<del>//<span class="w">    </span><span class="c1">// DO NOT KEEP THIS - IT&#39;S HUGE                                                                    </span><span class="w"></span></del>
-<del>//<span class="w">    </span><span class="c1">// Once you have selected your icons, copy their code into the app                                 </span><span class="w"></span></del>
-<del>//<span class="w">    </span><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;androidx.compose.material:material-icons-extended:1.2.1&#39;</span><span class="w">                           </span></del>
-<del>//<span class="w">                                                                                                       </span></del>
-<span class="w">      </span><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1&#39;</span><span class="w">                              </span>
-<span class="w">      </span><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;androidx.core:core-ktx:1.9.0&#39;</span><span class="w">                                                      </span>
-<span class="w">      </span><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;androidx.lifecycle:lifecycle-runtime-ktx:2.5.1&#39;</span><span class="w">                                    </span>
-<span class="w">      </span><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;androidx.activity:activity-compose:1.5.1&#39;</span><span class="w">                                          </span>
-<span class="w">      </span><span class="n">implementation</span><span class="w"> </span><span class="s2">&quot;androidx.compose.ui:ui:$compose_ui_version&quot;</span><span class="w">                                        </span>
-<span class="w">      </span><span class="n">implementation</span><span class="w"> </span><span class="s2">&quot;androidx.compose.ui:ui-tooling-preview:$compose_ui_version&quot;</span><span class="w">                        </span>
-<span class="w">      </span><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;androidx.compose.material:material:1.2.1&#39;</span><span class="w">                                          </span>
-<span class="w">      </span><span class="n">testImplementation</span><span class="w"> </span><span class="s1">&#39;junit:junit:4.13.2&#39;</span><span class="w">                                                            </span>
-<span class="w">      </span><span class="n">androidTestImplementation</span><span class="w"> </span><span class="s1">&#39;androidx.test.ext:junit:1.1.3&#39;</span><span class="w">                                          </span>
-<span class="w">      </span><span class="n">androidTestImplementation</span><span class="w"> </span><span class="s1">&#39;androidx.test.espresso:espresso-core:3.4.0&#39;</span><span class="w">                             </span>
-<span class="w">      </span><span class="n">androidTestImplementation</span><span class="w"> </span><span class="s2">&quot;androidx.compose.ui:ui-test-junit4:$compose_ui_version&quot;</span><span class="w">                 </span>
-<span class="w">      </span><span class="n">debugImplementation</span><span class="w"> </span><span class="s2">&quot;androidx.compose.ui:ui-tooling:$compose_ui_version&quot;</span><span class="w">                           </span>
-<span class="w">      </span><span class="n">debugImplementation</span><span class="w"> </span><span class="s2">&quot;androidx.compose.ui:ui-test-manifest:$compose_ui_version&quot;</span><span class="w">                     </span>
-<span class="w">  </span><span class="o">}</span><span class="w">                                                                                                      </span>
-</pre></div>
+<pre>
+plugins {                                                                                              
+    id &#39;com.android.application&#39;                                                                       
+    id &#39;org.jetbrains.kotlin.android&#39;                                                                  
+}                                                                                                      
+                                                                                                       
+android {                                                                                              
+    namespace &#39;com.javadude.movies&#39;                                                                    
+    compileSdk 33                                                                                      
+                                                                                                       
+    defaultConfig {                                                                                    
+        applicationId &quot;com.javadude.movies&quot;                                                            
+        minSdk 21                                                                                      
+        targetSdk 33                                                                                   
+        versionCode 1                                                                                  
+        versionName &quot;1.0&quot;                                                                              
+                                                                                                       
+        testInstrumentationRunner &quot;androidx.test.runner.AndroidJUnitRunner&quot;                            
+        vectorDrawables {                                                                              
+            useSupportLibrary true                                                                     
+        }                                                                                              
+    }                                                                                                  
+                                                                                                       
+    buildTypes {                                                                                       
+        release {                                                                                      
+            minifyEnabled false                                                                        
+            proguardFiles getDefaultProguardFile(&#39;proguard-android-optimize.txt&#39;), &#39;proguard-rules.pro&#39;
+        }                                                                                              
+    }                                                                                                  
+    compileOptions {                                                                                   
+        sourceCompatibility JavaVersion.VERSION_1_8                                                    
+        targetCompatibility JavaVersion.VERSION_1_8                                                    
+    }                                                                                                  
+    kotlinOptions {                                                                                    
+        jvmTarget = &#39;1.8&#39;                                                                              
+    }                                                                                                  
+    buildFeatures {                                                                                    
+        compose true                                                                                   
+    }                                                                                                  
+    composeOptions {                                                                                   
+        kotlinCompilerExtensionVersion compose_compiler_version                                        
+    }                                                                                                  
+    packagingOptions {                                                                                 
+        resources {                                                                                    
+            excludes += &#39;/META-INF/{AL2.0,LGPL2.1}&#39;                                                    
+        }                                                                                              
+    }                                                                                                  
+}                                                                                                      
+                                                                                                       
+dependencies {                                                                                         
+    implementation project(&quot;:repository&quot;)                                                              
+                                                                                                       
+<del>//  // DO NOT KEEP THIS - IT&#39;S HUGE                                                                    </del>
+<del>//  // Once you have selected your icons, copy their code into the app                                 </del>
+<del>//  implementation &#39;androidx.compose.material:material-icons-extended:1.2.1&#39;                           </del>
+    implementation &#39;androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1&#39;                              
+    implementation &#39;androidx.core:core-ktx:1.9.0&#39;                                                      
+    implementation &#39;androidx.lifecycle:lifecycle-runtime-ktx:2.5.1&#39;                                    
+    implementation &#39;androidx.activity:activity-compose:1.5.1&#39;                                          
+    implementation &quot;androidx.compose.ui:ui:$compose_ui_version&quot;                                        
+    implementation &quot;androidx.compose.ui:ui-tooling-preview:$compose_ui_version&quot;                        
+    implementation &#39;androidx.compose.material:material:1.2.1&#39;                                          
+    testImplementation &#39;junit:junit:4.13.2&#39;                                                            
+    androidTestImplementation &#39;androidx.test.ext:junit:1.1.3&#39;                                          
+    androidTestImplementation &#39;androidx.test.espresso:espresso-core:3.4.0&#39;                             
+    androidTestImplementation &quot;androidx.compose.ui:ui-test-junit4:$compose_ui_version&quot;                 
+    debugImplementation &quot;androidx.compose.ui:ui-tooling:$compose_ui_version&quot;                           
+    debugImplementation &quot;androidx.compose.ui:ui-test-manifest:$compose_ui_version&quot;                     
+}                                                                                                      
+</pre>
 </div>
 </details>
 <details class="success" open>
 <summary>ADDED: /app/src/main/java/androidx/compose/material/icons/filled/Emergency.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/java/androidx/compose/material/icons/filled/Emergency.kt';">
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="cm">/*                                                                         </span>
-<span class="cm">   * Copyright 2022 The Android Open Source Project                          </span>
-<span class="cm">   *                                                                         </span>
-<span class="cm">   * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);         </span>
-<span class="cm">   * you may not use this file except in compliance with the License.        </span>
-<span class="cm">   * You may obtain a copy of the License at                                 </span>
-<span class="cm">   *                                                                         </span>
-<span class="cm">   *      http://www.apache.org/licenses/LICENSE-2.0                         </span>
-<span class="cm">   *                                                                         </span>
-<span class="cm">   * Unless required by applicable law or agreed to in writing, software     </span>
-<span class="cm">   * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,       </span>
-<span class="cm">   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
-<span class="cm">   * See the License for the specific language governing permissions and     </span>
-<span class="cm">   * limitations under the License.                                          </span>
-<span class="cm">   */</span><span class="w">                                                                        </span>
-<span class="w">                                                                             </span>
-<span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">androidx.compose.material.icons.filled</span><span class="w">                             </span>
-<span class="w">                                                                             </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.material.icons.Icons</span><span class="w">                               </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.material.icons.materialIcon</span><span class="w">                        </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.material.icons.materialPath</span><span class="w">                        </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.graphics.vector.ImageVector</span><span class="w">                     </span>
-<span class="w">                                                                             </span>
-<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">Icons</span><span class="p">.</span><span class="na">Filled</span><span class="p">.</span><span class="na">Emergency</span><span class="p">:</span><span class="w"> </span><span class="n">ImageVector</span><span class="w">                             </span>
-<span class="w">      </span><span class="k">get</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                </span>
-<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">_emergency</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                          </span>
-<span class="w">              </span><span class="k">return</span><span class="w"> </span><span class="n">_emergency</span><span class="o">!!</span><span class="w">                                            </span>
-<span class="w">          </span><span class="p">}</span><span class="w">                                                                  </span>
-<span class="w">          </span><span class="n">_emergency</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">materialIcon</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Filled.Emergency&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">             </span>
-<span class="w">              </span><span class="n">materialPath</span><span class="w"> </span><span class="p">{</span><span class="w">                                                 </span>
-<span class="w">                  </span><span class="n">moveTo</span><span class="p">(</span><span class="m">20.79f</span><span class="p">,</span><span class="w"> </span><span class="m">9.23f</span><span class="p">)</span><span class="w">                                      </span>
-<span class="w">                  </span><span class="n">lineToRelative</span><span class="p">(</span><span class="o">-</span><span class="m">2.0f</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="m">3.46f</span><span class="p">)</span><span class="w">                              </span>
-<span class="w">                  </span><span class="n">lineToRelative</span><span class="p">(</span><span class="o">-</span><span class="m">4.79f</span><span class="p">,</span><span class="w"> </span><span class="m">2.77f</span><span class="p">)</span><span class="w">                              </span>
-<span class="w">                  </span><span class="n">lineToRelative</span><span class="p">(</span><span class="m">0.0f</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="m">5.54f</span><span class="p">)</span><span class="w">                               </span>
-<span class="w">                  </span><span class="n">lineToRelative</span><span class="p">(</span><span class="o">-</span><span class="m">4.0f</span><span class="p">,</span><span class="w"> </span><span class="m">0.0f</span><span class="p">)</span><span class="w">                                </span>
-<span class="w">                  </span><span class="n">lineToRelative</span><span class="p">(</span><span class="m">0.0f</span><span class="p">,</span><span class="w"> </span><span class="m">5.54f</span><span class="p">)</span><span class="w">                                </span>
-<span class="w">                  </span><span class="n">lineToRelative</span><span class="p">(</span><span class="o">-</span><span class="m">4.79f</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="m">2.77f</span><span class="p">)</span><span class="w">                             </span>
-<span class="w">                  </span><span class="n">lineToRelative</span><span class="p">(</span><span class="o">-</span><span class="m">2.0f</span><span class="p">,</span><span class="w"> </span><span class="m">3.46f</span><span class="p">)</span><span class="w">                               </span>
-<span class="w">                  </span><span class="n">lineToRelative</span><span class="p">(</span><span class="m">4.79f</span><span class="p">,</span><span class="w"> </span><span class="m">2.77f</span><span class="p">)</span><span class="w">                               </span>
-<span class="w">                  </span><span class="n">lineToRelative</span><span class="p">(</span><span class="o">-</span><span class="m">4.79f</span><span class="p">,</span><span class="w"> </span><span class="m">2.77f</span><span class="p">)</span><span class="w">                              </span>
-<span class="w">                  </span><span class="n">lineToRelative</span><span class="p">(</span><span class="m">2.0f</span><span class="p">,</span><span class="w"> </span><span class="m">3.46f</span><span class="p">)</span><span class="w">                                </span>
-<span class="w">                  </span><span class="n">lineToRelative</span><span class="p">(</span><span class="m">4.79f</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="m">2.77f</span><span class="p">)</span><span class="w">                              </span>
-<span class="w">                  </span><span class="n">lineToRelative</span><span class="p">(</span><span class="m">0.0f</span><span class="p">,</span><span class="w"> </span><span class="m">5.54f</span><span class="p">)</span><span class="w">                                </span>
-<span class="w">                  </span><span class="n">lineToRelative</span><span class="p">(</span><span class="m">4.0f</span><span class="p">,</span><span class="w"> </span><span class="m">0.0f</span><span class="p">)</span><span class="w">                                 </span>
-<span class="w">                  </span><span class="n">lineToRelative</span><span class="p">(</span><span class="m">0.0f</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="m">5.54f</span><span class="p">)</span><span class="w">                               </span>
-<span class="w">                  </span><span class="n">lineToRelative</span><span class="p">(</span><span class="m">4.79f</span><span class="p">,</span><span class="w"> </span><span class="m">2.77f</span><span class="p">)</span><span class="w">                               </span>
-<span class="w">                  </span><span class="n">lineToRelative</span><span class="p">(</span><span class="m">2.0f</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="m">3.46f</span><span class="p">)</span><span class="w">                               </span>
-<span class="w">                  </span><span class="n">lineToRelative</span><span class="p">(</span><span class="o">-</span><span class="m">4.79f</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="m">2.77f</span><span class="p">)</span><span class="w">                             </span>
-<span class="w">                  </span><span class="n">close</span><span class="p">()</span><span class="w">                                                    </span>
-<span class="w">              </span><span class="p">}</span><span class="w">                                                              </span>
-<span class="w">          </span><span class="p">}</span><span class="w">                                                                  </span>
-<span class="w">          </span><span class="k">return</span><span class="w"> </span><span class="n">_emergency</span><span class="o">!!</span><span class="w">                                                </span>
-<span class="w">      </span><span class="p">}</span><span class="w">                                                                      </span>
-<span class="w">                                                                             </span>
-<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">_emergency</span><span class="p">:</span><span class="w"> </span><span class="n">ImageVector? </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="w">                                </span>
-</pre></div>
+<pre>
+<ins>/*                                                                         </ins>
+<ins> * Copyright 2022 The Android Open Source Project                          </ins>
+<ins> *                                                                         </ins>
+<ins> * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);         </ins>
+<ins> * you may not use this file except in compliance with the License.        </ins>
+<ins> * You may obtain a copy of the License at                                 </ins>
+<ins> *                                                                         </ins>
+<ins> *      http://www.apache.org/licenses/LICENSE-2.0                         </ins>
+<ins> *                                                                         </ins>
+<ins> * Unless required by applicable law or agreed to in writing, software     </ins>
+<ins> * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,       </ins>
+<ins> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</ins>
+<ins> * See the License for the specific language governing permissions and     </ins>
+<ins> * limitations under the License.                                          </ins>
+<ins> */                                                                        </ins>
+                                                                           
+<ins>package androidx.compose.material.icons.filled                             </ins>
+                                                                           
+<ins>import androidx.compose.material.icons.Icons                               </ins>
+<ins>import androidx.compose.material.icons.materialIcon                        </ins>
+<ins>import androidx.compose.material.icons.materialPath                        </ins>
+<ins>import androidx.compose.ui.graphics.vector.ImageVector                     </ins>
+                                                                           
+<ins>public val Icons.Filled.Emergency: ImageVector                             </ins>
+<ins>    get() {                                                                </ins>
+<ins>        if (_emergency != null) {                                          </ins>
+<ins>            return _emergency!!                                            </ins>
+<ins>        }                                                                  </ins>
+<ins>        _emergency = materialIcon(name = &quot;Filled.Emergency&quot;) {             </ins>
+<ins>            materialPath {                                                 </ins>
+<ins>                moveTo(20.79f, 9.23f)                                      </ins>
+<ins>                lineToRelative(-2.0f, -3.46f)                              </ins>
+<ins>                lineToRelative(-4.79f, 2.77f)                              </ins>
+<ins>                lineToRelative(0.0f, -5.54f)                               </ins>
+<ins>                lineToRelative(-4.0f, 0.0f)                                </ins>
+<ins>                lineToRelative(0.0f, 5.54f)                                </ins>
+<ins>                lineToRelative(-4.79f, -2.77f)                             </ins>
+<ins>                lineToRelative(-2.0f, 3.46f)                               </ins>
+<ins>                lineToRelative(4.79f, 2.77f)                               </ins>
+<ins>                lineToRelative(-4.79f, 2.77f)                              </ins>
+<ins>                lineToRelative(2.0f, 3.46f)                                </ins>
+<ins>                lineToRelative(4.79f, -2.77f)                              </ins>
+<ins>                lineToRelative(0.0f, 5.54f)                                </ins>
+<ins>                lineToRelative(4.0f, 0.0f)                                 </ins>
+<ins>                lineToRelative(0.0f, -5.54f)                               </ins>
+<ins>                lineToRelative(4.79f, 2.77f)                               </ins>
+<ins>                lineToRelative(2.0f, -3.46f)                               </ins>
+<ins>                lineToRelative(-4.79f, -2.77f)                             </ins>
+<ins>                close()                                                    </ins>
+<ins>            }                                                              </ins>
+<ins>        }                                                                  </ins>
+<ins>        return _emergency!!                                                </ins>
+<ins>    }                                                                      </ins>
+                                                                           
+<ins>private var _emergency: ImageVector? = null                                </ins>
+</pre>
 </div>
 </details>
 <details class="success" open>
 <summary>ADDED: /app/src/main/java/androidx/compose/material/icons/filled/Movie.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/java/androidx/compose/material/icons/filled/Movie.kt';">
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="cm">/*                                                                         </span>
-<span class="cm">   * Copyright 2022 The Android Open Source Project                          </span>
-<span class="cm">   *                                                                         </span>
-<span class="cm">   * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);         </span>
-<span class="cm">   * you may not use this file except in compliance with the License.        </span>
-<span class="cm">   * You may obtain a copy of the License at                                 </span>
-<span class="cm">   *                                                                         </span>
-<span class="cm">   *      http://www.apache.org/licenses/LICENSE-2.0                         </span>
-<span class="cm">   *                                                                         </span>
-<span class="cm">   * Unless required by applicable law or agreed to in writing, software     </span>
-<span class="cm">   * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,       </span>
-<span class="cm">   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
-<span class="cm">   * See the License for the specific language governing permissions and     </span>
-<span class="cm">   * limitations under the License.                                          </span>
-<span class="cm">   */</span><span class="w">                                                                        </span>
-<span class="w">                                                                             </span>
-<span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">androidx.compose.material.icons.filled</span><span class="w">                             </span>
-<span class="w">                                                                             </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.material.icons.Icons</span><span class="w">                               </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.material.icons.materialIcon</span><span class="w">                        </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.material.icons.materialPath</span><span class="w">                        </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.graphics.vector.ImageVector</span><span class="w">                     </span>
-<span class="w">                                                                             </span>
-<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">Icons</span><span class="p">.</span><span class="na">Filled</span><span class="p">.</span><span class="na">Movie</span><span class="p">:</span><span class="w"> </span><span class="n">ImageVector</span><span class="w">                                 </span>
-<span class="w">      </span><span class="k">get</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                </span>
-<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">_movie</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                              </span>
-<span class="w">              </span><span class="k">return</span><span class="w"> </span><span class="n">_movie</span><span class="o">!!</span><span class="w">                                                </span>
-<span class="w">          </span><span class="p">}</span><span class="w">                                                                  </span>
-<span class="w">          </span><span class="n">_movie</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">materialIcon</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Filled.Movie&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                     </span>
-<span class="w">              </span><span class="n">materialPath</span><span class="w"> </span><span class="p">{</span><span class="w">                                                 </span>
-<span class="w">                  </span><span class="n">moveTo</span><span class="p">(</span><span class="m">18.0f</span><span class="p">,</span><span class="w"> </span><span class="m">4.0f</span><span class="p">)</span><span class="w">                                        </span>
-<span class="w">                  </span><span class="n">lineToRelative</span><span class="p">(</span><span class="m">2.0f</span><span class="p">,</span><span class="w"> </span><span class="m">4.0f</span><span class="p">)</span><span class="w">                                 </span>
-<span class="w">                  </span><span class="n">horizontalLineToRelative</span><span class="p">(</span><span class="o">-</span><span class="m">3.0f</span><span class="p">)</span><span class="w">                            </span>
-<span class="w">                  </span><span class="n">lineToRelative</span><span class="p">(</span><span class="o">-</span><span class="m">2.0f</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="m">4.0f</span><span class="p">)</span><span class="w">                               </span>
-<span class="w">                  </span><span class="n">horizontalLineToRelative</span><span class="p">(</span><span class="o">-</span><span class="m">2.0f</span><span class="p">)</span><span class="w">                            </span>
-<span class="w">                  </span><span class="n">lineToRelative</span><span class="p">(</span><span class="m">2.0f</span><span class="p">,</span><span class="w"> </span><span class="m">4.0f</span><span class="p">)</span><span class="w">                                 </span>
-<span class="w">                  </span><span class="n">horizontalLineToRelative</span><span class="p">(</span><span class="o">-</span><span class="m">3.0f</span><span class="p">)</span><span class="w">                            </span>
-<span class="w">                  </span><span class="n">lineToRelative</span><span class="p">(</span><span class="o">-</span><span class="m">2.0f</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="m">4.0f</span><span class="p">)</span><span class="w">                               </span>
-<span class="w">                  </span><span class="n">horizontalLineTo</span><span class="p">(</span><span class="m">8.0f</span><span class="p">)</span><span class="w">                                     </span>
-<span class="w">                  </span><span class="n">lineToRelative</span><span class="p">(</span><span class="m">2.0f</span><span class="p">,</span><span class="w"> </span><span class="m">4.0f</span><span class="p">)</span><span class="w">                                 </span>
-<span class="w">                  </span><span class="n">horizontalLineTo</span><span class="p">(</span><span class="m">7.0f</span><span class="p">)</span><span class="w">                                     </span>
-<span class="w">                  </span><span class="n">lineTo</span><span class="p">(</span><span class="m">5.0f</span><span class="p">,</span><span class="w"> </span><span class="m">4.0f</span><span class="p">)</span><span class="w">                                         </span>
-<span class="w">                  </span><span class="n">horizontalLineTo</span><span class="p">(</span><span class="m">4.0f</span><span class="p">)</span><span class="w">                                     </span>
-<span class="w">                  </span><span class="n">curveToRelative</span><span class="p">(</span><span class="o">-</span><span class="m">1.1f</span><span class="p">,</span><span class="w"> </span><span class="m">0.0f</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="m">1.99f</span><span class="p">,</span><span class="w"> </span><span class="m">0.9f</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="m">1.99f</span><span class="p">,</span><span class="w"> </span><span class="m">2.0f</span><span class="p">)</span><span class="w">   </span>
-<span class="w">                  </span><span class="n">lineTo</span><span class="p">(</span><span class="m">2.0f</span><span class="p">,</span><span class="w"> </span><span class="m">18.0f</span><span class="p">)</span><span class="w">                                        </span>
-<span class="w">                  </span><span class="n">curveToRelative</span><span class="p">(</span><span class="m">0.0f</span><span class="p">,</span><span class="w"> </span><span class="m">1.1f</span><span class="p">,</span><span class="w"> </span><span class="m">0.9f</span><span class="p">,</span><span class="w"> </span><span class="m">2.0f</span><span class="p">,</span><span class="w"> </span><span class="m">2.0f</span><span class="p">,</span><span class="w"> </span><span class="m">2.0f</span><span class="p">)</span><span class="w">        </span>
-<span class="w">                  </span><span class="n">horizontalLineToRelative</span><span class="p">(</span><span class="m">16.0f</span><span class="p">)</span><span class="w">                            </span>
-<span class="w">                  </span><span class="n">curveToRelative</span><span class="p">(</span><span class="m">1.1f</span><span class="p">,</span><span class="w"> </span><span class="m">0.0f</span><span class="p">,</span><span class="w"> </span><span class="m">2.0f</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="m">0.9f</span><span class="p">,</span><span class="w"> </span><span class="m">2.0f</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="m">2.0f</span><span class="p">)</span><span class="w">      </span>
-<span class="w">                  </span><span class="n">verticalLineTo</span><span class="p">(</span><span class="m">4.0f</span><span class="p">)</span><span class="w">                                       </span>
-<span class="w">                  </span><span class="n">horizontalLineToRelative</span><span class="p">(</span><span class="o">-</span><span class="m">4.0f</span><span class="p">)</span><span class="w">                            </span>
-<span class="w">                  </span><span class="n">close</span><span class="p">()</span><span class="w">                                                    </span>
-<span class="w">              </span><span class="p">}</span><span class="w">                                                              </span>
-<span class="w">          </span><span class="p">}</span><span class="w">                                                                  </span>
-<span class="w">          </span><span class="k">return</span><span class="w"> </span><span class="n">_movie</span><span class="o">!!</span><span class="w">                                                    </span>
-<span class="w">      </span><span class="p">}</span><span class="w">                                                                      </span>
-<span class="w">                                                                             </span>
-<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">_movie</span><span class="p">:</span><span class="w"> </span><span class="n">ImageVector? </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="w">                                    </span>
-</pre></div>
+<pre>
+<ins>/*                                                                         </ins>
+<ins> * Copyright 2022 The Android Open Source Project                          </ins>
+<ins> *                                                                         </ins>
+<ins> * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);         </ins>
+<ins> * you may not use this file except in compliance with the License.        </ins>
+<ins> * You may obtain a copy of the License at                                 </ins>
+<ins> *                                                                         </ins>
+<ins> *      http://www.apache.org/licenses/LICENSE-2.0                         </ins>
+<ins> *                                                                         </ins>
+<ins> * Unless required by applicable law or agreed to in writing, software     </ins>
+<ins> * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,       </ins>
+<ins> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</ins>
+<ins> * See the License for the specific language governing permissions and     </ins>
+<ins> * limitations under the License.                                          </ins>
+<ins> */                                                                        </ins>
+                                                                           
+<ins>package androidx.compose.material.icons.filled                             </ins>
+                                                                           
+<ins>import androidx.compose.material.icons.Icons                               </ins>
+<ins>import androidx.compose.material.icons.materialIcon                        </ins>
+<ins>import androidx.compose.material.icons.materialPath                        </ins>
+<ins>import androidx.compose.ui.graphics.vector.ImageVector                     </ins>
+                                                                           
+<ins>public val Icons.Filled.Movie: ImageVector                                 </ins>
+<ins>    get() {                                                                </ins>
+<ins>        if (_movie != null) {                                              </ins>
+<ins>            return _movie!!                                                </ins>
+<ins>        }                                                                  </ins>
+<ins>        _movie = materialIcon(name = &quot;Filled.Movie&quot;) {                     </ins>
+<ins>            materialPath {                                                 </ins>
+<ins>                moveTo(18.0f, 4.0f)                                        </ins>
+<ins>                lineToRelative(2.0f, 4.0f)                                 </ins>
+<ins>                horizontalLineToRelative(-3.0f)                            </ins>
+<ins>                lineToRelative(-2.0f, -4.0f)                               </ins>
+<ins>                horizontalLineToRelative(-2.0f)                            </ins>
+<ins>                lineToRelative(2.0f, 4.0f)                                 </ins>
+<ins>                horizontalLineToRelative(-3.0f)                            </ins>
+<ins>                lineToRelative(-2.0f, -4.0f)                               </ins>
+<ins>                horizontalLineTo(8.0f)                                     </ins>
+<ins>                lineToRelative(2.0f, 4.0f)                                 </ins>
+<ins>                horizontalLineTo(7.0f)                                     </ins>
+<ins>                lineTo(5.0f, 4.0f)                                         </ins>
+<ins>                horizontalLineTo(4.0f)                                     </ins>
+<ins>                curveToRelative(-1.1f, 0.0f, -1.99f, 0.9f, -1.99f, 2.0f)   </ins>
+<ins>                lineTo(2.0f, 18.0f)                                        </ins>
+<ins>                curveToRelative(0.0f, 1.1f, 0.9f, 2.0f, 2.0f, 2.0f)        </ins>
+<ins>                horizontalLineToRelative(16.0f)                            </ins>
+<ins>                curveToRelative(1.1f, 0.0f, 2.0f, -0.9f, 2.0f, -2.0f)      </ins>
+<ins>                verticalLineTo(4.0f)                                       </ins>
+<ins>                horizontalLineToRelative(-4.0f)                            </ins>
+<ins>                close()                                                    </ins>
+<ins>            }                                                              </ins>
+<ins>        }                                                                  </ins>
+<ins>        return _movie!!                                                    </ins>
+<ins>    }                                                                      </ins>
+                                                                           
+<ins>private var _movie: ImageVector? = null                                    </ins>
+</pre>
 </div>
 </details>
   

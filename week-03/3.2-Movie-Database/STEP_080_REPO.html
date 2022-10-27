@@ -55,7 +55,7 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra-7.css">
+      <link rel="stylesheet" href="../../stylesheets/extra-8.css">
     
     <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -881,22 +881,8 @@
   
   
     <li class="md-nav__item">
-      <a href="STEP_010_REPO.html" class="md-nav__link">
-        Starter Project
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="STEP_020_REPO.html" class="md-nav__link">
-        Update Versions
+        Project Setup
       </a>
     </li>
   
@@ -1257,22 +1243,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-04/4.2-Movie-Ui-1/STEP_010_REPO.html" class="md-nav__link">
-        Start with Movies Database
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../week-04/4.2-Movie-Ui-1/STEP_020_REPO.html" class="md-nav__link">
-        Update AGP Version
+        Project Setup
       </a>
     </li>
   
@@ -1515,20 +1487,6 @@
     <li class="md-nav__item">
       <a href="../../week-05/5.2-Movie-Ui-2/index.html" class="md-nav__link">
         Movie UI, part 2
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../week-05/5.2-Movie-Ui-2/STEP_010_REPO.html" class="md-nav__link">
-        Start with Movies UI, Part 1
       </a>
     </li>
   
@@ -2051,22 +2009,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-09/9.1-Google-map/STEP_010_REPO.html" class="md-nav__link">
-        Initial Project
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../week-09/9.1-Google-map/STEP_020_REPO.html" class="md-nav__link">
-        Update versions
+        Project Setup
       </a>
     </li>
   
@@ -3120,254 +3064,210 @@
 <details class="success" open>
 <summary>ADDED: /app/src/main/java/com/javadude/movies/MovieViewModel.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/java/com/javadude/movies/MovieViewModel.kt';">
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies</span><span class="w">                                                       </span>
-<span class="w">                                                                                    </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">android.app.Application</span><span class="w">                                                    </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.lifecycle.AndroidViewModel</span><span class="w">                                        </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.lifecycle.viewModelScope</span><span class="w">                                          </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.repository.MovieDatabaseRepository</span><span class="w">                     </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.repository.MovieRepository</span><span class="w">                             </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">kotlinx.coroutines.launch</span><span class="w">                                                  </span>
-<span class="w">                                                                                    </span>
-<span class="w">  </span><span class="kd">class</span><span class="w"> </span><span class="nc">MovieViewModel</span><span class="p">(</span><span class="n">application</span><span class="p">:</span><span class="w"> </span><span class="n">Application</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">AndroidViewModel</span><span class="p">(</span><span class="n">application</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
-<span class="w">      </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">repository</span><span class="p">:</span><span class="w"> </span><span class="n">MovieRepository</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MovieDatabaseRepository</span><span class="p">(</span><span class="n">application</span><span class="p">)</span><span class="w"></span>
-<span class="w">                                                                                    </span>
-<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">ratingsFlow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">repository</span><span class="p">.</span><span class="na">ratingsFlow</span><span class="w">                                      </span>
-<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">moviesFlow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">repository</span><span class="p">.</span><span class="na">moviesFlow</span><span class="w">                                        </span>
-<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">actorsFlow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">repository</span><span class="p">.</span><span class="na">actorsFlow</span><span class="w">                                        </span>
-<span class="w">                                                                                    </span>
-<span class="w">      </span><span class="kd">fun</span><span class="w"> </span><span class="nf">resetDatabase</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">                                                         </span>
-<span class="w">          </span><span class="n">viewModelScope</span><span class="p">.</span><span class="na">launch</span><span class="w"> </span><span class="p">{</span><span class="w">                                                   </span>
-<span class="w">              </span><span class="n">repository</span><span class="p">.</span><span class="na">resetDatabase</span><span class="p">()</span><span class="w">                                            </span>
-<span class="w">          </span><span class="p">}</span><span class="w">                                                                         </span>
-<span class="w">      </span><span class="p">}</span><span class="w">                                                                             </span>
-<span class="w">  </span><span class="p">}</span><span class="w">                                                                                 </span>
-</pre></div>
+<pre>
+<ins>package com.javadude.movies                                                       </ins>
+                                                                                  
+<ins>import android.app.Application                                                    </ins>
+<ins>import androidx.lifecycle.AndroidViewModel                                        </ins>
+<ins>import androidx.lifecycle.viewModelScope                                          </ins>
+<ins>import com.javadude.movies.repository.MovieDatabaseRepository                     </ins>
+<ins>import com.javadude.movies.repository.MovieRepository                             </ins>
+<ins>import kotlinx.coroutines.launch                                                  </ins>
+                                                                                  
+<ins>class MovieViewModel(application: Application) : AndroidViewModel(application) {  </ins>
+<ins>    private val repository: MovieRepository = MovieDatabaseRepository(application)</ins>
+                                                                                  
+<ins>    val ratingsFlow = repository.ratingsFlow                                      </ins>
+<ins>    val moviesFlow = repository.moviesFlow                                        </ins>
+<ins>    val actorsFlow = repository.actorsFlow                                        </ins>
+                                                                                  
+<ins>    fun resetDatabase() {                                                         </ins>
+<ins>        viewModelScope.launch {                                                   </ins>
+<ins>            repository.resetDatabase()                                            </ins>
+<ins>        }                                                                         </ins>
+<ins>    }                                                                             </ins>
+<ins>}                                                                                 </ins>
+</pre>
 </div>
 </details>
 <details class="example" open>
 <summary>CHANGED: /data/src/main/java/com/javadude/movies/data/MovieDAO.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/data/src/main/java/com/javadude/movies/data/MovieDAO.kt';">
-<div class="highlight"><pre><del>//<span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.data</span><span class="w">                       </span></del>
-<del>//<span class="w">                                                       </span></del>
-<del>//<span class="w"></span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Dao</span><span class="w">                               </span></del>
-<del>//<span class="w"></span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Delete</span><span class="w">                            </span></del>
-<del>//<span class="w"></span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Insert</span><span class="w">                            </span></del>
-<del>//<span class="w"></span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Query</span><span class="w">                             </span></del>
-<del>//<span class="w"></span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Transaction</span><span class="w">                       </span></del>
-<del>//<span class="w"></span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Update</span><span class="w">                            </span></del>
-<del>//<span class="w"></span><span class="k">import</span><span class="w"> </span><span class="nn">kotlinx.coroutines.flow.Flow</span><span class="w">                    </span></del>
-<del>//<span class="w">                                                       </span></del>
-<del>//<span class="w"></span><span class="nd">@Dao</span><span class="w">                                                   </span></del>
-<del>//<span class="w"></span><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">MovieDAO</span><span class="w"> </span><span class="p">{</span><span class="w">                              </span></del>
-<del>//<span class="w">    </span><span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;SELECT * FROM Rating&quot;</span><span class="p">)</span><span class="w">                     </span></del>
-<del>//<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getRatingsFlow</span><span class="p">():</span><span class="w"> </span><span class="n">Flow</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Rating</span><span class="o">&gt;&gt;</span><span class="w">  </span></del>
-<del>//<span class="w">                                                       </span></del>
-<del>//<span class="w">    </span><span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;SELECT * FROM Movie&quot;</span><span class="p">)</span><span class="w">                      </span></del>
-<del>//<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getMoviesFlow</span><span class="p">():</span><span class="w"> </span><span class="n">Flow</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Movie</span><span class="o">&gt;&gt;</span><span class="w">    </span></del>
-<del>//<span class="w">                                                       </span></del>
-<del>//<span class="w">    </span><span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;SELECT * FROM Actor&quot;</span><span class="p">)</span><span class="w">                      </span></del>
-<del>//<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getActorsFlow</span><span class="p">():</span><span class="w"> </span><span class="n">Flow</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Actor</span><span class="o">&gt;&gt;</span><span class="w">    </span></del>
-<del>//<span class="w">                                                       </span></del>
-<del>//<span class="w">    </span><span class="nd">@Insert</span><span class="w">                                            </span></del>
-<del>//<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">ratings</span><span class="p">:</span><span class="w"> </span><span class="n">Rating</span><span class="p">)</span><span class="w"></span></del>
-<del>//<span class="w">    </span><span class="nd">@Insert</span><span class="w">                                            </span></del>
-<del>//<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">movies</span><span class="p">:</span><span class="w"> </span><span class="n">Movie</span><span class="p">)</span><span class="w">  </span></del>
-<del>//<span class="w">    </span><span class="nd">@Insert</span><span class="w">                                            </span></del>
-<del>//<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">actors</span><span class="p">:</span><span class="w"> </span><span class="n">Actor</span><span class="p">)</span><span class="w">  </span></del>
-<del>//<span class="w">    </span><span class="nd">@Insert</span><span class="w">                                            </span></del>
-<del>//<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">roles</span><span class="p">:</span><span class="w"> </span><span class="n">Role</span><span class="p">)</span><span class="w">    </span></del>
-<del>//<span class="w">                                                       </span></del>
-<del>//<span class="w">    </span><span class="nd">@Update</span><span class="w">                                            </span></del>
-<del>//<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">ratings</span><span class="p">:</span><span class="w"> </span><span class="n">Rating</span><span class="p">)</span><span class="w"></span></del>
-<del>//<span class="w">    </span><span class="nd">@Update</span><span class="w">                                            </span></del>
-<del>//<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">movies</span><span class="p">:</span><span class="w"> </span><span class="n">Movie</span><span class="p">)</span><span class="w">  </span></del>
-<del>//<span class="w">    </span><span class="nd">@Update</span><span class="w">                                            </span></del>
-<del>//<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">actors</span><span class="p">:</span><span class="w"> </span><span class="n">Actor</span><span class="p">)</span><span class="w">  </span></del>
-<del>//<span class="w">    </span><span class="nd">@Update</span><span class="w">                                            </span></del>
-<del>//<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">roles</span><span class="p">:</span><span class="w"> </span><span class="n">Role</span><span class="p">)</span><span class="w">    </span></del>
-<del>//<span class="w">                                                       </span></del>
-<del>//<span class="w">    </span><span class="nd">@Delete</span><span class="w">                                            </span></del>
-<del>//<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">ratings</span><span class="p">:</span><span class="w"> </span><span class="n">Rating</span><span class="p">)</span><span class="w"></span></del>
-<del>//<span class="w">    </span><span class="nd">@Delete</span><span class="w">                                            </span></del>
-<del>//<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">movies</span><span class="p">:</span><span class="w"> </span><span class="n">Movie</span><span class="p">)</span><span class="w">  </span></del>
-<del>//<span class="w">    </span><span class="nd">@Delete</span><span class="w">                                            </span></del>
-<del>//<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">actors</span><span class="p">:</span><span class="w"> </span><span class="n">Actor</span><span class="p">)</span><span class="w">  </span></del>
-<del>//<span class="w">    </span><span class="nd">@Delete</span><span class="w">                                            </span></del>
-<del>//<span class="w">    </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">roles</span><span class="p">:</span><span class="w"> </span><span class="n">Role</span><span class="p">)</span><span class="w">    </span></del>
-<del>//<span class="w"></span><span class="p">}</span><span class="w">                                                      </span></del>
-<ins><div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.data</span><span class="w">                                                                   </span></ins>
-<ins><span class="w">                                                                                                     </span></ins>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Dao</span><span class="w">                                                                           </span></ins>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Delete</span><span class="w">                                                                        </span></ins>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Insert</span><span class="w">                                                                        </span></ins>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Query</span><span class="w">                                                                         </span></ins>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Transaction</span><span class="w">                                                                   </span></ins>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Update</span><span class="w">                                                                        </span></ins>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">kotlinx.coroutines.flow.Flow</span><span class="w">                                                                </span></ins>
-<ins><span class="w">                                                                                                     </span></ins>
-<ins><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">NotRated</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Rating</span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;r0&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Not Rated&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Not yet rated&quot;</span><span class="p">)</span><span class="w">        </span></ins>
-<ins><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">G</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Rating</span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;r1&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;G&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;General Audiences&quot;</span><span class="p">)</span><span class="w">                   </span></ins>
-<ins><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">PG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Rating</span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;r2&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;PG&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Parental Guidance Suggested&quot;</span><span class="p">)</span><span class="w">       </span></ins>
-<ins><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">PG13</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Rating</span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;r3&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;PG-13&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Unsuitable for those under 13&quot;</span><span class="p">)</span><span class="w"></span></ins>
-<ins><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">R</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Rating</span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;r4&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;R&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Restricted - 17 and older&quot;</span><span class="p">)</span><span class="w">           </span></ins>
-<ins><span class="w">                                                                                                     </span></ins>
-<ins><span class="w">  </span><span class="nd">@Dao</span><span class="w">                                                                                               </span></ins>
-<ins><span class="w">  </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">MovieDAO</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                          </span></ins>
-<ins><span class="w">      </span><span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;SELECT * FROM Rating&quot;</span><span class="p">)</span><span class="w">                                                                 </span></ins>
-<ins><span class="w">      </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getRatingsFlow</span><span class="p">():</span><span class="w"> </span><span class="n">Flow</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Rating</span><span class="o">&gt;&gt;</span><span class="w">                                              </span></ins>
-<ins><span class="w">                                                                                                     </span></ins>
-<ins><span class="w">      </span><span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;SELECT * FROM Movie&quot;</span><span class="p">)</span><span class="w">                                                                  </span></ins>
-<ins><span class="w">      </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getMoviesFlow</span><span class="p">():</span><span class="w"> </span><span class="n">Flow</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Movie</span><span class="o">&gt;&gt;</span><span class="w">                                                </span></ins>
-<ins><span class="w">                                                                                                     </span></ins>
-<ins><span class="w">      </span><span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;SELECT * FROM Actor&quot;</span><span class="p">)</span><span class="w">                                                                  </span></ins>
-<ins><span class="w">      </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getActorsFlow</span><span class="p">():</span><span class="w"> </span><span class="n">Flow</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Actor</span><span class="o">&gt;&gt;</span><span class="w">                                                </span></ins>
-<ins><span class="w">                                                                                                     </span></ins>
-<ins><span class="w">      </span><span class="nd">@Insert</span><span class="w">                                                                                        </span></ins>
-<ins><span class="w">      </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">ratings</span><span class="p">:</span><span class="w"> </span><span class="n">Rating</span><span class="p">)</span><span class="w">                                            </span></ins>
-<ins><span class="w">      </span><span class="nd">@Insert</span><span class="w">                                                                                        </span></ins>
-<ins><span class="w">      </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">movies</span><span class="p">:</span><span class="w"> </span><span class="n">Movie</span><span class="p">)</span><span class="w">                                              </span></ins>
-<ins><span class="w">      </span><span class="nd">@Insert</span><span class="w">                                                                                        </span></ins>
-<ins><span class="w">      </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">actors</span><span class="p">:</span><span class="w"> </span><span class="n">Actor</span><span class="p">)</span><span class="w">                                              </span></ins>
-<ins><span class="w">      </span><span class="nd">@Insert</span><span class="w">                                                                                        </span></ins>
-<ins><span class="w">      </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">roles</span><span class="p">:</span><span class="w"> </span><span class="n">Role</span><span class="p">)</span><span class="w">                                                </span></ins>
-<ins><span class="w">                                                                                                     </span></ins>
-<ins><span class="w">      </span><span class="nd">@Update</span><span class="w">                                                                                        </span></ins>
-<ins><span class="w">      </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">ratings</span><span class="p">:</span><span class="w"> </span><span class="n">Rating</span><span class="p">)</span><span class="w">                                            </span></ins>
-<ins><span class="w">      </span><span class="nd">@Update</span><span class="w">                                                                                        </span></ins>
-<ins><span class="w">      </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">movies</span><span class="p">:</span><span class="w"> </span><span class="n">Movie</span><span class="p">)</span><span class="w">                                              </span></ins>
-<ins><span class="w">      </span><span class="nd">@Update</span><span class="w">                                                                                        </span></ins>
-<ins><span class="w">      </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">actors</span><span class="p">:</span><span class="w"> </span><span class="n">Actor</span><span class="p">)</span><span class="w">                                              </span></ins>
-<ins><span class="w">      </span><span class="nd">@Update</span><span class="w">                                                                                        </span></ins>
-<ins><span class="w">      </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">roles</span><span class="p">:</span><span class="w"> </span><span class="n">Role</span><span class="p">)</span><span class="w">                                                </span></ins>
-<ins><span class="w">                                                                                                     </span></ins>
-<ins><span class="w">      </span><span class="nd">@Delete</span><span class="w">                                                                                        </span></ins>
-<ins><span class="w">      </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">ratings</span><span class="p">:</span><span class="w"> </span><span class="n">Rating</span><span class="p">)</span><span class="w">                                            </span></ins>
-<ins><span class="w">      </span><span class="nd">@Delete</span><span class="w">                                                                                        </span></ins>
-<ins><span class="w">      </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">movies</span><span class="p">:</span><span class="w"> </span><span class="n">Movie</span><span class="p">)</span><span class="w">                                              </span></ins>
-<ins><span class="w">      </span><span class="nd">@Delete</span><span class="w">                                                                                        </span></ins>
-<ins><span class="w">      </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">actors</span><span class="p">:</span><span class="w"> </span><span class="n">Actor</span><span class="p">)</span><span class="w">                                              </span></ins>
-<ins><span class="w">      </span><span class="nd">@Delete</span><span class="w">                                                                                        </span></ins>
-<ins><span class="w">      </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">roles</span><span class="p">:</span><span class="w"> </span><span class="n">Role</span><span class="p">)</span><span class="w">                                                </span></ins>
-<ins><span class="w">                                                                                                     </span></ins>
-<ins><span class="w">      </span><span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;DELETE FROM Movie&quot;</span><span class="p">)</span><span class="w">                                                                    </span></ins>
-<ins><span class="w">      </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">clearMovies</span><span class="p">()</span><span class="w">                                                             </span></ins>
-<ins><span class="w">      </span><span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;DELETE FROM Actor&quot;</span><span class="p">)</span><span class="w">                                                                    </span></ins>
-<ins><span class="w">      </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">clearActors</span><span class="p">()</span><span class="w">                                                             </span></ins>
-<ins><span class="w">      </span><span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;DELETE FROM Rating&quot;</span><span class="p">)</span><span class="w">                                                                   </span></ins>
-<ins><span class="w">      </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">clearRatings</span><span class="p">()</span><span class="w">                                                            </span></ins>
-<ins><span class="w">      </span><span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;DELETE FROM Role&quot;</span><span class="p">)</span><span class="w">                                                                     </span></ins>
-<ins><span class="w">      </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">clearRoles</span><span class="p">()</span><span class="w">                                                              </span></ins>
-<ins><span class="w">                                                                                                     </span></ins>
-<ins><span class="w">      </span><span class="nd">@Transaction</span><span class="w">                                                                                   </span></ins>
-<ins><span class="w">      </span><span class="kd">open</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">resetDatabase</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">                                                             </span></ins>
-<ins><span class="w">          </span><span class="n">clearMovies</span><span class="p">()</span><span class="w">                                                                              </span></ins>
-<ins><span class="w">          </span><span class="n">clearActors</span><span class="p">()</span><span class="w">                                                                              </span></ins>
-<ins><span class="w">          </span><span class="n">clearRoles</span><span class="p">()</span><span class="w">                                                                               </span></ins>
-<ins><span class="w">          </span><span class="n">clearRatings</span><span class="p">()</span><span class="w">                                                                             </span></ins>
-<ins><span class="w">                                                                                                     </span></ins>
-<ins><span class="w">          </span><span class="n">insert</span><span class="p">(</span><span class="n">NotRated</span><span class="p">,</span><span class="w"> </span><span class="n">G</span><span class="p">,</span><span class="w"> </span><span class="n">PG</span><span class="p">,</span><span class="w"> </span><span class="n">PG13</span><span class="p">,</span><span class="w"> </span><span class="n">R</span><span class="p">)</span><span class="w">                                                           </span></ins>
-<ins><span class="w">                                                                                                     </span></ins>
-<ins><span class="w">          </span><span class="n">insert</span><span class="p">(</span><span class="w">                                                                                    </span></ins>
-<ins><span class="w">              </span><span class="n">Movie</span><span class="p">(</span><span class="s">&quot;m1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;The Transporter&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Jason Statham kicks a guy in the face&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;r3&quot;</span><span class="p">),</span><span class="w">         </span></ins>
-<ins><span class="w">              </span><span class="n">Movie</span><span class="p">(</span><span class="s">&quot;m2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Transporter 2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Jason Statham kicks a bunch of guys in the face&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;r4&quot;</span><span class="p">),</span><span class="w"> </span></ins>
-<ins><span class="w">              </span><span class="n">Movie</span><span class="p">(</span><span class="s">&quot;m3&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Hobbs and Shaw&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Cars, Explosions and Stuff&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;r3&quot;</span><span class="p">),</span><span class="w">                     </span></ins>
-<ins><span class="w">              </span><span class="n">Movie</span><span class="p">(</span><span class="s">&quot;m4&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Jumanji - Welcome to the Jungle&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;The Rock smolders&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;r3&quot;</span><span class="p">),</span><span class="w">             </span></ins>
-<ins><span class="w">          </span><span class="p">)</span><span class="w">                                                                                          </span></ins>
-<ins><span class="w">          </span><span class="n">insert</span><span class="p">(</span><span class="w">                                                                                    </span></ins>
-<ins><span class="w">              </span><span class="n">Actor</span><span class="p">(</span><span class="s">&quot;a1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Jason Statham&quot;</span><span class="p">),</span><span class="w">                                                          </span></ins>
-<ins><span class="w">              </span><span class="n">Actor</span><span class="p">(</span><span class="s">&quot;a2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;The Rock&quot;</span><span class="p">),</span><span class="w">                                                               </span></ins>
-<ins><span class="w">              </span><span class="n">Actor</span><span class="p">(</span><span class="s">&quot;a3&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Shu Qi&quot;</span><span class="p">),</span><span class="w">                                                                 </span></ins>
-<ins><span class="w">              </span><span class="n">Actor</span><span class="p">(</span><span class="s">&quot;a4&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Amber Valletta&quot;</span><span class="p">),</span><span class="w">                                                         </span></ins>
-<ins><span class="w">              </span><span class="n">Actor</span><span class="p">(</span><span class="s">&quot;a5&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Kevin Hart&quot;</span><span class="p">),</span><span class="w">                                                             </span></ins>
-<ins><span class="w">          </span><span class="p">)</span><span class="w">                                                                                          </span></ins>
-<ins><span class="w">          </span><span class="n">insert</span><span class="p">(</span><span class="w">                                                                                    </span></ins>
-<ins><span class="w">              </span><span class="n">Role</span><span class="p">(</span><span class="s">&quot;m1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;a1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Frank Martin&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">),</span><span class="w">                                                   </span></ins>
-<ins><span class="w">              </span><span class="n">Role</span><span class="p">(</span><span class="s">&quot;m1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;a3&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Lai&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">),</span><span class="w">                                                            </span></ins>
-<ins><span class="w">              </span><span class="n">Role</span><span class="p">(</span><span class="s">&quot;m2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;a1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Frank Martin&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">),</span><span class="w">                                                   </span></ins>
-<ins><span class="w">              </span><span class="n">Role</span><span class="p">(</span><span class="s">&quot;m2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;a4&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Audrey Billings&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">),</span><span class="w">                                                </span></ins>
-<ins><span class="w">              </span><span class="n">Role</span><span class="p">(</span><span class="s">&quot;m3&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;a2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Hobbs&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">),</span><span class="w">                                                          </span></ins>
-<ins><span class="w">              </span><span class="n">Role</span><span class="p">(</span><span class="s">&quot;m3&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;a1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Shaw&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">),</span><span class="w">                                                           </span></ins>
-<ins><span class="w">              </span><span class="n">Role</span><span class="p">(</span><span class="s">&quot;m4&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;a2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Spencer&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">),</span><span class="w">                                                        </span></ins>
-<ins><span class="w">              </span><span class="n">Role</span><span class="p">(</span><span class="s">&quot;m4&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;a5&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Fridge&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">),</span><span class="w">                                                         </span></ins>
-<ins><span class="w">          </span><span class="p">)</span><span class="w">                                                                                          </span></ins>
-<ins><span class="w">      </span><span class="p">}</span><span class="w">                                                                                              </span></ins>
-<ins><span class="w">  </span><span class="p">}</span><span class="w">                                                                                                  </span></ins>
-</pre></div>
+<pre>
+package com.javadude.movies.data                                                                   
+                                                                                                   
+import androidx.room.Dao                                                                           
+import androidx.room.Delete                                                                        
+import androidx.room.Insert                                                                        
+import androidx.room.Query                                                                         
+import androidx.room.Transaction                                                                   
+import androidx.room.Update                                                                        
+import kotlinx.coroutines.flow.Flow                                                                
+                                                                                                   
+<ins>private val NotRated = Rating(id = &quot;r0&quot;, name = &quot;Not Rated&quot;, description = &quot;Not yet rated&quot;)        </ins>
+<ins>private val G = Rating(id = &quot;r1&quot;, name = &quot;G&quot;, description = &quot;General Audiences&quot;)                   </ins>
+<ins>private val PG = Rating(id = &quot;r2&quot;, name = &quot;PG&quot;, description = &quot;Parental Guidance Suggested&quot;)       </ins>
+<ins>private val PG13 = Rating(id = &quot;r3&quot;, name = &quot;PG-13&quot;, description = &quot;Unsuitable for those under 13&quot;)</ins>
+<ins>private val R = Rating(id = &quot;r4&quot;, name = &quot;R&quot;, description = &quot;Restricted - 17 and older&quot;)           </ins>
+                                                                                                   
+@Dao                                                                                               
+abstract class MovieDAO {                                                                          
+    @Query(&quot;SELECT * FROM Rating&quot;)                                                                 
+    abstract fun getRatingsFlow(): Flow&lt;List&lt;Rating&gt;&gt;                                              
+                                                                                                   
+    @Query(&quot;SELECT * FROM Movie&quot;)                                                                  
+    abstract fun getMoviesFlow(): Flow&lt;List&lt;Movie&gt;&gt;                                                
+                                                                                                   
+    @Query(&quot;SELECT * FROM Actor&quot;)                                                                  
+    abstract fun getActorsFlow(): Flow&lt;List&lt;Actor&gt;&gt;                                                
+                                                                                                   
+    @Insert                                                                                        
+    abstract suspend fun insert(vararg ratings: Rating)                                            
+    @Insert                                                                                        
+    abstract suspend fun insert(vararg movies: Movie)                                              
+    @Insert                                                                                        
+    abstract suspend fun insert(vararg actors: Actor)                                              
+    @Insert                                                                                        
+    abstract suspend fun insert(vararg roles: Role)                                                
+                                                                                                   
+    @Update                                                                                        
+    abstract suspend fun update(vararg ratings: Rating)                                            
+    @Update                                                                                        
+    abstract suspend fun update(vararg movies: Movie)                                              
+    @Update                                                                                        
+    abstract suspend fun update(vararg actors: Actor)                                              
+    @Update                                                                                        
+    abstract suspend fun update(vararg roles: Role)                                                
+                                                                                                   
+    @Delete                                                                                        
+    abstract suspend fun delete(vararg ratings: Rating)                                            
+    @Delete                                                                                        
+    abstract suspend fun delete(vararg movies: Movie)                                              
+    @Delete                                                                                        
+    abstract suspend fun delete(vararg actors: Actor)                                              
+    @Delete                                                                                        
+    abstract suspend fun delete(vararg roles: Role)                                                
+                                                                                                   
+<ins>    @Query(&quot;DELETE FROM Movie&quot;)                                                                    </ins>
+<ins>    abstract suspend fun clearMovies()                                                             </ins>
+<ins>    @Query(&quot;DELETE FROM Actor&quot;)                                                                    </ins>
+<ins>    abstract suspend fun clearActors()                                                             </ins>
+<ins>    @Query(&quot;DELETE FROM Rating&quot;)                                                                   </ins>
+<ins>    abstract suspend fun clearRatings()                                                            </ins>
+<ins>    @Query(&quot;DELETE FROM Role&quot;)                                                                     </ins>
+<ins>    abstract suspend fun clearRoles()                                                              </ins>
+                                                                                                   
+<ins>    @Transaction                                                                                   </ins>
+<ins>    open suspend fun resetDatabase() {                                                             </ins>
+<ins>        clearMovies()                                                                              </ins>
+<ins>        clearActors()                                                                              </ins>
+<ins>        clearRoles()                                                                               </ins>
+<ins>        clearRatings()                                                                             </ins>
+                                                                                                   
+<ins>        insert(NotRated, G, PG, PG13, R)                                                           </ins>
+                                                                                                   
+<ins>        insert(                                                                                    </ins>
+<ins>            Movie(&quot;m1&quot;, &quot;The Transporter&quot;, &quot;Jason Statham kicks a guy in the face&quot;, &quot;r3&quot;),         </ins>
+<ins>            Movie(&quot;m2&quot;, &quot;Transporter 2&quot;, &quot;Jason Statham kicks a bunch of guys in the face&quot;, &quot;r4&quot;), </ins>
+<ins>            Movie(&quot;m3&quot;, &quot;Hobbs and Shaw&quot;, &quot;Cars, Explosions and Stuff&quot;, &quot;r3&quot;),                     </ins>
+<ins>            Movie(&quot;m4&quot;, &quot;Jumanji - Welcome to the Jungle&quot;, &quot;The Rock smolders&quot;, &quot;r3&quot;),             </ins>
+<ins>        )                                                                                          </ins>
+<ins>        insert(                                                                                    </ins>
+<ins>            Actor(&quot;a1&quot;, &quot;Jason Statham&quot;),                                                          </ins>
+<ins>            Actor(&quot;a2&quot;, &quot;The Rock&quot;),                                                               </ins>
+<ins>            Actor(&quot;a3&quot;, &quot;Shu Qi&quot;),                                                                 </ins>
+<ins>            Actor(&quot;a4&quot;, &quot;Amber Valletta&quot;),                                                         </ins>
+<ins>            Actor(&quot;a5&quot;, &quot;Kevin Hart&quot;),                                                             </ins>
+<ins>        )                                                                                          </ins>
+<ins>        insert(                                                                                    </ins>
+<ins>            Role(&quot;m1&quot;, &quot;a1&quot;, &quot;Frank Martin&quot;, 1),                                                   </ins>
+<ins>            Role(&quot;m1&quot;, &quot;a3&quot;, &quot;Lai&quot;, 2),                                                            </ins>
+<ins>            Role(&quot;m2&quot;, &quot;a1&quot;, &quot;Frank Martin&quot;, 1),                                                   </ins>
+<ins>            Role(&quot;m2&quot;, &quot;a4&quot;, &quot;Audrey Billings&quot;, 2),                                                </ins>
+<ins>            Role(&quot;m3&quot;, &quot;a2&quot;, &quot;Hobbs&quot;, 1),                                                          </ins>
+<ins>            Role(&quot;m3&quot;, &quot;a1&quot;, &quot;Shaw&quot;, 2),                                                           </ins>
+<ins>            Role(&quot;m4&quot;, &quot;a2&quot;, &quot;Spencer&quot;, 1),                                                        </ins>
+<ins>            Role(&quot;m4&quot;, &quot;a5&quot;, &quot;Fridge&quot;, 2),                                                         </ins>
+<ins>        )                                                                                          </ins>
+<ins>    }                                                                                              </ins>
+}                                                                                                  
+</pre>
 </div>
 </details>
 <details class="example" open>
 <summary>CHANGED: /repository/src/main/java/com/javadude/movies/repository/MovieDatabaseRepository.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/repository/src/main/java/com/javadude/movies/repository/MovieDatabaseRepository.kt';">
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.repository</span><span class="w">                                            </span>
-<span class="w">                                                                                    </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">android.content.Context</span><span class="w">                                                    </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.data.createDao</span><span class="w">                                         </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">kotlinx.coroutines.flow.map</span><span class="w">                                                </span>
-<span class="w">                                                                                    </span>
-<span class="w">  </span><span class="kd">class</span><span class="w"> </span><span class="nc">MovieDatabaseRepository</span><span class="p">(</span><span class="n">context</span><span class="p">:</span><span class="w"> </span><span class="n">Context</span><span class="p">):</span><span class="w"> </span><span class="n">MovieRepository</span><span class="w"> </span><span class="p">{</span><span class="w">                </span>
-<span class="w">      </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">dao</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">createDao</span><span class="p">(</span><span class="n">context</span><span class="p">)</span><span class="w">                                          </span>
-<span class="w">                                                                                    </span>
-<span class="w">      </span><span class="kd">override</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">ratingsFlow</span><span class="w"> </span><span class="o">=</span><span class="w">                                                    </span>
-<span class="w">          </span><span class="n">dao</span><span class="p">.</span><span class="na">getRatingsFlow</span><span class="p">()</span><span class="w">                                                      </span>
-<span class="w">              </span><span class="p">.</span><span class="na">map</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">ratings</span><span class="w"> </span><span class="o">-&gt;</span><span class="w">                                                     </span>
-<span class="w">                  </span><span class="n">ratings</span><span class="p">.</span><span class="na">map</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nb">it</span><span class="p">.</span><span class="na">toDto</span><span class="p">()</span><span class="w"> </span><span class="p">}</span><span class="w">                                        </span>
-<span class="w">              </span><span class="p">}</span><span class="w">                                                                     </span>
-<span class="w">      </span><span class="kd">override</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">moviesFlow</span><span class="w"> </span><span class="o">=</span><span class="w">                                                     </span>
-<span class="w">          </span><span class="n">dao</span><span class="p">.</span><span class="na">getMoviesFlow</span><span class="p">()</span><span class="w">                                                       </span>
-<span class="w">              </span><span class="p">.</span><span class="na">map</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">movies</span><span class="w"> </span><span class="o">-&gt;</span><span class="w">                                                      </span>
-<span class="w">                  </span><span class="n">movies</span><span class="p">.</span><span class="na">map</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nb">it</span><span class="p">.</span><span class="na">toDto</span><span class="p">()</span><span class="w"> </span><span class="p">}</span><span class="w">                                         </span>
-<span class="w">              </span><span class="p">}</span><span class="w">                                                                     </span>
-<span class="w">      </span><span class="kd">override</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">actorsFlow</span><span class="w"> </span><span class="o">=</span><span class="w">                                                     </span>
-<span class="w">          </span><span class="n">dao</span><span class="p">.</span><span class="na">getActorsFlow</span><span class="p">()</span><span class="w">                                                       </span>
-<span class="w">              </span><span class="p">.</span><span class="na">map</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">actors</span><span class="w"> </span><span class="o">-&gt;</span><span class="w">                                                      </span>
-<span class="w">                  </span><span class="n">actors</span><span class="p">.</span><span class="na">map</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nb">it</span><span class="p">.</span><span class="na">toDto</span><span class="p">()</span><span class="w"> </span><span class="p">}</span><span class="w">                                         </span>
-<span class="w">              </span><span class="p">}</span><span class="w">                                                                     </span>
-<span class="w">                                                                                    </span>
-<span class="w">      </span><span class="kd">override</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="n">movie</span><span class="p">:</span><span class="w"> </span><span class="n">MovieDto</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dao</span><span class="p">.</span><span class="na">insert</span><span class="p">(</span><span class="n">movie</span><span class="p">.</span><span class="na">toEntity</span><span class="p">())</span><span class="w">   </span>
-<span class="w">      </span><span class="kd">override</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="n">actor</span><span class="p">:</span><span class="w"> </span><span class="n">ActorDto</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dao</span><span class="p">.</span><span class="na">insert</span><span class="p">(</span><span class="n">actor</span><span class="p">.</span><span class="na">toEntity</span><span class="p">())</span><span class="w">   </span>
-<span class="w">      </span><span class="kd">override</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="n">rating</span><span class="p">:</span><span class="w"> </span><span class="n">RatingDto</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dao</span><span class="p">.</span><span class="na">insert</span><span class="p">(</span><span class="n">rating</span><span class="p">.</span><span class="na">toEntity</span><span class="p">())</span><span class="w"></span>
-<span class="w">                                                                                    </span>
-<span class="w">      </span><span class="kd">override</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="n">movie</span><span class="p">:</span><span class="w"> </span><span class="n">MovieDto</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dao</span><span class="p">.</span><span class="na">update</span><span class="p">(</span><span class="n">movie</span><span class="p">.</span><span class="na">toEntity</span><span class="p">())</span><span class="w">   </span>
-<span class="w">      </span><span class="kd">override</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="n">actor</span><span class="p">:</span><span class="w"> </span><span class="n">ActorDto</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dao</span><span class="p">.</span><span class="na">update</span><span class="p">(</span><span class="n">actor</span><span class="p">.</span><span class="na">toEntity</span><span class="p">())</span><span class="w">   </span>
-<span class="w">      </span><span class="kd">override</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="n">rating</span><span class="p">:</span><span class="w"> </span><span class="n">RatingDto</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dao</span><span class="p">.</span><span class="na">update</span><span class="p">(</span><span class="n">rating</span><span class="p">.</span><span class="na">toEntity</span><span class="p">())</span><span class="w"></span>
-<span class="w">                                                                                    </span>
-<span class="w">      </span><span class="kd">override</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="n">movie</span><span class="p">:</span><span class="w"> </span><span class="n">MovieDto</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dao</span><span class="p">.</span><span class="na">delete</span><span class="p">(</span><span class="n">movie</span><span class="p">.</span><span class="na">toEntity</span><span class="p">())</span><span class="w">   </span>
-<span class="w">      </span><span class="kd">override</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="n">actor</span><span class="p">:</span><span class="w"> </span><span class="n">ActorDto</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dao</span><span class="p">.</span><span class="na">delete</span><span class="p">(</span><span class="n">actor</span><span class="p">.</span><span class="na">toEntity</span><span class="p">())</span><span class="w">   </span>
-<span class="w">      </span><span class="kd">override</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="n">rating</span><span class="p">:</span><span class="w"> </span><span class="n">RatingDto</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dao</span><span class="p">.</span><span class="na">delete</span><span class="p">(</span><span class="n">rating</span><span class="p">.</span><span class="na">toEntity</span><span class="p">())</span><span class="w"></span>
-<ins><span class="w">                                                                                    </span></ins>
-<ins><span class="w">      </span><span class="kd">override</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">resetDatabase</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dao</span><span class="p">.</span><span class="na">resetDatabase</span><span class="p">()</span><span class="w">                    </span></ins>
-<span class="w">  </span><span class="p">}</span><span class="w">                                                                                 </span>
-</pre></div>
+<pre>
+package com.javadude.movies.repository                                            
+                                                                                  
+import android.content.Context                                                    
+import com.javadude.movies.data.createDao                                         
+import kotlinx.coroutines.flow.map                                                
+                                                                                  
+class MovieDatabaseRepository(context: Context): MovieRepository {                
+    private val dao = createDao(context)                                          
+                                                                                  
+    override val ratingsFlow =                                                    
+        dao.getRatingsFlow()                                                      
+            .map { ratings -&gt;                                                     
+                ratings.map { it.toDto() }                                        
+            }                                                                     
+    override val moviesFlow =                                                     
+        dao.getMoviesFlow()                                                       
+            .map { movies -&gt;                                                      
+                movies.map { it.toDto() }                                         
+            }                                                                     
+    override val actorsFlow =                                                     
+        dao.getActorsFlow()                                                       
+            .map { actors -&gt;                                                      
+                actors.map { it.toDto() }                                         
+            }                                                                     
+                                                                                  
+    override suspend fun insert(movie: MovieDto) = dao.insert(movie.toEntity())   
+    override suspend fun insert(actor: ActorDto) = dao.insert(actor.toEntity())   
+    override suspend fun insert(rating: RatingDto) = dao.insert(rating.toEntity())
+                                                                                  
+    override suspend fun update(movie: MovieDto) = dao.update(movie.toEntity())   
+    override suspend fun update(actor: ActorDto) = dao.update(actor.toEntity())   
+    override suspend fun update(rating: RatingDto) = dao.update(rating.toEntity())
+                                                                                  
+    override suspend fun delete(movie: MovieDto) = dao.delete(movie.toEntity())   
+    override suspend fun delete(actor: ActorDto) = dao.delete(actor.toEntity())   
+    override suspend fun delete(rating: RatingDto) = dao.delete(rating.toEntity())
+                                                                                  
+<ins>    override suspend fun resetDatabase() = dao.resetDatabase()                    </ins>
+}                                                                                 
+</pre>
 </div>
 </details>
 <details class="example" open>
 <summary>CHANGED: /repository/src/main/java/com/javadude/movies/repository/MovieRepository.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/repository/src/main/java/com/javadude/movies/repository/MovieRepository.kt';">
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.repository</span><span class="w">    </span>
-<span class="w">                                            </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">kotlinx.coroutines.flow.Flow</span><span class="w">       </span>
-<span class="w">                                            </span>
-<span class="w">  </span><span class="kd">interface</span><span class="w"> </span><span class="nc">MovieRepository</span><span class="w"> </span><span class="p">{</span><span class="w">               </span>
-<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">ratingsFlow</span><span class="p">:</span><span class="w"> </span><span class="n">Flow</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">RatingDto</span><span class="o">&gt;&gt;</span><span class="w"></span>
-<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">moviesFlow</span><span class="p">:</span><span class="w"> </span><span class="n">Flow</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">MovieDto</span><span class="o">&gt;&gt;</span><span class="w">  </span>
-<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">actorsFlow</span><span class="p">:</span><span class="w"> </span><span class="n">Flow</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">ActorDto</span><span class="o">&gt;&gt;</span><span class="w">  </span>
-<span class="w">                                            </span>
-<span class="w">      </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="n">movie</span><span class="p">:</span><span class="w"> </span><span class="n">MovieDto</span><span class="p">)</span><span class="w">   </span>
-<span class="w">      </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="n">actor</span><span class="p">:</span><span class="w"> </span><span class="n">ActorDto</span><span class="p">)</span><span class="w">   </span>
-<span class="w">      </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="n">rating</span><span class="p">:</span><span class="w"> </span><span class="n">RatingDto</span><span class="p">)</span><span class="w"> </span>
-<span class="w">                                            </span>
-<span class="w">      </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="n">movie</span><span class="p">:</span><span class="w"> </span><span class="n">MovieDto</span><span class="p">)</span><span class="w">   </span>
-<span class="w">      </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="n">actor</span><span class="p">:</span><span class="w"> </span><span class="n">ActorDto</span><span class="p">)</span><span class="w">   </span>
-<span class="w">      </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="n">rating</span><span class="p">:</span><span class="w"> </span><span class="n">RatingDto</span><span class="p">)</span><span class="w"> </span>
-<span class="w">                                            </span>
-<span class="w">      </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="n">movie</span><span class="p">:</span><span class="w"> </span><span class="n">MovieDto</span><span class="p">)</span><span class="w">   </span>
-<span class="w">      </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="n">actor</span><span class="p">:</span><span class="w"> </span><span class="n">ActorDto</span><span class="p">)</span><span class="w">   </span>
-<span class="w">      </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="n">rating</span><span class="p">:</span><span class="w"> </span><span class="n">RatingDto</span><span class="p">)</span><span class="w"> </span>
-<ins><span class="w">                                            </span></ins>
-<ins><span class="w">      </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">resetDatabase</span><span class="p">()</span><span class="w">           </span></ins>
-<span class="w">  </span><span class="p">}</span><span class="w">                                         </span>
-</pre></div>
+<pre>
+package com.javadude.movies.repository    
+                                          
+import kotlinx.coroutines.flow.Flow       
+                                          
+interface MovieRepository {               
+    val ratingsFlow: Flow&lt;List&lt;RatingDto&gt;&gt;
+    val moviesFlow: Flow&lt;List&lt;MovieDto&gt;&gt;  
+    val actorsFlow: Flow&lt;List&lt;ActorDto&gt;&gt;  
+                                          
+    suspend fun insert(movie: MovieDto)   
+    suspend fun insert(actor: ActorDto)   
+    suspend fun insert(rating: RatingDto) 
+                                          
+    suspend fun update(movie: MovieDto)   
+    suspend fun update(actor: ActorDto)   
+    suspend fun update(rating: RatingDto) 
+                                          
+    suspend fun delete(movie: MovieDto)   
+    suspend fun delete(actor: ActorDto)   
+    suspend fun delete(rating: RatingDto) 
+                                          
+<ins>    suspend fun resetDatabase()           </ins>
+}                                         
+</pre>
 </div>
 </details>
   

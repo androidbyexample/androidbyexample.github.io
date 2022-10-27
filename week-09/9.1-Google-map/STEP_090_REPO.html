@@ -55,7 +55,7 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra-7.css">
+      <link rel="stylesheet" href="../../stylesheets/extra-8.css">
     
     <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -877,22 +877,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-03/3.2-Movie-Database/STEP_010_REPO.html" class="md-nav__link">
-        Starter Project
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../week-03/3.2-Movie-Database/STEP_020_REPO.html" class="md-nav__link">
-        Update Versions
+        Project Setup
       </a>
     </li>
   
@@ -1245,22 +1231,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-04/4.2-Movie-Ui-1/STEP_010_REPO.html" class="md-nav__link">
-        Start with Movies Database
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../week-04/4.2-Movie-Ui-1/STEP_020_REPO.html" class="md-nav__link">
-        Update AGP Version
+        Project Setup
       </a>
     </li>
   
@@ -1503,20 +1475,6 @@
     <li class="md-nav__item">
       <a href="../../week-05/5.2-Movie-Ui-2/index.html" class="md-nav__link">
         Movie UI, part 2
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../week-05/5.2-Movie-Ui-2/STEP_010_REPO.html" class="md-nav__link">
-        Start with Movies UI, Part 1
       </a>
     </li>
   
@@ -2043,22 +2001,8 @@
   
   
     <li class="md-nav__item">
-      <a href="STEP_010_REPO.html" class="md-nav__link">
-        Initial Project
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="STEP_020_REPO.html" class="md-nav__link">
-        Update versions
+        Project Setup
       </a>
     </li>
   
@@ -3133,393 +3077,437 @@
 <details class="success" open>
 <summary>ADDED: /app/src/main/java/com/javadude/carfinder/DrawableHelpers.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/java/com/javadude/carfinder/DrawableHelpers.kt';">
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.carfinder</span><span class="w">                                                                                                          </span>
-<span class="w">                                                                                                                                          </span>
-<span class="w">  </span><span class="c1">// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);                                                                      </span><span class="w"></span>
-<span class="w">  </span><span class="c1">// you may not use this file except in compliance with the License.                                                                     </span><span class="w"></span>
-<span class="w">  </span><span class="c1">// You may obtain a copy of the License at                                                                                              </span><span class="w"></span>
-<span class="w">  </span><span class="c1">//                                                                                                                                      </span><span class="w"></span>
-<span class="w">  </span><span class="c1">//     https://www.apache.org/licenses/LICENSE-2.0                                                                                      </span><span class="w"></span>
-<span class="w">  </span><span class="c1">//                                                                                                                                      </span><span class="w"></span>
-<span class="w">  </span><span class="c1">// Unless required by applicable law or agreed to in writing, software                                                                  </span><span class="w"></span>
-<span class="w">  </span><span class="c1">// distributed under the License is distributed on an &quot;AS IS&quot; BASIS,                                                                    </span><span class="w"></span>
-<span class="w">  </span><span class="c1">// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.                                                             </span><span class="w"></span>
-<span class="w">  </span><span class="c1">// See the License for the specific language governing permissions and                                                                  </span><span class="w"></span>
-<span class="w">  </span><span class="c1">// limitations under the License.                                                                                                       </span><span class="w"></span>
-<span class="w">                                                                                                                                          </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">android.content.Context</span><span class="w">                                                                                                          </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">android.content.res.Resources</span><span class="w">                                                                                                    </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">android.graphics.Bitmap</span><span class="w">                                                                                                          </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">android.graphics.Canvas</span><span class="w">                                                                                                          </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">android.graphics.drawable.BitmapDrawable</span><span class="w">                                                                                         </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">android.graphics.drawable.Drawable</span><span class="w">                                                                                               </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.annotation.DrawableRes</span><span class="w">                                                                                                  </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.core.content.ContextCompat</span><span class="w">                                                                                              </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.google.android.gms.maps.model.BitmapDescriptor</span><span class="w">                                                                               </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.google.android.gms.maps.model.BitmapDescriptorFactory</span><span class="w">                                                                        </span>
-<span class="w">                                                                                                                                          </span>
-<span class="w">  </span><span class="c1">// NOTE: I wanted to show an example of a set of extensions nicely-documented for KDoc generation                                       </span><span class="w"></span>
-<span class="w">  </span><span class="c1">//       using the Dokka tool. There&#39;s an example of the setup in the build scripts. Note that                                          </span><span class="w"></span>
-<span class="w">  </span><span class="c1">//       Dokka is still pretty young and doesn&#39;t generate the prettiest documentation...                                                </span><span class="w"></span>
-<span class="w">  </span><span class="c1">//       But you can use it to generate markdown and use another tool to generate something prettier...                                 </span><span class="w"></span>
-<span class="w">                                                                                                                                          </span>
-<span class="w">  </span><span class="cm">/**                                                                                                                                     </span>
-<span class="cm">   * Returns a [Bitmap] for the intrinsic size of any [Drawable]. If the drawable is a [BitmapDrawable],                                  </span>
-<span class="cm">   * we just return it. Otherwise, we create a new [Bitmap] of the intrinsic size of the [Drawable],                                      </span>
-<span class="cm">   * draw the [Drawable] to it, and return the [Bitmap].                                                                                  </span>
-<span class="cm">   *                                                                                                                                      </span>
-<span class="cm">   * @sample loadBitmap                                                                                                                   </span>
-<span class="cm">   * @receiver Any [Drawable]                                                                                                             </span>
-<span class="cm">   * @return a [Bitmap] representation of the [Drawable]                                                                                  </span>
-<span class="cm">   */</span><span class="w">                                                                                                                                     </span>
-<span class="w">  </span><span class="kd">fun</span><span class="w"> </span><span class="n">Drawable</span><span class="p">.</span><span class="nf">toBitmap</span><span class="p">()</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Bitmap</span><span class="w"> </span><span class="o">=</span><span class="w">                                                                                                      </span>
-<span class="w">      </span><span class="k">when</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                                                              </span>
-<span class="w">          </span><span class="c1">// if it&#39;s already a bitmap; just return it                                                                                     </span><span class="w"></span>
-<span class="w">          </span><span class="k">this</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">BitmapDrawable</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">bitmap</span><span class="w">                                                                                                </span>
-<span class="w">                                                                                                                                          </span>
-<span class="w">          </span><span class="c1">// otherwise, create a bitmap and draw the drawable to it                                                                       </span><span class="w"></span>
-<span class="w">          </span><span class="n">intrinsicWidth</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">intrinsicHeight</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">-&gt;</span><span class="w">                                                                                  </span>
-<span class="w">              </span><span class="k">throw</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">&quot;Drawable cannot be converted to a Bitmap; it must have non-zero intrinsic width and height&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="w">                                                                                                                                          </span>
-<span class="w">          </span><span class="k">else</span><span class="w"> </span><span class="o">-&gt;</span><span class="w">                                                                                                                         </span>
-<span class="w">              </span><span class="n">Bitmap</span><span class="p">.</span><span class="na">createBitmap</span><span class="p">(</span><span class="n">intrinsicWidth</span><span class="p">,</span><span class="w"> </span><span class="n">intrinsicHeight</span><span class="p">,</span><span class="w"> </span><span class="n">Bitmap</span><span class="p">.</span><span class="na">Config</span><span class="p">.</span><span class="na">ARGB_8888</span><span class="p">).</span><span class="na">apply</span><span class="w"> </span><span class="p">{</span><span class="w">                                       </span>
-<span class="w">                  </span><span class="kd">val</span><span class="w"> </span><span class="nv">canvas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Canvas</span><span class="p">(</span><span class="k">this</span><span class="p">)</span><span class="w">                                                                                               </span>
-<span class="w">                  </span><span class="n">setBounds</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">canvas</span><span class="p">.</span><span class="na">width</span><span class="p">,</span><span class="w"> </span><span class="n">canvas</span><span class="p">.</span><span class="na">height</span><span class="p">)</span><span class="w">                                                                            </span>
-<span class="w">                  </span><span class="n">draw</span><span class="p">(</span><span class="n">canvas</span><span class="p">)</span><span class="w">                                                                                                            </span>
-<span class="w">              </span><span class="p">}</span><span class="w">                                                                                                                           </span>
-<span class="w">      </span><span class="p">}</span><span class="w">                                                                                                                                   </span>
-<span class="w">                                                                                                                                          </span>
-<span class="w">  </span><span class="cm">/**                                                                                                                                     </span>
-<span class="cm">   * Loads a [Bitmap] by the resource id of a [Drawable].                                                                                 </span>
-<span class="cm">   *                                                                                                                                      </span>
-<span class="cm">   * @sample loadBitmapDescriptor                                                                                                         </span>
-<span class="cm">   * @receiver [Context] to load the [Drawable]                                                                                           </span>
-<span class="cm">   * @param id [Int] the resource id of the [Drawable]                                                                                    </span>
-<span class="cm">   * @return a [Bitmap] representation of the [Drawable]                                                                                  </span>
-<span class="cm">   */</span><span class="w">                                                                                                                                     </span>
-<span class="w">  </span><span class="kd">fun</span><span class="w"> </span><span class="n">Context</span><span class="p">.</span><span class="nf">loadBitmap</span><span class="p">(</span><span class="nd">@DrawableRes</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Bitmap</span><span class="w"> </span><span class="o">=</span><span class="w">                                                                                </span>
-<span class="w">      </span><span class="n">ContextCompat</span><span class="p">.</span><span class="na">getDrawable</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">)</span><span class="o">?.</span><span class="na">toBitmap</span><span class="p">()</span><span class="w">                                                                                     </span>
-<span class="w">          </span><span class="o">?:</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="n">Resources</span><span class="p">.</span><span class="na">NotFoundException</span><span class="p">(</span><span class="n">resources</span><span class="p">.</span><span class="na">getResourceName</span><span class="p">(</span><span class="n">id</span><span class="p">))</span><span class="w">                                                             </span>
-<span class="w">                                                                                                                                          </span>
-<span class="w">                                                                                                                                          </span>
-<span class="w">  </span><span class="cm">/**                                                                                                                                     </span>
-<span class="cm">   * Loads a [BitmapDescriptor] by the resource id of a [Drawable].                                                                       </span>
-<span class="cm">   *                                                                                                                                      </span>
-<span class="cm">   * @sample com.javadude.maps.samples.SampleActivity.onCreate                                                                            </span>
-<span class="cm">   * @receiver [Context] to load the [Drawable]                                                                                           </span>
-<span class="cm">   * @param id [Int] the resource id of the [Drawable]                                                                                    </span>
-<span class="cm">   * @return a [Bitmap] representation of the [Drawable]                                                                                  </span>
-<span class="cm">   */</span><span class="w">                                                                                                                                     </span>
-<span class="w">  </span><span class="nd">@Suppress</span><span class="p">(</span><span class="s">&quot;KDocUnresolvedReference&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">// they actually are resolved by dokka &#39;samples&#39; config                                            </span><span class="w"></span>
-<span class="w">  </span><span class="kd">fun</span><span class="w"> </span><span class="n">Context</span><span class="p">.</span><span class="nf">loadBitmapDescriptor</span><span class="p">(</span><span class="nd">@DrawableRes</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">BitmapDescriptor</span><span class="w"> </span><span class="o">=</span><span class="w">                                                            </span>
-<span class="w">      </span><span class="n">loadBitmap</span><span class="p">(</span><span class="n">id</span><span class="p">).</span><span class="na">toBitmapDescriptor</span><span class="p">()</span><span class="w">                                                                                                 </span>
-<span class="w">                                                                                                                                          </span>
-<span class="w">                                                                                                                                          </span>
-<span class="w">  </span><span class="cm">/**                                                                                                                                     </span>
-<span class="cm">   * Converts a [Bitmap] to a [BitmapDescriptor]                                                                                          </span>
-<span class="cm">   *                                                                                                                                      </span>
-<span class="cm">   * @sample loadBitmapDescriptor                                                                                                         </span>
-<span class="cm">   */</span><span class="w">                                                                                                                                     </span>
-<span class="w">  </span><span class="kd">fun</span><span class="w"> </span><span class="n">Bitmap</span><span class="p">.</span><span class="nf">toBitmapDescriptor</span><span class="p">():</span><span class="w"> </span><span class="n">BitmapDescriptor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BitmapDescriptorFactory</span><span class="p">.</span><span class="na">fromBitmap</span><span class="p">(</span><span class="k">this</span><span class="p">)</span><span class="w">                                            </span>
-</pre></div>
+<pre>
+<ins>package com.javadude.carfinder                                               </ins>
+                                                                             
+<ins>// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);           </ins>
+<ins>// you may not use this file except in compliance with the License.          </ins>
+<ins>// You may obtain a copy of the License at                                   </ins>
+<ins>//                                                                           </ins>
+<ins>//     https://www.apache.org/licenses/LICENSE-2.0                           </ins>
+<ins>//                                                                           </ins>
+<ins>// Unless required by applicable law or agreed to in writing, software       </ins>
+<ins>// distributed under the License is distributed on an &quot;AS IS&quot; BASIS,         </ins>
+<ins>// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  </ins>
+<ins>// See the License for the specific language governing permissions and       </ins>
+<ins>// limitations under the License.                                            </ins>
+                                                                             
+<ins>import android.content.Context                                               </ins>
+<ins>import android.content.res.Resources                                         </ins>
+<ins>import android.graphics.Bitmap                                               </ins>
+<ins>import android.graphics.Canvas                                               </ins>
+<ins>import android.graphics.drawable.BitmapDrawable                              </ins>
+<ins>import android.graphics.drawable.Drawable                                    </ins>
+<ins>import androidx.annotation.DrawableRes                                       </ins>
+<ins>import androidx.core.content.ContextCompat                                   </ins>
+<ins>import com.google.android.gms.maps.model.BitmapDescriptor                    </ins>
+<ins>import com.google.android.gms.maps.model.BitmapDescriptorFactory             </ins>
+                                                                             
+<ins>// NOTE: I wanted to show an example of a set of extensions nicely-documented</ins>
+<ins>// for KDoc generation using the Dokka tool. There&#39;s an example of the setup </ins>
+<ins>// in the build scripts. Note that Dokka is still pretty young and doesn&#39;t   </ins>
+<ins>// generate the prettiest documentation... But you can use it to generate    </ins>
+<ins>// markdown and use another tool to generate something prettier...           </ins>
+                                                                             
+<ins>/**                                                                          </ins>
+<ins> * Returns a [Bitmap] for the intrinsic size of any [Drawable]. If the       </ins>
+<ins> * drawable is a [BitmapDrawable], we just return it. Otherwise, we create a </ins>
+<ins> * new [Bitmap] of the intrinsic size of the [Drawable], draw the [Drawable] </ins>
+<ins> * to it, and return the [Bitmap].                                           </ins>
+<ins> *                                                                           </ins>
+<ins> * @sample loadBitmap                                                        </ins>
+<ins> * @receiver Any [Drawable]                                                  </ins>
+<ins> * @return a [Bitmap] representation of the [Drawable]                       </ins>
+<ins> */                                                                          </ins>
+<ins>fun Drawable.toBitmap(): Bitmap =                                            </ins>
+<ins>    when {                                                                   </ins>
+<ins>        // if it&#39;s already a bitmap; just return it                          </ins>
+<ins>        this is BitmapDrawable -&gt; bitmap                                     </ins>
+                                                                             
+<ins>        // otherwise, create a bitmap and draw the drawable to it            </ins>
+<ins>        intrinsicWidth == 0 || intrinsicHeight == 0 -&gt;                       </ins>
+<ins>            throw IllegalArgumentException(                                  </ins>
+<ins>                &quot;Drawable cannot be converted to a Bitmap; it must have &quot; +  </ins>
+<ins>                        &quot;non-zero intrinsic width and height&quot;)               </ins>
+                                                                             
+<ins>        else -&gt;                                                              </ins>
+<ins>            Bitmap.createBitmap(                                             </ins>
+<ins>                intrinsicWidth,                                              </ins>
+<ins>                intrinsicHeight,                                             </ins>
+<ins>                Bitmap.Config.ARGB_8888                                      </ins>
+<ins>            ).apply {                                                        </ins>
+<ins>                val canvas = Canvas(this)                                    </ins>
+<ins>                setBounds(0, 0, canvas.width, canvas.height)                 </ins>
+<ins>                draw(canvas)                                                 </ins>
+<ins>            }                                                                </ins>
+<ins>    }                                                                        </ins>
+                                                                             
+<ins>/**                                                                          </ins>
+<ins> * Loads a [Bitmap] by the resource id of a [Drawable].                      </ins>
+<ins> *                                                                           </ins>
+<ins> * @sample loadBitmapDescriptor                                              </ins>
+<ins> * @receiver [Context] to load the [Drawable]                                </ins>
+<ins> * @param id [Int] the resource id of the [Drawable]                         </ins>
+<ins> * @return a [Bitmap] representation of the [Drawable]                       </ins>
+<ins> */                                                                          </ins>
+<ins>fun Context.loadBitmap(@DrawableRes id: Int): Bitmap =                       </ins>
+<ins>    ContextCompat.getDrawable(this, id)?.toBitmap()                          </ins>
+<ins>        ?: throw Resources.NotFoundException(resources.getResourceName(id))  </ins>
+                                                                             
+                                                                             
+<ins>/**                                                                          </ins>
+<ins> * Loads a [BitmapDescriptor] by the resource id of a [Drawable].            </ins>
+<ins> *                                                                           </ins>
+<ins> * @sample com.javadude.maps.samples.SampleActivity.onCreate                 </ins>
+<ins> * @receiver [Context] to load the [Drawable]                                </ins>
+<ins> * @param id [Int] the resource id of the [Drawable]                         </ins>
+<ins> * @return a [Bitmap] representation of the [Drawable]                       </ins>
+<ins> */                                                                          </ins>
+<ins>@Suppress(&quot;KDocUnresolvedReference&quot;)                                         </ins>
+<ins>    // they actually are resolved by dokka &#39;samples&#39; config                  </ins>
+<ins>fun Context.loadBitmapDescriptor(@DrawableRes id: Int): BitmapDescriptor =   </ins>
+<ins>    loadBitmap(id).toBitmapDescriptor()                                      </ins>
+                                                                             
+                                                                             
+<ins>/**                                                                          </ins>
+<ins> * Converts a [Bitmap] to a [BitmapDescriptor]                               </ins>
+<ins> *                                                                           </ins>
+<ins> * @sample loadBitmapDescriptor                                              </ins>
+<ins> */                                                                          </ins>
+<ins>fun Bitmap.toBitmapDescriptor(): BitmapDescriptor =                          </ins>
+<ins>    BitmapDescriptorFactory.fromBitmap(this)                                 </ins>
+</pre>
 </div>
 </details>
 <details class="example" open>
 <summary>CHANGED: /app/src/main/java/com/javadude/carfinder/MainActivity.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/java/com/javadude/carfinder/MainActivity.kt';">
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.carfinder</span><span class="w">                                                                                                                                                                                          </span>
-<span class="w">                                                                                                                                                                                                                          </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">android.Manifest</span><span class="w">                                                                                                                                                                                                 </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">android.annotation.SuppressLint</span><span class="w">                                                                                                                                                                                  </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">android.app.AlertDialog</span><span class="w">                                                                                                                                                                                          </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">android.content.Intent</span><span class="w">                                                                                                                                                                                           </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">android.content.pm.PackageManager</span><span class="w">                                                                                                                                                                                </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">android.location.Location</span><span class="w">                                                                                                                                                                                        </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">android.net.Uri</span><span class="w">                                                                                                                                                                                                  </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">android.os.Bundle</span><span class="w">                                                                                                                                                                                                </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">android.os.Looper</span><span class="w">                                                                                                                                                                                                </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">android.provider.Settings</span><span class="w">                                                                                                                                                                                        </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">android.widget.Toast</span><span class="w">                                                                                                                                                                                             </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.activity.ComponentActivity</span><span class="w">                                                                                                                                                                              </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.activity.compose.setContent</span><span class="w">                                                                                                                                                                             </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.activity.result.contract.ActivityResultContracts</span><span class="w">                                                                                                                                                        </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.activity.viewModels</span><span class="w">                                                                                                                                                                                     </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.animation.AnimatedVisibility</span><span class="w">                                                                                                                                                                    </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.animation.EnterTransition</span><span class="w">                                                                                                                                                                       </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.animation.fadeOut</span><span class="w">                                                                                                                                                                               </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.background</span><span class="w">                                                                                                                                                                           </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.Box</span><span class="w">                                                                                                                                                                           </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.Column</span><span class="w">                                                                                                                                                                        </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.fillMaxSize</span><span class="w">                                                                                                                                                                   </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.fillMaxWidth</span><span class="w">                                                                                                                                                                  </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.wrapContentSize</span><span class="w">                                                                                                                                                               </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.material.CircularProgressIndicator</span><span class="w">                                                                                                                                                              </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.material.MaterialTheme</span><span class="w">                                                                                                                                                                          </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.material.Surface</span><span class="w">                                                                                                                                                                                </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.Composable</span><span class="w">                                                                                                                                                                              </span>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.LaunchedEffect</span><span class="w">                                                                                                                                                                          </span></ins>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.collectAsState</span><span class="w">                                                                                                                                                                          </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.getValue</span><span class="w">                                                                                                                                                                                </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.mutableStateOf</span><span class="w">                                                                                                                                                                          </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.remember</span><span class="w">                                                                                                                                                                                </span>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.rememberCoroutineScope</span><span class="w">                                                                                                                                                                  </span></ins>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.setValue</span><span class="w">                                                                                                                                                                                </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.Modifier</span><span class="w">                                                                                                                                                                                     </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.geometry.Offset</span><span class="w">                                                                                                                                                                              </span>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.platform.LocalContext</span><span class="w">                                                                                                                                                                        </span></ins>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.res.stringResource</span><span class="w">                                                                                                                                                                           </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.core.app.ActivityCompat</span><span class="w">                                                                                                                                                                                 </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.google.android.gms.common.GoogleApiAvailability</span><span class="w">                                                                                                                                                              </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.google.android.gms.location.FusedLocationProviderClient</span><span class="w">                                                                                                                                                      </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.google.android.gms.location.LocationCallback</span><span class="w">                                                                                                                                                                 </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.google.android.gms.location.LocationRequest</span><span class="w">                                                                                                                                                                  </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.google.android.gms.location.LocationResult</span><span class="w">                                                                                                                                                                   </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.google.android.gms.location.LocationServices</span><span class="w">                                                                                                                                                                 </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.google.android.gms.location.Priority</span><span class="w">                                                                                                                                                                         </span>
-<del>//<span class="w"></span><span class="k">import</span><span class="w"> </span><span class="nn">com.google.android.gms.maps.model.CameraPosition</span><span class="w">                                                                                                                                                                 </span></del>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.google.android.gms.maps.CameraUpdateFactory</span><span class="w">                                                                                                                                                                  </span></ins>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.google.android.gms.maps.model.BitmapDescriptor</span><span class="w">                                                                                                                                                               </span></ins>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.google.android.gms.maps.model.LatLng</span><span class="w">                                                                                                                                                                         </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.google.maps.android.compose.CameraPositionState</span><span class="w">                                                                                                                                                              </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.google.maps.android.compose.GoogleMap</span><span class="w">                                                                                                                                                                        </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.google.maps.android.compose.MapProperties</span><span class="w">                                                                                                                                                                    </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.google.maps.android.compose.MapType</span><span class="w">                                                                                                                                                                          </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.google.maps.android.compose.MarkerInfoWindowContent</span><span class="w">                                                                                                                                                          </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.google.maps.android.compose.MarkerState</span><span class="w">                                                                                                                                                                      </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.google.maps.android.compose.rememberCameraPositionState</span><span class="w">                                                                                                                                                      </span>
-<del>//<span class="w"></span><span class="k">import</span><span class="w"> </span><span class="nn">com.google.maps.android.compose.rememberMarkerState</span><span class="w">                                                                                                                                                              </span></del>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.carfinder.ui.theme.CarFinderTheme</span><span class="w">                                                                                                                                                                   </span>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">kotlinx.coroutines.Dispatchers</span><span class="w">                                                                                                                                                                                   </span></ins>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">kotlinx.coroutines.launch</span><span class="w">                                                                                                                                                                                        </span></ins>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">kotlinx.coroutines.withContext</span><span class="w">                                                                                                                                                                                   </span></ins>
-<span class="w">                                                                                                                                                                                                                          </span>
-<del>//<span class="w"></span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">googleHQ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LatLng</span><span class="p">(</span><span class="m">37.42423291057923</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="m">122.08811454627153</span><span class="p">)</span><span class="w">                                                                                                                                                   </span></del>
-<del>//<span class="w"></span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">defaultCameraPosition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CameraPosition</span><span class="p">.</span><span class="na">fromLatLngZoom</span><span class="p">(</span><span class="n">googleHQ</span><span class="p">,</span><span class="w"> </span><span class="m">11f</span><span class="p">)</span><span class="w">                                                                                                                                        </span></del>
-<del>//<span class="w">                                                                                                                                                                                                                        </span></del>
-<span class="w">  </span><span class="kd">class</span><span class="w"> </span><span class="nc">MainActivity</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ComponentActivity</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                                                                                                              </span>
-<span class="w">      </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">viewModel</span><span class="p">:</span><span class="w"> </span><span class="n">CarViewModel</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">viewModels</span><span class="p">()</span><span class="w">                                                                                                                                                                 </span>
-<span class="w">                                                                                                                                                                                                                          </span>
-<div id="080-location-client-and-callback"><span class="w">      </span><span class="kd">private</span><span class="w"> </span><span class="kd">lateinit</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">fusedLocationProviderClient</span><span class="p">:</span><span class="w"> </span><span class="n">FusedLocationProviderClient</span><span class="w">                                                                                                                                       </span>
-<span class="w">                                                                                                                                                                                                                          </span>
-<span class="w">      </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">locationCallback</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">object</span><span class="p">:</span><span class="w"> </span><span class="n">LocationCallback</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                                                                                         </span>
-<span class="w">          </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onLocationResult</span><span class="p">(</span><span class="n">locationResult</span><span class="p">:</span><span class="w"> </span><span class="n">LocationResult</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                                                                                 </span>
-<span class="w">              </span><span class="n">viewModel</span><span class="p">.</span><span class="na">updateLocation</span><span class="p">(</span><span class="n">locationResult</span><span class="p">.</span><span class="na">lastLocation</span><span class="p">)</span><span class="w">                                                                                                                                                       </span>
-<span class="w">          </span><span class="p">}</span><span class="w">                                                                                                                                                                                                               </span>
-<span class="w">      </span><span class="p">}</span><span class="w">                                                                                                                                                                                                                   </span>
-</div><span class="w">                                                                                                                                                                                                                          </span>
-<div id="080-permission-launcher"><span class="w">      </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">getLocationPermission</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">registerForActivityResult</span><span class="p">(</span><span class="n">ActivityResultContracts</span><span class="p">.</span><span class="na">RequestMultiplePermissions</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">isGranted</span><span class="w"> </span><span class="o">-&gt;</span><span class="w">                                                                                  </span>
-<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isGranted</span><span class="p">.</span><span class="na">values</span><span class="p">.</span><span class="na">any</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nb">it</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                                                                                                              </span>
-<span class="w">              </span><span class="n">startLocationAndMap</span><span class="p">()</span><span class="w">                                                                                                                                                                                       </span>
-<span class="w">          </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                                                                                                                                        </span>
-<span class="w">              </span><span class="n">AlertDialog</span><span class="p">.</span><span class="na">Builder</span><span class="p">(</span><span class="k">this</span><span class="p">)</span><span class="w">                                                                                                                                                                                   </span>
-<span class="w">                  </span><span class="p">.</span><span class="na">setTitle</span><span class="p">(</span><span class="s">&quot;Permissions Needed&quot;</span><span class="p">)</span><span class="w">                                                                                                                                                                         </span>
-<span class="w">                  </span><span class="p">.</span><span class="na">setMessage</span><span class="p">(</span><span class="s">&quot;We need coarse-location or fine-location permission to locate a car (fine location is highly recommended for accurate car locating). Please allow these permissions via App Info settings&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="w">                  </span><span class="p">.</span><span class="na">setCancelable</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span><span class="w">                                                                                                                                                                                   </span>
-<span class="w">                  </span><span class="p">.</span><span class="na">setNegativeButton</span><span class="p">(</span><span class="s">&quot;Quit&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">_</span><span class="p">,</span><span class="n">_</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">finish</span><span class="p">()</span><span class="w"> </span><span class="p">}</span><span class="w">                                                                                                                                                          </span>
-<span class="w">                  </span><span class="p">.</span><span class="na">setPositiveButton</span><span class="p">(</span><span class="s">&quot;App Info&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">_</span><span class="p">,</span><span class="n">_</span><span class="w"> </span><span class="o">-&gt;</span><span class="w">                                                                                                                                                                 </span>
-<span class="w">                      </span><span class="n">startActivity</span><span class="p">(</span><span class="w">                                                                                                                                                                                      </span>
-<span class="w">                          </span><span class="n">Intent</span><span class="p">(</span><span class="n">Settings</span><span class="p">.</span><span class="na">ACTION_APPLICATION_DETAILS_SETTINGS</span><span class="p">).</span><span class="na">apply</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                                                                    </span>
-<span class="w">                              </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Uri</span><span class="p">.</span><span class="na">parse</span><span class="p">(</span><span class="s">&quot;package:</span><span class="si">$</span><span class="n">packageName</span><span class="s">&quot;</span><span class="p">)</span><span class="w">                                                                                                                                                    </span>
-<span class="w">                          </span><span class="p">}</span><span class="w">                                                                                                                                                                                               </span>
-<span class="w">                      </span><span class="p">)</span><span class="w">                                                                                                                                                                                                   </span>
-<span class="w">                      </span><span class="n">finish</span><span class="p">()</span><span class="w">                                                                                                                                                                                            </span>
-<span class="w">                  </span><span class="p">}</span><span class="w">                                                                                                                                                                                                       </span>
-<span class="w">                  </span><span class="p">.</span><span class="na">show</span><span class="p">()</span><span class="w">                                                                                                                                                                                                 </span>
-<span class="w">          </span><span class="p">}</span><span class="w">                                                                                                                                                                                                               </span>
-<span class="w">      </span><span class="p">}</span><span class="w">                                                                                                                                                                                                                   </span>
-</div><span class="w">                                                                                                                                                                                                                          </span>
-<span class="w">      </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span><span class="w"> </span><span class="n">Bundle?)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                                                                                                </span>
-<span class="w">          </span><span class="k">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span><span class="w">                                                                                                                                                                              </span>
-<span class="w">                                                                                                                                                                                                                          </span>
-<div id="080-check-play-services"><span class="w">          </span><span class="n">GoogleApiAvailability</span><span class="p">.</span><span class="na">getInstance</span><span class="p">().</span><span class="na">makeGooglePlayServicesAvailable</span><span class="p">(</span><span class="k">this</span><span class="p">)</span><span class="w">                                                                                                                                       </span>
-<span class="w">              </span><span class="p">.</span><span class="na">addOnSuccessListener</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                                                                                                                     </span>
-<div id="080-have-permission"><span class="w">                  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ActivityCompat</span><span class="p">.</span><span class="na">checkSelfPermission</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">Manifest</span><span class="p">.</span><span class="na">permission</span><span class="p">.</span><span class="na">ACCESS_FINE_LOCATION</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">PackageManager</span><span class="p">.</span><span class="na">PERMISSION_GRANTED</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w">                                                                          </span>
-<span class="w">                      </span><span class="n">ActivityCompat</span><span class="p">.</span><span class="na">checkSelfPermission</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">Manifest</span><span class="p">.</span><span class="na">permission</span><span class="p">.</span><span class="na">ACCESS_COARSE_LOCATION</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">PackageManager</span><span class="p">.</span><span class="na">PERMISSION_GRANTED</span><span class="w">                                                                           </span>
-<span class="w">                  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                                                                                                                                     </span>
-<span class="w">                      </span><span class="n">getLocationPermission</span><span class="p">.</span><span class="na">launch</span><span class="p">(</span><span class="n">arrayOf</span><span class="p">(</span><span class="n">Manifest</span><span class="p">.</span><span class="na">permission</span><span class="p">.</span><span class="na">ACCESS_FINE_LOCATION</span><span class="p">,</span><span class="w"> </span><span class="n">Manifest</span><span class="p">.</span><span class="na">permission</span><span class="p">.</span><span class="na">ACCESS_COARSE_LOCATION</span><span class="p">))</span><span class="w">                                                                         </span>
-<span class="w">                  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                                                                                                                                </span>
-<span class="w">                      </span><span class="n">startLocationAndMap</span><span class="p">()</span><span class="w">                                                                                                                                                                               </span>
-<span class="w">                  </span><span class="p">}</span><span class="w">                                                                                                                                                                                                       </span>
-</div><span class="w">              </span><span class="p">}.</span><span class="na">addOnFailureListener</span><span class="p">(</span><span class="k">this</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                                                                                                              </span>
-<span class="w">                  </span><span class="n">Toast</span><span class="p">.</span><span class="na">makeText</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Google Play services required (or upgrade required)&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Toast</span><span class="p">.</span><span class="na">LENGTH_SHORT</span><span class="p">).</span><span class="na">show</span><span class="p">()</span><span class="w">                                                                                                  </span>
-<span class="w">                  </span><span class="n">finish</span><span class="p">()</span><span class="w">                                                                                                                                                                                                </span>
-<span class="w">              </span><span class="p">}</span><span class="w">                                                                                                                                                                                                           </span>
-</div><span class="w">      </span><span class="p">}</span><span class="w">                                                                                                                                                                                                                   </span>
-<span class="w">                                                                                                                                                                                                                          </span>
-<span class="w">      </span><span class="nd">@SuppressLint</span><span class="p">(</span><span class="s">&quot;MissingPermission&quot;</span><span class="p">)</span><span class="w">                                                                                                                                                                                  </span>
-<span class="w">      </span><span class="kd">fun</span><span class="w"> </span><span class="nf">startLocationAndMap</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                                                                                                                         </span>
-<div id="080-request-location-updates"><span class="w">          </span><span class="kd">val</span><span class="w"> </span><span class="nv">locationRequest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LocationRequest</span><span class="p">.</span><span class="na">Builder</span><span class="p">(</span><span class="n">Priority</span><span class="p">.</span><span class="na">PRIORITY_HIGH_ACCURACY</span><span class="p">,</span><span class="w"> </span><span class="m">5000</span><span class="p">)</span><span class="w">                                                                                                                            </span>
-<span class="w">              </span><span class="p">.</span><span class="na">setWaitForAccurateLocation</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span><span class="w">                                                                                                                                                                          </span>
-<span class="w">              </span><span class="p">.</span><span class="na">setMinUpdateIntervalMillis</span><span class="p">(</span><span class="m">0</span><span class="p">)</span><span class="w">                                                                                                                                                                              </span>
-<span class="w">              </span><span class="p">.</span><span class="na">setMaxUpdateDelayMillis</span><span class="p">(</span><span class="m">5000</span><span class="p">)</span><span class="w">                                                                                                                                                                              </span>
-<span class="w">              </span><span class="p">.</span><span class="na">build</span><span class="p">()</span><span class="w">                                                                                                                                                                                                    </span>
-<span class="w">                                                                                                                                                                                                                          </span>
-<span class="w">          </span><span class="n">fusedLocationProviderClient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LocationServices</span><span class="p">.</span><span class="na">getFusedLocationProviderClient</span><span class="p">(</span><span class="k">this</span><span class="p">)</span><span class="w">                                                                                                                             </span>
-<span class="w">          </span><span class="n">fusedLocationProviderClient</span><span class="p">.</span><span class="na">requestLocationUpdates</span><span class="p">(</span><span class="w">                                                                                                                                                             </span>
-<span class="w">              </span><span class="n">locationRequest</span><span class="p">,</span><span class="w">                                                                                                                                                                                            </span>
-<span class="w">              </span><span class="n">locationCallback</span><span class="p">,</span><span class="w">                                                                                                                                                                                           </span>
-<span class="w">              </span><span class="n">Looper</span><span class="p">.</span><span class="na">getMainLooper</span><span class="p">()</span><span class="w">                                                                                                                                                                                      </span>
-<span class="w">          </span><span class="p">)</span><span class="w">                                                                                                                                                                                                               </span>
-</div><span class="w">                                                                                                                                                                                                                          </span>
-<span class="w">          </span><span class="n">setContent</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                                                                                                                                    </span>
-<span class="w">              </span><span class="n">CarFinderTheme</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                                                                                                                            </span>
-<span class="w">                  </span><span class="c1">// A surface container using the &#39;background&#39; color from the theme                                                                                                                                      </span><span class="w"></span>
-<span class="w">                  </span><span class="n">Surface</span><span class="p">(</span><span class="w">                                                                                                                                                                                                </span>
-<span class="w">                      </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">fillMaxSize</span><span class="p">(),</span><span class="w">                                                                                                                                                                  </span>
-<span class="w">                      </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MaterialTheme</span><span class="p">.</span><span class="na">colors</span><span class="p">.</span><span class="na">background</span><span class="w">                                                                                                                                                             </span>
-<span class="w">                  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                                                                                                                                     </span>
-<div id="050-camera-position-state"><del>//<span class="w">                    </span><span class="kd">val</span><span class="w"> </span><span class="nv">cameraPositionState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rememberCameraPositionState</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                                                                             </span></del>
-<del>//<span class="w">                        </span><span class="n">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">defaultCameraPosition</span><span class="w">                                                                                                                                                                </span></del>
-<del>//<span class="w">                    </span><span class="p">}</span><span class="w">                                                                                                                                                                                                   </span></del>
-<ins><span class="w">                      </span><span class="kd">val</span><span class="w"> </span><span class="nv">cameraPositionState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rememberCameraPositionState</span><span class="p">()</span><span class="w">                                                                                                                                             </span></ins>
-</div><span class="w">                                                                                                                                                                                                                          </span>
-<div id="080-collect-location-state"><span class="w">                      </span><span class="kd">val</span><span class="w"> </span><span class="nv">currentLocation</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">viewModel</span><span class="p">.</span><span class="na">currentLocation</span><span class="p">.</span><span class="na">collectAsState</span><span class="p">(</span><span class="n">initial</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w">                                                                                                                     </span>
-</div><span class="w">                                                                                                                                                                                                                          </span>
-<div id="040-factor-map"><span class="w">                      </span><span class="n">GoogleMapDisplay</span><span class="p">(</span><span class="w">                                                                                                                                                                                   </span>
-<span class="w">                          </span><span class="n">currentLocation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">currentLocation</span><span class="p">,</span><span class="w">                                                                                                                                                              </span>
-<del>//<span class="w">                        </span><span class="n">place</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">googleHQ</span><span class="p">,</span><span class="w">                                                                                                                                                                               </span></del>
-<del>//<span class="w">                        </span><span class="n">placeDescription</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Google HQ&quot;</span><span class="p">,</span><span class="w">                                                                                                                                                                 </span></del>
-<span class="w">                          </span><span class="n">cameraPositionState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cameraPositionState</span><span class="p">,</span><span class="w">                                                                                                                                                      </span>
-<span class="w">                          </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">fillMaxSize</span><span class="p">(),</span><span class="w">                                                                                                                                                              </span>
-<span class="w">                      </span><span class="p">)</span><span class="w">                                                                                                                                                                                                   </span>
-</div><span class="w">                  </span><span class="p">}</span><span class="w">                                                                                                                                                                                                       </span>
-<span class="w">              </span><span class="p">}</span><span class="w">                                                                                                                                                                                                           </span>
-<span class="w">          </span><span class="p">}</span><span class="w">                                                                                                                                                                                                               </span>
-<span class="w">      </span><span class="p">}</span><span class="w">                                                                                                                                                                                                                   </span>
-<span class="w">  </span><span class="p">}</span><span class="w">                                                                                                                                                                                                                       </span>
-<span class="w">                                                                                                                                                                                                                          </span>
-<div id="040-new-map-composable"><span class="w">  </span><span class="nd">@Composable</span><span class="w">                                                                                                                                                                                                             </span>
-<span class="w">  </span><span class="kd">fun</span><span class="w"> </span><span class="nf">GoogleMapDisplay</span><span class="p">(</span><span class="w">                                                                                                                                                                                                   </span>
-<span class="w">      </span><span class="n">currentLocation</span><span class="p">:</span><span class="w"> </span><span class="n">Location?,</span><span class="w">                                                                                                                                                                                         </span>
-<del>//<span class="w">    </span><span class="n">place</span><span class="p">:</span><span class="w"> </span><span class="n">LatLng</span><span class="p">,</span><span class="w">                                                                                                                                                                                                      </span></del>
-<del>//<span class="w">    </span><span class="n">placeDescription</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                                                                                                                                                                                           </span></del>
-<span class="w">      </span><span class="n">cameraPositionState</span><span class="p">:</span><span class="w"> </span><span class="n">CameraPositionState</span><span class="p">,</span><span class="w">                                                                                                                                                                           </span>
-<span class="w">      </span><span class="n">modifier</span><span class="p">:</span><span class="w"> </span><span class="n">Modifier</span><span class="p">,</span><span class="w">                                                                                                                                                                                                 </span>
-<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                                                                                                                                                     </span>
-<div id="060-marker-state-holder"><span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">mapLoaded</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">remember</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">mutableStateOf</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span><span class="w"> </span><span class="p">}</span><span class="w">                                                                                                                                                                 </span>
-</div><span class="w">                                                                                                                                                                                                                          </span>
-<div id="070-current-map-type"><span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">currentMapType</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">remember</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">mutableStateOf</span><span class="p">(</span><span class="n">MapType</span><span class="p">.</span><span class="na">NORMAL</span><span class="p">)</span><span class="w"> </span><span class="p">}</span><span class="w">                                                                                                                                                   </span>
-<span class="w">                                                                                                                                                                                                                          </span>
-<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">mapProperties</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">remember</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                                                                                                                     </span>
-<span class="w">          </span><span class="n">mutableStateOf</span><span class="p">(</span><span class="n">MapProperties</span><span class="p">(</span><span class="n">mapType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MapType</span><span class="p">.</span><span class="na">NORMAL</span><span class="p">))</span><span class="w">                                                                                                                                                         </span>
-<span class="w">      </span><span class="p">}</span><span class="w">                                                                                                                                                                                                                   </span>
-</div><span class="w">                                                                                                                                                                                                                          </span>
-<del>//<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">placeState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rememberMarkerState</span><span class="p">(</span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">place</span><span class="p">.</span><span class="na">toString</span><span class="p">(),</span><span class="w"> </span><span class="n">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">place</span><span class="p">)</span><span class="w">                                                                                                                                      </span></del>
-<del>//<span class="w">                                                                                                                                                                                                                        </span></del>
-<div id="080-current-location-state"><span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">currentLocationState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">remember</span><span class="p">(</span><span class="n">currentLocation</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                                                                                              </span>
-<span class="w">          </span><span class="n">currentLocation</span><span class="o">?.</span><span class="na">let</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">MarkerState</span><span class="p">(</span><span class="n">LatLng</span><span class="p">(</span><span class="nb">it</span><span class="p">.</span><span class="na">latitude</span><span class="p">,</span><span class="w"> </span><span class="nb">it</span><span class="p">.</span><span class="na">longitude</span><span class="p">))</span><span class="w"> </span><span class="p">}</span><span class="w">                                                                                                                                         </span>
-<span class="w">      </span><span class="p">}</span><span class="w">                                                                                                                                                                                                                   </span>
-</div><span class="w">                                                                                                                                                                                                                          </span>
-<div id="090-icon-state"><ins><span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LocalContext</span><span class="p">.</span><span class="na">current</span><span class="w">                                                                                                                                                                                  </span></ins>
-<ins><span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">currentLocationIcon</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">remember</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">mutableStateOf</span><span class="o">&lt;</span><span class="n">BitmapDescriptor?&gt;</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">}</span><span class="w">                                                                                                                                     </span></ins>
-<ins><span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">scope</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rememberCoroutineScope</span><span class="p">()</span><span class="w">                                                                                                                                                                                </span></ins>
-</div><ins><span class="w">                                                                                                                                                                                                                          </span></ins>
-<div id="090-jump-to-location"><ins><span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">initialBoundsSet</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">remember</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">mutableStateOf</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span><span class="w"> </span><span class="p">}</span><span class="w">                                                                                                                                                          </span></ins>
-<ins><span class="w">                                                                                                                                                                                                                          </span></ins>
-<ins><span class="w">      </span><span class="n">LaunchedEffect</span><span class="p">(</span><span class="n">key1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">currentLocation</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                                                                                                            </span></ins>
-<ins><span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">currentLocation</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                                                                                                                  </span></ins>
-<ins><span class="w">              </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">initialBoundsSet</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                                                                                                                    </span></ins>
-<ins><span class="w">                  </span><span class="n">initialBoundsSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w">                                                                                                                                                                                 </span></ins>
-<ins><span class="w">                  </span><span class="kd">val</span><span class="w"> </span><span class="nv">current</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LatLng</span><span class="p">(</span><span class="n">currentLocation</span><span class="p">.</span><span class="na">latitude</span><span class="p">,</span><span class="w"> </span><span class="n">currentLocation</span><span class="p">.</span><span class="na">longitude</span><span class="p">)</span><span class="w">                                                                                                                               </span></ins>
-<ins><span class="w">                  </span><span class="n">cameraPositionState</span><span class="p">.</span><span class="na">animate</span><span class="p">(</span><span class="n">CameraUpdateFactory</span><span class="p">.</span><span class="na">newLatLngZoom</span><span class="p">(</span><span class="n">current</span><span class="p">,</span><span class="w"> </span><span class="m">16f</span><span class="p">),</span><span class="w"> </span><span class="m">1000</span><span class="p">)</span><span class="w">                                                                                                                      </span></ins>
-<ins><span class="w">              </span><span class="p">}</span><span class="w">                                                                                                                                                                                                           </span></ins>
-<ins><span class="w">          </span><span class="p">}</span><span class="w">                                                                                                                                                                                                               </span></ins>
-<ins><span class="w">      </span><span class="p">}</span><span class="w">                                                                                                                                                                                                                   </span></ins>
-</div><ins><span class="w">                                                                                                                                                                                                                          </span></ins>
-<div id="060-wrap-map"><span class="w">      </span><span class="n">Box</span><span class="p">(</span><span class="w">                                                                                                                                                                                                                </span>
-<div id="060-top-level-modifier"><span class="w">          </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">modifier</span><span class="p">,</span><span class="w">                                                                                                                                                                                            </span>
-</div><span class="w">      </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                                                                                                                                                 </span>
-</div><div id="070-column"><span class="w">          </span><span class="n">Column</span><span class="p">(</span><span class="w">                                                                                                                                                                                                         </span>
-<span class="w">              </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">fillMaxSize</span><span class="p">()</span><span class="w">                                                                                                                                                                           </span>
-<span class="w">          </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                                                                                                                                             </span>
-<span class="w">              </span><span class="n">MapTypeSelector</span><span class="p">(</span><span class="w">                                                                                                                                                                                            </span>
-<span class="w">                  </span><span class="n">currentValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">currentMapType</span><span class="p">,</span><span class="w">                                                                                                                                                                          </span>
-<span class="w">                  </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">fillMaxWidth</span><span class="p">(),</span><span class="w">                                                                                                                                                                     </span>
-<span class="w">              </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                                                                                                                                         </span>
-<span class="w">                  </span><span class="n">mapProperties</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mapProperties</span><span class="p">.</span><span class="na">copy</span><span class="p">(</span><span class="n">mapType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">it</span><span class="p">)</span><span class="w">                                                                                                                                                        </span>
-<span class="w">                  </span><span class="n">currentMapType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">it</span><span class="w">                                                                                                                                                                                     </span>
-<span class="w">              </span><span class="p">}</span><span class="w">                                                                                                                                                                                                           </span>
-</div><span class="w">              </span><span class="n">GoogleMap</span><span class="p">(</span><span class="w">                                                                                                                                                                                                  </span>
-<div id="050-use-camera-position-state"><span class="w">                  </span><span class="n">cameraPositionState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cameraPositionState</span><span class="p">,</span><span class="w">                                                                                                                                                              </span>
-</div><div id="060-set-mapLoaded"><span class="w">                  </span><span class="n">onMapLoaded</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                                                                                                                         </span>
-<span class="w">                      </span><span class="n">mapLoaded</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w">                                                                                                                                                                                    </span>
-<div id="090-load-icon"><ins><span class="w">                      </span><span class="n">scope</span><span class="p">.</span><span class="na">launch</span><span class="p">(</span><span class="n">Dispatchers</span><span class="p">.</span><span class="na">IO</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                                                                                                      </span></ins>
-<ins><span class="w">                          </span><span class="n">currentLocationIcon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="na">loadBitmapDescriptor</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">drawable</span><span class="p">.</span><span class="na">ic_current_location</span><span class="p">)</span><span class="w">                                                                                                              </span></ins>
-<ins><span class="w">                      </span><span class="p">}</span><span class="w">                                                                                                                                                                                                   </span></ins>
-</div><span class="w">                  </span><span class="p">},</span><span class="w">                                                                                                                                                                                                      </span>
-</div><div id="070-pass-properties"><span class="w">                  </span><span class="n">properties</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mapProperties</span><span class="p">,</span><span class="w">                                                                                                                                                                             </span>
-</div><div id="040-map-modifier"><div id="060-map-modifier-change"><div id="070-map-weight"><del>//<span class="w">                </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">fillMaxWidth</span><span class="p">().</span><span class="na">weight</span><span class="p">(</span><span class="m">1f</span><span class="p">),</span><span class="w">                                                                                                                                                          </span></del>
-<ins><span class="w">                  </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="w">                                                                                                                                                                                     </span></ins>
-<ins><span class="w">                      </span><span class="p">.</span><span class="na">fillMaxWidth</span><span class="p">()</span><span class="w">                                                                                                                                                                                     </span></ins>
-<ins><span class="w">                      </span><span class="p">.</span><span class="na">weight</span><span class="p">(</span><span class="m">1f</span><span class="p">),</span><span class="w">                                                                                                                                                                                        </span></ins>
-</div></div></div><span class="w">              </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                                                                                                                                         </span>
-<div id="080-marker"><span class="w">                  </span><span class="n">currentLocationState</span><span class="o">?.</span><span class="na">let</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                                                                                                             </span>
-<span class="w">                      </span><span class="n">MarkerInfoWindowContent</span><span class="p">(</span><span class="w">                                                                                                                                                                            </span>
-<span class="w">                          </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">it</span><span class="p">,</span><span class="w">                                                                                                                                                                                     </span>
-<div id="090-icon-offset"><ins><span class="w">                          </span><span class="n">icon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">currentLocationIcon</span><span class="p">,</span><span class="w">                                                                                                                                                                     </span></ins>
-<span class="w">                          </span><span class="n">anchor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Offset</span><span class="p">(</span><span class="m">0.5f</span><span class="p">,</span><span class="w"> </span><span class="m">0.5f</span><span class="p">),</span><span class="w">                                                                                                                                                                    </span>
-</div><span class="w">                          </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stringResource</span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">current_location</span><span class="p">),</span><span class="w">                                                                                                                                         </span>
-<span class="w">                      </span><span class="p">)</span><span class="w">                                                                                                                                                                                                   </span>
-<span class="w">                  </span><span class="p">}</span><span class="w">                                                                                                                                                                                                       </span>
-</div><span class="w">              </span><span class="p">}</span><span class="w">                                                                                                                                                                                                           </span>
-<span class="w">          </span><span class="p">}</span><span class="w">                                                                                                                                                                                                               </span>
-<div id="060-progress-spinner"><span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">mapLoaded</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                                                                                                                               </span>
-<span class="w">              </span><span class="n">AnimatedVisibility</span><span class="p">(</span><span class="w">                                                                                                                                                                                         </span>
-<span class="w">                  </span><span class="n">visible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">                                                                                                                                                                                         </span>
-<span class="w">                  </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">fillMaxSize</span><span class="p">(),</span><span class="w">                                                                                                                                                                      </span>
-<span class="w">                  </span><span class="n">enter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EnterTransition</span><span class="p">.</span><span class="na">None</span><span class="p">,</span><span class="w">                                                                                                                                                                           </span>
-<span class="w">                  </span><span class="n">exit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fadeOut</span><span class="p">()</span><span class="w">                                                                                                                                                                                        </span>
-<span class="w">              </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                                                                                                                                         </span>
-<span class="w">                  </span><span class="n">CircularProgressIndicator</span><span class="p">(</span><span class="w">                                                                                                                                                                              </span>
-<span class="w">                      </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="w">                                                                                                                                                                                 </span>
-<span class="w">                          </span><span class="p">.</span><span class="na">background</span><span class="p">(</span><span class="n">MaterialTheme</span><span class="p">.</span><span class="na">colors</span><span class="p">.</span><span class="na">background</span><span class="p">)</span><span class="w">                                                                                                                                                    </span>
-<span class="w">                          </span><span class="p">.</span><span class="na">wrapContentSize</span><span class="p">()</span><span class="w">                                                                                                                                                                              </span>
-<span class="w">                  </span><span class="p">)</span><span class="w">                                                                                                                                                                                                       </span>
-<span class="w">              </span><span class="p">}</span><span class="w">                                                                                                                                                                                                           </span>
-<span class="w">          </span><span class="p">}</span><span class="w">                                                                                                                                                                                                               </span>
-</div><span class="w">      </span><span class="p">}</span><span class="w">                                                                                                                                                                                                                   </span>
-<span class="w">  </span><span class="p">}</span><span class="w">                                                                                                                                                                                                                       </span>
-</div></pre></div>
+<pre>
+package com.javadude.carfinder                                                      
+                                                                                    
+import android.Manifest                                                             
+import android.annotation.SuppressLint                                              
+import android.app.AlertDialog                                                      
+import android.content.Intent                                                       
+import android.content.pm.PackageManager                                            
+import android.location.Location                                                    
+import android.net.Uri                                                              
+import android.os.Bundle                                                            
+import android.os.Looper                                                            
+import android.provider.Settings                                                    
+import android.widget.Toast                                                         
+import androidx.activity.ComponentActivity                                          
+import androidx.activity.compose.setContent                                         
+import androidx.activity.result.contract.ActivityResultContracts                    
+import androidx.activity.viewModels                                                 
+import androidx.compose.animation.AnimatedVisibility                                
+import androidx.compose.animation.EnterTransition                                   
+import androidx.compose.animation.fadeOut                                           
+import androidx.compose.foundation.background                                       
+import androidx.compose.foundation.layout.Box                                       
+import androidx.compose.foundation.layout.Column                                    
+import androidx.compose.foundation.layout.fillMaxSize                               
+import androidx.compose.foundation.layout.fillMaxWidth                              
+import androidx.compose.foundation.layout.wrapContentSize                           
+import androidx.compose.material.CircularProgressIndicator                          
+import androidx.compose.material.MaterialTheme                                      
+import androidx.compose.material.Surface                                            
+import androidx.compose.runtime.Composable                                          
+<ins>import androidx.compose.runtime.LaunchedEffect                                      </ins>
+import androidx.compose.runtime.collectAsState                                      
+import androidx.compose.runtime.getValue                                            
+import androidx.compose.runtime.mutableStateOf                                      
+import androidx.compose.runtime.remember                                            
+<ins>import androidx.compose.runtime.rememberCoroutineScope                              </ins>
+import androidx.compose.runtime.setValue                                            
+import androidx.compose.ui.Modifier                                                 
+import androidx.compose.ui.geometry.Offset                                          
+<ins>import androidx.compose.ui.platform.LocalContext                                    </ins>
+import androidx.compose.ui.res.stringResource                                       
+import androidx.core.app.ActivityCompat                                             
+import com.google.android.gms.common.GoogleApiAvailability                          
+import com.google.android.gms.location.FusedLocationProviderClient                  
+import com.google.android.gms.location.LocationCallback                             
+import com.google.android.gms.location.LocationRequest                              
+import com.google.android.gms.location.LocationResult                               
+import com.google.android.gms.location.LocationServices                             
+import com.google.android.gms.location.Priority                                     
+<del>//import com.google.android.gms.maps.model.CameraPosition                           </del>
+<ins>import com.google.android.gms.maps.CameraUpdateFactory                              </ins>
+<ins>import com.google.android.gms.maps.model.BitmapDescriptor                           </ins>
+import com.google.android.gms.maps.model.LatLng                                     
+import com.google.maps.android.compose.CameraPositionState                          
+import com.google.maps.android.compose.GoogleMap                                    
+import com.google.maps.android.compose.MapProperties                                
+import com.google.maps.android.compose.MapType                                      
+import com.google.maps.android.compose.MarkerInfoWindowContent                      
+import com.google.maps.android.compose.MarkerState                                  
+import com.google.maps.android.compose.rememberCameraPositionState                  
+<del>//import com.google.maps.android.compose.rememberMarkerState                        </del>
+import com.javadude.carfinder.ui.theme.CarFinderTheme                               
+<div id="050-add-initial-position"><del>//private val googleHQ = LatLng(37.42423291057923, -122.08811454627153)             </del>
+<del>//private val defaultCameraPosition = CameraPosition.fromLatLngZoom(googleHQ, 11f)  </del>
+</div><ins>import kotlinx.coroutines.Dispatchers                                               </ins>
+<ins>import kotlinx.coroutines.launch                                                    </ins>
+<ins>import kotlinx.coroutines.withContext                                               </ins>
+                                                                                    
+class MainActivity : ComponentActivity() {                                          
+    private val viewModel: CarViewModel by viewModels()                             
+                                                                                    
+<div id="080-location-client-and-callback">    private lateinit var fusedLocationProviderClient: FusedLocationProviderClient   
+                                                                                    
+    private val locationCallback = object : LocationCallback() {                    
+        override fun onLocationResult(locationResult: LocationResult) {             
+            viewModel.updateLocation(locationResult.lastLocation)                   
+        }                                                                           
+    }                                                                               
+</div>                                                                                    
+<div id="080-permission-launcher">    private val getLocationPermission =                                             
+        registerForActivityResult(                                                  
+            ActivityResultContracts.RequestMultiplePermissions()                    
+        ) { isGranted -&gt;                                                            
+            if (isGranted.values.any { it }) {                                      
+                startLocationAndMap()                                               
+            } else {                                                                
+                AlertDialog.Builder(this)                                           
+                    .setTitle(&quot;Permissions Needed&quot;)                                 
+                    .setMessage(                                                    
+                        &quot;We need coarse-location or fine-location permission &quot; +    
+                                &quot;to locate a car (fine location is highly &quot; +       
+                                &quot;recommended for accurate car locating). &quot; +        
+                                &quot;Please allow these permissions via App Info &quot; +    
+                                &quot;settings&quot;)                                         
+                    .setCancelable(false)                                           
+                    .setNegativeButton(&quot;Quit&quot;) { _, _ -&gt; finish() }                 
+                    .setPositiveButton(&quot;App Info&quot;) { _, _ -&gt;                        
+                        startActivity(                                              
+                            Intent(                                                 
+                                Settings.ACTION_APPLICATION_DETAILS_SETTINGS        
+                            ).apply {                                               
+                                data = Uri.parse(&quot;package:$packageName&quot;)            
+                            }                                                       
+                        )                                                           
+                        finish()                                                    
+                    }                                                               
+                    .show()                                                         
+            }                                                                       
+        }                                                                           
+</div>                                                                                    
+    override fun onCreate(savedInstanceState: Bundle?) {                            
+        super.onCreate(savedInstanceState)                                          
+                                                                                    
+<div id="080-check-play-services">        GoogleApiAvailability.getInstance()                                         
+            .makeGooglePlayServicesAvailable(this)                                  
+            .addOnSuccessListener {                                                 
+<div id="080-have-permission">                if (ActivityCompat.checkSelfPermission(                             
+                        this,                                                       
+                        Manifest.permission.ACCESS_FINE_LOCATION                    
+                    ) != PackageManager.PERMISSION_GRANTED &amp;&amp;                       
+                    ActivityCompat.checkSelfPermission(                             
+                        this,                                                       
+                        Manifest.permission.ACCESS_COARSE_LOCATION                  
+                    ) != PackageManager.PERMISSION_GRANTED                          
+                ) {                                                                 
+                    getLocationPermission.launch(                                   
+                        arrayOf(                                                    
+                            Manifest.permission.ACCESS_FINE_LOCATION,               
+                            Manifest.permission.ACCESS_COARSE_LOCATION              
+                        )                                                           
+                    )                                                               
+                } else {                                                            
+                    startLocationAndMap()                                           
+                }                                                                   
+</div>            }.addOnFailureListener(this) {                                          
+                Toast.makeText(                                                     
+                    this,                                                           
+                    &quot;Google Play services required (or upgrade required)&quot;,          
+                    Toast.LENGTH_SHORT                                              
+                ).show()                                                            
+                finish()                                                            
+            }                                                                       
+</div>    }                                                                               
+                                                                                    
+    @SuppressLint(&quot;MissingPermission&quot;)                                              
+    fun startLocationAndMap() {                                                     
+<div id="080-request-location-updates">        val locationRequest =                                                       
+            LocationRequest.Builder(Priority.PRIORITY_HIGH_ACCURACY, 5000)          
+                .setWaitForAccurateLocation(false)                                  
+                .setMinUpdateIntervalMillis(0)                                      
+                .setMaxUpdateDelayMillis(5000)                                      
+                .build()                                                            
+                                                                                    
+        fusedLocationProviderClient =                                               
+            LocationServices.getFusedLocationProviderClient(this)                   
+        fusedLocationProviderClient.requestLocationUpdates(                         
+            locationRequest,                                                        
+            locationCallback,                                                       
+            Looper.getMainLooper()                                                  
+        )                                                                           
+</div>                                                                                    
+        setContent {                                                                
+            CarFinderTheme {                                                        
+<del>//              // A surface container using the &#39;background&#39; color from the theme  </del>
+<ins>                // A surface container using the &#39;background&#39; color                 </ins>
+<ins>                // from the theme                                                   </ins>
+                Surface(                                                            
+                    modifier = Modifier.fillMaxSize(),                              
+                    color = MaterialTheme.colors.background                         
+                ) {                                                                 
+<div id="050-camera-position-state"><del>//                  val cameraPositionState = rememberCameraPositionState {         </del>
+<del>//                      position = defaultCameraPosition                            </del>
+<del>//                  }                                                               </del>
+<ins>                    val cameraPositionState = rememberCameraPositionState()         </ins>
+</div>                                                                                    
+<div id="080-collect-location-state">                    val currentLocation by viewModel.currentLocation.collectAsState(
+                        initial = null                                              
+                    )                                                               
+</div>                                                                                    
+<div id="040-factor-map">                    GoogleMapDisplay(                                               
+                        currentLocation = currentLocation,                          
+<del>//                      place = googleHQ,                                           </del>
+<del>//                      placeDescription = &quot;Google HQ&quot;,                             </del>
+                        cameraPositionState = cameraPositionState,                  
+                        modifier = Modifier.fillMaxSize(),                          
+                    )                                                               
+</div>                }                                                                   
+            }                                                                       
+        }                                                                           
+    }                                                                               
+}                                                                                   
+                                                                                    
+<div id="040-new-map-composable">@Composable                                                                         
+fun GoogleMapDisplay(                                                               
+    currentLocation: Location?,                                                     
+<del>//  place: LatLng,                                                                  </del>
+<del>//  placeDescription: String,                                                       </del>
+    cameraPositionState: CameraPositionState,                                       
+    modifier: Modifier,                                                             
+) {                                                                                 
+<div id="060-marker-state-holder">    var mapLoaded by remember { mutableStateOf(false) }                             
+</div>                                                                                    
+<div id="070-current-map-type">    var currentMapType by remember { mutableStateOf(MapType.NORMAL) }               
+                                                                                    
+    var mapProperties by remember {                                                 
+        mutableStateOf(MapProperties(mapType = MapType.NORMAL))                     
+    }                                                                               
+</div>                                                                                    
+<div id="080-current-location-state"><div id="040-marker-state-holder"><del>//  val placeState =                                                                </del>
+<del>//      rememberMarkerState(key = place.toString(), position = place)               </del>
+</div>    val currentLocationState = remember(currentLocation) {                          
+        currentLocation?.let { MarkerState(LatLng(it.latitude, it.longitude)) }     
+    }                                                                               
+</div>                                                                                    
+<div id="090-icon-state"><ins>    val context = LocalContext.current                                              </ins>
+<ins>    var currentLocationIcon by                                                      </ins>
+<ins>        remember { mutableStateOf&lt;BitmapDescriptor?&gt;(null) }                        </ins>
+<ins>    val scope = rememberCoroutineScope()                                            </ins>
+</div>                                                                                    
+<div id="090-jump-to-location"><ins>    var initialBoundsSet by remember { mutableStateOf(false) }                      </ins>
+                                                                                    
+<ins>    LaunchedEffect(key1 = currentLocation) {                                        </ins>
+<ins>        if (currentLocation != null) {                                              </ins>
+<ins>            if (!initialBoundsSet) {                                                </ins>
+<ins>                initialBoundsSet = true                                             </ins>
+<ins>                val current =                                                       </ins>
+<ins>                    LatLng(currentLocation.latitude, currentLocation.longitude)     </ins>
+<ins>                cameraPositionState.animate(                                        </ins>
+<ins>                    CameraUpdateFactory.newLatLngZoom(                              </ins>
+<ins>                        current,                                                    </ins>
+<ins>                        16f                                                         </ins>
+<ins>                    ), 1000                                                         </ins>
+<ins>                )                                                                   </ins>
+<ins>            }                                                                       </ins>
+<ins>        }                                                                           </ins>
+<ins>    }                                                                               </ins>
+</div>                                                                                    
+<div id="060-wrap-map">    Box(                                                                            
+<div id="060-top-level-modifier">        modifier = modifier,                                                        
+</div>    ) {                                                                             
+</div><div id="070-column">        Column(                                                                     
+            modifier = Modifier.fillMaxSize()                                       
+        ) {                                                                         
+            MapTypeSelector(                                                        
+                currentValue = currentMapType,                                      
+                modifier = Modifier.fillMaxWidth(),                                 
+            ) {                                                                     
+                mapProperties = mapProperties.copy(mapType = it)                    
+                currentMapType = it                                                 
+            }                                                                       
+</div>            GoogleMap(                                                              
+<div id="050-use-camera-position-state">                cameraPositionState = cameraPositionState,                          
+</div><div id="060-set-mapLoaded">                onMapLoaded = {                                                     
+                    mapLoaded = true                                                
+<div id="090-load-icon"><ins>                    scope.launch(Dispatchers.IO) {                                  </ins>
+<ins>                        currentLocationIcon =                                       </ins>
+<ins>                            context.loadBitmapDescriptor(                           </ins>
+<ins>                                R.drawable.ic_current_location                      </ins>
+<ins>                            )                                                       </ins>
+<ins>                    }                                                               </ins>
+</div>                },                                                                  
+</div><div id="070-pass-properties">                properties = mapProperties,                                         
+</div><div id="040-map-modifier"><div id="060-map-modifier-change"><div id="070-map-weight">                modifier = Modifier                                                 
+                    .fillMaxWidth()                                                 
+                    .weight(1f),                                                    
+</div></div></div>            ) {                                                                     
+<div id="080-marker">                currentLocationState?.let {                                         
+                    MarkerInfoWindowContent(                                        
+                        state = it,                                                 
+<div id="090-icon-offset"><ins>                        icon = currentLocationIcon,                                 </ins>
+                        anchor = Offset(0.5f, 0.5f),                                
+</div>                        title = stringResource(id = R.string.current_location),     
+                    )                                                               
+                }                                                                   
+</div>            }                                                                       
+        }                                                                           
+<div id="060-progress-spinner">        if (!mapLoaded) {                                                           
+            AnimatedVisibility(                                                     
+                visible = true,                                                     
+                modifier = Modifier.fillMaxSize(),                                  
+                enter = EnterTransition.None,                                       
+                exit = fadeOut()                                                    
+            ) {                                                                     
+                CircularProgressIndicator(                                          
+                    modifier = Modifier                                             
+                        .background(MaterialTheme.colors.background)                
+                        .wrapContentSize()                                          
+                )                                                                   
+            }                                                                       
+        }                                                                           
+</div>    }                                                                               
+}                                                                                   
+</div></pre>
 </div>
 </details>
 <details class="success" open>
 <summary>ADDED: /app/src/main/res/drawable/ic_current_location.xml</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/res/drawable/ic_current_location.xml';">
-<div class="highlight"><pre><span></span>  <span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>                                
-<div id="090-icon-resource">  <span class="nt">&lt;shape</span> <span class="na">android:shape=</span><span class="s">&quot;oval&quot;</span>                                           
-      <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span><span class="nt">&gt;</span>       
-      <span class="nt">&lt;size</span> <span class="na">android:height=</span><span class="s">&quot;24dp&quot;</span> <span class="na">android:width=</span><span class="s">&quot;24dp&quot;</span> <span class="nt">/&gt;</span>               
-      <span class="nt">&lt;stroke</span> <span class="na">android:color=</span><span class="s">&quot;@android:color/white&quot;</span> <span class="na">android:width=</span><span class="s">&quot;3dp&quot;</span><span class="nt">/&gt;</span>
-      <span class="nt">&lt;solid</span> <span class="na">android:color=</span><span class="s">&quot;@color/my_location&quot;</span> <span class="nt">/&gt;</span>                      
-  <span class="nt">&lt;/shape&gt;</span>                                                              
-</div></pre></div>
+<pre>
+<ins>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;                                </ins>
+<div id="090-icon-resource"><ins>&lt;shape android:shape=&quot;oval&quot;                                           </ins>
+<ins>    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;       </ins>
+<ins>    &lt;size android:height=&quot;24dp&quot; android:width=&quot;24dp&quot; /&gt;               </ins>
+<ins>    &lt;stroke android:color=&quot;@android:color/white&quot; android:width=&quot;3dp&quot;/&gt;</ins>
+<ins>    &lt;solid android:color=&quot;@color/my_location&quot; /&gt;                      </ins>
+<ins>&lt;/shape&gt;                                                              </ins>
+</div></pre>
 </div>
 </details>
 <details class="example" open>
 <summary>CHANGED: /app/src/main/res/values/colors.xml</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/res/values/colors.xml';">
-<div class="highlight"><pre><del>//<span></span>  <span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>        </del>
-<del>//<span class="nt">&lt;resources&gt;</span>                                   </del>
-<del>//    <span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">&quot;purple_200&quot;</span><span class="nt">&gt;</span>#FFBB86FC<span class="nt">&lt;/color&gt;</span></del>
-<del>//    <span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">&quot;purple_500&quot;</span><span class="nt">&gt;</span>#FF6200EE<span class="nt">&lt;/color&gt;</span></del>
-<del>//    <span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">&quot;purple_700&quot;</span><span class="nt">&gt;</span>#FF3700B3<span class="nt">&lt;/color&gt;</span></del>
-<del>//    <span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">&quot;teal_200&quot;</span><span class="nt">&gt;</span>#FF03DAC5<span class="nt">&lt;/color&gt;</span>  </del>
-<del>//    <span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">&quot;teal_700&quot;</span><span class="nt">&gt;</span>#FF018786<span class="nt">&lt;/color&gt;</span>  </del>
-<del>//    <span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">&quot;black&quot;</span><span class="nt">&gt;</span>#FF000000<span class="nt">&lt;/color&gt;</span>     </del>
-<del>//    <span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">&quot;white&quot;</span><span class="nt">&gt;</span>#FFFFFFFF<span class="nt">&lt;/color&gt;</span>     </del>
-<del>//<span class="nt">&lt;/resources&gt;</span>                                  </del>
-<ins><div class="highlight"><pre><span></span>  <span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>         </ins>
-<ins>  <span class="nt">&lt;resources&gt;</span>                                    </ins>
-<div id="090-custom-color"><ins>      <span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">&quot;my_location&quot;</span><span class="nt">&gt;</span>#FF0000FF<span class="nt">&lt;/color&gt;</span></ins>
-</div><ins>      <span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">&quot;purple_200&quot;</span><span class="nt">&gt;</span>#FFBB86FC<span class="nt">&lt;/color&gt;</span> </ins>
-<ins>      <span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">&quot;purple_500&quot;</span><span class="nt">&gt;</span>#FF6200EE<span class="nt">&lt;/color&gt;</span> </ins>
-<ins>      <span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">&quot;purple_700&quot;</span><span class="nt">&gt;</span>#FF3700B3<span class="nt">&lt;/color&gt;</span> </ins>
-<ins>      <span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">&quot;teal_200&quot;</span><span class="nt">&gt;</span>#FF03DAC5<span class="nt">&lt;/color&gt;</span>   </ins>
-<ins>      <span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">&quot;teal_700&quot;</span><span class="nt">&gt;</span>#FF018786<span class="nt">&lt;/color&gt;</span>   </ins>
-<ins>      <span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">&quot;black&quot;</span><span class="nt">&gt;</span>#FF000000<span class="nt">&lt;/color&gt;</span>      </ins>
-<ins>      <span class="nt">&lt;color</span> <span class="na">name=</span><span class="s">&quot;white&quot;</span><span class="nt">&gt;</span>#FFFFFFFF<span class="nt">&lt;/color&gt;</span>      </ins>
-<ins>  <span class="nt">&lt;/resources&gt;</span>                                   </ins>
-</pre></div>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;         
+&lt;resources&gt;                                    
+<div id="090-custom-color"><ins>    &lt;color name=&quot;my_location&quot;&gt;#FF0000FF&lt;/color&gt;</ins>
+</div>    &lt;color name=&quot;purple_200&quot;&gt;#FFBB86FC&lt;/color&gt; 
+    &lt;color name=&quot;purple_500&quot;&gt;#FF6200EE&lt;/color&gt; 
+    &lt;color name=&quot;purple_700&quot;&gt;#FF3700B3&lt;/color&gt; 
+    &lt;color name=&quot;teal_200&quot;&gt;#FF03DAC5&lt;/color&gt;   
+    &lt;color name=&quot;teal_700&quot;&gt;#FF018786&lt;/color&gt;   
+    &lt;color name=&quot;black&quot;&gt;#FF000000&lt;/color&gt;      
+    &lt;color name=&quot;white&quot;&gt;#FFFFFFFF&lt;/color&gt;      
+&lt;/resources&gt;                                   
+</pre>
 </div>
 </details>
   

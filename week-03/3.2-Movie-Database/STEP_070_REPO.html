@@ -55,7 +55,7 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra-7.css">
+      <link rel="stylesheet" href="../../stylesheets/extra-8.css">
     
     <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -886,22 +886,8 @@
   
   
     <li class="md-nav__item">
-      <a href="STEP_010_REPO.html" class="md-nav__link">
-        Starter Project
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="STEP_020_REPO.html" class="md-nav__link">
-        Update Versions
+        Project Setup
       </a>
     </li>
   
@@ -1305,22 +1291,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-04/4.2-Movie-Ui-1/STEP_010_REPO.html" class="md-nav__link">
-        Start with Movies Database
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../week-04/4.2-Movie-Ui-1/STEP_020_REPO.html" class="md-nav__link">
-        Update AGP Version
+        Project Setup
       </a>
     </li>
   
@@ -1563,20 +1535,6 @@
     <li class="md-nav__item">
       <a href="../../week-05/5.2-Movie-Ui-2/index.html" class="md-nav__link">
         Movie UI, part 2
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../week-05/5.2-Movie-Ui-2/STEP_010_REPO.html" class="md-nav__link">
-        Start with Movies UI, Part 1
       </a>
     </li>
   
@@ -2099,22 +2057,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-09/9.1-Google-map/STEP_010_REPO.html" class="md-nav__link">
-        Initial Project
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../week-09/9.1-Google-map/STEP_020_REPO.html" class="md-nav__link">
-        Update versions
+        Project Setup
       </a>
     </li>
   
@@ -3170,131 +3114,136 @@
 <details class="success" open>
 <summary>ADDED: /repository/src/main/java/com/javadude/movies/repository/Actor.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/repository/src/main/java/com/javadude/movies/repository/Actor.kt';">
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.repository</span><span class="w"></span>
-<span class="w">                                        </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.data.Actor</span><span class="w"> </span>
-<span class="w">                                        </span>
-<span class="w">  </span><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">ActorDto</span><span class="p">(</span><span class="w">                  </span>
-<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">id</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                   </span>
-<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">name</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                 </span>
-<span class="w">  </span><span class="p">)</span><span class="w">                                     </span>
-<span class="w">                                        </span>
-<span class="w">  </span><span class="kd">internal</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="n">Actor</span><span class="p">.</span><span class="nf">toDto</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w">          </span>
-<span class="w">      </span><span class="n">ActorDto</span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w">    </span>
-<span class="w">  </span><span class="kd">internal</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="n">ActorDto</span><span class="p">.</span><span class="nf">toEntity</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w">    </span>
-<span class="w">      </span><span class="n">Actor</span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w">       </span>
-</pre></div>
+<pre>
+<ins>package com.javadude.movies.repository</ins>
+                                      
+<ins>import com.javadude.movies.data.Actor </ins>
+                                      
+<ins>data class ActorDto(                  </ins>
+<ins>    val id: String,                   </ins>
+<ins>    val name: String,                 </ins>
+<ins>)                                     </ins>
+                                      
+<ins>internal fun Actor.toDto() =          </ins>
+<ins>    ActorDto(id = id, name = name)    </ins>
+<ins>internal fun ActorDto.toEntity() =    </ins>
+<ins>    Actor(id = id, name = name)       </ins>
+</pre>
 </div>
 </details>
 <details class="success" open>
 <summary>ADDED: /repository/src/main/java/com/javadude/movies/repository/Movie.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/repository/src/main/java/com/javadude/movies/repository/Movie.kt';">
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.repository</span><span class="w">                                              </span>
-<span class="w">                                                                                      </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.data.Movie</span><span class="w">                                               </span>
-<span class="w">                                                                                      </span>
-<span class="w">  </span><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">MovieDto</span><span class="p">(</span><span class="w">                                                                </span>
-<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">id</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                                                                 </span>
-<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">title</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                                                              </span>
-<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">description</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                                                        </span>
-<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">ratingId</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                                                           </span>
-<span class="w">  </span><span class="p">)</span><span class="w">                                                                                   </span>
-<span class="w">                                                                                      </span>
-<span class="w">  </span><span class="kd">internal</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="n">Movie</span><span class="p">.</span><span class="nf">toDto</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w">                                                        </span>
-<span class="w">      </span><span class="n">MovieDto</span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">description</span><span class="p">,</span><span class="w"> </span><span class="n">ratingId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ratingId</span><span class="p">)</span><span class="w"></span>
-<span class="w">  </span><span class="kd">internal</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="n">MovieDto</span><span class="p">.</span><span class="nf">toEntity</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w">                                                  </span>
-<span class="w">      </span><span class="n">Movie</span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">description</span><span class="p">,</span><span class="w"> </span><span class="n">ratingId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ratingId</span><span class="p">)</span><span class="w">   </span>
-</pre></div>
+<pre>
+<ins>package com.javadude.movies.repository                                              </ins>
+                                                                                    
+<ins>import com.javadude.movies.data.Movie                                               </ins>
+                                                                                    
+<ins>data class MovieDto(                                                                </ins>
+<ins>    val id: String,                                                                 </ins>
+<ins>    val title: String,                                                              </ins>
+<ins>    val description: String,                                                        </ins>
+<ins>    val ratingId: String,                                                           </ins>
+<ins>)                                                                                   </ins>
+                                                                                    
+<ins>internal fun Movie.toDto() =                                                        </ins>
+<ins>    MovieDto(id = id, title = title, description = description, ratingId = ratingId)</ins>
+<ins>internal fun MovieDto.toEntity() =                                                  </ins>
+<ins>    Movie(id = id, title = title, description = description, ratingId = ratingId)   </ins>
+</pre>
 </div>
 </details>
 <details class="success" open>
 <summary>ADDED: /repository/src/main/java/com/javadude/movies/repository/MovieDatabaseRepository.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/repository/src/main/java/com/javadude/movies/repository/MovieDatabaseRepository.kt';">
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.repository</span><span class="w">                                            </span>
-<span class="w">                                                                                    </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">android.content.Context</span><span class="w">                                                    </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.data.createDao</span><span class="w">                                         </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">kotlinx.coroutines.flow.map</span><span class="w">                                                </span>
-<span class="w">                                                                                    </span>
-<span class="w">  </span><span class="kd">class</span><span class="w"> </span><span class="nc">MovieDatabaseRepository</span><span class="p">(</span><span class="n">context</span><span class="p">:</span><span class="w"> </span><span class="n">Context</span><span class="p">):</span><span class="w"> </span><span class="n">MovieRepository</span><span class="w"> </span><span class="p">{</span><span class="w">                </span>
-<span class="w">      </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">dao</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">createDao</span><span class="p">(</span><span class="n">context</span><span class="p">)</span><span class="w">                                          </span>
-<span class="w">                                                                                    </span>
-<span class="w">      </span><span class="kd">override</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">ratingsFlow</span><span class="w"> </span><span class="o">=</span><span class="w">                                                    </span>
-<span class="w">          </span><span class="n">dao</span><span class="p">.</span><span class="na">getRatingsFlow</span><span class="p">()</span><span class="w">                                                      </span>
-<span class="w">              </span><span class="p">.</span><span class="na">map</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">ratings</span><span class="w"> </span><span class="o">-&gt;</span><span class="w">                                                     </span>
-<span class="w">                  </span><span class="n">ratings</span><span class="p">.</span><span class="na">map</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nb">it</span><span class="p">.</span><span class="na">toDto</span><span class="p">()</span><span class="w"> </span><span class="p">}</span><span class="w">                                        </span>
-<span class="w">              </span><span class="p">}</span><span class="w">                                                                     </span>
-<span class="w">      </span><span class="kd">override</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">moviesFlow</span><span class="w"> </span><span class="o">=</span><span class="w">                                                     </span>
-<span class="w">          </span><span class="n">dao</span><span class="p">.</span><span class="na">getMoviesFlow</span><span class="p">()</span><span class="w">                                                       </span>
-<span class="w">              </span><span class="p">.</span><span class="na">map</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">movies</span><span class="w"> </span><span class="o">-&gt;</span><span class="w">                                                      </span>
-<span class="w">                  </span><span class="n">movies</span><span class="p">.</span><span class="na">map</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nb">it</span><span class="p">.</span><span class="na">toDto</span><span class="p">()</span><span class="w"> </span><span class="p">}</span><span class="w">                                         </span>
-<span class="w">              </span><span class="p">}</span><span class="w">                                                                     </span>
-<span class="w">      </span><span class="kd">override</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">actorsFlow</span><span class="w"> </span><span class="o">=</span><span class="w">                                                     </span>
-<span class="w">          </span><span class="n">dao</span><span class="p">.</span><span class="na">getActorsFlow</span><span class="p">()</span><span class="w">                                                       </span>
-<span class="w">              </span><span class="p">.</span><span class="na">map</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">actors</span><span class="w"> </span><span class="o">-&gt;</span><span class="w">                                                      </span>
-<span class="w">                  </span><span class="n">actors</span><span class="p">.</span><span class="na">map</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nb">it</span><span class="p">.</span><span class="na">toDto</span><span class="p">()</span><span class="w"> </span><span class="p">}</span><span class="w">                                         </span>
-<span class="w">              </span><span class="p">}</span><span class="w">                                                                     </span>
-<span class="w">                                                                                    </span>
-<span class="w">      </span><span class="kd">override</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="n">movie</span><span class="p">:</span><span class="w"> </span><span class="n">MovieDto</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dao</span><span class="p">.</span><span class="na">insert</span><span class="p">(</span><span class="n">movie</span><span class="p">.</span><span class="na">toEntity</span><span class="p">())</span><span class="w">   </span>
-<span class="w">      </span><span class="kd">override</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="n">actor</span><span class="p">:</span><span class="w"> </span><span class="n">ActorDto</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dao</span><span class="p">.</span><span class="na">insert</span><span class="p">(</span><span class="n">actor</span><span class="p">.</span><span class="na">toEntity</span><span class="p">())</span><span class="w">   </span>
-<span class="w">      </span><span class="kd">override</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="n">rating</span><span class="p">:</span><span class="w"> </span><span class="n">RatingDto</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dao</span><span class="p">.</span><span class="na">insert</span><span class="p">(</span><span class="n">rating</span><span class="p">.</span><span class="na">toEntity</span><span class="p">())</span><span class="w"></span>
-<span class="w">                                                                                    </span>
-<span class="w">      </span><span class="kd">override</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="n">movie</span><span class="p">:</span><span class="w"> </span><span class="n">MovieDto</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dao</span><span class="p">.</span><span class="na">update</span><span class="p">(</span><span class="n">movie</span><span class="p">.</span><span class="na">toEntity</span><span class="p">())</span><span class="w">   </span>
-<span class="w">      </span><span class="kd">override</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="n">actor</span><span class="p">:</span><span class="w"> </span><span class="n">ActorDto</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dao</span><span class="p">.</span><span class="na">update</span><span class="p">(</span><span class="n">actor</span><span class="p">.</span><span class="na">toEntity</span><span class="p">())</span><span class="w">   </span>
-<span class="w">      </span><span class="kd">override</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="n">rating</span><span class="p">:</span><span class="w"> </span><span class="n">RatingDto</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dao</span><span class="p">.</span><span class="na">update</span><span class="p">(</span><span class="n">rating</span><span class="p">.</span><span class="na">toEntity</span><span class="p">())</span><span class="w"></span>
-<span class="w">                                                                                    </span>
-<span class="w">      </span><span class="kd">override</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="n">movie</span><span class="p">:</span><span class="w"> </span><span class="n">MovieDto</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dao</span><span class="p">.</span><span class="na">delete</span><span class="p">(</span><span class="n">movie</span><span class="p">.</span><span class="na">toEntity</span><span class="p">())</span><span class="w">   </span>
-<span class="w">      </span><span class="kd">override</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="n">actor</span><span class="p">:</span><span class="w"> </span><span class="n">ActorDto</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dao</span><span class="p">.</span><span class="na">delete</span><span class="p">(</span><span class="n">actor</span><span class="p">.</span><span class="na">toEntity</span><span class="p">())</span><span class="w">   </span>
-<span class="w">      </span><span class="kd">override</span><span class="w"> </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="n">rating</span><span class="p">:</span><span class="w"> </span><span class="n">RatingDto</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dao</span><span class="p">.</span><span class="na">delete</span><span class="p">(</span><span class="n">rating</span><span class="p">.</span><span class="na">toEntity</span><span class="p">())</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w">                                                                                 </span>
-</pre></div>
+<pre>
+<ins>package com.javadude.movies.repository                                            </ins>
+                                                                                  
+<ins>import android.content.Context                                                    </ins>
+<ins>import com.javadude.movies.data.createDao                                         </ins>
+<ins>import kotlinx.coroutines.flow.map                                                </ins>
+                                                                                  
+<ins>class MovieDatabaseRepository(context: Context): MovieRepository {                </ins>
+<ins>    private val dao = createDao(context)                                          </ins>
+                                                                                  
+<ins>    override val ratingsFlow =                                                    </ins>
+<ins>        dao.getRatingsFlow()                                                      </ins>
+<ins>            .map { ratings -&gt;                                                     </ins>
+<ins>                ratings.map { it.toDto() }                                        </ins>
+<ins>            }                                                                     </ins>
+<ins>    override val moviesFlow =                                                     </ins>
+<ins>        dao.getMoviesFlow()                                                       </ins>
+<ins>            .map { movies -&gt;                                                      </ins>
+<ins>                movies.map { it.toDto() }                                         </ins>
+<ins>            }                                                                     </ins>
+<ins>    override val actorsFlow =                                                     </ins>
+<ins>        dao.getActorsFlow()                                                       </ins>
+<ins>            .map { actors -&gt;                                                      </ins>
+<ins>                actors.map { it.toDto() }                                         </ins>
+<ins>            }                                                                     </ins>
+                                                                                  
+<ins>    override suspend fun insert(movie: MovieDto) = dao.insert(movie.toEntity())   </ins>
+<ins>    override suspend fun insert(actor: ActorDto) = dao.insert(actor.toEntity())   </ins>
+<ins>    override suspend fun insert(rating: RatingDto) = dao.insert(rating.toEntity())</ins>
+                                                                                  
+<ins>    override suspend fun update(movie: MovieDto) = dao.update(movie.toEntity())   </ins>
+<ins>    override suspend fun update(actor: ActorDto) = dao.update(actor.toEntity())   </ins>
+<ins>    override suspend fun update(rating: RatingDto) = dao.update(rating.toEntity())</ins>
+                                                                                  
+<ins>    override suspend fun delete(movie: MovieDto) = dao.delete(movie.toEntity())   </ins>
+<ins>    override suspend fun delete(actor: ActorDto) = dao.delete(actor.toEntity())   </ins>
+<ins>    override suspend fun delete(rating: RatingDto) = dao.delete(rating.toEntity())</ins>
+<ins>}                                                                                 </ins>
+</pre>
 </div>
 </details>
 <details class="success" open>
 <summary>ADDED: /repository/src/main/java/com/javadude/movies/repository/MovieRepository.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/repository/src/main/java/com/javadude/movies/repository/MovieRepository.kt';">
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.repository</span><span class="w">    </span>
-<span class="w">                                            </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">kotlinx.coroutines.flow.Flow</span><span class="w">       </span>
-<span class="w">                                            </span>
-<span class="w">  </span><span class="kd">interface</span><span class="w"> </span><span class="nc">MovieRepository</span><span class="w"> </span><span class="p">{</span><span class="w">               </span>
-<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">ratingsFlow</span><span class="p">:</span><span class="w"> </span><span class="n">Flow</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">RatingDto</span><span class="o">&gt;&gt;</span><span class="w"></span>
-<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">moviesFlow</span><span class="p">:</span><span class="w"> </span><span class="n">Flow</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">MovieDto</span><span class="o">&gt;&gt;</span><span class="w">  </span>
-<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">actorsFlow</span><span class="p">:</span><span class="w"> </span><span class="n">Flow</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">ActorDto</span><span class="o">&gt;&gt;</span><span class="w">  </span>
-<span class="w">                                            </span>
-<span class="w">      </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="n">movie</span><span class="p">:</span><span class="w"> </span><span class="n">MovieDto</span><span class="p">)</span><span class="w">   </span>
-<span class="w">      </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="n">actor</span><span class="p">:</span><span class="w"> </span><span class="n">ActorDto</span><span class="p">)</span><span class="w">   </span>
-<span class="w">      </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="n">rating</span><span class="p">:</span><span class="w"> </span><span class="n">RatingDto</span><span class="p">)</span><span class="w"> </span>
-<span class="w">                                            </span>
-<span class="w">      </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="n">movie</span><span class="p">:</span><span class="w"> </span><span class="n">MovieDto</span><span class="p">)</span><span class="w">   </span>
-<span class="w">      </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="n">actor</span><span class="p">:</span><span class="w"> </span><span class="n">ActorDto</span><span class="p">)</span><span class="w">   </span>
-<span class="w">      </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="n">rating</span><span class="p">:</span><span class="w"> </span><span class="n">RatingDto</span><span class="p">)</span><span class="w"> </span>
-<span class="w">                                            </span>
-<span class="w">      </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="n">movie</span><span class="p">:</span><span class="w"> </span><span class="n">MovieDto</span><span class="p">)</span><span class="w">   </span>
-<span class="w">      </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="n">actor</span><span class="p">:</span><span class="w"> </span><span class="n">ActorDto</span><span class="p">)</span><span class="w">   </span>
-<span class="w">      </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="n">rating</span><span class="p">:</span><span class="w"> </span><span class="n">RatingDto</span><span class="p">)</span><span class="w"> </span>
-<span class="w">  </span><span class="p">}</span><span class="w">                                         </span>
-</pre></div>
+<pre>
+<ins>package com.javadude.movies.repository    </ins>
+                                          
+<ins>import kotlinx.coroutines.flow.Flow       </ins>
+                                          
+<ins>interface MovieRepository {               </ins>
+<ins>    val ratingsFlow: Flow&lt;List&lt;RatingDto&gt;&gt;</ins>
+<ins>    val moviesFlow: Flow&lt;List&lt;MovieDto&gt;&gt;  </ins>
+<ins>    val actorsFlow: Flow&lt;List&lt;ActorDto&gt;&gt;  </ins>
+                                          
+<ins>    suspend fun insert(movie: MovieDto)   </ins>
+<ins>    suspend fun insert(actor: ActorDto)   </ins>
+<ins>    suspend fun insert(rating: RatingDto) </ins>
+                                          
+<ins>    suspend fun update(movie: MovieDto)   </ins>
+<ins>    suspend fun update(actor: ActorDto)   </ins>
+<ins>    suspend fun update(rating: RatingDto) </ins>
+                                          
+<ins>    suspend fun delete(movie: MovieDto)   </ins>
+<ins>    suspend fun delete(actor: ActorDto)   </ins>
+<ins>    suspend fun delete(rating: RatingDto) </ins>
+<ins>}                                         </ins>
+</pre>
 </div>
 </details>
 <details class="success" open>
 <summary>ADDED: /repository/src/main/java/com/javadude/movies/repository/Rating.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/repository/src/main/java/com/javadude/movies/repository/Rating.kt';">
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.repository</span><span class="w">                        </span>
-<span class="w">                                                                </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.data.Rating</span><span class="w">                        </span>
-<span class="w">                                                                </span>
-<span class="w">  </span><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">RatingDto</span><span class="p">(</span><span class="w">                                         </span>
-<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">id</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                                           </span>
-<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">name</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                                         </span>
-<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">description</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                                  </span>
-<span class="w">  </span><span class="p">)</span><span class="w">                                                             </span>
-<span class="w">                                                                </span>
-<span class="w">  </span><span class="kd">internal</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="n">Rating</span><span class="p">.</span><span class="nf">toDto</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w">                                 </span>
-<span class="w">      </span><span class="n">RatingDto</span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">description</span><span class="p">)</span><span class="w"></span>
-<span class="w">  </span><span class="kd">internal</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="n">RatingDto</span><span class="p">.</span><span class="nf">toEntity</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w">                           </span>
-<span class="w">      </span><span class="n">Rating</span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">description</span><span class="p">)</span><span class="w">   </span>
-</pre></div>
+<pre>
+<ins>package com.javadude.movies.repository                        </ins>
+                                                              
+<ins>import com.javadude.movies.data.Rating                        </ins>
+                                                              
+<ins>data class RatingDto(                                         </ins>
+<ins>    val id: String,                                           </ins>
+<ins>    val name: String,                                         </ins>
+<ins>    val description: String,                                  </ins>
+<ins>)                                                             </ins>
+                                                              
+<ins>internal fun Rating.toDto() =                                 </ins>
+<ins>    RatingDto(id = id, name = name, description = description)</ins>
+<ins>internal fun RatingDto.toEntity() =                           </ins>
+<ins>    Rating(id = id, name = name, description = description)   </ins>
+</pre>
 </div>
 </details>
   

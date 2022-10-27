@@ -55,7 +55,7 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra-7.css">
+      <link rel="stylesheet" href="../../stylesheets/extra-8.css">
     
     <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -881,22 +881,8 @@
   
   
     <li class="md-nav__item">
-      <a href="STEP_010_REPO.html" class="md-nav__link">
-        Starter Project
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="STEP_020_REPO.html" class="md-nav__link">
-        Update Versions
+        Project Setup
       </a>
     </li>
   
@@ -1257,22 +1243,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-04/4.2-Movie-Ui-1/STEP_010_REPO.html" class="md-nav__link">
-        Start with Movies Database
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../week-04/4.2-Movie-Ui-1/STEP_020_REPO.html" class="md-nav__link">
-        Update AGP Version
+        Project Setup
       </a>
     </li>
   
@@ -1515,20 +1487,6 @@
     <li class="md-nav__item">
       <a href="../../week-05/5.2-Movie-Ui-2/index.html" class="md-nav__link">
         Movie UI, part 2
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../week-05/5.2-Movie-Ui-2/STEP_010_REPO.html" class="md-nav__link">
-        Start with Movies UI, Part 1
       </a>
     </li>
   
@@ -2051,22 +2009,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-09/9.1-Google-map/STEP_010_REPO.html" class="md-nav__link">
-        Initial Project
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../week-09/9.1-Google-map/STEP_020_REPO.html" class="md-nav__link">
-        Update versions
+        Project Setup
       </a>
     </li>
   
@@ -3134,316 +3078,285 @@
   
 <h2>Code Changes</h2>
   
+<details class="example" open>
+<summary>CHANGED: /.idea/gradle.xml</summary>
+<div class="sas1-code-file" style="--sas1-file-name: '/.idea/gradle.xml';">
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;                             
+&lt;project version=&quot;4&quot;&gt;                                              
+  &lt;component name=&quot;GradleMigrationSettings&quot; migrationVersion=&quot;1&quot; /&gt;
+  &lt;component name=&quot;GradleSettings&quot;&gt;                                
+    &lt;option name=&quot;linkedExternalProjectsSettings&quot;&gt;                 
+      &lt;GradleProjectSettings&gt;                                      
+        &lt;option name=&quot;testRunner&quot; value=&quot;GRADLE&quot; /&gt;                
+        &lt;option name=&quot;distributionType&quot; value=&quot;DEFAULT_WRAPPED&quot; /&gt; 
+        &lt;option name=&quot;externalProjectPath&quot; value=&quot;$PROJECT_DIR$&quot; /&gt;
+        &lt;option name=&quot;modules&quot;&gt;                                    
+          &lt;set&gt;                                                    
+            &lt;option value=&quot;$PROJECT_DIR$&quot; /&gt;                       
+            &lt;option value=&quot;$PROJECT_DIR$/app&quot; /&gt;                   
+<ins>            &lt;option value=&quot;$PROJECT_DIR$/data&quot; /&gt;                  </ins>
+<ins>            &lt;option value=&quot;$PROJECT_DIR$/repository&quot; /&gt;            </ins>
+          &lt;/set&gt;                                                   
+        &lt;/option&gt;                                                  
+      &lt;/GradleProjectSettings&gt;                                     
+    &lt;/option&gt;                                                      
+  &lt;/component&gt;                                                     
+&lt;/project&gt;                                                         
+</pre>
+</div>
+</details>
 <details class="success" open>
 <summary>ADDED: /data/build.gradle</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/data/build.gradle';">
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="n">plugins</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                              </span>
-<span class="w">      </span><span class="n">id</span><span class="w"> </span><span class="s1">&#39;com.android.library&#39;</span><span class="w">                                                                           </span>
-<span class="w">      </span><span class="n">id</span><span class="w"> </span><span class="s1">&#39;org.jetbrains.kotlin.android&#39;</span><span class="w">                                                                  </span>
-<span class="w">  </span><span class="o">}</span><span class="w">                                                                                                      </span>
-<span class="w">                                                                                                         </span>
-<span class="w">  </span><span class="n">android</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                              </span>
-<span class="w">      </span><span class="n">namespace</span><span class="w"> </span><span class="s1">&#39;com.javadude.movies.data&#39;</span><span class="w">                                                               </span>
-<span class="w">      </span><span class="n">compileSdk</span><span class="w"> </span><span class="mi">32</span><span class="w">                                                                                      </span>
-<span class="w">                                                                                                         </span>
-<span class="w">      </span><span class="n">defaultConfig</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                    </span>
-<span class="w">          </span><span class="n">minSdk</span><span class="w"> </span><span class="mi">21</span><span class="w">                                                                                      </span>
-<span class="w">          </span><span class="n">targetSdk</span><span class="w"> </span><span class="mi">32</span><span class="w">                                                                                   </span>
-<span class="w">                                                                                                         </span>
-<span class="w">          </span><span class="n">testInstrumentationRunner</span><span class="w"> </span><span class="s2">&quot;androidx.test.runner.AndroidJUnitRunner&quot;</span><span class="w">                            </span>
-<span class="w">          </span><span class="n">consumerProguardFiles</span><span class="w"> </span><span class="s2">&quot;consumer-rules.pro&quot;</span><span class="w">                                                     </span>
-<span class="w">      </span><span class="o">}</span><span class="w">                                                                                                  </span>
-<span class="w">                                                                                                         </span>
-<span class="w">      </span><span class="n">buildTypes</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                       </span>
-<span class="w">          </span><span class="n">release</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                      </span>
-<span class="w">              </span><span class="n">minifyEnabled</span><span class="w"> </span><span class="kc">false</span><span class="w">                                                                        </span>
-<span class="w">              </span><span class="n">proguardFiles</span><span class="w"> </span><span class="n">getDefaultProguardFile</span><span class="o">(</span><span class="s1">&#39;proguard-android-optimize.txt&#39;</span><span class="o">),</span><span class="w"> </span><span class="s1">&#39;proguard-rules.pro&#39;</span><span class="w"></span>
-<span class="w">          </span><span class="o">}</span><span class="w">                                                                                              </span>
-<span class="w">      </span><span class="o">}</span><span class="w">                                                                                                  </span>
-<span class="w">      </span><span class="n">compileOptions</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                   </span>
-<span class="w">          </span><span class="n">sourceCompatibility</span><span class="w"> </span><span class="n">JavaVersion</span><span class="o">.</span><span class="na">VERSION_1_8</span><span class="w">                                                    </span>
-<span class="w">          </span><span class="n">targetCompatibility</span><span class="w"> </span><span class="n">JavaVersion</span><span class="o">.</span><span class="na">VERSION_1_8</span><span class="w">                                                    </span>
-<span class="w">      </span><span class="o">}</span><span class="w">                                                                                                  </span>
-<span class="w">      </span><span class="n">kotlinOptions</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                    </span>
-<span class="w">          </span><span class="n">jvmTarget</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;1.8&#39;</span><span class="w">                                                                              </span>
-<span class="w">      </span><span class="o">}</span><span class="w">                                                                                                  </span>
-<span class="w">  </span><span class="o">}</span><span class="w">                                                                                                      </span>
-<span class="w">                                                                                                         </span>
-<span class="w">  </span><span class="n">dependencies</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                         </span>
-<span class="w">                                                                                                         </span>
-<span class="w">      </span><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;androidx.core:core-ktx:1.7.0&#39;</span><span class="w">                                                      </span>
-<span class="w">      </span><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;androidx.appcompat:appcompat:1.5.0&#39;</span><span class="w">                                                </span>
-<span class="w">      </span><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;com.google.android.material:material:1.6.1&#39;</span><span class="w">                                        </span>
-<span class="w">      </span><span class="n">testImplementation</span><span class="w"> </span><span class="s1">&#39;junit:junit:4.13.2&#39;</span><span class="w">                                                            </span>
-<span class="w">      </span><span class="n">androidTestImplementation</span><span class="w"> </span><span class="s1">&#39;androidx.test.ext:junit:1.1.3&#39;</span><span class="w">                                          </span>
-<span class="w">      </span><span class="n">androidTestImplementation</span><span class="w"> </span><span class="s1">&#39;androidx.test.espresso:espresso-core:3.4.0&#39;</span><span class="w">                             </span>
-<span class="w">  </span><span class="o">}</span><span class="w">                                                                                                      </span>
-</pre></div>
-</div>
-</details>
-<details class="success" open>
-<summary>ADDED: /data/consumer-rules.pro</summary>
-<div class="sas1-code-file" style="--sas1-file-name: '/data/consumer-rules.pro';">
-<div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</details>
-<details class="success" open>
-<summary>ADDED: /data/proguard-rules.pro</summary>
-<div class="sas1-code-file" style="--sas1-file-name: '/data/proguard-rules.pro';">
-<div class="highlight"><pre><span></span>  <span class="s s-Atom">#</span> <span class="nv">Add</span> <span class="s s-Atom">project</span> <span class="s s-Atom">specific</span> <span class="nv">ProGuard</span> <span class="s s-Atom">rules</span> <span class="s s-Atom">here</span><span class="p">.</span>                             
-  <span class="s s-Atom">#</span> <span class="nv">You</span> <span class="s s-Atom">can</span> <span class="s s-Atom">control</span> <span class="s s-Atom">the</span> <span class="s s-Atom">set</span> <span class="s s-Atom">of</span> <span class="s s-Atom">applied</span> <span class="s s-Atom">configuration</span> <span class="s s-Atom">files</span> <span class="s s-Atom">using</span> <span class="s s-Atom">the</span>      
-  <span class="s s-Atom">#</span> <span class="s s-Atom">proguardFiles</span> <span class="s s-Atom">setting</span> <span class="s s-Atom">in</span> <span class="s s-Atom">build</span><span class="p">.</span><span class="s s-Atom">gradle</span><span class="p">.</span>                                
-  <span class="s s-Atom">#</span>                                                                       
-  <span class="s s-Atom">#</span> <span class="nv">For</span> <span class="s s-Atom">more</span> <span class="s s-Atom">details</span><span class="p">,</span> <span class="s s-Atom">see</span>                                                 
-  <span class="s s-Atom">#</span>   <span class="nn">http</span><span class="p">:</span><span class="o">//</span><span class="s s-Atom">developer</span><span class="p">.</span><span class="s s-Atom">android</span><span class="p">.</span><span class="s s-Atom">com</span><span class="o">/</span><span class="s s-Atom">guide</span><span class="o">/</span><span class="s s-Atom">developing</span><span class="o">/</span><span class="s s-Atom">tools</span><span class="o">/</span><span class="s s-Atom">proguard</span><span class="p">.</span><span class="s s-Atom">html</span>   
-                                                                          
-  <span class="s s-Atom">#</span> <span class="nv">If</span> <span class="s s-Atom">your</span> <span class="s s-Atom">project</span> <span class="s s-Atom">uses</span> <span class="nv">WebView</span> <span class="s s-Atom">with</span> <span class="nv">JS</span><span class="p">,</span> <span class="s s-Atom">uncomment</span> <span class="s s-Atom">the</span> <span class="s s-Atom">following</span>         
-  <span class="s s-Atom">#</span> <span class="s s-Atom">and</span> <span class="s s-Atom">specify</span> <span class="s s-Atom">the</span> <span class="s s-Atom">fully</span> <span class="s s-Atom">qualified</span> <span class="s s-Atom">class</span> <span class="s s-Atom">name</span> <span class="s s-Atom">to</span> <span class="s s-Atom">the</span> <span class="nv">JavaScript</span> <span class="s s-Atom">interface</span>
-  <span class="s s-Atom">#</span> <span class="nn">class</span><span class="p">:</span>                                                                
-  <span class="s s-Atom">#-keepclassmembers</span> <span class="s s-Atom">class</span> <span class="s s-Atom">fqcn</span><span class="p">.</span><span class="s s-Atom">of</span><span class="p">.</span><span class="s s-Atom">javascript</span><span class="p">.</span><span class="s s-Atom">interface</span><span class="p">.</span><span class="s s-Atom">for</span><span class="p">.</span><span class="s s-Atom">webview</span> <span class="p">{</span>     
-  <span class="s s-Atom">#</span>   <span class="s s-Atom">public</span> <span class="s s-Atom">*</span><span class="p">;</span>                                                           
-  <span class="s s-Atom">#</span><span class="p">}</span>                                                                      
-                                                                          
-  <span class="s s-Atom">#</span> <span class="nv">Uncomment</span> <span class="s s-Atom">this</span> <span class="s s-Atom">to</span> <span class="s s-Atom">preserve</span> <span class="s s-Atom">the</span> <span class="s s-Atom">line</span> <span class="s s-Atom">number</span> <span class="s s-Atom">information</span> <span class="s s-Atom">for</span>            
-  <span class="s s-Atom">#</span> <span class="s s-Atom">debugging</span> <span class="s s-Atom">stack</span> <span class="s s-Atom">traces</span><span class="p">.</span>                                               
-  <span class="s s-Atom">#-keepattributes</span> <span class="nv">SourceFile</span><span class="p">,</span><span class="nv">LineNumberTable</span>                             
-                                                                          
-  <span class="s s-Atom">#</span> <span class="nv">If</span> <span class="s s-Atom">you</span> <span class="s s-Atom">keep</span> <span class="s s-Atom">the</span> <span class="s s-Atom">line</span> <span class="s s-Atom">number</span> <span class="s s-Atom">information</span><span class="p">,</span> <span class="s s-Atom">uncomment</span> <span class="s s-Atom">this</span> <span class="s s-Atom">to</span>            
-  <span class="s s-Atom">#</span> <span class="s s-Atom">hide</span> <span class="s s-Atom">the</span> <span class="s s-Atom">original</span> <span class="s s-Atom">source</span> <span class="s s-Atom">file</span> <span class="s s-Atom">name</span><span class="p">.</span>                                   
-  <span class="s s-Atom">#-renamesourcefileattribute</span> <span class="nv">SourceFile</span>                                  
-</pre></div>
+<pre>
+<ins>plugins {                                                                                              </ins>
+<ins>    id &#39;com.android.library&#39;                                                                           </ins>
+<ins>    id &#39;org.jetbrains.kotlin.android&#39;                                                                  </ins>
+<ins>}                                                                                                      </ins>
+                                                                                                       
+<ins>android {                                                                                              </ins>
+<ins>    namespace &#39;com.javadude.movies.data&#39;                                                               </ins>
+<ins>    compileSdk 32                                                                                      </ins>
+                                                                                                       
+<ins>    defaultConfig {                                                                                    </ins>
+<ins>        minSdk 21                                                                                      </ins>
+<ins>        targetSdk 32                                                                                   </ins>
+                                                                                                       
+<ins>        testInstrumentationRunner &quot;androidx.test.runner.AndroidJUnitRunner&quot;                            </ins>
+<ins>        consumerProguardFiles &quot;consumer-rules.pro&quot;                                                     </ins>
+<ins>    }                                                                                                  </ins>
+                                                                                                       
+<ins>    buildTypes {                                                                                       </ins>
+<ins>        release {                                                                                      </ins>
+<ins>            minifyEnabled false                                                                        </ins>
+<ins>            proguardFiles getDefaultProguardFile(&#39;proguard-android-optimize.txt&#39;), &#39;proguard-rules.pro&#39;</ins>
+<ins>        }                                                                                              </ins>
+<ins>    }                                                                                                  </ins>
+<ins>    compileOptions {                                                                                   </ins>
+<ins>        sourceCompatibility JavaVersion.VERSION_1_8                                                    </ins>
+<ins>        targetCompatibility JavaVersion.VERSION_1_8                                                    </ins>
+<ins>    }                                                                                                  </ins>
+<ins>    kotlinOptions {                                                                                    </ins>
+<ins>        jvmTarget = &#39;1.8&#39;                                                                              </ins>
+<ins>    }                                                                                                  </ins>
+<ins>}                                                                                                      </ins>
+                                                                                                       
+<ins>dependencies {                                                                                         </ins>
+                                                                                                       
+<ins>    implementation &#39;androidx.core:core-ktx:1.7.0&#39;                                                      </ins>
+<ins>    implementation &#39;androidx.appcompat:appcompat:1.5.0&#39;                                                </ins>
+<ins>    implementation &#39;com.google.android.material:material:1.6.1&#39;                                        </ins>
+<ins>    testImplementation &#39;junit:junit:4.13.2&#39;                                                            </ins>
+<ins>    androidTestImplementation &#39;androidx.test.ext:junit:1.1.3&#39;                                          </ins>
+<ins>    androidTestImplementation &#39;androidx.test.espresso:espresso-core:3.4.0&#39;                             </ins>
+<ins>}                                                                                                      </ins>
+</pre>
 </div>
 </details>
 <details class="success" open>
 <summary>ADDED: /data/src/androidTest/java/com/javadude/movies/data/ExampleInstrumentedTest.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/data/src/androidTest/java/com/javadude/movies/data/ExampleInstrumentedTest.kt';">
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.data</span><span class="w">                                                   </span>
-<span class="w">                                                                                     </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.test.platform.app.InstrumentationRegistry</span><span class="w">                          </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.test.ext.junit.runners.AndroidJUnit4</span><span class="w">                               </span>
-<span class="w">                                                                                     </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">org.junit.Test</span><span class="w">                                                              </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">org.junit.runner.RunWith</span><span class="w">                                                    </span>
-<span class="w">                                                                                     </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">org.junit.Assert.*</span><span class="w">                                                          </span>
-<span class="w">                                                                                     </span>
-<span class="w">  </span><span class="cm">/**                                                                                </span>
-<span class="cm">   * Instrumented test, which will execute on an Android device.                     </span>
-<span class="cm">   *                                                                                 </span>
-<span class="cm">   * See [testing documentation](http://d.android.com/tools/testing).                </span>
-<span class="cm">   */</span><span class="w">                                                                                </span>
-<span class="w">  </span><span class="nd">@RunWith</span><span class="p">(</span><span class="n">AndroidJUnit4</span><span class="o">::</span><span class="n">class</span><span class="p">)</span><span class="w">                                                     </span>
-<span class="w">  </span><span class="kd">class</span><span class="w"> </span><span class="nc">ExampleInstrumentedTest</span><span class="w"> </span><span class="p">{</span><span class="w">                                                    </span>
-<span class="w">      </span><span class="nd">@Test</span><span class="w">                                                                          </span>
-<span class="w">      </span><span class="kd">fun</span><span class="w"> </span><span class="nf">useAppContext</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">                                                          </span>
-<span class="w">          </span><span class="c1">// Context of the app under test.                                          </span><span class="w"></span>
-<span class="w">          </span><span class="kd">val</span><span class="w"> </span><span class="nv">appContext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">InstrumentationRegistry</span><span class="p">.</span><span class="na">getInstrumentation</span><span class="p">().</span><span class="na">targetContext</span><span class="w"></span>
-<span class="w">          </span><span class="n">assertEquals</span><span class="p">(</span><span class="s">&quot;com.javadude.movies.data.test&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">appContext</span><span class="p">.</span><span class="na">packageName</span><span class="p">)</span><span class="w">      </span>
-<span class="w">      </span><span class="p">}</span><span class="w">                                                                              </span>
-<span class="w">  </span><span class="p">}</span><span class="w">                                                                                  </span>
-</pre></div>
+<pre>
+<ins>package com.javadude.movies.data                                                   </ins>
+                                                                                   
+<ins>import androidx.test.platform.app.InstrumentationRegistry                          </ins>
+<ins>import androidx.test.ext.junit.runners.AndroidJUnit4                               </ins>
+                                                                                   
+<ins>import org.junit.Test                                                              </ins>
+<ins>import org.junit.runner.RunWith                                                    </ins>
+                                                                                   
+<ins>import org.junit.Assert.*                                                          </ins>
+                                                                                   
+<ins>/**                                                                                </ins>
+<ins> * Instrumented test, which will execute on an Android device.                     </ins>
+<ins> *                                                                                 </ins>
+<ins> * See [testing documentation](http://d.android.com/tools/testing).                </ins>
+<ins> */                                                                                </ins>
+<ins>@RunWith(AndroidJUnit4::class)                                                     </ins>
+<ins>class ExampleInstrumentedTest {                                                    </ins>
+<ins>    @Test                                                                          </ins>
+<ins>    fun useAppContext() {                                                          </ins>
+<ins>        // Context of the app under test.                                          </ins>
+<ins>        val appContext = InstrumentationRegistry.getInstrumentation().targetContext</ins>
+<ins>        assertEquals(&quot;com.javadude.movies.data.test&quot;, appContext.packageName)      </ins>
+<ins>    }                                                                              </ins>
+<ins>}                                                                                  </ins>
+</pre>
 </div>
 </details>
 <details class="success" open>
 <summary>ADDED: /data/src/main/AndroidManifest.xml</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/data/src/main/AndroidManifest.xml';">
-<div class="highlight"><pre><span></span>  <span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>                               
-  <span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span><span class="nt">&gt;</span>
-                                                                       
-  <span class="nt">&lt;/manifest&gt;</span>                                                          
-</pre></div>
+<pre>
+<ins>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;                               </ins>
+<ins>&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;</ins>
+                                                                     
+<ins>&lt;/manifest&gt;                                                          </ins>
+</pre>
 </div>
 </details>
 <details class="success" open>
 <summary>ADDED: /data/src/test/java/com/javadude/movies/data/ExampleUnitTest.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/data/src/test/java/com/javadude/movies/data/ExampleUnitTest.kt';">
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.data</span><span class="w">                                                 </span>
-<span class="w">                                                                                   </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">org.junit.Test</span><span class="w">                                                            </span>
-<span class="w">                                                                                   </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">org.junit.Assert.*</span><span class="w">                                                        </span>
-<span class="w">                                                                                   </span>
-<span class="w">  </span><span class="cm">/**                                                                              </span>
-<span class="cm">   * Example local unit test, which will execute on the development machine (host).</span>
-<span class="cm">   *                                                                               </span>
-<span class="cm">   * See [testing documentation](http://d.android.com/tools/testing).              </span>
-<span class="cm">   */</span><span class="w">                                                                              </span>
-<span class="w">  </span><span class="kd">class</span><span class="w"> </span><span class="nc">ExampleUnitTest</span><span class="w"> </span><span class="p">{</span><span class="w">                                                          </span>
-<span class="w">      </span><span class="nd">@Test</span><span class="w">                                                                        </span>
-<span class="w">      </span><span class="kd">fun</span><span class="w"> </span><span class="nf">addition_isCorrect</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">                                                   </span>
-<span class="w">          </span><span class="n">assertEquals</span><span class="p">(</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w">                                                   </span>
-<span class="w">      </span><span class="p">}</span><span class="w">                                                                            </span>
-<span class="w">  </span><span class="p">}</span><span class="w">                                                                                </span>
-</pre></div>
+<pre>
+<ins>package com.javadude.movies.data                                                 </ins>
+                                                                                 
+<ins>import org.junit.Test                                                            </ins>
+                                                                                 
+<ins>import org.junit.Assert.*                                                        </ins>
+                                                                                 
+<ins>/**                                                                              </ins>
+<ins> * Example local unit test, which will execute on the development machine (host).</ins>
+<ins> *                                                                               </ins>
+<ins> * See [testing documentation](http://d.android.com/tools/testing).              </ins>
+<ins> */                                                                              </ins>
+<ins>class ExampleUnitTest {                                                          </ins>
+<ins>    @Test                                                                        </ins>
+<ins>    fun addition_isCorrect() {                                                   </ins>
+<ins>        assertEquals(4, 2 + 2)                                                   </ins>
+<ins>    }                                                                            </ins>
+<ins>}                                                                                </ins>
+</pre>
 </div>
 </details>
 <details class="success" open>
 <summary>ADDED: /repository/build.gradle</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/repository/build.gradle';">
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="n">plugins</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                              </span>
-<span class="w">      </span><span class="n">id</span><span class="w"> </span><span class="s1">&#39;com.android.library&#39;</span><span class="w">                                                                           </span>
-<span class="w">      </span><span class="n">id</span><span class="w"> </span><span class="s1">&#39;org.jetbrains.kotlin.android&#39;</span><span class="w">                                                                  </span>
-<span class="w">  </span><span class="o">}</span><span class="w">                                                                                                      </span>
-<span class="w">                                                                                                         </span>
-<span class="w">  </span><span class="n">android</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                              </span>
-<span class="w">      </span><span class="n">namespace</span><span class="w"> </span><span class="s1">&#39;com.javadude.movies.repository&#39;</span><span class="w">                                                         </span>
-<span class="w">      </span><span class="n">compileSdk</span><span class="w"> </span><span class="mi">32</span><span class="w">                                                                                      </span>
-<span class="w">                                                                                                         </span>
-<span class="w">      </span><span class="n">defaultConfig</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                    </span>
-<span class="w">          </span><span class="n">minSdk</span><span class="w"> </span><span class="mi">21</span><span class="w">                                                                                      </span>
-<span class="w">          </span><span class="n">targetSdk</span><span class="w"> </span><span class="mi">32</span><span class="w">                                                                                   </span>
-<span class="w">                                                                                                         </span>
-<span class="w">          </span><span class="n">testInstrumentationRunner</span><span class="w"> </span><span class="s2">&quot;androidx.test.runner.AndroidJUnitRunner&quot;</span><span class="w">                            </span>
-<span class="w">          </span><span class="n">consumerProguardFiles</span><span class="w"> </span><span class="s2">&quot;consumer-rules.pro&quot;</span><span class="w">                                                     </span>
-<span class="w">      </span><span class="o">}</span><span class="w">                                                                                                  </span>
-<span class="w">                                                                                                         </span>
-<span class="w">      </span><span class="n">buildTypes</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                       </span>
-<span class="w">          </span><span class="n">release</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                      </span>
-<span class="w">              </span><span class="n">minifyEnabled</span><span class="w"> </span><span class="kc">false</span><span class="w">                                                                        </span>
-<span class="w">              </span><span class="n">proguardFiles</span><span class="w"> </span><span class="n">getDefaultProguardFile</span><span class="o">(</span><span class="s1">&#39;proguard-android-optimize.txt&#39;</span><span class="o">),</span><span class="w"> </span><span class="s1">&#39;proguard-rules.pro&#39;</span><span class="w"></span>
-<span class="w">          </span><span class="o">}</span><span class="w">                                                                                              </span>
-<span class="w">      </span><span class="o">}</span><span class="w">                                                                                                  </span>
-<span class="w">      </span><span class="n">compileOptions</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                   </span>
-<span class="w">          </span><span class="n">sourceCompatibility</span><span class="w"> </span><span class="n">JavaVersion</span><span class="o">.</span><span class="na">VERSION_1_8</span><span class="w">                                                    </span>
-<span class="w">          </span><span class="n">targetCompatibility</span><span class="w"> </span><span class="n">JavaVersion</span><span class="o">.</span><span class="na">VERSION_1_8</span><span class="w">                                                    </span>
-<span class="w">      </span><span class="o">}</span><span class="w">                                                                                                  </span>
-<span class="w">      </span><span class="n">kotlinOptions</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                    </span>
-<span class="w">          </span><span class="n">jvmTarget</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;1.8&#39;</span><span class="w">                                                                              </span>
-<span class="w">      </span><span class="o">}</span><span class="w">                                                                                                  </span>
-<span class="w">  </span><span class="o">}</span><span class="w">                                                                                                      </span>
-<span class="w">                                                                                                         </span>
-<span class="w">  </span><span class="n">dependencies</span><span class="w"> </span><span class="o">{</span><span class="w">                                                                                         </span>
-<span class="w">                                                                                                         </span>
-<span class="w">      </span><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;androidx.core:core-ktx:1.7.0&#39;</span><span class="w">                                                      </span>
-<span class="w">      </span><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;androidx.appcompat:appcompat:1.5.0&#39;</span><span class="w">                                                </span>
-<span class="w">      </span><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;com.google.android.material:material:1.6.1&#39;</span><span class="w">                                        </span>
-<span class="w">      </span><span class="n">testImplementation</span><span class="w"> </span><span class="s1">&#39;junit:junit:4.13.2&#39;</span><span class="w">                                                            </span>
-<span class="w">      </span><span class="n">androidTestImplementation</span><span class="w"> </span><span class="s1">&#39;androidx.test.ext:junit:1.1.3&#39;</span><span class="w">                                          </span>
-<span class="w">      </span><span class="n">androidTestImplementation</span><span class="w"> </span><span class="s1">&#39;androidx.test.espresso:espresso-core:3.4.0&#39;</span><span class="w">                             </span>
-<span class="w">  </span><span class="o">}</span><span class="w">                                                                                                      </span>
-</pre></div>
-</div>
-</details>
-<details class="success" open>
-<summary>ADDED: /repository/consumer-rules.pro</summary>
-<div class="sas1-code-file" style="--sas1-file-name: '/repository/consumer-rules.pro';">
-<div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</details>
-<details class="success" open>
-<summary>ADDED: /repository/proguard-rules.pro</summary>
-<div class="sas1-code-file" style="--sas1-file-name: '/repository/proguard-rules.pro';">
-<div class="highlight"><pre><span></span>  <span class="s s-Atom">#</span> <span class="nv">Add</span> <span class="s s-Atom">project</span> <span class="s s-Atom">specific</span> <span class="nv">ProGuard</span> <span class="s s-Atom">rules</span> <span class="s s-Atom">here</span><span class="p">.</span>                             
-  <span class="s s-Atom">#</span> <span class="nv">You</span> <span class="s s-Atom">can</span> <span class="s s-Atom">control</span> <span class="s s-Atom">the</span> <span class="s s-Atom">set</span> <span class="s s-Atom">of</span> <span class="s s-Atom">applied</span> <span class="s s-Atom">configuration</span> <span class="s s-Atom">files</span> <span class="s s-Atom">using</span> <span class="s s-Atom">the</span>      
-  <span class="s s-Atom">#</span> <span class="s s-Atom">proguardFiles</span> <span class="s s-Atom">setting</span> <span class="s s-Atom">in</span> <span class="s s-Atom">build</span><span class="p">.</span><span class="s s-Atom">gradle</span><span class="p">.</span>                                
-  <span class="s s-Atom">#</span>                                                                       
-  <span class="s s-Atom">#</span> <span class="nv">For</span> <span class="s s-Atom">more</span> <span class="s s-Atom">details</span><span class="p">,</span> <span class="s s-Atom">see</span>                                                 
-  <span class="s s-Atom">#</span>   <span class="nn">http</span><span class="p">:</span><span class="o">//</span><span class="s s-Atom">developer</span><span class="p">.</span><span class="s s-Atom">android</span><span class="p">.</span><span class="s s-Atom">com</span><span class="o">/</span><span class="s s-Atom">guide</span><span class="o">/</span><span class="s s-Atom">developing</span><span class="o">/</span><span class="s s-Atom">tools</span><span class="o">/</span><span class="s s-Atom">proguard</span><span class="p">.</span><span class="s s-Atom">html</span>   
-                                                                          
-  <span class="s s-Atom">#</span> <span class="nv">If</span> <span class="s s-Atom">your</span> <span class="s s-Atom">project</span> <span class="s s-Atom">uses</span> <span class="nv">WebView</span> <span class="s s-Atom">with</span> <span class="nv">JS</span><span class="p">,</span> <span class="s s-Atom">uncomment</span> <span class="s s-Atom">the</span> <span class="s s-Atom">following</span>         
-  <span class="s s-Atom">#</span> <span class="s s-Atom">and</span> <span class="s s-Atom">specify</span> <span class="s s-Atom">the</span> <span class="s s-Atom">fully</span> <span class="s s-Atom">qualified</span> <span class="s s-Atom">class</span> <span class="s s-Atom">name</span> <span class="s s-Atom">to</span> <span class="s s-Atom">the</span> <span class="nv">JavaScript</span> <span class="s s-Atom">interface</span>
-  <span class="s s-Atom">#</span> <span class="nn">class</span><span class="p">:</span>                                                                
-  <span class="s s-Atom">#-keepclassmembers</span> <span class="s s-Atom">class</span> <span class="s s-Atom">fqcn</span><span class="p">.</span><span class="s s-Atom">of</span><span class="p">.</span><span class="s s-Atom">javascript</span><span class="p">.</span><span class="s s-Atom">interface</span><span class="p">.</span><span class="s s-Atom">for</span><span class="p">.</span><span class="s s-Atom">webview</span> <span class="p">{</span>     
-  <span class="s s-Atom">#</span>   <span class="s s-Atom">public</span> <span class="s s-Atom">*</span><span class="p">;</span>                                                           
-  <span class="s s-Atom">#</span><span class="p">}</span>                                                                      
-                                                                          
-  <span class="s s-Atom">#</span> <span class="nv">Uncomment</span> <span class="s s-Atom">this</span> <span class="s s-Atom">to</span> <span class="s s-Atom">preserve</span> <span class="s s-Atom">the</span> <span class="s s-Atom">line</span> <span class="s s-Atom">number</span> <span class="s s-Atom">information</span> <span class="s s-Atom">for</span>            
-  <span class="s s-Atom">#</span> <span class="s s-Atom">debugging</span> <span class="s s-Atom">stack</span> <span class="s s-Atom">traces</span><span class="p">.</span>                                               
-  <span class="s s-Atom">#-keepattributes</span> <span class="nv">SourceFile</span><span class="p">,</span><span class="nv">LineNumberTable</span>                             
-                                                                          
-  <span class="s s-Atom">#</span> <span class="nv">If</span> <span class="s s-Atom">you</span> <span class="s s-Atom">keep</span> <span class="s s-Atom">the</span> <span class="s s-Atom">line</span> <span class="s s-Atom">number</span> <span class="s s-Atom">information</span><span class="p">,</span> <span class="s s-Atom">uncomment</span> <span class="s s-Atom">this</span> <span class="s s-Atom">to</span>            
-  <span class="s s-Atom">#</span> <span class="s s-Atom">hide</span> <span class="s s-Atom">the</span> <span class="s s-Atom">original</span> <span class="s s-Atom">source</span> <span class="s s-Atom">file</span> <span class="s s-Atom">name</span><span class="p">.</span>                                   
-  <span class="s s-Atom">#-renamesourcefileattribute</span> <span class="nv">SourceFile</span>                                  
-</pre></div>
+<pre>
+<ins>plugins {                                                                                              </ins>
+<ins>    id &#39;com.android.library&#39;                                                                           </ins>
+<ins>    id &#39;org.jetbrains.kotlin.android&#39;                                                                  </ins>
+<ins>}                                                                                                      </ins>
+                                                                                                       
+<ins>android {                                                                                              </ins>
+<ins>    namespace &#39;com.javadude.movies.repository&#39;                                                         </ins>
+<ins>    compileSdk 32                                                                                      </ins>
+                                                                                                       
+<ins>    defaultConfig {                                                                                    </ins>
+<ins>        minSdk 21                                                                                      </ins>
+<ins>        targetSdk 32                                                                                   </ins>
+                                                                                                       
+<ins>        testInstrumentationRunner &quot;androidx.test.runner.AndroidJUnitRunner&quot;                            </ins>
+<ins>        consumerProguardFiles &quot;consumer-rules.pro&quot;                                                     </ins>
+<ins>    }                                                                                                  </ins>
+                                                                                                       
+<ins>    buildTypes {                                                                                       </ins>
+<ins>        release {                                                                                      </ins>
+<ins>            minifyEnabled false                                                                        </ins>
+<ins>            proguardFiles getDefaultProguardFile(&#39;proguard-android-optimize.txt&#39;), &#39;proguard-rules.pro&#39;</ins>
+<ins>        }                                                                                              </ins>
+<ins>    }                                                                                                  </ins>
+<ins>    compileOptions {                                                                                   </ins>
+<ins>        sourceCompatibility JavaVersion.VERSION_1_8                                                    </ins>
+<ins>        targetCompatibility JavaVersion.VERSION_1_8                                                    </ins>
+<ins>    }                                                                                                  </ins>
+<ins>    kotlinOptions {                                                                                    </ins>
+<ins>        jvmTarget = &#39;1.8&#39;                                                                              </ins>
+<ins>    }                                                                                                  </ins>
+<ins>}                                                                                                      </ins>
+                                                                                                       
+<ins>dependencies {                                                                                         </ins>
+                                                                                                       
+<ins>    implementation &#39;androidx.core:core-ktx:1.7.0&#39;                                                      </ins>
+<ins>    implementation &#39;androidx.appcompat:appcompat:1.5.0&#39;                                                </ins>
+<ins>    implementation &#39;com.google.android.material:material:1.6.1&#39;                                        </ins>
+<ins>    testImplementation &#39;junit:junit:4.13.2&#39;                                                            </ins>
+<ins>    androidTestImplementation &#39;androidx.test.ext:junit:1.1.3&#39;                                          </ins>
+<ins>    androidTestImplementation &#39;androidx.test.espresso:espresso-core:3.4.0&#39;                             </ins>
+<ins>}                                                                                                      </ins>
+</pre>
 </div>
 </details>
 <details class="success" open>
 <summary>ADDED: /repository/src/androidTest/java/com/javadude/movies/repository/ExampleInstrumentedTest.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/repository/src/androidTest/java/com/javadude/movies/repository/ExampleInstrumentedTest.kt';">
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.repository</span><span class="w">                                             </span>
-<span class="w">                                                                                     </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.test.platform.app.InstrumentationRegistry</span><span class="w">                          </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.test.ext.junit.runners.AndroidJUnit4</span><span class="w">                               </span>
-<span class="w">                                                                                     </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">org.junit.Test</span><span class="w">                                                              </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">org.junit.runner.RunWith</span><span class="w">                                                    </span>
-<span class="w">                                                                                     </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">org.junit.Assert.*</span><span class="w">                                                          </span>
-<span class="w">                                                                                     </span>
-<span class="w">  </span><span class="cm">/**                                                                                </span>
-<span class="cm">   * Instrumented test, which will execute on an Android device.                     </span>
-<span class="cm">   *                                                                                 </span>
-<span class="cm">   * See [testing documentation](http://d.android.com/tools/testing).                </span>
-<span class="cm">   */</span><span class="w">                                                                                </span>
-<span class="w">  </span><span class="nd">@RunWith</span><span class="p">(</span><span class="n">AndroidJUnit4</span><span class="o">::</span><span class="n">class</span><span class="p">)</span><span class="w">                                                     </span>
-<span class="w">  </span><span class="kd">class</span><span class="w"> </span><span class="nc">ExampleInstrumentedTest</span><span class="w"> </span><span class="p">{</span><span class="w">                                                    </span>
-<span class="w">      </span><span class="nd">@Test</span><span class="w">                                                                          </span>
-<span class="w">      </span><span class="kd">fun</span><span class="w"> </span><span class="nf">useAppContext</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">                                                          </span>
-<span class="w">          </span><span class="c1">// Context of the app under test.                                          </span><span class="w"></span>
-<span class="w">          </span><span class="kd">val</span><span class="w"> </span><span class="nv">appContext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">InstrumentationRegistry</span><span class="p">.</span><span class="na">getInstrumentation</span><span class="p">().</span><span class="na">targetContext</span><span class="w"></span>
-<span class="w">          </span><span class="n">assertEquals</span><span class="p">(</span><span class="s">&quot;com.javadude.movies.repository.test&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">appContext</span><span class="p">.</span><span class="na">packageName</span><span class="p">)</span><span class="w"></span>
-<span class="w">      </span><span class="p">}</span><span class="w">                                                                              </span>
-<span class="w">  </span><span class="p">}</span><span class="w">                                                                                  </span>
-</pre></div>
+<pre>
+<ins>package com.javadude.movies.repository                                             </ins>
+                                                                                   
+<ins>import androidx.test.platform.app.InstrumentationRegistry                          </ins>
+<ins>import androidx.test.ext.junit.runners.AndroidJUnit4                               </ins>
+                                                                                   
+<ins>import org.junit.Test                                                              </ins>
+<ins>import org.junit.runner.RunWith                                                    </ins>
+                                                                                   
+<ins>import org.junit.Assert.*                                                          </ins>
+                                                                                   
+<ins>/**                                                                                </ins>
+<ins> * Instrumented test, which will execute on an Android device.                     </ins>
+<ins> *                                                                                 </ins>
+<ins> * See [testing documentation](http://d.android.com/tools/testing).                </ins>
+<ins> */                                                                                </ins>
+<ins>@RunWith(AndroidJUnit4::class)                                                     </ins>
+<ins>class ExampleInstrumentedTest {                                                    </ins>
+<ins>    @Test                                                                          </ins>
+<ins>    fun useAppContext() {                                                          </ins>
+<ins>        // Context of the app under test.                                          </ins>
+<ins>        val appContext = InstrumentationRegistry.getInstrumentation().targetContext</ins>
+<ins>        assertEquals(&quot;com.javadude.movies.repository.test&quot;, appContext.packageName)</ins>
+<ins>    }                                                                              </ins>
+<ins>}                                                                                  </ins>
+</pre>
 </div>
 </details>
 <details class="success" open>
 <summary>ADDED: /repository/src/main/AndroidManifest.xml</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/repository/src/main/AndroidManifest.xml';">
-<div class="highlight"><pre><span></span>  <span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>                               
-  <span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span><span class="nt">&gt;</span>
-                                                                       
-  <span class="nt">&lt;/manifest&gt;</span>                                                          
-</pre></div>
+<pre>
+<ins>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;                               </ins>
+<ins>&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;</ins>
+                                                                     
+<ins>&lt;/manifest&gt;                                                          </ins>
+</pre>
 </div>
 </details>
 <details class="success" open>
 <summary>ADDED: /repository/src/test/java/com/javadude/movies/repository/ExampleUnitTest.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/repository/src/test/java/com/javadude/movies/repository/ExampleUnitTest.kt';">
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.repository</span><span class="w">                                           </span>
-<span class="w">                                                                                   </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">org.junit.Test</span><span class="w">                                                            </span>
-<span class="w">                                                                                   </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">org.junit.Assert.*</span><span class="w">                                                        </span>
-<span class="w">                                                                                   </span>
-<span class="w">  </span><span class="cm">/**                                                                              </span>
-<span class="cm">   * Example local unit test, which will execute on the development machine (host).</span>
-<span class="cm">   *                                                                               </span>
-<span class="cm">   * See [testing documentation](http://d.android.com/tools/testing).              </span>
-<span class="cm">   */</span><span class="w">                                                                              </span>
-<span class="w">  </span><span class="kd">class</span><span class="w"> </span><span class="nc">ExampleUnitTest</span><span class="w"> </span><span class="p">{</span><span class="w">                                                          </span>
-<span class="w">      </span><span class="nd">@Test</span><span class="w">                                                                        </span>
-<span class="w">      </span><span class="kd">fun</span><span class="w"> </span><span class="nf">addition_isCorrect</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">                                                   </span>
-<span class="w">          </span><span class="n">assertEquals</span><span class="p">(</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w">                                                   </span>
-<span class="w">      </span><span class="p">}</span><span class="w">                                                                            </span>
-<span class="w">  </span><span class="p">}</span><span class="w">                                                                                </span>
-</pre></div>
+<pre>
+<ins>package com.javadude.movies.repository                                           </ins>
+                                                                                 
+<ins>import org.junit.Test                                                            </ins>
+                                                                                 
+<ins>import org.junit.Assert.*                                                        </ins>
+                                                                                 
+<ins>/**                                                                              </ins>
+<ins> * Example local unit test, which will execute on the development machine (host).</ins>
+<ins> *                                                                               </ins>
+<ins> * See [testing documentation](http://d.android.com/tools/testing).              </ins>
+<ins> */                                                                              </ins>
+<ins>class ExampleUnitTest {                                                          </ins>
+<ins>    @Test                                                                        </ins>
+<ins>    fun addition_isCorrect() {                                                   </ins>
+<ins>        assertEquals(4, 2 + 2)                                                   </ins>
+<ins>    }                                                                            </ins>
+<ins>}                                                                                </ins>
+</pre>
 </div>
 </details>
 <details class="example" open>
 <summary>CHANGED: /settings.gradle</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/settings.gradle';">
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="n">pluginManagement</span><span class="w"> </span><span class="o">{</span><span class="w">                                              </span>
-<span class="w">      </span><span class="n">repositories</span><span class="w"> </span><span class="o">{</span><span class="w">                                              </span>
-<span class="w">          </span><span class="n">gradlePluginPortal</span><span class="o">()</span><span class="w">                                    </span>
-<span class="w">          </span><span class="n">google</span><span class="o">()</span><span class="w">                                                </span>
-<span class="w">          </span><span class="n">mavenCentral</span><span class="o">()</span><span class="w">                                          </span>
-<span class="w">      </span><span class="o">}</span><span class="w">                                                           </span>
-<span class="w">  </span><span class="o">}</span><span class="w">                                                               </span>
-<span class="w">  </span><span class="n">dependencyResolutionManagement</span><span class="w"> </span><span class="o">{</span><span class="w">                                </span>
-<span class="w">      </span><span class="n">repositoriesMode</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">RepositoriesMode</span><span class="o">.</span><span class="na">FAIL_ON_PROJECT_REPOS</span><span class="o">)</span><span class="w"></span>
-<span class="w">      </span><span class="n">repositories</span><span class="w"> </span><span class="o">{</span><span class="w">                                              </span>
-<span class="w">          </span><span class="n">google</span><span class="o">()</span><span class="w">                                                </span>
-<span class="w">          </span><span class="n">mavenCentral</span><span class="o">()</span><span class="w">                                          </span>
-<span class="w">      </span><span class="o">}</span><span class="w">                                                           </span>
-<span class="w">  </span><span class="o">}</span><span class="w">                                                               </span>
-<span class="w">  </span><span class="n">rootProject</span><span class="o">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Movies&quot;</span><span class="w">                                     </span>
-<span class="w">  </span><span class="n">include</span><span class="w"> </span><span class="s1">&#39;:app&#39;</span><span class="w">                                                  </span>
-<ins><span class="w">  </span><span class="n">include</span><span class="w"> </span><span class="s1">&#39;:data&#39;</span><span class="w">                                                 </span></ins>
-<ins><span class="w">  </span><span class="n">include</span><span class="w"> </span><span class="s1">&#39;:repository&#39;</span><span class="w">                                           </span></ins>
-</pre></div>
+<pre>
+pluginManagement {                                              
+    repositories {                                              
+        gradlePluginPortal()                                    
+        google()                                                
+        mavenCentral()                                          
+    }                                                           
+}                                                               
+dependencyResolutionManagement {                                
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {                                              
+        google()                                                
+        mavenCentral()                                          
+    }                                                           
+}                                                               
+rootProject.name = &quot;Movies&quot;                                     
+include &#39;:app&#39;                                                  
+<ins>include &#39;:data&#39;                                                 </ins>
+<ins>include &#39;:repository&#39;                                           </ins>
+</pre>
 </div>
 </details>
   
@@ -3469,7 +3382,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="STEP_020_REPO.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Update Versions" rel="prev">
+        <a href="STEP_020_REPO.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Project Setup" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -3478,7 +3391,7 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Update Versions
+              Project Setup
             </div>
           </div>
         </a>

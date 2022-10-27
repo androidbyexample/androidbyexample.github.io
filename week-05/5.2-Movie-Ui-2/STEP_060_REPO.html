@@ -55,7 +55,7 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra-7.css">
+      <link rel="stylesheet" href="../../stylesheets/extra-8.css">
     
     <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -877,22 +877,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-03/3.2-Movie-Database/STEP_010_REPO.html" class="md-nav__link">
-        Starter Project
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../week-03/3.2-Movie-Database/STEP_020_REPO.html" class="md-nav__link">
-        Update Versions
+        Project Setup
       </a>
     </li>
   
@@ -1245,22 +1231,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-04/4.2-Movie-Ui-1/STEP_010_REPO.html" class="md-nav__link">
-        Start with Movies Database
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../week-04/4.2-Movie-Ui-1/STEP_020_REPO.html" class="md-nav__link">
-        Update AGP Version
+        Project Setup
       </a>
     </li>
   
@@ -1507,20 +1479,6 @@
     <li class="md-nav__item">
       <a href="index.html" class="md-nav__link">
         Movie UI, part 2
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="STEP_010_REPO.html" class="md-nav__link">
-        Start with Movies UI, Part 1
       </a>
     </li>
   
@@ -2051,22 +2009,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-09/9.1-Google-map/STEP_010_REPO.html" class="md-nav__link">
-        Initial Project
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../week-09/9.1-Google-map/STEP_020_REPO.html" class="md-nav__link">
-        Update versions
+        Project Setup
       </a>
     </li>
   
@@ -3167,55 +3111,43 @@
 <details class="example" open>
 <summary>CHANGED: /data/src/main/java/com/javadude/movies/data/Role.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/data/src/main/java/com/javadude/movies/data/Role.kt';">
-<div class="highlight"><pre><del>//<span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.data</span><span class="w">         </span></del>
-<del>//<span class="w">                                         </span></del>
-<del>//<span class="w"></span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Entity</span><span class="w">              </span></del>
-<del>//<span class="w">                                         </span></del>
-<del>//<span class="w"></span><span class="nd">@Entity</span><span class="p">(</span><span class="w">                                 </span></del>
-<del>//<span class="w">    </span><span class="n">primaryKeys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s">&quot;actorId&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;movieId&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"></span></del>
-<del>//<span class="w"></span><span class="p">)</span><span class="w">                                        </span></del>
-<del>//<span class="w"></span><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Role</span><span class="p">(</span><span class="w">                         </span></del>
-<del>//<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">movieId</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                 </span></del>
-<del>//<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">actorId</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                 </span></del>
-<del>//<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">character</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">               </span></del>
-<del>//<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">orderInCredits</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">,</span><span class="w">             </span></del>
-<del>//<span class="w"></span><span class="p">)</span><span class="w">                                        </span></del>
-<ins><div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.data</span><span class="w">          </span></ins>
-<ins><span class="w">                                            </span></ins>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Entity</span><span class="w">               </span></ins>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.ForeignKey</span><span class="w">           </span></ins>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Index</span><span class="w">                </span></ins>
-<ins><span class="w">                                            </span></ins>
-<ins><span class="w">  </span><span class="nd">@Entity</span><span class="p">(</span><span class="w">                                  </span></ins>
-<ins><span class="w">      </span><span class="n">primaryKeys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s">&quot;actorId&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;movieId&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"> </span></ins>
-<ins><span class="w">      </span><span class="n">indices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="w">                           </span></ins>
-<ins><span class="w">          </span><span class="n">Index</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s">&quot;movieId&quot;</span><span class="o">]</span><span class="p">),</span><span class="w">       </span></ins>
-<ins><span class="w">          </span><span class="n">Index</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s">&quot;actorId&quot;</span><span class="o">]</span><span class="p">),</span><span class="w">       </span></ins>
-<ins><span class="w">      </span><span class="o">]</span><span class="p">,</span><span class="w">                                    </span></ins>
-<ins><span class="w">      </span><span class="n">foreignKeys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="w">                       </span></ins>
-<ins><span class="w">          </span><span class="n">ForeignKey</span><span class="p">(</span><span class="w">                       </span></ins>
-<ins><span class="w">              </span><span class="n">entity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Actor</span><span class="o">::</span><span class="n">class</span><span class="p">,</span><span class="w">        </span></ins>
-<ins><span class="w">              </span><span class="n">parentColumns</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s">&quot;id&quot;</span><span class="o">]</span><span class="p">,</span><span class="w">       </span></ins>
-<ins><span class="w">              </span><span class="n">childColumns</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s">&quot;actorId&quot;</span><span class="o">]</span><span class="p">,</span><span class="w">   </span></ins>
-<ins><span class="w">              </span><span class="n">onUpdate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ForeignKey</span><span class="p">.</span><span class="na">CASCADE</span><span class="p">,</span><span class="w"></span></ins>
-<ins><span class="w">              </span><span class="n">onDelete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ForeignKey</span><span class="p">.</span><span class="na">CASCADE</span><span class="p">,</span><span class="w"></span></ins>
-<ins><span class="w">          </span><span class="p">),</span><span class="w">                                </span></ins>
-<ins><span class="w">          </span><span class="n">ForeignKey</span><span class="p">(</span><span class="w">                       </span></ins>
-<ins><span class="w">              </span><span class="n">entity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Movie</span><span class="o">::</span><span class="n">class</span><span class="p">,</span><span class="w">        </span></ins>
-<ins><span class="w">              </span><span class="n">parentColumns</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s">&quot;id&quot;</span><span class="o">]</span><span class="p">,</span><span class="w">       </span></ins>
-<ins><span class="w">              </span><span class="n">childColumns</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s">&quot;movieId&quot;</span><span class="o">]</span><span class="p">,</span><span class="w">   </span></ins>
-<ins><span class="w">              </span><span class="n">onUpdate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ForeignKey</span><span class="p">.</span><span class="na">CASCADE</span><span class="p">,</span><span class="w"></span></ins>
-<ins><span class="w">              </span><span class="n">onDelete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ForeignKey</span><span class="p">.</span><span class="na">CASCADE</span><span class="p">,</span><span class="w"></span></ins>
-<ins><span class="w">          </span><span class="p">),</span><span class="w">                                </span></ins>
-<ins><span class="w">      </span><span class="o">]</span><span class="w">                                     </span></ins>
-<ins><span class="w">  </span><span class="p">)</span><span class="w">                                         </span></ins>
-<ins><span class="w">  </span><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Role</span><span class="p">(</span><span class="w">                          </span></ins>
-<ins><span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">movieId</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                  </span></ins>
-<ins><span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">actorId</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                  </span></ins>
-<ins><span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">character</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                </span></ins>
-<ins><span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">orderInCredits</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">,</span><span class="w">              </span></ins>
-<ins><span class="w">  </span><span class="p">)</span><span class="w">                                         </span></ins>
-</pre></div>
+<pre>
+package com.javadude.movies.data          
+                                          
+import androidx.room.Entity               
+<ins>import androidx.room.ForeignKey           </ins>
+<ins>import androidx.room.Index                </ins>
+                                          
+@Entity(                                  
+    primaryKeys = [&quot;actorId&quot;, &quot;movieId&quot;], 
+<ins>    indices = [                           </ins>
+<ins>        Index(value = [&quot;movieId&quot;]),       </ins>
+<ins>        Index(value = [&quot;actorId&quot;]),       </ins>
+<ins>    ],                                    </ins>
+<ins>    foreignKeys = [                       </ins>
+<ins>        ForeignKey(                       </ins>
+<ins>            entity = Actor::class,        </ins>
+<ins>            parentColumns = [&quot;id&quot;],       </ins>
+<ins>            childColumns = [&quot;actorId&quot;],   </ins>
+<ins>            onUpdate = ForeignKey.CASCADE,</ins>
+<ins>            onDelete = ForeignKey.CASCADE,</ins>
+<ins>        ),                                </ins>
+<ins>        ForeignKey(                       </ins>
+<ins>            entity = Movie::class,        </ins>
+<ins>            parentColumns = [&quot;id&quot;],       </ins>
+<ins>            childColumns = [&quot;movieId&quot;],   </ins>
+<ins>            onUpdate = ForeignKey.CASCADE,</ins>
+<ins>            onDelete = ForeignKey.CASCADE,</ins>
+<ins>        ),                                </ins>
+<ins>    ]                                     </ins>
+)                                         
+data class Role(                          
+    var movieId: String,                  
+    var actorId: String,                  
+    var character: String,                
+    var orderInCredits: Int,              
+)                                         
+</pre>
 </div>
 </details>
   

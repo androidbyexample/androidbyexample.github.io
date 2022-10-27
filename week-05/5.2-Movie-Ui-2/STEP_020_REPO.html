@@ -55,7 +55,7 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra-7.css">
+      <link rel="stylesheet" href="../../stylesheets/extra-8.css">
     
     <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -877,22 +877,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-03/3.2-Movie-Database/STEP_010_REPO.html" class="md-nav__link">
-        Starter Project
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../week-03/3.2-Movie-Database/STEP_020_REPO.html" class="md-nav__link">
-        Update Versions
+        Project Setup
       </a>
     </li>
   
@@ -1245,22 +1231,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-04/4.2-Movie-Ui-1/STEP_010_REPO.html" class="md-nav__link">
-        Start with Movies Database
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../week-04/4.2-Movie-Ui-1/STEP_020_REPO.html" class="md-nav__link">
-        Update AGP Version
+        Project Setup
       </a>
     </li>
   
@@ -1507,20 +1479,6 @@
     <li class="md-nav__item">
       <a href="index.html" class="md-nav__link">
         Movie UI, part 2
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="STEP_010_REPO.html" class="md-nav__link">
-        Start with Movies UI, Part 1
       </a>
     </li>
   
@@ -2051,22 +2009,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-09/9.1-Google-map/STEP_010_REPO.html" class="md-nav__link">
-        Initial Project
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../week-09/9.1-Google-map/STEP_020_REPO.html" class="md-nav__link">
-        Update versions
+        Project Setup
       </a>
     </li>
   
@@ -3102,6 +3046,8 @@
 
 <h2>Scrolling Columns and LazyList</h2>
     
+<p>We start with a copy of our Movies app at the end of the 
+"Movie UI, part 1" module.</p>
 <p>First, we'll add scrolling to all display screens, just in case they have too much to fit on one screen. We do this by adding a <code>verticalScroll</code> modifier to each <code>Column</code>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">Column</span><span class="p">(</span><span class="w"></span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="w"></span>
@@ -3156,391 +3102,365 @@
 <details class="example" open>
 <summary>CHANGED: /app/src/main/java/com/javadude/movies/screens/ActorDisplay.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/java/com/javadude/movies/screens/ActorDisplay.kt';">
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.screens</span><span class="w">                                                                 </span>
-<span class="w">                                                                                                      </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.Column</span><span class="w">                                                    </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.padding</span><span class="w">                                                   </span>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.rememberScrollState</span><span class="w">                                              </span></ins>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.verticalScroll</span><span class="w">                                                   </span></ins>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.Composable</span><span class="w">                                                          </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.LaunchedEffect</span><span class="w">                                                      </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.getValue</span><span class="w">                                                            </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.mutableStateOf</span><span class="w">                                                      </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.remember</span><span class="w">                                                            </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.setValue</span><span class="w">                                                            </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.Modifier</span><span class="w">                                                                 </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.res.stringResource</span><span class="w">                                                       </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.R</span><span class="w">                                                                        </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.Screen</span><span class="w">                                                                   </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.components.MovieScaffold</span><span class="w">                                                 </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.components.SimpleText</span><span class="w">                                                    </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.repository.ActorWithFilmographyDto</span><span class="w">                                       </span>
-<span class="w">                                                                                                      </span>
-<span class="w">  </span><span class="nd">@Composable</span><span class="w">                                                                                         </span>
-<span class="w">  </span><span class="kd">fun</span><span class="w"> </span><span class="nf">ActorDisplay</span><span class="p">(</span><span class="w">                                                                                   </span>
-<span class="w">      </span><span class="n">actorId</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                                                                                </span>
-<span class="w">      </span><span class="n">fetchActorWithFilmography</span><span class="p">:</span><span class="w"> </span><span class="n">suspend</span><span class="w"> </span><span class="p">(</span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">ActorWithFilmographyDto</span><span class="p">,</span><span class="w">                         </span>
-<span class="w">      </span><span class="n">onSelectListScreen</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="n">Screen</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">,</span><span class="w">                                                           </span>
-<span class="w">      </span><span class="n">onResetDatabase</span><span class="p">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">,</span><span class="w">                                                                    </span>
-<span class="w">      </span><span class="n">onMovieClick</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">,</span><span class="w">                                                                 </span>
-<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                                 </span>
-<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">actorWithFilmographyDto</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">remember</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">mutableStateOf</span><span class="o">&lt;</span><span class="n">ActorWithFilmographyDto?&gt;</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">}</span><span class="w">      </span>
-<span class="w">                                                                                                      </span>
-<span class="w">      </span><span class="n">LaunchedEffect</span><span class="p">(</span><span class="n">key1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actorId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                </span>
-<span class="w">          </span><span class="c1">// starts a coroutine to fetch the rating                                                   </span><span class="w"></span>
-<span class="w">          </span><span class="n">actorWithFilmographyDto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fetchActorWithFilmography</span><span class="p">(</span><span class="n">actorId</span><span class="p">)</span><span class="w">                                </span>
-<span class="w">      </span><span class="p">}</span><span class="w">                                                                                               </span>
-<span class="w">                                                                                                      </span>
-<span class="w">      </span><span class="n">MovieScaffold</span><span class="p">(</span><span class="w">                                                                                  </span>
-<span class="w">          </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actorWithFilmographyDto</span><span class="o">?.</span><span class="na">actor</span><span class="o">?.</span><span class="na">name</span><span class="w"> </span><span class="o">?:</span><span class="w"> </span><span class="n">stringResource</span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">loading</span><span class="p">),</span><span class="w">      </span>
-<span class="w">          </span><span class="n">onSelectListScreen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">onSelectListScreen</span><span class="p">,</span><span class="w">                                                    </span>
-<span class="w">          </span><span class="n">onResetDatabase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">onResetDatabase</span><span class="p">,</span><span class="w">                                                          </span>
-<span class="w">      </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">paddingValues</span><span class="w"> </span><span class="o">-&gt;</span><span class="w">                                                                            </span>
-<del>//<span class="w">        </span><span class="n">Column</span><span class="p">(</span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">padding</span><span class="p">(</span><span class="n">paddingValues</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">                                        </span></del>
-<ins><span class="w">          </span><span class="n">Column</span><span class="p">(</span><span class="w">                                                                                     </span></ins>
-<ins><span class="w">              </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="w">                                                                     </span></ins>
-<ins><span class="w">                  </span><span class="p">.</span><span class="na">padding</span><span class="p">(</span><span class="n">paddingValues</span><span class="p">)</span><span class="w">                                                             </span></ins>
-<ins><span class="w">                  </span><span class="p">.</span><span class="na">verticalScroll</span><span class="p">(</span><span class="n">rememberScrollState</span><span class="p">())</span><span class="w">                                              </span></ins>
-<ins><span class="w">          </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                         </span></ins>
-<span class="w">              </span><span class="n">actorWithFilmographyDto</span><span class="o">?.</span><span class="na">let</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">actorWithFilmography</span><span class="w"> </span><span class="o">-&gt;</span><span class="w">                                  </span>
-<span class="w">                  </span><span class="n">actorWithFilmography</span><span class="p">.</span><span class="na">filmography</span><span class="p">.</span><span class="na">forEach</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">roleWithMovie</span><span class="w"> </span><span class="o">-&gt;</span><span class="w">                         </span>
-<span class="w">                      </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;</span><span class="si">${</span><span class="n">roleWithMovie</span><span class="p">.</span><span class="na">movie</span><span class="p">.</span><span class="na">title</span><span class="si">}</span><span class="s"> (</span><span class="si">${</span><span class="n">roleWithMovie</span><span class="p">.</span><span class="na">character</span><span class="si">}</span><span class="s">)&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                          </span><span class="n">onMovieClick</span><span class="p">(</span><span class="n">roleWithMovie</span><span class="p">.</span><span class="na">movie</span><span class="p">.</span><span class="na">id</span><span class="p">)</span><span class="w">                                        </span>
-<span class="w">                      </span><span class="p">}</span><span class="w">                                                                               </span>
-<span class="w">                  </span><span class="p">}</span><span class="w">                                                                                   </span>
-<span class="w">              </span><span class="p">}</span><span class="w">                                                                                       </span>
-<span class="w">          </span><span class="p">}</span><span class="w">                                                                                           </span>
-<span class="w">      </span><span class="p">}</span><span class="w">                                                                                               </span>
-<span class="w">  </span><span class="p">}</span><span class="w">                                                                                                   </span>
-</pre></div>
+<pre>
+package com.javadude.movies.screens                                                                 
+                                                                                                    
+import androidx.compose.foundation.layout.Column                                                    
+import androidx.compose.foundation.layout.padding                                                   
+<ins>import androidx.compose.foundation.rememberScrollState                                              </ins>
+<ins>import androidx.compose.foundation.verticalScroll                                                   </ins>
+import androidx.compose.runtime.Composable                                                          
+import androidx.compose.runtime.LaunchedEffect                                                      
+import androidx.compose.runtime.getValue                                                            
+import androidx.compose.runtime.mutableStateOf                                                      
+import androidx.compose.runtime.remember                                                            
+import androidx.compose.runtime.setValue                                                            
+import androidx.compose.ui.Modifier                                                                 
+import androidx.compose.ui.res.stringResource                                                       
+import com.javadude.movies.R                                                                        
+import com.javadude.movies.Screen                                                                   
+import com.javadude.movies.components.MovieScaffold                                                 
+import com.javadude.movies.components.SimpleText                                                    
+import com.javadude.movies.repository.ActorWithFilmographyDto                                       
+                                                                                                    
+@Composable                                                                                         
+fun ActorDisplay(                                                                                   
+    actorId: String,                                                                                
+    fetchActorWithFilmography: suspend (String) -&gt; ActorWithFilmographyDto,                         
+    onSelectListScreen: (Screen) -&gt; Unit,                                                           
+    onResetDatabase: () -&gt; Unit,                                                                    
+    onMovieClick: (String) -&gt; Unit,                                                                 
+) {                                                                                                 
+    var actorWithFilmographyDto by remember { mutableStateOf&lt;ActorWithFilmographyDto?&gt;(null) }      
+                                                                                                    
+    LaunchedEffect(key1 = actorId) {                                                                
+        // starts a coroutine to fetch the rating                                                   
+        actorWithFilmographyDto = fetchActorWithFilmography(actorId)                                
+    }                                                                                               
+                                                                                                    
+    MovieScaffold(                                                                                  
+        title = actorWithFilmographyDto?.actor?.name ?: stringResource(id = R.string.loading),      
+        onSelectListScreen = onSelectListScreen,                                                    
+        onResetDatabase = onResetDatabase,                                                          
+    ) { paddingValues -&gt;                                                                            
+<del>//      Column(modifier = Modifier.padding(paddingValues)) {                                        </del>
+<ins>        Column(                                                                                     </ins>
+<ins>            modifier = Modifier                                                                     </ins>
+<ins>                .padding(paddingValues)                                                             </ins>
+<ins>                .verticalScroll(rememberScrollState())                                              </ins>
+<ins>        ) {                                                                                         </ins>
+            actorWithFilmographyDto?.let { actorWithFilmography -&gt;                                  
+                actorWithFilmography.filmography.forEach { roleWithMovie -&gt;                         
+                    SimpleText(text = &quot;${roleWithMovie.movie.title} (${roleWithMovie.character})&quot;) {
+                        onMovieClick(roleWithMovie.movie.id)                                        
+                    }                                                                               
+                }                                                                                   
+            }                                                                                       
+        }                                                                                           
+    }                                                                                               
+}                                                                                                   
+</pre>
 </div>
 </details>
 <details class="example" open>
 <summary>CHANGED: /app/src/main/java/com/javadude/movies/screens/ActorList.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/java/com/javadude/movies/screens/ActorList.kt';">
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.screens</span><span class="w">                           </span>
-<span class="w">                                                                </span>
-<del>//<span class="w"></span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.Column</span><span class="w">              </span></del>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.fillMaxWidth</span><span class="w">        </span></ins>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.padding</span><span class="w">             </span>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.lazy.LazyColumn</span><span class="w">            </span></ins>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.lazy.items</span><span class="w">                 </span></ins>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.material.Card</span><span class="w">                         </span></ins>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.Composable</span><span class="w">                    </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.Modifier</span><span class="w">                           </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.res.stringResource</span><span class="w">                 </span>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.unit.dp</span><span class="w">                            </span></ins>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.R</span><span class="w">                                  </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.Screen</span><span class="w">                             </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.components.MovieScaffold</span><span class="w">           </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.components.SimpleText</span><span class="w">              </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.repository.ActorDto</span><span class="w">                </span>
-<span class="w">                                                                </span>
-<span class="w">  </span><span class="nd">@Composable</span><span class="w">                                                   </span>
-<span class="w">  </span><span class="kd">fun</span><span class="w"> </span><span class="nf">ActorList</span><span class="p">(</span><span class="w">                                                </span>
-<span class="w">      </span><span class="n">actors</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">ActorDto</span><span class="o">&gt;</span><span class="p">,</span><span class="w">                                   </span>
-<span class="w">      </span><span class="n">onSelectListScreen</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="n">Screen</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">,</span><span class="w">                     </span>
-<span class="w">      </span><span class="n">onResetDatabase</span><span class="p">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">,</span><span class="w">                              </span>
-<span class="w">      </span><span class="n">onActorClick</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">,</span><span class="w">                           </span>
-<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MovieScaffold</span><span class="p">(</span><span class="w">                                            </span>
-<span class="w">      </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stringResource</span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">screen_title_actors</span><span class="p">),</span><span class="w"></span>
-<span class="w">      </span><span class="n">onSelectListScreen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">onSelectListScreen</span><span class="p">,</span><span class="w">                  </span>
-<span class="w">      </span><span class="n">onResetDatabase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">onResetDatabase</span><span class="p">,</span><span class="w">                        </span>
-<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">paddingValues</span><span class="w"> </span><span class="o">-&gt;</span><span class="w">                                          </span>
-<del>//<span class="w">    </span><span class="n">Column</span><span class="p">(</span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">padding</span><span class="p">(</span><span class="n">paddingValues</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">      </span></del>
-<del>//<span class="w">        </span><span class="n">actors</span><span class="p">.</span><span class="na">forEach</span><span class="w"> </span><span class="p">{</span><span class="w">                                      </span></del>
-<del>//<span class="w">            </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">it</span><span class="p">.</span><span class="na">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                      </span></del>
-<del>//<span class="w">                </span><span class="n">onActorClick</span><span class="p">(</span><span class="nb">it</span><span class="p">.</span><span class="na">id</span><span class="p">)</span><span class="w">                           </span></del>
-<ins><span class="w">      </span><span class="n">LazyColumn</span><span class="p">(</span><span class="w">                                               </span></ins>
-<ins><span class="w">          </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">padding</span><span class="p">(</span><span class="n">paddingValues</span><span class="p">)</span><span class="w">            </span></ins>
-<ins><span class="w">      </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                       </span></ins>
-<ins><span class="w">          </span><span class="n">items</span><span class="p">(</span><span class="w">                                                </span></ins>
-<ins><span class="w">              </span><span class="n">items</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actors</span><span class="p">,</span><span class="w">                                   </span></ins>
-<ins><span class="w">              </span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nb">it</span><span class="p">.</span><span class="na">id</span><span class="w"> </span><span class="p">},</span><span class="w">                                  </span></ins>
-<ins><span class="w">          </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                   </span></ins>
-<ins><span class="w">              </span><span class="n">Card</span><span class="p">(</span><span class="w">                                             </span></ins>
-<ins><span class="w">                  </span><span class="n">elevation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4.</span><span class="n">dp</span><span class="p">,</span><span class="w">                             </span></ins>
-<ins><span class="w">                  </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="w">                           </span></ins>
-<ins><span class="w">                      </span><span class="p">.</span><span class="na">padding</span><span class="p">(</span><span class="m">8.</span><span class="n">dp</span><span class="p">)</span><span class="w">                            </span></ins>
-<ins><span class="w">                      </span><span class="p">.</span><span class="na">fillMaxWidth</span><span class="p">()</span><span class="w">                           </span></ins>
-<ins><span class="w">              </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                               </span></ins>
-<ins><span class="w">                  </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">it</span><span class="p">.</span><span class="na">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                  </span></ins>
-<ins><span class="w">                      </span><span class="n">onActorClick</span><span class="p">(</span><span class="nb">it</span><span class="p">.</span><span class="na">id</span><span class="p">)</span><span class="w">                       </span></ins>
-<ins><span class="w">                  </span><span class="p">}</span><span class="w">                                             </span></ins>
-<span class="w">              </span><span class="p">}</span><span class="w">                                                 </span>
-<span class="w">          </span><span class="p">}</span><span class="w">                                                     </span>
-<span class="w">      </span><span class="p">}</span><span class="w">                                                         </span>
-<span class="w">  </span><span class="p">}</span><span class="w">                                                             </span>
-</pre></div>
+<pre>
+package com.javadude.movies.screens                           
+                                                              
+<del>//import androidx.compose.foundation.layout.Column            </del>
+<ins>import androidx.compose.foundation.layout.fillMaxWidth        </ins>
+import androidx.compose.foundation.layout.padding             
+<ins>import androidx.compose.foundation.lazy.LazyColumn            </ins>
+<ins>import androidx.compose.foundation.lazy.items                 </ins>
+<ins>import androidx.compose.material.Card                         </ins>
+import androidx.compose.runtime.Composable                    
+import androidx.compose.ui.Modifier                           
+import androidx.compose.ui.res.stringResource                 
+<ins>import androidx.compose.ui.unit.dp                            </ins>
+import com.javadude.movies.R                                  
+import com.javadude.movies.Screen                             
+import com.javadude.movies.components.MovieScaffold           
+import com.javadude.movies.components.SimpleText              
+import com.javadude.movies.repository.ActorDto                
+                                                              
+@Composable                                                   
+fun ActorList(                                                
+    actors: List&lt;ActorDto&gt;,                                   
+    onSelectListScreen: (Screen) -&gt; Unit,                     
+    onResetDatabase: () -&gt; Unit,                              
+    onActorClick: (String) -&gt; Unit,                           
+) = MovieScaffold(                                            
+    title = stringResource(id = R.string.screen_title_actors),
+    onSelectListScreen = onSelectListScreen,                  
+    onResetDatabase = onResetDatabase,                        
+) { paddingValues -&gt;                                          
+<del>//  Column(modifier = Modifier.padding(paddingValues)) {      </del>
+<del>//      actors.forEach {                                      </del>
+<ins>    LazyColumn(                                               </ins>
+<ins>        modifier = Modifier.padding(paddingValues)            </ins>
+<ins>    ) {                                                       </ins>
+<ins>        items(                                                </ins>
+<ins>            items = actors,                                   </ins>
+<ins>            key = { it.id },                                  </ins>
+<ins>        ) {                                                   </ins>
+<ins>            Card(                                             </ins>
+<ins>                elevation = 4.dp,                             </ins>
+<ins>                modifier = Modifier                           </ins>
+<ins>                    .padding(8.dp)                            </ins>
+<ins>                    .fillMaxWidth()                           </ins>
+<ins>            ) {                                               </ins>
+                SimpleText(text = it.name) {                  
+                    onActorClick(it.id)                       
+                }                                             
+            }                                                 
+        }                                                     
+<ins>    }                                                         </ins>
+}                                                             
+</pre>
 </div>
 </details>
 <details class="example" open>
 <summary>CHANGED: /app/src/main/java/com/javadude/movies/screens/MovieDisplay.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/java/com/javadude/movies/screens/MovieDisplay.kt';">
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.screens</span><span class="w">                                                               </span>
-<span class="w">                                                                                                    </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.Column</span><span class="w">                                                  </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.padding</span><span class="w">                                                 </span>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.rememberScrollState</span><span class="w">                                            </span></ins>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.verticalScroll</span><span class="w">                                                 </span></ins>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.Composable</span><span class="w">                                                        </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.LaunchedEffect</span><span class="w">                                                    </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.getValue</span><span class="w">                                                          </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.mutableStateOf</span><span class="w">                                                    </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.remember</span><span class="w">                                                          </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.setValue</span><span class="w">                                                          </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.Modifier</span><span class="w">                                                               </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.res.stringResource</span><span class="w">                                                     </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.R</span><span class="w">                                                                      </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.Screen</span><span class="w">                                                                 </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.components.MovieScaffold</span><span class="w">                                               </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.components.SimpleText</span><span class="w">                                                  </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.repository.MovieWithCastDto</span><span class="w">                                            </span>
-<span class="w">                                                                                                    </span>
-<span class="w">  </span><span class="nd">@Composable</span><span class="w">                                                                                       </span>
-<span class="w">  </span><span class="kd">fun</span><span class="w"> </span><span class="nf">MovieDisplay</span><span class="p">(</span><span class="w">                                                                                 </span>
-<span class="w">      </span><span class="n">movieId</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                                                                              </span>
-<span class="w">      </span><span class="n">fetchMovieWithCast</span><span class="p">:</span><span class="w"> </span><span class="n">suspend</span><span class="w"> </span><span class="p">(</span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">MovieWithCastDto</span><span class="p">,</span><span class="w">                                     </span>
-<span class="w">      </span><span class="n">onSelectListScreen</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="n">Screen</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">,</span><span class="w">                                                         </span>
-<span class="w">      </span><span class="n">onResetDatabase</span><span class="p">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">,</span><span class="w">                                                                  </span>
-<span class="w">      </span><span class="n">onActorClick</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">,</span><span class="w">                                                               </span>
-<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                               </span>
-<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">movieWithCastDto</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">remember</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">mutableStateOf</span><span class="o">&lt;</span><span class="n">MovieWithCastDto?&gt;</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">}</span><span class="w">                  </span>
-<span class="w">                                                                                                    </span>
-<span class="w">      </span><span class="n">LaunchedEffect</span><span class="p">(</span><span class="n">key1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">movieId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                              </span>
-<span class="w">          </span><span class="c1">// starts a coroutine to fetch the rating                                                 </span><span class="w"></span>
-<span class="w">          </span><span class="n">movieWithCastDto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fetchMovieWithCast</span><span class="p">(</span><span class="n">movieId</span><span class="p">)</span><span class="w">                                            </span>
-<span class="w">      </span><span class="p">}</span><span class="w">                                                                                             </span>
-<span class="w">                                                                                                    </span>
-<span class="w">      </span><span class="n">MovieScaffold</span><span class="p">(</span><span class="w">                                                                                </span>
-<span class="w">          </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">movieWithCastDto</span><span class="o">?.</span><span class="na">movie</span><span class="o">?.</span><span class="na">title</span><span class="w"> </span><span class="o">?:</span><span class="w"> </span><span class="n">stringResource</span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">loading</span><span class="p">),</span><span class="w">          </span>
-<span class="w">          </span><span class="n">onSelectListScreen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">onSelectListScreen</span><span class="p">,</span><span class="w">                                                  </span>
-<span class="w">          </span><span class="n">onResetDatabase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">onResetDatabase</span><span class="p">,</span><span class="w">                                                        </span>
-<span class="w">      </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">paddingValues</span><span class="w"> </span><span class="o">-&gt;</span><span class="w">                                                                          </span>
-<del>//<span class="w">        </span><span class="n">Column</span><span class="p">(</span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">padding</span><span class="p">(</span><span class="n">paddingValues</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">                                      </span></del>
-<ins><span class="w">          </span><span class="n">Column</span><span class="p">(</span><span class="w">                                                                                   </span></ins>
-<ins><span class="w">              </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="w">                                                                   </span></ins>
-<ins><span class="w">                  </span><span class="p">.</span><span class="na">padding</span><span class="p">(</span><span class="n">paddingValues</span><span class="p">)</span><span class="w">                                                           </span></ins>
-<ins><span class="w">                  </span><span class="p">.</span><span class="na">verticalScroll</span><span class="p">(</span><span class="n">rememberScrollState</span><span class="p">())</span><span class="w">                                            </span></ins>
-<ins><span class="w">          </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                       </span></ins>
-<span class="w">              </span><span class="n">movieWithCastDto</span><span class="o">?.</span><span class="na">let</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">movieWithCast</span><span class="w"> </span><span class="o">-&gt;</span><span class="w">                                              </span>
-<span class="w">                  </span><span class="n">movieWithCast</span><span class="p">.</span><span class="na">cast</span><span class="p">.</span><span class="na">forEach</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">roleWithActor</span><span class="w"> </span><span class="o">-&gt;</span><span class="w">                                     </span>
-<span class="w">                      </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;</span><span class="si">${</span><span class="n">roleWithActor</span><span class="p">.</span><span class="na">character</span><span class="si">}</span><span class="s">: </span><span class="si">${</span><span class="n">roleWithActor</span><span class="p">.</span><span class="na">actor</span><span class="p">.</span><span class="na">name</span><span class="si">}</span><span class="s">&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                          </span><span class="n">onActorClick</span><span class="p">(</span><span class="n">roleWithActor</span><span class="p">.</span><span class="na">actor</span><span class="p">.</span><span class="na">id</span><span class="p">)</span><span class="w">                                      </span>
-<span class="w">                      </span><span class="p">}</span><span class="w">                                                                             </span>
-<span class="w">                  </span><span class="p">}</span><span class="w">                                                                                 </span>
-<span class="w">              </span><span class="p">}</span><span class="w">                                                                                     </span>
-<span class="w">          </span><span class="p">}</span><span class="w">                                                                                         </span>
-<span class="w">      </span><span class="p">}</span><span class="w">                                                                                             </span>
-<span class="w">  </span><span class="p">}</span><span class="w">                                                                                                 </span>
-</pre></div>
+<pre>
+package com.javadude.movies.screens                                                               
+                                                                                                  
+import androidx.compose.foundation.layout.Column                                                  
+import androidx.compose.foundation.layout.padding                                                 
+<ins>import androidx.compose.foundation.rememberScrollState                                            </ins>
+<ins>import androidx.compose.foundation.verticalScroll                                                 </ins>
+import androidx.compose.runtime.Composable                                                        
+import androidx.compose.runtime.LaunchedEffect                                                    
+import androidx.compose.runtime.getValue                                                          
+import androidx.compose.runtime.mutableStateOf                                                    
+import androidx.compose.runtime.remember                                                          
+import androidx.compose.runtime.setValue                                                          
+import androidx.compose.ui.Modifier                                                               
+import androidx.compose.ui.res.stringResource                                                     
+import com.javadude.movies.R                                                                      
+import com.javadude.movies.Screen                                                                 
+import com.javadude.movies.components.MovieScaffold                                               
+import com.javadude.movies.components.SimpleText                                                  
+import com.javadude.movies.repository.MovieWithCastDto                                            
+                                                                                                  
+@Composable                                                                                       
+fun MovieDisplay(                                                                                 
+    movieId: String,                                                                              
+    fetchMovieWithCast: suspend (String) -&gt; MovieWithCastDto,                                     
+    onSelectListScreen: (Screen) -&gt; Unit,                                                         
+    onResetDatabase: () -&gt; Unit,                                                                  
+    onActorClick: (String) -&gt; Unit,                                                               
+) {                                                                                               
+    var movieWithCastDto by remember { mutableStateOf&lt;MovieWithCastDto?&gt;(null) }                  
+                                                                                                  
+    LaunchedEffect(key1 = movieId) {                                                              
+        // starts a coroutine to fetch the rating                                                 
+        movieWithCastDto = fetchMovieWithCast(movieId)                                            
+    }                                                                                             
+                                                                                                  
+    MovieScaffold(                                                                                
+        title = movieWithCastDto?.movie?.title ?: stringResource(id = R.string.loading),          
+        onSelectListScreen = onSelectListScreen,                                                  
+        onResetDatabase = onResetDatabase,                                                        
+    ) { paddingValues -&gt;                                                                          
+<del>//      Column(modifier = Modifier.padding(paddingValues)) {                                      </del>
+<ins>        Column(                                                                                   </ins>
+<ins>            modifier = Modifier                                                                   </ins>
+<ins>                .padding(paddingValues)                                                           </ins>
+<ins>                .verticalScroll(rememberScrollState())                                            </ins>
+<ins>        ) {                                                                                       </ins>
+            movieWithCastDto?.let { movieWithCast -&gt;                                              
+                movieWithCast.cast.forEach { roleWithActor -&gt;                                     
+                    SimpleText(text = &quot;${roleWithActor.character}: ${roleWithActor.actor.name}&quot;) {
+                        onActorClick(roleWithActor.actor.id)                                      
+                    }                                                                             
+                }                                                                                 
+            }                                                                                     
+        }                                                                                         
+    }                                                                                             
+}                                                                                                 
+</pre>
 </div>
 </details>
 <details class="example" open>
 <summary>CHANGED: /app/src/main/java/com/javadude/movies/screens/MovieList.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/java/com/javadude/movies/screens/MovieList.kt';">
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.screens</span><span class="w">                           </span>
-<span class="w">                                                                </span>
-<del>//<span class="w"></span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.Column</span><span class="w">              </span></del>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.fillMaxWidth</span><span class="w">        </span></ins>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.padding</span><span class="w">             </span>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.lazy.LazyColumn</span><span class="w">            </span></ins>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.lazy.items</span><span class="w">                 </span></ins>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.material.Card</span><span class="w">                         </span></ins>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.Composable</span><span class="w">                    </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.Modifier</span><span class="w">                           </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.res.stringResource</span><span class="w">                 </span>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.unit.dp</span><span class="w">                            </span></ins>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.R</span><span class="w">                                  </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.Screen</span><span class="w">                             </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.components.MovieScaffold</span><span class="w">           </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.components.SimpleText</span><span class="w">              </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.repository.MovieDto</span><span class="w">                </span>
-<span class="w">                                                                </span>
-<span class="w">  </span><span class="nd">@Composable</span><span class="w">                                                   </span>
-<span class="w">  </span><span class="kd">fun</span><span class="w"> </span><span class="nf">MovieList</span><span class="p">(</span><span class="w">                                                </span>
-<span class="w">      </span><span class="n">movies</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">MovieDto</span><span class="o">&gt;</span><span class="p">,</span><span class="w">                                   </span>
-<span class="w">      </span><span class="n">onSelectListScreen</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="n">Screen</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">,</span><span class="w">                     </span>
-<span class="w">      </span><span class="n">onResetDatabase</span><span class="p">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">,</span><span class="w">                              </span>
-<span class="w">      </span><span class="n">onMovieClick</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">,</span><span class="w">                           </span>
-<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MovieScaffold</span><span class="p">(</span><span class="w">                                            </span>
-<span class="w">      </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stringResource</span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">screen_title_movies</span><span class="p">),</span><span class="w"></span>
-<span class="w">      </span><span class="n">onSelectListScreen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">onSelectListScreen</span><span class="p">,</span><span class="w">                  </span>
-<span class="w">      </span><span class="n">onResetDatabase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">onResetDatabase</span><span class="p">,</span><span class="w">                        </span>
-<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">paddingValues</span><span class="w"> </span><span class="o">-&gt;</span><span class="w">                                          </span>
-<del>//<span class="w">    </span><span class="n">Column</span><span class="p">(</span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">padding</span><span class="p">(</span><span class="n">paddingValues</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">      </span></del>
-<del>//<span class="w">        </span><span class="n">movies</span><span class="p">.</span><span class="na">forEach</span><span class="w"> </span><span class="p">{</span><span class="w">                                      </span></del>
-<del>//<span class="w">            </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">it</span><span class="p">.</span><span class="na">title</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                     </span></del>
-<del>//<span class="w">                </span><span class="n">onMovieClick</span><span class="p">(</span><span class="nb">it</span><span class="p">.</span><span class="na">id</span><span class="p">)</span><span class="w">                           </span></del>
-<ins><span class="w">      </span><span class="n">LazyColumn</span><span class="p">(</span><span class="w">                                               </span></ins>
-<ins><span class="w">          </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">padding</span><span class="p">(</span><span class="n">paddingValues</span><span class="p">)</span><span class="w">            </span></ins>
-<ins><span class="w">      </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                       </span></ins>
-<ins><span class="w">          </span><span class="n">items</span><span class="p">(</span><span class="w">                                                </span></ins>
-<ins><span class="w">              </span><span class="n">items</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">movies</span><span class="p">,</span><span class="w">                                   </span></ins>
-<ins><span class="w">              </span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nb">it</span><span class="p">.</span><span class="na">id</span><span class="w"> </span><span class="p">},</span><span class="w">                                  </span></ins>
-<ins><span class="w">          </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                   </span></ins>
-<ins><span class="w">              </span><span class="n">Card</span><span class="p">(</span><span class="w">                                             </span></ins>
-<ins><span class="w">                  </span><span class="n">elevation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4.</span><span class="n">dp</span><span class="p">,</span><span class="w">                             </span></ins>
-<ins><span class="w">                  </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="w">                           </span></ins>
-<ins><span class="w">                      </span><span class="p">.</span><span class="na">padding</span><span class="p">(</span><span class="m">8.</span><span class="n">dp</span><span class="p">)</span><span class="w">                            </span></ins>
-<ins><span class="w">                      </span><span class="p">.</span><span class="na">fillMaxWidth</span><span class="p">()</span><span class="w">                           </span></ins>
-<ins><span class="w">              </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                               </span></ins>
-<ins><span class="w">                  </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">it</span><span class="p">.</span><span class="na">title</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                 </span></ins>
-<ins><span class="w">                      </span><span class="n">onMovieClick</span><span class="p">(</span><span class="nb">it</span><span class="p">.</span><span class="na">id</span><span class="p">)</span><span class="w">                       </span></ins>
-<ins><span class="w">                  </span><span class="p">}</span><span class="w">                                             </span></ins>
-<span class="w">              </span><span class="p">}</span><span class="w">                                                 </span>
-<span class="w">          </span><span class="p">}</span><span class="w">                                                     </span>
-<span class="w">      </span><span class="p">}</span><span class="w">                                                         </span>
-<span class="w">  </span><span class="p">}</span><span class="w">                                                             </span>
-</pre></div>
+<pre>
+package com.javadude.movies.screens                           
+                                                              
+<del>//import androidx.compose.foundation.layout.Column            </del>
+<ins>import androidx.compose.foundation.layout.fillMaxWidth        </ins>
+import androidx.compose.foundation.layout.padding             
+<ins>import androidx.compose.foundation.lazy.LazyColumn            </ins>
+<ins>import androidx.compose.foundation.lazy.items                 </ins>
+<ins>import androidx.compose.material.Card                         </ins>
+import androidx.compose.runtime.Composable                    
+import androidx.compose.ui.Modifier                           
+import androidx.compose.ui.res.stringResource                 
+<ins>import androidx.compose.ui.unit.dp                            </ins>
+import com.javadude.movies.R                                  
+import com.javadude.movies.Screen                             
+import com.javadude.movies.components.MovieScaffold           
+import com.javadude.movies.components.SimpleText              
+import com.javadude.movies.repository.MovieDto                
+                                                              
+@Composable                                                   
+fun MovieList(                                                
+    movies: List&lt;MovieDto&gt;,                                   
+    onSelectListScreen: (Screen) -&gt; Unit,                     
+    onResetDatabase: () -&gt; Unit,                              
+    onMovieClick: (String) -&gt; Unit,                           
+) = MovieScaffold(                                            
+    title = stringResource(id = R.string.screen_title_movies),
+    onSelectListScreen = onSelectListScreen,                  
+    onResetDatabase = onResetDatabase,                        
+) { paddingValues -&gt;                                          
+<del>//  Column(modifier = Modifier.padding(paddingValues)) {      </del>
+<del>//      movies.forEach {                                      </del>
+<ins>    LazyColumn(                                               </ins>
+<ins>        modifier = Modifier.padding(paddingValues)            </ins>
+<ins>    ) {                                                       </ins>
+<ins>        items(                                                </ins>
+<ins>            items = movies,                                   </ins>
+<ins>            key = { it.id },                                  </ins>
+<ins>        ) {                                                   </ins>
+<ins>            Card(                                             </ins>
+<ins>                elevation = 4.dp,                             </ins>
+<ins>                modifier = Modifier                           </ins>
+<ins>                    .padding(8.dp)                            </ins>
+<ins>                    .fillMaxWidth()                           </ins>
+<ins>            ) {                                               </ins>
+                SimpleText(text = it.title) {                 
+                    onMovieClick(it.id)                       
+                }                                             
+            }                                                 
+        }                                                     
+<ins>    }                                                         </ins>
+}                                                             
+</pre>
 </div>
 </details>
 <details class="example" open>
 <summary>CHANGED: /app/src/main/java/com/javadude/movies/screens/RatingDisplay.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/java/com/javadude/movies/screens/RatingDisplay.kt';">
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.screens</span><span class="w">                                                        </span>
-<span class="w">                                                                                             </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.Column</span><span class="w">                                           </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.padding</span><span class="w">                                          </span>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.rememberScrollState</span><span class="w">                                     </span></ins>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.verticalScroll</span><span class="w">                                          </span></ins>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.Composable</span><span class="w">                                                 </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.LaunchedEffect</span><span class="w">                                             </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.getValue</span><span class="w">                                                   </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.mutableStateOf</span><span class="w">                                             </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.remember</span><span class="w">                                                   </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.setValue</span><span class="w">                                                   </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.Modifier</span><span class="w">                                                        </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.res.stringResource</span><span class="w">                                              </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.R</span><span class="w">                                                               </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.Screen</span><span class="w">                                                          </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.components.MovieScaffold</span><span class="w">                                        </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.components.SimpleText</span><span class="w">                                           </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.repository.RatingWithMoviesDto</span><span class="w">                                  </span>
-<span class="w">                                                                                             </span>
-<span class="w">  </span><span class="nd">@Composable</span><span class="w">                                                                                </span>
-<span class="w">  </span><span class="kd">fun</span><span class="w"> </span><span class="nf">RatingDisplay</span><span class="p">(</span><span class="w">                                                                         </span>
-<span class="w">      </span><span class="n">ratingId</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                                                                      </span>
-<span class="w">      </span><span class="n">fetchRatingWithMovies</span><span class="p">:</span><span class="w"> </span><span class="n">suspend</span><span class="w"> </span><span class="p">(</span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">RatingWithMoviesDto</span><span class="p">,</span><span class="w">                        </span>
-<span class="w">      </span><span class="n">onSelectListScreen</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="n">Screen</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">,</span><span class="w">                                                  </span>
-<span class="w">      </span><span class="n">onResetDatabase</span><span class="p">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">,</span><span class="w">                                                           </span>
-<span class="w">      </span><span class="n">onMovieClick</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">,</span><span class="w">                                                        </span>
-<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                        </span>
-<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">ratingWithMoviesDto</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">remember</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">mutableStateOf</span><span class="o">&lt;</span><span class="n">RatingWithMoviesDto?&gt;</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">}</span><span class="w">     </span>
-<span class="w">                                                                                             </span>
-<span class="w">      </span><span class="n">LaunchedEffect</span><span class="p">(</span><span class="n">key1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ratingId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                      </span>
-<span class="w">          </span><span class="c1">// starts a coroutine to fetch the rating                                          </span><span class="w"></span>
-<span class="w">          </span><span class="n">ratingWithMoviesDto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fetchRatingWithMovies</span><span class="p">(</span><span class="n">ratingId</span><span class="p">)</span><span class="w">                              </span>
-<span class="w">      </span><span class="p">}</span><span class="w">                                                                                      </span>
-<span class="w">                                                                                             </span>
-<span class="w">      </span><span class="n">MovieScaffold</span><span class="p">(</span><span class="w">                                                                         </span>
-<span class="w">          </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ratingWithMoviesDto</span><span class="o">?.</span><span class="na">rating</span><span class="o">?.</span><span class="na">name</span><span class="w"> </span><span class="o">?:</span><span class="w"> </span><span class="n">stringResource</span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">loading</span><span class="p">),</span><span class="w"></span>
-<span class="w">          </span><span class="n">onSelectListScreen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">onSelectListScreen</span><span class="p">,</span><span class="w">                                           </span>
-<span class="w">          </span><span class="n">onResetDatabase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">onResetDatabase</span><span class="p">,</span><span class="w">                                                 </span>
-<span class="w">      </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">paddingValues</span><span class="w"> </span><span class="o">-&gt;</span><span class="w">                                                                   </span>
-<del>//<span class="w">        </span><span class="n">Column</span><span class="p">(</span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">padding</span><span class="p">(</span><span class="n">paddingValues</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">                               </span></del>
-<ins><span class="w">          </span><span class="n">Column</span><span class="p">(</span><span class="w">                                                                            </span></ins>
-<ins><span class="w">              </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="w">                                                            </span></ins>
-<ins><span class="w">                  </span><span class="p">.</span><span class="na">padding</span><span class="p">(</span><span class="n">paddingValues</span><span class="p">)</span><span class="w">                                                    </span></ins>
-<ins><span class="w">                  </span><span class="p">.</span><span class="na">verticalScroll</span><span class="p">(</span><span class="n">rememberScrollState</span><span class="p">())</span><span class="w">                                     </span></ins>
-<ins><span class="w">          </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                </span></ins>
-<span class="w">              </span><span class="n">ratingWithMoviesDto</span><span class="o">?.</span><span class="na">let</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">ratingWithMovies</span><span class="w"> </span><span class="o">-&gt;</span><span class="w">                                 </span>
-<span class="w">                  </span><span class="n">ratingWithMovies</span><span class="p">.</span><span class="na">movies</span><span class="p">.</span><span class="na">forEach</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">movie</span><span class="w"> </span><span class="o">-&gt;</span><span class="w">                                 </span>
-<span class="w">                      </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">movie</span><span class="p">.</span><span class="na">title</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                       </span>
-<span class="w">                          </span><span class="n">onMovieClick</span><span class="p">(</span><span class="n">movie</span><span class="p">.</span><span class="na">id</span><span class="p">)</span><span class="w">                                             </span>
-<span class="w">                      </span><span class="p">}</span><span class="w">                                                                      </span>
-<span class="w">                  </span><span class="p">}</span><span class="w">                                                                          </span>
-<span class="w">              </span><span class="p">}</span><span class="w">                                                                              </span>
-<span class="w">          </span><span class="p">}</span><span class="w">                                                                                  </span>
-<span class="w">      </span><span class="p">}</span><span class="w">                                                                                      </span>
-<span class="w">  </span><span class="p">}</span><span class="w">                                                                                          </span>
-</pre></div>
+<pre>
+package com.javadude.movies.screens                                                        
+                                                                                           
+import androidx.compose.foundation.layout.Column                                           
+import androidx.compose.foundation.layout.padding                                          
+<ins>import androidx.compose.foundation.rememberScrollState                                     </ins>
+<ins>import androidx.compose.foundation.verticalScroll                                          </ins>
+import androidx.compose.runtime.Composable                                                 
+import androidx.compose.runtime.LaunchedEffect                                             
+import androidx.compose.runtime.getValue                                                   
+import androidx.compose.runtime.mutableStateOf                                             
+import androidx.compose.runtime.remember                                                   
+import androidx.compose.runtime.setValue                                                   
+import androidx.compose.ui.Modifier                                                        
+import androidx.compose.ui.res.stringResource                                              
+import com.javadude.movies.R                                                               
+import com.javadude.movies.Screen                                                          
+import com.javadude.movies.components.MovieScaffold                                        
+import com.javadude.movies.components.SimpleText                                           
+import com.javadude.movies.repository.RatingWithMoviesDto                                  
+                                                                                           
+@Composable                                                                                
+fun RatingDisplay(                                                                         
+    ratingId: String,                                                                      
+    fetchRatingWithMovies: suspend (String) -&gt; RatingWithMoviesDto,                        
+    onSelectListScreen: (Screen) -&gt; Unit,                                                  
+    onResetDatabase: () -&gt; Unit,                                                           
+    onMovieClick: (String) -&gt; Unit,                                                        
+) {                                                                                        
+    var ratingWithMoviesDto by remember { mutableStateOf&lt;RatingWithMoviesDto?&gt;(null) }     
+                                                                                           
+    LaunchedEffect(key1 = ratingId) {                                                      
+        // starts a coroutine to fetch the rating                                          
+        ratingWithMoviesDto = fetchRatingWithMovies(ratingId)                              
+    }                                                                                      
+                                                                                           
+    MovieScaffold(                                                                         
+        title = ratingWithMoviesDto?.rating?.name ?: stringResource(id = R.string.loading),
+        onSelectListScreen = onSelectListScreen,                                           
+        onResetDatabase = onResetDatabase,                                                 
+    ) { paddingValues -&gt;                                                                   
+<del>//      Column(modifier = Modifier.padding(paddingValues)) {                               </del>
+<ins>        Column(                                                                            </ins>
+<ins>            modifier = Modifier                                                            </ins>
+<ins>                .padding(paddingValues)                                                    </ins>
+<ins>                .verticalScroll(rememberScrollState())                                     </ins>
+<ins>        ) {                                                                                </ins>
+            ratingWithMoviesDto?.let { ratingWithMovies -&gt;                                 
+                ratingWithMovies.movies.forEach { movie -&gt;                                 
+                    SimpleText(text = movie.title) {                                       
+                        onMovieClick(movie.id)                                             
+                    }                                                                      
+                }                                                                          
+            }                                                                              
+        }                                                                                  
+    }                                                                                      
+}                                                                                          
+</pre>
 </div>
 </details>
 <details class="example" open>
 <summary>CHANGED: /app/src/main/java/com/javadude/movies/screens/RatingList.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/java/com/javadude/movies/screens/RatingList.kt';">
-<div class="highlight"><pre><del>//<span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.screens</span><span class="w">                           </span></del>
-<del>//<span class="w">                                                              </span></del>
-<del>//<span class="w"></span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.Column</span><span class="w">              </span></del>
-<del>//<span class="w"></span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.padding</span><span class="w">             </span></del>
-<del>//<span class="w"></span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.Composable</span><span class="w">                    </span></del>
-<del>//<span class="w"></span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.Modifier</span><span class="w">                           </span></del>
-<del>//<span class="w"></span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.res.stringResource</span><span class="w">                 </span></del>
-<del>//<span class="w"></span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.R</span><span class="w">                                  </span></del>
-<del>//<span class="w"></span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.Screen</span><span class="w">                             </span></del>
-<del>//<span class="w"></span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.components.MovieScaffold</span><span class="w">           </span></del>
-<del>//<span class="w"></span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.components.SimpleText</span><span class="w">              </span></del>
-<del>//<span class="w"></span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.repository.RatingDto</span><span class="w">               </span></del>
-<del>//<span class="w">                                                              </span></del>
-<del>//<span class="w"></span><span class="nd">@Composable</span><span class="w">                                                   </span></del>
-<del>//<span class="w"></span><span class="kd">fun</span><span class="w"> </span><span class="nf">RatingList</span><span class="p">(</span><span class="w">                                               </span></del>
-<del>//<span class="w">    </span><span class="n">ratings</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">RatingDto</span><span class="o">&gt;</span><span class="p">,</span><span class="w">                                 </span></del>
-<del>//<span class="w">    </span><span class="n">onSelectListScreen</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="n">Screen</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">,</span><span class="w">                     </span></del>
-<del>//<span class="w">    </span><span class="n">onResetDatabase</span><span class="p">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">,</span><span class="w">                              </span></del>
-<del>//<span class="w">    </span><span class="n">onRatingClick</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">,</span><span class="w">                          </span></del>
-<del>//<span class="w"></span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MovieScaffold</span><span class="p">(</span><span class="w">                                            </span></del>
-<del>//<span class="w">    </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stringResource</span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">screen_title_movies</span><span class="p">),</span><span class="w"></span></del>
-<del>//<span class="w">    </span><span class="n">onSelectListScreen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">onSelectListScreen</span><span class="p">,</span><span class="w">                  </span></del>
-<del>//<span class="w">    </span><span class="n">onResetDatabase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">onResetDatabase</span><span class="p">,</span><span class="w">                        </span></del>
-<del>//<span class="w"></span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">paddingValues</span><span class="w"> </span><span class="o">-&gt;</span><span class="w">                                          </span></del>
-<del>//<span class="w">    </span><span class="n">Column</span><span class="p">(</span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">padding</span><span class="p">(</span><span class="n">paddingValues</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">      </span></del>
-<del>//<span class="w">        </span><span class="n">ratings</span><span class="p">.</span><span class="na">forEach</span><span class="w"> </span><span class="p">{</span><span class="w">                                     </span></del>
-<del>//<span class="w">            </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">it</span><span class="p">.</span><span class="na">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                      </span></del>
-<del>//<span class="w">                </span><span class="n">onRatingClick</span><span class="p">(</span><span class="nb">it</span><span class="p">.</span><span class="na">id</span><span class="p">)</span><span class="w">                          </span></del>
-<del>//<span class="w">            </span><span class="p">}</span><span class="w">                                                 </span></del>
-<del>//<span class="w">        </span><span class="p">}</span><span class="w">                                                     </span></del>
-<del>//<span class="w">    </span><span class="p">}</span><span class="w">                                                         </span></del>
-<del>//<span class="w"></span><span class="p">}</span><span class="w">                                                             </span></del>
-<ins><div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.screens</span><span class="w">                            </span></ins>
-<ins><span class="w">                                                                 </span></ins>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.fillMaxWidth</span><span class="w">         </span></ins>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.padding</span><span class="w">              </span></ins>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.lazy.LazyColumn</span><span class="w">             </span></ins>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.lazy.items</span><span class="w">                  </span></ins>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.material.Card</span><span class="w">                          </span></ins>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.Composable</span><span class="w">                     </span></ins>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.Modifier</span><span class="w">                            </span></ins>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.res.stringResource</span><span class="w">                  </span></ins>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.unit.dp</span><span class="w">                             </span></ins>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.R</span><span class="w">                                   </span></ins>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.Screen</span><span class="w">                              </span></ins>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.components.MovieScaffold</span><span class="w">            </span></ins>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.components.SimpleText</span><span class="w">               </span></ins>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.repository.RatingDto</span><span class="w">                </span></ins>
-<ins><span class="w">                                                                 </span></ins>
-<ins><span class="w">  </span><span class="nd">@Composable</span><span class="w">                                                    </span></ins>
-<ins><span class="w">  </span><span class="kd">fun</span><span class="w"> </span><span class="nf">RatingList</span><span class="p">(</span><span class="w">                                                </span></ins>
-<ins><span class="w">      </span><span class="n">ratings</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">RatingDto</span><span class="o">&gt;</span><span class="p">,</span><span class="w">                                  </span></ins>
-<ins><span class="w">      </span><span class="n">onSelectListScreen</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="n">Screen</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">,</span><span class="w">                      </span></ins>
-<ins><span class="w">      </span><span class="n">onResetDatabase</span><span class="p">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">,</span><span class="w">                               </span></ins>
-<ins><span class="w">      </span><span class="n">onRatingClick</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">,</span><span class="w">                           </span></ins>
-<ins><span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MovieScaffold</span><span class="p">(</span><span class="w">                                             </span></ins>
-<ins><span class="w">      </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stringResource</span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">screen_title_ratings</span><span class="p">),</span><span class="w"></span></ins>
-<ins><span class="w">      </span><span class="n">onSelectListScreen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">onSelectListScreen</span><span class="p">,</span><span class="w">                   </span></ins>
-<ins><span class="w">      </span><span class="n">onResetDatabase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">onResetDatabase</span><span class="p">,</span><span class="w">                         </span></ins>
-<ins><span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">paddingValues</span><span class="w"> </span><span class="o">-&gt;</span><span class="w">                                           </span></ins>
-<ins><span class="w">      </span><span class="n">LazyColumn</span><span class="p">(</span><span class="w">                                                </span></ins>
-<ins><span class="w">          </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">padding</span><span class="p">(</span><span class="n">paddingValues</span><span class="p">)</span><span class="w">             </span></ins>
-<ins><span class="w">      </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                        </span></ins>
-<ins><span class="w">          </span><span class="n">items</span><span class="p">(</span><span class="w">                                                 </span></ins>
-<ins><span class="w">              </span><span class="n">items</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ratings</span><span class="p">,</span><span class="w">                                   </span></ins>
-<ins><span class="w">              </span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nb">it</span><span class="p">.</span><span class="na">id</span><span class="w"> </span><span class="p">},</span><span class="w">                                   </span></ins>
-<ins><span class="w">          </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                    </span></ins>
-<ins><span class="w">              </span><span class="n">Card</span><span class="p">(</span><span class="w">                                              </span></ins>
-<ins><span class="w">                  </span><span class="n">elevation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4.</span><span class="n">dp</span><span class="p">,</span><span class="w">                              </span></ins>
-<ins><span class="w">                  </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="w">                            </span></ins>
-<ins><span class="w">                      </span><span class="p">.</span><span class="na">padding</span><span class="p">(</span><span class="m">8.</span><span class="n">dp</span><span class="p">)</span><span class="w">                             </span></ins>
-<ins><span class="w">                      </span><span class="p">.</span><span class="na">fillMaxWidth</span><span class="p">()</span><span class="w">                            </span></ins>
-<ins><span class="w">              </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                </span></ins>
-<ins><span class="w">                  </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">it</span><span class="p">.</span><span class="na">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                   </span></ins>
-<ins><span class="w">                      </span><span class="n">onRatingClick</span><span class="p">(</span><span class="nb">it</span><span class="p">.</span><span class="na">id</span><span class="p">)</span><span class="w">                       </span></ins>
-<ins><span class="w">                  </span><span class="p">}</span><span class="w">                                              </span></ins>
-<ins><span class="w">              </span><span class="p">}</span><span class="w">                                                  </span></ins>
-<ins><span class="w">          </span><span class="p">}</span><span class="w">                                                      </span></ins>
-<ins><span class="w">      </span><span class="p">}</span><span class="w">                                                          </span></ins>
-<ins><span class="w">  </span><span class="p">}</span><span class="w">                                                              </span></ins>
-</pre></div>
+<pre>
+package com.javadude.movies.screens                            
+                                                               
+<del>//import androidx.compose.foundation.layout.Column             </del>
+<ins>import androidx.compose.foundation.layout.fillMaxWidth         </ins>
+import androidx.compose.foundation.layout.padding              
+<ins>import androidx.compose.foundation.lazy.LazyColumn             </ins>
+<ins>import androidx.compose.foundation.lazy.items                  </ins>
+<ins>import androidx.compose.material.Card                          </ins>
+import androidx.compose.runtime.Composable                     
+import androidx.compose.ui.Modifier                            
+import androidx.compose.ui.res.stringResource                  
+<ins>import androidx.compose.ui.unit.dp                             </ins>
+import com.javadude.movies.R                                   
+import com.javadude.movies.Screen                              
+import com.javadude.movies.components.MovieScaffold            
+import com.javadude.movies.components.SimpleText               
+import com.javadude.movies.repository.RatingDto                
+                                                               
+@Composable                                                    
+fun RatingList(                                                
+    ratings: List&lt;RatingDto&gt;,                                  
+    onSelectListScreen: (Screen) -&gt; Unit,                      
+    onResetDatabase: () -&gt; Unit,                               
+    onRatingClick: (String) -&gt; Unit,                           
+) = MovieScaffold(                                             
+<del>//  title = stringResource(id = R.string.screen_title_movies), </del>
+<ins>    title = stringResource(id = R.string.screen_title_ratings),</ins>
+    onSelectListScreen = onSelectListScreen,                   
+    onResetDatabase = onResetDatabase,                         
+) { paddingValues -&gt;                                           
+<del>//  Column(modifier = Modifier.padding(paddingValues)) {       </del>
+<del>//      ratings.forEach {                                      </del>
+<ins>    LazyColumn(                                                </ins>
+<ins>        modifier = Modifier.padding(paddingValues)             </ins>
+<ins>    ) {                                                        </ins>
+<ins>        items(                                                 </ins>
+<ins>            items = ratings,                                   </ins>
+<ins>            key = { it.id },                                   </ins>
+<ins>        ) {                                                    </ins>
+<ins>            Card(                                              </ins>
+<ins>                elevation = 4.dp,                              </ins>
+<ins>                modifier = Modifier                            </ins>
+<ins>                    .padding(8.dp)                             </ins>
+<ins>                    .fillMaxWidth()                            </ins>
+<ins>            ) {                                                </ins>
+                SimpleText(text = it.name) {                   
+                    onRatingClick(it.id)                       
+                }                                              
+            }                                                  
+        }                                                      
+<ins>    }                                                          </ins>
+}                                                              
+</pre>
 </div>
 </details>
   
@@ -3566,7 +3486,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="STEP_010_REPO.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Start with Movies UI, Part 1" rel="prev">
+        <a href="index.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Movie UI, part 2" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -3575,7 +3495,7 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Start with Movies UI, Part 1
+              Movie UI, part 2
             </div>
           </div>
         </a>

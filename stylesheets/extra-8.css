@@ -226,6 +226,7 @@ a.find-button {
     border-radius: 16px;
     padding-top: 10px;
     padding-bottom: 10px;
+    width: fit-content;
 }
 
 *:target::after {

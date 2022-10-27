@@ -55,7 +55,7 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra-7.css">
+      <link rel="stylesheet" href="../../stylesheets/extra-8.css">
     
     <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -877,22 +877,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-03/3.2-Movie-Database/STEP_010_REPO.html" class="md-nav__link">
-        Starter Project
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../week-03/3.2-Movie-Database/STEP_020_REPO.html" class="md-nav__link">
-        Update Versions
+        Project Setup
       </a>
     </li>
   
@@ -1249,22 +1235,8 @@
   
   
     <li class="md-nav__item">
-      <a href="STEP_010_REPO.html" class="md-nav__link">
-        Start with Movies Database
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="STEP_020_REPO.html" class="md-nav__link">
-        Update AGP Version
+        Project Setup
       </a>
     </li>
   
@@ -1515,20 +1487,6 @@
     <li class="md-nav__item">
       <a href="../../week-05/5.2-Movie-Ui-2/index.html" class="md-nav__link">
         Movie UI, part 2
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../week-05/5.2-Movie-Ui-2/STEP_010_REPO.html" class="md-nav__link">
-        Start with Movies UI, Part 1
       </a>
     </li>
   
@@ -2051,22 +2009,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-09/9.1-Google-map/STEP_010_REPO.html" class="md-nav__link">
-        Initial Project
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../week-09/9.1-Google-map/STEP_020_REPO.html" class="md-nav__link">
-        Update versions
+        Project Setup
       </a>
     </li>
   
@@ -3162,393 +3106,461 @@
 <h2>Code Changes</h2>
   
 <details class="example" open>
+<summary>CHANGED: /.idea/gradle.xml</summary>
+<div class="sas1-code-file" style="--sas1-file-name: '/.idea/gradle.xml';">
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;                             
+&lt;project version=&quot;4&quot;&gt;                                              
+<ins>  &lt;component name=&quot;GradleMigrationSettings&quot; migrationVersion=&quot;1&quot; /&gt;</ins>
+  &lt;component name=&quot;GradleSettings&quot;&gt;                                
+    &lt;option name=&quot;linkedExternalProjectsSettings&quot;&gt;                 
+      &lt;GradleProjectSettings&gt;                                      
+        &lt;option name=&quot;testRunner&quot; value=&quot;GRADLE&quot; /&gt;                
+        &lt;option name=&quot;distributionType&quot; value=&quot;DEFAULT_WRAPPED&quot; /&gt; 
+        &lt;option name=&quot;externalProjectPath&quot; value=&quot;$PROJECT_DIR$&quot; /&gt;
+        &lt;option name=&quot;modules&quot;&gt;                                    
+          &lt;set&gt;                                                    
+            &lt;option value=&quot;$PROJECT_DIR$&quot; /&gt;                       
+            &lt;option value=&quot;$PROJECT_DIR$/app&quot; /&gt;                   
+            &lt;option value=&quot;$PROJECT_DIR$/data&quot; /&gt;                  
+            &lt;option value=&quot;$PROJECT_DIR$/repository&quot; /&gt;            
+          &lt;/set&gt;                                                   
+        &lt;/option&gt;                                                  
+      &lt;/GradleProjectSettings&gt;                                     
+    &lt;/option&gt;                                                      
+  &lt;/component&gt;                                                     
+&lt;/project&gt;                                                         
+</pre>
+</div>
+</details>
+<details class="success" open>
+<summary>ADDED: /.idea/inspectionProfiles/Project_Default.xml</summary>
+<div class="sas1-code-file" style="--sas1-file-name: '/.idea/inspectionProfiles/Project_Default.xml';">
+<pre>
+<ins>&lt;component name=&quot;InspectionProjectProfileManager&quot;&gt;                                                                            </ins>
+<ins>  &lt;profile version=&quot;1.0&quot;&gt;                                                                                                     </ins>
+<ins>    &lt;option name=&quot;myName&quot; value=&quot;Project Default&quot; /&gt;                                                                          </ins>
+<ins>    &lt;inspection_tool class=&quot;PreviewAnnotationInFunctionWithParameters&quot; enabled=&quot;true&quot; level=&quot;ERROR&quot; enabled_by_default=&quot;true&quot;&gt;</ins>
+<ins>      &lt;option name=&quot;composableFile&quot; value=&quot;true&quot; /&gt;                                                                           </ins>
+<ins>    &lt;/inspection_tool&gt;                                                                                                        </ins>
+<ins>    &lt;inspection_tool class=&quot;PreviewDimensionRespectsLimit&quot; enabled=&quot;true&quot; level=&quot;WARNING&quot; enabled_by_default=&quot;true&quot;&gt;          </ins>
+<ins>      &lt;option name=&quot;composableFile&quot; value=&quot;true&quot; /&gt;                                                                           </ins>
+<ins>    &lt;/inspection_tool&gt;                                                                                                        </ins>
+<ins>    &lt;inspection_tool class=&quot;PreviewFontScaleMustBeGreaterThanZero&quot; enabled=&quot;true&quot; level=&quot;ERROR&quot; enabled_by_default=&quot;true&quot;&gt;    </ins>
+<ins>      &lt;option name=&quot;composableFile&quot; value=&quot;true&quot; /&gt;                                                                           </ins>
+<ins>    &lt;/inspection_tool&gt;                                                                                                        </ins>
+<ins>    &lt;inspection_tool class=&quot;PreviewMultipleParameterProviders&quot; enabled=&quot;true&quot; level=&quot;ERROR&quot; enabled_by_default=&quot;true&quot;&gt;        </ins>
+<ins>      &lt;option name=&quot;composableFile&quot; value=&quot;true&quot; /&gt;                                                                           </ins>
+<ins>    &lt;/inspection_tool&gt;                                                                                                        </ins>
+<ins>    &lt;inspection_tool class=&quot;PreviewMustBeTopLevelFunction&quot; enabled=&quot;true&quot; level=&quot;ERROR&quot; enabled_by_default=&quot;true&quot;&gt;            </ins>
+<ins>      &lt;option name=&quot;composableFile&quot; value=&quot;true&quot; /&gt;                                                                           </ins>
+<ins>    &lt;/inspection_tool&gt;                                                                                                        </ins>
+<ins>    &lt;inspection_tool class=&quot;PreviewNeedsComposableAnnotation&quot; enabled=&quot;true&quot; level=&quot;ERROR&quot; enabled_by_default=&quot;true&quot;&gt;         </ins>
+<ins>      &lt;option name=&quot;composableFile&quot; value=&quot;true&quot; /&gt;                                                                           </ins>
+<ins>    &lt;/inspection_tool&gt;                                                                                                        </ins>
+<ins>    &lt;inspection_tool class=&quot;PreviewNotSupportedInUnitTestFiles&quot; enabled=&quot;true&quot; level=&quot;ERROR&quot; enabled_by_default=&quot;true&quot;&gt;       </ins>
+<ins>      &lt;option name=&quot;composableFile&quot; value=&quot;true&quot; /&gt;                                                                           </ins>
+<ins>    &lt;/inspection_tool&gt;                                                                                                        </ins>
+<ins>    &lt;inspection_tool class=&quot;PreviewPickerAnnotation&quot; enabled=&quot;true&quot; level=&quot;ERROR&quot; enabled_by_default=&quot;true&quot;&gt;                  </ins>
+<ins>      &lt;option name=&quot;composableFile&quot; value=&quot;true&quot; /&gt;                                                                           </ins>
+<ins>    &lt;/inspection_tool&gt;                                                                                                        </ins>
+<ins>  &lt;/profile&gt;                                                                                                                  </ins>
+<ins>&lt;/component&gt;                                                                                                                  </ins>
+</pre>
+</div>
+</details>
+<details class="example" open>
 <summary>CHANGED: /app/src/main/java/com/javadude/movies/MainActivity.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/java/com/javadude/movies/MainActivity.kt';">
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies</span><span class="w">                                                       </span>
-<span class="w">                                                                                    </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">android.os.Bundle</span><span class="w">                                                          </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.activity.ComponentActivity</span><span class="w">                                        </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.activity.compose.setContent</span><span class="w">                                       </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.fillMaxSize</span><span class="w">                             </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.material.MaterialTheme</span><span class="w">                                    </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.material.Surface</span><span class="w">                                          </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.Modifier</span><span class="w">                                               </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.screens.TestScreen</span><span class="w">                                     </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.ui.theme.MoviesTheme</span><span class="w">                                   </span>
-<span class="w">                                                                                    </span>
-<span class="w">  </span><span class="kd">class</span><span class="w"> </span><span class="nc">MainActivity</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ComponentActivity</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">                                        </span>
-<span class="w">      </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span><span class="w"> </span><span class="n">Bundle?)</span><span class="w"> </span><span class="p">{</span><span class="w">                          </span>
-<span class="w">          </span><span class="k">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span><span class="w">                                        </span>
-<span class="w">          </span><span class="n">setContent</span><span class="w"> </span><span class="p">{</span><span class="w">                                                              </span>
-<span class="w">              </span><span class="n">MoviesTheme</span><span class="w"> </span><span class="p">{</span><span class="w">                                                         </span>
-<span class="w">                  </span><span class="c1">// A surface container using the &#39;background&#39; color from the theme</span><span class="w"></span>
-<span class="w">                  </span><span class="n">Surface</span><span class="p">(</span><span class="w">                                                          </span>
-<span class="w">                      </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">fillMaxSize</span><span class="p">(),</span><span class="w">                            </span>
-<span class="w">                      </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MaterialTheme</span><span class="p">.</span><span class="na">colors</span><span class="p">.</span><span class="na">background</span><span class="w">                       </span>
-<span class="w">                  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                               </span>
-<del>//<span class="w">                    </span><span class="n">TestScreen</span><span class="p">()</span><span class="w">                                                  </span></del>
-<ins><span class="w">                      </span><span class="n">TestScreen</span><span class="w"> </span><span class="p">{</span><span class="w">                                                  </span></ins>
-<ins><span class="w">                          </span><span class="n">finish</span><span class="p">()</span><span class="w"> </span><span class="c1">// handle &quot;onExit&quot;                               </span><span class="w"></span></ins>
-<ins><span class="w">                      </span><span class="p">}</span><span class="w">                                                             </span></ins>
-<span class="w">                  </span><span class="p">}</span><span class="w">                                                                 </span>
-<span class="w">              </span><span class="p">}</span><span class="w">                                                                     </span>
-<span class="w">          </span><span class="p">}</span><span class="w">                                                                         </span>
-<span class="w">      </span><span class="p">}</span><span class="w">                                                                             </span>
-<span class="w">  </span><span class="p">}</span><span class="w">                                                                                 </span>
-</pre></div>
+<pre>
+package com.javadude.movies                                                       
+                                                                                  
+import android.os.Bundle                                                          
+import androidx.activity.ComponentActivity                                        
+import androidx.activity.compose.setContent                                       
+import androidx.compose.foundation.layout.fillMaxSize                             
+import androidx.compose.material.MaterialTheme                                    
+import androidx.compose.material.Surface                                          
+import androidx.compose.ui.Modifier                                               
+import com.javadude.movies.screens.TestScreen                                     
+import com.javadude.movies.ui.theme.MoviesTheme                                   
+                                                                                  
+class MainActivity : ComponentActivity() {                                        
+    override fun onCreate(savedInstanceState: Bundle?) {                          
+        super.onCreate(savedInstanceState)                                        
+        setContent {                                                              
+            MoviesTheme {                                                         
+                // A surface container using the &#39;background&#39; color from the theme
+                Surface(                                                          
+                    modifier = Modifier.fillMaxSize(),                            
+                    color = MaterialTheme.colors.background                       
+                ) {                                                               
+<del>//                  TestScreen()                                                  </del>
+<ins>                    TestScreen {                                                  </ins>
+<ins>                        finish() // handle &quot;onExit&quot;                               </ins>
+<ins>                    }                                                             </ins>
+                }                                                                 
+            }                                                                     
+        }                                                                         
+    }                                                                             
+}                                                                                 
+</pre>
 </div>
 </details>
 <details class="example" open>
 <summary>CHANGED: /app/src/main/java/com/javadude/movies/MovieViewModel.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/java/com/javadude/movies/MovieViewModel.kt';">
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies</span><span class="w">                                                       </span>
-<span class="w">                                                                                    </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">android.app.Application</span><span class="w">                                                    </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.getValue</span><span class="w">                                          </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.mutableStateOf</span><span class="w">                                    </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.setValue</span><span class="w">                                          </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.lifecycle.AndroidViewModel</span><span class="w">                                        </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.lifecycle.viewModelScope</span><span class="w">                                          </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.repository.MovieDatabaseRepository</span><span class="w">                     </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.repository.MovieRepository</span><span class="w">                             </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">kotlinx.coroutines.launch</span><span class="w">                                                  </span>
-<span class="w">                                                                                    </span>
-<span class="w">  </span><span class="kd">sealed</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="nc">Screen</span><span class="w">                                                           </span>
-<span class="w">                                                                                    </span>
-<span class="w">  </span><span class="kd">object</span><span class="w"> </span><span class="nc">RatingList</span><span class="p">:</span><span class="w"> </span><span class="n">Screen</span><span class="w">                                                         </span>
-<span class="w">  </span><span class="kd">object</span><span class="w"> </span><span class="nc">MovieList</span><span class="p">:</span><span class="w"> </span><span class="n">Screen</span><span class="w">                                                          </span>
-<span class="w">  </span><span class="kd">object</span><span class="w"> </span><span class="nc">ActorList</span><span class="p">:</span><span class="w"> </span><span class="n">Screen</span><span class="w">                                                          </span>
-<span class="w">                                                                                    </span>
-<span class="w">  </span><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">RatingDisplay</span><span class="p">(</span><span class="w">                                                         </span>
-<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">id</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="w">                                                                </span>
-<span class="w">  </span><span class="p">):</span><span class="w"> </span><span class="n">Screen</span><span class="w">                                                                         </span>
-<span class="w">  </span><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">ActorDisplay</span><span class="p">(</span><span class="w">                                                          </span>
-<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">id</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="w">                                                                </span>
-<span class="w">  </span><span class="p">):</span><span class="w"> </span><span class="n">Screen</span><span class="w">                                                                         </span>
-<span class="w">  </span><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">MovieDisplay</span><span class="p">(</span><span class="w">                                                          </span>
-<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">id</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="w">                                                                </span>
-<span class="w">  </span><span class="p">):</span><span class="w"> </span><span class="n">Screen</span><span class="w">                                                                         </span>
-<span class="w">                                                                                    </span>
-<span class="w">  </span><span class="kd">class</span><span class="w"> </span><span class="nc">MovieViewModel</span><span class="p">(</span><span class="n">application</span><span class="p">:</span><span class="w"> </span><span class="n">Application</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">AndroidViewModel</span><span class="p">(</span><span class="n">application</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
-<span class="w">      </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">repository</span><span class="p">:</span><span class="w"> </span><span class="n">MovieRepository</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MovieDatabaseRepository</span><span class="p">(</span><span class="n">application</span><span class="p">)</span><span class="w"></span>
-<span class="w">                                                                                    </span>
-<span class="w">      </span><span class="kd">private</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">screenStack</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Screen</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listOf</span><span class="p">(</span><span class="n">MovieList</span><span class="p">)</span><span class="w">                     </span>
-<span class="w">          </span><span class="k">set</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                              </span>
-<span class="w">              </span><span class="n">field</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="w">                                                         </span>
-<span class="w">              </span><span class="n">screen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">.</span><span class="na">lastOrNull</span><span class="p">()</span><span class="w">                                           </span>
-<span class="w">          </span><span class="p">}</span><span class="w">                                                                         </span>
-<span class="w">                                                                                    </span>
-<span class="w">      </span><span class="kd">fun</span><span class="w"> </span><span class="nf">pushScreen</span><span class="p">(</span><span class="n">screen</span><span class="p">:</span><span class="w"> </span><span class="n">Screen</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                              </span>
-<span class="w">          </span><span class="n">screenStack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">screenStack</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">screen</span><span class="w">                                        </span>
-<span class="w">      </span><span class="p">}</span><span class="w">                                                                             </span>
-<span class="w">      </span><span class="kd">fun</span><span class="w"> </span><span class="nf">popScreen</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">                                                             </span>
-<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">screenStack</span><span class="p">.</span><span class="na">isNotEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">                                           </span>
-<span class="w">              </span><span class="n">screenStack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">screenStack</span><span class="p">.</span><span class="na">dropLast</span><span class="p">(</span><span class="m">1</span><span class="p">)</span><span class="w">                                 </span>
-<span class="w">          </span><span class="p">}</span><span class="w">                                                                         </span>
-<span class="w">      </span><span class="p">}</span><span class="w">                                                                             </span>
-<span class="w">      </span><span class="kd">fun</span><span class="w"> </span><span class="nf">setScreenStack</span><span class="p">(</span><span class="n">screen</span><span class="p">:</span><span class="w"> </span><span class="n">Screen</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                          </span>
-<span class="w">          </span><span class="n">screenStack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listOf</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span><span class="w">                                              </span>
-<span class="w">      </span><span class="p">}</span><span class="w">                                                                             </span>
-<span class="w">                                                                                    </span>
-<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">screen</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">mutableStateOf</span><span class="o">&lt;</span><span class="n">Screen?&gt;</span><span class="p">(</span><span class="n">MovieList</span><span class="p">)</span><span class="w">                              </span>
-<span class="w">          </span><span class="n">private</span><span class="w"> </span><span class="k">set</span><span class="w">                                                               </span>
-<span class="w">                                                                                    </span>
-<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">ratingsFlow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">repository</span><span class="p">.</span><span class="na">ratingsFlow</span><span class="w">                                      </span>
-<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">moviesFlow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">repository</span><span class="p">.</span><span class="na">moviesFlow</span><span class="w">                                        </span>
-<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">actorsFlow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">repository</span><span class="p">.</span><span class="na">actorsFlow</span><span class="w">                                        </span>
-<span class="w">                                                                                    </span>
-<span class="w">      </span><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getRatingWithMovies</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w">                                 </span>
-<span class="w">          </span><span class="n">repository</span><span class="p">.</span><span class="na">getRatingWithMovies</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w">                                        </span>
-<span class="w">                                                                                    </span>
-<del>//<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">switchTo</span><span class="p">(</span><span class="n">screen</span><span class="p">:</span><span class="w"> </span><span class="n">Screen</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                </span></del>
-<del>//<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">screen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">screen</span><span class="w">                                                      </span></del>
-<del>//<span class="w">    </span><span class="p">}</span><span class="w">                                                                             </span></del>
-<del>//<span class="w">                                                                                  </span></del>
-<span class="w">      </span><span class="kd">fun</span><span class="w"> </span><span class="nf">resetDatabase</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">                                                         </span>
-<span class="w">          </span><span class="n">viewModelScope</span><span class="p">.</span><span class="na">launch</span><span class="w"> </span><span class="p">{</span><span class="w">                                                   </span>
-<span class="w">              </span><span class="n">repository</span><span class="p">.</span><span class="na">resetDatabase</span><span class="p">()</span><span class="w">                                            </span>
-<span class="w">          </span><span class="p">}</span><span class="w">                                                                         </span>
-<span class="w">      </span><span class="p">}</span><span class="w">                                                                             </span>
-<span class="w">  </span><span class="p">}</span><span class="w">                                                                                 </span>
-</pre></div>
+<pre>
+package com.javadude.movies                                                       
+                                                                                  
+import android.app.Application                                                    
+import androidx.compose.runtime.getValue                                          
+import androidx.compose.runtime.mutableStateOf                                    
+import androidx.compose.runtime.setValue                                          
+import androidx.lifecycle.AndroidViewModel                                        
+import androidx.lifecycle.viewModelScope                                          
+import com.javadude.movies.repository.MovieDatabaseRepository                     
+import com.javadude.movies.repository.MovieRepository                             
+import kotlinx.coroutines.launch                                                  
+                                                                                  
+sealed interface Screen                                                           
+                                                                                  
+object RatingList: Screen                                                         
+object MovieList: Screen                                                          
+object ActorList: Screen                                                          
+                                                                                  
+data class RatingDisplay(                                                         
+    val id: String                                                                
+): Screen                                                                         
+data class ActorDisplay(                                                          
+    val id: String                                                                
+): Screen                                                                         
+data class MovieDisplay(                                                          
+    val id: String                                                                
+): Screen                                                                         
+                                                                                  
+class MovieViewModel(application: Application) : AndroidViewModel(application) {  
+    private val repository: MovieRepository = MovieDatabaseRepository(application)
+                                                                                  
+    private var screenStack: List&lt;Screen&gt; = listOf(MovieList)                     
+        set(value) {                                                              
+            field = value                                                         
+            screen = value.lastOrNull()                                           
+        }                                                                         
+                                                                                  
+    fun pushScreen(screen: Screen) {                                              
+        screenStack = screenStack + screen                                        
+    }                                                                             
+    fun popScreen() {                                                             
+        if (screenStack.isNotEmpty()) {                                           
+            screenStack = screenStack.dropLast(1)                                 
+        }                                                                         
+    }                                                                             
+    fun setScreenStack(screen: Screen) {                                          
+        screenStack = listOf(screen)                                              
+    }                                                                             
+                                                                                  
+    var screen by mutableStateOf&lt;Screen?&gt;(MovieList)                              
+        private set                                                               
+                                                                                  
+    val ratingsFlow = repository.ratingsFlow                                      
+    val moviesFlow = repository.moviesFlow                                        
+    val actorsFlow = repository.actorsFlow                                        
+                                                                                  
+    suspend fun getRatingWithMovies(id: String) =                                 
+        repository.getRatingWithMovies(id)                                        
+                                                                                  
+<del>//  fun switchTo(screen: Screen) {                                                </del>
+<del>//      this.screen = screen                                                      </del>
+<del>//  }                                                                             </del>
+    fun resetDatabase() {                                                         
+        viewModelScope.launch {                                                   
+            repository.resetDatabase()                                            
+        }                                                                         
+    }                                                                             
+}                                                                                 
+</pre>
 </div>
 </details>
 <details class="success" open>
 <summary>ADDED: /app/src/main/java/com/javadude/movies/screens/ActorDisplay.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/java/com/javadude/movies/screens/ActorDisplay.kt';">
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.screens</span><span class="w">             </span>
-<span class="w">                                                  </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.Composable</span><span class="w">      </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.components.SimpleText</span><span class="w"></span>
-<span class="w">                                                  </span>
-<span class="w">  </span><span class="nd">@Composable</span><span class="w">                                     </span>
-<span class="w">  </span><span class="kd">fun</span><span class="w"> </span><span class="nf">ActorDisplay</span><span class="p">(</span><span class="w">                               </span>
-<span class="w">      </span><span class="n">actorId</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                            </span>
-<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                             </span>
-<span class="w">      </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Actor </span><span class="si">$</span><span class="n">actorId</span><span class="s">&quot;</span><span class="p">)</span><span class="w">         </span>
-<span class="w">  </span><span class="p">}</span><span class="w">                                               </span>
-</pre></div>
+<pre>
+<ins>package com.javadude.movies.screens             </ins>
+                                                
+<ins>import androidx.compose.runtime.Composable      </ins>
+<ins>import com.javadude.movies.components.SimpleText</ins>
+                                                
+<ins>@Composable                                     </ins>
+<ins>fun ActorDisplay(                               </ins>
+<ins>    actorId: String,                            </ins>
+<ins>) {                                             </ins>
+<ins>    SimpleText(text = &quot;Actor $actorId&quot;)         </ins>
+<ins>}                                               </ins>
+</pre>
 </div>
 </details>
 <details class="example" open>
 <summary>CHANGED: /app/src/main/java/com/javadude/movies/screens/ActorList.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/java/com/javadude/movies/screens/ActorList.kt';">
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.screens</span><span class="w">             </span>
-<span class="w">                                                  </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.Composable</span><span class="w">      </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.components.SimpleText</span><span class="w"></span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.repository.ActorDto</span><span class="w">  </span>
-<span class="w">                                                  </span>
-<span class="w">  </span><span class="nd">@Composable</span><span class="w">                                     </span>
-<span class="w">  </span><span class="kd">fun</span><span class="w"> </span><span class="nf">ActorList</span><span class="p">(</span><span class="w">                                  </span>
-<del>//<span class="w">    </span><span class="n">actors</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">ActorDto</span><span class="o">&gt;</span><span class="w">                      </span></del>
-<ins><span class="w">      </span><span class="n">actors</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">ActorDto</span><span class="o">&gt;</span><span class="p">,</span><span class="w">                     </span></ins>
-<ins><span class="w">      </span><span class="n">onActorClick</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">,</span><span class="w">             </span></ins>
-<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                             </span>
-<span class="w">      </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Actors&quot;</span><span class="p">)</span><span class="w">                 </span>
-<span class="w">      </span><span class="n">actors</span><span class="p">.</span><span class="na">forEach</span><span class="w"> </span><span class="p">{</span><span class="w">                            </span>
-<del>//<span class="w">        </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">it</span><span class="p">.</span><span class="na">name</span><span class="p">)</span><span class="w">              </span></del>
-<ins><span class="w">          </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">it</span><span class="p">.</span><span class="na">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">            </span></ins>
-<ins><span class="w">              </span><span class="n">onActorClick</span><span class="p">(</span><span class="nb">it</span><span class="p">.</span><span class="na">id</span><span class="p">)</span><span class="w">                 </span></ins>
-<ins><span class="w">          </span><span class="p">}</span><span class="w">                                       </span></ins>
-<span class="w">      </span><span class="p">}</span><span class="w">                                           </span>
-<span class="w">  </span><span class="p">}</span><span class="w">                                               </span>
-</pre></div>
+<pre>
+package com.javadude.movies.screens             
+                                                
+import androidx.compose.runtime.Composable      
+import com.javadude.movies.components.SimpleText
+import com.javadude.movies.repository.ActorDto  
+                                                
+@Composable                                     
+fun ActorList(                                  
+<del>//  actors: List&lt;ActorDto&gt;                      </del>
+<ins>    actors: List&lt;ActorDto&gt;,                     </ins>
+<ins>    onActorClick: (String) -&gt; Unit,             </ins>
+) {                                             
+    SimpleText(text = &quot;Actors&quot;)                 
+    actors.forEach {                            
+<del>//      SimpleText(text = it.name)              </del>
+<ins>        SimpleText(text = it.name) {            </ins>
+<ins>            onActorClick(it.id)                 </ins>
+<ins>        }                                       </ins>
+    }                                           
+}                                               
+</pre>
 </div>
 </details>
 <details class="success" open>
 <summary>ADDED: /app/src/main/java/com/javadude/movies/screens/MovieDisplay.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/java/com/javadude/movies/screens/MovieDisplay.kt';">
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.screens</span><span class="w">             </span>
-<span class="w">                                                  </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.Composable</span><span class="w">      </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.components.SimpleText</span><span class="w"></span>
-<span class="w">                                                  </span>
-<span class="w">  </span><span class="nd">@Composable</span><span class="w">                                     </span>
-<span class="w">  </span><span class="kd">fun</span><span class="w"> </span><span class="nf">MovieDisplay</span><span class="p">(</span><span class="w">                               </span>
-<span class="w">      </span><span class="n">movieId</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                            </span>
-<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                             </span>
-<span class="w">      </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Movie </span><span class="si">$</span><span class="n">movieId</span><span class="s">&quot;</span><span class="p">)</span><span class="w">         </span>
-<span class="w">  </span><span class="p">}</span><span class="w">                                               </span>
-</pre></div>
+<pre>
+<ins>package com.javadude.movies.screens             </ins>
+                                                
+<ins>import androidx.compose.runtime.Composable      </ins>
+<ins>import com.javadude.movies.components.SimpleText</ins>
+                                                
+<ins>@Composable                                     </ins>
+<ins>fun MovieDisplay(                               </ins>
+<ins>    movieId: String,                            </ins>
+<ins>) {                                             </ins>
+<ins>    SimpleText(text = &quot;Movie $movieId&quot;)         </ins>
+<ins>}                                               </ins>
+</pre>
 </div>
 </details>
 <details class="example" open>
 <summary>CHANGED: /app/src/main/java/com/javadude/movies/screens/MovieList.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/java/com/javadude/movies/screens/MovieList.kt';">
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.screens</span><span class="w">             </span>
-<span class="w">                                                  </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.Composable</span><span class="w">      </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.components.SimpleText</span><span class="w"></span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.repository.MovieDto</span><span class="w">  </span>
-<span class="w">                                                  </span>
-<span class="w">  </span><span class="nd">@Composable</span><span class="w">                                     </span>
-<span class="w">  </span><span class="kd">fun</span><span class="w"> </span><span class="nf">MovieList</span><span class="p">(</span><span class="w">                                  </span>
-<del>//<span class="w">    </span><span class="n">movies</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">MovieDto</span><span class="o">&gt;</span><span class="w">                      </span></del>
-<ins><span class="w">      </span><span class="n">movies</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">MovieDto</span><span class="o">&gt;</span><span class="p">,</span><span class="w">                     </span></ins>
-<ins><span class="w">      </span><span class="n">onMovieClick</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">,</span><span class="w">             </span></ins>
-<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                             </span>
-<span class="w">      </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Movies&quot;</span><span class="p">)</span><span class="w">                 </span>
-<span class="w">      </span><span class="n">movies</span><span class="p">.</span><span class="na">forEach</span><span class="w"> </span><span class="p">{</span><span class="w">                            </span>
-<del>//<span class="w">        </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">it</span><span class="p">.</span><span class="na">title</span><span class="p">)</span><span class="w">             </span></del>
-<ins><span class="w">          </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">it</span><span class="p">.</span><span class="na">title</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">           </span></ins>
-<ins><span class="w">              </span><span class="n">onMovieClick</span><span class="p">(</span><span class="nb">it</span><span class="p">.</span><span class="na">id</span><span class="p">)</span><span class="w">                 </span></ins>
-<ins><span class="w">          </span><span class="p">}</span><span class="w">                                       </span></ins>
-<span class="w">      </span><span class="p">}</span><span class="w">                                           </span>
-<span class="w">  </span><span class="p">}</span><span class="w">                                               </span>
-</pre></div>
+<pre>
+package com.javadude.movies.screens             
+                                                
+import androidx.compose.runtime.Composable      
+import com.javadude.movies.components.SimpleText
+import com.javadude.movies.repository.MovieDto  
+                                                
+@Composable                                     
+fun MovieList(                                  
+<del>//  movies: List&lt;MovieDto&gt;                      </del>
+<ins>    movies: List&lt;MovieDto&gt;,                     </ins>
+<ins>    onMovieClick: (String) -&gt; Unit,             </ins>
+) {                                             
+    SimpleText(text = &quot;Movies&quot;)                 
+    movies.forEach {                            
+<del>//      SimpleText(text = it.title)             </del>
+<ins>        SimpleText(text = it.title) {           </ins>
+<ins>            onMovieClick(it.id)                 </ins>
+<ins>        }                                       </ins>
+    }                                           
+}                                               
+</pre>
 </div>
 </details>
 <details class="example" open>
 <summary>CHANGED: /app/src/main/java/com/javadude/movies/screens/RatingDisplay.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/java/com/javadude/movies/screens/RatingDisplay.kt';">
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.screens</span><span class="w">                                                   </span>
-<span class="w">                                                                                        </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.Composable</span><span class="w">                                            </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.LaunchedEffect</span><span class="w">                                        </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.getValue</span><span class="w">                                              </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.mutableStateOf</span><span class="w">                                        </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.remember</span><span class="w">                                              </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.setValue</span><span class="w">                                              </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.components.SimpleText</span><span class="w">                                      </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.repository.RatingWithMoviesDto</span><span class="w">                             </span>
-<span class="w">                                                                                        </span>
-<span class="w">  </span><span class="nd">@Composable</span><span class="w">                                                                           </span>
-<span class="w">  </span><span class="kd">fun</span><span class="w"> </span><span class="nf">RatingDisplay</span><span class="p">(</span><span class="w">                                                                    </span>
-<span class="w">      </span><span class="n">ratingId</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                                                                 </span>
-<span class="w">      </span><span class="n">fetchRatingWithMovies</span><span class="p">:</span><span class="w"> </span><span class="n">suspend</span><span class="w"> </span><span class="p">(</span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">RatingWithMoviesDto</span><span class="p">,</span><span class="w">                   </span>
-<ins><span class="w">      </span><span class="n">onMovieClick</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">,</span><span class="w">                                                   </span></ins>
-<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                                   </span>
-<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">ratingWithMoviesDto</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">remember</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">mutableStateOf</span><span class="o">&lt;</span><span class="n">RatingWithMoviesDto?&gt;</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="w">                                                                                        </span>
-<span class="w">      </span><span class="n">LaunchedEffect</span><span class="p">(</span><span class="n">key1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ratingId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                 </span>
-<span class="w">          </span><span class="c1">// starts a coroutine to fetch the rating                                     </span><span class="w"></span>
-<span class="w">          </span><span class="n">ratingWithMoviesDto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fetchRatingWithMovies</span><span class="p">(</span><span class="n">ratingId</span><span class="p">)</span><span class="w">                         </span>
-<span class="w">      </span><span class="p">}</span><span class="w">                                                                                 </span>
-<span class="w">                                                                                        </span>
-<span class="w">      </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Rating&quot;</span><span class="p">)</span><span class="w">                                                       </span>
-<span class="w">      </span><span class="n">ratingWithMoviesDto</span><span class="o">?.</span><span class="na">let</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">ratingWithMovies</span><span class="w"> </span><span class="o">-&gt;</span><span class="w">                                    </span>
-<span class="w">          </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ratingWithMovies</span><span class="p">.</span><span class="na">rating</span><span class="p">.</span><span class="na">name</span><span class="p">)</span><span class="w">                               </span>
-<span class="w">          </span><span class="n">ratingWithMovies</span><span class="p">.</span><span class="na">movies</span><span class="p">.</span><span class="na">forEach</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">movie</span><span class="w"> </span><span class="o">-&gt;</span><span class="w">                                    </span>
-<del>//<span class="w">            </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Movie: </span><span class="si">${</span><span class="n">movie</span><span class="p">.</span><span class="na">title</span><span class="si">}</span><span class="s">&quot;</span><span class="p">)</span><span class="w">                                </span></del>
-<ins><span class="w">              </span><span class="n">SimpleText</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Movie: </span><span class="si">${</span><span class="n">movie</span><span class="p">.</span><span class="na">title</span><span class="si">}</span><span class="s">&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                              </span></ins>
-<ins><span class="w">                  </span><span class="n">onMovieClick</span><span class="p">(</span><span class="n">movie</span><span class="p">.</span><span class="na">id</span><span class="p">)</span><span class="w">                                                </span></ins>
-<ins><span class="w">              </span><span class="p">}</span><span class="w">                                                                         </span></ins>
-<span class="w">          </span><span class="p">}</span><span class="w">                                                                             </span>
-<span class="w">      </span><span class="p">}</span><span class="w">                                                                                 </span>
-<span class="w">  </span><span class="p">}</span><span class="w">                                                                                     </span>
-</pre></div>
+<pre>
+package com.javadude.movies.screens                                                   
+                                                                                      
+import androidx.compose.runtime.Composable                                            
+import androidx.compose.runtime.LaunchedEffect                                        
+import androidx.compose.runtime.getValue                                              
+import androidx.compose.runtime.mutableStateOf                                        
+import androidx.compose.runtime.remember                                              
+import androidx.compose.runtime.setValue                                              
+import com.javadude.movies.components.SimpleText                                      
+import com.javadude.movies.repository.RatingWithMoviesDto                             
+                                                                                      
+@Composable                                                                           
+fun RatingDisplay(                                                                    
+    ratingId: String,                                                                 
+    fetchRatingWithMovies: suspend (String) -&gt; RatingWithMoviesDto,                   
+<ins>    onMovieClick: (String) -&gt; Unit,                                                   </ins>
+) {                                                                                   
+    var ratingWithMoviesDto by remember { mutableStateOf&lt;RatingWithMoviesDto?&gt;(null) }
+                                                                                      
+    LaunchedEffect(key1 = ratingId) {                                                 
+        // starts a coroutine to fetch the rating                                     
+        ratingWithMoviesDto = fetchRatingWithMovies(ratingId)                         
+    }                                                                                 
+                                                                                      
+    SimpleText(text = &quot;Rating&quot;)                                                       
+    ratingWithMoviesDto?.let { ratingWithMovies -&gt;                                    
+        SimpleText(text = ratingWithMovies.rating.name)                               
+        ratingWithMovies.movies.forEach { movie -&gt;                                    
+<del>//          SimpleText(text = &quot;Movie: ${movie.title}&quot;)                                </del>
+<ins>            SimpleText(text = &quot;Movie: ${movie.title}&quot;) {                              </ins>
+<ins>                onMovieClick(movie.id)                                                </ins>
+<ins>            }                                                                         </ins>
+        }                                                                             
+    }                                                                                 
+}                                                                                     
+</pre>
 </div>
 </details>
 <details class="example" open>
 <summary>CHANGED: /app/src/main/java/com/javadude/movies/screens/TestScreen.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/java/com/javadude/movies/screens/TestScreen.kt';">
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.screens</span><span class="w">                                               </span>
-<span class="w">                                                                                    </span>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.activity.compose.BackHandler</span><span class="w">                                      </span></ins>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.Column</span><span class="w">                                  </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.Row</span><span class="w">                                     </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.Composable</span><span class="w">                                        </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.collectAsState</span><span class="w">                                    </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.getValue</span><span class="w">                                          </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.lifecycle.viewmodel.compose.viewModel</span><span class="w">                             </span>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.ActorDisplay</span><span class="w">                                           </span></ins>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.ActorList</span><span class="w">                                              </span>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.MovieDisplay</span><span class="w">                                           </span></ins>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.MovieList</span><span class="w">                                              </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.MovieViewModel</span><span class="w">                                         </span>
-<ins><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.RatingDisplay</span><span class="w">                                          </span></ins>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.RatingList</span><span class="w">                                             </span>
-<del>//<span class="w"></span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.RatingScreen</span><span class="w">                                           </span></del>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">com.javadude.movies.components.SimpleButton</span><span class="w">                                </span>
-<span class="w">                                                                                    </span>
-<span class="w">  </span><span class="nd">@Composable</span><span class="w">                                                                       </span>
-<span class="w">  </span><span class="kd">fun</span><span class="w"> </span><span class="nf">TestScreen</span><span class="p">(</span><span class="w">                                                                   </span>
-<del>//<span class="w">    </span><span class="n">viewModel</span><span class="p">:</span><span class="w"> </span><span class="n">MovieViewModel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">viewModel</span><span class="p">()</span><span class="w">                                       </span></del>
-<ins><span class="w">      </span><span class="n">viewModel</span><span class="p">:</span><span class="w"> </span><span class="n">MovieViewModel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">viewModel</span><span class="p">(),</span><span class="w">                                      </span></ins>
-<ins><span class="w">      </span><span class="n">onExit</span><span class="p">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">,</span><span class="w">                                                           </span></ins>
-<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                               </span>
-<ins><span class="w">      </span><span class="n">BackHandler</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                 </span></ins>
-<ins><span class="w">          </span><span class="n">viewModel</span><span class="p">.</span><span class="na">popScreen</span><span class="p">()</span><span class="w">                                                     </span></ins>
-<ins><span class="w">      </span><span class="p">}</span><span class="w">                                                                             </span></ins>
-<ins><span class="w">                                                                                    </span></ins>
-<span class="w">      </span><span class="c1">// This is a hideous, but simple simple test screen                           </span><span class="w"></span>
-<span class="w">      </span><span class="c1">//   (There are some bad things happening here... We&#39;ll fix it!)              </span><span class="w"></span>
-<span class="w">      </span><span class="c1">// Don&#39;t worry about how it does its job; we&#39;ll cover that soon!              </span><span class="w"></span>
-<span class="w">      </span><span class="n">Column</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                      </span>
-<span class="w">          </span><span class="n">Row</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                     </span>
-<span class="w">              </span><span class="n">SimpleButton</span><span class="p">(</span><span class="s">&quot;Reset&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                               </span>
-<span class="w">                  </span><span class="n">viewModel</span><span class="p">.</span><span class="na">resetDatabase</span><span class="p">()</span><span class="w">                                         </span>
-<span class="w">              </span><span class="p">}</span><span class="w">                                                                     </span>
-<span class="w">              </span><span class="n">SimpleButton</span><span class="p">(</span><span class="s">&quot;Ratings&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                             </span>
-<del>//<span class="w">                </span><span class="n">viewModel</span><span class="p">.</span><span class="na">switchTo</span><span class="p">(</span><span class="n">RatingList</span><span class="p">)</span><span class="w">                                    </span></del>
-<ins><span class="w">                  </span><span class="n">viewModel</span><span class="p">.</span><span class="na">setScreenStack</span><span class="p">(</span><span class="n">RatingList</span><span class="p">)</span><span class="w">                              </span></ins>
-<span class="w">              </span><span class="p">}</span><span class="w">                                                                     </span>
-<span class="w">          </span><span class="p">}</span><span class="w">                                                                         </span>
-<span class="w">          </span><span class="n">Row</span><span class="w"> </span><span class="p">{</span><span class="w">                                                                     </span>
-<span class="w">              </span><span class="n">SimpleButton</span><span class="p">(</span><span class="s">&quot;Movies&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                              </span>
-<del>//<span class="w">                </span><span class="n">viewModel</span><span class="p">.</span><span class="na">switchTo</span><span class="p">(</span><span class="n">MovieList</span><span class="p">)</span><span class="w">                                     </span></del>
-<ins><span class="w">                  </span><span class="n">viewModel</span><span class="p">.</span><span class="na">setScreenStack</span><span class="p">(</span><span class="n">MovieList</span><span class="p">)</span><span class="w">                               </span></ins>
-<span class="w">              </span><span class="p">}</span><span class="w">                                                                     </span>
-<span class="w">              </span><span class="n">SimpleButton</span><span class="p">(</span><span class="s">&quot;Actors&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                              </span>
-<del>//<span class="w">                </span><span class="n">viewModel</span><span class="p">.</span><span class="na">switchTo</span><span class="p">(</span><span class="n">ActorList</span><span class="p">)</span><span class="w">                                     </span></del>
-<ins><span class="w">                  </span><span class="n">viewModel</span><span class="p">.</span><span class="na">setScreenStack</span><span class="p">(</span><span class="n">ActorList</span><span class="p">)</span><span class="w">                               </span></ins>
-<span class="w">              </span><span class="p">}</span><span class="w">                                                                     </span>
-<span class="w">          </span><span class="p">}</span><span class="w">                                                                         </span>
-<span class="w">                                                                                    </span>
-<span class="w">          </span><span class="kd">val</span><span class="w"> </span><span class="nv">ratings</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">viewModel</span><span class="p">.</span><span class="na">ratingsFlow</span><span class="p">.</span><span class="na">collectAsState</span><span class="p">(</span><span class="n">initial</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">emptyList</span><span class="p">())</span><span class="w"></span>
-<span class="w">          </span><span class="kd">val</span><span class="w"> </span><span class="nv">movies</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">viewModel</span><span class="p">.</span><span class="na">moviesFlow</span><span class="p">.</span><span class="na">collectAsState</span><span class="p">(</span><span class="n">initial</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">emptyList</span><span class="p">())</span><span class="w">  </span>
-<span class="w">          </span><span class="kd">val</span><span class="w"> </span><span class="nv">actors</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">viewModel</span><span class="p">.</span><span class="na">actorsFlow</span><span class="p">.</span><span class="na">collectAsState</span><span class="p">(</span><span class="n">initial</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">emptyList</span><span class="p">())</span><span class="w">  </span>
-<span class="w">                                                                                    </span>
-<span class="w">          </span><span class="k">when</span><span class="p">(</span><span class="kd">val</span><span class="w"> </span><span class="nv">screen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">viewModel</span><span class="p">.</span><span class="na">screen</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                     </span>
-<ins><span class="w">              </span><span class="kc">null</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">onExit</span><span class="p">()</span><span class="w">                                                      </span></ins>
-<ins><span class="w">                                                                                    </span></ins>
-<span class="w">              </span><span class="n">RatingList</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">RatingList</span><span class="p">(</span><span class="n">ratings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ratings</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">-&gt;</span><span class="w">                   </span>
-<del>//<span class="w">                </span><span class="n">viewModel</span><span class="p">.</span><span class="na">switchTo</span><span class="p">(</span><span class="n">RatingScreen</span><span class="p">(</span><span class="n">id</span><span class="p">))</span><span class="w">                              </span></del>
-<ins><span class="w">                  </span><span class="n">viewModel</span><span class="p">.</span><span class="na">pushScreen</span><span class="p">(</span><span class="n">RatingDisplay</span><span class="p">(</span><span class="n">id</span><span class="p">))</span><span class="w">                           </span></ins>
-<span class="w">              </span><span class="p">}</span><span class="w">                                                                     </span>
-<del>//<span class="w">            </span><span class="n">MovieList</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">MovieList</span><span class="p">(</span><span class="n">movies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">movies</span><span class="p">)</span><span class="w">                               </span></del>
-<del>//<span class="w">            </span><span class="n">ActorList</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">ActorList</span><span class="p">(</span><span class="n">actors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actors</span><span class="p">)</span><span class="w">                               </span></del>
-<del>//<span class="w">            </span><span class="k">is</span><span class="w"> </span><span class="n">RatingScreen</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">RatingDisplay</span><span class="p">(</span><span class="w">                                     </span></del>
-<ins><span class="w">              </span><span class="n">MovieList</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">MovieList</span><span class="p">(</span><span class="n">movies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">movies</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">-&gt;</span><span class="w">                       </span></ins>
-<ins><span class="w">                  </span><span class="n">viewModel</span><span class="p">.</span><span class="na">pushScreen</span><span class="p">(</span><span class="n">MovieDisplay</span><span class="p">(</span><span class="n">id</span><span class="p">))</span><span class="w">                            </span></ins>
-<ins><span class="w">              </span><span class="p">}</span><span class="w">                                                                     </span></ins>
-<ins><span class="w">              </span><span class="n">ActorList</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">ActorList</span><span class="p">(</span><span class="n">actors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actors</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">-&gt;</span><span class="w">                       </span></ins>
-<ins><span class="w">                  </span><span class="n">viewModel</span><span class="p">.</span><span class="na">pushScreen</span><span class="p">(</span><span class="n">ActorDisplay</span><span class="p">(</span><span class="n">id</span><span class="p">))</span><span class="w">                            </span></ins>
-<ins><span class="w">              </span><span class="p">}</span><span class="w">                                                                     </span></ins>
-<ins><span class="w">                                                                                    </span></ins>
-<ins><span class="w">              </span><span class="k">is</span><span class="w"> </span><span class="n">RatingDisplay</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">RatingDisplay</span><span class="p">(</span><span class="w">                                    </span></ins>
-<span class="w">                  </span><span class="n">ratingId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">screen</span><span class="p">.</span><span class="na">id</span><span class="p">,</span><span class="w">                                             </span>
-<span class="w">                  </span><span class="n">fetchRatingWithMovies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">-&gt;</span><span class="w">                                   </span>
-<span class="w">                      </span><span class="n">viewModel</span><span class="p">.</span><span class="na">getRatingWithMovies</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w">                             </span>
-<ins><span class="w">                  </span><span class="p">},</span><span class="w">                                                                </span></ins>
-<ins><span class="w">                  </span><span class="n">onMovieClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">-&gt;</span><span class="w">                                            </span></ins>
-<ins><span class="w">                      </span><span class="n">viewModel</span><span class="p">.</span><span class="na">pushScreen</span><span class="p">(</span><span class="n">MovieDisplay</span><span class="p">(</span><span class="n">id</span><span class="p">))</span><span class="w">                        </span></ins>
-<span class="w">                  </span><span class="p">}</span><span class="w">                                                                 </span>
-<span class="w">              </span><span class="p">)</span><span class="w">                                                                     </span>
-<ins><span class="w">              </span><span class="k">is</span><span class="w"> </span><span class="n">MovieDisplay</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">MovieDisplay</span><span class="p">(</span><span class="w">                                      </span></ins>
-<ins><span class="w">                  </span><span class="n">movieId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">screen</span><span class="p">.</span><span class="na">id</span><span class="p">,</span><span class="w">                                              </span></ins>
-<ins><span class="w">              </span><span class="p">)</span><span class="w">                                                                     </span></ins>
-<ins><span class="w">              </span><span class="k">is</span><span class="w"> </span><span class="n">ActorDisplay</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">ActorDisplay</span><span class="p">(</span><span class="w">                                      </span></ins>
-<ins><span class="w">                  </span><span class="n">actorId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">screen</span><span class="p">.</span><span class="na">id</span><span class="p">,</span><span class="w">                                              </span></ins>
-<ins><span class="w">              </span><span class="p">)</span><span class="w">                                                                     </span></ins>
-<span class="w">          </span><span class="p">}</span><span class="w">                                                                         </span>
-<span class="w">      </span><span class="p">}</span><span class="w">                                                                             </span>
-<span class="w">  </span><span class="p">}</span><span class="w">                                                                                 </span>
-</pre></div>
+<pre>
+package com.javadude.movies.screens                                               
+                                                                                  
+<ins>import androidx.activity.compose.BackHandler                                      </ins>
+import androidx.compose.foundation.layout.Column                                  
+import androidx.compose.foundation.layout.Row                                     
+import androidx.compose.runtime.Composable                                        
+import androidx.compose.runtime.collectAsState                                    
+import androidx.compose.runtime.getValue                                          
+import androidx.lifecycle.viewmodel.compose.viewModel                             
+<ins>import com.javadude.movies.ActorDisplay                                           </ins>
+import com.javadude.movies.ActorList                                              
+<ins>import com.javadude.movies.MovieDisplay                                           </ins>
+import com.javadude.movies.MovieList                                              
+import com.javadude.movies.MovieViewModel                                         
+<ins>import com.javadude.movies.RatingDisplay                                          </ins>
+import com.javadude.movies.RatingList                                             
+<del>//import com.javadude.movies.RatingScreen                                         </del>
+import com.javadude.movies.components.SimpleButton                                
+                                                                                  
+@Composable                                                                       
+fun TestScreen(                                                                   
+<del>//  viewModel: MovieViewModel = viewModel()                                       </del>
+<ins>    viewModel: MovieViewModel = viewModel(),                                      </ins>
+<ins>    onExit: () -&gt; Unit,                                                           </ins>
+) {                                                                               
+<ins>    BackHandler {                                                                 </ins>
+<ins>        viewModel.popScreen()                                                     </ins>
+<ins>    }                                                                             </ins>
+                                                                                  
+    // This is a hideous, but simple simple test screen                           
+    //   (There are some bad things happening here... We&#39;ll fix it!)              
+    // Don&#39;t worry about how it does its job; we&#39;ll cover that soon!              
+    Column {                                                                      
+        Row {                                                                     
+            SimpleButton(&quot;Reset&quot;) {                                               
+                viewModel.resetDatabase()                                         
+            }                                                                     
+            SimpleButton(&quot;Ratings&quot;) {                                             
+<del>//              viewModel.switchTo(RatingList)                                    </del>
+<ins>                viewModel.setScreenStack(RatingList)                              </ins>
+            }                                                                     
+        }                                                                         
+        Row {                                                                     
+            SimpleButton(&quot;Movies&quot;) {                                              
+<del>//              viewModel.switchTo(MovieList)                                     </del>
+<ins>                viewModel.setScreenStack(MovieList)                               </ins>
+            }                                                                     
+            SimpleButton(&quot;Actors&quot;) {                                              
+<del>//              viewModel.switchTo(ActorList)                                     </del>
+<ins>                viewModel.setScreenStack(ActorList)                               </ins>
+            }                                                                     
+        }                                                                         
+                                                                                  
+        val ratings by viewModel.ratingsFlow.collectAsState(initial = emptyList())
+        val movies by viewModel.moviesFlow.collectAsState(initial = emptyList())  
+        val actors by viewModel.actorsFlow.collectAsState(initial = emptyList())  
+                                                                                  
+        when(val screen = viewModel.screen) {                                     
+<ins>            null -&gt; onExit()                                                      </ins>
+                                                                                  
+            RatingList -&gt; RatingList(ratings = ratings) { id -&gt;                   
+<del>//              viewModel.switchTo(RatingScreen(id))                              </del>
+<ins>                viewModel.pushScreen(RatingDisplay(id))                           </ins>
+            }                                                                     
+<del>//          MovieList -&gt; MovieList(movies = movies)                               </del>
+<del>//          ActorList -&gt; ActorList(actors = actors)                               </del>
+<del>//          is RatingScreen -&gt; RatingDisplay(                                     </del>
+<ins>            MovieList -&gt; MovieList(movies = movies) { id -&gt;                       </ins>
+<ins>                viewModel.pushScreen(MovieDisplay(id))                            </ins>
+<ins>            }                                                                     </ins>
+<ins>            ActorList -&gt; ActorList(actors = actors) { id -&gt;                       </ins>
+<ins>                viewModel.pushScreen(ActorDisplay(id))                            </ins>
+<ins>            }                                                                     </ins>
+                                                                                  
+<ins>            is RatingDisplay -&gt; RatingDisplay(                                    </ins>
+                ratingId = screen.id,                                             
+                fetchRatingWithMovies = { id -&gt;                                   
+                    viewModel.getRatingWithMovies(id)                             
+<ins>                },                                                                </ins>
+<ins>                onMovieClick = { id -&gt;                                            </ins>
+<ins>                    viewModel.pushScreen(MovieDisplay(id))                        </ins>
+                }                                                                 
+            )                                                                     
+<ins>            is MovieDisplay -&gt; MovieDisplay(                                      </ins>
+<ins>                movieId = screen.id,                                              </ins>
+<ins>            )                                                                     </ins>
+<ins>            is ActorDisplay -&gt; ActorDisplay(                                      </ins>
+<ins>                actorId = screen.id,                                              </ins>
+<ins>            )                                                                     </ins>
+        }                                                                         
+    }                                                                             
+}                                                                                 
+</pre>
 </div>
 </details>
 <details class="example" open>
 <summary>CHANGED: /data/src/main/AndroidManifest.xml</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/data/src/main/AndroidManifest.xml';">
-<div class="highlight"><pre><del>//<span></span>  <span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>                               </del>
-<del>//<span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span><span class="nt">&gt;</span></del>
-<del>//                                                                     </del>
-<del>//<span class="nt">&lt;/manifest&gt;</span>                                                          </del>
-<ins><div class="highlight"><pre><span></span>  <span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></ins>
-<ins>  <span class="nt">&lt;manifest&gt;</span>                            </ins>
-<ins>                                        </ins>
-<ins>  <span class="nt">&lt;/manifest&gt;</span>                           </ins>
-</pre></div>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;                               
+<del>//&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;</del>
+<ins>&lt;manifest&gt;                                                           </ins>
+                                                                     
+&lt;/manifest&gt;                                                          
+</pre>
 </div>
 </details>
 <details class="example" open>
 <summary>CHANGED: /data/src/main/java/com/javadude/movies/data/Movie.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/data/src/main/java/com/javadude/movies/data/Movie.kt';">
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">package</span><span class="w"> </span><span class="nn">com.javadude.movies.data</span><span class="w">                              </span>
-<span class="w">                                                                </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Entity</span><span class="w">                                   </span>
-<del>//<span class="w"></span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.ForeignKey</span><span class="w">                               </span></del>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.Index</span><span class="w">                                    </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">androidx.room.PrimaryKey</span><span class="w">                               </span>
-<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nn">java.util.UUID</span><span class="w">                                         </span>
-<span class="w">                                                                </span>
-<span class="w">  </span><span class="nd">@Entity</span><span class="p">(</span><span class="w">                                                      </span>
-<span class="w">      </span><span class="n">indices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="w">                                               </span>
-<span class="w">          </span><span class="n">Index</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s">&quot;ratingId&quot;</span><span class="o">]</span><span class="p">)</span><span class="w">                           </span>
-<span class="w">      </span><span class="o">]</span><span class="p">,</span><span class="w">                                                        </span>
-<span class="w">  </span><span class="p">)</span><span class="w">                                                             </span>
-<span class="w">  </span><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Movie</span><span class="p">(</span><span class="w">                                             </span>
-<span class="w">      </span><span class="nd">@PrimaryKey</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">id</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UUID</span><span class="p">.</span><span class="na">randomUUID</span><span class="p">().</span><span class="na">toString</span><span class="p">(),</span><span class="w"></span>
-<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">title</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                                        </span>
-<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">description</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                                  </span>
-<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">ratingId</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                                     </span>
-<span class="w">  </span><span class="p">)</span><span class="w">                                                             </span>
-</pre></div>
+<pre>
+package com.javadude.movies.data                              
+                                                              
+import androidx.room.Entity                                   
+<del>//import androidx.room.ForeignKey                             </del>
+import androidx.room.Index                                    
+import androidx.room.PrimaryKey                               
+import java.util.UUID                                         
+                                                              
+@Entity(                                                      
+    indices = [                                               
+        Index(value = [&quot;ratingId&quot;])                           
+    ],                                                        
+)                                                             
+data class Movie(                                             
+    @PrimaryKey var id: String = UUID.randomUUID().toString(),
+    var title: String,                                        
+    var description: String,                                  
+    var ratingId: String,                                     
+)                                                             
+</pre>
 </div>
 </details>
 <details class="example" open>
 <summary>CHANGED: /repository/src/main/AndroidManifest.xml</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/repository/src/main/AndroidManifest.xml';">
-<div class="highlight"><pre><del>//<span></span>  <span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>                               </del>
-<del>//<span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span><span class="nt">&gt;</span></del>
-<del>//                                                                     </del>
-<del>//<span class="nt">&lt;/manifest&gt;</span>                                                          </del>
-<ins><div class="highlight"><pre><span></span>  <span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></ins>
-<ins>  <span class="nt">&lt;manifest&gt;</span>                            </ins>
-<ins>                                        </ins>
-<ins>  <span class="nt">&lt;/manifest&gt;</span>                           </ins>
-</pre></div>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;                               
+<del>//&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;</del>
+<ins>&lt;manifest&gt;                                                           </ins>
+                                                                     
+&lt;/manifest&gt;                                                          
+</pre>
 </div>
 </details>
   
