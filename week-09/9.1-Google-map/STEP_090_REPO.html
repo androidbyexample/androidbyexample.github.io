@@ -3245,9 +3245,9 @@ import com.google.maps.android.compose.MarkerState
 import com.google.maps.android.compose.rememberCameraPositionState                  
 <del>//import com.google.maps.android.compose.rememberMarkerState                        </del>
 import com.javadude.carfinder.ui.theme.CarFinderTheme                               
-<div id="050-add-initial-position"><del>//private val googleHQ = LatLng(37.42423291057923, -122.08811454627153)             </del>
+<del>//private val googleHQ = LatLng(37.42423291057923, -122.08811454627153)             </del>
 <del>//private val defaultCameraPosition = CameraPosition.fromLatLngZoom(googleHQ, 11f)  </del>
-</div><ins>import kotlinx.coroutines.Dispatchers                                               </ins>
+<ins>import kotlinx.coroutines.Dispatchers                                               </ins>
 <ins>import kotlinx.coroutines.launch                                                    </ins>
 <ins>import kotlinx.coroutines.withContext                                               </ins>
                                                                                     
@@ -3391,9 +3391,9 @@ fun GoogleMapDisplay(
         mutableStateOf(MapProperties(mapType = MapType.NORMAL))                     
     }                                                                               
 </div>                                                                                    
-<div id="080-current-location-state"><div id="040-marker-state-holder"><del>//  val placeState =                                                                </del>
+<div id="080-current-location-state"><del>//  val placeState =                                                                </del>
 <del>//      rememberMarkerState(key = place.toString(), position = place)               </del>
-</div>    val currentLocationState = remember(currentLocation) {                          
+    val currentLocationState = remember(currentLocation) {                          
         currentLocation?.let { MarkerState(LatLng(it.latitude, it.longitude)) }     
     }                                                                               
 </div>                                                                                    
