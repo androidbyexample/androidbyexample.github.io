@@ -2534,8 +2534,15 @@
 
             
           
-        </ul>
-      </nav>
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week-11/11.1-Dependency-injection/STEP_020_REPO.html" class="md-nav__link">
+        Manual Injection
+      </a>
     </li>
   
 
@@ -2546,26 +2553,14 @@
   
   
   
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15_2" type="checkbox" id="__nav_15_2" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_15_2">
-          11.2 Clean architecture
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="11.2 Clean architecture" data-md-level="2">
-        <label class="md-nav__title" for="__nav_15_2">
-          <span class="md-nav__icon md-icon"></span>
-          11.2 Clean architecture
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+    <li class="md-nav__item">
+      <a href="../../week-11/11.1-Dependency-injection/STEP_030_REPO.html" class="md-nav__link">
+        Hilt Injection
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -2573,8 +2568,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-11/11.2-Clean-architecture/index.html" class="md-nav__link">
-        Clean Architecture
+      <a href="../../week-11/11.1-Dependency-injection/STEP_040_FULL.html" class="md-nav__link">
+        Wrapup
       </a>
     </li>
   
@@ -3025,6 +3020,53 @@
 
             
           
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_18_4" type="checkbox" id="__nav_18_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_18_4">
+          14.4 Clean architecture
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="14.4 Clean architecture" data-md-level="2">
+        <label class="md-nav__title" for="__nav_18_4">
+          <span class="md-nav__icon md-icon"></span>
+          14.4 Clean architecture
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../week-14/14.4-Clean-architecture/index.html" class="md-nav__link">
+        Clean Architecture
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -3105,70 +3147,6 @@
   
 <h2>Code Changes</h2>
   
-<details class="example" open>
-<summary>CHANGED: /.idea/gradle.xml</summary>
-<div class="sas1-code-file" style="--sas1-file-name: '/.idea/gradle.xml';">
-<pre>
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;                             
-&lt;project version=&quot;4&quot;&gt;                                              
-<ins>  &lt;component name=&quot;GradleMigrationSettings&quot; migrationVersion=&quot;1&quot; /&gt;</ins>
-  &lt;component name=&quot;GradleSettings&quot;&gt;                                
-    &lt;option name=&quot;linkedExternalProjectsSettings&quot;&gt;                 
-      &lt;GradleProjectSettings&gt;                                      
-        &lt;option name=&quot;testRunner&quot; value=&quot;GRADLE&quot; /&gt;                
-        &lt;option name=&quot;distributionType&quot; value=&quot;DEFAULT_WRAPPED&quot; /&gt; 
-        &lt;option name=&quot;externalProjectPath&quot; value=&quot;$PROJECT_DIR$&quot; /&gt;
-        &lt;option name=&quot;modules&quot;&gt;                                    
-          &lt;set&gt;                                                    
-            &lt;option value=&quot;$PROJECT_DIR$&quot; /&gt;                       
-            &lt;option value=&quot;$PROJECT_DIR$/app&quot; /&gt;                   
-            &lt;option value=&quot;$PROJECT_DIR$/data&quot; /&gt;                  
-            &lt;option value=&quot;$PROJECT_DIR$/repository&quot; /&gt;            
-          &lt;/set&gt;                                                   
-        &lt;/option&gt;                                                  
-      &lt;/GradleProjectSettings&gt;                                     
-    &lt;/option&gt;                                                      
-  &lt;/component&gt;                                                     
-&lt;/project&gt;                                                         
-</pre>
-</div>
-</details>
-<details class="success" open>
-<summary>ADDED: /.idea/inspectionProfiles/Project_Default.xml</summary>
-<div class="sas1-code-file" style="--sas1-file-name: '/.idea/inspectionProfiles/Project_Default.xml';">
-<pre>
-<ins>&lt;component name=&quot;InspectionProjectProfileManager&quot;&gt;                                                                            </ins>
-<ins>  &lt;profile version=&quot;1.0&quot;&gt;                                                                                                     </ins>
-<ins>    &lt;option name=&quot;myName&quot; value=&quot;Project Default&quot; /&gt;                                                                          </ins>
-<ins>    &lt;inspection_tool class=&quot;PreviewAnnotationInFunctionWithParameters&quot; enabled=&quot;true&quot; level=&quot;ERROR&quot; enabled_by_default=&quot;true&quot;&gt;</ins>
-<ins>      &lt;option name=&quot;composableFile&quot; value=&quot;true&quot; /&gt;                                                                           </ins>
-<ins>    &lt;/inspection_tool&gt;                                                                                                        </ins>
-<ins>    &lt;inspection_tool class=&quot;PreviewDimensionRespectsLimit&quot; enabled=&quot;true&quot; level=&quot;WARNING&quot; enabled_by_default=&quot;true&quot;&gt;          </ins>
-<ins>      &lt;option name=&quot;composableFile&quot; value=&quot;true&quot; /&gt;                                                                           </ins>
-<ins>    &lt;/inspection_tool&gt;                                                                                                        </ins>
-<ins>    &lt;inspection_tool class=&quot;PreviewFontScaleMustBeGreaterThanZero&quot; enabled=&quot;true&quot; level=&quot;ERROR&quot; enabled_by_default=&quot;true&quot;&gt;    </ins>
-<ins>      &lt;option name=&quot;composableFile&quot; value=&quot;true&quot; /&gt;                                                                           </ins>
-<ins>    &lt;/inspection_tool&gt;                                                                                                        </ins>
-<ins>    &lt;inspection_tool class=&quot;PreviewMultipleParameterProviders&quot; enabled=&quot;true&quot; level=&quot;ERROR&quot; enabled_by_default=&quot;true&quot;&gt;        </ins>
-<ins>      &lt;option name=&quot;composableFile&quot; value=&quot;true&quot; /&gt;                                                                           </ins>
-<ins>    &lt;/inspection_tool&gt;                                                                                                        </ins>
-<ins>    &lt;inspection_tool class=&quot;PreviewMustBeTopLevelFunction&quot; enabled=&quot;true&quot; level=&quot;ERROR&quot; enabled_by_default=&quot;true&quot;&gt;            </ins>
-<ins>      &lt;option name=&quot;composableFile&quot; value=&quot;true&quot; /&gt;                                                                           </ins>
-<ins>    &lt;/inspection_tool&gt;                                                                                                        </ins>
-<ins>    &lt;inspection_tool class=&quot;PreviewNeedsComposableAnnotation&quot; enabled=&quot;true&quot; level=&quot;ERROR&quot; enabled_by_default=&quot;true&quot;&gt;         </ins>
-<ins>      &lt;option name=&quot;composableFile&quot; value=&quot;true&quot; /&gt;                                                                           </ins>
-<ins>    &lt;/inspection_tool&gt;                                                                                                        </ins>
-<ins>    &lt;inspection_tool class=&quot;PreviewNotSupportedInUnitTestFiles&quot; enabled=&quot;true&quot; level=&quot;ERROR&quot; enabled_by_default=&quot;true&quot;&gt;       </ins>
-<ins>      &lt;option name=&quot;composableFile&quot; value=&quot;true&quot; /&gt;                                                                           </ins>
-<ins>    &lt;/inspection_tool&gt;                                                                                                        </ins>
-<ins>    &lt;inspection_tool class=&quot;PreviewPickerAnnotation&quot; enabled=&quot;true&quot; level=&quot;ERROR&quot; enabled_by_default=&quot;true&quot;&gt;                  </ins>
-<ins>      &lt;option name=&quot;composableFile&quot; value=&quot;true&quot; /&gt;                                                                           </ins>
-<ins>    &lt;/inspection_tool&gt;                                                                                                        </ins>
-<ins>  &lt;/profile&gt;                                                                                                                  </ins>
-<ins>&lt;/component&gt;                                                                                                                  </ins>
-</pre>
-</div>
-</details>
 <details class="example" open>
 <summary>CHANGED: /app/src/main/java/com/javadude/movies/MainActivity.kt</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/java/com/javadude/movies/MainActivity.kt';">
