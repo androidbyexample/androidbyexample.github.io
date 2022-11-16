@@ -2634,14 +2634,14 @@
       
       
         <label class="md-nav__link" for="__nav_16_1">
-          12.1 Legacy views
+          12.1 Testing
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="12.1 Legacy views" data-md-level="2">
+      <nav class="md-nav" aria-label="12.1 Testing" data-md-level="2">
         <label class="md-nav__title" for="__nav_16_1">
           <span class="md-nav__icon md-icon"></span>
-          12.1 Legacy views
+          12.1 Testing
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2651,8 +2651,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-12/12.1-Legacy-views/index.html" class="md-nav__link">
-        Legacy Views
+      <a href="../../week-12/12.1-Testing/index.html" class="md-nav__link">
+        Testing
       </a>
     </li>
   
@@ -2681,14 +2681,14 @@
       
       
         <label class="md-nav__link" for="__nav_16_2">
-          12.2 Legacy fragments
+          12.2 Nfc
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="12.2 Legacy fragments" data-md-level="2">
+      <nav class="md-nav" aria-label="12.2 Nfc" data-md-level="2">
         <label class="md-nav__title" for="__nav_16_2">
           <span class="md-nav__icon md-icon"></span>
-          12.2 Legacy fragments
+          12.2 Nfc
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2698,8 +2698,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-12/12.2-Legacy-fragments/index.html" class="md-nav__link">
-        Legacy Fragments
+      <a href="../../week-12/12.2-Nfc/index.html" class="md-nav__link">
+        NFC
       </a>
     </li>
   
@@ -2764,14 +2764,14 @@
       
       
         <label class="md-nav__link" for="__nav_17_1">
-          13.1 Testing
+          13.1 Legacy views
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="13.1 Testing" data-md-level="2">
+      <nav class="md-nav" aria-label="13.1 Legacy views" data-md-level="2">
         <label class="md-nav__title" for="__nav_17_1">
           <span class="md-nav__icon md-icon"></span>
-          13.1 Testing
+          13.1 Legacy views
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2781,8 +2781,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-13/13.1-Testing/index.html" class="md-nav__link">
-        Testing
+      <a href="../../week-13/13.1-Legacy-views/index.html" class="md-nav__link">
+        Legacy Views
       </a>
     </li>
   
@@ -2811,14 +2811,14 @@
       
       
         <label class="md-nav__link" for="__nav_17_2">
-          13.2 Nfc
+          13.2 Legacy fragments
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="13.2 Nfc" data-md-level="2">
+      <nav class="md-nav" aria-label="13.2 Legacy fragments" data-md-level="2">
         <label class="md-nav__title" for="__nav_17_2">
           <span class="md-nav__icon md-icon"></span>
-          13.2 Nfc
+          13.2 Legacy fragments
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2828,8 +2828,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-13/13.2-Nfc/index.html" class="md-nav__link">
-        NFC
+      <a href="../../week-13/13.2-Legacy-fragments/index.html" class="md-nav__link">
+        Legacy Fragments
       </a>
     </li>
   
@@ -3189,21 +3189,21 @@
 <ins>import com.javadude.movies.Screen                                                              </ins>
                                                                                                
 <ins>@Composable                                                                                    </ins>
-<ins>fun &lt;T&gt; ListScaffold(                                                                          </ins>
+<ins>fun <T> ListScaffold(                                                                          </ins>
 <ins>    @StringRes titleId: Int,                                                                   </ins>
-<ins>    items: List&lt;T&gt;,                                                                            </ins>
-<ins>    getId: (T) -&gt; String,                                                                      </ins>
-<ins>    onSelectListScreen: (Screen) -&gt; Unit,                                                      </ins>
-<ins>    onResetDatabase: () -&gt; Unit,                                                               </ins>
-<ins>    onItemClick: (String) -&gt; Unit,                                                             </ins>
+<ins>    items: List<T>,                                                                            </ins>
+<ins>    getId: (T) -> String,                                                                      </ins>
+<ins>    onSelectListScreen: (Screen) -> Unit,                                                      </ins>
+<ins>    onResetDatabase: () -> Unit,                                                               </ins>
+<ins>    onItemClick: (String) -> Unit,                                                             </ins>
 <ins>    itemIcon: ImageVector,                                                                     </ins>
 <ins>    @StringRes itemIconContentDescriptionId: Int,                                              </ins>
-<ins>    itemContent: @Composable RowScope.(T) -&gt; Unit,                                             </ins>
+<ins>    itemContent: @Composable RowScope.(T) -> Unit,                                             </ins>
 <ins>) = MovieScaffold(                                                                             </ins>
 <ins>    title = stringResource(id = titleId),                                                      </ins>
 <ins>    onSelectListScreen = onSelectListScreen,                                                   </ins>
 <ins>    onResetDatabase = onResetDatabase,                                                         </ins>
-<ins>) { paddingValues -&gt;                                                                           </ins>
+<ins>) { paddingValues ->                                                                           </ins>
 <ins>    LazyColumn(                                                                                </ins>
 <ins>        modifier = Modifier                                                                    </ins>
 <ins>            .padding(paddingValues)                                                            </ins>
@@ -3212,7 +3212,7 @@
 <ins>        items(                                                                                 </ins>
 <ins>            items = items,                                                                     </ins>
 <ins>            key = { getId(it) },                                                               </ins>
-<ins>        ) { item -&gt;                                                                            </ins>
+<ins>        ) { item ->                                                                            </ins>
 <ins>            Card(                                                                              </ins>
 <ins>                elevation = 4.dp,                                                              </ins>
 <ins>                modifier = Modifier                                                            </ins>
@@ -3262,7 +3262,7 @@ import androidx.compose.ui.unit.dp
 @Composable                                       
 fun SimpleText(                                   
     text: String,                                 
-<del>//  onClick: () -&gt; Unit = {},                     </del>
+<del>//  onClick: () -> Unit = {},                     </del>
 <ins>    modifier: Modifier = Modifier                 </ins>
 ) =                                               
     Text(                                         
@@ -3311,12 +3311,12 @@ import com.javadude.movies.repository.ActorWithFilmographyDto
 @Composable                                                                                                 
 fun ActorDisplay(                                                                                           
     actorId: String,                                                                                        
-    fetchActorWithFilmography: suspend (String) -&gt; ActorWithFilmographyDto,                                 
-    onSelectListScreen: (Screen) -&gt; Unit,                                                                   
-    onResetDatabase: () -&gt; Unit,                                                                            
-    onMovieClick: (String) -&gt; Unit,                                                                         
+    fetchActorWithFilmography: suspend (String) -> ActorWithFilmographyDto,                                 
+    onSelectListScreen: (Screen) -> Unit,                                                                   
+    onResetDatabase: () -> Unit,                                                                            
+    onMovieClick: (String) -> Unit,                                                                         
 ) {                                                                                                         
-    var actorWithFilmographyDto by remember { mutableStateOf&lt;ActorWithFilmographyDto?&gt;(null) }              
+    var actorWithFilmographyDto by remember { mutableStateOf<ActorWithFilmographyDto?>(null) }              
                                                                                                             
     LaunchedEffect(key1 = actorId) {                                                                        
         // starts a coroutine to fetch the rating                                                           
@@ -3327,13 +3327,13 @@ fun ActorDisplay(
         title = actorWithFilmographyDto?.actor?.name ?: stringResource(id = R.string.loading),              
         onSelectListScreen = onSelectListScreen,                                                            
         onResetDatabase = onResetDatabase,                                                                  
-    ) { paddingValues -&gt;                                                                                    
+    ) { paddingValues ->                                                                                    
         Column(                                                                                             
             modifier = Modifier                                                                             
                 .padding(paddingValues)                                                                     
                 .fillMaxHeight()                                                                            
         ) {                                                                                                 
-            actorWithFilmographyDto?.let { actorWithFilmography -&gt;                                          
+            actorWithFilmographyDto?.let { actorWithFilmography ->                                          
                 SimpleText(                                                                                 
                     text = stringResource(                                                                  
                         id = R.string.filmography, actorWithFilmography.actor.name                          
@@ -3346,16 +3346,16 @@ fun ActorDisplay(
                 ) {                                                                                         
                     items(                                                                                  
                         items = actorWithFilmography.filmography,                                           
-                    ) { roleWithMovie -&gt;                                                                    
+                    ) { roleWithMovie ->                                                                    
                         Card(                                                                               
                             elevation = 4.dp,                                                               
                             modifier = Modifier                                                             
                                 .padding(8.dp)                                                              
                                 .fillMaxWidth()                                                             
                         ) {                                                                                 
-<del>//                          SimpleText(text = &quot;${roleWithMovie.movie.title} (${roleWithMovie.character})&quot;) {</del>
+<del>//                          SimpleText(text = "${roleWithMovie.movie.title} (${roleWithMovie.character})") {</del>
 <ins>                            SimpleText(                                                                     </ins>
-<ins>                                text = &quot;${roleWithMovie.movie.title} (${roleWithMovie.character})&quot;,         </ins>
+<ins>                                text = "${roleWithMovie.movie.title} (${roleWithMovie.character})",         </ins>
 <ins>                                modifier = Modifier.clickable {                                             </ins>
                                     onMovieClick(roleWithMovie.movie.id)                                    
                                 }                                                                           
@@ -3397,10 +3397,10 @@ import com.javadude.movies.repository.ActorDto
                                                                     
 @Composable                                                         
 fun ActorList(                                                      
-    actors: List&lt;ActorDto&gt;,                                         
-    onSelectListScreen: (Screen) -&gt; Unit,                           
-    onResetDatabase: () -&gt; Unit,                                    
-    onActorClick: (String) -&gt; Unit,                                 
+    actors: List<ActorDto>,                                         
+    onSelectListScreen: (Screen) -> Unit,                           
+    onResetDatabase: () -> Unit,                                    
+    onActorClick: (String) -> Unit,                                 
 <del>//) = MovieScaffold(                                                </del>
 <del>//  title = stringResource(id = R.string.screen_title_actors),      </del>
 <ins>) = ListScaffold(                                                   </ins>
@@ -3409,7 +3409,7 @@ fun ActorList(
 <ins>    getId = { it.id },                                              </ins>
     onSelectListScreen = onSelectListScreen,                        
     onResetDatabase = onResetDatabase,                              
-<del>//) { paddingValues -&gt;                                              </del>
+<del>//) { paddingValues ->                                              </del>
 <del>//  LazyColumn(                                                     </del>
 <del>//      modifier = Modifier                                         </del>
 <del>//          .padding(paddingValues)                                 </del>
@@ -3434,7 +3434,7 @@ fun ActorList(
 <ins>    onItemClick = onActorClick,                                     </ins>
 <ins>    itemIcon = Icons.Default.Person,                                </ins>
 <ins>    itemIconContentDescriptionId = R.string.tap_to_toggle_selection,</ins>
-<ins>) { actor -&gt;                                                        </ins>
+<ins>) { actor ->                                                        </ins>
 <ins>    SimpleText(text = actor.name)                                   </ins>
 }                                                                   
 </pre>
@@ -3473,12 +3473,12 @@ import com.javadude.movies.repository.MovieWithCastDto
 @Composable                                                                                               
 fun MovieDisplay(                                                                                         
     movieId: String,                                                                                      
-    fetchMovieWithCast: suspend (String) -&gt; MovieWithCastDto,                                             
-    onSelectListScreen: (Screen) -&gt; Unit,                                                                 
-    onResetDatabase: () -&gt; Unit,                                                                          
-    onActorClick: (String) -&gt; Unit,                                                                       
+    fetchMovieWithCast: suspend (String) -> MovieWithCastDto,                                             
+    onSelectListScreen: (Screen) -> Unit,                                                                 
+    onResetDatabase: () -> Unit,                                                                          
+    onActorClick: (String) -> Unit,                                                                       
 ) {                                                                                                       
-    var movieWithCastDto by remember { mutableStateOf&lt;MovieWithCastDto?&gt;(null) }                          
+    var movieWithCastDto by remember { mutableStateOf<MovieWithCastDto?>(null) }                          
                                                                                                           
     LaunchedEffect(key1 = movieId) {                                                                      
         // starts a coroutine to fetch the rating                                                         
@@ -3489,13 +3489,13 @@ fun MovieDisplay(
         title = movieWithCastDto?.movie?.title ?: stringResource(id = R.string.loading),                  
         onSelectListScreen = onSelectListScreen,                                                          
         onResetDatabase = onResetDatabase,                                                                
-    ) { paddingValues -&gt;                                                                                  
+    ) { paddingValues ->                                                                                  
         Column(                                                                                           
             modifier = Modifier                                                                           
                 .padding(paddingValues)                                                                   
                 .fillMaxHeight()                                                                          
         ) {                                                                                               
-            movieWithCastDto?.let { movieWithCast -&gt;                                                      
+            movieWithCastDto?.let { movieWithCast ->                                                      
                 SimpleText(                                                                               
                     text = movieWithCast.movie.description                                                
                 )                                                                                         
@@ -3510,16 +3510,16 @@ fun MovieDisplay(
                 ) {                                                                                       
                     items(                                                                                
                         items = movieWithCast.cast,                                                       
-                    ) { roleWithActor -&gt;                                                                  
+                    ) { roleWithActor ->                                                                  
                         Card(                                                                             
                             elevation = 4.dp,                                                             
                             modifier = Modifier                                                           
                                 .padding(8.dp)                                                            
                                 .fillMaxWidth()                                                           
                         ) {                                                                               
-<del>//                          SimpleText(text = &quot;${roleWithActor.character}: ${roleWithActor.actor.name}&quot;) {</del>
+<del>//                          SimpleText(text = "${roleWithActor.character}: ${roleWithActor.actor.name}") {</del>
 <ins>                            SimpleText(                                                                   </ins>
-<ins>                                text = &quot;${roleWithActor.character}: ${roleWithActor.actor.name}&quot;,         </ins>
+<ins>                                text = "${roleWithActor.character}: ${roleWithActor.actor.name}",         </ins>
 <ins>                                modifier = Modifier.clickable {                                           </ins>
                                     onActorClick(roleWithActor.actor.id)                                  
                                 }                                                                         
@@ -3560,10 +3560,10 @@ import com.javadude.movies.repository.MovieDto
                                                                     
 @Composable                                                         
 fun MovieList(                                                      
-    movies: List&lt;MovieDto&gt;,                                         
-    onSelectListScreen: (Screen) -&gt; Unit,                           
-    onResetDatabase: () -&gt; Unit,                                    
-    onMovieClick: (String) -&gt; Unit,                                 
+    movies: List<MovieDto>,                                         
+    onSelectListScreen: (Screen) -> Unit,                           
+    onResetDatabase: () -> Unit,                                    
+    onMovieClick: (String) -> Unit,                                 
 <del>//) = MovieScaffold(                                                </del>
 <del>//  title = stringResource(id = R.string.screen_title_movies),      </del>
 <ins>) = ListScaffold(                                                   </ins>
@@ -3572,7 +3572,7 @@ fun MovieList(
 <ins>    getId = { it.id },                                              </ins>
     onSelectListScreen = onSelectListScreen,                        
     onResetDatabase = onResetDatabase,                              
-<del>//) { paddingValues -&gt;                                              </del>
+<del>//) { paddingValues ->                                              </del>
 <del>//  LazyColumn(                                                     </del>
 <del>//      modifier = Modifier                                         </del>
 <del>//          .padding(paddingValues)                                 </del>
@@ -3597,7 +3597,7 @@ fun MovieList(
 <ins>    onItemClick = onMovieClick,                                     </ins>
 <ins>    itemIcon = Icons.Default.Person,                                </ins>
 <ins>    itemIconContentDescriptionId = R.string.tap_to_toggle_selection,</ins>
-<ins>) { movie -&gt;                                                        </ins>
+<ins>) { movie ->                                                        </ins>
 <ins>    SimpleText(text = movie.title)                                  </ins>
 }                                                                   
 </pre>
@@ -3636,12 +3636,12 @@ import com.javadude.movies.repository.RatingWithMoviesDto
 @Composable                                                                                         
 fun RatingDisplay(                                                                                  
     ratingId: String,                                                                               
-    fetchRatingWithMovies: suspend (String) -&gt; RatingWithMoviesDto,                                 
-    onSelectListScreen: (Screen) -&gt; Unit,                                                           
-    onResetDatabase: () -&gt; Unit,                                                                    
-    onMovieClick: (String) -&gt; Unit,                                                                 
+    fetchRatingWithMovies: suspend (String) -> RatingWithMoviesDto,                                 
+    onSelectListScreen: (Screen) -> Unit,                                                           
+    onResetDatabase: () -> Unit,                                                                    
+    onMovieClick: (String) -> Unit,                                                                 
 ) {                                                                                                 
-    var ratingWithMoviesDto by remember { mutableStateOf&lt;RatingWithMoviesDto?&gt;(null) }              
+    var ratingWithMoviesDto by remember { mutableStateOf<RatingWithMoviesDto?>(null) }              
                                                                                                     
     LaunchedEffect(key1 = ratingId) {                                                               
         // starts a coroutine to fetch the rating                                                   
@@ -3652,13 +3652,13 @@ fun RatingDisplay(
         title = ratingWithMoviesDto?.rating?.name ?: stringResource(id = R.string.loading),         
         onSelectListScreen = onSelectListScreen,                                                    
         onResetDatabase = onResetDatabase,                                                          
-    ) { paddingValues -&gt;                                                                            
+    ) { paddingValues ->                                                                            
         Column(                                                                                     
             modifier = Modifier                                                                     
                 .padding(paddingValues)                                                             
                 .fillMaxHeight()                                                                    
         ) {                                                                                         
-            ratingWithMoviesDto?.let { ratingWithMovies -&gt;                                          
+            ratingWithMoviesDto?.let { ratingWithMovies ->                                          
                 SimpleText(text = ratingWithMovies.rating.description)                              
                 Divider()                                                                           
                 if (ratingWithMovies.movies.isEmpty()) {                                            
@@ -3674,7 +3674,7 @@ fun RatingDisplay(
                     ) {                                                                             
                         items(                                                                      
                             items = ratingWithMovies.movies,                                        
-                        ) { movie -&gt;                                                                
+                        ) { movie ->                                                                
                             Card(                                                                   
                                 elevation = 4.dp,                                                   
                                 modifier = Modifier                                                 
@@ -3725,10 +3725,10 @@ import com.javadude.movies.repository.RatingDto
                                                                     
 @Composable                                                         
 fun RatingList(                                                     
-    ratings: List&lt;RatingDto&gt;,                                       
-    onSelectListScreen: (Screen) -&gt; Unit,                           
-    onResetDatabase: () -&gt; Unit,                                    
-    onRatingClick: (String) -&gt; Unit,                                
+    ratings: List<RatingDto>,                                       
+    onSelectListScreen: (Screen) -> Unit,                           
+    onResetDatabase: () -> Unit,                                    
+    onRatingClick: (String) -> Unit,                                
 <del>//) = MovieScaffold(                                                </del>
 <del>//  title = stringResource(id = R.string.screen_title_ratings),     </del>
 <ins>) = ListScaffold(                                                   </ins>
@@ -3737,7 +3737,7 @@ fun RatingList(
 <ins>    getId = { it.id },                                              </ins>
     onSelectListScreen = onSelectListScreen,                        
     onResetDatabase = onResetDatabase,                              
-<del>//) { paddingValues -&gt;                                              </del>
+<del>//) { paddingValues ->                                              </del>
 <del>//  LazyColumn(                                                     </del>
 <del>//      modifier = Modifier                                         </del>
 <del>//          .padding(paddingValues)                                 </del>
@@ -3762,7 +3762,7 @@ fun RatingList(
 <ins>    onItemClick = onRatingClick,                                    </ins>
 <ins>    itemIcon = Icons.Default.Person,                                </ins>
 <ins>    itemIconContentDescriptionId = R.string.tap_to_toggle_selection,</ins>
-<ins>) { rating -&gt;                                                       </ins>
+<ins>) { rating ->                                                       </ins>
 <ins>    SimpleText(text = rating.name)                                  </ins>
 }                                                                   
 </pre>
@@ -3772,23 +3772,23 @@ fun RatingList(
 <summary>CHANGED: /app/src/main/res/values/strings.xml</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/res/values/strings.xml';">
 <pre>
-&lt;resources&gt;                                                                                
-    &lt;string name=&quot;app_name&quot;&gt;Movies&lt;/string&gt;                                                
-    &lt;string name=&quot;reset_database&quot;&gt;Reset Database&lt;/string&gt;                                  
+<resources>                                                                                
+    <string name="app_name">Movies</string>                                                
+    <string name="reset_database">Reset Database</string>                                  
                                                                                            
-    &lt;string name=&quot;screen_title_ratings&quot;&gt;MPAA Ratings&lt;/string&gt;                              
-    &lt;string name=&quot;screen_title_movies&quot;&gt;Movies&lt;/string&gt;                                     
-    &lt;string name=&quot;screen_title_actors&quot;&gt;Actors&lt;/string&gt;                                     
+    <string name="screen_title_ratings">MPAA Ratings</string>                              
+    <string name="screen_title_movies">Movies</string>                                     
+    <string name="screen_title_actors">Actors</string>                                     
                                                                                            
-    &lt;string name=&quot;movies&quot;&gt;Movies that are rated %1$s&lt;/string&gt;                              
-    &lt;string name=&quot;filmography&quot;&gt;Films that feature %1$s&lt;/string&gt;                            
-    &lt;string name=&quot;cast&quot;&gt;Cast&lt;/string&gt;                                                      
+    <string name="movies">Movies that are rated %1$s</string>                              
+    <string name="filmography">Films that feature %1$s</string>                            
+    <string name="cast">Cast</string>                                                      
                                                                                            
-    &lt;string name=&quot;no_movies_found_for_this_rating&quot;&gt;No movies found for this rating&lt;/string&gt;
-<ins>    &lt;string name=&quot;tap_to_toggle_selection&quot;&gt;Tap to toggle selection&lt;/string&gt;                </ins>
+    <string name="no_movies_found_for_this_rating">No movies found for this rating</string>
+<ins>    <string name="tap_to_toggle_selection">Tap to toggle selection</string>                </ins>
                                                                                            
-    &lt;string name=&quot;loading&quot;&gt;Loading&lt;/string&gt;                                                
-&lt;/resources&gt;                                                                               
+    <string name="loading">Loading</string>                                                
+</resources>                                                                               
 </pre>
 </div>
 </details>

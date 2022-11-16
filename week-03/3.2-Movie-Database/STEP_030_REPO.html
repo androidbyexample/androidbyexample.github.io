@@ -2634,14 +2634,14 @@
       
       
         <label class="md-nav__link" for="__nav_16_1">
-          12.1 Legacy views
+          12.1 Testing
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="12.1 Legacy views" data-md-level="2">
+      <nav class="md-nav" aria-label="12.1 Testing" data-md-level="2">
         <label class="md-nav__title" for="__nav_16_1">
           <span class="md-nav__icon md-icon"></span>
-          12.1 Legacy views
+          12.1 Testing
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2651,8 +2651,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-12/12.1-Legacy-views/index.html" class="md-nav__link">
-        Legacy Views
+      <a href="../../week-12/12.1-Testing/index.html" class="md-nav__link">
+        Testing
       </a>
     </li>
   
@@ -2681,14 +2681,14 @@
       
       
         <label class="md-nav__link" for="__nav_16_2">
-          12.2 Legacy fragments
+          12.2 Nfc
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="12.2 Legacy fragments" data-md-level="2">
+      <nav class="md-nav" aria-label="12.2 Nfc" data-md-level="2">
         <label class="md-nav__title" for="__nav_16_2">
           <span class="md-nav__icon md-icon"></span>
-          12.2 Legacy fragments
+          12.2 Nfc
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2698,8 +2698,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-12/12.2-Legacy-fragments/index.html" class="md-nav__link">
-        Legacy Fragments
+      <a href="../../week-12/12.2-Nfc/index.html" class="md-nav__link">
+        NFC
       </a>
     </li>
   
@@ -2764,14 +2764,14 @@
       
       
         <label class="md-nav__link" for="__nav_17_1">
-          13.1 Testing
+          13.1 Legacy views
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="13.1 Testing" data-md-level="2">
+      <nav class="md-nav" aria-label="13.1 Legacy views" data-md-level="2">
         <label class="md-nav__title" for="__nav_17_1">
           <span class="md-nav__icon md-icon"></span>
-          13.1 Testing
+          13.1 Legacy views
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2781,8 +2781,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-13/13.1-Testing/index.html" class="md-nav__link">
-        Testing
+      <a href="../../week-13/13.1-Legacy-views/index.html" class="md-nav__link">
+        Legacy Views
       </a>
     </li>
   
@@ -2811,14 +2811,14 @@
       
       
         <label class="md-nav__link" for="__nav_17_2">
-          13.2 Nfc
+          13.2 Legacy fragments
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="13.2 Nfc" data-md-level="2">
+      <nav class="md-nav" aria-label="13.2 Legacy fragments" data-md-level="2">
         <label class="md-nav__title" for="__nav_17_2">
           <span class="md-nav__icon md-icon"></span>
-          13.2 Nfc
+          13.2 Legacy fragments
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2828,8 +2828,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-13/13.2-Nfc/index.html" class="md-nav__link">
-        NFC
+      <a href="../../week-13/13.2-Legacy-fragments/index.html" class="md-nav__link">
+        Legacy Fragments
       </a>
     </li>
   
@@ -3125,26 +3125,26 @@
 <div class="sas1-code-file" style="--sas1-file-name: '/data/build.gradle';">
 <pre>
 <ins>plugins {                                                                                              </ins>
-<ins>    id &#39;com.android.library&#39;                                                                           </ins>
-<ins>    id &#39;org.jetbrains.kotlin.android&#39;                                                                  </ins>
+<ins>    id 'com.android.library'                                                                           </ins>
+<ins>    id 'org.jetbrains.kotlin.android'                                                                  </ins>
 <ins>}                                                                                                      </ins>
                                                                                                        
 <ins>android {                                                                                              </ins>
-<ins>    namespace &#39;com.javadude.movies.data&#39;                                                               </ins>
+<ins>    namespace 'com.javadude.movies.data'                                                               </ins>
 <ins>    compileSdk 32                                                                                      </ins>
                                                                                                        
 <ins>    defaultConfig {                                                                                    </ins>
 <ins>        minSdk 21                                                                                      </ins>
 <ins>        targetSdk 32                                                                                   </ins>
                                                                                                        
-<ins>        testInstrumentationRunner &quot;androidx.test.runner.AndroidJUnitRunner&quot;                            </ins>
-<ins>        consumerProguardFiles &quot;consumer-rules.pro&quot;                                                     </ins>
+<ins>        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"                            </ins>
+<ins>        consumerProguardFiles "consumer-rules.pro"                                                     </ins>
 <ins>    }                                                                                                  </ins>
                                                                                                        
 <ins>    buildTypes {                                                                                       </ins>
 <ins>        release {                                                                                      </ins>
 <ins>            minifyEnabled false                                                                        </ins>
-<ins>            proguardFiles getDefaultProguardFile(&#39;proguard-android-optimize.txt&#39;), &#39;proguard-rules.pro&#39;</ins>
+<ins>            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'</ins>
 <ins>        }                                                                                              </ins>
 <ins>    }                                                                                                  </ins>
 <ins>    compileOptions {                                                                                   </ins>
@@ -3152,18 +3152,18 @@
 <ins>        targetCompatibility JavaVersion.VERSION_1_8                                                    </ins>
 <ins>    }                                                                                                  </ins>
 <ins>    kotlinOptions {                                                                                    </ins>
-<ins>        jvmTarget = &#39;1.8&#39;                                                                              </ins>
+<ins>        jvmTarget = '1.8'                                                                              </ins>
 <ins>    }                                                                                                  </ins>
 <ins>}                                                                                                      </ins>
                                                                                                        
 <ins>dependencies {                                                                                         </ins>
                                                                                                        
-<ins>    implementation &#39;androidx.core:core-ktx:1.7.0&#39;                                                      </ins>
-<ins>    implementation &#39;androidx.appcompat:appcompat:1.5.0&#39;                                                </ins>
-<ins>    implementation &#39;com.google.android.material:material:1.6.1&#39;                                        </ins>
-<ins>    testImplementation &#39;junit:junit:4.13.2&#39;                                                            </ins>
-<ins>    androidTestImplementation &#39;androidx.test.ext:junit:1.1.3&#39;                                          </ins>
-<ins>    androidTestImplementation &#39;androidx.test.espresso:espresso-core:3.4.0&#39;                             </ins>
+<ins>    implementation 'androidx.core:core-ktx:1.7.0'                                                      </ins>
+<ins>    implementation 'androidx.appcompat:appcompat:1.5.0'                                                </ins>
+<ins>    implementation 'com.google.android.material:material:1.6.1'                                        </ins>
+<ins>    testImplementation 'junit:junit:4.13.2'                                                            </ins>
+<ins>    androidTestImplementation 'androidx.test.ext:junit:1.1.3'                                          </ins>
+<ins>    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'                             </ins>
 <ins>}                                                                                                      </ins>
 </pre>
 </div>
@@ -3193,7 +3193,7 @@
 <ins>    fun useAppContext() {                                                          </ins>
 <ins>        // Context of the app under test.                                          </ins>
 <ins>        val appContext = InstrumentationRegistry.getInstrumentation().targetContext</ins>
-<ins>        assertEquals(&quot;com.javadude.movies.data.test&quot;, appContext.packageName)      </ins>
+<ins>        assertEquals("com.javadude.movies.data.test", appContext.packageName)      </ins>
 <ins>    }                                                                              </ins>
 <ins>}                                                                                  </ins>
 </pre>
@@ -3203,10 +3203,10 @@
 <summary>ADDED: /data/src/main/AndroidManifest.xml</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/data/src/main/AndroidManifest.xml';">
 <pre>
-<ins>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;                               </ins>
-<ins>&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;</ins>
+<ins><?xml version="1.0" encoding="utf-8"?>                               </ins>
+<ins><manifest xmlns:android="http://schemas.android.com/apk/res/android"></ins>
                                                                      
-<ins>&lt;/manifest&gt;                                                          </ins>
+<ins></manifest>                                                          </ins>
 </pre>
 </div>
 </details>
@@ -3239,26 +3239,26 @@
 <div class="sas1-code-file" style="--sas1-file-name: '/repository/build.gradle';">
 <pre>
 <ins>plugins {                                                                                              </ins>
-<ins>    id &#39;com.android.library&#39;                                                                           </ins>
-<ins>    id &#39;org.jetbrains.kotlin.android&#39;                                                                  </ins>
+<ins>    id 'com.android.library'                                                                           </ins>
+<ins>    id 'org.jetbrains.kotlin.android'                                                                  </ins>
 <ins>}                                                                                                      </ins>
                                                                                                        
 <ins>android {                                                                                              </ins>
-<ins>    namespace &#39;com.javadude.movies.repository&#39;                                                         </ins>
+<ins>    namespace 'com.javadude.movies.repository'                                                         </ins>
 <ins>    compileSdk 32                                                                                      </ins>
                                                                                                        
 <ins>    defaultConfig {                                                                                    </ins>
 <ins>        minSdk 21                                                                                      </ins>
 <ins>        targetSdk 32                                                                                   </ins>
                                                                                                        
-<ins>        testInstrumentationRunner &quot;androidx.test.runner.AndroidJUnitRunner&quot;                            </ins>
-<ins>        consumerProguardFiles &quot;consumer-rules.pro&quot;                                                     </ins>
+<ins>        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"                            </ins>
+<ins>        consumerProguardFiles "consumer-rules.pro"                                                     </ins>
 <ins>    }                                                                                                  </ins>
                                                                                                        
 <ins>    buildTypes {                                                                                       </ins>
 <ins>        release {                                                                                      </ins>
 <ins>            minifyEnabled false                                                                        </ins>
-<ins>            proguardFiles getDefaultProguardFile(&#39;proguard-android-optimize.txt&#39;), &#39;proguard-rules.pro&#39;</ins>
+<ins>            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'</ins>
 <ins>        }                                                                                              </ins>
 <ins>    }                                                                                                  </ins>
 <ins>    compileOptions {                                                                                   </ins>
@@ -3266,18 +3266,18 @@
 <ins>        targetCompatibility JavaVersion.VERSION_1_8                                                    </ins>
 <ins>    }                                                                                                  </ins>
 <ins>    kotlinOptions {                                                                                    </ins>
-<ins>        jvmTarget = &#39;1.8&#39;                                                                              </ins>
+<ins>        jvmTarget = '1.8'                                                                              </ins>
 <ins>    }                                                                                                  </ins>
 <ins>}                                                                                                      </ins>
                                                                                                        
 <ins>dependencies {                                                                                         </ins>
                                                                                                        
-<ins>    implementation &#39;androidx.core:core-ktx:1.7.0&#39;                                                      </ins>
-<ins>    implementation &#39;androidx.appcompat:appcompat:1.5.0&#39;                                                </ins>
-<ins>    implementation &#39;com.google.android.material:material:1.6.1&#39;                                        </ins>
-<ins>    testImplementation &#39;junit:junit:4.13.2&#39;                                                            </ins>
-<ins>    androidTestImplementation &#39;androidx.test.ext:junit:1.1.3&#39;                                          </ins>
-<ins>    androidTestImplementation &#39;androidx.test.espresso:espresso-core:3.4.0&#39;                             </ins>
+<ins>    implementation 'androidx.core:core-ktx:1.7.0'                                                      </ins>
+<ins>    implementation 'androidx.appcompat:appcompat:1.5.0'                                                </ins>
+<ins>    implementation 'com.google.android.material:material:1.6.1'                                        </ins>
+<ins>    testImplementation 'junit:junit:4.13.2'                                                            </ins>
+<ins>    androidTestImplementation 'androidx.test.ext:junit:1.1.3'                                          </ins>
+<ins>    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'                             </ins>
 <ins>}                                                                                                      </ins>
 </pre>
 </div>
@@ -3307,7 +3307,7 @@
 <ins>    fun useAppContext() {                                                          </ins>
 <ins>        // Context of the app under test.                                          </ins>
 <ins>        val appContext = InstrumentationRegistry.getInstrumentation().targetContext</ins>
-<ins>        assertEquals(&quot;com.javadude.movies.repository.test&quot;, appContext.packageName)</ins>
+<ins>        assertEquals("com.javadude.movies.repository.test", appContext.packageName)</ins>
 <ins>    }                                                                              </ins>
 <ins>}                                                                                  </ins>
 </pre>
@@ -3317,10 +3317,10 @@
 <summary>ADDED: /repository/src/main/AndroidManifest.xml</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/repository/src/main/AndroidManifest.xml';">
 <pre>
-<ins>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;                               </ins>
-<ins>&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;</ins>
+<ins><?xml version="1.0" encoding="utf-8"?>                               </ins>
+<ins><manifest xmlns:android="http://schemas.android.com/apk/res/android"></ins>
                                                                      
-<ins>&lt;/manifest&gt;                                                          </ins>
+<ins></manifest>                                                          </ins>
 </pre>
 </div>
 </details>
@@ -3366,10 +3366,10 @@ dependencyResolutionManagement {
         mavenCentral()                                          
     }                                                           
 }                                                               
-rootProject.name = &quot;Movies&quot;                                     
-include &#39;:app&#39;                                                  
-<ins>include &#39;:data&#39;                                                 </ins>
-<ins>include &#39;:repository&#39;                                           </ins>
+rootProject.name = "Movies"                                     
+include ':app'                                                  
+<ins>include ':data'                                                 </ins>
+<ins>include ':repository'                                           </ins>
 </pre>
 </div>
 </details>

@@ -2682,14 +2682,14 @@
       
       
         <label class="md-nav__link" for="__nav_16_1">
-          12.1 Legacy views
+          12.1 Testing
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="12.1 Legacy views" data-md-level="2">
+      <nav class="md-nav" aria-label="12.1 Testing" data-md-level="2">
         <label class="md-nav__title" for="__nav_16_1">
           <span class="md-nav__icon md-icon"></span>
-          12.1 Legacy views
+          12.1 Testing
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2699,8 +2699,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-12/12.1-Legacy-views/index.html" class="md-nav__link">
-        Legacy Views
+      <a href="../../week-12/12.1-Testing/index.html" class="md-nav__link">
+        Testing
       </a>
     </li>
   
@@ -2729,14 +2729,14 @@
       
       
         <label class="md-nav__link" for="__nav_16_2">
-          12.2 Legacy fragments
+          12.2 Nfc
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="12.2 Legacy fragments" data-md-level="2">
+      <nav class="md-nav" aria-label="12.2 Nfc" data-md-level="2">
         <label class="md-nav__title" for="__nav_16_2">
           <span class="md-nav__icon md-icon"></span>
-          12.2 Legacy fragments
+          12.2 Nfc
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2746,8 +2746,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-12/12.2-Legacy-fragments/index.html" class="md-nav__link">
-        Legacy Fragments
+      <a href="../../week-12/12.2-Nfc/index.html" class="md-nav__link">
+        NFC
       </a>
     </li>
   
@@ -2812,14 +2812,14 @@
       
       
         <label class="md-nav__link" for="__nav_17_1">
-          13.1 Testing
+          13.1 Legacy views
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="13.1 Testing" data-md-level="2">
+      <nav class="md-nav" aria-label="13.1 Legacy views" data-md-level="2">
         <label class="md-nav__title" for="__nav_17_1">
           <span class="md-nav__icon md-icon"></span>
-          13.1 Testing
+          13.1 Legacy views
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2829,8 +2829,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-13/13.1-Testing/index.html" class="md-nav__link">
-        Testing
+      <a href="../../week-13/13.1-Legacy-views/index.html" class="md-nav__link">
+        Legacy Views
       </a>
     </li>
   
@@ -2859,14 +2859,14 @@
       
       
         <label class="md-nav__link" for="__nav_17_2">
-          13.2 Nfc
+          13.2 Legacy fragments
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="13.2 Nfc" data-md-level="2">
+      <nav class="md-nav" aria-label="13.2 Legacy fragments" data-md-level="2">
         <label class="md-nav__title" for="__nav_17_2">
           <span class="md-nav__icon md-icon"></span>
-          13.2 Nfc
+          13.2 Legacy fragments
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2876,8 +2876,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-13/13.2-Nfc/index.html" class="md-nav__link">
-        NFC
+      <a href="../../week-13/13.2-Legacy-fragments/index.html" class="md-nav__link">
+        Legacy Fragments
       </a>
     </li>
   
@@ -3174,22 +3174,22 @@
 <div class="sas1-code-file" style="--sas1-file-name: '/app/build.gradle';">
 <pre>
 plugins {                                                                                              
-    id &#39;com.android.application&#39;                                                                       
-    id &#39;org.jetbrains.kotlin.android&#39;                                                                  
+    id 'com.android.application'                                                                       
+    id 'org.jetbrains.kotlin.android'                                                                  
 }                                                                                                      
                                                                                                        
 android {                                                                                              
-    namespace &#39;com.javadude.movies&#39;                                                                    
+    namespace 'com.javadude.movies'                                                                    
     compileSdk 33                                                                                      
                                                                                                        
     defaultConfig {                                                                                    
-        applicationId &quot;com.javadude.movies&quot;                                                            
+        applicationId "com.javadude.movies"                                                            
         minSdk 21                                                                                      
         targetSdk 33                                                                                   
         versionCode 1                                                                                  
-        versionName &quot;1.0&quot;                                                                              
+        versionName "1.0"                                                                              
                                                                                                        
-        testInstrumentationRunner &quot;androidx.test.runner.AndroidJUnitRunner&quot;                            
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"                            
         vectorDrawables {                                                                              
             useSupportLibrary true                                                                     
         }                                                                                              
@@ -3198,7 +3198,7 @@ android {
     buildTypes {                                                                                       
         release {                                                                                      
             minifyEnabled false                                                                        
-            proguardFiles getDefaultProguardFile(&#39;proguard-android-optimize.txt&#39;), &#39;proguard-rules.pro&#39;
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }                                                                                              
     }                                                                                                  
     compileOptions {                                                                                   
@@ -3206,7 +3206,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8                                                    
     }                                                                                                  
     kotlinOptions {                                                                                    
-        jvmTarget = &#39;1.8&#39;                                                                              
+        jvmTarget = '1.8'                                                                              
     }                                                                                                  
     buildFeatures {                                                                                    
         compose true                                                                                   
@@ -3216,27 +3216,27 @@ android {
     }                                                                                                  
     packagingOptions {                                                                                 
         resources {                                                                                    
-            excludes += &#39;/META-INF/{AL2.0,LGPL2.1}&#39;                                                    
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'                                                    
         }                                                                                              
     }                                                                                                  
 }                                                                                                      
                                                                                                        
 dependencies {                                                                                         
-    implementation project(&quot;:repository&quot;)                                                              
+    implementation project(":repository")                                                              
                                                                                                        
-<ins>    implementation &#39;androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1&#39;                              </ins>
-    implementation &#39;androidx.core:core-ktx:1.9.0&#39;                                                      
-    implementation &#39;androidx.lifecycle:lifecycle-runtime-ktx:2.5.1&#39;                                    
-    implementation &#39;androidx.activity:activity-compose:1.5.1&#39;                                          
-    implementation &quot;androidx.compose.ui:ui:$compose_ui_version&quot;                                        
-    implementation &quot;androidx.compose.ui:ui-tooling-preview:$compose_ui_version&quot;                        
-    implementation &#39;androidx.compose.material:material:1.2.1&#39;                                          
-    testImplementation &#39;junit:junit:4.13.2&#39;                                                            
-    androidTestImplementation &#39;androidx.test.ext:junit:1.1.3&#39;                                          
-    androidTestImplementation &#39;androidx.test.espresso:espresso-core:3.4.0&#39;                             
-    androidTestImplementation &quot;androidx.compose.ui:ui-test-junit4:$compose_ui_version&quot;                 
-    debugImplementation &quot;androidx.compose.ui:ui-tooling:$compose_ui_version&quot;                           
-    debugImplementation &quot;androidx.compose.ui:ui-test-manifest:$compose_ui_version&quot;                     
+<ins>    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1'                              </ins>
+    implementation 'androidx.core:core-ktx:1.9.0'                                                      
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'                                    
+    implementation 'androidx.activity:activity-compose:1.5.1'                                          
+    implementation "androidx.compose.ui:ui:$compose_ui_version"                                        
+    implementation "androidx.compose.ui:ui-tooling-preview:$compose_ui_version"                        
+    implementation 'androidx.compose.material:material:1.2.1'                                          
+    testImplementation 'junit:junit:4.13.2'                                                            
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'                                          
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'                             
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"                 
+    debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version"                           
+    debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"                     
 }                                                                                                      
 </pre>
 </div>
@@ -3275,12 +3275,12 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)                                        
         setContent {                                                              
             MoviesTheme {                                                         
-                // A surface container using the &#39;background&#39; color from the theme
+                // A surface container using the 'background' color from the theme
                 Surface(                                                          
                     modifier = Modifier.fillMaxSize(),                            
                     color = MaterialTheme.colors.background                       
                 ) {                                                               
-<del>//                  Greeting(&quot;Android&quot;)                                           </del>
+<del>//                  Greeting("Android")                                           </del>
 <ins>                    TestScreen()                                                  </ins>
                 }                                                                 
             }                                                                     
@@ -3290,11 +3290,11 @@ class MainActivity : ComponentActivity() {
                                                                                   
 @Composable                                                                       
 <del>//fun Greeting(name: String) {                                                    </del>
-<del>//  Text(text = &quot;Hello $name!&quot;)                                                   </del>
+<del>//  Text(text = "Hello $name!")                                                   </del>
 <del>//}                                                                               </del>
 <ins>fun SimpleButton(                                                                 </ins>
 <ins>    text: String,                                                                 </ins>
-<ins>    onClick: () -&gt; Unit,                                                          </ins>
+<ins>    onClick: () -> Unit,                                                          </ins>
 <ins>) =                                                                               </ins>
 <ins>    Button(onClick = onClick, modifier = Modifier.padding(8.dp)) {                </ins>
 <ins>        SimpleText(text = text)                                                   </ins>
@@ -3304,7 +3304,7 @@ class MainActivity : ComponentActivity() {
 @Composable                                                                       
 <del>//fun DefaultPreview() {                                                          </del>
 <del>//  MoviesTheme {                                                                 </del>
-<del>//      Greeting(&quot;Android&quot;)                                                       </del>
+<del>//      Greeting("Android")                                                       </del>
 <ins>fun SimpleText(                                                                   </ins>
 <ins>    text: String,                                                                 </ins>
 <ins>) =                                                                               </ins>
@@ -3315,22 +3315,22 @@ class MainActivity : ComponentActivity() {
 <ins>    viewModel: MovieViewModel = viewModel()                                       </ins>
 <ins>) {                                                                               </ins>
 <ins>    // This is a hideous, but simple simple test screen                           </ins>
-<ins>    //   (There are some bad things happening here... We&#39;ll fix it!)              </ins>
-<ins>    // Don&#39;t worry about how it does its job; we&#39;ll cover that soon!              </ins>
+<ins>    //   (There are some bad things happening here... We'll fix it!)              </ins>
+<ins>    // Don't worry about how it does its job; we'll cover that soon!              </ins>
 <ins>    Column {                                                                      </ins>
 <ins>        Row {                                                                     </ins>
-<ins>            SimpleButton(&quot;Reset&quot;) {                                               </ins>
+<ins>            SimpleButton("Reset") {                                               </ins>
 <ins>                viewModel.resetDatabase()                                         </ins>
 <ins>            }                                                                     </ins>
-<ins>            SimpleButton(&quot;Ratings&quot;) {                                             </ins>
+<ins>            SimpleButton("Ratings") {                                             </ins>
 <ins>                viewModel.switchTo(RatingList)                                    </ins>
 <ins>            }                                                                     </ins>
 <ins>        }                                                                         </ins>
 <ins>        Row {                                                                     </ins>
-<ins>            SimpleButton(&quot;Movies&quot;) {                                              </ins>
+<ins>            SimpleButton("Movies") {                                              </ins>
 <ins>                viewModel.switchTo(MovieList)                                     </ins>
 <ins>            }                                                                     </ins>
-<ins>            SimpleButton(&quot;Actors&quot;) {                                              </ins>
+<ins>            SimpleButton("Actors") {                                              </ins>
 <ins>                viewModel.switchTo(ActorList)                                     </ins>
 <ins>            }                                                                     </ins>
 <ins>        }                                                                         </ins>
@@ -3340,18 +3340,18 @@ class MainActivity : ComponentActivity() {
 <ins>        val actors by viewModel.actorsFlow.collectAsState(initial = emptyList())  </ins>
                                                                                   
 <ins>        when(viewModel.screen) {                                                  </ins>
-<ins>            RatingList -&gt; RatingList(ratings = ratings)                           </ins>
-<ins>            MovieList -&gt; MovieList(movies = movies)                               </ins>
-<ins>            ActorList -&gt; ActorList(actors = actors)                               </ins>
+<ins>            RatingList -> RatingList(ratings = ratings)                           </ins>
+<ins>            MovieList -> MovieList(movies = movies)                               </ins>
+<ins>            ActorList -> ActorList(actors = actors)                               </ins>
 <ins>        }                                                                         </ins>
 <ins>    }                                                                             </ins>
 <ins>}                                                                                 </ins>
                                                                                   
 <ins>@Composable                                                                       </ins>
 <ins>fun RatingList(                                                                   </ins>
-<ins>    ratings: List&lt;RatingDto&gt;                                                      </ins>
+<ins>    ratings: List<RatingDto>                                                      </ins>
 <ins>) {                                                                               </ins>
-<ins>    SimpleText(text = &quot;Ratings&quot;)                                                  </ins>
+<ins>    SimpleText(text = "Ratings")                                                  </ins>
 <ins>    ratings.forEach {                                                             </ins>
 <ins>        SimpleText(text = it.name)                                                </ins>
 <ins>    }                                                                             </ins>
@@ -3359,9 +3359,9 @@ class MainActivity : ComponentActivity() {
                                                                                   
 <ins>@Composable                                                                       </ins>
 <ins>fun MovieList(                                                                    </ins>
-<ins>    movies: List&lt;MovieDto&gt;                                                        </ins>
+<ins>    movies: List<MovieDto>                                                        </ins>
 <ins>) {                                                                               </ins>
-<ins>    SimpleText(text = &quot;Movies&quot;)                                                   </ins>
+<ins>    SimpleText(text = "Movies")                                                   </ins>
 <ins>    movies.forEach {                                                              </ins>
 <ins>        SimpleText(text = it.title)                                               </ins>
 <ins>    }                                                                             </ins>
@@ -3369,9 +3369,9 @@ class MainActivity : ComponentActivity() {
                                                                                   
 <ins>@Composable                                                                       </ins>
 <ins>fun ActorList(                                                                    </ins>
-<ins>    actors: List&lt;ActorDto&gt;                                                        </ins>
+<ins>    actors: List<ActorDto>                                                        </ins>
 <ins>) {                                                                               </ins>
-<ins>    SimpleText(text = &quot;Actors&quot;)                                                   </ins>
+<ins>    SimpleText(text = "Actors")                                                   </ins>
 <ins>    actors.forEach {                                                              </ins>
 <ins>        SimpleText(text = it.name)                                                </ins>
 <ins>    }                                                                             </ins>
@@ -3381,13 +3381,13 @@ class MainActivity : ComponentActivity() {
 <ins>fun MovieDisplay(                                                                 </ins>
 <ins>    movie: MovieDto                                                               </ins>
 <ins>) {                                                                               </ins>
-<ins>    SimpleText(text = &quot;Movie&quot;)                                                    </ins>
+<ins>    SimpleText(text = "Movie")                                                    </ins>
 <ins>    Row {                                                                         </ins>
-<ins>        SimpleText(text = &quot;Title&quot;)                                                </ins>
+<ins>        SimpleText(text = "Title")                                                </ins>
 <ins>        SimpleText(text = movie.title)                                            </ins>
 <ins>    }                                                                             </ins>
 <ins>    Row {                                                                         </ins>
-<ins>        SimpleText(text = &quot;Description&quot;)                                          </ins>
+<ins>        SimpleText(text = "Description")                                          </ins>
 <ins>        SimpleText(text = movie.description)                                      </ins>
     }                                                                             
 }                                                                                 
@@ -3418,7 +3418,7 @@ import kotlinx.coroutines.launch
 class MovieViewModel(application: Application) : AndroidViewModel(application) {  
     private val repository: MovieRepository = MovieDatabaseRepository(application)
                                                                                   
-<ins>    var screen by mutableStateOf&lt;Screen&gt;(RatingList)                              </ins>
+<ins>    var screen by mutableStateOf<Screen>(RatingList)                              </ins>
 <ins>        private set                                                               </ins>
                                                                                   
     val ratingsFlow = repository.ratingsFlow                                      

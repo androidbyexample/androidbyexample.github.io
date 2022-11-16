@@ -2634,14 +2634,14 @@
       
       
         <label class="md-nav__link" for="__nav_16_1">
-          12.1 Legacy views
+          12.1 Testing
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="12.1 Legacy views" data-md-level="2">
+      <nav class="md-nav" aria-label="12.1 Testing" data-md-level="2">
         <label class="md-nav__title" for="__nav_16_1">
           <span class="md-nav__icon md-icon"></span>
-          12.1 Legacy views
+          12.1 Testing
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2651,8 +2651,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-12/12.1-Legacy-views/index.html" class="md-nav__link">
-        Legacy Views
+      <a href="../../week-12/12.1-Testing/index.html" class="md-nav__link">
+        Testing
       </a>
     </li>
   
@@ -2681,14 +2681,14 @@
       
       
         <label class="md-nav__link" for="__nav_16_2">
-          12.2 Legacy fragments
+          12.2 Nfc
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="12.2 Legacy fragments" data-md-level="2">
+      <nav class="md-nav" aria-label="12.2 Nfc" data-md-level="2">
         <label class="md-nav__title" for="__nav_16_2">
           <span class="md-nav__icon md-icon"></span>
-          12.2 Legacy fragments
+          12.2 Nfc
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2698,8 +2698,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-12/12.2-Legacy-fragments/index.html" class="md-nav__link">
-        Legacy Fragments
+      <a href="../../week-12/12.2-Nfc/index.html" class="md-nav__link">
+        NFC
       </a>
     </li>
   
@@ -2764,14 +2764,14 @@
       
       
         <label class="md-nav__link" for="__nav_17_1">
-          13.1 Testing
+          13.1 Legacy views
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="13.1 Testing" data-md-level="2">
+      <nav class="md-nav" aria-label="13.1 Legacy views" data-md-level="2">
         <label class="md-nav__title" for="__nav_17_1">
           <span class="md-nav__icon md-icon"></span>
-          13.1 Testing
+          13.1 Legacy views
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2781,8 +2781,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-13/13.1-Testing/index.html" class="md-nav__link">
-        Testing
+      <a href="../../week-13/13.1-Legacy-views/index.html" class="md-nav__link">
+        Legacy Views
       </a>
     </li>
   
@@ -2811,14 +2811,14 @@
       
       
         <label class="md-nav__link" for="__nav_17_2">
-          13.2 Nfc
+          13.2 Legacy fragments
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="13.2 Nfc" data-md-level="2">
+      <nav class="md-nav" aria-label="13.2 Legacy fragments" data-md-level="2">
         <label class="md-nav__title" for="__nav_17_2">
           <span class="md-nav__icon md-icon"></span>
-          13.2 Nfc
+          13.2 Legacy fragments
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2828,8 +2828,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-13/13.2-Nfc/index.html" class="md-nav__link">
-        NFC
+      <a href="../../week-13/13.2-Legacy-fragments/index.html" class="md-nav__link">
+        Legacy Fragments
       </a>
     </li>
   
@@ -3168,14 +3168,14 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)                                        
         setContent {                                                              
             MoviesTheme {                                                         
-                // A surface container using the &#39;background&#39; color from the theme
+                // A surface container using the 'background' color from the theme
                 Surface(                                                          
                     modifier = Modifier.fillMaxSize(),                            
                     color = MaterialTheme.colors.background                       
                 ) {                                                               
 <del>//                  TestScreen()                                                  </del>
 <ins>                    TestScreen {                                                  </ins>
-<ins>                        finish() // handle &quot;onExit&quot;                               </ins>
+<ins>                        finish() // handle "onExit"                               </ins>
 <ins>                    }                                                             </ins>
                 }                                                                 
             }                                                                     
@@ -3220,7 +3220,7 @@ data class MovieDisplay(
 class MovieViewModel(application: Application) : AndroidViewModel(application) {  
     private val repository: MovieRepository = MovieDatabaseRepository(application)
                                                                                   
-    private var screenStack: List&lt;Screen&gt; = listOf(MovieList)                     
+    private var screenStack: List<Screen> = listOf(MovieList)                     
         set(value) {                                                              
             field = value                                                         
             screen = value.lastOrNull()                                           
@@ -3238,7 +3238,7 @@ class MovieViewModel(application: Application) : AndroidViewModel(application) {
         screenStack = listOf(screen)                                              
     }                                                                             
                                                                                   
-    var screen by mutableStateOf&lt;Screen?&gt;(MovieList)                              
+    var screen by mutableStateOf<Screen?>(MovieList)                              
         private set                                                               
                                                                                   
     val ratingsFlow = repository.ratingsFlow                                      
@@ -3273,7 +3273,7 @@ class MovieViewModel(application: Application) : AndroidViewModel(application) {
 <ins>fun ActorDisplay(                               </ins>
 <ins>    actorId: String,                            </ins>
 <ins>) {                                             </ins>
-<ins>    SimpleText(text = &quot;Actor $actorId&quot;)         </ins>
+<ins>    SimpleText(text = "Actor $actorId")         </ins>
 <ins>}                                               </ins>
 </pre>
 </div>
@@ -3290,11 +3290,11 @@ import com.javadude.movies.repository.ActorDto
                                                 
 @Composable                                     
 fun ActorList(                                  
-<del>//  actors: List&lt;ActorDto&gt;                      </del>
-<ins>    actors: List&lt;ActorDto&gt;,                     </ins>
-<ins>    onActorClick: (String) -&gt; Unit,             </ins>
+<del>//  actors: List<ActorDto>                      </del>
+<ins>    actors: List<ActorDto>,                     </ins>
+<ins>    onActorClick: (String) -> Unit,             </ins>
 ) {                                             
-    SimpleText(text = &quot;Actors&quot;)                 
+    SimpleText(text = "Actors")                 
     actors.forEach {                            
 <del>//      SimpleText(text = it.name)              </del>
 <ins>        SimpleText(text = it.name) {            </ins>
@@ -3318,7 +3318,7 @@ fun ActorList(
 <ins>fun MovieDisplay(                               </ins>
 <ins>    movieId: String,                            </ins>
 <ins>) {                                             </ins>
-<ins>    SimpleText(text = &quot;Movie $movieId&quot;)         </ins>
+<ins>    SimpleText(text = "Movie $movieId")         </ins>
 <ins>}                                               </ins>
 </pre>
 </div>
@@ -3335,11 +3335,11 @@ import com.javadude.movies.repository.MovieDto
                                                 
 @Composable                                     
 fun MovieList(                                  
-<del>//  movies: List&lt;MovieDto&gt;                      </del>
-<ins>    movies: List&lt;MovieDto&gt;,                     </ins>
-<ins>    onMovieClick: (String) -&gt; Unit,             </ins>
+<del>//  movies: List<MovieDto>                      </del>
+<ins>    movies: List<MovieDto>,                     </ins>
+<ins>    onMovieClick: (String) -> Unit,             </ins>
 ) {                                             
-    SimpleText(text = &quot;Movies&quot;)                 
+    SimpleText(text = "Movies")                 
     movies.forEach {                            
 <del>//      SimpleText(text = it.title)             </del>
 <ins>        SimpleText(text = it.title) {           </ins>
@@ -3368,22 +3368,22 @@ import com.javadude.movies.repository.RatingWithMoviesDto
 @Composable                                                                           
 fun RatingDisplay(                                                                    
     ratingId: String,                                                                 
-    fetchRatingWithMovies: suspend (String) -&gt; RatingWithMoviesDto,                   
-<ins>    onMovieClick: (String) -&gt; Unit,                                                   </ins>
+    fetchRatingWithMovies: suspend (String) -> RatingWithMoviesDto,                   
+<ins>    onMovieClick: (String) -> Unit,                                                   </ins>
 ) {                                                                                   
-    var ratingWithMoviesDto by remember { mutableStateOf&lt;RatingWithMoviesDto?&gt;(null) }
+    var ratingWithMoviesDto by remember { mutableStateOf<RatingWithMoviesDto?>(null) }
                                                                                       
     LaunchedEffect(key1 = ratingId) {                                                 
         // starts a coroutine to fetch the rating                                     
         ratingWithMoviesDto = fetchRatingWithMovies(ratingId)                         
     }                                                                                 
                                                                                       
-    SimpleText(text = &quot;Rating&quot;)                                                       
-    ratingWithMoviesDto?.let { ratingWithMovies -&gt;                                    
+    SimpleText(text = "Rating")                                                       
+    ratingWithMoviesDto?.let { ratingWithMovies ->                                    
         SimpleText(text = ratingWithMovies.rating.name)                               
-        ratingWithMovies.movies.forEach { movie -&gt;                                    
-<del>//          SimpleText(text = &quot;Movie: ${movie.title}&quot;)                                </del>
-<ins>            SimpleText(text = &quot;Movie: ${movie.title}&quot;) {                              </ins>
+        ratingWithMovies.movies.forEach { movie ->                                    
+<del>//          SimpleText(text = "Movie: ${movie.title}")                                </del>
+<ins>            SimpleText(text = "Movie: ${movie.title}") {                              </ins>
 <ins>                onMovieClick(movie.id)                                                </ins>
 <ins>            }                                                                         </ins>
         }                                                                             
@@ -3419,31 +3419,31 @@ import com.javadude.movies.components.SimpleButton
 fun TestScreen(                                                                   
 <del>//  viewModel: MovieViewModel = viewModel()                                       </del>
 <ins>    viewModel: MovieViewModel = viewModel(),                                      </ins>
-<ins>    onExit: () -&gt; Unit,                                                           </ins>
+<ins>    onExit: () -> Unit,                                                           </ins>
 ) {                                                                               
 <ins>    BackHandler {                                                                 </ins>
 <ins>        viewModel.popScreen()                                                     </ins>
 <ins>    }                                                                             </ins>
                                                                                   
     // This is a hideous, but simple simple test screen                           
-    //   (There are some bad things happening here... We&#39;ll fix it!)              
-    // Don&#39;t worry about how it does its job; we&#39;ll cover that soon!              
+    //   (There are some bad things happening here... We'll fix it!)              
+    // Don't worry about how it does its job; we'll cover that soon!              
     Column {                                                                      
         Row {                                                                     
-            SimpleButton(&quot;Reset&quot;) {                                               
+            SimpleButton("Reset") {                                               
                 viewModel.resetDatabase()                                         
             }                                                                     
-            SimpleButton(&quot;Ratings&quot;) {                                             
+            SimpleButton("Ratings") {                                             
 <del>//              viewModel.switchTo(RatingList)                                    </del>
 <ins>                viewModel.setScreenStack(RatingList)                              </ins>
             }                                                                     
         }                                                                         
         Row {                                                                     
-            SimpleButton(&quot;Movies&quot;) {                                              
+            SimpleButton("Movies") {                                              
 <del>//              viewModel.switchTo(MovieList)                                     </del>
 <ins>                viewModel.setScreenStack(MovieList)                               </ins>
             }                                                                     
-            SimpleButton(&quot;Actors&quot;) {                                              
+            SimpleButton("Actors") {                                              
 <del>//              viewModel.switchTo(ActorList)                                     </del>
 <ins>                viewModel.setScreenStack(ActorList)                               </ins>
             }                                                                     
@@ -3454,35 +3454,35 @@ fun TestScreen(
         val actors by viewModel.actorsFlow.collectAsState(initial = emptyList())  
                                                                                   
         when(val screen = viewModel.screen) {                                     
-<ins>            null -&gt; onExit()                                                      </ins>
+<ins>            null -> onExit()                                                      </ins>
                                                                                   
-            RatingList -&gt; RatingList(ratings = ratings) { id -&gt;                   
+            RatingList -> RatingList(ratings = ratings) { id ->                   
 <del>//              viewModel.switchTo(RatingScreen(id))                              </del>
 <ins>                viewModel.pushScreen(RatingDisplay(id))                           </ins>
             }                                                                     
-<del>//          MovieList -&gt; MovieList(movies = movies)                               </del>
-<del>//          ActorList -&gt; ActorList(actors = actors)                               </del>
-<del>//          is RatingScreen -&gt; RatingDisplay(                                     </del>
-<ins>            MovieList -&gt; MovieList(movies = movies) { id -&gt;                       </ins>
+<del>//          MovieList -> MovieList(movies = movies)                               </del>
+<del>//          ActorList -> ActorList(actors = actors)                               </del>
+<del>//          is RatingScreen -> RatingDisplay(                                     </del>
+<ins>            MovieList -> MovieList(movies = movies) { id ->                       </ins>
 <ins>                viewModel.pushScreen(MovieDisplay(id))                            </ins>
 <ins>            }                                                                     </ins>
-<ins>            ActorList -&gt; ActorList(actors = actors) { id -&gt;                       </ins>
+<ins>            ActorList -> ActorList(actors = actors) { id ->                       </ins>
 <ins>                viewModel.pushScreen(ActorDisplay(id))                            </ins>
 <ins>            }                                                                     </ins>
                                                                                   
-<ins>            is RatingDisplay -&gt; RatingDisplay(                                    </ins>
+<ins>            is RatingDisplay -> RatingDisplay(                                    </ins>
                 ratingId = screen.id,                                             
-                fetchRatingWithMovies = { id -&gt;                                   
+                fetchRatingWithMovies = { id ->                                   
                     viewModel.getRatingWithMovies(id)                             
 <ins>                },                                                                </ins>
-<ins>                onMovieClick = { id -&gt;                                            </ins>
+<ins>                onMovieClick = { id ->                                            </ins>
 <ins>                    viewModel.pushScreen(MovieDisplay(id))                        </ins>
                 }                                                                 
             )                                                                     
-<ins>            is MovieDisplay -&gt; MovieDisplay(                                      </ins>
+<ins>            is MovieDisplay -> MovieDisplay(                                      </ins>
 <ins>                movieId = screen.id,                                              </ins>
 <ins>            )                                                                     </ins>
-<ins>            is ActorDisplay -&gt; ActorDisplay(                                      </ins>
+<ins>            is ActorDisplay -> ActorDisplay(                                      </ins>
 <ins>                actorId = screen.id,                                              </ins>
 <ins>            )                                                                     </ins>
         }                                                                         
@@ -3495,11 +3495,11 @@ fun TestScreen(
 <summary>CHANGED: /data/src/main/AndroidManifest.xml</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/data/src/main/AndroidManifest.xml';">
 <pre>
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;                               
-<del>//&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;</del>
-<ins>&lt;manifest&gt;                                                           </ins>
+<?xml version="1.0" encoding="utf-8"?>                               
+<del>//<manifest xmlns:android="http://schemas.android.com/apk/res/android"></del>
+<ins><manifest>                                                           </ins>
                                                                      
-&lt;/manifest&gt;                                                          
+</manifest>                                                          
 </pre>
 </div>
 </details>
@@ -3517,7 +3517,7 @@ import java.util.UUID
                                                               
 @Entity(                                                      
     indices = [                                               
-        Index(value = [&quot;ratingId&quot;])                           
+        Index(value = ["ratingId"])                           
     ],                                                        
 )                                                             
 data class Movie(                                             
@@ -3533,11 +3533,11 @@ data class Movie(
 <summary>CHANGED: /repository/src/main/AndroidManifest.xml</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/repository/src/main/AndroidManifest.xml';">
 <pre>
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;                               
-<del>//&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;</del>
-<ins>&lt;manifest&gt;                                                           </ins>
+<?xml version="1.0" encoding="utf-8"?>                               
+<del>//<manifest xmlns:android="http://schemas.android.com/apk/res/android"></del>
+<ins><manifest>                                                           </ins>
                                                                      
-&lt;/manifest&gt;                                                          
+</manifest>                                                          
 </pre>
 </div>
 </details>

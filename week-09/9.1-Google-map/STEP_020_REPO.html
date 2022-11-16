@@ -2634,14 +2634,14 @@
       
       
         <label class="md-nav__link" for="__nav_16_1">
-          12.1 Legacy views
+          12.1 Testing
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="12.1 Legacy views" data-md-level="2">
+      <nav class="md-nav" aria-label="12.1 Testing" data-md-level="2">
         <label class="md-nav__title" for="__nav_16_1">
           <span class="md-nav__icon md-icon"></span>
-          12.1 Legacy views
+          12.1 Testing
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2651,8 +2651,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-12/12.1-Legacy-views/index.html" class="md-nav__link">
-        Legacy Views
+      <a href="../../week-12/12.1-Testing/index.html" class="md-nav__link">
+        Testing
       </a>
     </li>
   
@@ -2681,14 +2681,14 @@
       
       
         <label class="md-nav__link" for="__nav_16_2">
-          12.2 Legacy fragments
+          12.2 Nfc
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="12.2 Legacy fragments" data-md-level="2">
+      <nav class="md-nav" aria-label="12.2 Nfc" data-md-level="2">
         <label class="md-nav__title" for="__nav_16_2">
           <span class="md-nav__icon md-icon"></span>
-          12.2 Legacy fragments
+          12.2 Nfc
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2698,8 +2698,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-12/12.2-Legacy-fragments/index.html" class="md-nav__link">
-        Legacy Fragments
+      <a href="../../week-12/12.2-Nfc/index.html" class="md-nav__link">
+        NFC
       </a>
     </li>
   
@@ -2764,14 +2764,14 @@
       
       
         <label class="md-nav__link" for="__nav_17_1">
-          13.1 Testing
+          13.1 Legacy views
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="13.1 Testing" data-md-level="2">
+      <nav class="md-nav" aria-label="13.1 Legacy views" data-md-level="2">
         <label class="md-nav__title" for="__nav_17_1">
           <span class="md-nav__icon md-icon"></span>
-          13.1 Testing
+          13.1 Legacy views
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2781,8 +2781,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-13/13.1-Testing/index.html" class="md-nav__link">
-        Testing
+      <a href="../../week-13/13.1-Legacy-views/index.html" class="md-nav__link">
+        Legacy Views
       </a>
     </li>
   
@@ -2811,14 +2811,14 @@
       
       
         <label class="md-nav__link" for="__nav_17_2">
-          13.2 Nfc
+          13.2 Legacy fragments
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="13.2 Nfc" data-md-level="2">
+      <nav class="md-nav" aria-label="13.2 Legacy fragments" data-md-level="2">
         <label class="md-nav__title" for="__nav_17_2">
           <span class="md-nav__icon md-icon"></span>
-          13.2 Nfc
+          13.2 Legacy fragments
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2828,8 +2828,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-13/13.2-Nfc/index.html" class="md-nav__link">
-        NFC
+      <a href="../../week-13/13.2-Legacy-fragments/index.html" class="md-nav__link">
+        Legacy Fragments
       </a>
     </li>
   
@@ -3106,24 +3106,24 @@
 <div class="sas1-code-file" style="--sas1-file-name: '/app/build.gradle';">
 <pre>
 plugins {                                                                                              
-    id &#39;com.android.application&#39;                                                                       
-    id &#39;org.jetbrains.kotlin.android&#39;                                                                  
+    id 'com.android.application'                                                                       
+    id 'org.jetbrains.kotlin.android'                                                                  
 }                                                                                                      
                                                                                                        
 android {                                                                                              
-    namespace &#39;com.javadude.carfinder&#39;                                                                 
+    namespace 'com.javadude.carfinder'                                                                 
 <div id="020-latest-android-sdk"><del>//  compileSdk 32                                                                                      </del>
 <ins>    compileSdk 33                                                                                      </ins>
                                                                                                        
     defaultConfig {                                                                                    
-        applicationId &quot;com.javadude.carfinder&quot;                                                         
+        applicationId "com.javadude.carfinder"                                                         
         minSdk 21                                                                                      
 <del>//      targetSdk 32                                                                                   </del>
 <ins>        targetSdk 33                                                                                   </ins>
 </div>        versionCode 1                                                                                  
-        versionName &quot;1.0&quot;                                                                              
+        versionName "1.0"                                                                              
                                                                                                        
-        testInstrumentationRunner &quot;androidx.test.runner.AndroidJUnitRunner&quot;                            
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"                            
         vectorDrawables {                                                                              
             useSupportLibrary true                                                                     
         }                                                                                              
@@ -3132,7 +3132,7 @@ android {
     buildTypes {                                                                                       
         release {                                                                                      
             minifyEnabled false                                                                        
-            proguardFiles getDefaultProguardFile(&#39;proguard-android-optimize.txt&#39;), &#39;proguard-rules.pro&#39;
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }                                                                                              
     }                                                                                                  
     compileOptions {                                                                                   
@@ -3140,39 +3140,39 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8                                                    
     }                                                                                                  
     kotlinOptions {                                                                                    
-        jvmTarget = &#39;1.8&#39;                                                                              
+        jvmTarget = '1.8'                                                                              
     }                                                                                                  
     buildFeatures {                                                                                    
         compose true                                                                                   
     }                                                                                                  
     composeOptions {                                                                                   
-<div id="020-use-variable-from-main-build"><del>//      kotlinCompilerExtensionVersion &#39;1.1.1&#39;                                                         </del>
+<div id="020-use-variable-from-main-build"><del>//      kotlinCompilerExtensionVersion '1.1.1'                                                         </del>
 <ins>        kotlinCompilerExtensionVersion compose_compiler_version                                        </ins>
 </div>    }                                                                                                  
     packagingOptions {                                                                                 
         resources {                                                                                    
-            excludes += &#39;/META-INF/{AL2.0,LGPL2.1}&#39;                                                    
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'                                                    
         }                                                                                              
     }                                                                                                  
 }                                                                                                      
                                                                                                        
 dependencies {                                                                                         
-<div id="020-update-all-highlighted-deps"><del>//  implementation &#39;androidx.core:core-ktx:1.7.0&#39;                                                      </del>
-<del>//  implementation &#39;androidx.lifecycle:lifecycle-runtime-ktx:2.3.1&#39;                                    </del>
-<del>//  implementation &#39;androidx.activity:activity-compose:1.3.1&#39;                                          </del>
-<ins>    implementation &#39;androidx.core:core-ktx:1.9.0&#39;                                                      </ins>
-<ins>    implementation &#39;androidx.lifecycle:lifecycle-runtime-ktx:2.5.1&#39;                                    </ins>
-<ins>    implementation &#39;androidx.activity:activity-compose:1.6.0&#39;                                          </ins>
-    implementation &quot;androidx.compose.ui:ui:$compose_ui_version&quot;                                        
-    implementation &quot;androidx.compose.ui:ui-tooling-preview:$compose_ui_version&quot;                        
-<del>//  implementation &#39;androidx.compose.material:material:1.1.1&#39;                                          </del>
-<ins>    implementation &#39;androidx.compose.material:material:1.2.1&#39;                                          </ins>
-    testImplementation &#39;junit:junit:4.13.2&#39;                                                            
-    androidTestImplementation &#39;androidx.test.ext:junit:1.1.3&#39;                                          
-    androidTestImplementation &#39;androidx.test.espresso:espresso-core:3.4.0&#39;                             
-    androidTestImplementation &quot;androidx.compose.ui:ui-test-junit4:$compose_ui_version&quot;                 
-    debugImplementation &quot;androidx.compose.ui:ui-tooling:$compose_ui_version&quot;                           
-    debugImplementation &quot;androidx.compose.ui:ui-test-manifest:$compose_ui_version&quot;                     
+<div id="020-update-all-highlighted-deps"><del>//  implementation 'androidx.core:core-ktx:1.7.0'                                                      </del>
+<del>//  implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'                                    </del>
+<del>//  implementation 'androidx.activity:activity-compose:1.3.1'                                          </del>
+<ins>    implementation 'androidx.core:core-ktx:1.9.0'                                                      </ins>
+<ins>    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'                                    </ins>
+<ins>    implementation 'androidx.activity:activity-compose:1.6.0'                                          </ins>
+    implementation "androidx.compose.ui:ui:$compose_ui_version"                                        
+    implementation "androidx.compose.ui:ui-tooling-preview:$compose_ui_version"                        
+<del>//  implementation 'androidx.compose.material:material:1.1.1'                                          </del>
+<ins>    implementation 'androidx.compose.material:material:1.2.1'                                          </ins>
+    testImplementation 'junit:junit:4.13.2'                                                            
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'                                          
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'                             
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"                 
+    debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version"                           
+    debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"                     
 </div>}                                                                                                      
 </pre>
 </div>
@@ -3204,7 +3204,7 @@ class ExampleInstrumentedTest {
 <del>//      val appContext =                                                           </del>
 <del>//          InstrumentationRegistry.getInstrumentation().targetContext             </del>
 <ins>        val appContext = InstrumentationRegistry.getInstrumentation().targetContext</ins>
-        assertEquals(&quot;com.javadude.carfinder&quot;, appContext.packageName)             
+        assertEquals("com.javadude.carfinder", appContext.packageName)             
     }                                                                              
 }                                                                                  
 </pre>
@@ -3233,14 +3233,14 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)                                        
         setContent {                                                              
             CarFinderTheme {                                                      
-<del>//              // A surface container using the &#39;background&#39; color from the theme</del>
-<ins>                // A surface container using the &#39;background&#39; color               </ins>
+<del>//              // A surface container using the 'background' color from the theme</del>
+<ins>                // A surface container using the 'background' color               </ins>
 <ins>                // from the theme                                                 </ins>
                 Surface(                                                          
                     modifier = Modifier.fillMaxSize(),                            
                     color = MaterialTheme.colors.background                       
                 ) {                                                               
-                    Greeting(&quot;Android&quot;)                                           
+                    Greeting("Android")                                           
                 }                                                                 
             }                                                                     
         }                                                                         
@@ -3249,14 +3249,14 @@ class MainActivity : ComponentActivity() {
                                                                                   
 @Composable                                                                       
 fun Greeting(name: String) {                                                      
-    Text(text = &quot;Hello $name!&quot;)                                                   
+    Text(text = "Hello $name!")                                                   
 }                                                                                 
                                                                                   
 @Preview(showBackground = true)                                                   
 @Composable                                                                       
 fun DefaultPreview() {                                                            
     CarFinderTheme {                                                              
-        Greeting(&quot;Android&quot;)                                                       
+        Greeting("Android")                                                       
     }                                                                             
 }                                                                                 
 </pre>
@@ -3298,9 +3298,9 @@ private val LightColorPalette = lightColors(
 @Composable                                                                                      
 <del>//fun CarFinderTheme(                                                                            </del>
 <del>//  darkTheme: Boolean = isSystemInDarkTheme(),                                                  </del>
-<del>//  content: @Composable () -&gt; Unit                                                              </del>
+<del>//  content: @Composable () -> Unit                                                              </del>
 <del>//) {                                                                                            </del>
-<ins>fun CarFinderTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable () -&gt; Unit) {</ins>
+<ins>fun CarFinderTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable () -> Unit) {</ins>
     val colors = if (darkTheme) {                                                                
         DarkColorPalette                                                                         
     } else {                                                                                     
@@ -3323,16 +3323,16 @@ private val LightColorPalette = lightColors(
 <pre>
 <div id="020-compose-and-kotlin-versions">buildscript {                                                                                       
     ext {                                                                                           
-<del>//      compose_ui_version = &#39;1.1.1&#39;                                                                </del>
-<ins>        compose_ui_version = &#39;1.3.0&#39;                                                                </ins>
-<ins>        compose_compiler_version = &#39;1.3.2&#39;                                                          </ins>
+<del>//      compose_ui_version = '1.1.1'                                                                </del>
+<ins>        compose_ui_version = '1.3.0'                                                                </ins>
+<ins>        compose_compiler_version = '1.3.2'                                                          </ins>
     }                                                                                               
 }// Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {                                                                                           
-    id &#39;com.android.application&#39; version &#39;7.3.1&#39; apply false                                        
-    id &#39;com.android.library&#39; version &#39;7.3.1&#39; apply false                                            
-<del>//  id &#39;org.jetbrains.kotlin.android&#39; version &#39;1.6.10&#39; apply false                                  </del>
-<ins>    id &#39;org.jetbrains.kotlin.android&#39; version &#39;1.7.20&#39; apply false                                  </ins>
+    id 'com.android.application' version '7.3.1' apply false                                        
+    id 'com.android.library' version '7.3.1' apply false                                            
+<del>//  id 'org.jetbrains.kotlin.android' version '1.6.10' apply false                                  </del>
+<ins>    id 'org.jetbrains.kotlin.android' version '1.7.20' apply false                                  </ins>
 }                                                                                                   
 </div></pre>
 </div>

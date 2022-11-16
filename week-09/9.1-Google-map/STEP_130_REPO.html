@@ -2634,14 +2634,14 @@
       
       
         <label class="md-nav__link" for="__nav_16_1">
-          12.1 Legacy views
+          12.1 Testing
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="12.1 Legacy views" data-md-level="2">
+      <nav class="md-nav" aria-label="12.1 Testing" data-md-level="2">
         <label class="md-nav__title" for="__nav_16_1">
           <span class="md-nav__icon md-icon"></span>
-          12.1 Legacy views
+          12.1 Testing
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2651,8 +2651,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-12/12.1-Legacy-views/index.html" class="md-nav__link">
-        Legacy Views
+      <a href="../../week-12/12.1-Testing/index.html" class="md-nav__link">
+        Testing
       </a>
     </li>
   
@@ -2681,14 +2681,14 @@
       
       
         <label class="md-nav__link" for="__nav_16_2">
-          12.2 Legacy fragments
+          12.2 Nfc
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="12.2 Legacy fragments" data-md-level="2">
+      <nav class="md-nav" aria-label="12.2 Nfc" data-md-level="2">
         <label class="md-nav__title" for="__nav_16_2">
           <span class="md-nav__icon md-icon"></span>
-          12.2 Legacy fragments
+          12.2 Nfc
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2698,8 +2698,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-12/12.2-Legacy-fragments/index.html" class="md-nav__link">
-        Legacy Fragments
+      <a href="../../week-12/12.2-Nfc/index.html" class="md-nav__link">
+        NFC
       </a>
     </li>
   
@@ -2764,14 +2764,14 @@
       
       
         <label class="md-nav__link" for="__nav_17_1">
-          13.1 Testing
+          13.1 Legacy views
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="13.1 Testing" data-md-level="2">
+      <nav class="md-nav" aria-label="13.1 Legacy views" data-md-level="2">
         <label class="md-nav__title" for="__nav_17_1">
           <span class="md-nav__icon md-icon"></span>
-          13.1 Testing
+          13.1 Legacy views
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2781,8 +2781,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-13/13.1-Testing/index.html" class="md-nav__link">
-        Testing
+      <a href="../../week-13/13.1-Legacy-views/index.html" class="md-nav__link">
+        Legacy Views
       </a>
     </li>
   
@@ -2811,14 +2811,14 @@
       
       
         <label class="md-nav__link" for="__nav_17_2">
-          13.2 Nfc
+          13.2 Legacy fragments
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="13.2 Nfc" data-md-level="2">
+      <nav class="md-nav" aria-label="13.2 Legacy fragments" data-md-level="2">
         <label class="md-nav__title" for="__nav_17_2">
           <span class="md-nav__icon md-icon"></span>
-          13.2 Nfc
+          13.2 Legacy fragments
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2828,8 +2828,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-13/13.2-Nfc/index.html" class="md-nav__link">
-        NFC
+      <a href="../../week-13/13.2-Legacy-fragments/index.html" class="md-nav__link">
+        Legacy Fragments
       </a>
     </li>
   
@@ -3142,12 +3142,12 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.map                                                      
 import kotlinx.coroutines.launch                                                        
                                                                                         
-private val LAT_PREF = stringPreferencesKey(&quot;lat&quot;)                                      
-private val LON_PREF = stringPreferencesKey(&quot;lon&quot;)                                      
+private val LAT_PREF = stringPreferencesKey("lat")                                      
+private val LON_PREF = stringPreferencesKey("lon")                                      
                                                                                         
 class CarViewModel(application: Application) : AndroidViewModel(application) {          
-<div id="080-track-current-location">    private val _currentLocation = MutableStateFlow&lt;Location?&gt;(null)                    
-    val currentLocation: Flow&lt;Location?&gt;                                                
+<div id="080-track-current-location">    private val _currentLocation = MutableStateFlow<Location?>(null)                    
+    val currentLocation: Flow<Location?>                                                
         get() = _currentLocation                                                        
 </div>                                                                                        
 <div id="080-allow-activity-to-update">    fun updateLocation(location: Location?) {                                           
@@ -3155,13 +3155,13 @@ class CarViewModel(application: Application) : AndroidViewModel(application) {
     }                                                                                   
 </div>                                                                                        
 <div id="120-add-car-location">    private val Context.preferencesDataStore:                                           
-            DataStore&lt;Preferences&gt; by preferencesDataStore(                             
-        name = &quot;carfinder&quot;                                                              
+            DataStore<Preferences> by preferencesDataStore(                             
+        name = "carfinder"                                                              
     )                                                                                   
                                                                                         
-    val carLatLng = application.preferencesDataStore.data.map { preferences -&gt;          
-        preferences[LAT_PREF]?.let { latString -&gt;                                       
-            preferences[LON_PREF]?.let { lonString -&gt;                                   
+    val carLatLng = application.preferencesDataStore.data.map { preferences ->          
+        preferences[LAT_PREF]?.let { latString ->                                       
+            preferences[LON_PREF]?.let { lonString ->                                   
                 LatLng(latString.toDouble(), lonString.toDouble())                      
             }                                                                           
         }                                                                               
@@ -3169,7 +3169,7 @@ class CarViewModel(application: Application) : AndroidViewModel(application) {
                                                                                         
     fun clearCarLocation() {                                                            
         viewModelScope.launch {                                                         
-            getApplication&lt;Application&gt;().preferencesDataStore.edit { preferences -&gt;    
+            getApplication<Application>().preferencesDataStore.edit { preferences ->    
                 preferences.remove(LAT_PREF)                                            
                 preferences.remove(LON_PREF)                                            
             }                                                                           
@@ -3178,8 +3178,8 @@ class CarViewModel(application: Application) : AndroidViewModel(application) {
                                                                                         
     fun setCarLocation() {                                                              
         viewModelScope.launch {                                                         
-            _currentLocation.value?.let { location -&gt;                                   
-                getApplication&lt;Application&gt;().preferencesDataStore.edit { preferences -&gt;
+            _currentLocation.value?.let { location ->                                   
+                getApplication<Application>().preferencesDataStore.edit { preferences ->
                     preferences[LAT_PREF] = location.latitude.toString()                
                     preferences[LON_PREF] = location.longitude.toString()               
                 }                                                                       
@@ -3191,7 +3191,7 @@ class CarViewModel(application: Application) : AndroidViewModel(application) {
 </div>                                                                                        
 <ins>    fun setCarLocation(latLng: LatLng) {                                                </ins>
 <ins>        viewModelScope.launch {                                                         </ins>
-<ins>            getApplication&lt;Application&gt;().preferencesDataStore.edit { preferences -&gt;    </ins>
+<ins>            getApplication<Application>().preferencesDataStore.edit { preferences ->    </ins>
 <ins>                preferences[LAT_PREF] = latLng.latitude.toString()                      </ins>
 <ins>                preferences[LON_PREF] = latLng.longitude.toString()                     </ins>
 <ins>            }                                                                           </ins>
@@ -3287,26 +3287,26 @@ class MainActivity : ComponentActivity() {
 <div id="080-permission-launcher">    private val getLocationPermission =                                             
         registerForActivityResult(                                                  
             ActivityResultContracts.RequestMultiplePermissions()                    
-        ) { isGranted -&gt;                                                            
+        ) { isGranted ->                                                            
             if (isGranted.values.any { it }) {                                      
                 startLocationAndMap()                                               
             } else {                                                                
                 AlertDialog.Builder(this)                                           
-                    .setTitle(&quot;Permissions Needed&quot;)                                 
+                    .setTitle("Permissions Needed")                                 
                     .setMessage(                                                    
-                        &quot;We need coarse-location or fine-location permission &quot; +    
-                                &quot;to locate a car (fine location is highly &quot; +       
-                                &quot;recommended for accurate car locating). &quot; +        
-                                &quot;Please allow these permissions via App Info &quot; +    
-                                &quot;settings&quot;)                                         
+                        "We need coarse-location or fine-location permission " +    
+                                "to locate a car (fine location is highly " +       
+                                "recommended for accurate car locating). " +        
+                                "Please allow these permissions via App Info " +    
+                                "settings")                                         
                     .setCancelable(false)                                           
-                    .setNegativeButton(&quot;Quit&quot;) { _, _ -&gt; finish() }                 
-                    .setPositiveButton(&quot;App Info&quot;) { _, _ -&gt;                        
+                    .setNegativeButton("Quit") { _, _ -> finish() }                 
+                    .setPositiveButton("App Info") { _, _ ->                        
                         startActivity(                                              
                             Intent(                                                 
                                 Settings.ACTION_APPLICATION_DETAILS_SETTINGS        
                             ).apply {                                               
-                                data = Uri.parse(&quot;package:$packageName&quot;)            
+                                data = Uri.parse("package:$packageName")            
                             }                                                       
                         )                                                           
                         finish()                                                    
@@ -3324,7 +3324,7 @@ class MainActivity : ComponentActivity() {
 <div id="080-have-permission">                if (ActivityCompat.checkSelfPermission(                             
                         this,                                                       
                         Manifest.permission.ACCESS_FINE_LOCATION                    
-                    ) != PackageManager.PERMISSION_GRANTED &amp;&amp;                       
+                    ) != PackageManager.PERMISSION_GRANTED &&                       
                     ActivityCompat.checkSelfPermission(                             
                         this,                                                       
                         Manifest.permission.ACCESS_COARSE_LOCATION                  
@@ -3342,14 +3342,14 @@ class MainActivity : ComponentActivity() {
 </div>            }.addOnFailureListener(this) {                                          
                 Toast.makeText(                                                     
                     this,                                                           
-                    &quot;Google Play services required (or upgrade required)&quot;,          
+                    "Google Play services required (or upgrade required)",          
                     Toast.LENGTH_SHORT                                              
                 ).show()                                                            
                 finish()                                                            
             }                                                                       
 </div>    }                                                                               
                                                                                     
-    @SuppressLint(&quot;MissingPermission&quot;)                                              
+    @SuppressLint("MissingPermission")                                              
     fun startLocationAndMap() {                                                     
 <div id="080-request-location-updates">        val locationRequest =                                                       
             LocationRequest.Builder(Priority.PRIORITY_HIGH_ACCURACY, 5000)          
@@ -3368,7 +3368,7 @@ class MainActivity : ComponentActivity() {
 </div>                                                                                    
         setContent {                                                                
             CarFinderTheme {                                                        
-                // A surface container using the &#39;background&#39; color                 
+                // A surface container using the 'background' color                 
                 // from the theme                                                   
                 Surface(                                                            
                     modifier = Modifier.fillMaxSize(),                              
@@ -3402,9 +3402,9 @@ fun GoogleMapDisplay(
     currentLocation: Location?,                                                     
     carLatLng: LatLng?,                                                             
     cameraPositionState: CameraPositionState,                                       
-    onSetCarLocation: () -&gt; Unit,                                                   
-    onClearCarLocation: () -&gt; Unit,                                                 
-<div id="130-event"><ins>    onMoveCar: (LatLng) -&gt; Unit,                                                    </ins>
+    onSetCarLocation: () -> Unit,                                                   
+    onClearCarLocation: () -> Unit,                                                 
+<div id="130-event"><ins>    onMoveCar: (LatLng) -> Unit,                                                    </ins>
 </div>    modifier: Modifier,                                                             
 ) {                                                                                 
 <div id="060-marker-state-holder">    var mapLoaded by remember { mutableStateOf(false) }                             
@@ -3418,13 +3418,13 @@ fun GoogleMapDisplay(
 <div id="080-current-location-state">    val currentLocationState = remember(currentLocation) {                          
         currentLocation?.let { MarkerState(LatLng(it.latitude, it.longitude)) }     
     }                                                                               
-    val carState = rememberMarkerState(&quot;car&quot;)                                       
+    val carState = rememberMarkerState("car")                                       
 </div>                                                                                    
 <div id="090-icon-state">    val context = LocalContext.current                                              
 <del>//  var currentLocationIcon by                                                      </del>
-<del>//      remember { mutableStateOf&lt;BitmapDescriptor?&gt;(null) }                        </del>
-<ins>    var currentLocationIcon by remember { mutableStateOf&lt;BitmapDescriptor?&gt;(null) } </ins>
-    var carIcon by remember { mutableStateOf&lt;BitmapDescriptor?&gt;(null) }             
+<del>//      remember { mutableStateOf<BitmapDescriptor?>(null) }                        </del>
+<ins>    var currentLocationIcon by remember { mutableStateOf<BitmapDescriptor?>(null) } </ins>
+    var carIcon by remember { mutableStateOf<BitmapDescriptor?>(null) }             
     val scope = rememberCoroutineScope()                                            
 </div>                                                                                    
 <div id="090-jump-to-location">    var initialBoundsSet by remember { mutableStateOf(false) }                      
@@ -3450,13 +3450,13 @@ fun GoogleMapDisplay(
                                                                                     
 <ins>        snapshotFlow { carState.dragState }                                         </ins>
 <ins>            .collect {                                                              </ins>
-<ins>                // Make sure we&#39;ve seen at least one drag state before updating     </ins>
-<ins>                //   the view model. Otherwise we&#39;ll see the initial (0.0, 0.0)     </ins>
+<ins>                // Make sure we've seen at least one drag state before updating     </ins>
+<ins>                //   the view model. Otherwise we'll see the initial (0.0, 0.0)     </ins>
 <ins>                //   value that was set when the MarkerState was created            </ins>
 <ins>                if (it == DragState.DRAG) {                                         </ins>
 <ins>                    dragged = true                                                  </ins>
                                                                                     
-<ins>                } else if (it == DragState.END &amp;&amp; dragged) {                        </ins>
+<ins>                } else if (it == DragState.END && dragged) {                        </ins>
 <ins>                    dragged = false                                                 </ins>
 <ins>                    onMoveCar(carState.position)                                    </ins>
 <ins>                }                                                                   </ins>
@@ -3472,7 +3472,7 @@ fun GoogleMapDisplay(
                 onClearCarLocation = onClearCarLocation,                            
                 onWalkToCar = { TODO() },                                           
                 onGoToCurrentLocation = {                                           
-                    currentLocation?.let { curr -&gt;                                  
+                    currentLocation?.let { curr ->                                  
                         scope.launch {                                              
                             cameraPositionState.animate(                            
                                 CameraUpdateFactory.newLatLngZoom(                  
@@ -3483,13 +3483,13 @@ fun GoogleMapDisplay(
                         }                                                           
                     } ?: Toast.makeText(                                            
                         context,                                                    
-                        &quot;No current location available&quot;,                            
+                        "No current location available",                            
                         Toast.LENGTH_LONG                                           
                     ).show()                                                        
                 },                                                                  
             )                                                                       
         },                                                                          
-        content = { paddingValues -&gt;                                                
+        content = { paddingValues ->                                                
 </div><div id="060-wrap-map">            Box(                                                                    
 <div id="060-top-level-modifier">                modifier = modifier.padding(paddingValues),                         
 </div>            ) {                                                                     

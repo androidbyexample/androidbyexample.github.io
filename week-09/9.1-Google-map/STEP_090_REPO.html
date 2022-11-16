@@ -2634,14 +2634,14 @@
       
       
         <label class="md-nav__link" for="__nav_16_1">
-          12.1 Legacy views
+          12.1 Testing
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="12.1 Legacy views" data-md-level="2">
+      <nav class="md-nav" aria-label="12.1 Testing" data-md-level="2">
         <label class="md-nav__title" for="__nav_16_1">
           <span class="md-nav__icon md-icon"></span>
-          12.1 Legacy views
+          12.1 Testing
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2651,8 +2651,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-12/12.1-Legacy-views/index.html" class="md-nav__link">
-        Legacy Views
+      <a href="../../week-12/12.1-Testing/index.html" class="md-nav__link">
+        Testing
       </a>
     </li>
   
@@ -2681,14 +2681,14 @@
       
       
         <label class="md-nav__link" for="__nav_16_2">
-          12.2 Legacy fragments
+          12.2 Nfc
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="12.2 Legacy fragments" data-md-level="2">
+      <nav class="md-nav" aria-label="12.2 Nfc" data-md-level="2">
         <label class="md-nav__title" for="__nav_16_2">
           <span class="md-nav__icon md-icon"></span>
-          12.2 Legacy fragments
+          12.2 Nfc
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2698,8 +2698,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-12/12.2-Legacy-fragments/index.html" class="md-nav__link">
-        Legacy Fragments
+      <a href="../../week-12/12.2-Nfc/index.html" class="md-nav__link">
+        NFC
       </a>
     </li>
   
@@ -2764,14 +2764,14 @@
       
       
         <label class="md-nav__link" for="__nav_17_1">
-          13.1 Testing
+          13.1 Legacy views
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="13.1 Testing" data-md-level="2">
+      <nav class="md-nav" aria-label="13.1 Legacy views" data-md-level="2">
         <label class="md-nav__title" for="__nav_17_1">
           <span class="md-nav__icon md-icon"></span>
-          13.1 Testing
+          13.1 Legacy views
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2781,8 +2781,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-13/13.1-Testing/index.html" class="md-nav__link">
-        Testing
+      <a href="../../week-13/13.1-Legacy-views/index.html" class="md-nav__link">
+        Legacy Views
       </a>
     </li>
   
@@ -2811,14 +2811,14 @@
       
       
         <label class="md-nav__link" for="__nav_17_2">
-          13.2 Nfc
+          13.2 Legacy fragments
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="13.2 Nfc" data-md-level="2">
+      <nav class="md-nav" aria-label="13.2 Legacy fragments" data-md-level="2">
         <label class="md-nav__title" for="__nav_17_2">
           <span class="md-nav__icon md-icon"></span>
-          13.2 Nfc
+          13.2 Legacy fragments
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2828,8 +2828,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-13/13.2-Nfc/index.html" class="md-nav__link">
-        NFC
+      <a href="../../week-13/13.2-Legacy-fragments/index.html" class="md-nav__link">
+        Legacy Fragments
       </a>
     </li>
   
@@ -3122,14 +3122,14 @@
 <pre>
 <ins>package com.javadude.carfinder                                               </ins>
                                                                              
-<ins>// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);           </ins>
+<ins>// Licensed under the Apache License, Version 2.0 (the "License");           </ins>
 <ins>// you may not use this file except in compliance with the License.          </ins>
 <ins>// You may obtain a copy of the License at                                   </ins>
 <ins>//                                                                           </ins>
 <ins>//     https://www.apache.org/licenses/LICENSE-2.0                           </ins>
 <ins>//                                                                           </ins>
 <ins>// Unless required by applicable law or agreed to in writing, software       </ins>
-<ins>// distributed under the License is distributed on an &quot;AS IS&quot; BASIS,         </ins>
+<ins>// distributed under the License is distributed on an "AS IS" BASIS,         </ins>
 <ins>// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  </ins>
 <ins>// See the License for the specific language governing permissions and       </ins>
 <ins>// limitations under the License.                                            </ins>
@@ -3146,8 +3146,8 @@
 <ins>import com.google.android.gms.maps.model.BitmapDescriptorFactory             </ins>
                                                                              
 <ins>// NOTE: I wanted to show an example of a set of extensions nicely-documented</ins>
-<ins>// for KDoc generation using the Dokka tool. There&#39;s an example of the setup </ins>
-<ins>// in the build scripts. Note that Dokka is still pretty young and doesn&#39;t   </ins>
+<ins>// for KDoc generation using the Dokka tool. There's an example of the setup </ins>
+<ins>// in the build scripts. Note that Dokka is still pretty young and doesn't   </ins>
 <ins>// generate the prettiest documentation... But you can use it to generate    </ins>
 <ins>// markdown and use another tool to generate something prettier...           </ins>
                                                                              
@@ -3163,16 +3163,16 @@
 <ins> */                                                                          </ins>
 <ins>fun Drawable.toBitmap(): Bitmap =                                            </ins>
 <ins>    when {                                                                   </ins>
-<ins>        // if it&#39;s already a bitmap; just return it                          </ins>
-<ins>        this is BitmapDrawable -&gt; bitmap                                     </ins>
+<ins>        // if it's already a bitmap; just return it                          </ins>
+<ins>        this is BitmapDrawable -> bitmap                                     </ins>
                                                                              
 <ins>        // otherwise, create a bitmap and draw the drawable to it            </ins>
-<ins>        intrinsicWidth == 0 || intrinsicHeight == 0 -&gt;                       </ins>
+<ins>        intrinsicWidth == 0 || intrinsicHeight == 0 ->                       </ins>
 <ins>            throw IllegalArgumentException(                                  </ins>
-<ins>                &quot;Drawable cannot be converted to a Bitmap; it must have &quot; +  </ins>
-<ins>                        &quot;non-zero intrinsic width and height&quot;)               </ins>
+<ins>                "Drawable cannot be converted to a Bitmap; it must have " +  </ins>
+<ins>                        "non-zero intrinsic width and height")               </ins>
                                                                              
-<ins>        else -&gt;                                                              </ins>
+<ins>        else ->                                                              </ins>
 <ins>            Bitmap.createBitmap(                                             </ins>
 <ins>                intrinsicWidth,                                              </ins>
 <ins>                intrinsicHeight,                                             </ins>
@@ -3205,8 +3205,8 @@
 <ins> * @param id [Int] the resource id of the [Drawable]                         </ins>
 <ins> * @return a [Bitmap] representation of the [Drawable]                       </ins>
 <ins> */                                                                          </ins>
-<ins>@Suppress(&quot;KDocUnresolvedReference&quot;)                                         </ins>
-<ins>    // they actually are resolved by dokka &#39;samples&#39; config                  </ins>
+<ins>@Suppress("KDocUnresolvedReference")                                         </ins>
+<ins>    // they actually are resolved by dokka 'samples' config                  </ins>
 <ins>fun Context.loadBitmapDescriptor(@DrawableRes id: Int): BitmapDescriptor =   </ins>
 <ins>    loadBitmap(id).toBitmapDescriptor()                                      </ins>
                                                                              
@@ -3307,26 +3307,26 @@ class MainActivity : ComponentActivity() {
 <div id="080-permission-launcher">    private val getLocationPermission =                                             
         registerForActivityResult(                                                  
             ActivityResultContracts.RequestMultiplePermissions()                    
-        ) { isGranted -&gt;                                                            
+        ) { isGranted ->                                                            
             if (isGranted.values.any { it }) {                                      
                 startLocationAndMap()                                               
             } else {                                                                
                 AlertDialog.Builder(this)                                           
-                    .setTitle(&quot;Permissions Needed&quot;)                                 
+                    .setTitle("Permissions Needed")                                 
                     .setMessage(                                                    
-                        &quot;We need coarse-location or fine-location permission &quot; +    
-                                &quot;to locate a car (fine location is highly &quot; +       
-                                &quot;recommended for accurate car locating). &quot; +        
-                                &quot;Please allow these permissions via App Info &quot; +    
-                                &quot;settings&quot;)                                         
+                        "We need coarse-location or fine-location permission " +    
+                                "to locate a car (fine location is highly " +       
+                                "recommended for accurate car locating). " +        
+                                "Please allow these permissions via App Info " +    
+                                "settings")                                         
                     .setCancelable(false)                                           
-                    .setNegativeButton(&quot;Quit&quot;) { _, _ -&gt; finish() }                 
-                    .setPositiveButton(&quot;App Info&quot;) { _, _ -&gt;                        
+                    .setNegativeButton("Quit") { _, _ -> finish() }                 
+                    .setPositiveButton("App Info") { _, _ ->                        
                         startActivity(                                              
                             Intent(                                                 
                                 Settings.ACTION_APPLICATION_DETAILS_SETTINGS        
                             ).apply {                                               
-                                data = Uri.parse(&quot;package:$packageName&quot;)            
+                                data = Uri.parse("package:$packageName")            
                             }                                                       
                         )                                                           
                         finish()                                                    
@@ -3344,7 +3344,7 @@ class MainActivity : ComponentActivity() {
 <div id="080-have-permission">                if (ActivityCompat.checkSelfPermission(                             
                         this,                                                       
                         Manifest.permission.ACCESS_FINE_LOCATION                    
-                    ) != PackageManager.PERMISSION_GRANTED &amp;&amp;                       
+                    ) != PackageManager.PERMISSION_GRANTED &&                       
                     ActivityCompat.checkSelfPermission(                             
                         this,                                                       
                         Manifest.permission.ACCESS_COARSE_LOCATION                  
@@ -3362,14 +3362,14 @@ class MainActivity : ComponentActivity() {
 </div>            }.addOnFailureListener(this) {                                          
                 Toast.makeText(                                                     
                     this,                                                           
-                    &quot;Google Play services required (or upgrade required)&quot;,          
+                    "Google Play services required (or upgrade required)",          
                     Toast.LENGTH_SHORT                                              
                 ).show()                                                            
                 finish()                                                            
             }                                                                       
 </div>    }                                                                               
                                                                                     
-    @SuppressLint(&quot;MissingPermission&quot;)                                              
+    @SuppressLint("MissingPermission")                                              
     fun startLocationAndMap() {                                                     
 <div id="080-request-location-updates">        val locationRequest =                                                       
             LocationRequest.Builder(Priority.PRIORITY_HIGH_ACCURACY, 5000)          
@@ -3388,8 +3388,8 @@ class MainActivity : ComponentActivity() {
 </div>                                                                                    
         setContent {                                                                
             CarFinderTheme {                                                        
-<del>//              // A surface container using the &#39;background&#39; color from the theme  </del>
-<ins>                // A surface container using the &#39;background&#39; color                 </ins>
+<del>//              // A surface container using the 'background' color from the theme  </del>
+<ins>                // A surface container using the 'background' color                 </ins>
 <ins>                // from the theme                                                   </ins>
                 Surface(                                                            
                     modifier = Modifier.fillMaxSize(),                              
@@ -3407,7 +3407,7 @@ class MainActivity : ComponentActivity() {
 <div id="040-factor-map">                    GoogleMapDisplay(                                               
                         currentLocation = currentLocation,                          
 <del>//                      place = googleHQ,                                           </del>
-<del>//                      placeDescription = &quot;Google HQ&quot;,                             </del>
+<del>//                      placeDescription = "Google HQ",                             </del>
                         cameraPositionState = cameraPositionState,                  
                         modifier = Modifier.fillMaxSize(),                          
                     )                                                               
@@ -3441,7 +3441,7 @@ fun GoogleMapDisplay(
 </div>                                                                                    
 <div id="090-icon-state"><ins>    val context = LocalContext.current                                              </ins>
 <ins>    var currentLocationIcon by                                                      </ins>
-<ins>        remember { mutableStateOf&lt;BitmapDescriptor?&gt;(null) }                        </ins>
+<ins>        remember { mutableStateOf<BitmapDescriptor?>(null) }                        </ins>
 <ins>    val scope = rememberCoroutineScope()                                            </ins>
 </div>                                                                                    
 <div id="090-jump-to-location"><ins>    var initialBoundsSet by remember { mutableStateOf(false) }                      </ins>
@@ -3524,13 +3524,13 @@ fun GoogleMapDisplay(
 <summary>ADDED: /app/src/main/res/drawable/ic_current_location.xml</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/res/drawable/ic_current_location.xml';">
 <pre>
-<ins>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;                                </ins>
-<div id="090-icon-resource"><ins>&lt;shape android:shape=&quot;oval&quot;                                           </ins>
-<ins>    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;       </ins>
-<ins>    &lt;size android:height=&quot;24dp&quot; android:width=&quot;24dp&quot; /&gt;               </ins>
-<ins>    &lt;stroke android:color=&quot;@android:color/white&quot; android:width=&quot;3dp&quot;/&gt;</ins>
-<ins>    &lt;solid android:color=&quot;@color/my_location&quot; /&gt;                      </ins>
-<ins>&lt;/shape&gt;                                                              </ins>
+<ins><?xml version="1.0" encoding="utf-8"?>                                </ins>
+<div id="090-icon-resource"><ins><shape android:shape="oval"                                           </ins>
+<ins>    xmlns:android="http://schemas.android.com/apk/res/android">       </ins>
+<ins>    <size android:height="24dp" android:width="24dp" />               </ins>
+<ins>    <stroke android:color="@android:color/white" android:width="3dp"/></ins>
+<ins>    <solid android:color="@color/my_location" />                      </ins>
+<ins></shape>                                                              </ins>
 </div></pre>
 </div>
 </details>
@@ -3538,17 +3538,17 @@ fun GoogleMapDisplay(
 <summary>CHANGED: /app/src/main/res/values/colors.xml</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/res/values/colors.xml';">
 <pre>
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;         
-&lt;resources&gt;                                    
-<div id="090-custom-color"><ins>    &lt;color name=&quot;my_location&quot;&gt;#FF0000FF&lt;/color&gt;</ins>
-</div>    &lt;color name=&quot;purple_200&quot;&gt;#FFBB86FC&lt;/color&gt; 
-    &lt;color name=&quot;purple_500&quot;&gt;#FF6200EE&lt;/color&gt; 
-    &lt;color name=&quot;purple_700&quot;&gt;#FF3700B3&lt;/color&gt; 
-    &lt;color name=&quot;teal_200&quot;&gt;#FF03DAC5&lt;/color&gt;   
-    &lt;color name=&quot;teal_700&quot;&gt;#FF018786&lt;/color&gt;   
-    &lt;color name=&quot;black&quot;&gt;#FF000000&lt;/color&gt;      
-    &lt;color name=&quot;white&quot;&gt;#FFFFFFFF&lt;/color&gt;      
-&lt;/resources&gt;                                   
+<?xml version="1.0" encoding="utf-8"?>         
+<resources>                                    
+<div id="090-custom-color"><ins>    <color name="my_location">#FF0000FF</color></ins>
+</div>    <color name="purple_200">#FFBB86FC</color> 
+    <color name="purple_500">#FF6200EE</color> 
+    <color name="purple_700">#FF3700B3</color> 
+    <color name="teal_200">#FF03DAC5</color>   
+    <color name="teal_700">#FF018786</color>   
+    <color name="black">#FF000000</color>      
+    <color name="white">#FFFFFFFF</color>      
+</resources>                                   
 </pre>
 </div>
 </details>

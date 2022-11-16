@@ -2634,14 +2634,14 @@
       
       
         <label class="md-nav__link" for="__nav_16_1">
-          12.1 Legacy views
+          12.1 Testing
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="12.1 Legacy views" data-md-level="2">
+      <nav class="md-nav" aria-label="12.1 Testing" data-md-level="2">
         <label class="md-nav__title" for="__nav_16_1">
           <span class="md-nav__icon md-icon"></span>
-          12.1 Legacy views
+          12.1 Testing
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2651,8 +2651,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-12/12.1-Legacy-views/index.html" class="md-nav__link">
-        Legacy Views
+      <a href="../../week-12/12.1-Testing/index.html" class="md-nav__link">
+        Testing
       </a>
     </li>
   
@@ -2681,14 +2681,14 @@
       
       
         <label class="md-nav__link" for="__nav_16_2">
-          12.2 Legacy fragments
+          12.2 Nfc
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="12.2 Legacy fragments" data-md-level="2">
+      <nav class="md-nav" aria-label="12.2 Nfc" data-md-level="2">
         <label class="md-nav__title" for="__nav_16_2">
           <span class="md-nav__icon md-icon"></span>
-          12.2 Legacy fragments
+          12.2 Nfc
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2698,8 +2698,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-12/12.2-Legacy-fragments/index.html" class="md-nav__link">
-        Legacy Fragments
+      <a href="../../week-12/12.2-Nfc/index.html" class="md-nav__link">
+        NFC
       </a>
     </li>
   
@@ -2764,14 +2764,14 @@
       
       
         <label class="md-nav__link" for="__nav_17_1">
-          13.1 Testing
+          13.1 Legacy views
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="13.1 Testing" data-md-level="2">
+      <nav class="md-nav" aria-label="13.1 Legacy views" data-md-level="2">
         <label class="md-nav__title" for="__nav_17_1">
           <span class="md-nav__icon md-icon"></span>
-          13.1 Testing
+          13.1 Legacy views
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2781,8 +2781,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-13/13.1-Testing/index.html" class="md-nav__link">
-        Testing
+      <a href="../../week-13/13.1-Legacy-views/index.html" class="md-nav__link">
+        Legacy Views
       </a>
     </li>
   
@@ -2811,14 +2811,14 @@
       
       
         <label class="md-nav__link" for="__nav_17_2">
-          13.2 Nfc
+          13.2 Legacy fragments
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="13.2 Nfc" data-md-level="2">
+      <nav class="md-nav" aria-label="13.2 Legacy fragments" data-md-level="2">
         <label class="md-nav__title" for="__nav_17_2">
           <span class="md-nav__icon md-icon"></span>
-          13.2 Nfc
+          13.2 Legacy fragments
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2828,8 +2828,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-13/13.2-Nfc/index.html" class="md-nav__link">
-        NFC
+      <a href="../../week-13/13.2-Legacy-fragments/index.html" class="md-nav__link">
+        Legacy Fragments
       </a>
     </li>
   
@@ -3195,26 +3195,26 @@ class MainActivity : ComponentActivity() {
 <div id="080-permission-launcher">    private val getLocationPermission =                                             
         registerForActivityResult(                                                  
             ActivityResultContracts.RequestMultiplePermissions()                    
-        ) { isGranted -&gt;                                                            
+        ) { isGranted ->                                                            
             if (isGranted.values.any { it }) {                                      
                 startLocationAndMap()                                               
             } else {                                                                
                 AlertDialog.Builder(this)                                           
-                    .setTitle(&quot;Permissions Needed&quot;)                                 
+                    .setTitle("Permissions Needed")                                 
                     .setMessage(                                                    
-                        &quot;We need coarse-location or fine-location permission &quot; +    
-                                &quot;to locate a car (fine location is highly &quot; +       
-                                &quot;recommended for accurate car locating). &quot; +        
-                                &quot;Please allow these permissions via App Info &quot; +    
-                                &quot;settings&quot;)                                         
+                        "We need coarse-location or fine-location permission " +    
+                                "to locate a car (fine location is highly " +       
+                                "recommended for accurate car locating). " +        
+                                "Please allow these permissions via App Info " +    
+                                "settings")                                         
                     .setCancelable(false)                                           
-                    .setNegativeButton(&quot;Quit&quot;) { _, _ -&gt; finish() }                 
-                    .setPositiveButton(&quot;App Info&quot;) { _, _ -&gt;                        
+                    .setNegativeButton("Quit") { _, _ -> finish() }                 
+                    .setPositiveButton("App Info") { _, _ ->                        
                         startActivity(                                              
                             Intent(                                                 
                                 Settings.ACTION_APPLICATION_DETAILS_SETTINGS        
                             ).apply {                                               
-                                data = Uri.parse(&quot;package:$packageName&quot;)            
+                                data = Uri.parse("package:$packageName")            
                             }                                                       
                         )                                                           
                         finish()                                                    
@@ -3232,7 +3232,7 @@ class MainActivity : ComponentActivity() {
 <div id="080-have-permission">                if (ActivityCompat.checkSelfPermission(                             
                         this,                                                       
                         Manifest.permission.ACCESS_FINE_LOCATION                    
-                    ) != PackageManager.PERMISSION_GRANTED &amp;&amp;                       
+                    ) != PackageManager.PERMISSION_GRANTED &&                       
                     ActivityCompat.checkSelfPermission(                             
                         this,                                                       
                         Manifest.permission.ACCESS_COARSE_LOCATION                  
@@ -3250,14 +3250,14 @@ class MainActivity : ComponentActivity() {
 </div>            }.addOnFailureListener(this) {                                          
                 Toast.makeText(                                                     
                     this,                                                           
-                    &quot;Google Play services required (or upgrade required)&quot;,          
+                    "Google Play services required (or upgrade required)",          
                     Toast.LENGTH_SHORT                                              
                 ).show()                                                            
                 finish()                                                            
             }                                                                       
 </div>    }                                                                               
                                                                                     
-    @SuppressLint(&quot;MissingPermission&quot;)                                              
+    @SuppressLint("MissingPermission")                                              
     fun startLocationAndMap() {                                                     
 <div id="080-request-location-updates">        val locationRequest =                                                       
             LocationRequest.Builder(Priority.PRIORITY_HIGH_ACCURACY, 5000)          
@@ -3276,7 +3276,7 @@ class MainActivity : ComponentActivity() {
 </div>                                                                                    
         setContent {                                                                
             CarFinderTheme {                                                        
-                // A surface container using the &#39;background&#39; color                 
+                // A surface container using the 'background' color                 
                 // from the theme                                                   
                 Surface(                                                            
                     modifier = Modifier.fillMaxSize(),                              
@@ -3310,9 +3310,9 @@ fun GoogleMapDisplay(
     currentLocation: Location?,                                                     
     carLatLng: LatLng?,                                                             
     cameraPositionState: CameraPositionState,                                       
-    onSetCarLocation: () -&gt; Unit,                                                   
-    onClearCarLocation: () -&gt; Unit,                                                 
-<div id="130-event">    onMoveCar: (LatLng) -&gt; Unit,                                                    
+    onSetCarLocation: () -> Unit,                                                   
+    onClearCarLocation: () -> Unit,                                                 
+<div id="130-event">    onMoveCar: (LatLng) -> Unit,                                                    
 </div>    modifier: Modifier,                                                             
 ) {                                                                                 
 <div id="150-density-padding"><ins>    with(LocalDensity.current) {                                                    </ins>
@@ -3336,17 +3336,17 @@ fun GoogleMapDisplay(
 <ins>                )                                                                   </ins>
 <ins>            }                                                                       </ins>
         }                                                                           
-        val carState = rememberMarkerState(&quot;car&quot;)                                   
+        val carState = rememberMarkerState("car")                                   
 </div>                                                                                    
 <div id="090-icon-state">        val context = LocalContext.current                                          
 <del>//  var currentLocationIcon by                                                      </del>
-<del>//      remember { mutableStateOf&lt;BitmapDescriptor?&gt;(null) }                        </del>
+<del>//      remember { mutableStateOf<BitmapDescriptor?>(null) }                        </del>
 <ins>        var currentLocationIcon by remember {                                       </ins>
-<ins>            mutableStateOf&lt;BitmapDescriptor?&gt;(                                      </ins>
+<ins>            mutableStateOf<BitmapDescriptor?>(                                      </ins>
 <ins>                null                                                                </ins>
 <ins>            )                                                                       </ins>
 <ins>        }                                                                           </ins>
-        var carIcon by remember { mutableStateOf&lt;BitmapDescriptor?&gt;(null) }         
+        var carIcon by remember { mutableStateOf<BitmapDescriptor?>(null) }         
         val scope = rememberCoroutineScope()                                        
 </div>                                                                                    
 <div id="090-jump-to-location">        var initialBoundsSet by remember { mutableStateOf(false) }                  
@@ -3361,7 +3361,7 @@ fun GoogleMapDisplay(
 <ins>                        currentLocation.latitude,                                   </ins>
 <ins>                        currentLocation.longitude                                   </ins>
 <ins>                    )                                                               </ins>
-<ins>                    carLatLng?.let { car -&gt;                                         </ins>
+<ins>                    carLatLng?.let { car ->                                         </ins>
 <ins>                        val bounds =                                                </ins>
 <ins>                            LatLngBounds(current, current).including(car)           </ins>
 <ins>                        cameraPositionState.animate(                                </ins>
@@ -3387,17 +3387,17 @@ fun GoogleMapDisplay(
                                                                                     
             snapshotFlow { carState.dragState }                                     
                 .collect {                                                          
-<del>//              // Make sure we&#39;ve seen at least one drag state before updating     </del>
-<del>//              //   the view model. Otherwise we&#39;ll see the initial (0.0, 0.0)     </del>
+<del>//              // Make sure we've seen at least one drag state before updating     </del>
+<del>//              //   the view model. Otherwise we'll see the initial (0.0, 0.0)     </del>
 <del>//              //   value that was set when the MarkerState was created            </del>
-<ins>                    // Make sure we&#39;ve seen at least one drag state before          </ins>
-<ins>                    //   updating the view model. Otherwise we&#39;ll see the           </ins>
+<ins>                    // Make sure we've seen at least one drag state before          </ins>
+<ins>                    //   updating the view model. Otherwise we'll see the           </ins>
 <ins>                    //   initial (0.0, 0.0) value that was set when the             </ins>
 <ins>                    //   MarkerState was created                                    </ins>
                     if (it == DragState.DRAG) {                                     
                         dragged = true                                              
                                                                                     
-                    } else if (it == DragState.END &amp;&amp; dragged) {                    
+                    } else if (it == DragState.END && dragged) {                    
                         dragged = false                                             
                         onMoveCar(carState.position)                                
                     }                                                               
@@ -3412,39 +3412,39 @@ fun GoogleMapDisplay(
                     onSetCarLocation = onSetCarLocation,                            
                     onClearCarLocation = onClearCarLocation,                        
 <div id="140-navigate">                    onWalkToCar = {                                                 
-                        currentLocation?.let { curr -&gt;                              
-                            carLatLng?.let { car -&gt;                                 
+                        currentLocation?.let { curr ->                              
+                            carLatLng?.let { car ->                                 
                                 val uri =                                           
                                     Uri.parse(                                      
-<del>//                                  &quot;https://www.google.com/maps/dir/&quot; +            </del>
-<del>//                                          &quot;?api=1&amp;origin=${curr.latitude},&quot; +     </del>
-<ins>                                        &quot;https://www.google.com/maps/dir/?&quot; +       </ins>
-<ins>                                                &quot;api=1&amp;origin=${curr.latitude},&quot; +  </ins>
-                                                &quot;${curr.longitude}&amp;&quot; +              
-                                                &quot;destination=${car.latitude},&quot; +    
-<del>//                                          &quot;${car.longitude}&amp;travelmode=walking&quot;)  </del>
-<ins>                                                &quot;${car.longitude}&amp;&quot; +               </ins>
-<ins>                                                &quot;travelmode=walking&quot;)               </ins>
+<del>//                                  "https://www.google.com/maps/dir/" +            </del>
+<del>//                                          "?api=1&origin=${curr.latitude}," +     </del>
+<ins>                                        "https://www.google.com/maps/dir/?" +       </ins>
+<ins>                                                "api=1&origin=${curr.latitude}," +  </ins>
+                                                "${curr.longitude}&" +              
+                                                "destination=${car.latitude}," +    
+<del>//                                          "${car.longitude}&travelmode=walking")  </del>
+<ins>                                                "${car.longitude}&" +               </ins>
+<ins>                                                "travelmode=walking")               </ins>
                                 context.startActivity(                              
                                     Intent(                                         
                                         Intent.ACTION_VIEW,                         
                                         uri                                         
                                     ).apply {                                       
-                                        setPackage(&quot;com.google.android.apps.maps&quot;)  
+                                        setPackage("com.google.android.apps.maps")  
                                     })                                              
                             } ?: Toast.makeText(                                    
                                 context,                                            
-                                &quot;Cannot navigate; no car location available&quot;,       
+                                "Cannot navigate; no car location available",       
                                 Toast.LENGTH_LONG                                   
                             ).show()                                                
                         } ?: Toast.makeText(                                        
                             context,                                                
-                            &quot;Cannot navigate; no current location available&quot;,       
+                            "Cannot navigate; no current location available",       
                             Toast.LENGTH_LONG                                       
                         ).show()                                                    
                     },                                                              
 </div>                    onGoToCurrentLocation = {                                       
-                        currentLocation?.let { curr -&gt;                              
+                        currentLocation?.let { curr ->                              
                             scope.launch {                                          
                                 cameraPositionState.animate(                        
                                     CameraUpdateFactory.newLatLngZoom(              
@@ -3455,13 +3455,13 @@ fun GoogleMapDisplay(
                             }                                                       
                         } ?: Toast.makeText(                                        
                             context,                                                
-                            &quot;No current location available&quot;,                        
+                            "No current location available",                        
                             Toast.LENGTH_LONG                                       
                         ).show()                                                    
                     },                                                              
                 )                                                                   
             },                                                                      
-            content = { paddingValues -&gt;                                            
+            content = { paddingValues ->                                            
 </div><div id="060-wrap-map">                Box(                                                                
 <div id="060-top-level-modifier">                    modifier = modifier.padding(paddingValues),                     
 </div>                ) {                                                                 

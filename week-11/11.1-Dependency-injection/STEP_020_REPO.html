@@ -2634,14 +2634,14 @@
       
       
         <label class="md-nav__link" for="__nav_16_1">
-          12.1 Legacy views
+          12.1 Testing
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="12.1 Legacy views" data-md-level="2">
+      <nav class="md-nav" aria-label="12.1 Testing" data-md-level="2">
         <label class="md-nav__title" for="__nav_16_1">
           <span class="md-nav__icon md-icon"></span>
-          12.1 Legacy views
+          12.1 Testing
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2651,8 +2651,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-12/12.1-Legacy-views/index.html" class="md-nav__link">
-        Legacy Views
+      <a href="../../week-12/12.1-Testing/index.html" class="md-nav__link">
+        Testing
       </a>
     </li>
   
@@ -2681,14 +2681,14 @@
       
       
         <label class="md-nav__link" for="__nav_16_2">
-          12.2 Legacy fragments
+          12.2 Nfc
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="12.2 Legacy fragments" data-md-level="2">
+      <nav class="md-nav" aria-label="12.2 Nfc" data-md-level="2">
         <label class="md-nav__title" for="__nav_16_2">
           <span class="md-nav__icon md-icon"></span>
-          12.2 Legacy fragments
+          12.2 Nfc
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2698,8 +2698,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-12/12.2-Legacy-fragments/index.html" class="md-nav__link">
-        Legacy Fragments
+      <a href="../../week-12/12.2-Nfc/index.html" class="md-nav__link">
+        NFC
       </a>
     </li>
   
@@ -2764,14 +2764,14 @@
       
       
         <label class="md-nav__link" for="__nav_17_1">
-          13.1 Testing
+          13.1 Legacy views
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="13.1 Testing" data-md-level="2">
+      <nav class="md-nav" aria-label="13.1 Legacy views" data-md-level="2">
         <label class="md-nav__title" for="__nav_17_1">
           <span class="md-nav__icon md-icon"></span>
-          13.1 Testing
+          13.1 Legacy views
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2781,8 +2781,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-13/13.1-Testing/index.html" class="md-nav__link">
-        Testing
+      <a href="../../week-13/13.1-Legacy-views/index.html" class="md-nav__link">
+        Legacy Views
       </a>
     </li>
   
@@ -2811,14 +2811,14 @@
       
       
         <label class="md-nav__link" for="__nav_17_2">
-          13.2 Nfc
+          13.2 Legacy fragments
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="13.2 Nfc" data-md-level="2">
+      <nav class="md-nav" aria-label="13.2 Legacy fragments" data-md-level="2">
         <label class="md-nav__title" for="__nav_17_2">
           <span class="md-nav__icon md-icon"></span>
-          13.2 Nfc
+          13.2 Legacy fragments
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2828,8 +2828,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-13/13.2-Nfc/index.html" class="md-nav__link">
-        NFC
+      <a href="../../week-13/13.2-Legacy-fragments/index.html" class="md-nav__link">
+        Legacy Fragments
       </a>
     </li>
   
@@ -3173,14 +3173,14 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)                                        
         setContent {                                                              
             MoviesTheme {                                                         
-                // A surface container using the &#39;background&#39; color from the theme
+                // A surface container using the 'background' color from the theme
                 Surface(                                                          
                     modifier = Modifier.fillMaxSize(),                            
                     color = MaterialTheme.colors.background                       
                 ) {                                                               
 <del>//                  Ui {                                                          </del>
 <ins>                    Ui(context = LocalContext.current) {                          </ins>
-                        finish() // handle &quot;onExit&quot;                               
+                        finish() // handle "onExit"                               
                     }                                                             
                 }                                                                 
             }                                                                     
@@ -3232,14 +3232,14 @@ data class MovieEdit(
 <div id="020-inject-repo"><del>//class MovieViewModel(application: Application) : AndroidViewModel(application) {</del>
 <del>//  private val repository: MovieRepository = MovieDatabaseRepository(application)</del>
 <ins>class MovieViewModel(private val repository: MovieRepository) : ViewModel() {     </ins>
-</div>    private var screenStack: List&lt;Screen&gt; = listOf(MovieList)                     
+</div>    private var screenStack: List<Screen> = listOf(MovieList)                     
         set(value) {                                                              
             field = value                                                         
             screen = value.lastOrNull()                                           
             clearSelections()                                                     
         }                                                                         
                                                                                   
-    var selectedItemIds by mutableStateOf&lt;Set&lt;String&gt;&gt;(emptySet())                
+    var selectedItemIds by mutableStateOf<Set<String>>(emptySet())                
         private set                                                               
                                                                                   
     fun clearSelections() {                                                       
@@ -3284,7 +3284,7 @@ data class MovieEdit(
         screenStack = listOf(screen)                                              
     }                                                                             
                                                                                   
-    var screen by mutableStateOf&lt;Screen?&gt;(MovieList)                              
+    var screen by mutableStateOf<Screen?>(MovieList)                              
         private set                                                               
                                                                                   
     val ratingsFlow = repository.ratingsFlow                                      
@@ -3348,8 +3348,8 @@ import com.javadude.movies.RatingList
 <ins>import com.javadude.movies.repository.createRepository                                </ins>
                                                                                       
 <div id="020-build-vm"><ins>class MovieViewModelFactory(private val context: Context): ViewModelProvider.Factory {</ins>
-<ins>    override fun &lt;T : ViewModel&gt; create(modelClass: Class&lt;T&gt;): T {                    </ins>
-<ins>        @Suppress(&quot;UNCHECKED_CAST&quot;)                                                   </ins>
+<ins>    override fun <T : ViewModel> create(modelClass: Class<T>): T {                    </ins>
+<ins>        @Suppress("UNCHECKED_CAST")                                                   </ins>
 <ins>        return MovieViewModel(                                                        </ins>
 <ins>            createRepository(context)                                                 </ins>
 <ins>        ) as T                                                                        </ins>
@@ -3362,7 +3362,7 @@ fun Ui(
 <ins>    context: Context,                                                                 </ins>
 <ins>    viewModel: MovieViewModel =                                                       </ins>
 <ins>        viewModel(factory = MovieViewModelFactory(context)),                          </ins>
-</div>    onExit: () -&gt; Unit,                                                               
+</div>    onExit: () -> Unit,                                                               
 ) {                                                                                   
     BackHandler {                                                                     
         viewModel.popScreen()                                                         
@@ -3373,13 +3373,13 @@ fun Ui(
     val actors by viewModel.actorsFlow.collectAsState(initial = emptyList())          
                                                                                       
     when(val screen = viewModel.screen) {                                             
-        null -&gt; onExit()                                                              
+        null -> onExit()                                                              
                                                                                       
-        RatingList -&gt; RatingList(                                                     
+        RatingList -> RatingList(                                                     
             ratings = ratings,                                                        
             onSelectListScreen = viewModel::setScreenStack,                           
             onResetDatabase = viewModel::resetDatabase,                               
-            onRatingClick = { id -&gt;                                                   
+            onRatingClick = { id ->                                                   
                 viewModel.pushScreen(RatingDisplay(id))                               
             },                                                                        
             selectedItemIds = viewModel.selectedItemIds,                              
@@ -3387,11 +3387,11 @@ fun Ui(
             onToggleSelection = viewModel::toggleSelection,                           
             onDeleteSelectedItems = viewModel::deleteSelectedRatings,                 
         )                                                                             
-        MovieList -&gt; MovieList(                                                       
+        MovieList -> MovieList(                                                       
             movies = movies,                                                          
             onSelectListScreen = viewModel::setScreenStack,                           
             onResetDatabase = viewModel::resetDatabase,                               
-            onMovieClick = { id -&gt;                                                    
+            onMovieClick = { id ->                                                    
                 viewModel.pushScreen(MovieDisplay(id))                                
             },                                                                        
             selectedItemIds = viewModel.selectedItemIds,                              
@@ -3399,11 +3399,11 @@ fun Ui(
             onToggleSelection = viewModel::toggleSelection,                           
             onDeleteSelectedItems = viewModel::deleteSelectedMovies,                  
         )                                                                             
-        ActorList -&gt; ActorList(                                                       
+        ActorList -> ActorList(                                                       
             actors = actors,                                                          
             onSelectListScreen = viewModel::setScreenStack,                           
             onResetDatabase = viewModel::resetDatabase,                               
-            onActorClick = { id -&gt;                                                    
+            onActorClick = { id ->                                                    
                 viewModel.pushScreen(ActorDisplay(id))                                
             },                                                                        
             selectedItemIds = viewModel.selectedItemIds,                              
@@ -3412,42 +3412,42 @@ fun Ui(
             onDeleteSelectedItems = viewModel::deleteSelectedActors,                  
         )                                                                             
                                                                                       
-        is RatingDisplay -&gt; RatingDisplay(                                            
+        is RatingDisplay -> RatingDisplay(                                            
             ratingId = screen.id,                                                     
-            fetchRatingWithMovies = { id -&gt;                                           
+            fetchRatingWithMovies = { id ->                                           
                 viewModel.getRatingWithMovies(id)                                     
             },                                                                        
             onSelectListScreen = viewModel::setScreenStack,                           
             onResetDatabase = viewModel::resetDatabase,                               
-            onMovieClick = { id -&gt;                                                    
+            onMovieClick = { id ->                                                    
                 viewModel.pushScreen(MovieDisplay(id))                                
             }                                                                         
         )                                                                             
-        is MovieDisplay -&gt; MovieDisplay(                                              
+        is MovieDisplay -> MovieDisplay(                                              
             movieId = screen.id,                                                      
             fetchMovieWithCast = viewModel::getMovieWithCast,                         
             onSelectListScreen = viewModel::setScreenStack,                           
             onResetDatabase = viewModel::resetDatabase,                               
-            onActorClick = { id -&gt;                                                    
+            onActorClick = { id ->                                                    
                 viewModel.pushScreen(ActorDisplay(id))                                
             },                                                                        
-            onEdit = { id -&gt;                                                          
+            onEdit = { id ->                                                          
                 viewModel.pushScreen(MovieEdit(id))                                   
             }                                                                         
         )                                                                             
-        is MovieEdit -&gt; MovieEdit(                                                    
+        is MovieEdit -> MovieEdit(                                                    
             movieId = screen.id,                                                      
             fetchMovie = viewModel::getMovie,                                         
             onSelectListScreen = viewModel::setScreenStack,                           
             onResetDatabase = viewModel::resetDatabase,                               
             onMovieUpdate = viewModel::updateMovie,                                   
         )                                                                             
-        is ActorDisplay -&gt; ActorDisplay(                                              
+        is ActorDisplay -> ActorDisplay(                                              
             actorId = screen.id,                                                      
             fetchActorWithFilmography = viewModel::getActorWithFilmography,           
             onSelectListScreen = viewModel::setScreenStack,                           
             onResetDatabase = viewModel::resetDatabase,                               
-            onMovieClick = { id -&gt;                                                    
+            onMovieClick = { id ->                                                    
                 viewModel.pushScreen(MovieDisplay(id))                                
             }                                                                         
         )                                                                             
@@ -3472,17 +3472,17 @@ import kotlinx.coroutines.flow.map
 <ins>class MovieDatabaseRepository(private val dao: MovieDAO): MovieRepository {              </ins>
 </div>    override val ratingsFlow =                                                           
         dao.getRatingsFlow()                                                             
-            .map { ratings -&gt;                                                            
+            .map { ratings ->                                                            
                 ratings.map { it.toDto() }                                               
             }                                                                            
     override val moviesFlow =                                                            
         dao.getMoviesFlow()                                                              
-            .map { movies -&gt;                                                             
+            .map { movies ->                                                             
                 movies.map { it.toDto() }                                                
             }                                                                            
     override val actorsFlow =                                                            
         dao.getActorsFlow()                                                              
-            .map { actors -&gt;                                                             
+            .map { actors ->                                                             
                 actors.map { it.toDto() }                                                
             }                                                                            
                                                                                          
@@ -3510,9 +3510,9 @@ import kotlinx.coroutines.flow.map
     override suspend fun delete(actor: ActorDto) = dao.delete(actor.toEntity())          
     override suspend fun delete(rating: RatingDto) = dao.delete(rating.toEntity())       
                                                                                          
-    override suspend fun deleteMoviesById(ids: Set&lt;String&gt;) = dao.deleteMoviesById(ids)  
-    override suspend fun deleteActorsById(ids: Set&lt;String&gt;) = dao.deleteActorsById(ids)  
-    override suspend fun deleteRatingsById(ids: Set&lt;String&gt;) = dao.deleteRatingsById(ids)
+    override suspend fun deleteMoviesById(ids: Set<String>) = dao.deleteMoviesById(ids)  
+    override suspend fun deleteActorsById(ids: Set<String>) = dao.deleteActorsById(ids)  
+    override suspend fun deleteRatingsById(ids: Set<String>) = dao.deleteRatingsById(ids)
                                                                                          
     override suspend fun resetDatabase() = dao.resetDatabase()                           
 }                                                                                        

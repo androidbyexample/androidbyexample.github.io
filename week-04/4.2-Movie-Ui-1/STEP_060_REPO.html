@@ -2634,14 +2634,14 @@
       
       
         <label class="md-nav__link" for="__nav_16_1">
-          12.1 Legacy views
+          12.1 Testing
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="12.1 Legacy views" data-md-level="2">
+      <nav class="md-nav" aria-label="12.1 Testing" data-md-level="2">
         <label class="md-nav__title" for="__nav_16_1">
           <span class="md-nav__icon md-icon"></span>
-          12.1 Legacy views
+          12.1 Testing
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2651,8 +2651,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-12/12.1-Legacy-views/index.html" class="md-nav__link">
-        Legacy Views
+      <a href="../../week-12/12.1-Testing/index.html" class="md-nav__link">
+        Testing
       </a>
     </li>
   
@@ -2681,14 +2681,14 @@
       
       
         <label class="md-nav__link" for="__nav_16_2">
-          12.2 Legacy fragments
+          12.2 Nfc
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="12.2 Legacy fragments" data-md-level="2">
+      <nav class="md-nav" aria-label="12.2 Nfc" data-md-level="2">
         <label class="md-nav__title" for="__nav_16_2">
           <span class="md-nav__icon md-icon"></span>
-          12.2 Legacy fragments
+          12.2 Nfc
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2698,8 +2698,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-12/12.2-Legacy-fragments/index.html" class="md-nav__link">
-        Legacy Fragments
+      <a href="../../week-12/12.2-Nfc/index.html" class="md-nav__link">
+        NFC
       </a>
     </li>
   
@@ -2764,14 +2764,14 @@
       
       
         <label class="md-nav__link" for="__nav_17_1">
-          13.1 Testing
+          13.1 Legacy views
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="13.1 Testing" data-md-level="2">
+      <nav class="md-nav" aria-label="13.1 Legacy views" data-md-level="2">
         <label class="md-nav__title" for="__nav_17_1">
           <span class="md-nav__icon md-icon"></span>
-          13.1 Testing
+          13.1 Legacy views
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2781,8 +2781,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-13/13.1-Testing/index.html" class="md-nav__link">
-        Testing
+      <a href="../../week-13/13.1-Legacy-views/index.html" class="md-nav__link">
+        Legacy Views
       </a>
     </li>
   
@@ -2811,14 +2811,14 @@
       
       
         <label class="md-nav__link" for="__nav_17_2">
-          13.2 Nfc
+          13.2 Legacy fragments
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="13.2 Nfc" data-md-level="2">
+      <nav class="md-nav" aria-label="13.2 Legacy fragments" data-md-level="2">
         <label class="md-nav__title" for="__nav_17_2">
           <span class="md-nav__icon md-icon"></span>
-          13.2 Nfc
+          13.2 Legacy fragments
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2828,8 +2828,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-13/13.2-Nfc/index.html" class="md-nav__link">
-        NFC
+      <a href="../../week-13/13.2-Legacy-fragments/index.html" class="md-nav__link">
+        Legacy Fragments
       </a>
     </li>
   
@@ -3160,22 +3160,22 @@
 <div class="sas1-code-file" style="--sas1-file-name: '/app/build.gradle';">
 <pre>
 plugins {                                                                                              
-    id &#39;com.android.application&#39;                                                                       
-    id &#39;org.jetbrains.kotlin.android&#39;                                                                  
+    id 'com.android.application'                                                                       
+    id 'org.jetbrains.kotlin.android'                                                                  
 }                                                                                                      
                                                                                                        
 android {                                                                                              
-    namespace &#39;com.javadude.movies&#39;                                                                    
+    namespace 'com.javadude.movies'                                                                    
     compileSdk 33                                                                                      
                                                                                                        
     defaultConfig {                                                                                    
-        applicationId &quot;com.javadude.movies&quot;                                                            
+        applicationId "com.javadude.movies"                                                            
         minSdk 21                                                                                      
         targetSdk 33                                                                                   
         versionCode 1                                                                                  
-        versionName &quot;1.0&quot;                                                                              
+        versionName "1.0"                                                                              
                                                                                                        
-        testInstrumentationRunner &quot;androidx.test.runner.AndroidJUnitRunner&quot;                            
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"                            
         vectorDrawables {                                                                              
             useSupportLibrary true                                                                     
         }                                                                                              
@@ -3184,7 +3184,7 @@ android {
     buildTypes {                                                                                       
         release {                                                                                      
             minifyEnabled false                                                                        
-            proguardFiles getDefaultProguardFile(&#39;proguard-android-optimize.txt&#39;), &#39;proguard-rules.pro&#39;
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }                                                                                              
     }                                                                                                  
     compileOptions {                                                                                   
@@ -3192,7 +3192,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8                                                    
     }                                                                                                  
     kotlinOptions {                                                                                    
-        jvmTarget = &#39;1.8&#39;                                                                              
+        jvmTarget = '1.8'                                                                              
     }                                                                                                  
     buildFeatures {                                                                                    
         compose true                                                                                   
@@ -3202,31 +3202,31 @@ android {
     }                                                                                                  
     packagingOptions {                                                                                 
         resources {                                                                                    
-            excludes += &#39;/META-INF/{AL2.0,LGPL2.1}&#39;                                                    
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'                                                    
         }                                                                                              
     }                                                                                                  
 }                                                                                                      
                                                                                                        
 dependencies {                                                                                         
-    implementation project(&quot;:repository&quot;)                                                              
+    implementation project(":repository")                                                              
                                                                                                        
-<ins>    // DO NOT KEEP THIS - IT&#39;S HUGE                                                                    </ins>
+<ins>    // DO NOT KEEP THIS - IT'S HUGE                                                                    </ins>
 <ins>    // Once you have selected your icons, copy their code into the app                                 </ins>
-<ins>    implementation &#39;androidx.compose.material:material-icons-extended:1.2.1&#39;                           </ins>
+<ins>    implementation 'androidx.compose.material:material-icons-extended:1.2.1'                           </ins>
                                                                                                        
-    implementation &#39;androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1&#39;                              
-    implementation &#39;androidx.core:core-ktx:1.9.0&#39;                                                      
-    implementation &#39;androidx.lifecycle:lifecycle-runtime-ktx:2.5.1&#39;                                    
-    implementation &#39;androidx.activity:activity-compose:1.5.1&#39;                                          
-    implementation &quot;androidx.compose.ui:ui:$compose_ui_version&quot;                                        
-    implementation &quot;androidx.compose.ui:ui-tooling-preview:$compose_ui_version&quot;                        
-    implementation &#39;androidx.compose.material:material:1.2.1&#39;                                          
-    testImplementation &#39;junit:junit:4.13.2&#39;                                                            
-    androidTestImplementation &#39;androidx.test.ext:junit:1.1.3&#39;                                          
-    androidTestImplementation &#39;androidx.test.espresso:espresso-core:3.4.0&#39;                             
-    androidTestImplementation &quot;androidx.compose.ui:ui-test-junit4:$compose_ui_version&quot;                 
-    debugImplementation &quot;androidx.compose.ui:ui-tooling:$compose_ui_version&quot;                           
-    debugImplementation &quot;androidx.compose.ui:ui-test-manifest:$compose_ui_version&quot;                     
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1'                              
+    implementation 'androidx.core:core-ktx:1.9.0'                                                      
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'                                    
+    implementation 'androidx.activity:activity-compose:1.5.1'                                          
+    implementation "androidx.compose.ui:ui:$compose_ui_version"                                        
+    implementation "androidx.compose.ui:ui-tooling-preview:$compose_ui_version"                        
+    implementation 'androidx.compose.material:material:1.2.1'                                          
+    testImplementation 'junit:junit:4.13.2'                                                            
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'                                          
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'                             
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"                 
+    debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version"                           
+    debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"                     
 }                                                                                                      
 </pre>
 </div>
@@ -3253,14 +3253,14 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)                                        
         setContent {                                                              
             MoviesTheme {                                                         
-                // A surface container using the &#39;background&#39; color from the theme
+                // A surface container using the 'background' color from the theme
                 Surface(                                                          
                     modifier = Modifier.fillMaxSize(),                            
                     color = MaterialTheme.colors.background                       
                 ) {                                                               
 <del>//                  TestScreen {                                                  </del>
 <ins>                    Ui {                                                          </ins>
-                        finish() // handle &quot;onExit&quot;                               
+                        finish() // handle "onExit"                               
                     }                                                             
                 }                                                                 
             }                                                                     
@@ -3306,9 +3306,9 @@ class MainActivity : ComponentActivity() {
 <ins>@Composable                                                                                  </ins>
 <ins>fun MovieScaffold(                                                                           </ins>
 <ins>    title: String,                                                                           </ins>
-<ins>    onSelectListScreen: (Screen) -&gt; Unit,                                                    </ins>
-<ins>    onResetDatabase: () -&gt; Unit,                                                             </ins>
-<ins>    content: @Composable (PaddingValues) -&gt; Unit,                                            </ins>
+<ins>    onSelectListScreen: (Screen) -> Unit,                                                    </ins>
+<ins>    onResetDatabase: () -> Unit,                                                             </ins>
+<ins>    content: @Composable (PaddingValues) -> Unit,                                            </ins>
 <ins>) {                                                                                          </ins>
 <ins>    Scaffold(                                                                                </ins>
 <ins>        topBar = {                                                                           </ins>
@@ -3327,7 +3327,7 @@ class MainActivity : ComponentActivity() {
 <ins>                }                                                                            </ins>
 <ins>            )                                                                                </ins>
 <ins>        },                                                                                   </ins>
-<ins>        content = { paddingValues -&gt;                                                         </ins>
+<ins>        content = { paddingValues ->                                                         </ins>
 <ins>            content(paddingValues)                                                           </ins>
 <ins>        },                                                                                   </ins>
 <ins>        bottomBar = {                                                                        </ins>
@@ -3360,7 +3360,7 @@ class MainActivity : ComponentActivity() {
 <ins>    targetScreen: Screen,                                                                    </ins>
 <ins>    imageVector: ImageVector,                                                                </ins>
 <ins>    @StringRes labelId: Int,                                                                 </ins>
-<ins>    onSelectListScreen: (Screen) -&gt; Unit,                                                    </ins>
+<ins>    onSelectListScreen: (Screen) -> Unit,                                                    </ins>
 <ins>) =                                                                                          </ins>
 <ins>    BottomNavigationItem(                                                                    </ins>
 <ins>        selected = false,                                                                    </ins>
@@ -3397,7 +3397,7 @@ import androidx.compose.ui.unit.dp
 @Composable                                       
 fun SimpleText(                                   
     text: String,                                 
-    onClick: () -&gt; Unit = {},                     
+    onClick: () -> Unit = {},                     
 ) =                                               
     Text(                                         
         text = text,                              
@@ -3437,29 +3437,29 @@ import com.javadude.movies.repository.ActorWithFilmographyDto
 @Composable                                                                                         
 fun ActorDisplay(                                                                                   
     actorId: String,                                                                                
-    fetchActorWithFilmography: suspend (String) -&gt; ActorWithFilmographyDto,                         
-<ins>    onSelectListScreen: (Screen) -&gt; Unit,                                                           </ins>
-<ins>    onResetDatabase: () -&gt; Unit,                                                                    </ins>
-    onMovieClick: (String) -&gt; Unit,                                                                 
+    fetchActorWithFilmography: suspend (String) -> ActorWithFilmographyDto,                         
+<ins>    onSelectListScreen: (Screen) -> Unit,                                                           </ins>
+<ins>    onResetDatabase: () -> Unit,                                                                    </ins>
+    onMovieClick: (String) -> Unit,                                                                 
 ) {                                                                                                 
-    var actorWithFilmographyDto by remember { mutableStateOf&lt;ActorWithFilmographyDto?&gt;(null) }      
+    var actorWithFilmographyDto by remember { mutableStateOf<ActorWithFilmographyDto?>(null) }      
                                                                                                     
     LaunchedEffect(key1 = actorId) {                                                                
         // starts a coroutine to fetch the rating                                                   
         actorWithFilmographyDto = fetchActorWithFilmography(actorId)                                
     }                                                                                               
                                                                                                     
-<del>//  SimpleText(text = &quot;Actor&quot;)                                                                      </del>
+<del>//  SimpleText(text = "Actor")                                                                      </del>
 <ins>    MovieScaffold(                                                                                  </ins>
 <ins>        title = actorWithFilmographyDto?.actor?.name ?: stringResource(id = R.string.loading),      </ins>
 <ins>        onSelectListScreen = onSelectListScreen,                                                    </ins>
 <ins>        onResetDatabase = onResetDatabase,                                                          </ins>
-<ins>    ) { paddingValues -&gt;                                                                            </ins>
+<ins>    ) { paddingValues ->                                                                            </ins>
 <ins>        Column(modifier = Modifier.padding(paddingValues)) {                                        </ins>
-            actorWithFilmographyDto?.let { actorWithFilmography -&gt;                                  
+            actorWithFilmographyDto?.let { actorWithFilmography ->                                  
 <del>//      SimpleText(text = actorWithFilmography.actor.name)                                          </del>
-                actorWithFilmography.filmography.forEach { roleWithMovie -&gt;                         
-                    SimpleText(text = &quot;${roleWithMovie.movie.title} (${roleWithMovie.character})&quot;) {
+                actorWithFilmography.filmography.forEach { roleWithMovie ->                         
+                    SimpleText(text = "${roleWithMovie.movie.title} (${roleWithMovie.character})") {
                         onMovieClick(roleWithMovie.movie.id)                                        
                     }                                                                               
                 }                                                                                   
@@ -3489,17 +3489,17 @@ import com.javadude.movies.repository.ActorDto
                                                               
 @Composable                                                   
 fun ActorList(                                                
-    actors: List&lt;ActorDto&gt;,                                   
-<ins>    onSelectListScreen: (Screen) -&gt; Unit,                     </ins>
-<ins>    onResetDatabase: () -&gt; Unit,                              </ins>
-    onActorClick: (String) -&gt; Unit,                           
+    actors: List<ActorDto>,                                   
+<ins>    onSelectListScreen: (Screen) -> Unit,                     </ins>
+<ins>    onResetDatabase: () -> Unit,                              </ins>
+    onActorClick: (String) -> Unit,                           
 <del>//) {                                                         </del>
-<del>//  SimpleText(text = &quot;Actors&quot;)                               </del>
+<del>//  SimpleText(text = "Actors")                               </del>
 <ins>) = MovieScaffold(                                            </ins>
 <ins>    title = stringResource(id = R.string.screen_title_actors),</ins>
 <ins>    onSelectListScreen = onSelectListScreen,                  </ins>
 <ins>    onResetDatabase = onResetDatabase,                        </ins>
-<ins>) { paddingValues -&gt;                                          </ins>
+<ins>) { paddingValues ->                                          </ins>
 <ins>    Column(modifier = Modifier.padding(paddingValues)) {      </ins>
         actors.forEach {                                      
             SimpleText(text = it.name) {                      
@@ -3536,29 +3536,29 @@ import com.javadude.movies.repository.MovieWithCastDto
 @Composable                                                                                       
 fun MovieDisplay(                                                                                 
     movieId: String,                                                                              
-    fetchMovieWithCast: suspend (String) -&gt; MovieWithCastDto,                                     
-<ins>    onSelectListScreen: (Screen) -&gt; Unit,                                                         </ins>
-<ins>    onResetDatabase: () -&gt; Unit,                                                                  </ins>
-    onActorClick: (String) -&gt; Unit,                                                               
+    fetchMovieWithCast: suspend (String) -> MovieWithCastDto,                                     
+<ins>    onSelectListScreen: (Screen) -> Unit,                                                         </ins>
+<ins>    onResetDatabase: () -> Unit,                                                                  </ins>
+    onActorClick: (String) -> Unit,                                                               
 ) {                                                                                               
-    var movieWithCastDto by remember { mutableStateOf&lt;MovieWithCastDto?&gt;(null) }                  
+    var movieWithCastDto by remember { mutableStateOf<MovieWithCastDto?>(null) }                  
                                                                                                   
     LaunchedEffect(key1 = movieId) {                                                              
         // starts a coroutine to fetch the rating                                                 
         movieWithCastDto = fetchMovieWithCast(movieId)                                            
     }                                                                                             
                                                                                                   
-<del>//  SimpleText(text = &quot;Movie&quot;)                                                                    </del>
+<del>//  SimpleText(text = "Movie")                                                                    </del>
 <ins>    MovieScaffold(                                                                                </ins>
 <ins>        title = movieWithCastDto?.movie?.title ?: stringResource(id = R.string.loading),          </ins>
 <ins>        onSelectListScreen = onSelectListScreen,                                                  </ins>
 <ins>        onResetDatabase = onResetDatabase,                                                        </ins>
-<ins>    ) { paddingValues -&gt;                                                                          </ins>
+<ins>    ) { paddingValues ->                                                                          </ins>
 <ins>        Column(modifier = Modifier.padding(paddingValues)) {                                      </ins>
-            movieWithCastDto?.let { movieWithCast -&gt;                                              
+            movieWithCastDto?.let { movieWithCast ->                                              
 <del>//      SimpleText(text = movieWithCast.movie.title)                                              </del>
-                movieWithCast.cast.forEach { roleWithActor -&gt;                                     
-                    SimpleText(text = &quot;${roleWithActor.character}: ${roleWithActor.actor.name}&quot;) {
+                movieWithCast.cast.forEach { roleWithActor ->                                     
+                    SimpleText(text = "${roleWithActor.character}: ${roleWithActor.actor.name}") {
                         onActorClick(roleWithActor.actor.id)                                      
                     }                                                                             
                 }                                                                                 
@@ -3588,17 +3588,17 @@ import com.javadude.movies.repository.MovieDto
                                                               
 @Composable                                                   
 fun MovieList(                                                
-    movies: List&lt;MovieDto&gt;,                                   
-<ins>    onSelectListScreen: (Screen) -&gt; Unit,                     </ins>
-<ins>    onResetDatabase: () -&gt; Unit,                              </ins>
-    onMovieClick: (String) -&gt; Unit,                           
+    movies: List<MovieDto>,                                   
+<ins>    onSelectListScreen: (Screen) -> Unit,                     </ins>
+<ins>    onResetDatabase: () -> Unit,                              </ins>
+    onMovieClick: (String) -> Unit,                           
 <del>//) {                                                         </del>
-<del>//  SimpleText(text = &quot;Movies&quot;)                               </del>
+<del>//  SimpleText(text = "Movies")                               </del>
 <ins>) = MovieScaffold(                                            </ins>
 <ins>    title = stringResource(id = R.string.screen_title_movies),</ins>
 <ins>    onSelectListScreen = onSelectListScreen,                  </ins>
 <ins>    onResetDatabase = onResetDatabase,                        </ins>
-<ins>) { paddingValues -&gt;                                          </ins>
+<ins>) { paddingValues ->                                          </ins>
 <ins>    Column(modifier = Modifier.padding(paddingValues)) {      </ins>
         movies.forEach {                                      
             SimpleText(text = it.title) {                     
@@ -3635,29 +3635,29 @@ import com.javadude.movies.repository.RatingWithMoviesDto
 @Composable                                                                                
 fun RatingDisplay(                                                                         
     ratingId: String,                                                                      
-    fetchRatingWithMovies: suspend (String) -&gt; RatingWithMoviesDto,                        
-<ins>    onSelectListScreen: (Screen) -&gt; Unit,                                                  </ins>
-<ins>    onResetDatabase: () -&gt; Unit,                                                           </ins>
-    onMovieClick: (String) -&gt; Unit,                                                        
+    fetchRatingWithMovies: suspend (String) -> RatingWithMoviesDto,                        
+<ins>    onSelectListScreen: (Screen) -> Unit,                                                  </ins>
+<ins>    onResetDatabase: () -> Unit,                                                           </ins>
+    onMovieClick: (String) -> Unit,                                                        
 ) {                                                                                        
-    var ratingWithMoviesDto by remember { mutableStateOf&lt;RatingWithMoviesDto?&gt;(null) }     
+    var ratingWithMoviesDto by remember { mutableStateOf<RatingWithMoviesDto?>(null) }     
                                                                                            
     LaunchedEffect(key1 = ratingId) {                                                      
         // starts a coroutine to fetch the rating                                          
         ratingWithMoviesDto = fetchRatingWithMovies(ratingId)                              
     }                                                                                      
                                                                                            
-<del>//  SimpleText(text = &quot;Rating&quot;)                                                            </del>
+<del>//  SimpleText(text = "Rating")                                                            </del>
 <ins>    MovieScaffold(                                                                         </ins>
 <ins>        title = ratingWithMoviesDto?.rating?.name ?: stringResource(id = R.string.loading),</ins>
 <ins>        onSelectListScreen = onSelectListScreen,                                           </ins>
 <ins>        onResetDatabase = onResetDatabase,                                                 </ins>
-<ins>    ) { paddingValues -&gt;                                                                   </ins>
+<ins>    ) { paddingValues ->                                                                   </ins>
 <ins>        Column(modifier = Modifier.padding(paddingValues)) {                               </ins>
-            ratingWithMoviesDto?.let { ratingWithMovies -&gt;                                 
+            ratingWithMoviesDto?.let { ratingWithMovies ->                                 
 <del>//      SimpleText(text = ratingWithMovies.rating.name)                                    </del>
-                ratingWithMovies.movies.forEach { movie -&gt;                                 
-<del>//          SimpleText(text = &quot;Movie: ${movie.title}&quot;) {                                   </del>
+                ratingWithMovies.movies.forEach { movie ->                                 
+<del>//          SimpleText(text = "Movie: ${movie.title}") {                                   </del>
 <ins>                    SimpleText(text = movie.title) {                                       </ins>
                         onMovieClick(movie.id)                                             
                     }                                                                      
@@ -3688,17 +3688,17 @@ import com.javadude.movies.repository.RatingDto
                                                               
 @Composable                                                   
 fun RatingList(                                               
-    ratings: List&lt;RatingDto&gt;,                                 
-<ins>    onSelectListScreen: (Screen) -&gt; Unit,                     </ins>
-<ins>    onResetDatabase: () -&gt; Unit,                              </ins>
-    onRatingClick: (String) -&gt; Unit,                          
+    ratings: List<RatingDto>,                                 
+<ins>    onSelectListScreen: (Screen) -> Unit,                     </ins>
+<ins>    onResetDatabase: () -> Unit,                              </ins>
+    onRatingClick: (String) -> Unit,                          
 <del>//) {                                                         </del>
-<del>//  SimpleText(text = &quot;Ratings&quot;)                              </del>
+<del>//  SimpleText(text = "Ratings")                              </del>
 <ins>) = MovieScaffold(                                            </ins>
 <ins>    title = stringResource(id = R.string.screen_title_movies),</ins>
 <ins>    onSelectListScreen = onSelectListScreen,                  </ins>
 <ins>    onResetDatabase = onResetDatabase,                        </ins>
-<ins>) { paddingValues -&gt;                                          </ins>
+<ins>) { paddingValues ->                                          </ins>
 <ins>    Column(modifier = Modifier.padding(paddingValues)) {      </ins>
         ratings.forEach {                                     
             SimpleText(text = it.name) {                      
@@ -3732,7 +3732,7 @@ fun RatingList(
 <ins>@Composable                                                                   </ins>
 <ins>fun Ui(                                                                       </ins>
 <ins>    viewModel: MovieViewModel = viewModel(),                                  </ins>
-<ins>    onExit: () -&gt; Unit,                                                       </ins>
+<ins>    onExit: () -> Unit,                                                       </ins>
 <ins>) {                                                                           </ins>
 <ins>    BackHandler {                                                             </ins>
 <ins>        viewModel.popScreen()                                                 </ins>
@@ -3743,59 +3743,59 @@ fun RatingList(
 <ins>    val actors by viewModel.actorsFlow.collectAsState(initial = emptyList())  </ins>
                                                                               
 <ins>    when(val screen = viewModel.screen) {                                     </ins>
-<ins>        null -&gt; onExit()                                                      </ins>
+<ins>        null -> onExit()                                                      </ins>
                                                                               
-<ins>        RatingList -&gt; RatingList(                                             </ins>
+<ins>        RatingList -> RatingList(                                             </ins>
 <ins>            ratings = ratings,                                                </ins>
 <ins>            onSelectListScreen = viewModel::setScreenStack,                   </ins>
 <ins>            onResetDatabase = viewModel::resetDatabase,                       </ins>
-<ins>            onRatingClick = { id -&gt;                                           </ins>
+<ins>            onRatingClick = { id ->                                           </ins>
 <ins>                viewModel.pushScreen(RatingDisplay(id))                       </ins>
 <ins>            }                                                                 </ins>
 <ins>        )                                                                     </ins>
-<ins>        MovieList -&gt; MovieList(                                               </ins>
+<ins>        MovieList -> MovieList(                                               </ins>
 <ins>            movies = movies,                                                  </ins>
 <ins>            onSelectListScreen = viewModel::setScreenStack,                   </ins>
 <ins>            onResetDatabase = viewModel::resetDatabase,                       </ins>
-<ins>            onMovieClick = { id -&gt;                                            </ins>
+<ins>            onMovieClick = { id ->                                            </ins>
 <ins>                viewModel.pushScreen(MovieDisplay(id))                        </ins>
 <ins>            }                                                                 </ins>
 <ins>        )                                                                     </ins>
-<ins>        ActorList -&gt; ActorList(                                               </ins>
+<ins>        ActorList -> ActorList(                                               </ins>
 <ins>            actors = actors,                                                  </ins>
 <ins>            onSelectListScreen = viewModel::setScreenStack,                   </ins>
 <ins>            onResetDatabase = viewModel::resetDatabase,                       </ins>
-<ins>            onActorClick = { id -&gt;                                            </ins>
+<ins>            onActorClick = { id ->                                            </ins>
 <ins>                viewModel.pushScreen(ActorDisplay(id))                        </ins>
 <ins>            }                                                                 </ins>
 <ins>        )                                                                     </ins>
                                                                               
-<ins>        is RatingDisplay -&gt; RatingDisplay(                                    </ins>
+<ins>        is RatingDisplay -> RatingDisplay(                                    </ins>
 <ins>            ratingId = screen.id,                                             </ins>
-<ins>            fetchRatingWithMovies = { id -&gt;                                   </ins>
+<ins>            fetchRatingWithMovies = { id ->                                   </ins>
 <ins>                viewModel.getRatingWithMovies(id)                             </ins>
 <ins>            },                                                                </ins>
 <ins>            onSelectListScreen = viewModel::setScreenStack,                   </ins>
 <ins>            onResetDatabase = viewModel::resetDatabase,                       </ins>
-<ins>            onMovieClick = { id -&gt;                                            </ins>
+<ins>            onMovieClick = { id ->                                            </ins>
 <ins>                viewModel.pushScreen(MovieDisplay(id))                        </ins>
 <ins>            }                                                                 </ins>
 <ins>        )                                                                     </ins>
-<ins>        is MovieDisplay -&gt; MovieDisplay(                                      </ins>
+<ins>        is MovieDisplay -> MovieDisplay(                                      </ins>
 <ins>            movieId = screen.id,                                              </ins>
 <ins>            fetchMovieWithCast = viewModel::getMovieWithCast,                 </ins>
 <ins>            onSelectListScreen = viewModel::setScreenStack,                   </ins>
 <ins>            onResetDatabase = viewModel::resetDatabase,                       </ins>
-<ins>            onActorClick = { id -&gt;                                            </ins>
+<ins>            onActorClick = { id ->                                            </ins>
 <ins>                viewModel.pushScreen(ActorDisplay(id))                        </ins>
 <ins>            }                                                                 </ins>
 <ins>        )                                                                     </ins>
-<ins>        is ActorDisplay -&gt; ActorDisplay(                                      </ins>
+<ins>        is ActorDisplay -> ActorDisplay(                                      </ins>
 <ins>            actorId = screen.id,                                              </ins>
 <ins>            fetchActorWithFilmography = viewModel::getActorWithFilmography,   </ins>
 <ins>            onSelectListScreen = viewModel::setScreenStack,                   </ins>
 <ins>            onResetDatabase = viewModel::resetDatabase,                       </ins>
-<ins>            onMovieClick = { id -&gt;                                            </ins>
+<ins>            onMovieClick = { id ->                                            </ins>
 <ins>                viewModel.pushScreen(MovieDisplay(id))                        </ins>
 <ins>            }                                                                 </ins>
 <ins>        )                                                                     </ins>
@@ -3808,16 +3808,16 @@ fun RatingList(
 <summary>CHANGED: /app/src/main/res/values/strings.xml</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/res/values/strings.xml';">
 <pre>
-&lt;resources&gt;                                                  
-    &lt;string name=&quot;app_name&quot;&gt;Movies&lt;/string&gt;                  
-<ins>    &lt;string name=&quot;reset_database&quot;&gt;Reset Database&lt;/string&gt;    </ins>
+<resources>                                                  
+    <string name="app_name">Movies</string>                  
+<ins>    <string name="reset_database">Reset Database</string>    </ins>
                                                              
-<ins>    &lt;string name=&quot;screen_title_ratings&quot;&gt;MPAA Ratings&lt;/string&gt;</ins>
-<ins>    &lt;string name=&quot;screen_title_movies&quot;&gt;Movies&lt;/string&gt;       </ins>
-<ins>    &lt;string name=&quot;screen_title_actors&quot;&gt;Actors&lt;/string&gt;       </ins>
+<ins>    <string name="screen_title_ratings">MPAA Ratings</string></ins>
+<ins>    <string name="screen_title_movies">Movies</string>       </ins>
+<ins>    <string name="screen_title_actors">Actors</string>       </ins>
                                                              
-<ins>    &lt;string name=&quot;loading&quot;&gt;Loading&lt;/string&gt;                  </ins>
-&lt;/resources&gt;                                                 
+<ins>    <string name="loading">Loading</string>                  </ins>
+</resources>                                                 
 </pre>
 </div>
 </details>

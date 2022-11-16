@@ -2696,14 +2696,14 @@
       
       
         <label class="md-nav__link" for="__nav_16_1">
-          12.1 Legacy views
+          12.1 Testing
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="12.1 Legacy views" data-md-level="2">
+      <nav class="md-nav" aria-label="12.1 Testing" data-md-level="2">
         <label class="md-nav__title" for="__nav_16_1">
           <span class="md-nav__icon md-icon"></span>
-          12.1 Legacy views
+          12.1 Testing
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2713,8 +2713,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-12/12.1-Legacy-views/index.html" class="md-nav__link">
-        Legacy Views
+      <a href="../../week-12/12.1-Testing/index.html" class="md-nav__link">
+        Testing
       </a>
     </li>
   
@@ -2743,14 +2743,14 @@
       
       
         <label class="md-nav__link" for="__nav_16_2">
-          12.2 Legacy fragments
+          12.2 Nfc
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="12.2 Legacy fragments" data-md-level="2">
+      <nav class="md-nav" aria-label="12.2 Nfc" data-md-level="2">
         <label class="md-nav__title" for="__nav_16_2">
           <span class="md-nav__icon md-icon"></span>
-          12.2 Legacy fragments
+          12.2 Nfc
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2760,8 +2760,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-12/12.2-Legacy-fragments/index.html" class="md-nav__link">
-        Legacy Fragments
+      <a href="../../week-12/12.2-Nfc/index.html" class="md-nav__link">
+        NFC
       </a>
     </li>
   
@@ -2826,14 +2826,14 @@
       
       
         <label class="md-nav__link" for="__nav_17_1">
-          13.1 Testing
+          13.1 Legacy views
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="13.1 Testing" data-md-level="2">
+      <nav class="md-nav" aria-label="13.1 Legacy views" data-md-level="2">
         <label class="md-nav__title" for="__nav_17_1">
           <span class="md-nav__icon md-icon"></span>
-          13.1 Testing
+          13.1 Legacy views
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2843,8 +2843,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-13/13.1-Testing/index.html" class="md-nav__link">
-        Testing
+      <a href="../../week-13/13.1-Legacy-views/index.html" class="md-nav__link">
+        Legacy Views
       </a>
     </li>
   
@@ -2873,14 +2873,14 @@
       
       
         <label class="md-nav__link" for="__nav_17_2">
-          13.2 Nfc
+          13.2 Legacy fragments
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="13.2 Nfc" data-md-level="2">
+      <nav class="md-nav" aria-label="13.2 Legacy fragments" data-md-level="2">
         <label class="md-nav__title" for="__nav_17_2">
           <span class="md-nav__icon md-icon"></span>
-          13.2 Nfc
+          13.2 Legacy fragments
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2890,8 +2890,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-13/13.2-Nfc/index.html" class="md-nav__link">
-        NFC
+      <a href="../../week-13/13.2-Legacy-fragments/index.html" class="md-nav__link">
+        Legacy Fragments
       </a>
     </li>
   
@@ -3254,24 +3254,24 @@ same way it previously did.</p>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/build.gradle';">
 <pre>
 plugins {                                                                                              
-    id &#39;com.android.application&#39;                                                                       
-    id &#39;org.jetbrains.kotlin.android&#39;                                                                  
-<ins>    id &#39;kotlin-kapt&#39;                                                                                   </ins>
-<ins>    id &#39;com.google.dagger.hilt.android&#39;                                                                </ins>
+    id 'com.android.application'                                                                       
+    id 'org.jetbrains.kotlin.android'                                                                  
+<ins>    id 'kotlin-kapt'                                                                                   </ins>
+<ins>    id 'com.google.dagger.hilt.android'                                                                </ins>
 }                                                                                                      
                                                                                                        
 android {                                                                                              
-    namespace &#39;com.javadude.movies&#39;                                                                    
+    namespace 'com.javadude.movies'                                                                    
     compileSdk 33                                                                                      
                                                                                                        
     defaultConfig {                                                                                    
-        applicationId &quot;com.javadude.movies&quot;                                                            
+        applicationId "com.javadude.movies"                                                            
         minSdk 21                                                                                      
         targetSdk 33                                                                                   
         versionCode 1                                                                                  
-        versionName &quot;1.0&quot;                                                                              
+        versionName "1.0"                                                                              
                                                                                                        
-        testInstrumentationRunner &quot;androidx.test.runner.AndroidJUnitRunner&quot;                            
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"                            
         vectorDrawables {                                                                              
             useSupportLibrary true                                                                     
         }                                                                                              
@@ -3280,7 +3280,7 @@ android {
     buildTypes {                                                                                       
         release {                                                                                      
             minifyEnabled false                                                                        
-            proguardFiles getDefaultProguardFile(&#39;proguard-android-optimize.txt&#39;), &#39;proguard-rules.pro&#39;
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }                                                                                              
     }                                                                                                  
     compileOptions {                                                                                   
@@ -3288,7 +3288,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8                                                    
     }                                                                                                  
     kotlinOptions {                                                                                    
-        jvmTarget = &#39;1.8&#39;                                                                              
+        jvmTarget = '1.8'                                                                              
     }                                                                                                  
     buildFeatures {                                                                                    
         compose true                                                                                   
@@ -3298,7 +3298,7 @@ android {
     }                                                                                                  
     packagingOptions {                                                                                 
         resources {                                                                                    
-            excludes += &#39;/META-INF/{AL2.0,LGPL2.1}&#39;                                                    
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'                                                    
         }                                                                                              
     }                                                                                                  
 }                                                                                                      
@@ -3309,28 +3309,28 @@ android {
 <ins>}                                                                                                      </ins>
                                                                                                        
 dependencies {                                                                                         
-    implementation project(&quot;:repository&quot;)                                                              
+    implementation project(":repository")                                                              
                                                                                                        
-<ins>    implementation &quot;com.google.dagger:hilt-android:2.44&quot;                                               </ins>
-<ins>    kapt &quot;com.google.dagger:hilt-compiler:2.44&quot;                                                        </ins>
+<ins>    implementation "com.google.dagger:hilt-android:2.44"                                               </ins>
+<ins>    kapt "com.google.dagger:hilt-compiler:2.44"                                                        </ins>
                                                                                                        
-    implementation &#39;androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1&#39;                              
-    implementation &#39;androidx.core:core-ktx:1.9.0&#39;                                                      
-    implementation &#39;androidx.lifecycle:lifecycle-runtime-ktx:2.5.1&#39;                                    
-<del>//  implementation &#39;androidx.activity:activity-compose:1.6.0&#39;                                          </del>
-<ins>    implementation &#39;androidx.activity:activity-compose:1.6.1&#39;                                          </ins>
-    implementation &quot;androidx.compose.ui:ui:$compose_ui_version&quot;                                        
-    implementation &quot;androidx.compose.ui:ui-tooling-preview:$compose_ui_version&quot;                        
-<del>//  implementation &#39;androidx.compose.material:material:1.2.1&#39;                                          </del>
-<ins>    implementation &#39;androidx.compose.material:material:1.3.0&#39;                                          </ins>
-    testImplementation &#39;junit:junit:4.13.2&#39;                                                            
-<del>//  androidTestImplementation &#39;androidx.test.ext:junit:1.1.3&#39;                                          </del>
-<del>//  androidTestImplementation &#39;androidx.test.espresso:espresso-core:3.4.0&#39;                             </del>
-<ins>    androidTestImplementation &#39;androidx.test.ext:junit:1.1.4&#39;                                          </ins>
-<ins>    androidTestImplementation &#39;androidx.test.espresso:espresso-core:3.5.0&#39;                             </ins>
-    androidTestImplementation &quot;androidx.compose.ui:ui-test-junit4:$compose_ui_version&quot;                 
-    debugImplementation &quot;androidx.compose.ui:ui-tooling:$compose_ui_version&quot;                           
-    debugImplementation &quot;androidx.compose.ui:ui-test-manifest:$compose_ui_version&quot;                     
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1'                              
+    implementation 'androidx.core:core-ktx:1.9.0'                                                      
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'                                    
+<del>//  implementation 'androidx.activity:activity-compose:1.6.0'                                          </del>
+<ins>    implementation 'androidx.activity:activity-compose:1.6.1'                                          </ins>
+    implementation "androidx.compose.ui:ui:$compose_ui_version"                                        
+    implementation "androidx.compose.ui:ui-tooling-preview:$compose_ui_version"                        
+<del>//  implementation 'androidx.compose.material:material:1.2.1'                                          </del>
+<ins>    implementation 'androidx.compose.material:material:1.3.0'                                          </ins>
+    testImplementation 'junit:junit:4.13.2'                                                            
+<del>//  androidTestImplementation 'androidx.test.ext:junit:1.1.3'                                          </del>
+<del>//  androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'                             </del>
+<ins>    androidTestImplementation 'androidx.test.ext:junit:1.1.4'                                          </ins>
+<ins>    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'                             </ins>
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"                 
+    debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version"                           
+    debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"                     
 }                                                                                                      
 </pre>
 </div>
@@ -3339,38 +3339,38 @@ dependencies {
 <summary>CHANGED: /app/src/main/AndroidManifest.xml</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/AndroidManifest.xml';">
 <pre>
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;                                      
-&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;        
-    xmlns:tools=&quot;http://schemas.android.com/tools&quot;&gt;                         
+<?xml version="1.0" encoding="utf-8"?>                                      
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"        
+    xmlns:tools="http://schemas.android.com/tools">                         
                                                                             
-<div id="030-add-application">    &lt;application                                                            
-<ins>        android:name=&quot;.MovieApplication&quot;                                    </ins>
-        android:allowBackup=&quot;true&quot;                                          
-        android:dataExtractionRules=&quot;@xml/data_extraction_rules&quot;            
-        android:fullBackupContent=&quot;@xml/backup_rules&quot;                       
-        android:icon=&quot;@mipmap/ic_launcher&quot;                                  
-        android:label=&quot;@string/app_name&quot;                                    
-        android:roundIcon=&quot;@mipmap/ic_launcher_round&quot;                       
-        android:supportsRtl=&quot;true&quot;                                          
-        android:theme=&quot;@style/Theme.Movies&quot;                                 
-        tools:targetApi=&quot;31&quot;&gt;                                               
-</div>        &lt;activity                                                           
-            android:name=&quot;.MainActivity&quot;                                    
-            android:exported=&quot;true&quot;                                         
-            android:theme=&quot;@style/Theme.Movies&quot;&gt;                            
-            &lt;intent-filter&gt;                                                 
-                &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;        
+<div id="030-add-application">    <application                                                            
+<ins>        android:name=".MovieApplication"                                    </ins>
+        android:allowBackup="true"                                          
+        android:dataExtractionRules="@xml/data_extraction_rules"            
+        android:fullBackupContent="@xml/backup_rules"                       
+        android:icon="@mipmap/ic_launcher"                                  
+        android:label="@string/app_name"                                    
+        android:roundIcon="@mipmap/ic_launcher_round"                       
+        android:supportsRtl="true"                                          
+        android:theme="@style/Theme.Movies"                                 
+        tools:targetApi="31">                                               
+</div>        <activity                                                           
+            android:name=".MainActivity"                                    
+            android:exported="true"                                         
+            android:theme="@style/Theme.Movies">                            
+            <intent-filter>                                                 
+                <action android:name="android.intent.action.MAIN" />        
                                                                             
-                &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
-            &lt;/intent-filter&gt;                                                
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>                                                
                                                                             
-            &lt;meta-data                                                      
-                android:name=&quot;android.app.lib_name&quot;                         
-                android:value=&quot;&quot; /&gt;                                         
-        &lt;/activity&gt;                                                         
-    &lt;/application&gt;                                                          
+            <meta-data                                                      
+                android:name="android.app.lib_name"                         
+                android:value="" />                                         
+        </activity>                                                         
+    </application>                                                          
                                                                             
-&lt;/manifest&gt;                                                                 
+</manifest>                                                                 
 </pre>
 </div>
 </details>
@@ -3398,14 +3398,14 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)                                        
         setContent {                                                              
             MoviesTheme {                                                         
-                // A surface container using the &#39;background&#39; color from the theme
+                // A surface container using the 'background' color from the theme
                 Surface(                                                          
                     modifier = Modifier.fillMaxSize(),                            
                     color = MaterialTheme.colors.background                       
                 ) {                                                               
 <del>//                  Ui(context = LocalContext.current) {                          </del>
 <ins>                    Ui {                                                          </ins>
-                        finish() // handle &quot;onExit&quot;                               
+                        finish() // handle "onExit"                               
                     }                                                             
                 }                                                                 
             }                                                                     
@@ -3472,14 +3472,14 @@ data class MovieEdit(
 <ins>class MovieViewModel                                                           </ins>
 <ins>    @Inject constructor(private val repository: MovieRepository): ViewModel() {</ins>
 </div>                                                                               
-    private var screenStack: List&lt;Screen&gt; = listOf(MovieList)                  
+    private var screenStack: List<Screen> = listOf(MovieList)                  
         set(value) {                                                           
             field = value                                                      
             screen = value.lastOrNull()                                        
             clearSelections()                                                  
         }                                                                      
                                                                                
-    var selectedItemIds by mutableStateOf&lt;Set&lt;String&gt;&gt;(emptySet())             
+    var selectedItemIds by mutableStateOf<Set<String>>(emptySet())             
         private set                                                            
                                                                                
     fun clearSelections() {                                                    
@@ -3524,7 +3524,7 @@ data class MovieEdit(
         screenStack = listOf(screen)                                           
     }                                                                          
                                                                                
-    var screen by mutableStateOf&lt;Screen?&gt;(MovieList)                           
+    var screen by mutableStateOf<Screen?>(MovieList)                           
         private set                                                            
                                                                                
     val ratingsFlow = repository.ratingsFlow                                   
@@ -3587,8 +3587,8 @@ import com.javadude.movies.RatingDisplay
 import com.javadude.movies.RatingList                                                 
 <del>//import com.javadude.movies.repository.createRepository                              </del>
 <del>//class MovieViewModelFactory(private val context: Context): ViewModelProvider.Factory {</del>
-<del>//  override fun &lt;T : ViewModel&gt; create(modelClass: Class&lt;T&gt;): T {                    </del>
-<del>//      @Suppress(&quot;UNCHECKED_CAST&quot;)                                                   </del>
+<del>//  override fun <T : ViewModel> create(modelClass: Class<T>): T {                    </del>
+<del>//      @Suppress("UNCHECKED_CAST")                                                   </del>
 <del>//      return MovieViewModel(                                                        </del>
 <del>//          createRepository(context)                                                 </del>
 <del>//      ) as T                                                                        </del>
@@ -3601,7 +3601,7 @@ fun Ui(
 <del>//  viewModel: MovieViewModel =                                                       </del>
 <del>//      viewModel(factory = MovieViewModelFactory(context)),                          </del>
 <ins>    viewModel: MovieViewModel = viewModel(),                                          </ins>
-</div>    onExit: () -&gt; Unit,                                                               
+</div>    onExit: () -> Unit,                                                               
 ) {                                                                                   
     BackHandler {                                                                     
         viewModel.popScreen()                                                         
@@ -3612,13 +3612,13 @@ fun Ui(
     val actors by viewModel.actorsFlow.collectAsState(initial = emptyList())          
                                                                                       
     when(val screen = viewModel.screen) {                                             
-        null -&gt; onExit()                                                              
+        null -> onExit()                                                              
                                                                                       
-        RatingList -&gt; RatingList(                                                     
+        RatingList -> RatingList(                                                     
             ratings = ratings,                                                        
             onSelectListScreen = viewModel::setScreenStack,                           
             onResetDatabase = viewModel::resetDatabase,                               
-            onRatingClick = { id -&gt;                                                   
+            onRatingClick = { id ->                                                   
                 viewModel.pushScreen(RatingDisplay(id))                               
             },                                                                        
             selectedItemIds = viewModel.selectedItemIds,                              
@@ -3626,11 +3626,11 @@ fun Ui(
             onToggleSelection = viewModel::toggleSelection,                           
             onDeleteSelectedItems = viewModel::deleteSelectedRatings,                 
         )                                                                             
-        MovieList -&gt; MovieList(                                                       
+        MovieList -> MovieList(                                                       
             movies = movies,                                                          
             onSelectListScreen = viewModel::setScreenStack,                           
             onResetDatabase = viewModel::resetDatabase,                               
-            onMovieClick = { id -&gt;                                                    
+            onMovieClick = { id ->                                                    
                 viewModel.pushScreen(MovieDisplay(id))                                
             },                                                                        
             selectedItemIds = viewModel.selectedItemIds,                              
@@ -3638,11 +3638,11 @@ fun Ui(
             onToggleSelection = viewModel::toggleSelection,                           
             onDeleteSelectedItems = viewModel::deleteSelectedMovies,                  
         )                                                                             
-        ActorList -&gt; ActorList(                                                       
+        ActorList -> ActorList(                                                       
             actors = actors,                                                          
             onSelectListScreen = viewModel::setScreenStack,                           
             onResetDatabase = viewModel::resetDatabase,                               
-            onActorClick = { id -&gt;                                                    
+            onActorClick = { id ->                                                    
                 viewModel.pushScreen(ActorDisplay(id))                                
             },                                                                        
             selectedItemIds = viewModel.selectedItemIds,                              
@@ -3651,42 +3651,42 @@ fun Ui(
             onDeleteSelectedItems = viewModel::deleteSelectedActors,                  
         )                                                                             
                                                                                       
-        is RatingDisplay -&gt; RatingDisplay(                                            
+        is RatingDisplay -> RatingDisplay(                                            
             ratingId = screen.id,                                                     
-            fetchRatingWithMovies = { id -&gt;                                           
+            fetchRatingWithMovies = { id ->                                           
                 viewModel.getRatingWithMovies(id)                                     
             },                                                                        
             onSelectListScreen = viewModel::setScreenStack,                           
             onResetDatabase = viewModel::resetDatabase,                               
-            onMovieClick = { id -&gt;                                                    
+            onMovieClick = { id ->                                                    
                 viewModel.pushScreen(MovieDisplay(id))                                
             }                                                                         
         )                                                                             
-        is MovieDisplay -&gt; MovieDisplay(                                              
+        is MovieDisplay -> MovieDisplay(                                              
             movieId = screen.id,                                                      
             fetchMovieWithCast = viewModel::getMovieWithCast,                         
             onSelectListScreen = viewModel::setScreenStack,                           
             onResetDatabase = viewModel::resetDatabase,                               
-            onActorClick = { id -&gt;                                                    
+            onActorClick = { id ->                                                    
                 viewModel.pushScreen(ActorDisplay(id))                                
             },                                                                        
-            onEdit = { id -&gt;                                                          
+            onEdit = { id ->                                                          
                 viewModel.pushScreen(MovieEdit(id))                                   
             }                                                                         
         )                                                                             
-        is MovieEdit -&gt; MovieEdit(                                                    
+        is MovieEdit -> MovieEdit(                                                    
             movieId = screen.id,                                                      
             fetchMovie = viewModel::getMovie,                                         
             onSelectListScreen = viewModel::setScreenStack,                           
             onResetDatabase = viewModel::resetDatabase,                               
             onMovieUpdate = viewModel::updateMovie,                                   
         )                                                                             
-        is ActorDisplay -&gt; ActorDisplay(                                              
+        is ActorDisplay -> ActorDisplay(                                              
             actorId = screen.id,                                                      
             fetchActorWithFilmography = viewModel::getActorWithFilmography,           
             onSelectListScreen = viewModel::setScreenStack,                           
             onResetDatabase = viewModel::resetDatabase,                               
-            onMovieClick = { id -&gt;                                                    
+            onMovieClick = { id ->                                                    
                 viewModel.pushScreen(MovieDisplay(id))                                
             }                                                                         
         )                                                                             
@@ -3701,17 +3701,17 @@ fun Ui(
 <pre>
 buildscript {                                                                                       
     ext {                                                                                           
-        compose_ui_version = &#39;1.3.0&#39;                                                                
-        compose_compiler_version = &#39;1.3.1&#39;                                                          
-        room_version = &#39;2.4.3&#39;                                                                      
+        compose_ui_version = '1.3.0'                                                                
+        compose_compiler_version = '1.3.1'                                                          
+        room_version = '2.4.3'                                                                      
     }                                                                                               
 }// Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {                                                                                           
-    id &#39;com.android.application&#39; version &#39;7.3.1&#39; apply false                                        
-    id &#39;com.android.library&#39; version &#39;7.3.1&#39; apply false                                            
-    id &#39;org.jetbrains.kotlin.android&#39; version &#39;1.7.10&#39; apply false                                  
-    id &#39;com.google.devtools.ksp&#39; version &#39;1.7.10-1.0.6&#39; apply false                                 
-<div id="030-declare-hilt"><ins>    id &#39;com.google.dagger.hilt.android&#39; version &#39;2.44&#39; apply false                                  </ins>
+    id 'com.android.application' version '7.3.1' apply false                                        
+    id 'com.android.library' version '7.3.1' apply false                                            
+    id 'org.jetbrains.kotlin.android' version '1.7.10' apply false                                  
+    id 'com.google.devtools.ksp' version '1.7.10-1.0.6' apply false                                 
+<div id="030-declare-hilt"><ins>    id 'com.google.dagger.hilt.android' version '2.44' apply false                                  </ins>
 </div>}                                                                                                   
 </pre>
 </div>
@@ -3721,29 +3721,29 @@ plugins {
 <div class="sas1-code-file" style="--sas1-file-name: '/data/build.gradle';">
 <pre>
 plugins {                                                                                              
-    id &#39;com.android.library&#39;                                                                           
-    id &#39;org.jetbrains.kotlin.android&#39;                                                                  
-    id &#39;com.google.devtools.ksp&#39;                                                                       
-<div id="030-use-hilt"><ins>    id &#39;kotlin-kapt&#39;                                                                                   </ins>
-<ins>    id &#39;com.google.dagger.hilt.android&#39;                                                                </ins>
+    id 'com.android.library'                                                                           
+    id 'org.jetbrains.kotlin.android'                                                                  
+    id 'com.google.devtools.ksp'                                                                       
+<div id="030-use-hilt"><ins>    id 'kotlin-kapt'                                                                                   </ins>
+<ins>    id 'com.google.dagger.hilt.android'                                                                </ins>
 </div>}                                                                                                      
                                                                                                        
 android {                                                                                              
-    namespace &#39;com.javadude.movies.data&#39;                                                               
+    namespace 'com.javadude.movies.data'                                                               
     compileSdk 33                                                                                      
                                                                                                        
     defaultConfig {                                                                                    
         minSdk 21                                                                                      
         targetSdk 33                                                                                   
                                                                                                        
-        testInstrumentationRunner &quot;androidx.test.runner.AndroidJUnitRunner&quot;                            
-        consumerProguardFiles &quot;consumer-rules.pro&quot;                                                     
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"                            
+        consumerProguardFiles "consumer-rules.pro"                                                     
     }                                                                                                  
                                                                                                        
     buildTypes {                                                                                       
         release {                                                                                      
             minifyEnabled false                                                                        
-            proguardFiles getDefaultProguardFile(&#39;proguard-android-optimize.txt&#39;), &#39;proguard-rules.pro&#39;
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }                                                                                              
     }                                                                                                  
     compileOptions {                                                                                   
@@ -3751,7 +3751,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8                                                    
     }                                                                                                  
     kotlinOptions {                                                                                    
-        jvmTarget = &#39;1.8&#39;                                                                              
+        jvmTarget = '1.8'                                                                              
     }                                                                                                  
 }                                                                                                      
                                                                                                        
@@ -3761,22 +3761,22 @@ android {
 <ins>}                                                                                                      </ins>
 </div>                                                                                                       
 dependencies {                                                                                         
-<div id="030-hilt-deps"><ins>    implementation &quot;com.google.dagger:hilt-android:2.44&quot;                                               </ins>
-<ins>    kapt &quot;com.google.dagger:hilt-compiler:2.44&quot;                                                        </ins>
+<div id="030-hilt-deps"><ins>    implementation "com.google.dagger:hilt-android:2.44"                                               </ins>
+<ins>    kapt "com.google.dagger:hilt-compiler:2.44"                                                        </ins>
 </div>                                                                                                       
-    implementation &quot;androidx.room:room-runtime:$room_version&quot;                                          
-    implementation &quot;androidx.room:room-ktx:$room_version&quot;                                              
-    ksp &quot;androidx.room:room-compiler:$room_version&quot;                                                    
+    implementation "androidx.room:room-runtime:$room_version"                                          
+    implementation "androidx.room:room-ktx:$room_version"                                              
+    ksp "androidx.room:room-compiler:$room_version"                                                    
                                                                                                        
-    implementation &#39;androidx.core:core-ktx:1.9.0&#39;                                                      
-    implementation &#39;androidx.appcompat:appcompat:1.5.1&#39;                                                
-<del>//  implementation &#39;com.google.android.material:material:1.6.1&#39;                                        </del>
-<ins>    implementation &#39;com.google.android.material:material:1.7.0&#39;                                        </ins>
-    testImplementation &#39;junit:junit:4.13.2&#39;                                                            
-<del>//  androidTestImplementation &#39;androidx.test.ext:junit:1.1.3&#39;                                          </del>
-<del>//  androidTestImplementation &#39;androidx.test.espresso:espresso-core:3.4.0&#39;                             </del>
-<ins>    androidTestImplementation &#39;androidx.test.ext:junit:1.1.4&#39;                                          </ins>
-<ins>    androidTestImplementation &#39;androidx.test.espresso:espresso-core:3.5.0&#39;                             </ins>
+    implementation 'androidx.core:core-ktx:1.9.0'                                                      
+    implementation 'androidx.appcompat:appcompat:1.5.1'                                                
+<del>//  implementation 'com.google.android.material:material:1.6.1'                                        </del>
+<ins>    implementation 'com.google.android.material:material:1.7.0'                                        </ins>
+    testImplementation 'junit:junit:4.13.2'                                                            
+<del>//  androidTestImplementation 'androidx.test.ext:junit:1.1.3'                                          </del>
+<del>//  androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'                             </del>
+<ins>    androidTestImplementation 'androidx.test.ext:junit:1.1.4'                                          </ins>
+<ins>    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'                             </ins>
 }                                                                                                      
 </pre>
 </div>
@@ -3813,7 +3813,7 @@ dependencies {
 <ins>        return Room.databaseBuilder(                             </ins>
 <ins>            context,                                             </ins>
 <ins>            MovieDatabase::class.java,                           </ins>
-<ins>            &quot;MOVIES&quot;                                             </ins>
+<ins>            "MOVIES"                                             </ins>
 <ins>        ).build()                                                </ins>
 <ins>    }                                                            </ins>
 </div><ins>}                                                                </ins>
@@ -3825,28 +3825,28 @@ dependencies {
 <div class="sas1-code-file" style="--sas1-file-name: '/repository/build.gradle';">
 <pre>
 plugins {                                                                                              
-    id &#39;com.android.library&#39;                                                                           
-    id &#39;org.jetbrains.kotlin.android&#39;                                                                  
-<ins>    id &#39;kotlin-kapt&#39;                                                                                   </ins>
-<ins>    id &#39;com.google.dagger.hilt.android&#39;                                                                </ins>
+    id 'com.android.library'                                                                           
+    id 'org.jetbrains.kotlin.android'                                                                  
+<ins>    id 'kotlin-kapt'                                                                                   </ins>
+<ins>    id 'com.google.dagger.hilt.android'                                                                </ins>
 }                                                                                                      
                                                                                                        
 android {                                                                                              
-    namespace &#39;com.javadude.movies.repository&#39;                                                         
+    namespace 'com.javadude.movies.repository'                                                         
     compileSdk 33                                                                                      
                                                                                                        
     defaultConfig {                                                                                    
         minSdk 21                                                                                      
         targetSdk 33                                                                                   
                                                                                                        
-        testInstrumentationRunner &quot;androidx.test.runner.AndroidJUnitRunner&quot;                            
-        consumerProguardFiles &quot;consumer-rules.pro&quot;                                                     
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"                            
+        consumerProguardFiles "consumer-rules.pro"                                                     
     }                                                                                                  
                                                                                                        
     buildTypes {                                                                                       
         release {                                                                                      
             minifyEnabled false                                                                        
-            proguardFiles getDefaultProguardFile(&#39;proguard-android-optimize.txt&#39;), &#39;proguard-rules.pro&#39;
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }                                                                                              
     }                                                                                                  
     compileOptions {                                                                                   
@@ -3854,7 +3854,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8                                                    
     }                                                                                                  
     kotlinOptions {                                                                                    
-        jvmTarget = &#39;1.8&#39;                                                                              
+        jvmTarget = '1.8'                                                                              
     }                                                                                                  
 }                                                                                                      
                                                                                                        
@@ -3864,20 +3864,20 @@ android {
 <ins>}                                                                                                      </ins>
                                                                                                        
 dependencies {                                                                                         
-    implementation project(&quot;:data&quot;)                                                                    
+    implementation project(":data")                                                                    
                                                                                                        
-<ins>    implementation &quot;com.google.dagger:hilt-android:2.44&quot;                                               </ins>
-<ins>    kapt &quot;com.google.dagger:hilt-compiler:2.44&quot;                                                        </ins>
+<ins>    implementation "com.google.dagger:hilt-android:2.44"                                               </ins>
+<ins>    kapt "com.google.dagger:hilt-compiler:2.44"                                                        </ins>
                                                                                                        
-    implementation &#39;androidx.core:core-ktx:1.9.0&#39;                                                      
-    implementation &#39;androidx.appcompat:appcompat:1.5.1&#39;                                                
-<del>//  implementation &#39;com.google.android.material:material:1.6.1&#39;                                        </del>
-<ins>    implementation &#39;com.google.android.material:material:1.7.0&#39;                                        </ins>
-    testImplementation &#39;junit:junit:4.13.2&#39;                                                            
-<del>//  androidTestImplementation &#39;androidx.test.ext:junit:1.1.3&#39;                                          </del>
-<del>//  androidTestImplementation &#39;androidx.test.espresso:espresso-core:3.4.0&#39;                             </del>
-<ins>    androidTestImplementation &#39;androidx.test.ext:junit:1.1.4&#39;                                          </ins>
-<ins>    androidTestImplementation &#39;androidx.test.espresso:espresso-core:3.5.0&#39;                             </ins>
+    implementation 'androidx.core:core-ktx:1.9.0'                                                      
+    implementation 'androidx.appcompat:appcompat:1.5.1'                                                
+<del>//  implementation 'com.google.android.material:material:1.6.1'                                        </del>
+<ins>    implementation 'com.google.android.material:material:1.7.0'                                        </ins>
+    testImplementation 'junit:junit:4.13.2'                                                            
+<del>//  androidTestImplementation 'androidx.test.ext:junit:1.1.3'                                          </del>
+<del>//  androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'                             </del>
+<ins>    androidTestImplementation 'androidx.test.ext:junit:1.1.4'                                          </ins>
+<ins>    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'                             </ins>
 }                                                                                                      
 </pre>
 </div>
@@ -3897,17 +3897,17 @@ import kotlinx.coroutines.flow.map
 </div><ins>    MovieRepository {                                                                    </ins>
     override val ratingsFlow =                                                           
         dao.getRatingsFlow()                                                             
-            .map { ratings -&gt;                                                            
+            .map { ratings ->                                                            
                 ratings.map { it.toDto() }                                               
             }                                                                            
     override val moviesFlow =                                                            
         dao.getMoviesFlow()                                                              
-            .map { movies -&gt;                                                             
+            .map { movies ->                                                             
                 movies.map { it.toDto() }                                                
             }                                                                            
     override val actorsFlow =                                                            
         dao.getActorsFlow()                                                              
-            .map { actors -&gt;                                                             
+            .map { actors ->                                                             
                 actors.map { it.toDto() }                                                
             }                                                                            
                                                                                          
@@ -3935,9 +3935,9 @@ import kotlinx.coroutines.flow.map
     override suspend fun delete(actor: ActorDto) = dao.delete(actor.toEntity())          
     override suspend fun delete(rating: RatingDto) = dao.delete(rating.toEntity())       
                                                                                          
-    override suspend fun deleteMoviesById(ids: Set&lt;String&gt;) = dao.deleteMoviesById(ids)  
-    override suspend fun deleteActorsById(ids: Set&lt;String&gt;) = dao.deleteActorsById(ids)  
-    override suspend fun deleteRatingsById(ids: Set&lt;String&gt;) = dao.deleteRatingsById(ids)
+    override suspend fun deleteMoviesById(ids: Set<String>) = dao.deleteMoviesById(ids)  
+    override suspend fun deleteActorsById(ids: Set<String>) = dao.deleteActorsById(ids)  
+    override suspend fun deleteRatingsById(ids: Set<String>) = dao.deleteRatingsById(ids)
                                                                                          
     override suspend fun resetDatabase() = dao.resetDatabase()                           
 }                                                                                        

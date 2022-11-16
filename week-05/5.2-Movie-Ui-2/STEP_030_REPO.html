@@ -2634,14 +2634,14 @@
       
       
         <label class="md-nav__link" for="__nav_16_1">
-          12.1 Legacy views
+          12.1 Testing
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="12.1 Legacy views" data-md-level="2">
+      <nav class="md-nav" aria-label="12.1 Testing" data-md-level="2">
         <label class="md-nav__title" for="__nav_16_1">
           <span class="md-nav__icon md-icon"></span>
-          12.1 Legacy views
+          12.1 Testing
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2651,8 +2651,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-12/12.1-Legacy-views/index.html" class="md-nav__link">
-        Legacy Views
+      <a href="../../week-12/12.1-Testing/index.html" class="md-nav__link">
+        Testing
       </a>
     </li>
   
@@ -2681,14 +2681,14 @@
       
       
         <label class="md-nav__link" for="__nav_16_2">
-          12.2 Legacy fragments
+          12.2 Nfc
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="12.2 Legacy fragments" data-md-level="2">
+      <nav class="md-nav" aria-label="12.2 Nfc" data-md-level="2">
         <label class="md-nav__title" for="__nav_16_2">
           <span class="md-nav__icon md-icon"></span>
-          12.2 Legacy fragments
+          12.2 Nfc
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2698,8 +2698,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-12/12.2-Legacy-fragments/index.html" class="md-nav__link">
-        Legacy Fragments
+      <a href="../../week-12/12.2-Nfc/index.html" class="md-nav__link">
+        NFC
       </a>
     </li>
   
@@ -2764,14 +2764,14 @@
       
       
         <label class="md-nav__link" for="__nav_17_1">
-          13.1 Testing
+          13.1 Legacy views
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="13.1 Testing" data-md-level="2">
+      <nav class="md-nav" aria-label="13.1 Legacy views" data-md-level="2">
         <label class="md-nav__title" for="__nav_17_1">
           <span class="md-nav__icon md-icon"></span>
-          13.1 Testing
+          13.1 Legacy views
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2781,8 +2781,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-13/13.1-Testing/index.html" class="md-nav__link">
-        Testing
+      <a href="../../week-13/13.1-Legacy-views/index.html" class="md-nav__link">
+        Legacy Views
       </a>
     </li>
   
@@ -2811,14 +2811,14 @@
       
       
         <label class="md-nav__link" for="__nav_17_2">
-          13.2 Nfc
+          13.2 Legacy fragments
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="13.2 Nfc" data-md-level="2">
+      <nav class="md-nav" aria-label="13.2 Legacy fragments" data-md-level="2">
         <label class="md-nav__title" for="__nav_17_2">
           <span class="md-nav__icon md-icon"></span>
-          13.2 Nfc
+          13.2 Legacy fragments
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2828,8 +2828,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-13/13.2-Nfc/index.html" class="md-nav__link">
-        NFC
+      <a href="../../week-13/13.2-Legacy-fragments/index.html" class="md-nav__link">
+        Legacy Fragments
       </a>
     </li>
   
@@ -3174,22 +3174,22 @@
 <div class="sas1-code-file" style="--sas1-file-name: '/app/build.gradle';">
 <pre>
 plugins {                                                                                              
-    id &#39;com.android.application&#39;                                                                       
-    id &#39;org.jetbrains.kotlin.android&#39;                                                                  
+    id 'com.android.application'                                                                       
+    id 'org.jetbrains.kotlin.android'                                                                  
 }                                                                                                      
                                                                                                        
 android {                                                                                              
-    namespace &#39;com.javadude.movies&#39;                                                                    
+    namespace 'com.javadude.movies'                                                                    
     compileSdk 33                                                                                      
                                                                                                        
     defaultConfig {                                                                                    
-        applicationId &quot;com.javadude.movies&quot;                                                            
+        applicationId "com.javadude.movies"                                                            
         minSdk 21                                                                                      
         targetSdk 33                                                                                   
         versionCode 1                                                                                  
-        versionName &quot;1.0&quot;                                                                              
+        versionName "1.0"                                                                              
                                                                                                        
-        testInstrumentationRunner &quot;androidx.test.runner.AndroidJUnitRunner&quot;                            
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"                            
         vectorDrawables {                                                                              
             useSupportLibrary true                                                                     
         }                                                                                              
@@ -3198,7 +3198,7 @@ android {
     buildTypes {                                                                                       
         release {                                                                                      
             minifyEnabled false                                                                        
-            proguardFiles getDefaultProguardFile(&#39;proguard-android-optimize.txt&#39;), &#39;proguard-rules.pro&#39;
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }                                                                                              
     }                                                                                                  
     compileOptions {                                                                                   
@@ -3206,7 +3206,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8                                                    
     }                                                                                                  
     kotlinOptions {                                                                                    
-        jvmTarget = &#39;1.8&#39;                                                                              
+        jvmTarget = '1.8'                                                                              
     }                                                                                                  
     buildFeatures {                                                                                    
         compose true                                                                                   
@@ -3216,28 +3216,28 @@ android {
     }                                                                                                  
     packagingOptions {                                                                                 
         resources {                                                                                    
-            excludes += &#39;/META-INF/{AL2.0,LGPL2.1}&#39;                                                    
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'                                                    
         }                                                                                              
     }                                                                                                  
 }                                                                                                      
                                                                                                        
 dependencies {                                                                                         
-    implementation project(&quot;:repository&quot;)                                                              
+    implementation project(":repository")                                                              
                                                                                                        
-    implementation &#39;androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1&#39;                              
-    implementation &#39;androidx.core:core-ktx:1.9.0&#39;                                                      
-    implementation &#39;androidx.lifecycle:lifecycle-runtime-ktx:2.5.1&#39;                                    
-<del>//  implementation &#39;androidx.activity:activity-compose:1.5.1&#39;                                          </del>
-<ins>    implementation &#39;androidx.activity:activity-compose:1.6.0&#39;                                          </ins>
-    implementation &quot;androidx.compose.ui:ui:$compose_ui_version&quot;                                        
-    implementation &quot;androidx.compose.ui:ui-tooling-preview:$compose_ui_version&quot;                        
-    implementation &#39;androidx.compose.material:material:1.2.1&#39;                                          
-    testImplementation &#39;junit:junit:4.13.2&#39;                                                            
-    androidTestImplementation &#39;androidx.test.ext:junit:1.1.3&#39;                                          
-    androidTestImplementation &#39;androidx.test.espresso:espresso-core:3.4.0&#39;                             
-    androidTestImplementation &quot;androidx.compose.ui:ui-test-junit4:$compose_ui_version&quot;                 
-    debugImplementation &quot;androidx.compose.ui:ui-tooling:$compose_ui_version&quot;                           
-    debugImplementation &quot;androidx.compose.ui:ui-test-manifest:$compose_ui_version&quot;                     
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1'                              
+    implementation 'androidx.core:core-ktx:1.9.0'                                                      
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'                                    
+<del>//  implementation 'androidx.activity:activity-compose:1.5.1'                                          </del>
+<ins>    implementation 'androidx.activity:activity-compose:1.6.0'                                          </ins>
+    implementation "androidx.compose.ui:ui:$compose_ui_version"                                        
+    implementation "androidx.compose.ui:ui-tooling-preview:$compose_ui_version"                        
+    implementation 'androidx.compose.material:material:1.2.1'                                          
+    testImplementation 'junit:junit:4.13.2'                                                            
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'                                          
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'                             
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"                 
+    debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version"                           
+    debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"                     
 }                                                                                                      
 </pre>
 </div>
@@ -3246,38 +3246,38 @@ dependencies {
 <summary>CHANGED: /app/src/main/AndroidManifest.xml</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/AndroidManifest.xml';">
 <pre>
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;                                      
-&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;        
-    xmlns:tools=&quot;http://schemas.android.com/tools&quot;&gt;                         
+<?xml version="1.0" encoding="utf-8"?>                                      
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"        
+    xmlns:tools="http://schemas.android.com/tools">                         
                                                                             
-    &lt;application                                                            
-        android:allowBackup=&quot;true&quot;                                          
-        android:dataExtractionRules=&quot;@xml/data_extraction_rules&quot;            
-        android:fullBackupContent=&quot;@xml/backup_rules&quot;                       
-        android:icon=&quot;@mipmap/ic_launcher&quot;                                  
-        android:label=&quot;@string/app_name&quot;                                    
-        android:roundIcon=&quot;@mipmap/ic_launcher_round&quot;                       
-        android:supportsRtl=&quot;true&quot;                                          
-        android:theme=&quot;@style/Theme.Movies&quot;                                 
-        tools:targetApi=&quot;31&quot;&gt;                                               
-        &lt;activity                                                           
-            android:name=&quot;.MainActivity&quot;                                    
-            android:exported=&quot;true&quot;                                         
-<del>//          android:label=&quot;@string/app_name&quot;                                </del>
-            android:theme=&quot;@style/Theme.Movies&quot;&gt;                            
-            &lt;intent-filter&gt;                                                 
-                &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;        
+    <application                                                            
+        android:allowBackup="true"                                          
+        android:dataExtractionRules="@xml/data_extraction_rules"            
+        android:fullBackupContent="@xml/backup_rules"                       
+        android:icon="@mipmap/ic_launcher"                                  
+        android:label="@string/app_name"                                    
+        android:roundIcon="@mipmap/ic_launcher_round"                       
+        android:supportsRtl="true"                                          
+        android:theme="@style/Theme.Movies"                                 
+        tools:targetApi="31">                                               
+        <activity                                                           
+            android:name=".MainActivity"                                    
+            android:exported="true"                                         
+<del>//          android:label="@string/app_name"                                </del>
+            android:theme="@style/Theme.Movies">                            
+            <intent-filter>                                                 
+                <action android:name="android.intent.action.MAIN" />        
                                                                             
-                &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
-            &lt;/intent-filter&gt;                                                
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>                                                
                                                                             
-            &lt;meta-data                                                      
-                android:name=&quot;android.app.lib_name&quot;                         
-                android:value=&quot;&quot; /&gt;                                         
-        &lt;/activity&gt;                                                         
-    &lt;/application&gt;                                                          
+            <meta-data                                                      
+                android:name="android.app.lib_name"                         
+                android:value="" />                                         
+        </activity>                                                         
+    </application>                                                          
                                                                             
-&lt;/manifest&gt;                                                                 
+</manifest>                                                                 
 </pre>
 </div>
 </details>
@@ -3314,12 +3314,12 @@ import com.javadude.movies.repository.ActorWithFilmographyDto
 @Composable                                                                                                 
 fun ActorDisplay(                                                                                           
     actorId: String,                                                                                        
-    fetchActorWithFilmography: suspend (String) -&gt; ActorWithFilmographyDto,                                 
-    onSelectListScreen: (Screen) -&gt; Unit,                                                                   
-    onResetDatabase: () -&gt; Unit,                                                                            
-    onMovieClick: (String) -&gt; Unit,                                                                         
+    fetchActorWithFilmography: suspend (String) -> ActorWithFilmographyDto,                                 
+    onSelectListScreen: (Screen) -> Unit,                                                                   
+    onResetDatabase: () -> Unit,                                                                            
+    onMovieClick: (String) -> Unit,                                                                         
 ) {                                                                                                         
-    var actorWithFilmographyDto by remember { mutableStateOf&lt;ActorWithFilmographyDto?&gt;(null) }              
+    var actorWithFilmographyDto by remember { mutableStateOf<ActorWithFilmographyDto?>(null) }              
                                                                                                             
     LaunchedEffect(key1 = actorId) {                                                                        
         // starts a coroutine to fetch the rating                                                           
@@ -3330,15 +3330,15 @@ fun ActorDisplay(
         title = actorWithFilmographyDto?.actor?.name ?: stringResource(id = R.string.loading),              
         onSelectListScreen = onSelectListScreen,                                                            
         onResetDatabase = onResetDatabase,                                                                  
-    ) { paddingValues -&gt;                                                                                    
+    ) { paddingValues ->                                                                                    
         Column(                                                                                             
             modifier = Modifier                                                                             
                 .padding(paddingValues)                                                                     
 <del>//              .verticalScroll(rememberScrollState())                                                      </del>
 <ins>                .fillMaxHeight()                                                                            </ins>
         ) {                                                                                                 
-            actorWithFilmographyDto?.let { actorWithFilmography -&gt;                                          
-<del>//              actorWithFilmography.filmography.forEach { roleWithMovie -&gt;                                 </del>
+            actorWithFilmographyDto?.let { actorWithFilmography ->                                          
+<del>//              actorWithFilmography.filmography.forEach { roleWithMovie ->                                 </del>
 <ins>                SimpleText(                                                                                 </ins>
 <ins>                    text = stringResource(                                                                  </ins>
 <ins>                        id = R.string.filmography, actorWithFilmography.actor.name                          </ins>
@@ -3351,14 +3351,14 @@ fun ActorDisplay(
 <ins>                ) {                                                                                         </ins>
 <ins>                    items(                                                                                  </ins>
 <ins>                        items = actorWithFilmography.filmography,                                           </ins>
-<ins>                    ) { roleWithMovie -&gt;                                                                    </ins>
+<ins>                    ) { roleWithMovie ->                                                                    </ins>
 <ins>                        Card(                                                                               </ins>
 <ins>                            elevation = 4.dp,                                                               </ins>
 <ins>                            modifier = Modifier                                                             </ins>
 <ins>                                .padding(8.dp)                                                              </ins>
 <ins>                                .fillMaxWidth()                                                             </ins>
 <ins>                        ) {                                                                                 </ins>
-                            SimpleText(text = &quot;${roleWithMovie.movie.title} (${roleWithMovie.character})&quot;) {
+                            SimpleText(text = "${roleWithMovie.movie.title} (${roleWithMovie.character})") {
                                 onMovieClick(roleWithMovie.movie.id)                                        
                             }                                                                               
                         }                                                                                   
@@ -3394,15 +3394,15 @@ import com.javadude.movies.repository.ActorDto
                                                               
 @Composable                                                   
 fun ActorList(                                                
-    actors: List&lt;ActorDto&gt;,                                   
-    onSelectListScreen: (Screen) -&gt; Unit,                     
-    onResetDatabase: () -&gt; Unit,                              
-    onActorClick: (String) -&gt; Unit,                           
+    actors: List<ActorDto>,                                   
+    onSelectListScreen: (Screen) -> Unit,                     
+    onResetDatabase: () -> Unit,                              
+    onActorClick: (String) -> Unit,                           
 ) = MovieScaffold(                                            
     title = stringResource(id = R.string.screen_title_actors),
     onSelectListScreen = onSelectListScreen,                  
     onResetDatabase = onResetDatabase,                        
-) { paddingValues -&gt;                                          
+) { paddingValues ->                                          
     LazyColumn(                                               
 <del>//      modifier = Modifier.padding(paddingValues)            </del>
 <ins>        modifier = Modifier                                   </ins>
@@ -3463,12 +3463,12 @@ import com.javadude.movies.repository.MovieWithCastDto
 @Composable                                                                                               
 fun MovieDisplay(                                                                                         
     movieId: String,                                                                                      
-    fetchMovieWithCast: suspend (String) -&gt; MovieWithCastDto,                                             
-    onSelectListScreen: (Screen) -&gt; Unit,                                                                 
-    onResetDatabase: () -&gt; Unit,                                                                          
-    onActorClick: (String) -&gt; Unit,                                                                       
+    fetchMovieWithCast: suspend (String) -> MovieWithCastDto,                                             
+    onSelectListScreen: (Screen) -> Unit,                                                                 
+    onResetDatabase: () -> Unit,                                                                          
+    onActorClick: (String) -> Unit,                                                                       
 ) {                                                                                                       
-    var movieWithCastDto by remember { mutableStateOf&lt;MovieWithCastDto?&gt;(null) }                          
+    var movieWithCastDto by remember { mutableStateOf<MovieWithCastDto?>(null) }                          
                                                                                                           
     LaunchedEffect(key1 = movieId) {                                                                      
         // starts a coroutine to fetch the rating                                                         
@@ -3479,15 +3479,15 @@ fun MovieDisplay(
         title = movieWithCastDto?.movie?.title ?: stringResource(id = R.string.loading),                  
         onSelectListScreen = onSelectListScreen,                                                          
         onResetDatabase = onResetDatabase,                                                                
-    ) { paddingValues -&gt;                                                                                  
+    ) { paddingValues ->                                                                                  
         Column(                                                                                           
             modifier = Modifier                                                                           
                 .padding(paddingValues)                                                                   
 <del>//              .verticalScroll(rememberScrollState())                                                    </del>
 <ins>                .fillMaxHeight()                                                                          </ins>
         ) {                                                                                               
-            movieWithCastDto?.let { movieWithCast -&gt;                                                      
-<del>//              movieWithCast.cast.forEach { roleWithActor -&gt;                                             </del>
+            movieWithCastDto?.let { movieWithCast ->                                                      
+<del>//              movieWithCast.cast.forEach { roleWithActor ->                                             </del>
 <ins>                SimpleText(                                                                               </ins>
 <ins>                    text = movieWithCast.movie.description                                                </ins>
 <ins>                )                                                                                         </ins>
@@ -3502,14 +3502,14 @@ fun MovieDisplay(
 <ins>                ) {                                                                                       </ins>
 <ins>                    items(                                                                                </ins>
 <ins>                        items = movieWithCast.cast,                                                       </ins>
-<ins>                    ) { roleWithActor -&gt;                                                                  </ins>
+<ins>                    ) { roleWithActor ->                                                                  </ins>
 <ins>                        Card(                                                                             </ins>
 <ins>                            elevation = 4.dp,                                                             </ins>
 <ins>                            modifier = Modifier                                                           </ins>
 <ins>                                .padding(8.dp)                                                            </ins>
 <ins>                                .fillMaxWidth()                                                           </ins>
 <ins>                        ) {                                                                               </ins>
-                            SimpleText(text = &quot;${roleWithActor.character}: ${roleWithActor.actor.name}&quot;) {
+                            SimpleText(text = "${roleWithActor.character}: ${roleWithActor.actor.name}") {
                                 onActorClick(roleWithActor.actor.id)                                      
                             }                                                                             
                         }                                                                                 
@@ -3545,15 +3545,15 @@ import com.javadude.movies.repository.MovieDto
                                                               
 @Composable                                                   
 fun MovieList(                                                
-    movies: List&lt;MovieDto&gt;,                                   
-    onSelectListScreen: (Screen) -&gt; Unit,                     
-    onResetDatabase: () -&gt; Unit,                              
-    onMovieClick: (String) -&gt; Unit,                           
+    movies: List<MovieDto>,                                   
+    onSelectListScreen: (Screen) -> Unit,                     
+    onResetDatabase: () -> Unit,                              
+    onMovieClick: (String) -> Unit,                           
 ) = MovieScaffold(                                            
     title = stringResource(id = R.string.screen_title_movies),
     onSelectListScreen = onSelectListScreen,                  
     onResetDatabase = onResetDatabase,                        
-) { paddingValues -&gt;                                          
+) { paddingValues ->                                          
     LazyColumn(                                               
 <del>//      modifier = Modifier.padding(paddingValues)            </del>
 <ins>        modifier = Modifier                                   </ins>
@@ -3614,12 +3614,12 @@ import com.javadude.movies.repository.RatingWithMoviesDto
 @Composable                                                                                         
 fun RatingDisplay(                                                                                  
     ratingId: String,                                                                               
-    fetchRatingWithMovies: suspend (String) -&gt; RatingWithMoviesDto,                                 
-    onSelectListScreen: (Screen) -&gt; Unit,                                                           
-    onResetDatabase: () -&gt; Unit,                                                                    
-    onMovieClick: (String) -&gt; Unit,                                                                 
+    fetchRatingWithMovies: suspend (String) -> RatingWithMoviesDto,                                 
+    onSelectListScreen: (Screen) -> Unit,                                                           
+    onResetDatabase: () -> Unit,                                                                    
+    onMovieClick: (String) -> Unit,                                                                 
 ) {                                                                                                 
-    var ratingWithMoviesDto by remember { mutableStateOf&lt;RatingWithMoviesDto?&gt;(null) }              
+    var ratingWithMoviesDto by remember { mutableStateOf<RatingWithMoviesDto?>(null) }              
                                                                                                     
     LaunchedEffect(key1 = ratingId) {                                                               
         // starts a coroutine to fetch the rating                                                   
@@ -3630,15 +3630,15 @@ fun RatingDisplay(
         title = ratingWithMoviesDto?.rating?.name ?: stringResource(id = R.string.loading),         
         onSelectListScreen = onSelectListScreen,                                                    
         onResetDatabase = onResetDatabase,                                                          
-    ) { paddingValues -&gt;                                                                            
+    ) { paddingValues ->                                                                            
         Column(                                                                                     
             modifier = Modifier                                                                     
                 .padding(paddingValues)                                                             
 <del>//              .verticalScroll(rememberScrollState())                                              </del>
 <ins>                .fillMaxHeight()                                                                    </ins>
         ) {                                                                                         
-            ratingWithMoviesDto?.let { ratingWithMovies -&gt;                                          
-<del>//              ratingWithMovies.movies.forEach { movie -&gt;                                          </del>
+            ratingWithMoviesDto?.let { ratingWithMovies ->                                          
+<del>//              ratingWithMovies.movies.forEach { movie ->                                          </del>
 <ins>                SimpleText(text = ratingWithMovies.rating.description)                              </ins>
 <ins>                Divider()                                                                           </ins>
 <ins>                if (ratingWithMovies.movies.isEmpty()) {                                            </ins>
@@ -3654,7 +3654,7 @@ fun RatingDisplay(
 <ins>                    ) {                                                                             </ins>
 <ins>                        items(                                                                      </ins>
 <ins>                            items = ratingWithMovies.movies,                                        </ins>
-<ins>                        ) { movie -&gt;                                                                </ins>
+<ins>                        ) { movie ->                                                                </ins>
 <ins>                            Card(                                                                   </ins>
 <ins>                                elevation = 4.dp,                                                   </ins>
 <ins>                                modifier = Modifier                                                 </ins>
@@ -3698,15 +3698,15 @@ import com.javadude.movies.repository.RatingDto
                                                                
 @Composable                                                    
 fun RatingList(                                                
-    ratings: List&lt;RatingDto&gt;,                                  
-    onSelectListScreen: (Screen) -&gt; Unit,                      
-    onResetDatabase: () -&gt; Unit,                               
-    onRatingClick: (String) -&gt; Unit,                           
+    ratings: List<RatingDto>,                                  
+    onSelectListScreen: (Screen) -> Unit,                      
+    onResetDatabase: () -> Unit,                               
+    onRatingClick: (String) -> Unit,                           
 ) = MovieScaffold(                                             
     title = stringResource(id = R.string.screen_title_ratings),
     onSelectListScreen = onSelectListScreen,                   
     onResetDatabase = onResetDatabase,                         
-) { paddingValues -&gt;                                           
+) { paddingValues ->                                           
     LazyColumn(                                                
 <del>//      modifier = Modifier.padding(paddingValues)             </del>
 <ins>        modifier = Modifier                                    </ins>
@@ -3737,22 +3737,22 @@ fun RatingList(
 <summary>CHANGED: /app/src/main/res/values/strings.xml</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/res/values/strings.xml';">
 <pre>
-&lt;resources&gt;                                                                                
-    &lt;string name=&quot;app_name&quot;&gt;Movies&lt;/string&gt;                                                
-    &lt;string name=&quot;reset_database&quot;&gt;Reset Database&lt;/string&gt;                                  
+<resources>                                                                                
+    <string name="app_name">Movies</string>                                                
+    <string name="reset_database">Reset Database</string>                                  
                                                                                            
-    &lt;string name=&quot;screen_title_ratings&quot;&gt;MPAA Ratings&lt;/string&gt;                              
-    &lt;string name=&quot;screen_title_movies&quot;&gt;Movies&lt;/string&gt;                                     
-    &lt;string name=&quot;screen_title_actors&quot;&gt;Actors&lt;/string&gt;                                     
+    <string name="screen_title_ratings">MPAA Ratings</string>                              
+    <string name="screen_title_movies">Movies</string>                                     
+    <string name="screen_title_actors">Actors</string>                                     
                                                                                            
-<ins>    &lt;string name=&quot;movies&quot;&gt;Movies that are rated %1$s&lt;/string&gt;                              </ins>
-<ins>    &lt;string name=&quot;filmography&quot;&gt;Films that feature %1$s&lt;/string&gt;                            </ins>
-<ins>    &lt;string name=&quot;cast&quot;&gt;Cast&lt;/string&gt;                                                      </ins>
+<ins>    <string name="movies">Movies that are rated %1$s</string>                              </ins>
+<ins>    <string name="filmography">Films that feature %1$s</string>                            </ins>
+<ins>    <string name="cast">Cast</string>                                                      </ins>
                                                                                            
-<ins>    &lt;string name=&quot;no_movies_found_for_this_rating&quot;&gt;No movies found for this rating&lt;/string&gt;</ins>
+<ins>    <string name="no_movies_found_for_this_rating">No movies found for this rating</string></ins>
                                                                                            
-    &lt;string name=&quot;loading&quot;&gt;Loading&lt;/string&gt;                                                
-&lt;/resources&gt;                                                                               
+    <string name="loading">Loading</string>                                                
+</resources>                                                                               
 </pre>
 </div>
 </details>

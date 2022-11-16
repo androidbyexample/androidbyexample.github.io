@@ -2634,14 +2634,14 @@
       
       
         <label class="md-nav__link" for="__nav_16_1">
-          12.1 Legacy views
+          12.1 Testing
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="12.1 Legacy views" data-md-level="2">
+      <nav class="md-nav" aria-label="12.1 Testing" data-md-level="2">
         <label class="md-nav__title" for="__nav_16_1">
           <span class="md-nav__icon md-icon"></span>
-          12.1 Legacy views
+          12.1 Testing
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2651,8 +2651,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-12/12.1-Legacy-views/index.html" class="md-nav__link">
-        Legacy Views
+      <a href="../../week-12/12.1-Testing/index.html" class="md-nav__link">
+        Testing
       </a>
     </li>
   
@@ -2681,14 +2681,14 @@
       
       
         <label class="md-nav__link" for="__nav_16_2">
-          12.2 Legacy fragments
+          12.2 Nfc
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="12.2 Legacy fragments" data-md-level="2">
+      <nav class="md-nav" aria-label="12.2 Nfc" data-md-level="2">
         <label class="md-nav__title" for="__nav_16_2">
           <span class="md-nav__icon md-icon"></span>
-          12.2 Legacy fragments
+          12.2 Nfc
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2698,8 +2698,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-12/12.2-Legacy-fragments/index.html" class="md-nav__link">
-        Legacy Fragments
+      <a href="../../week-12/12.2-Nfc/index.html" class="md-nav__link">
+        NFC
       </a>
     </li>
   
@@ -2764,14 +2764,14 @@
       
       
         <label class="md-nav__link" for="__nav_17_1">
-          13.1 Testing
+          13.1 Legacy views
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="13.1 Testing" data-md-level="2">
+      <nav class="md-nav" aria-label="13.1 Legacy views" data-md-level="2">
         <label class="md-nav__title" for="__nav_17_1">
           <span class="md-nav__icon md-icon"></span>
-          13.1 Testing
+          13.1 Legacy views
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2781,8 +2781,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-13/13.1-Testing/index.html" class="md-nav__link">
-        Testing
+      <a href="../../week-13/13.1-Legacy-views/index.html" class="md-nav__link">
+        Legacy Views
       </a>
     </li>
   
@@ -2811,14 +2811,14 @@
       
       
         <label class="md-nav__link" for="__nav_17_2">
-          13.2 Nfc
+          13.2 Legacy fragments
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="13.2 Nfc" data-md-level="2">
+      <nav class="md-nav" aria-label="13.2 Legacy fragments" data-md-level="2">
         <label class="md-nav__title" for="__nav_17_2">
           <span class="md-nav__icon md-icon"></span>
-          13.2 Nfc
+          13.2 Legacy fragments
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2828,8 +2828,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-13/13.2-Nfc/index.html" class="md-nav__link">
-        NFC
+      <a href="../../week-13/13.2-Legacy-fragments/index.html" class="md-nav__link">
+        Legacy Fragments
       </a>
     </li>
   
@@ -3138,7 +3138,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)                                            
         setContent {                                                                  
             MoviesTheme {                                                             
-                // A surface container using the &#39;background&#39; color from the theme    
+                // A surface container using the 'background' color from the theme    
                 Surface(                                                              
                     modifier = Modifier.fillMaxSize(),                                
                     color = MaterialTheme.colors.background                           
@@ -3152,7 +3152,7 @@ class MainActivity : ComponentActivity() {
 <del>//@Composable                                                                         </del>
 <del>//fun SimpleButton(                                                                   </del>
 <del>//  text: String,                                                                     </del>
-<del>//  onClick: () -&gt; Unit,                                                              </del>
+<del>//  onClick: () -> Unit,                                                              </del>
 <del>//) =                                                                                 </del>
 <del>//  Button(onClick = onClick, modifier = Modifier.padding(8.dp)) {                    </del>
 <del>//      Text(text = text, modifier = Modifier.padding(8.dp))                          </del>
@@ -3160,7 +3160,7 @@ class MainActivity : ComponentActivity() {
 <del>//@Composable                                                                         </del>
 <del>//fun SimpleText(                                                                     </del>
 <del>//  text: String,                                                                     </del>
-<del>//  onClick: () -&gt; Unit = {},                                                         </del>
+<del>//  onClick: () -> Unit = {},                                                         </del>
 <del>//) =                                                                                 </del>
 <del>//  Text(                                                                             </del>
 <del>//      text = text,                                                                  </del>
@@ -3175,22 +3175,22 @@ class MainActivity : ComponentActivity() {
 <del>//  viewModel: MovieViewModel = viewModel()                                           </del>
 <del>//) {                                                                                 </del>
 <del>//  // This is a hideous, but simple simple test screen                               </del>
-<del>//  //   (There are some bad things happening here... We&#39;ll fix it!)                  </del>
-<del>//  // Don&#39;t worry about how it does its job; we&#39;ll cover that soon!                  </del>
+<del>//  //   (There are some bad things happening here... We'll fix it!)                  </del>
+<del>//  // Don't worry about how it does its job; we'll cover that soon!                  </del>
 <del>//  Column {                                                                          </del>
 <del>//      Row {                                                                         </del>
-<del>//          SimpleButton(&quot;Reset&quot;) {                                                   </del>
+<del>//          SimpleButton("Reset") {                                                   </del>
 <del>//              viewModel.resetDatabase()                                             </del>
 <del>//          }                                                                         </del>
-<del>//          SimpleButton(&quot;Ratings&quot;) {                                                 </del>
+<del>//          SimpleButton("Ratings") {                                                 </del>
 <del>//              viewModel.switchTo(RatingList)                                        </del>
 <del>//          }                                                                         </del>
 <del>//      }                                                                             </del>
 <del>//      Row {                                                                         </del>
-<del>//          SimpleButton(&quot;Movies&quot;) {                                                  </del>
+<del>//          SimpleButton("Movies") {                                                  </del>
 <del>//              viewModel.switchTo(MovieList)                                         </del>
 <del>//          }                                                                         </del>
-<del>//          SimpleButton(&quot;Actors&quot;) {                                                  </del>
+<del>//          SimpleButton("Actors") {                                                  </del>
 <del>//              viewModel.switchTo(ActorList)                                         </del>
 <del>//          }                                                                         </del>
 <del>//      }                                                                             </del>
@@ -3198,14 +3198,14 @@ class MainActivity : ComponentActivity() {
 <del>//      val movies by viewModel.moviesFlow.collectAsState(initial = emptyList())      </del>
 <del>//      val actors by viewModel.actorsFlow.collectAsState(initial = emptyList())      </del>
 <del>//      when(val screen = viewModel.screen) {                                         </del>
-<del>//          RatingList -&gt; RatingList(ratings = ratings) { id -&gt;                       </del>
+<del>//          RatingList -> RatingList(ratings = ratings) { id ->                       </del>
 <del>//              viewModel.switchTo(RatingScreen(id))                                  </del>
 <del>//          }                                                                         </del>
-<del>//          MovieList -&gt; MovieList(movies = movies)                                   </del>
-<del>//          ActorList -&gt; ActorList(actors = actors)                                   </del>
-<del>//          is RatingScreen -&gt; RatingDisplay(                                         </del>
+<del>//          MovieList -> MovieList(movies = movies)                                   </del>
+<del>//          ActorList -> ActorList(actors = actors)                                   </del>
+<del>//          is RatingScreen -> RatingDisplay(                                         </del>
 <del>//              ratingId = screen.id,                                                 </del>
-<del>//              fetchRatingWithMovies = { id -&gt;                                       </del>
+<del>//              fetchRatingWithMovies = { id ->                                       </del>
 <del>//                  viewModel.getRatingWithMovies(id)                                 </del>
 <del>//              }                                                                     </del>
 <del>//          )                                                                         </del>
@@ -3214,10 +3214,10 @@ class MainActivity : ComponentActivity() {
 <del>//}                                                                                   </del>
 <del>//@Composable                                                                         </del>
 <del>//fun RatingList(                                                                     </del>
-<del>//  ratings: List&lt;RatingDto&gt;,                                                         </del>
-<del>//  onRatingClick: (String) -&gt; Unit,                                                  </del>
+<del>//  ratings: List<RatingDto>,                                                         </del>
+<del>//  onRatingClick: (String) -> Unit,                                                  </del>
 <del>//) {                                                                                 </del>
-<del>//  SimpleText(text = &quot;Ratings&quot;)                                                      </del>
+<del>//  SimpleText(text = "Ratings")                                                      </del>
 <del>//  ratings.forEach {                                                                 </del>
 <del>//      SimpleText(text = it.name) {                                                  </del>
 <del>//          onRatingClick(it.id)                                                      </del>
@@ -3226,18 +3226,18 @@ class MainActivity : ComponentActivity() {
 <del>//}                                                                                   </del>
 <del>//@Composable                                                                         </del>
 <del>//fun MovieList(                                                                      </del>
-<del>//  movies: List&lt;MovieDto&gt;                                                            </del>
+<del>//  movies: List<MovieDto>                                                            </del>
 <del>//) {                                                                                 </del>
-<del>//  SimpleText(text = &quot;Movies&quot;)                                                       </del>
+<del>//  SimpleText(text = "Movies")                                                       </del>
 <del>//  movies.forEach {                                                                  </del>
 <del>//      SimpleText(text = it.title)                                                   </del>
 <del>//  }                                                                                 </del>
 <del>//}                                                                                   </del>
 <del>//@Composable                                                                         </del>
 <del>//fun ActorList(                                                                      </del>
-<del>//  actors: List&lt;ActorDto&gt;                                                            </del>
+<del>//  actors: List<ActorDto>                                                            </del>
 <del>//) {                                                                                 </del>
-<del>//  SimpleText(text = &quot;Actors&quot;)                                                       </del>
+<del>//  SimpleText(text = "Actors")                                                       </del>
 <del>//  actors.forEach {                                                                  </del>
 <del>//      SimpleText(text = it.name)                                                    </del>
 <del>//  }                                                                                 </del>
@@ -3246,31 +3246,31 @@ class MainActivity : ComponentActivity() {
 <del>//fun MovieDisplay(                                                                   </del>
 <del>//  movie: MovieDto                                                                   </del>
 <del>//) {                                                                                 </del>
-<del>//  SimpleText(text = &quot;Movie&quot;)                                                        </del>
+<del>//  SimpleText(text = "Movie")                                                        </del>
 <del>//  Row {                                                                             </del>
-<del>//      SimpleText(text = &quot;Title&quot;)                                                    </del>
+<del>//      SimpleText(text = "Title")                                                    </del>
 <del>//      SimpleText(text = movie.title)                                                </del>
 <del>//  }                                                                                 </del>
 <del>//  Row {                                                                             </del>
-<del>//      SimpleText(text = &quot;Description&quot;)                                              </del>
+<del>//      SimpleText(text = "Description")                                              </del>
 <del>//      SimpleText(text = movie.description)                                          </del>
 <del>//  }                                                                                 </del>
 <del>//}                                                                                   </del>
 <del>//@Composable                                                                         </del>
 <del>//fun RatingDisplay(                                                                  </del>
 <del>//  ratingId: String,                                                                 </del>
-<del>//  fetchRatingWithMovies: suspend (String) -&gt; RatingWithMoviesDto,                   </del>
+<del>//  fetchRatingWithMovies: suspend (String) -> RatingWithMoviesDto,                   </del>
 <del>//) {                                                                                 </del>
-<del>//  var ratingWithMoviesDto by remember { mutableStateOf&lt;RatingWithMoviesDto?&gt;(null) }</del>
+<del>//  var ratingWithMoviesDto by remember { mutableStateOf<RatingWithMoviesDto?>(null) }</del>
 <del>//  LaunchedEffect(key1 = ratingId) {                                                 </del>
 <del>//      // starts a coroutine to fetch the rating                                     </del>
 <del>//      ratingWithMoviesDto = fetchRatingWithMovies(ratingId)                         </del>
 <del>//  }                                                                                 </del>
-<del>//  SimpleText(text = &quot;Rating&quot;)                                                       </del>
-<del>//  ratingWithMoviesDto?.let { ratingWithMovies -&gt;                                    </del>
+<del>//  SimpleText(text = "Rating")                                                       </del>
+<del>//  ratingWithMoviesDto?.let { ratingWithMovies ->                                    </del>
 <del>//      SimpleText(text = ratingWithMovies.rating.name)                               </del>
-<del>//      ratingWithMovies.movies.forEach { movie -&gt;                                    </del>
-<del>//          SimpleText(text = &quot;Movie: ${movie.title}&quot;)                                </del>
+<del>//      ratingWithMovies.movies.forEach { movie ->                                    </del>
+<del>//          SimpleText(text = "Movie: ${movie.title}")                                </del>
 <del>//      }                                                                             </del>
 <del>//  }                                                                                 </del>
 <del>//}                                                                                   </del>
@@ -3293,7 +3293,7 @@ class MainActivity : ComponentActivity() {
 <ins>@Composable                                                       </ins>
 <ins>fun SimpleButton(                                                 </ins>
 <ins>    text: String,                                                 </ins>
-<ins>    onClick: () -&gt; Unit,                                          </ins>
+<ins>    onClick: () -> Unit,                                          </ins>
 <ins>) =                                                               </ins>
 <ins>    Button(onClick = onClick, modifier = Modifier.padding(8.dp)) {</ins>
 <ins>        Text(text = text, modifier = Modifier.padding(8.dp))      </ins>
@@ -3317,7 +3317,7 @@ class MainActivity : ComponentActivity() {
 <ins>@Composable                                      </ins>
 <ins>fun SimpleText(                                  </ins>
 <ins>    text: String,                                </ins>
-<ins>    onClick: () -&gt; Unit = {},                    </ins>
+<ins>    onClick: () -> Unit = {},                    </ins>
 <ins>) =                                              </ins>
 <ins>    Text(                                        </ins>
 <ins>        text = text,                             </ins>
@@ -3342,9 +3342,9 @@ class MainActivity : ComponentActivity() {
                                                 
 <ins>@Composable                                     </ins>
 <ins>fun ActorList(                                  </ins>
-<ins>    actors: List&lt;ActorDto&gt;                      </ins>
+<ins>    actors: List<ActorDto>                      </ins>
 <ins>) {                                             </ins>
-<ins>    SimpleText(text = &quot;Actors&quot;)                 </ins>
+<ins>    SimpleText(text = "Actors")                 </ins>
 <ins>    actors.forEach {                            </ins>
 <ins>        SimpleText(text = it.name)              </ins>
 <ins>    }                                           </ins>
@@ -3364,9 +3364,9 @@ class MainActivity : ComponentActivity() {
                                                 
 <ins>@Composable                                     </ins>
 <ins>fun MovieList(                                  </ins>
-<ins>    movies: List&lt;MovieDto&gt;                      </ins>
+<ins>    movies: List<MovieDto>                      </ins>
 <ins>) {                                             </ins>
-<ins>    SimpleText(text = &quot;Movies&quot;)                 </ins>
+<ins>    SimpleText(text = "Movies")                 </ins>
 <ins>    movies.forEach {                            </ins>
 <ins>        SimpleText(text = it.title)             </ins>
 <ins>    }                                           </ins>
@@ -3392,20 +3392,20 @@ class MainActivity : ComponentActivity() {
 <ins>@Composable                                                                           </ins>
 <ins>fun RatingDisplay(                                                                    </ins>
 <ins>    ratingId: String,                                                                 </ins>
-<ins>    fetchRatingWithMovies: suspend (String) -&gt; RatingWithMoviesDto,                   </ins>
+<ins>    fetchRatingWithMovies: suspend (String) -> RatingWithMoviesDto,                   </ins>
 <ins>) {                                                                                   </ins>
-<ins>    var ratingWithMoviesDto by remember { mutableStateOf&lt;RatingWithMoviesDto?&gt;(null) }</ins>
+<ins>    var ratingWithMoviesDto by remember { mutableStateOf<RatingWithMoviesDto?>(null) }</ins>
                                                                                       
 <ins>    LaunchedEffect(key1 = ratingId) {                                                 </ins>
 <ins>        // starts a coroutine to fetch the rating                                     </ins>
 <ins>        ratingWithMoviesDto = fetchRatingWithMovies(ratingId)                         </ins>
 <ins>    }                                                                                 </ins>
                                                                                       
-<ins>    SimpleText(text = &quot;Rating&quot;)                                                       </ins>
-<ins>    ratingWithMoviesDto?.let { ratingWithMovies -&gt;                                    </ins>
+<ins>    SimpleText(text = "Rating")                                                       </ins>
+<ins>    ratingWithMoviesDto?.let { ratingWithMovies ->                                    </ins>
 <ins>        SimpleText(text = ratingWithMovies.rating.name)                               </ins>
-<ins>        ratingWithMovies.movies.forEach { movie -&gt;                                    </ins>
-<ins>            SimpleText(text = &quot;Movie: ${movie.title}&quot;)                                </ins>
+<ins>        ratingWithMovies.movies.forEach { movie ->                                    </ins>
+<ins>            SimpleText(text = "Movie: ${movie.title}")                                </ins>
 <ins>        }                                                                             </ins>
 <ins>    }                                                                                 </ins>
 <ins>}                                                                                     </ins>
@@ -3424,10 +3424,10 @@ class MainActivity : ComponentActivity() {
                                                 
 <ins>@Composable                                     </ins>
 <ins>fun RatingList(                                 </ins>
-<ins>    ratings: List&lt;RatingDto&gt;,                   </ins>
-<ins>    onRatingClick: (String) -&gt; Unit,            </ins>
+<ins>    ratings: List<RatingDto>,                   </ins>
+<ins>    onRatingClick: (String) -> Unit,            </ins>
 <ins>) {                                             </ins>
-<ins>    SimpleText(text = &quot;Ratings&quot;)                </ins>
+<ins>    SimpleText(text = "Ratings")                </ins>
 <ins>    ratings.forEach {                           </ins>
 <ins>        SimpleText(text = it.name) {            </ins>
 <ins>            onRatingClick(it.id)                </ins>
@@ -3461,22 +3461,22 @@ class MainActivity : ComponentActivity() {
 <ins>    viewModel: MovieViewModel = viewModel()                                       </ins>
 <ins>) {                                                                               </ins>
 <ins>    // This is a hideous, but simple simple test screen                           </ins>
-<ins>    //   (There are some bad things happening here... We&#39;ll fix it!)              </ins>
-<ins>    // Don&#39;t worry about how it does its job; we&#39;ll cover that soon!              </ins>
+<ins>    //   (There are some bad things happening here... We'll fix it!)              </ins>
+<ins>    // Don't worry about how it does its job; we'll cover that soon!              </ins>
 <ins>    Column {                                                                      </ins>
 <ins>        Row {                                                                     </ins>
-<ins>            SimpleButton(&quot;Reset&quot;) {                                               </ins>
+<ins>            SimpleButton("Reset") {                                               </ins>
 <ins>                viewModel.resetDatabase()                                         </ins>
 <ins>            }                                                                     </ins>
-<ins>            SimpleButton(&quot;Ratings&quot;) {                                             </ins>
+<ins>            SimpleButton("Ratings") {                                             </ins>
 <ins>                viewModel.switchTo(RatingList)                                    </ins>
 <ins>            }                                                                     </ins>
 <ins>        }                                                                         </ins>
 <ins>        Row {                                                                     </ins>
-<ins>            SimpleButton(&quot;Movies&quot;) {                                              </ins>
+<ins>            SimpleButton("Movies") {                                              </ins>
 <ins>                viewModel.switchTo(MovieList)                                     </ins>
 <ins>            }                                                                     </ins>
-<ins>            SimpleButton(&quot;Actors&quot;) {                                              </ins>
+<ins>            SimpleButton("Actors") {                                              </ins>
 <ins>                viewModel.switchTo(ActorList)                                     </ins>
 <ins>            }                                                                     </ins>
 <ins>        }                                                                         </ins>
@@ -3486,14 +3486,14 @@ class MainActivity : ComponentActivity() {
 <ins>        val actors by viewModel.actorsFlow.collectAsState(initial = emptyList())  </ins>
                                                                                   
 <ins>        when(val screen = viewModel.screen) {                                     </ins>
-<ins>            RatingList -&gt; RatingList(ratings = ratings) { id -&gt;                   </ins>
+<ins>            RatingList -> RatingList(ratings = ratings) { id ->                   </ins>
 <ins>                viewModel.switchTo(RatingScreen(id))                              </ins>
 <ins>            }                                                                     </ins>
-<ins>            MovieList -&gt; MovieList(movies = movies)                               </ins>
-<ins>            ActorList -&gt; ActorList(actors = actors)                               </ins>
-<ins>            is RatingScreen -&gt; RatingDisplay(                                     </ins>
+<ins>            MovieList -> MovieList(movies = movies)                               </ins>
+<ins>            ActorList -> ActorList(actors = actors)                               </ins>
+<ins>            is RatingScreen -> RatingDisplay(                                     </ins>
 <ins>                ratingId = screen.id,                                             </ins>
-<ins>                fetchRatingWithMovies = { id -&gt;                                   </ins>
+<ins>                fetchRatingWithMovies = { id ->                                   </ins>
 <ins>                    viewModel.getRatingWithMovies(id)                             </ins>
 <ins>                }                                                                 </ins>
 <ins>            )                                                                     </ins>

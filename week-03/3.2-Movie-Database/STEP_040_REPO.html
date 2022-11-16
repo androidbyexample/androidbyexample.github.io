@@ -2634,14 +2634,14 @@
       
       
         <label class="md-nav__link" for="__nav_16_1">
-          12.1 Legacy views
+          12.1 Testing
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="12.1 Legacy views" data-md-level="2">
+      <nav class="md-nav" aria-label="12.1 Testing" data-md-level="2">
         <label class="md-nav__title" for="__nav_16_1">
           <span class="md-nav__icon md-icon"></span>
-          12.1 Legacy views
+          12.1 Testing
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2651,8 +2651,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-12/12.1-Legacy-views/index.html" class="md-nav__link">
-        Legacy Views
+      <a href="../../week-12/12.1-Testing/index.html" class="md-nav__link">
+        Testing
       </a>
     </li>
   
@@ -2681,14 +2681,14 @@
       
       
         <label class="md-nav__link" for="__nav_16_2">
-          12.2 Legacy fragments
+          12.2 Nfc
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="12.2 Legacy fragments" data-md-level="2">
+      <nav class="md-nav" aria-label="12.2 Nfc" data-md-level="2">
         <label class="md-nav__title" for="__nav_16_2">
           <span class="md-nav__icon md-icon"></span>
-          12.2 Legacy fragments
+          12.2 Nfc
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2698,8 +2698,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-12/12.2-Legacy-fragments/index.html" class="md-nav__link">
-        Legacy Fragments
+      <a href="../../week-12/12.2-Nfc/index.html" class="md-nav__link">
+        NFC
       </a>
     </li>
   
@@ -2764,14 +2764,14 @@
       
       
         <label class="md-nav__link" for="__nav_17_1">
-          13.1 Testing
+          13.1 Legacy views
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="13.1 Testing" data-md-level="2">
+      <nav class="md-nav" aria-label="13.1 Legacy views" data-md-level="2">
         <label class="md-nav__title" for="__nav_17_1">
           <span class="md-nav__icon md-icon"></span>
-          13.1 Testing
+          13.1 Legacy views
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2781,8 +2781,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-13/13.1-Testing/index.html" class="md-nav__link">
-        Testing
+      <a href="../../week-13/13.1-Legacy-views/index.html" class="md-nav__link">
+        Legacy Views
       </a>
     </li>
   
@@ -2811,14 +2811,14 @@
       
       
         <label class="md-nav__link" for="__nav_17_2">
-          13.2 Nfc
+          13.2 Legacy fragments
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="13.2 Nfc" data-md-level="2">
+      <nav class="md-nav" aria-label="13.2 Legacy fragments" data-md-level="2">
         <label class="md-nav__title" for="__nav_17_2">
           <span class="md-nav__icon md-icon"></span>
-          13.2 Nfc
+          13.2 Legacy fragments
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2828,8 +2828,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-13/13.2-Nfc/index.html" class="md-nav__link">
-        NFC
+      <a href="../../week-13/13.2-Legacy-fragments/index.html" class="md-nav__link">
+        Legacy Fragments
       </a>
     </li>
   
@@ -3114,16 +3114,16 @@
 <pre>
 buildscript {                                                                                       
     ext {                                                                                           
-        compose_ui_version = &#39;1.2.1&#39;                                                                
-        compose_compiler_version = &#39;1.3.1&#39;                                                          
-<ins>        room_version = &#39;2.4.3&#39;                                                                      </ins>
+        compose_ui_version = '1.2.1'                                                                
+        compose_compiler_version = '1.3.1'                                                          
+<ins>        room_version = '2.4.3'                                                                      </ins>
     }                                                                                               
 }// Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {                                                                                           
-    id &#39;com.android.application&#39; version &#39;7.3.0-rc01&#39; apply false                                   
-    id &#39;com.android.library&#39; version &#39;7.3.0-rc01&#39; apply false                                       
-    id &#39;org.jetbrains.kotlin.android&#39; version &#39;1.7.10&#39; apply false                                  
-<ins>    id &#39;com.google.devtools.ksp&#39; version &#39;1.7.10-1.0.6&#39; apply false                                 </ins>
+    id 'com.android.application' version '7.3.0-rc01' apply false                                   
+    id 'com.android.library' version '7.3.0-rc01' apply false                                       
+    id 'org.jetbrains.kotlin.android' version '1.7.10' apply false                                  
+<ins>    id 'com.google.devtools.ksp' version '1.7.10-1.0.6' apply false                                 </ins>
 }                                                                                                   
 </pre>
 </div>
@@ -3133,13 +3133,13 @@ plugins {
 <div class="sas1-code-file" style="--sas1-file-name: '/data/build.gradle';">
 <pre>
 plugins {                                                                                              
-    id &#39;com.android.library&#39;                                                                           
-    id &#39;org.jetbrains.kotlin.android&#39;                                                                  
-<ins>    id &#39;com.google.devtools.ksp&#39;                                                                       </ins>
+    id 'com.android.library'                                                                           
+    id 'org.jetbrains.kotlin.android'                                                                  
+<ins>    id 'com.google.devtools.ksp'                                                                       </ins>
 }                                                                                                      
                                                                                                        
 android {                                                                                              
-    namespace &#39;com.javadude.movies.data&#39;                                                               
+    namespace 'com.javadude.movies.data'                                                               
 <del>//  compileSdk 32                                                                                      </del>
 <ins>    compileSdk 33                                                                                      </ins>
                                                                                                        
@@ -3148,14 +3148,14 @@ android {
 <del>//      targetSdk 32                                                                                   </del>
 <ins>        targetSdk 33                                                                                   </ins>
                                                                                                        
-        testInstrumentationRunner &quot;androidx.test.runner.AndroidJUnitRunner&quot;                            
-        consumerProguardFiles &quot;consumer-rules.pro&quot;                                                     
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"                            
+        consumerProguardFiles "consumer-rules.pro"                                                     
     }                                                                                                  
                                                                                                        
     buildTypes {                                                                                       
         release {                                                                                      
             minifyEnabled false                                                                        
-            proguardFiles getDefaultProguardFile(&#39;proguard-android-optimize.txt&#39;), &#39;proguard-rules.pro&#39;
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }                                                                                              
     }                                                                                                  
     compileOptions {                                                                                   
@@ -3163,23 +3163,23 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8                                                    
     }                                                                                                  
     kotlinOptions {                                                                                    
-        jvmTarget = &#39;1.8&#39;                                                                              
+        jvmTarget = '1.8'                                                                              
     }                                                                                                  
 }                                                                                                      
                                                                                                        
 dependencies {                                                                                         
-<ins>    implementation &quot;androidx.room:room-runtime:$room_version&quot;                                          </ins>
-<ins>    implementation &quot;androidx.room:room-ktx:$room_version&quot;                                              </ins>
-<ins>    ksp &quot;androidx.room:room-compiler:$room_version&quot;                                                    </ins>
+<ins>    implementation "androidx.room:room-runtime:$room_version"                                          </ins>
+<ins>    implementation "androidx.room:room-ktx:$room_version"                                              </ins>
+<ins>    ksp "androidx.room:room-compiler:$room_version"                                                    </ins>
                                                                                                        
-<del>//  implementation &#39;androidx.core:core-ktx:1.7.0&#39;                                                      </del>
-<del>//  implementation &#39;androidx.appcompat:appcompat:1.5.0&#39;                                                </del>
-<ins>    implementation &#39;androidx.core:core-ktx:1.9.0&#39;                                                      </ins>
-<ins>    implementation &#39;androidx.appcompat:appcompat:1.5.1&#39;                                                </ins>
-    implementation &#39;com.google.android.material:material:1.6.1&#39;                                        
-    testImplementation &#39;junit:junit:4.13.2&#39;                                                            
-    androidTestImplementation &#39;androidx.test.ext:junit:1.1.3&#39;                                          
-    androidTestImplementation &#39;androidx.test.espresso:espresso-core:3.4.0&#39;                             
+<del>//  implementation 'androidx.core:core-ktx:1.7.0'                                                      </del>
+<del>//  implementation 'androidx.appcompat:appcompat:1.5.0'                                                </del>
+<ins>    implementation 'androidx.core:core-ktx:1.9.0'                                                      </ins>
+<ins>    implementation 'androidx.appcompat:appcompat:1.5.1'                                                </ins>
+    implementation 'com.google.android.material:material:1.6.1'                                        
+    testImplementation 'junit:junit:4.13.2'                                                            
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'                                          
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'                             
 }                                                                                                      
 </pre>
 </div>
@@ -3189,12 +3189,12 @@ dependencies {
 <div class="sas1-code-file" style="--sas1-file-name: '/repository/build.gradle';">
 <pre>
 plugins {                                                                                              
-    id &#39;com.android.library&#39;                                                                           
-    id &#39;org.jetbrains.kotlin.android&#39;                                                                  
+    id 'com.android.library'                                                                           
+    id 'org.jetbrains.kotlin.android'                                                                  
 }                                                                                                      
                                                                                                        
 android {                                                                                              
-    namespace &#39;com.javadude.movies.repository&#39;                                                         
+    namespace 'com.javadude.movies.repository'                                                         
 <del>//  compileSdk 32                                                                                      </del>
 <ins>    compileSdk 33                                                                                      </ins>
                                                                                                        
@@ -3203,14 +3203,14 @@ android {
 <del>//      targetSdk 32                                                                                   </del>
 <ins>        targetSdk 33                                                                                   </ins>
                                                                                                        
-        testInstrumentationRunner &quot;androidx.test.runner.AndroidJUnitRunner&quot;                            
-        consumerProguardFiles &quot;consumer-rules.pro&quot;                                                     
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"                            
+        consumerProguardFiles "consumer-rules.pro"                                                     
     }                                                                                                  
                                                                                                        
     buildTypes {                                                                                       
         release {                                                                                      
             minifyEnabled false                                                                        
-            proguardFiles getDefaultProguardFile(&#39;proguard-android-optimize.txt&#39;), &#39;proguard-rules.pro&#39;
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }                                                                                              
     }                                                                                                  
     compileOptions {                                                                                   
@@ -3218,19 +3218,19 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8                                                    
     }                                                                                                  
     kotlinOptions {                                                                                    
-        jvmTarget = &#39;1.8&#39;                                                                              
+        jvmTarget = '1.8'                                                                              
     }                                                                                                  
 }                                                                                                      
                                                                                                        
 dependencies {                                                                                         
-<del>//  implementation &#39;androidx.core:core-ktx:1.7.0&#39;                                                      </del>
-<del>//  implementation &#39;androidx.appcompat:appcompat:1.5.0&#39;                                                </del>
-<ins>    implementation &#39;androidx.core:core-ktx:1.9.0&#39;                                                      </ins>
-<ins>    implementation &#39;androidx.appcompat:appcompat:1.5.1&#39;                                                </ins>
-    implementation &#39;com.google.android.material:material:1.6.1&#39;                                        
-    testImplementation &#39;junit:junit:4.13.2&#39;                                                            
-    androidTestImplementation &#39;androidx.test.ext:junit:1.1.3&#39;                                          
-    androidTestImplementation &#39;androidx.test.espresso:espresso-core:3.4.0&#39;                             
+<del>//  implementation 'androidx.core:core-ktx:1.7.0'                                                      </del>
+<del>//  implementation 'androidx.appcompat:appcompat:1.5.0'                                                </del>
+<ins>    implementation 'androidx.core:core-ktx:1.9.0'                                                      </ins>
+<ins>    implementation 'androidx.appcompat:appcompat:1.5.1'                                                </ins>
+    implementation 'com.google.android.material:material:1.6.1'                                        
+    testImplementation 'junit:junit:4.13.2'                                                            
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'                                          
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'                             
 }                                                                                                      
 </pre>
 </div>

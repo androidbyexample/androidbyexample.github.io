@@ -2730,14 +2730,14 @@
       
       
         <label class="md-nav__link" for="__nav_16_1">
-          12.1 Legacy views
+          12.1 Testing
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="12.1 Legacy views" data-md-level="2">
+      <nav class="md-nav" aria-label="12.1 Testing" data-md-level="2">
         <label class="md-nav__title" for="__nav_16_1">
           <span class="md-nav__icon md-icon"></span>
-          12.1 Legacy views
+          12.1 Testing
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2747,8 +2747,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-12/12.1-Legacy-views/index.html" class="md-nav__link">
-        Legacy Views
+      <a href="../../week-12/12.1-Testing/index.html" class="md-nav__link">
+        Testing
       </a>
     </li>
   
@@ -2777,14 +2777,14 @@
       
       
         <label class="md-nav__link" for="__nav_16_2">
-          12.2 Legacy fragments
+          12.2 Nfc
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="12.2 Legacy fragments" data-md-level="2">
+      <nav class="md-nav" aria-label="12.2 Nfc" data-md-level="2">
         <label class="md-nav__title" for="__nav_16_2">
           <span class="md-nav__icon md-icon"></span>
-          12.2 Legacy fragments
+          12.2 Nfc
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2794,8 +2794,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-12/12.2-Legacy-fragments/index.html" class="md-nav__link">
-        Legacy Fragments
+      <a href="../../week-12/12.2-Nfc/index.html" class="md-nav__link">
+        NFC
       </a>
     </li>
   
@@ -2860,14 +2860,14 @@
       
       
         <label class="md-nav__link" for="__nav_17_1">
-          13.1 Testing
+          13.1 Legacy views
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="13.1 Testing" data-md-level="2">
+      <nav class="md-nav" aria-label="13.1 Legacy views" data-md-level="2">
         <label class="md-nav__title" for="__nav_17_1">
           <span class="md-nav__icon md-icon"></span>
-          13.1 Testing
+          13.1 Legacy views
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2877,8 +2877,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-13/13.1-Testing/index.html" class="md-nav__link">
-        Testing
+      <a href="../../week-13/13.1-Legacy-views/index.html" class="md-nav__link">
+        Legacy Views
       </a>
     </li>
   
@@ -2907,14 +2907,14 @@
       
       
         <label class="md-nav__link" for="__nav_17_2">
-          13.2 Nfc
+          13.2 Legacy fragments
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="13.2 Nfc" data-md-level="2">
+      <nav class="md-nav" aria-label="13.2 Legacy fragments" data-md-level="2">
         <label class="md-nav__title" for="__nav_17_2">
           <span class="md-nav__icon md-icon"></span>
-          13.2 Nfc
+          13.2 Legacy fragments
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2924,8 +2924,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-13/13.2-Nfc/index.html" class="md-nav__link">
-        NFC
+      <a href="../../week-13/13.2-Legacy-fragments/index.html" class="md-nav__link">
+        Legacy Fragments
       </a>
     </li>
   
@@ -3292,7 +3292,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)                                            
         setContent {                                                                  
             MoviesTheme {                                                             
-                // A surface container using the &#39;background&#39; color from the theme    
+                // A surface container using the 'background' color from the theme    
                 Surface(                                                              
                     modifier = Modifier.fillMaxSize(),                                
                     color = MaterialTheme.colors.background                           
@@ -3307,7 +3307,7 @@ class MainActivity : ComponentActivity() {
 @Composable                                                                           
 fun SimpleButton(                                                                     
     text: String,                                                                     
-    onClick: () -&gt; Unit,                                                              
+    onClick: () -> Unit,                                                              
 ) =                                                                                   
     Button(onClick = onClick, modifier = Modifier.padding(8.dp)) {                    
 <del>//      SimpleText(text = text)                                                       </del>
@@ -3317,7 +3317,7 @@ fun SimpleButton(
 @Composable                                                                           
 fun SimpleText(                                                                       
     text: String,                                                                     
-<ins>    onClick: () -&gt; Unit = {},                                                         </ins>
+<ins>    onClick: () -> Unit = {},                                                         </ins>
 ) =                                                                                   
 <del>//  Text(text = text, modifier = Modifier.padding(8.dp))                              </del>
 <ins>    Text(                                                                             </ins>
@@ -3334,22 +3334,22 @@ fun TestScreen(
     viewModel: MovieViewModel = viewModel()                                           
 ) {                                                                                   
     // This is a hideous, but simple simple test screen                               
-    //   (There are some bad things happening here... We&#39;ll fix it!)                  
-    // Don&#39;t worry about how it does its job; we&#39;ll cover that soon!                  
+    //   (There are some bad things happening here... We'll fix it!)                  
+    // Don't worry about how it does its job; we'll cover that soon!                  
     Column {                                                                          
         Row {                                                                         
-            SimpleButton(&quot;Reset&quot;) {                                                   
+            SimpleButton("Reset") {                                                   
                 viewModel.resetDatabase()                                             
             }                                                                         
-            SimpleButton(&quot;Ratings&quot;) {                                                 
+            SimpleButton("Ratings") {                                                 
                 viewModel.switchTo(RatingList)                                        
             }                                                                         
         }                                                                             
         Row {                                                                         
-            SimpleButton(&quot;Movies&quot;) {                                                  
+            SimpleButton("Movies") {                                                  
                 viewModel.switchTo(MovieList)                                         
             }                                                                         
-            SimpleButton(&quot;Actors&quot;) {                                                  
+            SimpleButton("Actors") {                                                  
                 viewModel.switchTo(ActorList)                                         
             }                                                                         
         }                                                                             
@@ -3359,16 +3359,16 @@ fun TestScreen(
         val actors by viewModel.actorsFlow.collectAsState(initial = emptyList())      
                                                                                       
 <del>//      when(viewModel.screen) {                                                      </del>
-<del>//          RatingList -&gt; RatingList(ratings = ratings)                               </del>
+<del>//          RatingList -> RatingList(ratings = ratings)                               </del>
 <ins>        when(val screen = viewModel.screen) {                                         </ins>
-<ins>            RatingList -&gt; RatingList(ratings = ratings) { id -&gt;                       </ins>
+<ins>            RatingList -> RatingList(ratings = ratings) { id ->                       </ins>
 <ins>                viewModel.switchTo(RatingScreen(id))                                  </ins>
 <ins>            }                                                                         </ins>
-            MovieList -&gt; MovieList(movies = movies)                                   
-            ActorList -&gt; ActorList(actors = actors)                                   
-<ins>            is RatingScreen -&gt; RatingDisplay(                                         </ins>
+            MovieList -> MovieList(movies = movies)                                   
+            ActorList -> ActorList(actors = actors)                                   
+<ins>            is RatingScreen -> RatingDisplay(                                         </ins>
 <ins>                ratingId = screen.id,                                                 </ins>
-<ins>                fetchRatingWithMovies = { id -&gt;                                       </ins>
+<ins>                fetchRatingWithMovies = { id ->                                       </ins>
 <ins>                    viewModel.getRatingWithMovies(id)                                 </ins>
 <ins>                }                                                                     </ins>
 <ins>            )                                                                         </ins>
@@ -3378,11 +3378,11 @@ fun TestScreen(
                                                                                       
 @Composable                                                                           
 fun RatingList(                                                                       
-<del>//  ratings: List&lt;RatingDto&gt;                                                          </del>
-<ins>    ratings: List&lt;RatingDto&gt;,                                                         </ins>
-<ins>    onRatingClick: (String) -&gt; Unit,                                                  </ins>
+<del>//  ratings: List<RatingDto>                                                          </del>
+<ins>    ratings: List<RatingDto>,                                                         </ins>
+<ins>    onRatingClick: (String) -> Unit,                                                  </ins>
 ) {                                                                                   
-    SimpleText(text = &quot;Ratings&quot;)                                                      
+    SimpleText(text = "Ratings")                                                      
     ratings.forEach {                                                                 
 <del>//      SimpleText(text = it.name)                                                    </del>
 <ins>        SimpleText(text = it.name) {                                                  </ins>
@@ -3393,9 +3393,9 @@ fun RatingList(
                                                                                       
 @Composable                                                                           
 fun MovieList(                                                                        
-    movies: List&lt;MovieDto&gt;                                                            
+    movies: List<MovieDto>                                                            
 ) {                                                                                   
-    SimpleText(text = &quot;Movies&quot;)                                                       
+    SimpleText(text = "Movies")                                                       
     movies.forEach {                                                                  
         SimpleText(text = it.title)                                                   
     }                                                                                 
@@ -3403,9 +3403,9 @@ fun MovieList(
                                                                                       
 @Composable                                                                           
 fun ActorList(                                                                        
-    actors: List&lt;ActorDto&gt;                                                            
+    actors: List<ActorDto>                                                            
 ) {                                                                                   
-    SimpleText(text = &quot;Actors&quot;)                                                       
+    SimpleText(text = "Actors")                                                       
     actors.forEach {                                                                  
         SimpleText(text = it.name)                                                    
     }                                                                                 
@@ -3415,13 +3415,13 @@ fun ActorList(
 fun MovieDisplay(                                                                     
     movie: MovieDto                                                                   
 ) {                                                                                   
-    SimpleText(text = &quot;Movie&quot;)                                                        
+    SimpleText(text = "Movie")                                                        
     Row {                                                                             
-        SimpleText(text = &quot;Title&quot;)                                                    
+        SimpleText(text = "Title")                                                    
         SimpleText(text = movie.title)                                                
     }                                                                                 
     Row {                                                                             
-        SimpleText(text = &quot;Description&quot;)                                              
+        SimpleText(text = "Description")                                              
         SimpleText(text = movie.description)                                          
     }                                                                                 
 }                                                                                     
@@ -3429,20 +3429,20 @@ fun MovieDisplay(
 <ins>@Composable                                                                           </ins>
 <ins>fun RatingDisplay(                                                                    </ins>
 <ins>    ratingId: String,                                                                 </ins>
-<ins>    fetchRatingWithMovies: suspend (String) -&gt; RatingWithMoviesDto,                   </ins>
+<ins>    fetchRatingWithMovies: suspend (String) -> RatingWithMoviesDto,                   </ins>
 <ins>) {                                                                                   </ins>
-<ins>    var ratingWithMoviesDto by remember { mutableStateOf&lt;RatingWithMoviesDto?&gt;(null) }</ins>
+<ins>    var ratingWithMoviesDto by remember { mutableStateOf<RatingWithMoviesDto?>(null) }</ins>
                                                                                       
 <ins>    LaunchedEffect(key1 = ratingId) {                                                 </ins>
 <ins>        // starts a coroutine to fetch the rating                                     </ins>
 <ins>        ratingWithMoviesDto = fetchRatingWithMovies(ratingId)                         </ins>
 <ins>    }                                                                                 </ins>
                                                                                       
-<ins>    SimpleText(text = &quot;Rating&quot;)                                                       </ins>
-<ins>    ratingWithMoviesDto?.let { ratingWithMovies -&gt;                                    </ins>
+<ins>    SimpleText(text = "Rating")                                                       </ins>
+<ins>    ratingWithMoviesDto?.let { ratingWithMovies ->                                    </ins>
 <ins>        SimpleText(text = ratingWithMovies.rating.name)                               </ins>
-<ins>        ratingWithMovies.movies.forEach { movie -&gt;                                    </ins>
-<ins>            SimpleText(text = &quot;Movie: ${movie.title}&quot;)                                </ins>
+<ins>        ratingWithMovies.movies.forEach { movie ->                                    </ins>
+<ins>            SimpleText(text = "Movie: ${movie.title}")                                </ins>
 <ins>        }                                                                             </ins>
 <ins>    }                                                                                 </ins>
 <ins>}                                                                                     </ins>
@@ -3476,7 +3476,7 @@ object ActorList: Screen
 class MovieViewModel(application: Application) : AndroidViewModel(application) {  
     private val repository: MovieRepository = MovieDatabaseRepository(application)
                                                                                   
-    var screen by mutableStateOf&lt;Screen&gt;(RatingList)                              
+    var screen by mutableStateOf<Screen>(RatingList)                              
         private set                                                               
                                                                                   
     val ratingsFlow = repository.ratingsFlow                                      
@@ -3513,25 +3513,25 @@ import androidx.room.Transaction
 import androidx.room.Update                                                                        
 import kotlinx.coroutines.flow.Flow                                                                
                                                                                                    
-private val NotRated = Rating(id = &quot;r0&quot;, name = &quot;Not Rated&quot;, description = &quot;Not yet rated&quot;)        
-private val G = Rating(id = &quot;r1&quot;, name = &quot;G&quot;, description = &quot;General Audiences&quot;)                   
-private val PG = Rating(id = &quot;r2&quot;, name = &quot;PG&quot;, description = &quot;Parental Guidance Suggested&quot;)       
-private val PG13 = Rating(id = &quot;r3&quot;, name = &quot;PG-13&quot;, description = &quot;Unsuitable for those under 13&quot;)
-private val R = Rating(id = &quot;r4&quot;, name = &quot;R&quot;, description = &quot;Restricted - 17 and older&quot;)           
+private val NotRated = Rating(id = "r0", name = "Not Rated", description = "Not yet rated")        
+private val G = Rating(id = "r1", name = "G", description = "General Audiences")                   
+private val PG = Rating(id = "r2", name = "PG", description = "Parental Guidance Suggested")       
+private val PG13 = Rating(id = "r3", name = "PG-13", description = "Unsuitable for those under 13")
+private val R = Rating(id = "r4", name = "R", description = "Restricted - 17 and older")           
                                                                                                    
 @Dao                                                                                               
 abstract class MovieDAO {                                                                          
-    @Query(&quot;SELECT * FROM Rating&quot;)                                                                 
-    abstract fun getRatingsFlow(): Flow&lt;List&lt;Rating&gt;&gt;                                              
+    @Query("SELECT * FROM Rating")                                                                 
+    abstract fun getRatingsFlow(): Flow<List<Rating>>                                              
                                                                                                    
-    @Query(&quot;SELECT * FROM Movie&quot;)                                                                  
-    abstract fun getMoviesFlow(): Flow&lt;List&lt;Movie&gt;&gt;                                                
+    @Query("SELECT * FROM Movie")                                                                  
+    abstract fun getMoviesFlow(): Flow<List<Movie>>                                                
                                                                                                    
-    @Query(&quot;SELECT * FROM Actor&quot;)                                                                  
-    abstract fun getActorsFlow(): Flow&lt;List&lt;Actor&gt;&gt;                                                
+    @Query("SELECT * FROM Actor")                                                                  
+    abstract fun getActorsFlow(): Flow<List<Actor>>                                                
                                                                                                    
 <ins>    @Transaction                                                                                   </ins>
-<ins>    @Query(&quot;SELECT * FROM Rating WHERE id = :id&quot;)                                                  </ins>
+<ins>    @Query("SELECT * FROM Rating WHERE id = :id")                                                  </ins>
 <ins>    abstract suspend fun getRatingWithMovies(id: String): RatingWithMovies                         </ins>
                                                                                                    
     @Insert                                                                                        
@@ -3561,13 +3561,13 @@ abstract class MovieDAO {
     @Delete                                                                                        
     abstract suspend fun delete(vararg roles: Role)                                                
                                                                                                    
-    @Query(&quot;DELETE FROM Movie&quot;)                                                                    
+    @Query("DELETE FROM Movie")                                                                    
     abstract suspend fun clearMovies()                                                             
-    @Query(&quot;DELETE FROM Actor&quot;)                                                                    
+    @Query("DELETE FROM Actor")                                                                    
     abstract suspend fun clearActors()                                                             
-    @Query(&quot;DELETE FROM Rating&quot;)                                                                   
+    @Query("DELETE FROM Rating")                                                                   
     abstract suspend fun clearRatings()                                                            
-    @Query(&quot;DELETE FROM Role&quot;)                                                                     
+    @Query("DELETE FROM Role")                                                                     
     abstract suspend fun clearRoles()                                                              
                                                                                                    
     @Transaction                                                                                   
@@ -3580,27 +3580,27 @@ abstract class MovieDAO {
         insert(NotRated, G, PG, PG13, R)                                                           
                                                                                                    
         insert(                                                                                    
-            Movie(&quot;m1&quot;, &quot;The Transporter&quot;, &quot;Jason Statham kicks a guy in the face&quot;, &quot;r3&quot;),         
-            Movie(&quot;m2&quot;, &quot;Transporter 2&quot;, &quot;Jason Statham kicks a bunch of guys in the face&quot;, &quot;r4&quot;), 
-            Movie(&quot;m3&quot;, &quot;Hobbs and Shaw&quot;, &quot;Cars, Explosions and Stuff&quot;, &quot;r3&quot;),                     
-            Movie(&quot;m4&quot;, &quot;Jumanji - Welcome to the Jungle&quot;, &quot;The Rock smolders&quot;, &quot;r3&quot;),             
+            Movie("m1", "The Transporter", "Jason Statham kicks a guy in the face", "r3"),         
+            Movie("m2", "Transporter 2", "Jason Statham kicks a bunch of guys in the face", "r4"), 
+            Movie("m3", "Hobbs and Shaw", "Cars, Explosions and Stuff", "r3"),                     
+            Movie("m4", "Jumanji - Welcome to the Jungle", "The Rock smolders", "r3"),             
         )                                                                                          
         insert(                                                                                    
-            Actor(&quot;a1&quot;, &quot;Jason Statham&quot;),                                                          
-            Actor(&quot;a2&quot;, &quot;The Rock&quot;),                                                               
-            Actor(&quot;a3&quot;, &quot;Shu Qi&quot;),                                                                 
-            Actor(&quot;a4&quot;, &quot;Amber Valletta&quot;),                                                         
-            Actor(&quot;a5&quot;, &quot;Kevin Hart&quot;),                                                             
+            Actor("a1", "Jason Statham"),                                                          
+            Actor("a2", "The Rock"),                                                               
+            Actor("a3", "Shu Qi"),                                                                 
+            Actor("a4", "Amber Valletta"),                                                         
+            Actor("a5", "Kevin Hart"),                                                             
         )                                                                                          
         insert(                                                                                    
-            Role(&quot;m1&quot;, &quot;a1&quot;, &quot;Frank Martin&quot;, 1),                                                   
-            Role(&quot;m1&quot;, &quot;a3&quot;, &quot;Lai&quot;, 2),                                                            
-            Role(&quot;m2&quot;, &quot;a1&quot;, &quot;Frank Martin&quot;, 1),                                                   
-            Role(&quot;m2&quot;, &quot;a4&quot;, &quot;Audrey Billings&quot;, 2),                                                
-            Role(&quot;m3&quot;, &quot;a2&quot;, &quot;Hobbs&quot;, 1),                                                          
-            Role(&quot;m3&quot;, &quot;a1&quot;, &quot;Shaw&quot;, 2),                                                           
-            Role(&quot;m4&quot;, &quot;a2&quot;, &quot;Spencer&quot;, 1),                                                        
-            Role(&quot;m4&quot;, &quot;a5&quot;, &quot;Fridge&quot;, 2),                                                         
+            Role("m1", "a1", "Frank Martin", 1),                                                   
+            Role("m1", "a3", "Lai", 2),                                                            
+            Role("m2", "a1", "Frank Martin", 1),                                                   
+            Role("m2", "a4", "Audrey Billings", 2),                                                
+            Role("m3", "a2", "Hobbs", 1),                                                          
+            Role("m3", "a1", "Shaw", 2),                                                           
+            Role("m4", "a2", "Spencer", 1),                                                        
+            Role("m4", "a5", "Fridge", 2),                                                         
         )                                                                                          
     }                                                                                              
 }                                                                                                  
@@ -3626,17 +3626,17 @@ data class Rating(
     var description: String,                                  
 )                                                             
                                                               
-<ins>// ONE-TO-MANY relationship (Rating -&gt; Movies)                </ins>
+<ins>// ONE-TO-MANY relationship (Rating -> Movies)                </ins>
 <ins>// NOTE: THIS IS NOT AN ENTITY!                               </ins>
 <ins>data class RatingWithMovies(                                  </ins>
 <ins>    @Embedded                                                 </ins>
 <ins>    val rating: Rating,                                       </ins>
                                                               
 <ins>    @Relation(                                                </ins>
-<ins>        parentColumn = &quot;id&quot;,                                  </ins>
-<ins>        entityColumn = &quot;ratingId&quot;,                            </ins>
+<ins>        parentColumn = "id",                                  </ins>
+<ins>        entityColumn = "ratingId",                            </ins>
 <ins>    )                                                         </ins>
-<ins>    val movies: List&lt;Movie&gt;                                   </ins>
+<ins>    val movies: List<Movie>                                   </ins>
 <ins>)                                                             </ins>
 </pre>
 </div>
@@ -3656,17 +3656,17 @@ class MovieDatabaseRepository(context: Context): MovieRepository {
                                                                                   
     override val ratingsFlow =                                                    
         dao.getRatingsFlow()                                                      
-            .map { ratings -&gt;                                                     
+            .map { ratings ->                                                     
                 ratings.map { it.toDto() }                                        
             }                                                                     
     override val moviesFlow =                                                     
         dao.getMoviesFlow()                                                       
-            .map { movies -&gt;                                                      
+            .map { movies ->                                                      
                 movies.map { it.toDto() }                                         
             }                                                                     
     override val actorsFlow =                                                     
         dao.getActorsFlow()                                                       
-            .map { actors -&gt;                                                      
+            .map { actors ->                                                      
                 actors.map { it.toDto() }                                         
             }                                                                     
                                                                                   
@@ -3699,9 +3699,9 @@ package com.javadude.movies.repository
 import kotlinx.coroutines.flow.Flow                                 
                                                                     
 interface MovieRepository {                                         
-    val ratingsFlow: Flow&lt;List&lt;RatingDto&gt;&gt;                          
-    val moviesFlow: Flow&lt;List&lt;MovieDto&gt;&gt;                            
-    val actorsFlow: Flow&lt;List&lt;ActorDto&gt;&gt;                            
+    val ratingsFlow: Flow<List<RatingDto>>                          
+    val moviesFlow: Flow<List<MovieDto>>                            
+    val actorsFlow: Flow<List<ActorDto>>                            
                                                                     
 <ins>    suspend fun getRatingWithMovies(id: String): RatingWithMoviesDto</ins>
                                                                     
@@ -3744,10 +3744,10 @@ internal fun RatingDto.toEntity() =
                                                                   
 <ins>data class RatingWithMoviesDto(                                   </ins>
 <ins>    val rating: RatingDto,                                        </ins>
-<ins>    val movies: List&lt;MovieDto&gt;,                                   </ins>
+<ins>    val movies: List<MovieDto>,                                   </ins>
 <ins>)                                                                 </ins>
                                                                   
-<ins>// only need the toDto(); we don&#39;t use this to do database updates</ins>
+<ins>// only need the toDto(); we don't use this to do database updates</ins>
 <ins>internal fun RatingWithMovies.toDto() =                           </ins>
 <ins>    RatingWithMoviesDto(                                          </ins>
 <ins>        rating = rating.toDto(),                                  </ins>

@@ -2634,14 +2634,14 @@
       
       
         <label class="md-nav__link" for="__nav_16_1">
-          12.1 Legacy views
+          12.1 Testing
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="12.1 Legacy views" data-md-level="2">
+      <nav class="md-nav" aria-label="12.1 Testing" data-md-level="2">
         <label class="md-nav__title" for="__nav_16_1">
           <span class="md-nav__icon md-icon"></span>
-          12.1 Legacy views
+          12.1 Testing
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2651,8 +2651,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-12/12.1-Legacy-views/index.html" class="md-nav__link">
-        Legacy Views
+      <a href="../../week-12/12.1-Testing/index.html" class="md-nav__link">
+        Testing
       </a>
     </li>
   
@@ -2681,14 +2681,14 @@
       
       
         <label class="md-nav__link" for="__nav_16_2">
-          12.2 Legacy fragments
+          12.2 Nfc
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="12.2 Legacy fragments" data-md-level="2">
+      <nav class="md-nav" aria-label="12.2 Nfc" data-md-level="2">
         <label class="md-nav__title" for="__nav_16_2">
           <span class="md-nav__icon md-icon"></span>
-          12.2 Legacy fragments
+          12.2 Nfc
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2698,8 +2698,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-12/12.2-Legacy-fragments/index.html" class="md-nav__link">
-        Legacy Fragments
+      <a href="../../week-12/12.2-Nfc/index.html" class="md-nav__link">
+        NFC
       </a>
     </li>
   
@@ -2764,14 +2764,14 @@
       
       
         <label class="md-nav__link" for="__nav_17_1">
-          13.1 Testing
+          13.1 Legacy views
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="13.1 Testing" data-md-level="2">
+      <nav class="md-nav" aria-label="13.1 Legacy views" data-md-level="2">
         <label class="md-nav__title" for="__nav_17_1">
           <span class="md-nav__icon md-icon"></span>
-          13.1 Testing
+          13.1 Legacy views
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2781,8 +2781,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-13/13.1-Testing/index.html" class="md-nav__link">
-        Testing
+      <a href="../../week-13/13.1-Legacy-views/index.html" class="md-nav__link">
+        Legacy Views
       </a>
     </li>
   
@@ -2811,14 +2811,14 @@
       
       
         <label class="md-nav__link" for="__nav_17_2">
-          13.2 Nfc
+          13.2 Legacy fragments
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="13.2 Nfc" data-md-level="2">
+      <nav class="md-nav" aria-label="13.2 Legacy fragments" data-md-level="2">
         <label class="md-nav__title" for="__nav_17_2">
           <span class="md-nav__icon md-icon"></span>
-          13.2 Nfc
+          13.2 Legacy fragments
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2828,8 +2828,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-13/13.2-Nfc/index.html" class="md-nav__link">
-        NFC
+      <a href="../../week-13/13.2-Legacy-fragments/index.html" class="md-nav__link">
+        Legacy Fragments
       </a>
     </li>
   
@@ -3102,23 +3102,23 @@
 <div class="sas1-code-file" style="--sas1-file-name: '/app/build.gradle';">
 <pre>
 plugins {                                                                                              
-    id &#39;com.android.application&#39;                                                                       
-    id &#39;org.jetbrains.kotlin.android&#39;                                                                  
-<div id="030-use-secrets-plugin">    id &#39;com.google.android.libraries.mapsplatform.secrets-gradle-plugin&#39;                               
+    id 'com.android.application'                                                                       
+    id 'org.jetbrains.kotlin.android'                                                                  
+<div id="030-use-secrets-plugin">    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'                               
 </div>}                                                                                                      
                                                                                                        
 android {                                                                                              
-    namespace &#39;com.javadude.carfinder&#39;                                                                 
+    namespace 'com.javadude.carfinder'                                                                 
 <div id="020-latest-android-sdk">    compileSdk 33                                                                                      
                                                                                                        
     defaultConfig {                                                                                    
-        applicationId &quot;com.javadude.carfinder&quot;                                                         
+        applicationId "com.javadude.carfinder"                                                         
         minSdk 21                                                                                      
         targetSdk 33                                                                                   
 </div>        versionCode 1                                                                                  
-        versionName &quot;1.0&quot;                                                                              
+        versionName "1.0"                                                                              
                                                                                                        
-        testInstrumentationRunner &quot;androidx.test.runner.AndroidJUnitRunner&quot;                            
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"                            
         vectorDrawables {                                                                              
             useSupportLibrary true                                                                     
         }                                                                                              
@@ -3127,7 +3127,7 @@ android {
     buildTypes {                                                                                       
         release {                                                                                      
             minifyEnabled false                                                                        
-            proguardFiles getDefaultProguardFile(&#39;proguard-android-optimize.txt&#39;), &#39;proguard-rules.pro&#39;
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }                                                                                              
     }                                                                                                  
     compileOptions {                                                                                   
@@ -3135,7 +3135,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8                                                    
     }                                                                                                  
     kotlinOptions {                                                                                    
-        jvmTarget = &#39;1.8&#39;                                                                              
+        jvmTarget = '1.8'                                                                              
     }                                                                                                  
     buildFeatures {                                                                                    
         compose true                                                                                   
@@ -3145,30 +3145,30 @@ android {
 </div>    }                                                                                                  
     packagingOptions {                                                                                 
         resources {                                                                                    
-            excludes += &#39;/META-INF/{AL2.0,LGPL2.1}&#39;                                                    
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'                                                    
         }                                                                                              
     }                                                                                                  
 }                                                                                                      
                                                                                                        
 dependencies {                                                                                         
-<div id="030-add-map-deps">    implementation &#39;com.google.maps.android:maps-ktx:3.3.0&#39;                                            
-    implementation &#39;com.google.maps.android:maps-compose:2.5.2&#39;                                        
+<div id="030-add-map-deps">    implementation 'com.google.maps.android:maps-ktx:3.3.0'                                            
+    implementation 'com.google.maps.android:maps-compose:2.5.2'                                        
 </div>                                                                                                       
-<div id="080-add-location-deps">    implementation &#39;com.google.android.gms:play-services-location:21.0.0&#39;                              
+<div id="080-add-location-deps">    implementation 'com.google.android.gms:play-services-location:21.0.0'                              
 </div>                                                                                                       
-<div id="020-update-all-highlighted-deps"><del>//  implementation &#39;androidx.compose.material:material-icons-extended:1.2.1&#39;                           </del>
-    implementation &#39;androidx.core:core-ktx:1.9.0&#39;                                                      
-    implementation &#39;androidx.lifecycle:lifecycle-runtime-ktx:2.5.1&#39;                                    
-    implementation &#39;androidx.activity:activity-compose:1.6.0&#39;                                          
-    implementation &quot;androidx.compose.ui:ui:$compose_ui_version&quot;                                        
-    implementation &quot;androidx.compose.ui:ui-tooling-preview:$compose_ui_version&quot;                        
-    implementation &#39;androidx.compose.material:material:1.2.1&#39;                                          
-    testImplementation &#39;junit:junit:4.13.2&#39;                                                            
-    androidTestImplementation &#39;androidx.test.ext:junit:1.1.3&#39;                                          
-    androidTestImplementation &#39;androidx.test.espresso:espresso-core:3.4.0&#39;                             
-    androidTestImplementation &quot;androidx.compose.ui:ui-test-junit4:$compose_ui_version&quot;                 
-    debugImplementation &quot;androidx.compose.ui:ui-tooling:$compose_ui_version&quot;                           
-    debugImplementation &quot;androidx.compose.ui:ui-test-manifest:$compose_ui_version&quot;                     
+<div id="020-update-all-highlighted-deps"><del>//  implementation 'androidx.compose.material:material-icons-extended:1.2.1'                           </del>
+    implementation 'androidx.core:core-ktx:1.9.0'                                                      
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'                                    
+    implementation 'androidx.activity:activity-compose:1.6.0'                                          
+    implementation "androidx.compose.ui:ui:$compose_ui_version"                                        
+    implementation "androidx.compose.ui:ui-tooling-preview:$compose_ui_version"                        
+    implementation 'androidx.compose.material:material:1.2.1'                                          
+    testImplementation 'junit:junit:4.13.2'                                                            
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'                                          
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'                             
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"                 
+    debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version"                           
+    debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"                     
 </div>}                                                                                                      
 </pre>
 </div>
@@ -3180,14 +3180,14 @@ dependencies {
 <ins>/*                                                                         </ins>
 <ins> * Copyright 2022 The Android Open Source Project                          </ins>
 <ins> *                                                                         </ins>
-<ins> * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);         </ins>
+<ins> * Licensed under the Apache License, Version 2.0 (the "License");         </ins>
 <ins> * you may not use this file except in compliance with the License.        </ins>
 <ins> * You may obtain a copy of the License at                                 </ins>
 <ins> *                                                                         </ins>
 <ins> *      http://www.apache.org/licenses/LICENSE-2.0                         </ins>
 <ins> *                                                                         </ins>
 <ins> * Unless required by applicable law or agreed to in writing, software     </ins>
-<ins> * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,       </ins>
+<ins> * distributed under the License is distributed on an "AS IS" BASIS,       </ins>
 <ins> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</ins>
 <ins> * See the License for the specific language governing permissions and     </ins>
 <ins> * limitations under the License.                                          </ins>
@@ -3205,7 +3205,7 @@ dependencies {
 <ins>        if (_directionsWalk != null) {                                     </ins>
 <ins>            return _directionsWalk!!                                       </ins>
 <ins>        }                                                                  </ins>
-<ins>        _directionsWalk = materialIcon(name = &quot;Filled.DirectionsWalk&quot;) {   </ins>
+<ins>        _directionsWalk = materialIcon(name = "Filled.DirectionsWalk") {   </ins>
 <ins>            materialPath {                                                 </ins>
 <ins>                moveTo(13.5f, 5.5f)                                        </ins>
 <ins>                curveToRelative(1.1f, 0.0f, 2.0f, -0.9f, 2.0f, -2.0f)      </ins>
@@ -3250,14 +3250,14 @@ dependencies {
 <ins>/*                                                                             </ins>
 <ins> * Copyright 2022 The Android Open Source Project                              </ins>
 <ins> *                                                                             </ins>
-<ins> * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);             </ins>
+<ins> * Licensed under the Apache License, Version 2.0 (the "License");             </ins>
 <ins> * you may not use this file except in compliance with the License.            </ins>
 <ins> * You may obtain a copy of the License at                                     </ins>
 <ins> *                                                                             </ins>
 <ins> *      http://www.apache.org/licenses/LICENSE-2.0                             </ins>
 <ins> *                                                                             </ins>
 <ins> * Unless required by applicable law or agreed to in writing, software         </ins>
-<ins> * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,           </ins>
+<ins> * distributed under the License is distributed on an "AS IS" BASIS,           </ins>
 <ins> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.    </ins>
 <ins> * See the License for the specific language governing permissions and         </ins>
 <ins> * limitations under the License.                                              </ins>
@@ -3275,7 +3275,7 @@ dependencies {
 <ins>        if (_gpsFixed != null) {                                               </ins>
 <ins>            return _gpsFixed!!                                                 </ins>
 <ins>        }                                                                      </ins>
-<ins>        _gpsFixed = materialIcon(name = &quot;Filled.GpsFixed&quot;) {                   </ins>
+<ins>        _gpsFixed = materialIcon(name = "Filled.GpsFixed") {                   </ins>
 <ins>            materialPath {                                                     </ins>
 <ins>                moveTo(12.0f, 8.0f)                                            </ins>
 <ins>                curveToRelative(-2.21f, 0.0f, -4.0f, 1.79f, -4.0f, 4.0f)       </ins>
@@ -3340,10 +3340,10 @@ import com.google.android.gms.maps.model.LatLng
 fun CarTopBar(                                                                   
     currentLocation: Location?,                                                  
     carLatLng: LatLng?,                                                          
-    onSetCarLocation: () -&gt; Unit,                                                
-    onGoToCurrentLocation: () -&gt; Unit,                                           
-    onClearCarLocation: () -&gt; Unit,                                              
-    onWalkToCar: () -&gt; Unit,                                                     
+    onSetCarLocation: () -> Unit,                                                
+    onGoToCurrentLocation: () -> Unit,                                           
+    onClearCarLocation: () -> Unit,                                              
+    onWalkToCar: () -> Unit,                                                     
 ) {                                                                              
     TopAppBar(                                                                   
         title = { Text(text = stringResource(id = R.string.app_name)) },         

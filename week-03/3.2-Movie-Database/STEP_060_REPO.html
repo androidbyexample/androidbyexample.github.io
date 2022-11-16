@@ -2710,14 +2710,14 @@
       
       
         <label class="md-nav__link" for="__nav_16_1">
-          12.1 Legacy views
+          12.1 Testing
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="12.1 Legacy views" data-md-level="2">
+      <nav class="md-nav" aria-label="12.1 Testing" data-md-level="2">
         <label class="md-nav__title" for="__nav_16_1">
           <span class="md-nav__icon md-icon"></span>
-          12.1 Legacy views
+          12.1 Testing
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2727,8 +2727,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-12/12.1-Legacy-views/index.html" class="md-nav__link">
-        Legacy Views
+      <a href="../../week-12/12.1-Testing/index.html" class="md-nav__link">
+        Testing
       </a>
     </li>
   
@@ -2757,14 +2757,14 @@
       
       
         <label class="md-nav__link" for="__nav_16_2">
-          12.2 Legacy fragments
+          12.2 Nfc
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="12.2 Legacy fragments" data-md-level="2">
+      <nav class="md-nav" aria-label="12.2 Nfc" data-md-level="2">
         <label class="md-nav__title" for="__nav_16_2">
           <span class="md-nav__icon md-icon"></span>
-          12.2 Legacy fragments
+          12.2 Nfc
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2774,8 +2774,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-12/12.2-Legacy-fragments/index.html" class="md-nav__link">
-        Legacy Fragments
+      <a href="../../week-12/12.2-Nfc/index.html" class="md-nav__link">
+        NFC
       </a>
     </li>
   
@@ -2840,14 +2840,14 @@
       
       
         <label class="md-nav__link" for="__nav_17_1">
-          13.1 Testing
+          13.1 Legacy views
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="13.1 Testing" data-md-level="2">
+      <nav class="md-nav" aria-label="13.1 Legacy views" data-md-level="2">
         <label class="md-nav__title" for="__nav_17_1">
           <span class="md-nav__icon md-icon"></span>
-          13.1 Testing
+          13.1 Legacy views
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2857,8 +2857,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-13/13.1-Testing/index.html" class="md-nav__link">
-        Testing
+      <a href="../../week-13/13.1-Legacy-views/index.html" class="md-nav__link">
+        Legacy Views
       </a>
     </li>
   
@@ -2887,14 +2887,14 @@
       
       
         <label class="md-nav__link" for="__nav_17_2">
-          13.2 Nfc
+          13.2 Legacy fragments
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="13.2 Nfc" data-md-level="2">
+      <nav class="md-nav" aria-label="13.2 Legacy fragments" data-md-level="2">
         <label class="md-nav__title" for="__nav_17_2">
           <span class="md-nav__icon md-icon"></span>
-          13.2 Nfc
+          13.2 Legacy fragments
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2904,8 +2904,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../week-13/13.2-Nfc/index.html" class="md-nav__link">
-        NFC
+      <a href="../../week-13/13.2-Legacy-fragments/index.html" class="md-nav__link">
+        Legacy Fragments
       </a>
     </li>
   
@@ -3363,12 +3363,12 @@
 <ins>    Room.databaseBuilder(                                                    </ins>
 <ins>        context,                                                             </ins>
 <ins>        MovieDatabase::class.java,                                           </ins>
-<ins>        &quot;MOVIES&quot;                                                             </ins>
+<ins>        "MOVIES"                                                             </ins>
 <ins>    )                                                                        </ins>
 <ins>// uncomment the following to see the SQL queries that are run               </ins>
 <ins>//        .setQueryCallback(                                                 </ins>
-<ins>//            { sqlQuery, bindArgs -&gt;                                        </ins>
-<ins>//                Log.d(&quot;!!!SQL&quot;, &quot;SQL Query: $sqlQuery SQL Args: $bindArgs&quot;)</ins>
+<ins>//            { sqlQuery, bindArgs ->                                        </ins>
+<ins>//                Log.d("!!!SQL", "SQL Query: $sqlQuery SQL Args: $bindArgs")</ins>
 <ins>//            }, Executors.newSingleThreadExecutor()                         </ins>
 <ins>//        )                                                                  </ins>
 <ins>        .build()                                                             </ins>
@@ -3390,7 +3390,7 @@
                                                               
 <ins>@Entity(                                                      </ins>
 <ins>    indices = [                                               </ins>
-<ins>        Index(value = [&quot;ratingId&quot;])                           </ins>
+<ins>        Index(value = ["ratingId"])                           </ins>
 <ins>    ],                                                        </ins>
 <ins>)                                                             </ins>
 <ins>data class Movie(                                             </ins>
@@ -3418,14 +3418,14 @@
                                                        
 <ins>@Dao                                                   </ins>
 <ins>abstract class MovieDAO {                              </ins>
-<ins>    @Query(&quot;SELECT * FROM Rating&quot;)                     </ins>
-<ins>    abstract fun getRatingsFlow(): Flow&lt;List&lt;Rating&gt;&gt;  </ins>
+<ins>    @Query("SELECT * FROM Rating")                     </ins>
+<ins>    abstract fun getRatingsFlow(): Flow<List<Rating>>  </ins>
                                                        
-<ins>    @Query(&quot;SELECT * FROM Movie&quot;)                      </ins>
-<ins>    abstract fun getMoviesFlow(): Flow&lt;List&lt;Movie&gt;&gt;    </ins>
+<ins>    @Query("SELECT * FROM Movie")                      </ins>
+<ins>    abstract fun getMoviesFlow(): Flow<List<Movie>>    </ins>
                                                        
-<ins>    @Query(&quot;SELECT * FROM Actor&quot;)                      </ins>
-<ins>    abstract fun getActorsFlow(): Flow&lt;List&lt;Actor&gt;&gt;    </ins>
+<ins>    @Query("SELECT * FROM Actor")                      </ins>
+<ins>    abstract fun getActorsFlow(): Flow<List<Actor>>    </ins>
                                                        
 <ins>    @Insert                                            </ins>
 <ins>    abstract suspend fun insert(vararg ratings: Rating)</ins>
@@ -3510,7 +3510,7 @@
 <ins>import androidx.room.Entity              </ins>
                                          
 <ins>@Entity(                                 </ins>
-<ins>    primaryKeys = [&quot;actorId&quot;, &quot;movieId&quot;],</ins>
+<ins>    primaryKeys = ["actorId", "movieId"],</ins>
 <ins>)                                        </ins>
 <ins>data class Role(                         </ins>
 <ins>    var movieId: String,                 </ins>
