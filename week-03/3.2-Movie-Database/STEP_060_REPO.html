@@ -3363,12 +3363,12 @@
 <ins>    Room.databaseBuilder(                                                    </ins>
 <ins>        context,                                                             </ins>
 <ins>        MovieDatabase::class.java,                                           </ins>
-<ins>        "MOVIES"                                                             </ins>
+<ins>        &quot;MOVIES&quot;                                                             </ins>
 <ins>    )                                                                        </ins>
 <ins>// uncomment the following to see the SQL queries that are run               </ins>
 <ins>//        .setQueryCallback(                                                 </ins>
-<ins>//            { sqlQuery, bindArgs ->                                        </ins>
-<ins>//                Log.d("!!!SQL", "SQL Query: $sqlQuery SQL Args: $bindArgs")</ins>
+<ins>//            { sqlQuery, bindArgs -&gt;                                        </ins>
+<ins>//                Log.d(&quot;!!!SQL&quot;, &quot;SQL Query: $sqlQuery SQL Args: $bindArgs&quot;)</ins>
 <ins>//            }, Executors.newSingleThreadExecutor()                         </ins>
 <ins>//        )                                                                  </ins>
 <ins>        .build()                                                             </ins>
@@ -3390,7 +3390,7 @@
                                                               
 <ins>@Entity(                                                      </ins>
 <ins>    indices = [                                               </ins>
-<ins>        Index(value = ["ratingId"])                           </ins>
+<ins>        Index(value = [&quot;ratingId&quot;])                           </ins>
 <ins>    ],                                                        </ins>
 <ins>)                                                             </ins>
 <ins>data class Movie(                                             </ins>
@@ -3418,14 +3418,14 @@
                                                        
 <ins>@Dao                                                   </ins>
 <ins>abstract class MovieDAO {                              </ins>
-<ins>    @Query("SELECT * FROM Rating")                     </ins>
-<ins>    abstract fun getRatingsFlow(): Flow<List<Rating>>  </ins>
+<ins>    @Query(&quot;SELECT * FROM Rating&quot;)                     </ins>
+<ins>    abstract fun getRatingsFlow(): Flow&lt;List&lt;Rating&gt;&gt;  </ins>
                                                        
-<ins>    @Query("SELECT * FROM Movie")                      </ins>
-<ins>    abstract fun getMoviesFlow(): Flow<List<Movie>>    </ins>
+<ins>    @Query(&quot;SELECT * FROM Movie&quot;)                      </ins>
+<ins>    abstract fun getMoviesFlow(): Flow&lt;List&lt;Movie&gt;&gt;    </ins>
                                                        
-<ins>    @Query("SELECT * FROM Actor")                      </ins>
-<ins>    abstract fun getActorsFlow(): Flow<List<Actor>>    </ins>
+<ins>    @Query(&quot;SELECT * FROM Actor&quot;)                      </ins>
+<ins>    abstract fun getActorsFlow(): Flow&lt;List&lt;Actor&gt;&gt;    </ins>
                                                        
 <ins>    @Insert                                            </ins>
 <ins>    abstract suspend fun insert(vararg ratings: Rating)</ins>
@@ -3510,7 +3510,7 @@
 <ins>import androidx.room.Entity              </ins>
                                          
 <ins>@Entity(                                 </ins>
-<ins>    primaryKeys = ["actorId", "movieId"],</ins>
+<ins>    primaryKeys = [&quot;actorId&quot;, &quot;movieId&quot;],</ins>
 <ins>)                                        </ins>
 <ins>data class Role(                         </ins>
 <ins>    var movieId: String,                 </ins>

@@ -3208,8 +3208,8 @@ object ActorList: Screen
 class MovieViewModel(application: Application) : AndroidViewModel(application) {  
     private val repository: MovieRepository = MovieDatabaseRepository(application)
                                                                                   
-<del>//  var screen by mutableStateOf<Screen>(RatingList)                              </del>
-<ins>    private var screenStack: List<Screen> = listOf(MovieList)                     </ins>
+<del>//  var screen by mutableStateOf&lt;Screen&gt;(RatingList)                              </del>
+<ins>    private var screenStack: List&lt;Screen&gt; = listOf(MovieList)                     </ins>
 <ins>        set(value) {                                                              </ins>
 <ins>            field = value                                                         </ins>
 <ins>            screen = value.lastOrNull()                                           </ins>
@@ -3227,7 +3227,7 @@ class MovieViewModel(application: Application) : AndroidViewModel(application) {
 <ins>        screenStack = listOf(screen)                                              </ins>
 <ins>    }                                                                             </ins>
                                                                                   
-<ins>    var screen by mutableStateOf<Screen?>(MovieList)                              </ins>
+<ins>    var screen by mutableStateOf&lt;Screen?&gt;(MovieList)                              </ins>
         private set                                                               
                                                                                   
     val ratingsFlow = repository.ratingsFlow                                      

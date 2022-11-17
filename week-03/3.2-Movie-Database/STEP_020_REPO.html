@@ -3115,14 +3115,14 @@ android {
 <ins>    compileSdk 33                                                                                      </ins>
                                                                                                        
     defaultConfig {                                                                                    
-        applicationId "com.javadude.movies"                                                            
+        applicationId &quot;com.javadude.movies&quot;                                                            
         minSdk 21                                                                                      
 <del>//      targetSdk 32                                                                                   </del>
 <ins>        targetSdk 33                                                                                   </ins>
         versionCode 1                                                                                  
-        versionName "1.0"                                                                              
+        versionName &quot;1.0&quot;                                                                              
                                                                                                        
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"                            
+        testInstrumentationRunner &quot;androidx.test.runner.AndroidJUnitRunner&quot;                            
         vectorDrawables {                                                                              
             useSupportLibrary true                                                                     
         }                                                                                              
@@ -3162,16 +3162,16 @@ dependencies {
 <ins>    implementation 'androidx.core:core-ktx:1.9.0'                                                      </ins>
 <ins>    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'                                    </ins>
 <ins>    implementation 'androidx.activity:activity-compose:1.5.1'                                          </ins>
-    implementation "androidx.compose.ui:ui:$compose_ui_version"                                        
-    implementation "androidx.compose.ui:ui-tooling-preview:$compose_ui_version"                        
+    implementation &quot;androidx.compose.ui:ui:$compose_ui_version&quot;                                        
+    implementation &quot;androidx.compose.ui:ui-tooling-preview:$compose_ui_version&quot;                        
 <del>//  implementation 'androidx.compose.material:material:1.1.1'                                          </del>
 <ins>    implementation 'androidx.compose.material:material:1.2.1'                                          </ins>
     testImplementation 'junit:junit:4.13.2'                                                            
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'                                          
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'                             
-    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"                 
-    debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version"                           
-    debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"                     
+    androidTestImplementation &quot;androidx.compose.ui:ui-test-junit4:$compose_ui_version&quot;                 
+    debugImplementation &quot;androidx.compose.ui:ui-tooling:$compose_ui_version&quot;                           
+    debugImplementation &quot;androidx.compose.ui:ui-test-manifest:$compose_ui_version&quot;                     
 }                                                                                                      
 </pre>
 </div>

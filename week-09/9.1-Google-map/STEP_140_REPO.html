@@ -3187,26 +3187,26 @@ class MainActivity : ComponentActivity() {
 <div id="080-permission-launcher">    private val getLocationPermission =                                             
         registerForActivityResult(                                                  
             ActivityResultContracts.RequestMultiplePermissions()                    
-        ) { isGranted ->                                                            
+        ) { isGranted -&gt;                                                            
             if (isGranted.values.any { it }) {                                      
                 startLocationAndMap()                                               
             } else {                                                                
                 AlertDialog.Builder(this)                                           
-                    .setTitle("Permissions Needed")                                 
+                    .setTitle(&quot;Permissions Needed&quot;)                                 
                     .setMessage(                                                    
-                        "We need coarse-location or fine-location permission " +    
-                                "to locate a car (fine location is highly " +       
-                                "recommended for accurate car locating). " +        
-                                "Please allow these permissions via App Info " +    
-                                "settings")                                         
+                        &quot;We need coarse-location or fine-location permission &quot; +    
+                                &quot;to locate a car (fine location is highly &quot; +       
+                                &quot;recommended for accurate car locating). &quot; +        
+                                &quot;Please allow these permissions via App Info &quot; +    
+                                &quot;settings&quot;)                                         
                     .setCancelable(false)                                           
-                    .setNegativeButton("Quit") { _, _ -> finish() }                 
-                    .setPositiveButton("App Info") { _, _ ->                        
+                    .setNegativeButton(&quot;Quit&quot;) { _, _ -&gt; finish() }                 
+                    .setPositiveButton(&quot;App Info&quot;) { _, _ -&gt;                        
                         startActivity(                                              
                             Intent(                                                 
                                 Settings.ACTION_APPLICATION_DETAILS_SETTINGS        
                             ).apply {                                               
-                                data = Uri.parse("package:$packageName")            
+                                data = Uri.parse(&quot;package:$packageName&quot;)            
                             }                                                       
                         )                                                           
                         finish()                                                    
@@ -3224,7 +3224,7 @@ class MainActivity : ComponentActivity() {
 <div id="080-have-permission">                if (ActivityCompat.checkSelfPermission(                             
                         this,                                                       
                         Manifest.permission.ACCESS_FINE_LOCATION                    
-                    ) != PackageManager.PERMISSION_GRANTED &&                       
+                    ) != PackageManager.PERMISSION_GRANTED &amp;&amp;                       
                     ActivityCompat.checkSelfPermission(                             
                         this,                                                       
                         Manifest.permission.ACCESS_COARSE_LOCATION                  
@@ -3242,14 +3242,14 @@ class MainActivity : ComponentActivity() {
 </div>            }.addOnFailureListener(this) {                                          
                 Toast.makeText(                                                     
                     this,                                                           
-                    "Google Play services required (or upgrade required)",          
+                    &quot;Google Play services required (or upgrade required)&quot;,          
                     Toast.LENGTH_SHORT                                              
                 ).show()                                                            
                 finish()                                                            
             }                                                                       
 </div>    }                                                                               
                                                                                     
-    @SuppressLint("MissingPermission")                                              
+    @SuppressLint(&quot;MissingPermission&quot;)                                              
     fun startLocationAndMap() {                                                     
 <div id="080-request-location-updates">        val locationRequest =                                                       
             LocationRequest.Builder(Priority.PRIORITY_HIGH_ACCURACY, 5000)          
@@ -3302,9 +3302,9 @@ fun GoogleMapDisplay(
     currentLocation: Location?,                                                     
     carLatLng: LatLng?,                                                             
     cameraPositionState: CameraPositionState,                                       
-    onSetCarLocation: () -> Unit,                                                   
-    onClearCarLocation: () -> Unit,                                                 
-<div id="130-event">    onMoveCar: (LatLng) -> Unit,                                                    
+    onSetCarLocation: () -&gt; Unit,                                                   
+    onClearCarLocation: () -&gt; Unit,                                                 
+<div id="130-event">    onMoveCar: (LatLng) -&gt; Unit,                                                    
 </div>    modifier: Modifier,                                                             
 ) {                                                                                 
 <div id="060-marker-state-holder">    var mapLoaded by remember { mutableStateOf(false) }                             
@@ -3318,13 +3318,13 @@ fun GoogleMapDisplay(
 <div id="080-current-location-state">    val currentLocationState = remember(currentLocation) {                          
         currentLocation?.let { MarkerState(LatLng(it.latitude, it.longitude)) }     
     }                                                                               
-    val carState = rememberMarkerState("car")                                       
+    val carState = rememberMarkerState(&quot;car&quot;)                                       
 </div>                                                                                    
 <div id="090-icon-state">    val context = LocalContext.current                                              
-<del>//  var currentLocationIcon by remember { mutableStateOf<BitmapDescriptor?>(null) } </del>
+<del>//  var currentLocationIcon by remember { mutableStateOf&lt;BitmapDescriptor?&gt;(null) } </del>
 <ins>    var currentLocationIcon by                                                      </ins>
-<ins>        remember { mutableStateOf<BitmapDescriptor?>(null) }                        </ins>
-    var carIcon by remember { mutableStateOf<BitmapDescriptor?>(null) }             
+<ins>        remember { mutableStateOf&lt;BitmapDescriptor?&gt;(null) }                        </ins>
+    var carIcon by remember { mutableStateOf&lt;BitmapDescriptor?&gt;(null) }             
     val scope = rememberCoroutineScope()                                            
 </div>                                                                                    
 <div id="090-jump-to-location">    var initialBoundsSet by remember { mutableStateOf(false) }                      
@@ -3356,7 +3356,7 @@ fun GoogleMapDisplay(
                 if (it == DragState.DRAG) {                                         
                     dragged = true                                                  
                                                                                     
-                } else if (it == DragState.END && dragged) {                        
+                } else if (it == DragState.END &amp;&amp; dragged) {                        
                     dragged = false                                                 
                     onMoveCar(carState.position)                                    
                 }                                                                   
@@ -3372,35 +3372,35 @@ fun GoogleMapDisplay(
                 onClearCarLocation = onClearCarLocation,                            
 <div id="140-navigate"><del>//              onWalkToCar = { TODO() },                                           </del>
 <ins>                onWalkToCar = {                                                     </ins>
-<ins>                    currentLocation?.let { curr ->                                  </ins>
-<ins>                        carLatLng?.let { car ->                                     </ins>
+<ins>                    currentLocation?.let { curr -&gt;                                  </ins>
+<ins>                        carLatLng?.let { car -&gt;                                     </ins>
 <ins>                            val uri =                                               </ins>
 <ins>                                Uri.parse(                                          </ins>
-<ins>                                    "https://www.google.com/maps/dir/" +            </ins>
-<ins>                                            "?api=1&origin=${curr.latitude}," +     </ins>
-<ins>                                            "${curr.longitude}&" +                  </ins>
-<ins>                                            "destination=${car.latitude}," +        </ins>
-<ins>                                            "${car.longitude}&travelmode=walking")  </ins>
+<ins>                                    &quot;https://www.google.com/maps/dir/&quot; +            </ins>
+<ins>                                            &quot;?api=1&amp;origin=${curr.latitude},&quot; +     </ins>
+<ins>                                            &quot;${curr.longitude}&amp;&quot; +                  </ins>
+<ins>                                            &quot;destination=${car.latitude},&quot; +        </ins>
+<ins>                                            &quot;${car.longitude}&amp;travelmode=walking&quot;)  </ins>
 <ins>                            context.startActivity(                                  </ins>
 <ins>                                Intent(                                             </ins>
 <ins>                                    Intent.ACTION_VIEW,                             </ins>
 <ins>                                    uri                                             </ins>
 <ins>                                ).apply {                                           </ins>
-<ins>                                    setPackage("com.google.android.apps.maps")      </ins>
+<ins>                                    setPackage(&quot;com.google.android.apps.maps&quot;)      </ins>
 <ins>                                })                                                  </ins>
 <ins>                        } ?: Toast.makeText(                                        </ins>
 <ins>                            context,                                                </ins>
-<ins>                            "Cannot navigate; no car location available",           </ins>
+<ins>                            &quot;Cannot navigate; no car location available&quot;,           </ins>
 <ins>                            Toast.LENGTH_LONG                                       </ins>
 <ins>                        ).show()                                                    </ins>
 <ins>                    } ?: Toast.makeText(                                            </ins>
 <ins>                        context,                                                    </ins>
-<ins>                        "Cannot navigate; no current location available",           </ins>
+<ins>                        &quot;Cannot navigate; no current location available&quot;,           </ins>
 <ins>                        Toast.LENGTH_LONG                                           </ins>
 <ins>                    ).show()                                                        </ins>
 <ins>                },                                                                  </ins>
 </div>                onGoToCurrentLocation = {                                           
-                    currentLocation?.let { curr ->                                  
+                    currentLocation?.let { curr -&gt;                                  
                         scope.launch {                                              
                             cameraPositionState.animate(                            
                                 CameraUpdateFactory.newLatLngZoom(                  
@@ -3411,13 +3411,13 @@ fun GoogleMapDisplay(
                         }                                                           
                     } ?: Toast.makeText(                                            
                         context,                                                    
-                        "No current location available",                            
+                        &quot;No current location available&quot;,                            
                         Toast.LENGTH_LONG                                           
                     ).show()                                                        
                 },                                                                  
             )                                                                       
         },                                                                          
-        content = { paddingValues ->                                                
+        content = { paddingValues -&gt;                                                
 </div><div id="060-wrap-map">            Box(                                                                    
 <div id="060-top-level-modifier">                modifier = modifier.padding(paddingValues),                         
 </div>            ) {                                                                     

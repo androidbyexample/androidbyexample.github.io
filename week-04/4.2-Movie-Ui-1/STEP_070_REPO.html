@@ -3146,13 +3146,13 @@ android {
     compileSdk 33                                                                                      
                                                                                                        
     defaultConfig {                                                                                    
-        applicationId "com.javadude.movies"                                                            
+        applicationId &quot;com.javadude.movies&quot;                                                            
         minSdk 21                                                                                      
         targetSdk 33                                                                                   
         versionCode 1                                                                                  
-        versionName "1.0"                                                                              
+        versionName &quot;1.0&quot;                                                                              
                                                                                                        
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"                            
+        testInstrumentationRunner &quot;androidx.test.runner.AndroidJUnitRunner&quot;                            
         vectorDrawables {                                                                              
             useSupportLibrary true                                                                     
         }                                                                                              
@@ -3185,7 +3185,7 @@ android {
 }                                                                                                      
                                                                                                        
 dependencies {                                                                                         
-    implementation project(":repository")                                                              
+    implementation project(&quot;:repository&quot;)                                                              
                                                                                                        
 <del>//  // DO NOT KEEP THIS - IT'S HUGE                                                                    </del>
 <del>//  // Once you have selected your icons, copy their code into the app                                 </del>
@@ -3194,15 +3194,15 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.9.0'                                                      
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'                                    
     implementation 'androidx.activity:activity-compose:1.5.1'                                          
-    implementation "androidx.compose.ui:ui:$compose_ui_version"                                        
-    implementation "androidx.compose.ui:ui-tooling-preview:$compose_ui_version"                        
+    implementation &quot;androidx.compose.ui:ui:$compose_ui_version&quot;                                        
+    implementation &quot;androidx.compose.ui:ui-tooling-preview:$compose_ui_version&quot;                        
     implementation 'androidx.compose.material:material:1.2.1'                                          
     testImplementation 'junit:junit:4.13.2'                                                            
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'                                          
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'                             
-    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"                 
-    debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version"                           
-    debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"                     
+    androidTestImplementation &quot;androidx.compose.ui:ui-test-junit4:$compose_ui_version&quot;                 
+    debugImplementation &quot;androidx.compose.ui:ui-tooling:$compose_ui_version&quot;                           
+    debugImplementation &quot;androidx.compose.ui:ui-test-manifest:$compose_ui_version&quot;                     
 }                                                                                                      
 </pre>
 </div>
@@ -3214,14 +3214,14 @@ dependencies {
 <ins>/*                                                                         </ins>
 <ins> * Copyright 2022 The Android Open Source Project                          </ins>
 <ins> *                                                                         </ins>
-<ins> * Licensed under the Apache License, Version 2.0 (the "License");         </ins>
+<ins> * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);         </ins>
 <ins> * you may not use this file except in compliance with the License.        </ins>
 <ins> * You may obtain a copy of the License at                                 </ins>
 <ins> *                                                                         </ins>
 <ins> *      http://www.apache.org/licenses/LICENSE-2.0                         </ins>
 <ins> *                                                                         </ins>
 <ins> * Unless required by applicable law or agreed to in writing, software     </ins>
-<ins> * distributed under the License is distributed on an "AS IS" BASIS,       </ins>
+<ins> * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,       </ins>
 <ins> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</ins>
 <ins> * See the License for the specific language governing permissions and     </ins>
 <ins> * limitations under the License.                                          </ins>
@@ -3239,7 +3239,7 @@ dependencies {
 <ins>        if (_emergency != null) {                                          </ins>
 <ins>            return _emergency!!                                            </ins>
 <ins>        }                                                                  </ins>
-<ins>        _emergency = materialIcon(name = "Filled.Emergency") {             </ins>
+<ins>        _emergency = materialIcon(name = &quot;Filled.Emergency&quot;) {             </ins>
 <ins>            materialPath {                                                 </ins>
 <ins>                moveTo(20.79f, 9.23f)                                      </ins>
 <ins>                lineToRelative(-2.0f, -3.46f)                              </ins>
@@ -3276,14 +3276,14 @@ dependencies {
 <ins>/*                                                                         </ins>
 <ins> * Copyright 2022 The Android Open Source Project                          </ins>
 <ins> *                                                                         </ins>
-<ins> * Licensed under the Apache License, Version 2.0 (the "License");         </ins>
+<ins> * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);         </ins>
 <ins> * you may not use this file except in compliance with the License.        </ins>
 <ins> * You may obtain a copy of the License at                                 </ins>
 <ins> *                                                                         </ins>
 <ins> *      http://www.apache.org/licenses/LICENSE-2.0                         </ins>
 <ins> *                                                                         </ins>
 <ins> * Unless required by applicable law or agreed to in writing, software     </ins>
-<ins> * distributed under the License is distributed on an "AS IS" BASIS,       </ins>
+<ins> * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,       </ins>
 <ins> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</ins>
 <ins> * See the License for the specific language governing permissions and     </ins>
 <ins> * limitations under the License.                                          </ins>
@@ -3301,7 +3301,7 @@ dependencies {
 <ins>        if (_movie != null) {                                              </ins>
 <ins>            return _movie!!                                                </ins>
 <ins>        }                                                                  </ins>
-<ins>        _movie = materialIcon(name = "Filled.Movie") {                     </ins>
+<ins>        _movie = materialIcon(name = &quot;Filled.Movie&quot;) {                     </ins>
 <ins>            materialPath {                                                 </ins>
 <ins>                moveTo(18.0f, 4.0f)                                        </ins>
 <ins>                lineToRelative(2.0f, 4.0f)                                 </ins>

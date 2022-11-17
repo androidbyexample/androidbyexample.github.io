@@ -3168,12 +3168,12 @@ import com.javadude.movies.repository.ActorWithFilmographyDto
 @Composable                                                                                         
 fun ActorDisplay(                                                                                   
     actorId: String,                                                                                
-    fetchActorWithFilmography: suspend (String) -> ActorWithFilmographyDto,                         
-    onSelectListScreen: (Screen) -> Unit,                                                           
-    onResetDatabase: () -> Unit,                                                                    
-    onMovieClick: (String) -> Unit,                                                                 
+    fetchActorWithFilmography: suspend (String) -&gt; ActorWithFilmographyDto,                         
+    onSelectListScreen: (Screen) -&gt; Unit,                                                           
+    onResetDatabase: () -&gt; Unit,                                                                    
+    onMovieClick: (String) -&gt; Unit,                                                                 
 ) {                                                                                                 
-    var actorWithFilmographyDto by remember { mutableStateOf<ActorWithFilmographyDto?>(null) }      
+    var actorWithFilmographyDto by remember { mutableStateOf&lt;ActorWithFilmographyDto?&gt;(null) }      
                                                                                                     
     LaunchedEffect(key1 = actorId) {                                                                
         // starts a coroutine to fetch the rating                                                   
@@ -3184,16 +3184,16 @@ fun ActorDisplay(
         title = actorWithFilmographyDto?.actor?.name ?: stringResource(id = R.string.loading),      
         onSelectListScreen = onSelectListScreen,                                                    
         onResetDatabase = onResetDatabase,                                                          
-    ) { paddingValues ->                                                                            
+    ) { paddingValues -&gt;                                                                            
 <del>//      Column(modifier = Modifier.padding(paddingValues)) {                                        </del>
 <ins>        Column(                                                                                     </ins>
 <ins>            modifier = Modifier                                                                     </ins>
 <ins>                .padding(paddingValues)                                                             </ins>
 <ins>                .verticalScroll(rememberScrollState())                                              </ins>
 <ins>        ) {                                                                                         </ins>
-            actorWithFilmographyDto?.let { actorWithFilmography ->                                  
-                actorWithFilmography.filmography.forEach { roleWithMovie ->                         
-                    SimpleText(text = "${roleWithMovie.movie.title} (${roleWithMovie.character})") {
+            actorWithFilmographyDto?.let { actorWithFilmography -&gt;                                  
+                actorWithFilmography.filmography.forEach { roleWithMovie -&gt;                         
+                    SimpleText(text = &quot;${roleWithMovie.movie.title} (${roleWithMovie.character})&quot;) {
                         onMovieClick(roleWithMovie.movie.id)                                        
                     }                                                                               
                 }                                                                                   
@@ -3228,15 +3228,15 @@ import com.javadude.movies.repository.ActorDto
                                                               
 @Composable                                                   
 fun ActorList(                                                
-    actors: List<ActorDto>,                                   
-    onSelectListScreen: (Screen) -> Unit,                     
-    onResetDatabase: () -> Unit,                              
-    onActorClick: (String) -> Unit,                           
+    actors: List&lt;ActorDto&gt;,                                   
+    onSelectListScreen: (Screen) -&gt; Unit,                     
+    onResetDatabase: () -&gt; Unit,                              
+    onActorClick: (String) -&gt; Unit,                           
 ) = MovieScaffold(                                            
     title = stringResource(id = R.string.screen_title_actors),
     onSelectListScreen = onSelectListScreen,                  
     onResetDatabase = onResetDatabase,                        
-) { paddingValues ->                                          
+) { paddingValues -&gt;                                          
 <del>//  Column(modifier = Modifier.padding(paddingValues)) {      </del>
 <del>//      actors.forEach {                                      </del>
 <ins>    LazyColumn(                                               </ins>
@@ -3289,12 +3289,12 @@ import com.javadude.movies.repository.MovieWithCastDto
 @Composable                                                                                       
 fun MovieDisplay(                                                                                 
     movieId: String,                                                                              
-    fetchMovieWithCast: suspend (String) -> MovieWithCastDto,                                     
-    onSelectListScreen: (Screen) -> Unit,                                                         
-    onResetDatabase: () -> Unit,                                                                  
-    onActorClick: (String) -> Unit,                                                               
+    fetchMovieWithCast: suspend (String) -&gt; MovieWithCastDto,                                     
+    onSelectListScreen: (Screen) -&gt; Unit,                                                         
+    onResetDatabase: () -&gt; Unit,                                                                  
+    onActorClick: (String) -&gt; Unit,                                                               
 ) {                                                                                               
-    var movieWithCastDto by remember { mutableStateOf<MovieWithCastDto?>(null) }                  
+    var movieWithCastDto by remember { mutableStateOf&lt;MovieWithCastDto?&gt;(null) }                  
                                                                                                   
     LaunchedEffect(key1 = movieId) {                                                              
         // starts a coroutine to fetch the rating                                                 
@@ -3305,16 +3305,16 @@ fun MovieDisplay(
         title = movieWithCastDto?.movie?.title ?: stringResource(id = R.string.loading),          
         onSelectListScreen = onSelectListScreen,                                                  
         onResetDatabase = onResetDatabase,                                                        
-    ) { paddingValues ->                                                                          
+    ) { paddingValues -&gt;                                                                          
 <del>//      Column(modifier = Modifier.padding(paddingValues)) {                                      </del>
 <ins>        Column(                                                                                   </ins>
 <ins>            modifier = Modifier                                                                   </ins>
 <ins>                .padding(paddingValues)                                                           </ins>
 <ins>                .verticalScroll(rememberScrollState())                                            </ins>
 <ins>        ) {                                                                                       </ins>
-            movieWithCastDto?.let { movieWithCast ->                                              
-                movieWithCast.cast.forEach { roleWithActor ->                                     
-                    SimpleText(text = "${roleWithActor.character}: ${roleWithActor.actor.name}") {
+            movieWithCastDto?.let { movieWithCast -&gt;                                              
+                movieWithCast.cast.forEach { roleWithActor -&gt;                                     
+                    SimpleText(text = &quot;${roleWithActor.character}: ${roleWithActor.actor.name}&quot;) {
                         onActorClick(roleWithActor.actor.id)                                      
                     }                                                                             
                 }                                                                                 
@@ -3349,15 +3349,15 @@ import com.javadude.movies.repository.MovieDto
                                                               
 @Composable                                                   
 fun MovieList(                                                
-    movies: List<MovieDto>,                                   
-    onSelectListScreen: (Screen) -> Unit,                     
-    onResetDatabase: () -> Unit,                              
-    onMovieClick: (String) -> Unit,                           
+    movies: List&lt;MovieDto&gt;,                                   
+    onSelectListScreen: (Screen) -&gt; Unit,                     
+    onResetDatabase: () -&gt; Unit,                              
+    onMovieClick: (String) -&gt; Unit,                           
 ) = MovieScaffold(                                            
     title = stringResource(id = R.string.screen_title_movies),
     onSelectListScreen = onSelectListScreen,                  
     onResetDatabase = onResetDatabase,                        
-) { paddingValues ->                                          
+) { paddingValues -&gt;                                          
 <del>//  Column(modifier = Modifier.padding(paddingValues)) {      </del>
 <del>//      movies.forEach {                                      </del>
 <ins>    LazyColumn(                                               </ins>
@@ -3410,12 +3410,12 @@ import com.javadude.movies.repository.RatingWithMoviesDto
 @Composable                                                                                
 fun RatingDisplay(                                                                         
     ratingId: String,                                                                      
-    fetchRatingWithMovies: suspend (String) -> RatingWithMoviesDto,                        
-    onSelectListScreen: (Screen) -> Unit,                                                  
-    onResetDatabase: () -> Unit,                                                           
-    onMovieClick: (String) -> Unit,                                                        
+    fetchRatingWithMovies: suspend (String) -&gt; RatingWithMoviesDto,                        
+    onSelectListScreen: (Screen) -&gt; Unit,                                                  
+    onResetDatabase: () -&gt; Unit,                                                           
+    onMovieClick: (String) -&gt; Unit,                                                        
 ) {                                                                                        
-    var ratingWithMoviesDto by remember { mutableStateOf<RatingWithMoviesDto?>(null) }     
+    var ratingWithMoviesDto by remember { mutableStateOf&lt;RatingWithMoviesDto?&gt;(null) }     
                                                                                            
     LaunchedEffect(key1 = ratingId) {                                                      
         // starts a coroutine to fetch the rating                                          
@@ -3426,15 +3426,15 @@ fun RatingDisplay(
         title = ratingWithMoviesDto?.rating?.name ?: stringResource(id = R.string.loading),
         onSelectListScreen = onSelectListScreen,                                           
         onResetDatabase = onResetDatabase,                                                 
-    ) { paddingValues ->                                                                   
+    ) { paddingValues -&gt;                                                                   
 <del>//      Column(modifier = Modifier.padding(paddingValues)) {                               </del>
 <ins>        Column(                                                                            </ins>
 <ins>            modifier = Modifier                                                            </ins>
 <ins>                .padding(paddingValues)                                                    </ins>
 <ins>                .verticalScroll(rememberScrollState())                                     </ins>
 <ins>        ) {                                                                                </ins>
-            ratingWithMoviesDto?.let { ratingWithMovies ->                                 
-                ratingWithMovies.movies.forEach { movie ->                                 
+            ratingWithMoviesDto?.let { ratingWithMovies -&gt;                                 
+                ratingWithMovies.movies.forEach { movie -&gt;                                 
                     SimpleText(text = movie.title) {                                       
                         onMovieClick(movie.id)                                             
                     }                                                                      
@@ -3470,16 +3470,16 @@ import com.javadude.movies.repository.RatingDto
                                                                
 @Composable                                                    
 fun RatingList(                                                
-    ratings: List<RatingDto>,                                  
-    onSelectListScreen: (Screen) -> Unit,                      
-    onResetDatabase: () -> Unit,                               
-    onRatingClick: (String) -> Unit,                           
+    ratings: List&lt;RatingDto&gt;,                                  
+    onSelectListScreen: (Screen) -&gt; Unit,                      
+    onResetDatabase: () -&gt; Unit,                               
+    onRatingClick: (String) -&gt; Unit,                           
 ) = MovieScaffold(                                             
 <del>//  title = stringResource(id = R.string.screen_title_movies), </del>
 <ins>    title = stringResource(id = R.string.screen_title_ratings),</ins>
     onSelectListScreen = onSelectListScreen,                   
     onResetDatabase = onResetDatabase,                         
-) { paddingValues ->                                           
+) { paddingValues -&gt;                                           
 <del>//  Column(modifier = Modifier.padding(paddingValues)) {       </del>
 <del>//      ratings.forEach {                                      </del>
 <ins>    LazyColumn(                                                </ins>

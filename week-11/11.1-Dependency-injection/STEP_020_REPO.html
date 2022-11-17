@@ -3180,7 +3180,7 @@ class MainActivity : ComponentActivity() {
                 ) {                                                               
 <del>//                  Ui {                                                          </del>
 <ins>                    Ui(context = LocalContext.current) {                          </ins>
-                        finish() // handle "onExit"                               
+                        finish() // handle &quot;onExit&quot;                               
                     }                                                             
                 }                                                                 
             }                                                                     
@@ -3232,14 +3232,14 @@ data class MovieEdit(
 <div id="020-inject-repo"><del>//class MovieViewModel(application: Application) : AndroidViewModel(application) {</del>
 <del>//  private val repository: MovieRepository = MovieDatabaseRepository(application)</del>
 <ins>class MovieViewModel(private val repository: MovieRepository) : ViewModel() {     </ins>
-</div>    private var screenStack: List<Screen> = listOf(MovieList)                     
+</div>    private var screenStack: List&lt;Screen&gt; = listOf(MovieList)                     
         set(value) {                                                              
             field = value                                                         
             screen = value.lastOrNull()                                           
             clearSelections()                                                     
         }                                                                         
                                                                                   
-    var selectedItemIds by mutableStateOf<Set<String>>(emptySet())                
+    var selectedItemIds by mutableStateOf&lt;Set&lt;String&gt;&gt;(emptySet())                
         private set                                                               
                                                                                   
     fun clearSelections() {                                                       
@@ -3284,7 +3284,7 @@ data class MovieEdit(
         screenStack = listOf(screen)                                              
     }                                                                             
                                                                                   
-    var screen by mutableStateOf<Screen?>(MovieList)                              
+    var screen by mutableStateOf&lt;Screen?&gt;(MovieList)                              
         private set                                                               
                                                                                   
     val ratingsFlow = repository.ratingsFlow                                      
@@ -3348,8 +3348,8 @@ import com.javadude.movies.RatingList
 <ins>import com.javadude.movies.repository.createRepository                                </ins>
                                                                                       
 <div id="020-build-vm"><ins>class MovieViewModelFactory(private val context: Context): ViewModelProvider.Factory {</ins>
-<ins>    override fun <T : ViewModel> create(modelClass: Class<T>): T {                    </ins>
-<ins>        @Suppress("UNCHECKED_CAST")                                                   </ins>
+<ins>    override fun &lt;T : ViewModel&gt; create(modelClass: Class&lt;T&gt;): T {                    </ins>
+<ins>        @Suppress(&quot;UNCHECKED_CAST&quot;)                                                   </ins>
 <ins>        return MovieViewModel(                                                        </ins>
 <ins>            createRepository(context)                                                 </ins>
 <ins>        ) as T                                                                        </ins>
@@ -3362,7 +3362,7 @@ fun Ui(
 <ins>    context: Context,                                                                 </ins>
 <ins>    viewModel: MovieViewModel =                                                       </ins>
 <ins>        viewModel(factory = MovieViewModelFactory(context)),                          </ins>
-</div>    onExit: () -> Unit,                                                               
+</div>    onExit: () -&gt; Unit,                                                               
 ) {                                                                                   
     BackHandler {                                                                     
         viewModel.popScreen()                                                         
@@ -3373,13 +3373,13 @@ fun Ui(
     val actors by viewModel.actorsFlow.collectAsState(initial = emptyList())          
                                                                                       
     when(val screen = viewModel.screen) {                                             
-        null -> onExit()                                                              
+        null -&gt; onExit()                                                              
                                                                                       
-        RatingList -> RatingList(                                                     
+        RatingList -&gt; RatingList(                                                     
             ratings = ratings,                                                        
             onSelectListScreen = viewModel::setScreenStack,                           
             onResetDatabase = viewModel::resetDatabase,                               
-            onRatingClick = { id ->                                                   
+            onRatingClick = { id -&gt;                                                   
                 viewModel.pushScreen(RatingDisplay(id))                               
             },                                                                        
             selectedItemIds = viewModel.selectedItemIds,                              
@@ -3387,11 +3387,11 @@ fun Ui(
             onToggleSelection = viewModel::toggleSelection,                           
             onDeleteSelectedItems = viewModel::deleteSelectedRatings,                 
         )                                                                             
-        MovieList -> MovieList(                                                       
+        MovieList -&gt; MovieList(                                                       
             movies = movies,                                                          
             onSelectListScreen = viewModel::setScreenStack,                           
             onResetDatabase = viewModel::resetDatabase,                               
-            onMovieClick = { id ->                                                    
+            onMovieClick = { id -&gt;                                                    
                 viewModel.pushScreen(MovieDisplay(id))                                
             },                                                                        
             selectedItemIds = viewModel.selectedItemIds,                              
@@ -3399,11 +3399,11 @@ fun Ui(
             onToggleSelection = viewModel::toggleSelection,                           
             onDeleteSelectedItems = viewModel::deleteSelectedMovies,                  
         )                                                                             
-        ActorList -> ActorList(                                                       
+        ActorList -&gt; ActorList(                                                       
             actors = actors,                                                          
             onSelectListScreen = viewModel::setScreenStack,                           
             onResetDatabase = viewModel::resetDatabase,                               
-            onActorClick = { id ->                                                    
+            onActorClick = { id -&gt;                                                    
                 viewModel.pushScreen(ActorDisplay(id))                                
             },                                                                        
             selectedItemIds = viewModel.selectedItemIds,                              
@@ -3412,42 +3412,42 @@ fun Ui(
             onDeleteSelectedItems = viewModel::deleteSelectedActors,                  
         )                                                                             
                                                                                       
-        is RatingDisplay -> RatingDisplay(                                            
+        is RatingDisplay -&gt; RatingDisplay(                                            
             ratingId = screen.id,                                                     
-            fetchRatingWithMovies = { id ->                                           
+            fetchRatingWithMovies = { id -&gt;                                           
                 viewModel.getRatingWithMovies(id)                                     
             },                                                                        
             onSelectListScreen = viewModel::setScreenStack,                           
             onResetDatabase = viewModel::resetDatabase,                               
-            onMovieClick = { id ->                                                    
+            onMovieClick = { id -&gt;                                                    
                 viewModel.pushScreen(MovieDisplay(id))                                
             }                                                                         
         )                                                                             
-        is MovieDisplay -> MovieDisplay(                                              
+        is MovieDisplay -&gt; MovieDisplay(                                              
             movieId = screen.id,                                                      
             fetchMovieWithCast = viewModel::getMovieWithCast,                         
             onSelectListScreen = viewModel::setScreenStack,                           
             onResetDatabase = viewModel::resetDatabase,                               
-            onActorClick = { id ->                                                    
+            onActorClick = { id -&gt;                                                    
                 viewModel.pushScreen(ActorDisplay(id))                                
             },                                                                        
-            onEdit = { id ->                                                          
+            onEdit = { id -&gt;                                                          
                 viewModel.pushScreen(MovieEdit(id))                                   
             }                                                                         
         )                                                                             
-        is MovieEdit -> MovieEdit(                                                    
+        is MovieEdit -&gt; MovieEdit(                                                    
             movieId = screen.id,                                                      
             fetchMovie = viewModel::getMovie,                                         
             onSelectListScreen = viewModel::setScreenStack,                           
             onResetDatabase = viewModel::resetDatabase,                               
             onMovieUpdate = viewModel::updateMovie,                                   
         )                                                                             
-        is ActorDisplay -> ActorDisplay(                                              
+        is ActorDisplay -&gt; ActorDisplay(                                              
             actorId = screen.id,                                                      
             fetchActorWithFilmography = viewModel::getActorWithFilmography,           
             onSelectListScreen = viewModel::setScreenStack,                           
             onResetDatabase = viewModel::resetDatabase,                               
-            onMovieClick = { id ->                                                    
+            onMovieClick = { id -&gt;                                                    
                 viewModel.pushScreen(MovieDisplay(id))                                
             }                                                                         
         )                                                                             
@@ -3472,17 +3472,17 @@ import kotlinx.coroutines.flow.map
 <ins>class MovieDatabaseRepository(private val dao: MovieDAO): MovieRepository {              </ins>
 </div>    override val ratingsFlow =                                                           
         dao.getRatingsFlow()                                                             
-            .map { ratings ->                                                            
+            .map { ratings -&gt;                                                            
                 ratings.map { it.toDto() }                                               
             }                                                                            
     override val moviesFlow =                                                            
         dao.getMoviesFlow()                                                              
-            .map { movies ->                                                             
+            .map { movies -&gt;                                                             
                 movies.map { it.toDto() }                                                
             }                                                                            
     override val actorsFlow =                                                            
         dao.getActorsFlow()                                                              
-            .map { actors ->                                                             
+            .map { actors -&gt;                                                             
                 actors.map { it.toDto() }                                                
             }                                                                            
                                                                                          
@@ -3510,9 +3510,9 @@ import kotlinx.coroutines.flow.map
     override suspend fun delete(actor: ActorDto) = dao.delete(actor.toEntity())          
     override suspend fun delete(rating: RatingDto) = dao.delete(rating.toEntity())       
                                                                                          
-    override suspend fun deleteMoviesById(ids: Set<String>) = dao.deleteMoviesById(ids)  
-    override suspend fun deleteActorsById(ids: Set<String>) = dao.deleteActorsById(ids)  
-    override suspend fun deleteRatingsById(ids: Set<String>) = dao.deleteRatingsById(ids)
+    override suspend fun deleteMoviesById(ids: Set&lt;String&gt;) = dao.deleteMoviesById(ids)  
+    override suspend fun deleteActorsById(ids: Set&lt;String&gt;) = dao.deleteActorsById(ids)  
+    override suspend fun deleteRatingsById(ids: Set&lt;String&gt;) = dao.deleteRatingsById(ids)
                                                                                          
     override suspend fun resetDatabase() = dao.resetDatabase()                           
 }                                                                                        

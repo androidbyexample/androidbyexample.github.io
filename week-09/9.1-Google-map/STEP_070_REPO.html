@@ -3179,7 +3179,7 @@ class MainActivity : ComponentActivity() {
 </div>                                                                                
 <div id="040-factor-map">                    GoogleMapDisplay(                                           
                         place = googleHQ,                                       
-                        placeDescription = "Google HQ",                         
+                        placeDescription = &quot;Google HQ&quot;,                         
                         cameraPositionState = cameraPositionState,              
                         modifier = Modifier.fillMaxSize(),                      
                     )                                                           
@@ -3284,7 +3284,7 @@ fun GoogleMapDisplay(
 <ins>fun MapTypeSelector(                                                         </ins>
 <ins>    currentValue: MapType,                                                   </ins>
 <ins>    modifier: Modifier,                                                      </ins>
-<ins>    onMapTypeClick: (MapType) -> Unit,                                       </ins>
+<ins>    onMapTypeClick: (MapType) -&gt; Unit,                                       </ins>
 <ins>) {                                                                          </ins>
 <div id="070-expanded-state-local"><ins>    var expanded by remember {                                               </ins>
 <ins>        mutableStateOf(false)                                                </ins>
@@ -3332,10 +3332,10 @@ fun GoogleMapDisplay(
 <summary>CHANGED: /app/src/main/res/values/strings.xml</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/res/values/strings.xml';">
 <pre>
-<resources>                                   
-    <string name="app_name">CarFinder</string>
-<ins>    <string name="map_type">Map Type</string> </ins>
-</resources>                                  
+&lt;resources&gt;                                   
+    &lt;string name=&quot;app_name&quot;&gt;CarFinder&lt;/string&gt;
+<ins>    &lt;string name=&quot;map_type&quot;&gt;Map Type&lt;/string&gt; </ins>
+&lt;/resources&gt;                                  
 </pre>
 </div>
 </details>

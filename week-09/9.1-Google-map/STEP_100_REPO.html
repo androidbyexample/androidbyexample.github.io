@@ -3127,13 +3127,13 @@ android {
 <div id="020-latest-android-sdk">    compileSdk 33                                                                                      
                                                                                                        
     defaultConfig {                                                                                    
-        applicationId "com.javadude.carfinder"                                                         
+        applicationId &quot;com.javadude.carfinder&quot;                                                         
         minSdk 21                                                                                      
         targetSdk 33                                                                                   
 </div>        versionCode 1                                                                                  
-        versionName "1.0"                                                                              
+        versionName &quot;1.0&quot;                                                                              
                                                                                                        
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"                            
+        testInstrumentationRunner &quot;androidx.test.runner.AndroidJUnitRunner&quot;                            
         vectorDrawables {                                                                              
             useSupportLibrary true                                                                     
         }                                                                                              
@@ -3177,15 +3177,15 @@ dependencies {
 <div id="020-update-all-highlighted-deps">    implementation 'androidx.core:core-ktx:1.9.0'                                                      
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'                                    
     implementation 'androidx.activity:activity-compose:1.6.0'                                          
-    implementation "androidx.compose.ui:ui:$compose_ui_version"                                        
-    implementation "androidx.compose.ui:ui-tooling-preview:$compose_ui_version"                        
+    implementation &quot;androidx.compose.ui:ui:$compose_ui_version&quot;                                        
+    implementation &quot;androidx.compose.ui:ui-tooling-preview:$compose_ui_version&quot;                        
     implementation 'androidx.compose.material:material:1.2.1'                                          
     testImplementation 'junit:junit:4.13.2'                                                            
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'                                          
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'                             
-    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"                 
-    debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version"                           
-    debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"                     
+    androidTestImplementation &quot;androidx.compose.ui:ui-test-junit4:$compose_ui_version&quot;                 
+    debugImplementation &quot;androidx.compose.ui:ui-tooling:$compose_ui_version&quot;                           
+    debugImplementation &quot;androidx.compose.ui:ui-test-manifest:$compose_ui_version&quot;                     
 </div>}                                                                                                      
 </pre>
 </div>
@@ -3214,10 +3214,10 @@ dependencies {
 <ins>fun CarTopBar(                                                                   </ins>
 <ins>    currentLocation: Location?,                                                  </ins>
 <ins>    carLatLng: LatLng?,                                                          </ins>
-<ins>    onSetCarLocation: () -> Unit,                                                </ins>
-<ins>    onGoToCurrentLocation: () -> Unit,                                           </ins>
-<ins>    onClearCarLocation: () -> Unit,                                              </ins>
-<ins>    onWalkToCar: () -> Unit,                                                     </ins>
+<ins>    onSetCarLocation: () -&gt; Unit,                                                </ins>
+<ins>    onGoToCurrentLocation: () -&gt; Unit,                                           </ins>
+<ins>    onClearCarLocation: () -&gt; Unit,                                              </ins>
+<ins>    onWalkToCar: () -&gt; Unit,                                                     </ins>
 <ins>) {                                                                              </ins>
 <ins>    TopAppBar(                                                                   </ins>
 <ins>        title = { Text(text = stringResource(id = R.string.app_name)) },         </ins>
@@ -3344,26 +3344,26 @@ class MainActivity : ComponentActivity() {
 <div id="080-permission-launcher">    private val getLocationPermission =                                             
         registerForActivityResult(                                                  
             ActivityResultContracts.RequestMultiplePermissions()                    
-        ) { isGranted ->                                                            
+        ) { isGranted -&gt;                                                            
             if (isGranted.values.any { it }) {                                      
                 startLocationAndMap()                                               
             } else {                                                                
                 AlertDialog.Builder(this)                                           
-                    .setTitle("Permissions Needed")                                 
+                    .setTitle(&quot;Permissions Needed&quot;)                                 
                     .setMessage(                                                    
-                        "We need coarse-location or fine-location permission " +    
-                                "to locate a car (fine location is highly " +       
-                                "recommended for accurate car locating). " +        
-                                "Please allow these permissions via App Info " +    
-                                "settings")                                         
+                        &quot;We need coarse-location or fine-location permission &quot; +    
+                                &quot;to locate a car (fine location is highly &quot; +       
+                                &quot;recommended for accurate car locating). &quot; +        
+                                &quot;Please allow these permissions via App Info &quot; +    
+                                &quot;settings&quot;)                                         
                     .setCancelable(false)                                           
-                    .setNegativeButton("Quit") { _, _ -> finish() }                 
-                    .setPositiveButton("App Info") { _, _ ->                        
+                    .setNegativeButton(&quot;Quit&quot;) { _, _ -&gt; finish() }                 
+                    .setPositiveButton(&quot;App Info&quot;) { _, _ -&gt;                        
                         startActivity(                                              
                             Intent(                                                 
                                 Settings.ACTION_APPLICATION_DETAILS_SETTINGS        
                             ).apply {                                               
-                                data = Uri.parse("package:$packageName")            
+                                data = Uri.parse(&quot;package:$packageName&quot;)            
                             }                                                       
                         )                                                           
                         finish()                                                    
@@ -3381,7 +3381,7 @@ class MainActivity : ComponentActivity() {
 <div id="080-have-permission">                if (ActivityCompat.checkSelfPermission(                             
                         this,                                                       
                         Manifest.permission.ACCESS_FINE_LOCATION                    
-                    ) != PackageManager.PERMISSION_GRANTED &&                       
+                    ) != PackageManager.PERMISSION_GRANTED &amp;&amp;                       
                     ActivityCompat.checkSelfPermission(                             
                         this,                                                       
                         Manifest.permission.ACCESS_COARSE_LOCATION                  
@@ -3399,14 +3399,14 @@ class MainActivity : ComponentActivity() {
 </div>            }.addOnFailureListener(this) {                                          
                 Toast.makeText(                                                     
                     this,                                                           
-                    "Google Play services required (or upgrade required)",          
+                    &quot;Google Play services required (or upgrade required)&quot;,          
                     Toast.LENGTH_SHORT                                              
                 ).show()                                                            
                 finish()                                                            
             }                                                                       
 </div>    }                                                                               
                                                                                     
-    @SuppressLint("MissingPermission")                                              
+    @SuppressLint(&quot;MissingPermission&quot;)                                              
     fun startLocationAndMap() {                                                     
 <div id="080-request-location-updates">        val locationRequest =                                                       
             LocationRequest.Builder(Priority.PRIORITY_HIGH_ACCURACY, 5000)          
@@ -3468,7 +3468,7 @@ fun GoogleMapDisplay(
 </div>                                                                                    
 <div id="090-icon-state">    val context = LocalContext.current                                              
     var currentLocationIcon by                                                      
-        remember { mutableStateOf<BitmapDescriptor?>(null) }                        
+        remember { mutableStateOf&lt;BitmapDescriptor?&gt;(null) }                        
     val scope = rememberCoroutineScope()                                            
 </div>                                                                                    
 <div id="090-jump-to-location">    var initialBoundsSet by remember { mutableStateOf(false) }                      
@@ -3498,7 +3498,7 @@ fun GoogleMapDisplay(
 <ins>                onClearCarLocation = { TODO() },                                    </ins>
 <ins>                onWalkToCar = { TODO() },                                           </ins>
 <ins>                onGoToCurrentLocation = {                                           </ins>
-<ins>                    currentLocation?.let { curr ->                                  </ins>
+<ins>                    currentLocation?.let { curr -&gt;                                  </ins>
 <ins>                        scope.launch {                                              </ins>
 <ins>                            cameraPositionState.animate(                            </ins>
 <ins>                                CameraUpdateFactory.newLatLngZoom(                  </ins>
@@ -3509,13 +3509,13 @@ fun GoogleMapDisplay(
 <ins>                        }                                                           </ins>
 <ins>                    } ?: Toast.makeText(                                            </ins>
 <ins>                        context,                                                    </ins>
-<ins>                        "No current location available",                            </ins>
+<ins>                        &quot;No current location available&quot;,                            </ins>
 <ins>                        Toast.LENGTH_LONG                                           </ins>
 <ins>                    ).show()                                                        </ins>
 <ins>                },                                                                  </ins>
 <ins>            )                                                                       </ins>
 <ins>        },                                                                          </ins>
-<ins>        content = { paddingValues ->                                                </ins>
+<ins>        content = { paddingValues -&gt;                                                </ins>
 </div><div id="060-wrap-map">            Box(                                                                    
 <div id="060-top-level-modifier"><del>//      modifier = modifier,                                                        </del>
 <ins>                modifier = modifier.padding(paddingValues),                         </ins>
@@ -3584,16 +3584,16 @@ fun GoogleMapDisplay(
 <summary>CHANGED: /app/src/main/res/values/strings.xml</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/res/values/strings.xml';">
 <pre>
-<resources>                                                              
-<del>//  <string name="app_name">CarFinder</string>                           </del>
-<ins>    <string name="app_name">Car Finder</string>                          </ins>
-    <string name="map_type">Map Type</string>                            
-    <string name="current_location">Current Location</string>            
-<ins>    <string name="go_to_current_location">Go to Current Location</string></ins>
-<ins>    <string name="remember_location">Remember Location</string>          </ins>
-<ins>    <string name="navigate">Walk to Car</string>                         </ins>
-<ins>    <string name="forget_location">Forget Car Location</string>          </ins>
-</resources>                                                             
+&lt;resources&gt;                                                              
+<del>//  &lt;string name=&quot;app_name&quot;&gt;CarFinder&lt;/string&gt;                           </del>
+<ins>    &lt;string name=&quot;app_name&quot;&gt;Car Finder&lt;/string&gt;                          </ins>
+    &lt;string name=&quot;map_type&quot;&gt;Map Type&lt;/string&gt;                            
+    &lt;string name=&quot;current_location&quot;&gt;Current Location&lt;/string&gt;            
+<ins>    &lt;string name=&quot;go_to_current_location&quot;&gt;Go to Current Location&lt;/string&gt;</ins>
+<ins>    &lt;string name=&quot;remember_location&quot;&gt;Remember Location&lt;/string&gt;          </ins>
+<ins>    &lt;string name=&quot;navigate&quot;&gt;Walk to Car&lt;/string&gt;                         </ins>
+<ins>    &lt;string name=&quot;forget_location&quot;&gt;Forget Car Location&lt;/string&gt;          </ins>
+&lt;/resources&gt;                                                             
 </pre>
 </div>
 </details>

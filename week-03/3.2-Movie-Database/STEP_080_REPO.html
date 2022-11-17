@@ -3146,22 +3146,22 @@ import androidx.room.Transaction
 import androidx.room.Update                                                                        
 import kotlinx.coroutines.flow.Flow                                                                
                                                                                                    
-<ins>private val NotRated = Rating(id = "r0", name = "Not Rated", description = "Not yet rated")        </ins>
-<ins>private val G = Rating(id = "r1", name = "G", description = "General Audiences")                   </ins>
-<ins>private val PG = Rating(id = "r2", name = "PG", description = "Parental Guidance Suggested")       </ins>
-<ins>private val PG13 = Rating(id = "r3", name = "PG-13", description = "Unsuitable for those under 13")</ins>
-<ins>private val R = Rating(id = "r4", name = "R", description = "Restricted - 17 and older")           </ins>
+<ins>private val NotRated = Rating(id = &quot;r0&quot;, name = &quot;Not Rated&quot;, description = &quot;Not yet rated&quot;)        </ins>
+<ins>private val G = Rating(id = &quot;r1&quot;, name = &quot;G&quot;, description = &quot;General Audiences&quot;)                   </ins>
+<ins>private val PG = Rating(id = &quot;r2&quot;, name = &quot;PG&quot;, description = &quot;Parental Guidance Suggested&quot;)       </ins>
+<ins>private val PG13 = Rating(id = &quot;r3&quot;, name = &quot;PG-13&quot;, description = &quot;Unsuitable for those under 13&quot;)</ins>
+<ins>private val R = Rating(id = &quot;r4&quot;, name = &quot;R&quot;, description = &quot;Restricted - 17 and older&quot;)           </ins>
                                                                                                    
 @Dao                                                                                               
 abstract class MovieDAO {                                                                          
-    @Query("SELECT * FROM Rating")                                                                 
-    abstract fun getRatingsFlow(): Flow<List<Rating>>                                              
+    @Query(&quot;SELECT * FROM Rating&quot;)                                                                 
+    abstract fun getRatingsFlow(): Flow&lt;List&lt;Rating&gt;&gt;                                              
                                                                                                    
-    @Query("SELECT * FROM Movie")                                                                  
-    abstract fun getMoviesFlow(): Flow<List<Movie>>                                                
+    @Query(&quot;SELECT * FROM Movie&quot;)                                                                  
+    abstract fun getMoviesFlow(): Flow&lt;List&lt;Movie&gt;&gt;                                                
                                                                                                    
-    @Query("SELECT * FROM Actor")                                                                  
-    abstract fun getActorsFlow(): Flow<List<Actor>>                                                
+    @Query(&quot;SELECT * FROM Actor&quot;)                                                                  
+    abstract fun getActorsFlow(): Flow&lt;List&lt;Actor&gt;&gt;                                                
                                                                                                    
     @Insert                                                                                        
     abstract suspend fun insert(vararg ratings: Rating)                                            
@@ -3190,13 +3190,13 @@ abstract class MovieDAO {
     @Delete                                                                                        
     abstract suspend fun delete(vararg roles: Role)                                                
                                                                                                    
-<ins>    @Query("DELETE FROM Movie")                                                                    </ins>
+<ins>    @Query(&quot;DELETE FROM Movie&quot;)                                                                    </ins>
 <ins>    abstract suspend fun clearMovies()                                                             </ins>
-<ins>    @Query("DELETE FROM Actor")                                                                    </ins>
+<ins>    @Query(&quot;DELETE FROM Actor&quot;)                                                                    </ins>
 <ins>    abstract suspend fun clearActors()                                                             </ins>
-<ins>    @Query("DELETE FROM Rating")                                                                   </ins>
+<ins>    @Query(&quot;DELETE FROM Rating&quot;)                                                                   </ins>
 <ins>    abstract suspend fun clearRatings()                                                            </ins>
-<ins>    @Query("DELETE FROM Role")                                                                     </ins>
+<ins>    @Query(&quot;DELETE FROM Role&quot;)                                                                     </ins>
 <ins>    abstract suspend fun clearRoles()                                                              </ins>
                                                                                                    
 <ins>    @Transaction                                                                                   </ins>
@@ -3209,27 +3209,27 @@ abstract class MovieDAO {
 <ins>        insert(NotRated, G, PG, PG13, R)                                                           </ins>
                                                                                                    
 <ins>        insert(                                                                                    </ins>
-<ins>            Movie("m1", "The Transporter", "Jason Statham kicks a guy in the face", "r3"),         </ins>
-<ins>            Movie("m2", "Transporter 2", "Jason Statham kicks a bunch of guys in the face", "r4"), </ins>
-<ins>            Movie("m3", "Hobbs and Shaw", "Cars, Explosions and Stuff", "r3"),                     </ins>
-<ins>            Movie("m4", "Jumanji - Welcome to the Jungle", "The Rock smolders", "r3"),             </ins>
+<ins>            Movie(&quot;m1&quot;, &quot;The Transporter&quot;, &quot;Jason Statham kicks a guy in the face&quot;, &quot;r3&quot;),         </ins>
+<ins>            Movie(&quot;m2&quot;, &quot;Transporter 2&quot;, &quot;Jason Statham kicks a bunch of guys in the face&quot;, &quot;r4&quot;), </ins>
+<ins>            Movie(&quot;m3&quot;, &quot;Hobbs and Shaw&quot;, &quot;Cars, Explosions and Stuff&quot;, &quot;r3&quot;),                     </ins>
+<ins>            Movie(&quot;m4&quot;, &quot;Jumanji - Welcome to the Jungle&quot;, &quot;The Rock smolders&quot;, &quot;r3&quot;),             </ins>
 <ins>        )                                                                                          </ins>
 <ins>        insert(                                                                                    </ins>
-<ins>            Actor("a1", "Jason Statham"),                                                          </ins>
-<ins>            Actor("a2", "The Rock"),                                                               </ins>
-<ins>            Actor("a3", "Shu Qi"),                                                                 </ins>
-<ins>            Actor("a4", "Amber Valletta"),                                                         </ins>
-<ins>            Actor("a5", "Kevin Hart"),                                                             </ins>
+<ins>            Actor(&quot;a1&quot;, &quot;Jason Statham&quot;),                                                          </ins>
+<ins>            Actor(&quot;a2&quot;, &quot;The Rock&quot;),                                                               </ins>
+<ins>            Actor(&quot;a3&quot;, &quot;Shu Qi&quot;),                                                                 </ins>
+<ins>            Actor(&quot;a4&quot;, &quot;Amber Valletta&quot;),                                                         </ins>
+<ins>            Actor(&quot;a5&quot;, &quot;Kevin Hart&quot;),                                                             </ins>
 <ins>        )                                                                                          </ins>
 <ins>        insert(                                                                                    </ins>
-<ins>            Role("m1", "a1", "Frank Martin", 1),                                                   </ins>
-<ins>            Role("m1", "a3", "Lai", 2),                                                            </ins>
-<ins>            Role("m2", "a1", "Frank Martin", 1),                                                   </ins>
-<ins>            Role("m2", "a4", "Audrey Billings", 2),                                                </ins>
-<ins>            Role("m3", "a2", "Hobbs", 1),                                                          </ins>
-<ins>            Role("m3", "a1", "Shaw", 2),                                                           </ins>
-<ins>            Role("m4", "a2", "Spencer", 1),                                                        </ins>
-<ins>            Role("m4", "a5", "Fridge", 2),                                                         </ins>
+<ins>            Role(&quot;m1&quot;, &quot;a1&quot;, &quot;Frank Martin&quot;, 1),                                                   </ins>
+<ins>            Role(&quot;m1&quot;, &quot;a3&quot;, &quot;Lai&quot;, 2),                                                            </ins>
+<ins>            Role(&quot;m2&quot;, &quot;a1&quot;, &quot;Frank Martin&quot;, 1),                                                   </ins>
+<ins>            Role(&quot;m2&quot;, &quot;a4&quot;, &quot;Audrey Billings&quot;, 2),                                                </ins>
+<ins>            Role(&quot;m3&quot;, &quot;a2&quot;, &quot;Hobbs&quot;, 1),                                                          </ins>
+<ins>            Role(&quot;m3&quot;, &quot;a1&quot;, &quot;Shaw&quot;, 2),                                                           </ins>
+<ins>            Role(&quot;m4&quot;, &quot;a2&quot;, &quot;Spencer&quot;, 1),                                                        </ins>
+<ins>            Role(&quot;m4&quot;, &quot;a5&quot;, &quot;Fridge&quot;, 2),                                                         </ins>
 <ins>        )                                                                                          </ins>
 <ins>    }                                                                                              </ins>
 }                                                                                                  
@@ -3251,17 +3251,17 @@ class MovieDatabaseRepository(context: Context): MovieRepository {
                                                                                   
     override val ratingsFlow =                                                    
         dao.getRatingsFlow()                                                      
-            .map { ratings ->                                                     
+            .map { ratings -&gt;                                                     
                 ratings.map { it.toDto() }                                        
             }                                                                     
     override val moviesFlow =                                                     
         dao.getMoviesFlow()                                                       
-            .map { movies ->                                                      
+            .map { movies -&gt;                                                      
                 movies.map { it.toDto() }                                         
             }                                                                     
     override val actorsFlow =                                                     
         dao.getActorsFlow()                                                       
-            .map { actors ->                                                      
+            .map { actors -&gt;                                                      
                 actors.map { it.toDto() }                                         
             }                                                                     
                                                                                   
@@ -3291,9 +3291,9 @@ package com.javadude.movies.repository
 import kotlinx.coroutines.flow.Flow       
                                           
 interface MovieRepository {               
-    val ratingsFlow: Flow<List<RatingDto>>
-    val moviesFlow: Flow<List<MovieDto>>  
-    val actorsFlow: Flow<List<ActorDto>>  
+    val ratingsFlow: Flow&lt;List&lt;RatingDto&gt;&gt;
+    val moviesFlow: Flow&lt;List&lt;MovieDto&gt;&gt;  
+    val actorsFlow: Flow&lt;List&lt;ActorDto&gt;&gt;  
                                           
     suspend fun insert(movie: MovieDto)   
     suspend fun insert(actor: ActorDto)   

@@ -3210,17 +3210,17 @@
                                                                                   
 <ins>    override val ratingsFlow =                                                    </ins>
 <ins>        dao.getRatingsFlow()                                                      </ins>
-<ins>            .map { ratings ->                                                     </ins>
+<ins>            .map { ratings -&gt;                                                     </ins>
 <ins>                ratings.map { it.toDto() }                                        </ins>
 <ins>            }                                                                     </ins>
 <ins>    override val moviesFlow =                                                     </ins>
 <ins>        dao.getMoviesFlow()                                                       </ins>
-<ins>            .map { movies ->                                                      </ins>
+<ins>            .map { movies -&gt;                                                      </ins>
 <ins>                movies.map { it.toDto() }                                         </ins>
 <ins>            }                                                                     </ins>
 <ins>    override val actorsFlow =                                                     </ins>
 <ins>        dao.getActorsFlow()                                                       </ins>
-<ins>            .map { actors ->                                                      </ins>
+<ins>            .map { actors -&gt;                                                      </ins>
 <ins>                actors.map { it.toDto() }                                         </ins>
 <ins>            }                                                                     </ins>
                                                                                   
@@ -3248,9 +3248,9 @@
 <ins>import kotlinx.coroutines.flow.Flow       </ins>
                                           
 <ins>interface MovieRepository {               </ins>
-<ins>    val ratingsFlow: Flow<List<RatingDto>></ins>
-<ins>    val moviesFlow: Flow<List<MovieDto>>  </ins>
-<ins>    val actorsFlow: Flow<List<ActorDto>>  </ins>
+<ins>    val ratingsFlow: Flow&lt;List&lt;RatingDto&gt;&gt;</ins>
+<ins>    val moviesFlow: Flow&lt;List&lt;MovieDto&gt;&gt;  </ins>
+<ins>    val actorsFlow: Flow&lt;List&lt;ActorDto&gt;&gt;  </ins>
                                           
 <ins>    suspend fun insert(movie: MovieDto)   </ins>
 <ins>    suspend fun insert(actor: ActorDto)   </ins>

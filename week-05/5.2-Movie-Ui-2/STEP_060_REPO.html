@@ -3161,23 +3161,23 @@ import androidx.room.Entity
 <ins>import androidx.room.Index                </ins>
                                           
 @Entity(                                  
-    primaryKeys = ["actorId", "movieId"], 
+    primaryKeys = [&quot;actorId&quot;, &quot;movieId&quot;], 
 <ins>    indices = [                           </ins>
-<ins>        Index(value = ["movieId"]),       </ins>
-<ins>        Index(value = ["actorId"]),       </ins>
+<ins>        Index(value = [&quot;movieId&quot;]),       </ins>
+<ins>        Index(value = [&quot;actorId&quot;]),       </ins>
 <ins>    ],                                    </ins>
 <ins>    foreignKeys = [                       </ins>
 <ins>        ForeignKey(                       </ins>
 <ins>            entity = Actor::class,        </ins>
-<ins>            parentColumns = ["id"],       </ins>
-<ins>            childColumns = ["actorId"],   </ins>
+<ins>            parentColumns = [&quot;id&quot;],       </ins>
+<ins>            childColumns = [&quot;actorId&quot;],   </ins>
 <ins>            onUpdate = ForeignKey.CASCADE,</ins>
 <ins>            onDelete = ForeignKey.CASCADE,</ins>
 <ins>        ),                                </ins>
 <ins>        ForeignKey(                       </ins>
 <ins>            entity = Movie::class,        </ins>
-<ins>            parentColumns = ["id"],       </ins>
-<ins>            childColumns = ["movieId"],   </ins>
+<ins>            parentColumns = [&quot;id&quot;],       </ins>
+<ins>            childColumns = [&quot;movieId&quot;],   </ins>
 <ins>            onUpdate = ForeignKey.CASCADE,</ins>
 <ins>            onDelete = ForeignKey.CASCADE,</ins>
 <ins>        ),                                </ins>

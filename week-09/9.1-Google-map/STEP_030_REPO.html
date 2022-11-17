@@ -3132,13 +3132,13 @@ android {
 <div id="020-latest-android-sdk">    compileSdk 33                                                                                      
                                                                                                        
     defaultConfig {                                                                                    
-        applicationId "com.javadude.carfinder"                                                         
+        applicationId &quot;com.javadude.carfinder&quot;                                                         
         minSdk 21                                                                                      
         targetSdk 33                                                                                   
 </div>        versionCode 1                                                                                  
-        versionName "1.0"                                                                              
+        versionName &quot;1.0&quot;                                                                              
                                                                                                        
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"                            
+        testInstrumentationRunner &quot;androidx.test.runner.AndroidJUnitRunner&quot;                            
         vectorDrawables {                                                                              
             useSupportLibrary true                                                                     
         }                                                                                              
@@ -3177,15 +3177,15 @@ dependencies {
 <div id="020-update-all-highlighted-deps">    implementation 'androidx.core:core-ktx:1.9.0'                                                      
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'                                    
     implementation 'androidx.activity:activity-compose:1.6.0'                                          
-    implementation "androidx.compose.ui:ui:$compose_ui_version"                                        
-    implementation "androidx.compose.ui:ui-tooling-preview:$compose_ui_version"                        
+    implementation &quot;androidx.compose.ui:ui:$compose_ui_version&quot;                                        
+    implementation &quot;androidx.compose.ui:ui-tooling-preview:$compose_ui_version&quot;                        
     implementation 'androidx.compose.material:material:1.2.1'                                          
     testImplementation 'junit:junit:4.13.2'                                                            
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'                                          
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'                             
-    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"                 
-    debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version"                           
-    debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"                     
+    androidTestImplementation &quot;androidx.compose.ui:ui-test-junit4:$compose_ui_version&quot;                 
+    debugImplementation &quot;androidx.compose.ui:ui-tooling:$compose_ui_version&quot;                           
+    debugImplementation &quot;androidx.compose.ui:ui-test-manifest:$compose_ui_version&quot;                     
 </div>}                                                                                                      
 </pre>
 </div>
@@ -3194,43 +3194,43 @@ dependencies {
 <summary>CHANGED: /app/src/main/AndroidManifest.xml</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/AndroidManifest.xml';">
 <pre>
-<?xml version="1.0" encoding="utf-8"?>                                      
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"        
-    xmlns:tools="http://schemas.android.com/tools">                         
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;                                      
+&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;        
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;&gt;                         
                                                                             
-    <application                                                            
-        android:allowBackup="true"                                          
-        android:dataExtractionRules="@xml/data_extraction_rules"            
-        android:fullBackupContent="@xml/backup_rules"                       
-        android:icon="@mipmap/ic_launcher"                                  
-        android:label="@string/app_name"                                    
-        android:roundIcon="@mipmap/ic_launcher_round"                       
-        android:supportsRtl="true"                                          
-        android:theme="@style/Theme.CarFinder"                              
-        tools:targetApi="31">                                               
+    &lt;application                                                            
+        android:allowBackup=&quot;true&quot;                                          
+        android:dataExtractionRules=&quot;@xml/data_extraction_rules&quot;            
+        android:fullBackupContent=&quot;@xml/backup_rules&quot;                       
+        android:icon=&quot;@mipmap/ic_launcher&quot;                                  
+        android:label=&quot;@string/app_name&quot;                                    
+        android:roundIcon=&quot;@mipmap/ic_launcher_round&quot;                       
+        android:supportsRtl=&quot;true&quot;                                          
+        android:theme=&quot;@style/Theme.CarFinder&quot;                              
+        tools:targetApi=&quot;31&quot;&gt;                                               
                                                                             
-<div id="030-manifest-key"><ins>        <meta-data                                                          </ins>
-<ins>            android:name="com.google.android.geo.API_KEY"                   </ins>
-<ins>            android:value="${MAPS_API_KEY}" />                              </ins>
+<div id="030-manifest-key"><ins>        &lt;meta-data                                                          </ins>
+<ins>            android:name=&quot;com.google.android.geo.API_KEY&quot;                   </ins>
+<ins>            android:value=&quot;${MAPS_API_KEY}&quot; /&gt;                              </ins>
 </div>                                                                            
-        <activity                                                           
-            android:name=".MainActivity"                                    
-            android:exported="true"                                         
-            android:label="@string/app_name"                                
-            android:theme="@style/Theme.CarFinder">                         
-            <intent-filter>                                                 
-                <action android:name="android.intent.action.MAIN" />        
+        &lt;activity                                                           
+            android:name=&quot;.MainActivity&quot;                                    
+            android:exported=&quot;true&quot;                                         
+            android:label=&quot;@string/app_name&quot;                                
+            android:theme=&quot;@style/Theme.CarFinder&quot;&gt;                         
+            &lt;intent-filter&gt;                                                 
+                &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;        
                                                                             
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>                                                
+                &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
+            &lt;/intent-filter&gt;                                                
                                                                             
-            <meta-data                                                      
-                android:name="android.app.lib_name"                         
-                android:value="" />                                         
-        </activity>                                                         
-    </application>                                                          
+            &lt;meta-data                                                      
+                android:name=&quot;android.app.lib_name&quot;                         
+                android:value=&quot;&quot; /&gt;                                         
+        &lt;/activity&gt;                                                         
+    &lt;/application&gt;                                                          
                                                                             
-</manifest>                                                                 
+&lt;/manifest&gt;                                                                 
 </pre>
 </div>
 </details>
@@ -3264,7 +3264,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),             
                     color = MaterialTheme.colors.background        
                 ) {                                                
-<div id="030-add-map"><del>//                  Greeting("Android")                            </del>
+<div id="030-add-map"><del>//                  Greeting(&quot;Android&quot;)                            </del>
 <ins>                    GoogleMap(                                     </ins>
 <ins>                        modifier = Modifier.fillMaxSize(),         </ins>
 <ins>                    ) {                                            </ins>
@@ -3277,13 +3277,13 @@ class MainActivity : ComponentActivity() {
 }                                                                  
 <del>//@Composable                                                      </del>
 <del>//fun Greeting(name: String) {                                     </del>
-<del>//  Text(text = "Hello $name!")                                    </del>
+<del>//  Text(text = &quot;Hello $name!&quot;)                                    </del>
 <del>//}                                                                </del>
 <del>//@Preview(showBackground = true)                                  </del>
 <del>//@Composable                                                      </del>
 <del>//fun DefaultPreview() {                                           </del>
 <del>//  CarFinderTheme {                                               </del>
-<del>//      Greeting("Android")                                        </del>
+<del>//      Greeting(&quot;Android&quot;)                                        </del>
 <del>//  }                                                              </del>
 <del>//}                                                                </del>
 </pre>

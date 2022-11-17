@@ -3137,8 +3137,8 @@
 <ins>        minSdk 21                                                                                      </ins>
 <ins>        targetSdk 32                                                                                   </ins>
                                                                                                        
-<ins>        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"                            </ins>
-<ins>        consumerProguardFiles "consumer-rules.pro"                                                     </ins>
+<ins>        testInstrumentationRunner &quot;androidx.test.runner.AndroidJUnitRunner&quot;                            </ins>
+<ins>        consumerProguardFiles &quot;consumer-rules.pro&quot;                                                     </ins>
 <ins>    }                                                                                                  </ins>
                                                                                                        
 <ins>    buildTypes {                                                                                       </ins>
@@ -3193,7 +3193,7 @@
 <ins>    fun useAppContext() {                                                          </ins>
 <ins>        // Context of the app under test.                                          </ins>
 <ins>        val appContext = InstrumentationRegistry.getInstrumentation().targetContext</ins>
-<ins>        assertEquals("com.javadude.movies.data.test", appContext.packageName)      </ins>
+<ins>        assertEquals(&quot;com.javadude.movies.data.test&quot;, appContext.packageName)      </ins>
 <ins>    }                                                                              </ins>
 <ins>}                                                                                  </ins>
 </pre>
@@ -3203,10 +3203,10 @@
 <summary>ADDED: /data/src/main/AndroidManifest.xml</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/data/src/main/AndroidManifest.xml';">
 <pre>
-<ins><?xml version="1.0" encoding="utf-8"?>                               </ins>
-<ins><manifest xmlns:android="http://schemas.android.com/apk/res/android"></ins>
+<ins>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;                               </ins>
+<ins>&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;</ins>
                                                                      
-<ins></manifest>                                                          </ins>
+<ins>&lt;/manifest&gt;                                                          </ins>
 </pre>
 </div>
 </details>
@@ -3251,8 +3251,8 @@
 <ins>        minSdk 21                                                                                      </ins>
 <ins>        targetSdk 32                                                                                   </ins>
                                                                                                        
-<ins>        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"                            </ins>
-<ins>        consumerProguardFiles "consumer-rules.pro"                                                     </ins>
+<ins>        testInstrumentationRunner &quot;androidx.test.runner.AndroidJUnitRunner&quot;                            </ins>
+<ins>        consumerProguardFiles &quot;consumer-rules.pro&quot;                                                     </ins>
 <ins>    }                                                                                                  </ins>
                                                                                                        
 <ins>    buildTypes {                                                                                       </ins>
@@ -3307,7 +3307,7 @@
 <ins>    fun useAppContext() {                                                          </ins>
 <ins>        // Context of the app under test.                                          </ins>
 <ins>        val appContext = InstrumentationRegistry.getInstrumentation().targetContext</ins>
-<ins>        assertEquals("com.javadude.movies.repository.test", appContext.packageName)</ins>
+<ins>        assertEquals(&quot;com.javadude.movies.repository.test&quot;, appContext.packageName)</ins>
 <ins>    }                                                                              </ins>
 <ins>}                                                                                  </ins>
 </pre>
@@ -3317,10 +3317,10 @@
 <summary>ADDED: /repository/src/main/AndroidManifest.xml</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/repository/src/main/AndroidManifest.xml';">
 <pre>
-<ins><?xml version="1.0" encoding="utf-8"?>                               </ins>
-<ins><manifest xmlns:android="http://schemas.android.com/apk/res/android"></ins>
+<ins>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;                               </ins>
+<ins>&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;</ins>
                                                                      
-<ins></manifest>                                                          </ins>
+<ins>&lt;/manifest&gt;                                                          </ins>
 </pre>
 </div>
 </details>
@@ -3366,7 +3366,7 @@ dependencyResolutionManagement {
         mavenCentral()                                          
     }                                                           
 }                                                               
-rootProject.name = "Movies"                                     
+rootProject.name = &quot;Movies&quot;                                     
 include ':app'                                                  
 <ins>include ':data'                                                 </ins>
 <ins>include ':repository'                                           </ins>

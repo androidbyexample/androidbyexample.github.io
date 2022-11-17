@@ -3424,14 +3424,14 @@ data class MovieDisplay(
 class MovieViewModel(application: Application) : AndroidViewModel(application) {  
     private val repository: MovieRepository = MovieDatabaseRepository(application)
                                                                                   
-    private var screenStack: List<Screen> = listOf(MovieList)                     
+    private var screenStack: List&lt;Screen&gt; = listOf(MovieList)                     
         set(value) {                                                              
             field = value                                                         
             screen = value.lastOrNull()                                           
             clearSelections()                                                     
         }                                                                         
                                                                                   
-    var selectedItemIds by mutableStateOf<Set<String>>(emptySet())                
+    var selectedItemIds by mutableStateOf&lt;Set&lt;String&gt;&gt;(emptySet())                
         private set                                                               
                                                                                   
     fun clearSelections() {                                                       
@@ -3476,7 +3476,7 @@ class MovieViewModel(application: Application) : AndroidViewModel(application) {
         screenStack = listOf(screen)                                              
     }                                                                             
                                                                                   
-    var screen by mutableStateOf<Screen?>(MovieList)                              
+    var screen by mutableStateOf&lt;Screen?&gt;(MovieList)                              
         private set                                                               
                                                                                   
     val ratingsFlow = repository.ratingsFlow                                      
@@ -3555,12 +3555,12 @@ import com.javadude.movies.Screen
 fun MovieScaffold(                                                                                      
     title: String,                                                                                      
     selectedItemCount: Int = 0,                                                                         
-    onClearSelections: () -> Unit = {},                                                                 
-    onDeleteSelectedItems: () -> Unit = {},                                                             
-    onSelectListScreen: (Screen) -> Unit,                                                               
-    onResetDatabase: () -> Unit,                                                                        
-<ins>    onEdit: (() -> Unit)? = null,                                                                       </ins>
-    content: @Composable (PaddingValues) -> Unit,                                                       
+    onClearSelections: () -&gt; Unit = {},                                                                 
+    onDeleteSelectedItems: () -&gt; Unit = {},                                                             
+    onSelectListScreen: (Screen) -&gt; Unit,                                                               
+    onResetDatabase: () -&gt; Unit,                                                                        
+<ins>    onEdit: (() -&gt; Unit)? = null,                                                                       </ins>
+    content: @Composable (PaddingValues) -&gt; Unit,                                                       
 ) {                                                                                                     
     Scaffold(                                                                                           
         topBar = {                                                                                      
@@ -3568,7 +3568,7 @@ fun MovieScaffold(
                 TopAppBar(                                                                              
                     title = { SimpleText(text = title) },                                               
                     actions = {                                                                         
-<ins>                        onEdit?.let { onEdit ->                                                         </ins>
+<ins>                        onEdit?.let { onEdit -&gt;                                                         </ins>
 <ins>                            IconButton(                                                                 </ins>
 <ins>                                onClick = onEdit,                                                       </ins>
 <ins>                                modifier = Modifier.padding(8.dp),                                      </ins>
@@ -3619,7 +3619,7 @@ fun MovieScaffold(
                 )                                                                                       
             }                                                                                           
         },                                                                                              
-        content = { paddingValues ->                                                                    
+        content = { paddingValues -&gt;                                                                    
             content(paddingValues)                                                                      
         },                                                                                              
         bottomBar = {                                                                                   
@@ -3652,7 +3652,7 @@ fun RowScope.ScreenSelectButton(
     targetScreen: Screen,                                                                               
     imageVector: ImageVector,                                                                           
     @StringRes labelId: Int,                                                                            
-    onSelectListScreen: (Screen) -> Unit,                                                               
+    onSelectListScreen: (Screen) -&gt; Unit,                                                               
 ) =                                                                                                     
     BottomNavigationItem(                                                                               
         selected = false,                                                                               
@@ -3693,7 +3693,7 @@ fun RowScope.ScreenSelectButton(
 <ins>    @StringRes labelId: Int,                              </ins>
 <ins>    @StringRes placeholderId: Int,                        </ins>
 <ins>    value: String?,                                       </ins>
-<ins>    onValueChange: (String) -> Unit,                      </ins>
+<ins>    onValueChange: (String) -&gt; Unit,                      </ins>
 <ins>    modifier: Modifier = Modifier,                        </ins>
 <ins>) =                                                       </ins>
 <ins>    OutlinedTextField(                                    </ins>
@@ -3706,13 +3706,13 @@ fun RowScope.ScreenSelectButton(
 <ins>            Text(                                         </ins>
 <ins>                text =                                    </ins>
 <ins>                    if (value == null) {                  </ins>
-<ins>                        "loading..."                      </ins>
+<ins>                        &quot;loading...&quot;                      </ins>
 <ins>                    } else {                              </ins>
 <ins>                        stringResource(id = placeholderId)</ins>
 <ins>                    }                                     </ins>
 <ins>            )                                             </ins>
 <ins>        },                                                </ins>
-<ins>        value = value ?: "",                              </ins>
+<ins>        value = value ?: &quot;&quot;,                              </ins>
 <ins>        onValueChange = {                                 </ins>
 <ins>            if (value != null) {                          </ins>
 <ins>                onValueChange(it)                         </ins>
@@ -3752,14 +3752,14 @@ import com.javadude.movies.repository.ActorDto
                                                                     
 @Composable                                                         
 fun ActorList(                                                      
-    actors: List<ActorDto>,                                         
-    onSelectListScreen: (Screen) -> Unit,                           
-    onResetDatabase: () -> Unit,                                    
-    selectedItemIds: Set<String>,                                   
-    onClearSelections: () -> Unit,                                  
-    onToggleSelection: (String) -> Unit,                            
-    onDeleteSelectedItems: () -> Unit,                              
-    onActorClick: (String) -> Unit,                                 
+    actors: List&lt;ActorDto&gt;,                                         
+    onSelectListScreen: (Screen) -&gt; Unit,                           
+    onResetDatabase: () -&gt; Unit,                                    
+    selectedItemIds: Set&lt;String&gt;,                                   
+    onClearSelections: () -&gt; Unit,                                  
+    onToggleSelection: (String) -&gt; Unit,                            
+    onDeleteSelectedItems: () -&gt; Unit,                              
+    onActorClick: (String) -&gt; Unit,                                 
 ) = ListScaffold(                                                   
     titleId = R.string.screen_title_actors,                         
     items = actors,                                                 
@@ -3773,7 +3773,7 @@ fun ActorList(
     onClearSelections = onClearSelections,                          
     onToggleSelection = onToggleSelection,                          
     onDeleteSelectedItems = onDeleteSelectedItems,                  
-) { actor ->                                                        
+) { actor -&gt;                                                        
     SimpleText(text = actor.name)                                   
 }                                                                   
 </pre>
@@ -3812,13 +3812,13 @@ import com.javadude.movies.repository.MovieWithCastDto
 @Composable                                                                                      
 fun MovieDisplay(                                                                                
     movieId: String,                                                                             
-    fetchMovieWithCast: suspend (String) -> MovieWithCastDto,                                    
-    onSelectListScreen: (Screen) -> Unit,                                                        
-    onResetDatabase: () -> Unit,                                                                 
-    onActorClick: (String) -> Unit,                                                              
-<ins>    onEdit: (String) -> Unit,                                                                    </ins>
+    fetchMovieWithCast: suspend (String) -&gt; MovieWithCastDto,                                    
+    onSelectListScreen: (Screen) -&gt; Unit,                                                        
+    onResetDatabase: () -&gt; Unit,                                                                 
+    onActorClick: (String) -&gt; Unit,                                                              
+<ins>    onEdit: (String) -&gt; Unit,                                                                    </ins>
 ) {                                                                                              
-    var movieWithCastDto by remember { mutableStateOf<MovieWithCastDto?>(null) }                 
+    var movieWithCastDto by remember { mutableStateOf&lt;MovieWithCastDto?&gt;(null) }                 
                                                                                                  
     LaunchedEffect(key1 = movieId) {                                                             
         // starts a coroutine to fetch the rating                                                
@@ -3830,18 +3830,18 @@ fun MovieDisplay(
         onSelectListScreen = onSelectListScreen,                                                 
         onResetDatabase = onResetDatabase,                                                       
 <ins>        onEdit =                                                                                 </ins>
-<ins>            movieWithCastDto?.let { movieWithCast ->                                             </ins>
+<ins>            movieWithCastDto?.let { movieWithCast -&gt;                                             </ins>
 <ins>                {                                                                                </ins>
 <ins>                    onEdit(movieWithCast.movie.id)                                               </ins>
 <ins>                }                                                                                </ins>
 <ins>            }                                                                                    </ins>
-    ) { paddingValues ->                                                                         
+    ) { paddingValues -&gt;                                                                         
         Column(                                                                                  
             modifier = Modifier                                                                  
                 .padding(paddingValues)                                                          
                 .fillMaxHeight()                                                                 
         ) {                                                                                      
-            movieWithCastDto?.let { movieWithCast ->                                             
+            movieWithCastDto?.let { movieWithCast -&gt;                                             
                 SimpleText(                                                                      
                     text = movieWithCast.movie.description                                       
                 )                                                                                
@@ -3856,7 +3856,7 @@ fun MovieDisplay(
                 ) {                                                                              
                     items(                                                                       
                         items = movieWithCast.cast,                                              
-                    ) { roleWithActor ->                                                         
+                    ) { roleWithActor -&gt;                                                         
                         Card(                                                                    
                             elevation = 4.dp,                                                    
                             modifier = Modifier                                                  
@@ -3864,7 +3864,7 @@ fun MovieDisplay(
                                 .fillMaxWidth()                                                  
                         ) {                                                                      
                             SimpleText(                                                          
-                                text = "${roleWithActor.character}: ${roleWithActor.actor.name}",
+                                text = &quot;${roleWithActor.character}: ${roleWithActor.actor.name}&quot;,
                                 modifier = Modifier.clickable {                                  
                                     onActorClick(roleWithActor.actor.id)                         
                                 }                                                                
@@ -3905,12 +3905,12 @@ fun MovieDisplay(
 <ins>@Composable                                                            </ins>
 <ins>fun MovieEdit(                                                         </ins>
 <ins>    movieId: String,                                                   </ins>
-<ins>    fetchMovie: suspend (String) -> MovieDto,                          </ins>
-<ins>    onSelectListScreen: (Screen) -> Unit,                              </ins>
-<ins>    onResetDatabase: () -> Unit,                                       </ins>
-<ins>    onMovieUpdate: (MovieDto) -> Unit,                                 </ins>
+<ins>    fetchMovie: suspend (String) -&gt; MovieDto,                          </ins>
+<ins>    onSelectListScreen: (Screen) -&gt; Unit,                              </ins>
+<ins>    onResetDatabase: () -&gt; Unit,                                       </ins>
+<ins>    onMovieUpdate: (MovieDto) -&gt; Unit,                                 </ins>
 <ins>) {                                                                    </ins>
-<ins>    var movie by remember { mutableStateOf<MovieDto?>(null) }          </ins>
+<ins>    var movie by remember { mutableStateOf&lt;MovieDto?&gt;(null) }          </ins>
                                                                        
 <ins>    LaunchedEffect(key1 = movieId) {                                   </ins>
 <ins>        // starts a coroutine to fetch the rating                      </ins>
@@ -3921,7 +3921,7 @@ fun MovieDisplay(
 <ins>        title = movie?.title ?: stringResource(id = R.string.loading), </ins>
 <ins>        onSelectListScreen = onSelectListScreen,                       </ins>
 <ins>        onResetDatabase = onResetDatabase,                             </ins>
-<ins>    ) { paddingValues ->                                               </ins>
+<ins>    ) { paddingValues -&gt;                                               </ins>
 <ins>        Column(                                                        </ins>
 <ins>            modifier = Modifier                                        </ins>
 <ins>                .padding(paddingValues)                                </ins>
@@ -3930,7 +3930,7 @@ fun MovieDisplay(
 <ins>            TextEntry(                                                 </ins>
 <ins>                labelId = R.string.title,                              </ins>
 <ins>                placeholderId = R.string.movie_title_placeholder,      </ins>
-<ins>                value = movie?.title ?: "",                            </ins>
+<ins>                value = movie?.title ?: &quot;&quot;,                            </ins>
 <ins>                onValueChange = {                                      </ins>
 <ins>                    movie = movie?.copy(title = it)?.apply {           </ins>
 <ins>                        onMovieUpdate(this)                            </ins>
@@ -3940,7 +3940,7 @@ fun MovieDisplay(
 <ins>            TextEntry(                                                 </ins>
 <ins>                labelId = R.string.description,                        </ins>
 <ins>                placeholderId = R.string.movie_description_placeholder,</ins>
-<ins>                value = movie?.description ?: "",                      </ins>
+<ins>                value = movie?.description ?: &quot;&quot;,                      </ins>
 <ins>                onValueChange = {                                      </ins>
 <ins>                    movie = movie?.copy(description = it)?.apply {     </ins>
 <ins>                        onMovieUpdate(this)                            </ins>
@@ -3976,7 +3976,7 @@ import com.javadude.movies.RatingList
 @Composable                                                                   
 fun Ui(                                                                       
     viewModel: MovieViewModel = viewModel(),                                  
-    onExit: () -> Unit,                                                       
+    onExit: () -&gt; Unit,                                                       
 ) {                                                                           
     BackHandler {                                                             
         viewModel.popScreen()                                                 
@@ -3987,13 +3987,13 @@ fun Ui(
     val actors by viewModel.actorsFlow.collectAsState(initial = emptyList())  
                                                                               
     when(val screen = viewModel.screen) {                                     
-        null -> onExit()                                                      
+        null -&gt; onExit()                                                      
                                                                               
-        RatingList -> RatingList(                                             
+        RatingList -&gt; RatingList(                                             
             ratings = ratings,                                                
             onSelectListScreen = viewModel::setScreenStack,                   
             onResetDatabase = viewModel::resetDatabase,                       
-            onRatingClick = { id ->                                           
+            onRatingClick = { id -&gt;                                           
                 viewModel.pushScreen(RatingDisplay(id))                       
             },                                                                
             selectedItemIds = viewModel.selectedItemIds,                      
@@ -4001,11 +4001,11 @@ fun Ui(
             onToggleSelection = viewModel::toggleSelection,                   
             onDeleteSelectedItems = viewModel::deleteSelectedRatings,         
         )                                                                     
-        MovieList -> MovieList(                                               
+        MovieList -&gt; MovieList(                                               
             movies = movies,                                                  
             onSelectListScreen = viewModel::setScreenStack,                   
             onResetDatabase = viewModel::resetDatabase,                       
-            onMovieClick = { id ->                                            
+            onMovieClick = { id -&gt;                                            
                 viewModel.pushScreen(MovieDisplay(id))                        
             },                                                                
             selectedItemIds = viewModel.selectedItemIds,                      
@@ -4013,11 +4013,11 @@ fun Ui(
             onToggleSelection = viewModel::toggleSelection,                   
             onDeleteSelectedItems = viewModel::deleteSelectedMovies,          
         )                                                                     
-        ActorList -> ActorList(                                               
+        ActorList -&gt; ActorList(                                               
             actors = actors,                                                  
             onSelectListScreen = viewModel::setScreenStack,                   
             onResetDatabase = viewModel::resetDatabase,                       
-            onActorClick = { id ->                                            
+            onActorClick = { id -&gt;                                            
                 viewModel.pushScreen(ActorDisplay(id))                        
             },                                                                
             selectedItemIds = viewModel.selectedItemIds,                      
@@ -4026,42 +4026,42 @@ fun Ui(
             onDeleteSelectedItems = viewModel::deleteSelectedActors,          
         )                                                                     
                                                                               
-        is RatingDisplay -> RatingDisplay(                                    
+        is RatingDisplay -&gt; RatingDisplay(                                    
             ratingId = screen.id,                                             
-            fetchRatingWithMovies = { id ->                                   
+            fetchRatingWithMovies = { id -&gt;                                   
                 viewModel.getRatingWithMovies(id)                             
             },                                                                
             onSelectListScreen = viewModel::setScreenStack,                   
             onResetDatabase = viewModel::resetDatabase,                       
-            onMovieClick = { id ->                                            
+            onMovieClick = { id -&gt;                                            
                 viewModel.pushScreen(MovieDisplay(id))                        
             }                                                                 
         )                                                                     
-        is MovieDisplay -> MovieDisplay(                                      
+        is MovieDisplay -&gt; MovieDisplay(                                      
             movieId = screen.id,                                              
             fetchMovieWithCast = viewModel::getMovieWithCast,                 
             onSelectListScreen = viewModel::setScreenStack,                   
             onResetDatabase = viewModel::resetDatabase,                       
-            onActorClick = { id ->                                            
+            onActorClick = { id -&gt;                                            
                 viewModel.pushScreen(ActorDisplay(id))                        
 <ins>            },                                                                </ins>
-<ins>            onEdit = { id ->                                                  </ins>
+<ins>            onEdit = { id -&gt;                                                  </ins>
 <ins>                viewModel.pushScreen(MovieEdit(id))                           </ins>
             }                                                                 
         )                                                                     
-<ins>        is MovieEdit -> MovieEdit(                                            </ins>
+<ins>        is MovieEdit -&gt; MovieEdit(                                            </ins>
 <ins>            movieId = screen.id,                                              </ins>
 <ins>            fetchMovie = viewModel::getMovie,                                 </ins>
 <ins>            onSelectListScreen = viewModel::setScreenStack,                   </ins>
 <ins>            onResetDatabase = viewModel::resetDatabase,                       </ins>
 <ins>            onMovieUpdate = viewModel::updateMovie,                           </ins>
 <ins>        )                                                                     </ins>
-        is ActorDisplay -> ActorDisplay(                                      
+        is ActorDisplay -&gt; ActorDisplay(                                      
             actorId = screen.id,                                              
             fetchActorWithFilmography = viewModel::getActorWithFilmography,   
             onSelectListScreen = viewModel::setScreenStack,                   
             onResetDatabase = viewModel::resetDatabase,                       
-            onMovieClick = { id ->                                            
+            onMovieClick = { id -&gt;                                            
                 viewModel.pushScreen(MovieDisplay(id))                        
             }                                                                 
         )                                                                     
@@ -4074,35 +4074,35 @@ fun Ui(
 <summary>CHANGED: /app/src/main/res/values/strings.xml</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/res/values/strings.xml';">
 <pre>
-<resources>                                                                                
-    <string name="app_name">Movies</string>                                                
-    <string name="reset_database">Reset Database</string>                                  
-<ins>    <string name="edit">Edit</string>                                                      </ins>
+&lt;resources&gt;                                                                                
+    &lt;string name=&quot;app_name&quot;&gt;Movies&lt;/string&gt;                                                
+    &lt;string name=&quot;reset_database&quot;&gt;Reset Database&lt;/string&gt;                                  
+<ins>    &lt;string name=&quot;edit&quot;&gt;Edit&lt;/string&gt;                                                      </ins>
                                                                                            
-    <string name="screen_title_ratings">MPAA Ratings</string>                              
-    <string name="screen_title_movies">Movies</string>                                     
-    <string name="screen_title_actors">Actors</string>                                     
+    &lt;string name=&quot;screen_title_ratings&quot;&gt;MPAA Ratings&lt;/string&gt;                              
+    &lt;string name=&quot;screen_title_movies&quot;&gt;Movies&lt;/string&gt;                                     
+    &lt;string name=&quot;screen_title_actors&quot;&gt;Actors&lt;/string&gt;                                     
                                                                                            
-    <string name="movies">Movies that are rated %1$s</string>                              
-    <string name="filmography">Films that feature %1$s</string>                            
-    <string name="cast">Cast</string>                                                      
+    &lt;string name=&quot;movies&quot;&gt;Movies that are rated %1$s&lt;/string&gt;                              
+    &lt;string name=&quot;filmography&quot;&gt;Films that feature %1$s&lt;/string&gt;                            
+    &lt;string name=&quot;cast&quot;&gt;Cast&lt;/string&gt;                                                      
                                                                                            
-    <string name="no_movies_found_for_this_rating">No movies found for this rating</string>
-    <string name="tap_to_toggle_selection">Tap to toggle selection</string>                
-    <string name="clear_selections">Clear selections</string>                              
-    <string name="delete_selected_items">Delete selected items</string>                    
+    &lt;string name=&quot;no_movies_found_for_this_rating&quot;&gt;No movies found for this rating&lt;/string&gt;
+    &lt;string name=&quot;tap_to_toggle_selection&quot;&gt;Tap to toggle selection&lt;/string&gt;                
+    &lt;string name=&quot;clear_selections&quot;&gt;Clear selections&lt;/string&gt;                              
+    &lt;string name=&quot;delete_selected_items&quot;&gt;Delete selected items&lt;/string&gt;                    
                                                                                            
-<ins>    <string name="name">Name</string>                                                      </ins>
-<ins>    <string name="title">Title</string>                                                    </ins>
-<ins>    <string name="rating_name_placeholder">Enter the actor name</string>                   </ins>
-<ins>    <string name="actor_name_placeholder">Enter the rating name</string>                   </ins>
-<ins>    <string name="movie_title_placeholder">Enter the movie title</string>                  </ins>
-<ins>    <string name="description">Description</string>                                        </ins>
-<ins>    <string name="movie_description_placeholder">Enter the movie description</string>      </ins>
-<ins>    <string name="rating_description_placeholder">Enter the rating description</string>    </ins>
+<ins>    &lt;string name=&quot;name&quot;&gt;Name&lt;/string&gt;                                                      </ins>
+<ins>    &lt;string name=&quot;title&quot;&gt;Title&lt;/string&gt;                                                    </ins>
+<ins>    &lt;string name=&quot;rating_name_placeholder&quot;&gt;Enter the actor name&lt;/string&gt;                   </ins>
+<ins>    &lt;string name=&quot;actor_name_placeholder&quot;&gt;Enter the rating name&lt;/string&gt;                   </ins>
+<ins>    &lt;string name=&quot;movie_title_placeholder&quot;&gt;Enter the movie title&lt;/string&gt;                  </ins>
+<ins>    &lt;string name=&quot;description&quot;&gt;Description&lt;/string&gt;                                        </ins>
+<ins>    &lt;string name=&quot;movie_description_placeholder&quot;&gt;Enter the movie description&lt;/string&gt;      </ins>
+<ins>    &lt;string name=&quot;rating_description_placeholder&quot;&gt;Enter the rating description&lt;/string&gt;    </ins>
                                                                                            
-    <string name="loading">Loading</string>                                                
-</resources>                                                                               
+    &lt;string name=&quot;loading&quot;&gt;Loading&lt;/string&gt;                                                
+&lt;/resources&gt;                                                                               
 </pre>
 </div>
 </details>
@@ -4120,36 +4120,36 @@ import androidx.room.Transaction
 import androidx.room.Update                                                                        
 import kotlinx.coroutines.flow.Flow                                                                
                                                                                                    
-private val NotRated = Rating(id = "r0", name = "Not Rated", description = "Not yet rated")        
-private val G = Rating(id = "r1", name = "G", description = "General Audiences")                   
-private val PG = Rating(id = "r2", name = "PG", description = "Parental Guidance Suggested")       
-private val PG13 = Rating(id = "r3", name = "PG-13", description = "Unsuitable for those under 13")
-private val R = Rating(id = "r4", name = "R", description = "Restricted - 17 and older")           
+private val NotRated = Rating(id = &quot;r0&quot;, name = &quot;Not Rated&quot;, description = &quot;Not yet rated&quot;)        
+private val G = Rating(id = &quot;r1&quot;, name = &quot;G&quot;, description = &quot;General Audiences&quot;)                   
+private val PG = Rating(id = &quot;r2&quot;, name = &quot;PG&quot;, description = &quot;Parental Guidance Suggested&quot;)       
+private val PG13 = Rating(id = &quot;r3&quot;, name = &quot;PG-13&quot;, description = &quot;Unsuitable for those under 13&quot;)
+private val R = Rating(id = &quot;r4&quot;, name = &quot;R&quot;, description = &quot;Restricted - 17 and older&quot;)           
                                                                                                    
 @Dao                                                                                               
 abstract class MovieDAO {                                                                          
-    @Query("SELECT * FROM Rating")                                                                 
-    abstract fun getRatingsFlow(): Flow<List<Rating>>                                              
+    @Query(&quot;SELECT * FROM Rating&quot;)                                                                 
+    abstract fun getRatingsFlow(): Flow&lt;List&lt;Rating&gt;&gt;                                              
                                                                                                    
-    @Query("SELECT * FROM Movie")                                                                  
-    abstract fun getMoviesFlow(): Flow<List<Movie>>                                                
+    @Query(&quot;SELECT * FROM Movie&quot;)                                                                  
+    abstract fun getMoviesFlow(): Flow&lt;List&lt;Movie&gt;&gt;                                                
                                                                                                    
-    @Query("SELECT * FROM Actor")                                                                  
-    abstract fun getActorsFlow(): Flow<List<Actor>>                                                
+    @Query(&quot;SELECT * FROM Actor&quot;)                                                                  
+    abstract fun getActorsFlow(): Flow&lt;List&lt;Actor&gt;&gt;                                                
                                                                                                    
     @Transaction                                                                                   
-    @Query("SELECT * FROM Rating WHERE id = :id")                                                  
+    @Query(&quot;SELECT * FROM Rating WHERE id = :id&quot;)                                                  
     abstract suspend fun getRatingWithMovies(id: String): RatingWithMovies                         
                                                                                                    
     @Transaction                                                                                   
-    @Query("SELECT * FROM Actor WHERE id = :id")                                                   
+    @Query(&quot;SELECT * FROM Actor WHERE id = :id&quot;)                                                   
     abstract suspend fun getActorWithFilmography(id: String): ActorWithFilmography                 
                                                                                                    
     @Transaction                                                                                   
-    @Query("SELECT * FROM Movie WHERE id = :id")                                                   
+    @Query(&quot;SELECT * FROM Movie WHERE id = :id&quot;)                                                   
     abstract suspend fun getMovieWithCast(id: String): MovieWithCast                               
                                                                                                    
-<ins>    @Query("SELECT * FROM Movie WHERE id = :id")                                                   </ins>
+<ins>    @Query(&quot;SELECT * FROM Movie WHERE id = :id&quot;)                                                   </ins>
 <ins>    abstract suspend fun getMovie(id: String): Movie                                               </ins>
                                                                                                    
     @Insert                                                                                        
@@ -4179,20 +4179,20 @@ abstract class MovieDAO {
     @Delete                                                                                        
     abstract suspend fun delete(vararg roles: Role)                                                
                                                                                                    
-    @Query("DELETE FROM Movie WHERE id IN (:ids)")                                                 
-    abstract suspend fun deleteMoviesById(ids: Set<String>)                                        
-    @Query("DELETE FROM Actor WHERE id IN (:ids)")                                                 
-    abstract suspend fun deleteActorsById(ids: Set<String>)                                        
-    @Query("DELETE FROM Rating WHERE id IN (:ids)")                                                
-    abstract suspend fun deleteRatingsById(ids: Set<String>)                                       
+    @Query(&quot;DELETE FROM Movie WHERE id IN (:ids)&quot;)                                                 
+    abstract suspend fun deleteMoviesById(ids: Set&lt;String&gt;)                                        
+    @Query(&quot;DELETE FROM Actor WHERE id IN (:ids)&quot;)                                                 
+    abstract suspend fun deleteActorsById(ids: Set&lt;String&gt;)                                        
+    @Query(&quot;DELETE FROM Rating WHERE id IN (:ids)&quot;)                                                
+    abstract suspend fun deleteRatingsById(ids: Set&lt;String&gt;)                                       
                                                                                                    
-    @Query("DELETE FROM Movie")                                                                    
+    @Query(&quot;DELETE FROM Movie&quot;)                                                                    
     abstract suspend fun clearMovies()                                                             
-    @Query("DELETE FROM Actor")                                                                    
+    @Query(&quot;DELETE FROM Actor&quot;)                                                                    
     abstract suspend fun clearActors()                                                             
-    @Query("DELETE FROM Rating")                                                                   
+    @Query(&quot;DELETE FROM Rating&quot;)                                                                   
     abstract suspend fun clearRatings()                                                            
-    @Query("DELETE FROM Role")                                                                     
+    @Query(&quot;DELETE FROM Role&quot;)                                                                     
     abstract suspend fun clearRoles()                                                              
                                                                                                    
     @Transaction                                                                                   
@@ -4205,27 +4205,27 @@ abstract class MovieDAO {
         insert(NotRated, G, PG, PG13, R)                                                           
                                                                                                    
         insert(                                                                                    
-            Movie("m1", "The Transporter", "Jason Statham kicks a guy in the face", "r3"),         
-            Movie("m2", "Transporter 2", "Jason Statham kicks a bunch of guys in the face", "r4"), 
-            Movie("m3", "Hobbs and Shaw", "Cars, Explosions and Stuff", "r3"),                     
-            Movie("m4", "Jumanji - Welcome to the Jungle", "The Rock smolders", "r3"),             
+            Movie(&quot;m1&quot;, &quot;The Transporter&quot;, &quot;Jason Statham kicks a guy in the face&quot;, &quot;r3&quot;),         
+            Movie(&quot;m2&quot;, &quot;Transporter 2&quot;, &quot;Jason Statham kicks a bunch of guys in the face&quot;, &quot;r4&quot;), 
+            Movie(&quot;m3&quot;, &quot;Hobbs and Shaw&quot;, &quot;Cars, Explosions and Stuff&quot;, &quot;r3&quot;),                     
+            Movie(&quot;m4&quot;, &quot;Jumanji - Welcome to the Jungle&quot;, &quot;The Rock smolders&quot;, &quot;r3&quot;),             
         )                                                                                          
         insert(                                                                                    
-            Actor("a1", "Jason Statham"),                                                          
-            Actor("a2", "The Rock"),                                                               
-            Actor("a3", "Shu Qi"),                                                                 
-            Actor("a4", "Amber Valletta"),                                                         
-            Actor("a5", "Kevin Hart"),                                                             
+            Actor(&quot;a1&quot;, &quot;Jason Statham&quot;),                                                          
+            Actor(&quot;a2&quot;, &quot;The Rock&quot;),                                                               
+            Actor(&quot;a3&quot;, &quot;Shu Qi&quot;),                                                                 
+            Actor(&quot;a4&quot;, &quot;Amber Valletta&quot;),                                                         
+            Actor(&quot;a5&quot;, &quot;Kevin Hart&quot;),                                                             
         )                                                                                          
         insert(                                                                                    
-            Role("m1", "a1", "Frank Martin", 1),                                                   
-            Role("m1", "a3", "Lai", 2),                                                            
-            Role("m2", "a1", "Frank Martin", 1),                                                   
-            Role("m2", "a4", "Audrey Billings", 2),                                                
-            Role("m3", "a2", "Hobbs", 1),                                                          
-            Role("m3", "a1", "Shaw", 2),                                                           
-            Role("m4", "a2", "Spencer", 1),                                                        
-            Role("m4", "a5", "Fridge", 2),                                                         
+            Role(&quot;m1&quot;, &quot;a1&quot;, &quot;Frank Martin&quot;, 1),                                                   
+            Role(&quot;m1&quot;, &quot;a3&quot;, &quot;Lai&quot;, 2),                                                            
+            Role(&quot;m2&quot;, &quot;a1&quot;, &quot;Frank Martin&quot;, 1),                                                   
+            Role(&quot;m2&quot;, &quot;a4&quot;, &quot;Audrey Billings&quot;, 2),                                                
+            Role(&quot;m3&quot;, &quot;a2&quot;, &quot;Hobbs&quot;, 1),                                                          
+            Role(&quot;m3&quot;, &quot;a1&quot;, &quot;Shaw&quot;, 2),                                                           
+            Role(&quot;m4&quot;, &quot;a2&quot;, &quot;Spencer&quot;, 1),                                                        
+            Role(&quot;m4&quot;, &quot;a5&quot;, &quot;Fridge&quot;, 2),                                                         
         )                                                                                          
     }                                                                                              
 }                                                                                                  
@@ -4247,17 +4247,17 @@ class MovieDatabaseRepository(context: Context): MovieRepository {
                                                                                          
     override val ratingsFlow =                                                           
         dao.getRatingsFlow()                                                             
-            .map { ratings ->                                                            
+            .map { ratings -&gt;                                                            
                 ratings.map { it.toDto() }                                               
             }                                                                            
     override val moviesFlow =                                                            
         dao.getMoviesFlow()                                                              
-            .map { movies ->                                                             
+            .map { movies -&gt;                                                             
                 movies.map { it.toDto() }                                                
             }                                                                            
     override val actorsFlow =                                                            
         dao.getActorsFlow()                                                              
-            .map { actors ->                                                             
+            .map { actors -&gt;                                                             
                 actors.map { it.toDto() }                                                
             }                                                                            
                                                                                          
@@ -4285,9 +4285,9 @@ class MovieDatabaseRepository(context: Context): MovieRepository {
     override suspend fun delete(actor: ActorDto) = dao.delete(actor.toEntity())          
     override suspend fun delete(rating: RatingDto) = dao.delete(rating.toEntity())       
                                                                                          
-    override suspend fun deleteMoviesById(ids: Set<String>) = dao.deleteMoviesById(ids)  
-    override suspend fun deleteActorsById(ids: Set<String>) = dao.deleteActorsById(ids)  
-    override suspend fun deleteRatingsById(ids: Set<String>) = dao.deleteRatingsById(ids)
+    override suspend fun deleteMoviesById(ids: Set&lt;String&gt;) = dao.deleteMoviesById(ids)  
+    override suspend fun deleteActorsById(ids: Set&lt;String&gt;) = dao.deleteActorsById(ids)  
+    override suspend fun deleteRatingsById(ids: Set&lt;String&gt;) = dao.deleteRatingsById(ids)
                                                                                          
     override suspend fun resetDatabase() = dao.resetDatabase()                           
 }                                                                                        
@@ -4303,9 +4303,9 @@ package com.javadude.movies.repository
 import kotlinx.coroutines.flow.Flow                                         
                                                                             
 interface MovieRepository {                                                 
-    val ratingsFlow: Flow<List<RatingDto>>                                  
-    val moviesFlow: Flow<List<MovieDto>>                                    
-    val actorsFlow: Flow<List<ActorDto>>                                    
+    val ratingsFlow: Flow&lt;List&lt;RatingDto&gt;&gt;                                  
+    val moviesFlow: Flow&lt;List&lt;MovieDto&gt;&gt;                                    
+    val actorsFlow: Flow&lt;List&lt;ActorDto&gt;&gt;                                    
                                                                             
 <ins>    suspend fun getMovie(id: String): MovieDto                              </ins>
                                                                             
@@ -4325,9 +4325,9 @@ interface MovieRepository {
     suspend fun delete(actor: ActorDto)                                     
     suspend fun delete(rating: RatingDto)                                   
                                                                             
-    suspend fun deleteMoviesById(ids: Set<String>)                          
-    suspend fun deleteActorsById(ids: Set<String>)                          
-    suspend fun deleteRatingsById(ids: Set<String>)                         
+    suspend fun deleteMoviesById(ids: Set&lt;String&gt;)                          
+    suspend fun deleteActorsById(ids: Set&lt;String&gt;)                          
+    suspend fun deleteRatingsById(ids: Set&lt;String&gt;)                         
                                                                             
     suspend fun resetDatabase()                                             
 }                                                                           

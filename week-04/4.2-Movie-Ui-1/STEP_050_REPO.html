@@ -3206,7 +3206,7 @@ data class MovieDisplay(
 class MovieViewModel(application: Application) : AndroidViewModel(application) {  
     private val repository: MovieRepository = MovieDatabaseRepository(application)
                                                                                   
-    private var screenStack: List<Screen> = listOf(MovieList)                     
+    private var screenStack: List&lt;Screen&gt; = listOf(MovieList)                     
         set(value) {                                                              
             field = value                                                         
             screen = value.lastOrNull()                                           
@@ -3224,7 +3224,7 @@ class MovieViewModel(application: Application) : AndroidViewModel(application) {
         screenStack = listOf(screen)                                              
     }                                                                             
                                                                                   
-    var screen by mutableStateOf<Screen?>(MovieList)                              
+    var screen by mutableStateOf&lt;Screen?&gt;(MovieList)                              
         private set                                                               
                                                                                   
     val ratingsFlow = repository.ratingsFlow                                      
@@ -3267,22 +3267,22 @@ import com.javadude.movies.components.SimpleText
 @Composable                                                                                   
 fun ActorDisplay(                                                                             
     actorId: String,                                                                          
-<ins>    fetchActorWithFilmography: suspend (String) -> ActorWithFilmographyDto,                   </ins>
-<ins>    onMovieClick: (String) -> Unit,                                                           </ins>
+<ins>    fetchActorWithFilmography: suspend (String) -&gt; ActorWithFilmographyDto,                   </ins>
+<ins>    onMovieClick: (String) -&gt; Unit,                                                           </ins>
 ) {                                                                                           
-<del>//  SimpleText(text = "Actor $actorId")                                                       </del>
-<ins>    var actorWithFilmographyDto by remember { mutableStateOf<ActorWithFilmographyDto?>(null) }</ins>
+<del>//  SimpleText(text = &quot;Actor $actorId&quot;)                                                       </del>
+<ins>    var actorWithFilmographyDto by remember { mutableStateOf&lt;ActorWithFilmographyDto?&gt;(null) }</ins>
                                                                                               
 <ins>    LaunchedEffect(key1 = actorId) {                                                          </ins>
 <ins>        // starts a coroutine to fetch the rating                                             </ins>
 <ins>        actorWithFilmographyDto = fetchActorWithFilmography(actorId)                          </ins>
 <ins>    }                                                                                         </ins>
                                                                                               
-<ins>    SimpleText(text = "Actor")                                                                </ins>
-<ins>    actorWithFilmographyDto?.let { actorWithFilmography ->                                    </ins>
+<ins>    SimpleText(text = &quot;Actor&quot;)                                                                </ins>
+<ins>    actorWithFilmographyDto?.let { actorWithFilmography -&gt;                                    </ins>
 <ins>        SimpleText(text = actorWithFilmography.actor.name)                                    </ins>
-<ins>        actorWithFilmography.filmography.forEach { roleWithMovie ->                           </ins>
-<ins>            SimpleText(text = "${roleWithMovie.movie.title} (${roleWithMovie.character})") {  </ins>
+<ins>        actorWithFilmography.filmography.forEach { roleWithMovie -&gt;                           </ins>
+<ins>            SimpleText(text = &quot;${roleWithMovie.movie.title} (${roleWithMovie.character})&quot;) {  </ins>
 <ins>                onMovieClick(roleWithMovie.movie.id)                                          </ins>
 <ins>            }                                                                                 </ins>
 <ins>        }                                                                                     </ins>
@@ -3309,22 +3309,22 @@ import com.javadude.movies.components.SimpleText
 @Composable                                                                               
 fun MovieDisplay(                                                                         
     movieId: String,                                                                      
-<ins>    fetchMovieWithCast: suspend (String) -> MovieWithCastDto,                             </ins>
-<ins>    onActorClick: (String) -> Unit,                                                       </ins>
+<ins>    fetchMovieWithCast: suspend (String) -&gt; MovieWithCastDto,                             </ins>
+<ins>    onActorClick: (String) -&gt; Unit,                                                       </ins>
 ) {                                                                                       
-<del>//  SimpleText(text = "Movie $movieId")                                                   </del>
-<ins>    var movieWithCastDto by remember { mutableStateOf<MovieWithCastDto?>(null) }          </ins>
+<del>//  SimpleText(text = &quot;Movie $movieId&quot;)                                                   </del>
+<ins>    var movieWithCastDto by remember { mutableStateOf&lt;MovieWithCastDto?&gt;(null) }          </ins>
                                                                                           
 <ins>    LaunchedEffect(key1 = movieId) {                                                      </ins>
 <ins>        // starts a coroutine to fetch the rating                                         </ins>
 <ins>        movieWithCastDto = fetchMovieWithCast(movieId)                                    </ins>
 <ins>    }                                                                                     </ins>
                                                                                           
-<ins>    SimpleText(text = "Movie")                                                            </ins>
-<ins>    movieWithCastDto?.let { movieWithCast ->                                              </ins>
+<ins>    SimpleText(text = &quot;Movie&quot;)                                                            </ins>
+<ins>    movieWithCastDto?.let { movieWithCast -&gt;                                              </ins>
 <ins>        SimpleText(text = movieWithCast.movie.title)                                      </ins>
-<ins>        movieWithCast.cast.forEach { roleWithActor ->                                     </ins>
-<ins>            SimpleText(text = "${roleWithActor.character}: ${roleWithActor.actor.name}") {</ins>
+<ins>        movieWithCast.cast.forEach { roleWithActor -&gt;                                     </ins>
+<ins>            SimpleText(text = &quot;${roleWithActor.character}: ${roleWithActor.actor.name}&quot;) {</ins>
 <ins>                onActorClick(roleWithActor.actor.id)                                      </ins>
 <ins>            }                                                                             </ins>
 <ins>        }                                                                                 </ins>
@@ -3358,7 +3358,7 @@ import com.javadude.movies.components.SimpleButton
 @Composable                                                                       
 fun TestScreen(                                                                   
     viewModel: MovieViewModel = viewModel(),                                      
-    onExit: () -> Unit,                                                           
+    onExit: () -&gt; Unit,                                                           
 ) {                                                                               
     BackHandler {                                                                 
         viewModel.popScreen()                                                     
@@ -3369,18 +3369,18 @@ fun TestScreen(
     // Don't worry about how it does its job; we'll cover that soon!              
     Column {                                                                      
         Row {                                                                     
-            SimpleButton("Reset") {                                               
+            SimpleButton(&quot;Reset&quot;) {                                               
                 viewModel.resetDatabase()                                         
             }                                                                     
-            SimpleButton("Ratings") {                                             
+            SimpleButton(&quot;Ratings&quot;) {                                             
                 viewModel.setScreenStack(RatingList)                              
             }                                                                     
         }                                                                         
         Row {                                                                     
-            SimpleButton("Movies") {                                              
+            SimpleButton(&quot;Movies&quot;) {                                              
                 viewModel.setScreenStack(MovieList)                               
             }                                                                     
-            SimpleButton("Actors") {                                              
+            SimpleButton(&quot;Actors&quot;) {                                              
                 viewModel.setScreenStack(ActorList)                               
             }                                                                     
         }                                                                         
@@ -3390,38 +3390,38 @@ fun TestScreen(
         val actors by viewModel.actorsFlow.collectAsState(initial = emptyList())  
                                                                                   
         when(val screen = viewModel.screen) {                                     
-            null -> onExit()                                                      
+            null -&gt; onExit()                                                      
                                                                                   
-            RatingList -> RatingList(ratings = ratings) { id ->                   
+            RatingList -&gt; RatingList(ratings = ratings) { id -&gt;                   
                 viewModel.pushScreen(RatingDisplay(id))                           
             }                                                                     
-            MovieList -> MovieList(movies = movies) { id ->                       
+            MovieList -&gt; MovieList(movies = movies) { id -&gt;                       
                 viewModel.pushScreen(MovieDisplay(id))                            
             }                                                                     
-            ActorList -> ActorList(actors = actors) { id ->                       
+            ActorList -&gt; ActorList(actors = actors) { id -&gt;                       
                 viewModel.pushScreen(ActorDisplay(id))                            
             }                                                                     
                                                                                   
-            is RatingDisplay -> RatingDisplay(                                    
+            is RatingDisplay -&gt; RatingDisplay(                                    
                 ratingId = screen.id,                                             
-                fetchRatingWithMovies = { id ->                                   
+                fetchRatingWithMovies = { id -&gt;                                   
                     viewModel.getRatingWithMovies(id)                             
                 },                                                                
-                onMovieClick = { id ->                                            
+                onMovieClick = { id -&gt;                                            
                     viewModel.pushScreen(MovieDisplay(id))                        
                 }                                                                 
             )                                                                     
-            is MovieDisplay -> MovieDisplay(                                      
+            is MovieDisplay -&gt; MovieDisplay(                                      
                 movieId = screen.id,                                              
 <ins>                fetchMovieWithCast = viewModel::getMovieWithCast,                 </ins>
-<ins>                onActorClick = { id ->                                            </ins>
+<ins>                onActorClick = { id -&gt;                                            </ins>
 <ins>                    viewModel.pushScreen(ActorDisplay(id))                        </ins>
 <ins>                }                                                                 </ins>
             )                                                                     
-            is ActorDisplay -> ActorDisplay(                                      
+            is ActorDisplay -&gt; ActorDisplay(                                      
                 actorId = screen.id,                                              
 <ins>                fetchActorWithFilmography = viewModel::getActorWithFilmography,   </ins>
-<ins>                onMovieClick = { id ->                                            </ins>
+<ins>                onMovieClick = { id -&gt;                                            </ins>
 <ins>                    viewModel.pushScreen(MovieDisplay(id))                        </ins>
 <ins>                }                                                                 </ins>
             )                                                                     
@@ -3455,10 +3455,10 @@ data class Actor(
                                                               
 <ins>    @Relation(                                                </ins>
 <ins>        entity = Role::class,                                 </ins>
-<ins>        parentColumn = "id",                                  </ins>
-<ins>        entityColumn = "actorId",                             </ins>
+<ins>        parentColumn = &quot;id&quot;,                                  </ins>
+<ins>        entityColumn = &quot;actorId&quot;,                             </ins>
 <ins>    )                                                         </ins>
-<ins>    val rolesWithMovies: List<RoleWithMovie>,                 </ins>
+<ins>    val rolesWithMovies: List&lt;RoleWithMovie&gt;,                 </ins>
 <ins>)                                                             </ins>
                                                               
 <ins>data class RoleWithMovie(                                     </ins>
@@ -3466,8 +3466,8 @@ data class Actor(
 <ins>    val role: Role,                                           </ins>
                                                               
 <ins>    @Relation(                                                </ins>
-<ins>        parentColumn = "movieId",                             </ins>
-<ins>        entityColumn = "id"                                   </ins>
+<ins>        parentColumn = &quot;movieId&quot;,                             </ins>
+<ins>        entityColumn = &quot;id&quot;                                   </ins>
 <ins>    )                                                         </ins>
 <ins>    val movie: Movie,                                         </ins>
 <ins>)                                                             </ins>
@@ -3489,7 +3489,7 @@ import java.util.UUID
                                                               
 @Entity(                                                      
     indices = [                                               
-        Index(value = ["ratingId"])                           
+        Index(value = [&quot;ratingId&quot;])                           
     ],                                                        
 )                                                             
 data class Movie(                                             
@@ -3505,10 +3505,10 @@ data class Movie(
                                                               
 <ins>    @Relation(                                                </ins>
 <ins>        entity = Role::class,                                 </ins>
-<ins>        parentColumn = "id",                                  </ins>
-<ins>        entityColumn = "movieId",                             </ins>
+<ins>        parentColumn = &quot;id&quot;,                                  </ins>
+<ins>        entityColumn = &quot;movieId&quot;,                             </ins>
 <ins>    )                                                         </ins>
-<ins>    val rolesWithActors: List<RoleWithActor>,                 </ins>
+<ins>    val rolesWithActors: List&lt;RoleWithActor&gt;,                 </ins>
 <ins>)                                                             </ins>
                                                               
 <ins>data class RoleWithActor(                                     </ins>
@@ -3516,8 +3516,8 @@ data class Movie(
 <ins>    val role: Role,                                           </ins>
                                                               
 <ins>    @Relation(                                                </ins>
-<ins>        parentColumn = "actorId",                             </ins>
-<ins>        entityColumn = "id"                                   </ins>
+<ins>        parentColumn = &quot;actorId&quot;,                             </ins>
+<ins>        entityColumn = &quot;id&quot;                                   </ins>
 <ins>    )                                                         </ins>
 <ins>    val actor: Actor,                                         </ins>
 <ins>)                                                             </ins>
@@ -3538,33 +3538,33 @@ import androidx.room.Transaction
 import androidx.room.Update                                                                        
 import kotlinx.coroutines.flow.Flow                                                                
                                                                                                    
-private val NotRated = Rating(id = "r0", name = "Not Rated", description = "Not yet rated")        
-private val G = Rating(id = "r1", name = "G", description = "General Audiences")                   
-private val PG = Rating(id = "r2", name = "PG", description = "Parental Guidance Suggested")       
-private val PG13 = Rating(id = "r3", name = "PG-13", description = "Unsuitable for those under 13")
-private val R = Rating(id = "r4", name = "R", description = "Restricted - 17 and older")           
+private val NotRated = Rating(id = &quot;r0&quot;, name = &quot;Not Rated&quot;, description = &quot;Not yet rated&quot;)        
+private val G = Rating(id = &quot;r1&quot;, name = &quot;G&quot;, description = &quot;General Audiences&quot;)                   
+private val PG = Rating(id = &quot;r2&quot;, name = &quot;PG&quot;, description = &quot;Parental Guidance Suggested&quot;)       
+private val PG13 = Rating(id = &quot;r3&quot;, name = &quot;PG-13&quot;, description = &quot;Unsuitable for those under 13&quot;)
+private val R = Rating(id = &quot;r4&quot;, name = &quot;R&quot;, description = &quot;Restricted - 17 and older&quot;)           
                                                                                                    
 @Dao                                                                                               
 abstract class MovieDAO {                                                                          
-    @Query("SELECT * FROM Rating")                                                                 
-    abstract fun getRatingsFlow(): Flow<List<Rating>>                                              
+    @Query(&quot;SELECT * FROM Rating&quot;)                                                                 
+    abstract fun getRatingsFlow(): Flow&lt;List&lt;Rating&gt;&gt;                                              
                                                                                                    
-    @Query("SELECT * FROM Movie")                                                                  
-    abstract fun getMoviesFlow(): Flow<List<Movie>>                                                
+    @Query(&quot;SELECT * FROM Movie&quot;)                                                                  
+    abstract fun getMoviesFlow(): Flow&lt;List&lt;Movie&gt;&gt;                                                
                                                                                                    
-    @Query("SELECT * FROM Actor")                                                                  
-    abstract fun getActorsFlow(): Flow<List<Actor>>                                                
+    @Query(&quot;SELECT * FROM Actor&quot;)                                                                  
+    abstract fun getActorsFlow(): Flow&lt;List&lt;Actor&gt;&gt;                                                
                                                                                                    
     @Transaction                                                                                   
-    @Query("SELECT * FROM Rating WHERE id = :id")                                                  
+    @Query(&quot;SELECT * FROM Rating WHERE id = :id&quot;)                                                  
     abstract suspend fun getRatingWithMovies(id: String): RatingWithMovies                         
                                                                                                    
 <ins>    @Transaction                                                                                   </ins>
-<ins>    @Query("SELECT * FROM Actor WHERE id = :id")                                                   </ins>
+<ins>    @Query(&quot;SELECT * FROM Actor WHERE id = :id&quot;)                                                   </ins>
 <ins>    abstract suspend fun getActorWithFilmography(id: String): ActorWithFilmography                 </ins>
                                                                                                    
 <ins>    @Transaction                                                                                   </ins>
-<ins>    @Query("SELECT * FROM Movie WHERE id = :id")                                                   </ins>
+<ins>    @Query(&quot;SELECT * FROM Movie WHERE id = :id&quot;)                                                   </ins>
 <ins>    abstract suspend fun getMovieWithCast(id: String): MovieWithCast                               </ins>
                                                                                                    
     @Insert                                                                                        
@@ -3594,13 +3594,13 @@ abstract class MovieDAO {
     @Delete                                                                                        
     abstract suspend fun delete(vararg roles: Role)                                                
                                                                                                    
-    @Query("DELETE FROM Movie")                                                                    
+    @Query(&quot;DELETE FROM Movie&quot;)                                                                    
     abstract suspend fun clearMovies()                                                             
-    @Query("DELETE FROM Actor")                                                                    
+    @Query(&quot;DELETE FROM Actor&quot;)                                                                    
     abstract suspend fun clearActors()                                                             
-    @Query("DELETE FROM Rating")                                                                   
+    @Query(&quot;DELETE FROM Rating&quot;)                                                                   
     abstract suspend fun clearRatings()                                                            
-    @Query("DELETE FROM Role")                                                                     
+    @Query(&quot;DELETE FROM Role&quot;)                                                                     
     abstract suspend fun clearRoles()                                                              
                                                                                                    
     @Transaction                                                                                   
@@ -3613,27 +3613,27 @@ abstract class MovieDAO {
         insert(NotRated, G, PG, PG13, R)                                                           
                                                                                                    
         insert(                                                                                    
-            Movie("m1", "The Transporter", "Jason Statham kicks a guy in the face", "r3"),         
-            Movie("m2", "Transporter 2", "Jason Statham kicks a bunch of guys in the face", "r4"), 
-            Movie("m3", "Hobbs and Shaw", "Cars, Explosions and Stuff", "r3"),                     
-            Movie("m4", "Jumanji - Welcome to the Jungle", "The Rock smolders", "r3"),             
+            Movie(&quot;m1&quot;, &quot;The Transporter&quot;, &quot;Jason Statham kicks a guy in the face&quot;, &quot;r3&quot;),         
+            Movie(&quot;m2&quot;, &quot;Transporter 2&quot;, &quot;Jason Statham kicks a bunch of guys in the face&quot;, &quot;r4&quot;), 
+            Movie(&quot;m3&quot;, &quot;Hobbs and Shaw&quot;, &quot;Cars, Explosions and Stuff&quot;, &quot;r3&quot;),                     
+            Movie(&quot;m4&quot;, &quot;Jumanji - Welcome to the Jungle&quot;, &quot;The Rock smolders&quot;, &quot;r3&quot;),             
         )                                                                                          
         insert(                                                                                    
-            Actor("a1", "Jason Statham"),                                                          
-            Actor("a2", "The Rock"),                                                               
-            Actor("a3", "Shu Qi"),                                                                 
-            Actor("a4", "Amber Valletta"),                                                         
-            Actor("a5", "Kevin Hart"),                                                             
+            Actor(&quot;a1&quot;, &quot;Jason Statham&quot;),                                                          
+            Actor(&quot;a2&quot;, &quot;The Rock&quot;),                                                               
+            Actor(&quot;a3&quot;, &quot;Shu Qi&quot;),                                                                 
+            Actor(&quot;a4&quot;, &quot;Amber Valletta&quot;),                                                         
+            Actor(&quot;a5&quot;, &quot;Kevin Hart&quot;),                                                             
         )                                                                                          
         insert(                                                                                    
-            Role("m1", "a1", "Frank Martin", 1),                                                   
-            Role("m1", "a3", "Lai", 2),                                                            
-            Role("m2", "a1", "Frank Martin", 1),                                                   
-            Role("m2", "a4", "Audrey Billings", 2),                                                
-            Role("m3", "a2", "Hobbs", 1),                                                          
-            Role("m3", "a1", "Shaw", 2),                                                           
-            Role("m4", "a2", "Spencer", 1),                                                        
-            Role("m4", "a5", "Fridge", 2),                                                         
+            Role(&quot;m1&quot;, &quot;a1&quot;, &quot;Frank Martin&quot;, 1),                                                   
+            Role(&quot;m1&quot;, &quot;a3&quot;, &quot;Lai&quot;, 2),                                                            
+            Role(&quot;m2&quot;, &quot;a1&quot;, &quot;Frank Martin&quot;, 1),                                                   
+            Role(&quot;m2&quot;, &quot;a4&quot;, &quot;Audrey Billings&quot;, 2),                                                
+            Role(&quot;m3&quot;, &quot;a2&quot;, &quot;Hobbs&quot;, 1),                                                          
+            Role(&quot;m3&quot;, &quot;a1&quot;, &quot;Shaw&quot;, 2),                                                           
+            Role(&quot;m4&quot;, &quot;a2&quot;, &quot;Spencer&quot;, 1),                                                        
+            Role(&quot;m4&quot;, &quot;a5&quot;, &quot;Fridge&quot;, 2),                                                         
         )                                                                                          
     }                                                                                              
 }                                                                                                  
@@ -3662,7 +3662,7 @@ internal fun ActorDto.toEntity() =
                                                     
 <ins>data class ActorWithFilmographyDto(                 </ins>
 <ins>    val actor: ActorDto,                            </ins>
-<ins>    val filmography: List<RoleWithMovieDto>,        </ins>
+<ins>    val filmography: List&lt;RoleWithMovieDto&gt;,        </ins>
 <ins>)                                                   </ins>
                                                     
 <ins>data class RoleWithMovieDto(                        </ins>
@@ -3713,7 +3713,7 @@ internal fun MovieDto.toEntity() =
                                                                                     
 <ins>data class MovieWithCastDto(                                                        </ins>
 <ins>    val movie: MovieDto,                                                            </ins>
-<ins>    val cast: List<RoleWithActorDto>,                                               </ins>
+<ins>    val cast: List&lt;RoleWithActorDto&gt;,                                               </ins>
 <ins>)                                                                                   </ins>
                                                                                     
 <ins>data class RoleWithActorDto(                                                        </ins>
@@ -3755,17 +3755,17 @@ class MovieDatabaseRepository(context: Context): MovieRepository {
                                                                                        
     override val ratingsFlow =                                                         
         dao.getRatingsFlow()                                                           
-            .map { ratings ->                                                          
+            .map { ratings -&gt;                                                          
                 ratings.map { it.toDto() }                                             
             }                                                                          
     override val moviesFlow =                                                          
         dao.getMoviesFlow()                                                            
-            .map { movies ->                                                           
+            .map { movies -&gt;                                                           
                 movies.map { it.toDto() }                                              
             }                                                                          
     override val actorsFlow =                                                          
         dao.getActorsFlow()                                                            
-            .map { actors ->                                                           
+            .map { actors -&gt;                                                           
                 actors.map { it.toDto() }                                              
             }                                                                          
                                                                                        
@@ -3804,9 +3804,9 @@ package com.javadude.movies.repository
 import kotlinx.coroutines.flow.Flow                                         
                                                                             
 interface MovieRepository {                                                 
-    val ratingsFlow: Flow<List<RatingDto>>                                  
-    val moviesFlow: Flow<List<MovieDto>>                                    
-    val actorsFlow: Flow<List<ActorDto>>                                    
+    val ratingsFlow: Flow&lt;List&lt;RatingDto&gt;&gt;                                  
+    val moviesFlow: Flow&lt;List&lt;MovieDto&gt;&gt;                                    
+    val actorsFlow: Flow&lt;List&lt;ActorDto&gt;&gt;                                    
                                                                             
     suspend fun getRatingWithMovies(id: String): RatingWithMoviesDto        
 <ins>    suspend fun getMovieWithCast(id: String): MovieWithCastDto              </ins>

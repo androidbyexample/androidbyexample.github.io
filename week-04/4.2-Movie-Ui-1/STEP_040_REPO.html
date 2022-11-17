@@ -3175,7 +3175,7 @@ class MainActivity : ComponentActivity() {
                 ) {                                                               
 <del>//                  TestScreen()                                                  </del>
 <ins>                    TestScreen {                                                  </ins>
-<ins>                        finish() // handle "onExit"                               </ins>
+<ins>                        finish() // handle &quot;onExit&quot;                               </ins>
 <ins>                    }                                                             </ins>
                 }                                                                 
             }                                                                     
@@ -3220,7 +3220,7 @@ data class MovieDisplay(
 class MovieViewModel(application: Application) : AndroidViewModel(application) {  
     private val repository: MovieRepository = MovieDatabaseRepository(application)
                                                                                   
-    private var screenStack: List<Screen> = listOf(MovieList)                     
+    private var screenStack: List&lt;Screen&gt; = listOf(MovieList)                     
         set(value) {                                                              
             field = value                                                         
             screen = value.lastOrNull()                                           
@@ -3238,7 +3238,7 @@ class MovieViewModel(application: Application) : AndroidViewModel(application) {
         screenStack = listOf(screen)                                              
     }                                                                             
                                                                                   
-    var screen by mutableStateOf<Screen?>(MovieList)                              
+    var screen by mutableStateOf&lt;Screen?&gt;(MovieList)                              
         private set                                                               
                                                                                   
     val ratingsFlow = repository.ratingsFlow                                      
@@ -3273,7 +3273,7 @@ class MovieViewModel(application: Application) : AndroidViewModel(application) {
 <ins>fun ActorDisplay(                               </ins>
 <ins>    actorId: String,                            </ins>
 <ins>) {                                             </ins>
-<ins>    SimpleText(text = "Actor $actorId")         </ins>
+<ins>    SimpleText(text = &quot;Actor $actorId&quot;)         </ins>
 <ins>}                                               </ins>
 </pre>
 </div>
@@ -3290,11 +3290,11 @@ import com.javadude.movies.repository.ActorDto
                                                 
 @Composable                                     
 fun ActorList(                                  
-<del>//  actors: List<ActorDto>                      </del>
-<ins>    actors: List<ActorDto>,                     </ins>
-<ins>    onActorClick: (String) -> Unit,             </ins>
+<del>//  actors: List&lt;ActorDto&gt;                      </del>
+<ins>    actors: List&lt;ActorDto&gt;,                     </ins>
+<ins>    onActorClick: (String) -&gt; Unit,             </ins>
 ) {                                             
-    SimpleText(text = "Actors")                 
+    SimpleText(text = &quot;Actors&quot;)                 
     actors.forEach {                            
 <del>//      SimpleText(text = it.name)              </del>
 <ins>        SimpleText(text = it.name) {            </ins>
@@ -3318,7 +3318,7 @@ fun ActorList(
 <ins>fun MovieDisplay(                               </ins>
 <ins>    movieId: String,                            </ins>
 <ins>) {                                             </ins>
-<ins>    SimpleText(text = "Movie $movieId")         </ins>
+<ins>    SimpleText(text = &quot;Movie $movieId&quot;)         </ins>
 <ins>}                                               </ins>
 </pre>
 </div>
@@ -3335,11 +3335,11 @@ import com.javadude.movies.repository.MovieDto
                                                 
 @Composable                                     
 fun MovieList(                                  
-<del>//  movies: List<MovieDto>                      </del>
-<ins>    movies: List<MovieDto>,                     </ins>
-<ins>    onMovieClick: (String) -> Unit,             </ins>
+<del>//  movies: List&lt;MovieDto&gt;                      </del>
+<ins>    movies: List&lt;MovieDto&gt;,                     </ins>
+<ins>    onMovieClick: (String) -&gt; Unit,             </ins>
 ) {                                             
-    SimpleText(text = "Movies")                 
+    SimpleText(text = &quot;Movies&quot;)                 
     movies.forEach {                            
 <del>//      SimpleText(text = it.title)             </del>
 <ins>        SimpleText(text = it.title) {           </ins>
@@ -3368,22 +3368,22 @@ import com.javadude.movies.repository.RatingWithMoviesDto
 @Composable                                                                           
 fun RatingDisplay(                                                                    
     ratingId: String,                                                                 
-    fetchRatingWithMovies: suspend (String) -> RatingWithMoviesDto,                   
-<ins>    onMovieClick: (String) -> Unit,                                                   </ins>
+    fetchRatingWithMovies: suspend (String) -&gt; RatingWithMoviesDto,                   
+<ins>    onMovieClick: (String) -&gt; Unit,                                                   </ins>
 ) {                                                                                   
-    var ratingWithMoviesDto by remember { mutableStateOf<RatingWithMoviesDto?>(null) }
+    var ratingWithMoviesDto by remember { mutableStateOf&lt;RatingWithMoviesDto?&gt;(null) }
                                                                                       
     LaunchedEffect(key1 = ratingId) {                                                 
         // starts a coroutine to fetch the rating                                     
         ratingWithMoviesDto = fetchRatingWithMovies(ratingId)                         
     }                                                                                 
                                                                                       
-    SimpleText(text = "Rating")                                                       
-    ratingWithMoviesDto?.let { ratingWithMovies ->                                    
+    SimpleText(text = &quot;Rating&quot;)                                                       
+    ratingWithMoviesDto?.let { ratingWithMovies -&gt;                                    
         SimpleText(text = ratingWithMovies.rating.name)                               
-        ratingWithMovies.movies.forEach { movie ->                                    
-<del>//          SimpleText(text = "Movie: ${movie.title}")                                </del>
-<ins>            SimpleText(text = "Movie: ${movie.title}") {                              </ins>
+        ratingWithMovies.movies.forEach { movie -&gt;                                    
+<del>//          SimpleText(text = &quot;Movie: ${movie.title}&quot;)                                </del>
+<ins>            SimpleText(text = &quot;Movie: ${movie.title}&quot;) {                              </ins>
 <ins>                onMovieClick(movie.id)                                                </ins>
 <ins>            }                                                                         </ins>
         }                                                                             
@@ -3419,7 +3419,7 @@ import com.javadude.movies.components.SimpleButton
 fun TestScreen(                                                                   
 <del>//  viewModel: MovieViewModel = viewModel()                                       </del>
 <ins>    viewModel: MovieViewModel = viewModel(),                                      </ins>
-<ins>    onExit: () -> Unit,                                                           </ins>
+<ins>    onExit: () -&gt; Unit,                                                           </ins>
 ) {                                                                               
 <ins>    BackHandler {                                                                 </ins>
 <ins>        viewModel.popScreen()                                                     </ins>
@@ -3430,20 +3430,20 @@ fun TestScreen(
     // Don't worry about how it does its job; we'll cover that soon!              
     Column {                                                                      
         Row {                                                                     
-            SimpleButton("Reset") {                                               
+            SimpleButton(&quot;Reset&quot;) {                                               
                 viewModel.resetDatabase()                                         
             }                                                                     
-            SimpleButton("Ratings") {                                             
+            SimpleButton(&quot;Ratings&quot;) {                                             
 <del>//              viewModel.switchTo(RatingList)                                    </del>
 <ins>                viewModel.setScreenStack(RatingList)                              </ins>
             }                                                                     
         }                                                                         
         Row {                                                                     
-            SimpleButton("Movies") {                                              
+            SimpleButton(&quot;Movies&quot;) {                                              
 <del>//              viewModel.switchTo(MovieList)                                     </del>
 <ins>                viewModel.setScreenStack(MovieList)                               </ins>
             }                                                                     
-            SimpleButton("Actors") {                                              
+            SimpleButton(&quot;Actors&quot;) {                                              
 <del>//              viewModel.switchTo(ActorList)                                     </del>
 <ins>                viewModel.setScreenStack(ActorList)                               </ins>
             }                                                                     
@@ -3454,35 +3454,35 @@ fun TestScreen(
         val actors by viewModel.actorsFlow.collectAsState(initial = emptyList())  
                                                                                   
         when(val screen = viewModel.screen) {                                     
-<ins>            null -> onExit()                                                      </ins>
+<ins>            null -&gt; onExit()                                                      </ins>
                                                                                   
-            RatingList -> RatingList(ratings = ratings) { id ->                   
+            RatingList -&gt; RatingList(ratings = ratings) { id -&gt;                   
 <del>//              viewModel.switchTo(RatingScreen(id))                              </del>
 <ins>                viewModel.pushScreen(RatingDisplay(id))                           </ins>
             }                                                                     
-<del>//          MovieList -> MovieList(movies = movies)                               </del>
-<del>//          ActorList -> ActorList(actors = actors)                               </del>
-<del>//          is RatingScreen -> RatingDisplay(                                     </del>
-<ins>            MovieList -> MovieList(movies = movies) { id ->                       </ins>
+<del>//          MovieList -&gt; MovieList(movies = movies)                               </del>
+<del>//          ActorList -&gt; ActorList(actors = actors)                               </del>
+<del>//          is RatingScreen -&gt; RatingDisplay(                                     </del>
+<ins>            MovieList -&gt; MovieList(movies = movies) { id -&gt;                       </ins>
 <ins>                viewModel.pushScreen(MovieDisplay(id))                            </ins>
 <ins>            }                                                                     </ins>
-<ins>            ActorList -> ActorList(actors = actors) { id ->                       </ins>
+<ins>            ActorList -&gt; ActorList(actors = actors) { id -&gt;                       </ins>
 <ins>                viewModel.pushScreen(ActorDisplay(id))                            </ins>
 <ins>            }                                                                     </ins>
                                                                                   
-<ins>            is RatingDisplay -> RatingDisplay(                                    </ins>
+<ins>            is RatingDisplay -&gt; RatingDisplay(                                    </ins>
                 ratingId = screen.id,                                             
-                fetchRatingWithMovies = { id ->                                   
+                fetchRatingWithMovies = { id -&gt;                                   
                     viewModel.getRatingWithMovies(id)                             
 <ins>                },                                                                </ins>
-<ins>                onMovieClick = { id ->                                            </ins>
+<ins>                onMovieClick = { id -&gt;                                            </ins>
 <ins>                    viewModel.pushScreen(MovieDisplay(id))                        </ins>
                 }                                                                 
             )                                                                     
-<ins>            is MovieDisplay -> MovieDisplay(                                      </ins>
+<ins>            is MovieDisplay -&gt; MovieDisplay(                                      </ins>
 <ins>                movieId = screen.id,                                              </ins>
 <ins>            )                                                                     </ins>
-<ins>            is ActorDisplay -> ActorDisplay(                                      </ins>
+<ins>            is ActorDisplay -&gt; ActorDisplay(                                      </ins>
 <ins>                actorId = screen.id,                                              </ins>
 <ins>            )                                                                     </ins>
         }                                                                         
@@ -3495,11 +3495,11 @@ fun TestScreen(
 <summary>CHANGED: /data/src/main/AndroidManifest.xml</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/data/src/main/AndroidManifest.xml';">
 <pre>
-<?xml version="1.0" encoding="utf-8"?>                               
-<del>//<manifest xmlns:android="http://schemas.android.com/apk/res/android"></del>
-<ins><manifest>                                                           </ins>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;                               
+<del>//&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;</del>
+<ins>&lt;manifest&gt;                                                           </ins>
                                                                      
-</manifest>                                                          
+&lt;/manifest&gt;                                                          
 </pre>
 </div>
 </details>
@@ -3517,7 +3517,7 @@ import java.util.UUID
                                                               
 @Entity(                                                      
     indices = [                                               
-        Index(value = ["ratingId"])                           
+        Index(value = [&quot;ratingId&quot;])                           
     ],                                                        
 )                                                             
 data class Movie(                                             
@@ -3533,11 +3533,11 @@ data class Movie(
 <summary>CHANGED: /repository/src/main/AndroidManifest.xml</summary>
 <div class="sas1-code-file" style="--sas1-file-name: '/repository/src/main/AndroidManifest.xml';">
 <pre>
-<?xml version="1.0" encoding="utf-8"?>                               
-<del>//<manifest xmlns:android="http://schemas.android.com/apk/res/android"></del>
-<ins><manifest>                                                           </ins>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;                               
+<del>//&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;</del>
+<ins>&lt;manifest&gt;                                                           </ins>
                                                                      
-</manifest>                                                          
+&lt;/manifest&gt;                                                          
 </pre>
 </div>
 </details>
