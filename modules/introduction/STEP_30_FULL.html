@@ -1,0 +1,830 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://androidbyexample.com/modules/introduction/STEP_30_FULL.html">
+      
+      
+        <link rel="prev" href="STEP_20_FULL.html">
+      
+      
+        <link rel="next" href="STEP_40_FULL.html">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>Grading - Android By Example</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
+      
+      
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 64C0 28.7 28.7 0 64 0h160v128c0 17.7 14.3 32 32 32h128v288c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0l128 128z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 64C0 28.7 28.7 0 64 0h160v128c0 17.7 14.3 32 32 32h128v288c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0l128 128z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 64C0 28.7 28.7 0 64 0h160v128c0 17.7 14.3 32 32 32h128v288c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0l128 128z"/></svg>');}</style>
+
+
+    
+    
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<!--<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">-->
+
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#points" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Android By Example" class="md-header__button md-logo" aria-label="Android By Example" data-md-component="logo">
+      
+  <img src="../../android.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Android By Example
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Grading
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+<!--    <div class="md-sidebar md-sidebar&#45;&#45;primary" data-md-component="sidebar" data-md-type="navigation">-->
+<div class="md-sidebar md-sidebar--primary" data-md-type="navigation">
+    <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner">
+            
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Android By Example" class="md-nav__button md-logo" aria-label="Android By Example" data-md-component="logo">
+      
+  <img src="../../android.png" alt="logo">
+
+    </a>
+    Android By Example
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          Introduction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_01_FULL.html" class="md-nav__link">
+        About This Site
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_02_FULL.html" class="md-nav__link">
+        About Your Instructor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_04_FULL.html" class="md-nav__link">
+        Content License
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_05_FULL.html" class="md-nav__link">
+        Source Code License
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_09_FULL.html" class="md-nav__link">
+        Welcome!
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_10_FULL.html" class="md-nav__link">
+        Course Hardware and Software
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_20_FULL.html" class="md-nav__link">
+        Assignments
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Grading
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="STEP_30_FULL.html" class="md-nav__link md-nav__link--active">
+        Grading
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#points" class="md-nav__link">
+    Points
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#late-penalty" class="md-nav__link">
+    Late Penalty
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#holistic-grading" class="md-nav__link">
+    "Holistic" Grading
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distribution-of-grades" class="md-nav__link">
+    Distribution of Grades
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_40_FULL.html" class="md-nav__link">
+        Using Third-Party and Course Sample Code
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Week 1 (8/31-9/6)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Week 1 (8/31-9/6)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../kotlin-primer/index.html">Kotlin Primer</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Kotlin Primer
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../architecture/index.html">Architecture</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Architecture
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../android-studio/index.html">Android Studio</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Android Studio
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+        </div>
+    </div>
+</div>
+
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+  <div class="sas1-text-column">
+
+<div class="sas1-text-area">
+            
+<h1>Introduction</h1>
+
+<h2>Grading</h2>
+  
+<h2 id="points">Points</h2>
+<p>Assignments are worth 4 points each, mapping to GPA letters.</p>
+<p>My grader and I assign letter grades first, then convert them to numbers and apply late penalties. The grading scale from letters to numbers is as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Letter Grade</th>
+<th>Numerical Equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>4.0</td>
+</tr>
+<tr>
+<td>A-</td>
+<td>3.7</td>
+</tr>
+<tr>
+<td>(A/B border)</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>B+</td>
+<td>3.3</td>
+</tr>
+<tr>
+<td>B</td>
+<td>3.0</td>
+</tr>
+<tr>
+<td>B-</td>
+<td>2.7</td>
+</tr>
+<tr>
+<td>(B/C border)</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>C+</td>
+<td>2.3</td>
+</tr>
+<tr>
+<td>C</td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>C-</td>
+<td>1.7</td>
+</tr>
+<tr>
+<td>(C/D border)</td>
+<td>1.5</td>
+</tr>
+<tr>
+<td>D+</td>
+<td>1.3</td>
+</tr>
+<tr>
+<td>D</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>D-</td>
+<td>0.7</td>
+</tr>
+<tr>
+<td>F</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>Note that there is no A+. We had been reserving that for "exemplary" submissions, but some students considered an "A" as lost points.</p>
+<p>Your final grade <strong>WILL NOT</strong> include +/- designations. A/A- both count as "A" and "4" for University GPA purposes(and similar for other letter grades).</p>
+<h2 id="late-penalty">Late Penalty</h2>
+<p>Each <em>day</em> late results in 1 full letter grade (1 point) off. This is to prevent cascading lateness. In the past students would submit an assignment a week late and have one week less to do the next assignment, which would often result in that assignment being late as well. The also made it difficult to discus assignments until all were submitted.</p>
+<p>When grading assignments, we will write comments describing your grade, but we will usually not note specific point-value deductions (see "Holistic Grading" below). Some comments are "for your information"/"helpful hints" and will be marked to indicate that they have no effect on the grade.</p>
+<p>If you disagree with a grade you can ask us to review it. Tell us what your concerns are and we'll look at it. Sometimes we may miss something in your code.</p>
+<p>If we note a problem with a submission that was also noted for a previous submission, we will not count off for it. (If we do, please let use know and we'll correct the grade.)</p>
+<h2 id="holistic-grading">"Holistic" Grading</h2>
+<p>I started out using a rubric to grade. For many reasons, this almost never reflected reality, so after a few terms, I realized a much fairer scheme, that I call "holistic grading"</p>
+<p>First, some problems with Rubrics...</p>
+<ul>
+<li>
+<p>Gaming the System</p>
+<p>When I had point counts next to features, many students would decide which features to implement based on how many points they felt they could afford to lose. Rather than implement all function (the point of which is to exercise important techniques), they would implement a subset just to "get the grade". This is frustrating for a teacher because we design exercises to be sure students have had the opportunity to try out important techniques.</p>
+</li>
+<li>
+<p>"Sum of the Parts" vs "The Whole"</p>
+<p>Rubrics tend to cut both ways when the points are added up...</p>
+<p>Sometimes, a few relatively minor things that don't greatly impact the overall submission would numerically push the grade into "B" territory or lower. This didn't feel fair to the student based on the overall result, but to be fair to all students I had to stick with the grade based off the rubric.</p>
+<p>Other times, small things that made an impact when combined could result in an "A" that didn't feel right (sometimes because of gaming the system, other times because the small problems really added up).</p>
+</li>
+<li>
+<p>"That shouldn't be n points off"</p>
+<p>The most common complaint would be that either the rubric was unfair in the number of points it assigned to a specific item, or that I was applying a rubric item too broadly to a problem in the submission. Most of the time I would leave the grade as-is, but in some cases it was a matter of a possible alternative interpretation of the assignment requirements, in which case I adjusted the points off.</p>
+<p>Later, after I stopped using rubrics, but would list points deductions on assignment comments, I'd get the same complaints.</p>
+<p>In either case, this never made any significant difference in the grade for the assignment, or the course.</p>
+</li>
+</ul>
+<p>Students ended up spending a good bit of time trying to figure out which items they could argue to get a few points back, not realizing a few points over the term made no effective difference.</p>
+<p>This led me to... "Holistic Grading"</p>
+<p>(If it sounds a little "New Age", it's not... "Holistic" here simply means "looking at the whole")</p>
+<p>"This feels like a B+"...</p>
+<p>My grader and I write comments about what we see in the assignment, and don't write specific deductions for each one.</p>
+<p>We look at the overall result, taking all comments into account, and say "that's an A", or "that's a B-", or "that's barely anything more than the sample code" (at which point we estimate the % of the assignment that was done and assign that number).</p>
+<p>The letters we assign are converted to numbers. A=4.0, A-=3.7, etc.</p>
+<p>When coming up with these letters, one of my key concepts is "things that cap the grade at A-". There's not a fixed list of such items, but things like "coding conventions" fall into this category. If several small things like these happen, a rubric may have pushed the grade into "B" territory. When I see several little things but otherwise the overall submission feels like an "A", I use "A-" as the grade. Note that if there are "cap" items as well as bigger issues, the "cap" items won't push the grade lower than the bigger issues already would have.</p>
+<p>Usually, if features are missing or not implemented per the assignment description, I start thinking "B", but if they're very minor features or present but not quite what was explicitly stated in the assignment description, and otherwise the assignment looked good, I'll go with "A-".</p>
+<p>Because of this, "A-" is often the most common grade for an assignment.</p>
+<p>If the assignment does everything we ask, in the ways I taught in class, meets coding standards, and is on time, that's where "A" comes in.</p>
+<p>Other grades (before late deductions) are usually driven by</p>
+<ul>
+<li>
+<p>Feature omissions or problems</p>
+<p>Most common: something is missing or doesn't work properly</p>
+<p>This is often because a student started work a few days before the assignment was due and didn't have time to ask questions or study the concepts.</p>
+</li>
+<li>
+<p>Crashes and compilation errors</p>
+<p>Note that we try to make your code work before grading it. Sometimes it's an inverted boolean expression, and if we can get it working and it's something simple, we'll give a better grade than "doesn't work".</p>
+<p>However, sometimes, after spending an hour or two trying to get it to work, we have to give up...</p>
+</li>
+<li>
+<p>Working together or Plagiarism</p>
+<p>I've caught <em>many</em> students doing this...</p>
+<p>Sometimes they even try to submit something they found online that doesn't match the assignment description or is very obviously not based on what I've taught.</p>
+</li>
+</ul>
+<p>Bottom line: When you see a "3.7" for a submission, don't think of it as "0.3 points off". Think of it as a few minor things aren't right. If that's how most of your assignments go, that's an "A" for the course...</p>
+<h2 id="distribution-of-grades">Distribution of Grades</h2>
+<p>It is possible (and has happened in past sections) for everyone to get an "A" in this course. I will not be applying any sort of curve or other means to artificially distribute grades.</p>
+<p>I will be looking closely at your efforts in this class when determining your final grades. An "A" grade in this course requires a good deal of effort. Do not expect an "A" if you start programming a few nights before they are due...</p>
+<p>Let me repeat that. Do not expect an "A" if you start programming assignments a few nights before they are due... This has often been the reason for B and C grades in the course; students do not allow enough time to ask clarifying questions or do the coding.</p>
+<p>Be sure to at least look over and understand the assignments at the beginning of the week they are assigned! This will give you time to ask questions.</p>
+<p>If you do all the work well and on-time, you will get an "A" for the course. If you do all of the work on-time but are having trouble with the concepts, you'll likely get a "B" for the course. If you're in danger of a lower grade, I will speak with you as soon as it becomes apparent to me.</p>
+  
+</div>
+  
+</div>
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="" >
+      
+        
+        <a href="STEP_20_FULL.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Assignments" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Assignments
+            </div>
+          </div>
+        </a>
+      
+      <div class="md-footer-meta md-typeset">
+        <div class="md-footer-meta__inner md-grid">
+          <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023. Scott Stanchfield
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+          
+        </div>
+      </div>    
+      
+        
+        <a href="STEP_40_FULL.html" class="md-footer__link md-footer__link--next" aria-label="Next: Using Third-Party and Course Sample Code" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Using Third-Party and Course Sample Code
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.sections", "search.suggest", "search.highlight", "navigation.instant", "content.tabs.link", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>

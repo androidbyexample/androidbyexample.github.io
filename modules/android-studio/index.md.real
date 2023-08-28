@@ -1,0 +1,199 @@
+---
+title: Android Studio
+template: main-noparent.html
+---
+
+## Current Project Setup
+
+!!! note
+
+    The sample code build files may vary from what's created by the new project wizard in Android Studio.
+    The new project wizard changes its templates over time, and the sample code isn't updated every term.
+    
+    Don't copy the build files from the sample code; start with the build files created by the new-project wizard,
+    and copy over any dependencies you need from the samples. Be sure to update the versions and use the
+    Bill-of-Materials for the versions of the Jetpack Compose dependencies.
+
+The video below walks through the basic setup of Android Studio, though it's on a previous version. Be sure to use the versions listed in the "Introduction" module. Follow the instructions listed here when updating versions in the `build.gradle` files.
+
+For all work in this class, you should create a new "Empty Compose" project in Android Studio. Use the "minimum SDK" version specified in the "Introduction" module.
+
+After the project has been created, you'll need to adjust some version information in the build files.
+
+Each project will have two `build.gradle` files. One is at the root of the project, and the other is inside the `app` directory.
+
+### Compose Bill of Materials
+
+In this class we're going to use a new way to specify the Jetpack Compose library versions, called a "Bill of Materials".
+
+Google has started evolving each Compose library independently. Rather than specifying a single version for all Compose libraries, we'll specify the version of a "Bill of Materials", which is a list of all Compose libraries and the versions that work together. (See [https://developer.android.com/jetpack/compose/setup#bom-version-mapping](https://developer.android.com/jetpack/compose/setup#bom-version-mapping) for more details if you're interested.)
+
+To use this we'll need to make some modifications to the build scripts.
+
+### Root `build.gradle` file
+
+The root `build.gradle` should initially look something like the following:
+
+```groovy
+buildscript {
+    ext {
+        compose_ui_version = '1.2.0'
+    }
+}// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    id 'com.android.application' version '7.4.0' apply false
+    id 'com.android.library' version '7.4.0' apply false
+    id 'org.jetbrains.kotlin.android' version '1.7.0' apply false
+}
+```
+
+Modify your root `build.gradle` to look like the following. 
+
+```groovy
+buildscript {
+    ext {
+        // REMOVE compose_ui_version
+        compose_compiler_version = '1.3.2'  // NEW VARIABLE - value in "Introduction" module
+        compose_bom_version = '2023.01.00'  // NEW VARIABLE - value in "Introduction" module
+        kotlin_version = '1.7.20'           // NEW VARIABLE - value in "Introduction" module
+    }
+}// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    id 'com.android.application' version '7.4.0' apply false                // NO CHANGE
+    id 'com.android.library' version '7.4.0' apply false                    // NO CHANGE
+    id 'org.jetbrains.kotlin.android' version "$kotlin_version" apply false // USE VARIABLE
+}
+```
+
+### `app/build.gradle` file
+
+The `build.gradle` file in the `app` directory should look something like the following:
+
+```groovy
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.example.deleteme2'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.deleteme2"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.2.0'
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
+    implementation 'androidx.activity:activity-compose:1.3.1'
+    implementation "androidx.compose.ui:ui:$compose_ui_version"
+    implementation "androidx.compose.ui:ui-tooling-preview:$compose_ui_version"
+    implementation 'androidx.compose.material:material:1.2.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"
+    debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version"
+    debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"
+}
+```
+
+You'll need to modify it (only changed lines shown):
+
+   * Update the `compileSdk`, `minSdk` and `targetSdk` values
+   * Change the `kotlinCompilerExtensionVersion` to use the new `compose_compiler_version` variable we defined in the root `build.gradle`
+   * Add the Bill-Of-Materials (BOM) as a `platform` implementation dependency
+   * Remove the `:$compose_ui_version` from each dependency that uses it. The version numbers will now be pulled in from the BOM.
+   * Remove the explicit version number from any other `androidx.compose` dependency.
+   * If any dependencies are highlighted as a warning stating "A newer version ... is available"
+      * Press Alt-Enter on the line
+      * Choose "Change to [new version]"
+
+```groovy
+android {
+    compileSdk 33   // UPDATE TO COMPILE SDK IN "Introduction" MODULE
+
+    defaultConfig {
+        applicationId "com.example.deleteme2"
+        minSdk 24       // UPDATE TO MIN SDK IN "Introduction" MODULE
+        targetSdk 33    // UPDATE TO TARGET SDK IN "Introduction" MODULE
+        ...
+    }
+    ...
+    composeOptions {
+        kotlinCompilerExtensionVersion compose_compiler_version // CHANGED TO VARIABLE
+    }
+    ...
+}
+
+dependencies {
+    implementation platform("androidx.compose:compose-bom:$compose_bom_version") // ADDED
+
+    implementation 'androidx.core:core-ktx:1.7.0'                           // UPDATE VERSION (alt+enter)
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'         // UPDATE VERSION (alt+enter)
+    implementation 'androidx.activity:activity-compose:1.3.1'               // UPDATE VERSION (alt+enter)
+    implementation "androidx.compose.ui:ui"                                 // REMOVED VERSION
+    implementation "androidx.compose.ui:ui-tooling-preview"                 // REMOVED VERSION
+    implementation 'androidx.compose.material:material'                     // REMOVED VERSION
+    testImplementation 'junit:junit:4.13.2'                                 // UPDATE VERSION (alt+enter)
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'               // UPDATE VERSION (alt+enter)
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'  // UPDATE VERSION (alt+enter)
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4"          // REMOVED VERSION
+    debugImplementation "androidx.compose.ui:ui-tooling"                    // REMOVED VERSION
+    debugImplementation "androidx.compose.ui:ui-test-manifest"              // REMOVED VERSION
+}
+```
+
+
+
+
+## Video
+
+!!! note
+
+    You can change the quality and playback speed by clicking the :material-cog: icon when the video is playing. 
+
+    If you would like to search the captions for this video, click _Watch on YouTube_, press "..." and choose _Show Transcript_.
+
+<iframe width="800" height="450" src="https://www.youtube.com/embed/sxTBIIJAIug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Example Source
+
+See [https://gitlab.com/android-development-2022-refresh/android-studio](https://gitlab.com/android-development-2022-refresh/android-studio)

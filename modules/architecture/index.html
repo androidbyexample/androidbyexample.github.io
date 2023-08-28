@@ -1,0 +1,937 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://androidbyexample.com/modules/architecture/index.html">
+      
+      
+        <link rel="prev" href="../kotlin-primer/index.html">
+      
+      
+        <link rel="next" href="../android-studio/index.html">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>Architecture - Android By Example</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
+      
+      
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 64C0 28.7 28.7 0 64 0h160v128c0 17.7 14.3 32 32 32h128v288c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0l128 128z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 64C0 28.7 28.7 0 64 0h160v128c0 17.7 14.3 32 32 32h128v288c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0l128 128z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 64C0 28.7 28.7 0 64 0h160v128c0 17.7 14.3 32 32 32h128v288c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0l128 128z"/></svg>');}</style>
+
+
+    
+    
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<!--<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">-->
+
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#architecture-overview" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Android By Example" class="md-header__button md-logo" aria-label="Android By Example" data-md-component="logo">
+      
+  <img src="../../android.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Android By Example
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Architecture
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+<!--    <div class="md-sidebar md-sidebar&#45;&#45;primary" data-md-component="sidebar" data-md-type="navigation">-->
+<div class="md-sidebar md-sidebar--primary" data-md-type="navigation">
+    <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner">
+            
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Android By Example" class="md-nav__button md-logo" aria-label="Android By Example" data-md-component="logo">
+      
+  <img src="../../android.png" alt="logo">
+
+    </a>
+    Android By Example
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          Introduction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_01_FULL.html" class="md-nav__link">
+        About This Site
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_02_FULL.html" class="md-nav__link">
+        About Your Instructor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_04_FULL.html" class="md-nav__link">
+        Content License
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_05_FULL.html" class="md-nav__link">
+        Source Code License
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_09_FULL.html" class="md-nav__link">
+        Welcome!
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_10_FULL.html" class="md-nav__link">
+        Course Hardware and Software
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_20_FULL.html" class="md-nav__link">
+        Assignments
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_30_FULL.html" class="md-nav__link">
+        Grading
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_40_FULL.html" class="md-nav__link">
+        Using Third-Party and Course Sample Code
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Week 1 (8/31-9/6)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Week 1 (8/31-9/6)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../kotlin-primer/index.html">Kotlin Primer</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Kotlin Primer
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index md-nav__link--active">
+          <a href="index.html">Architecture</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Architecture
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../android-studio/index.html">Android Studio</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Android Studio
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+        </div>
+    </div>
+</div>
+
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+  <div class="sas1-text-column">
+
+<div class="sas1-text-area">
+            
+<h1>Architecture</h1>
+  
+<p>Before we start writing code, let's talk about how we should organize our application.</p>
+<p>Over the years there have been many best practices for organizing code. These practices evolve as technologies change and we learn from maintaining previous approaches.</p>
+<p>When we look at the application as a whole and consider all of its high-level parts, we're talking about the <em>architecture</em> of the application. The architecture describes the general division of responsibilities in your application, and which parts communicate with which other parts. </p>
+<p>Breaking your application into chunks allows for</p>
+<ul>
+<li>Easier discussion of how the application works</li>
+<li>Easier developer tasking (especially in larger applications)</li>
+<li>Reuse of chunks across different types of applications (reusing the data layer, for example, across mobile apps, web services, and command-line applications)</li>
+<li>Easier independent testing of separate parts of your application</li>
+</ul>
+<p>The architecture we use in this class is based on <strong>Modern Android Development</strong>, also known as "MAD". See <a href="https://developer.android.com/modern-android-development">https://developer.android.com/modern-android-development</a>, which includes architecture, tools and libraries that Google recommends for Android development.</p>
+<h2 id="architecture-overview">Architecture Overview</h2>
+<p>Applications are structured as <strong>Layers</strong> and <strong>Modules</strong>.</p>
+<p>A "module" is a separately-compilable group of code and resources that can be consumed by other modules in your system. They're useful for isolating functionality, internal implementation details can be hidden while exposing a subset of function, its public API (Application Programming Interface). Separating code into modules also helps large applications isolate changes that many developers are making at the same time.</p>
+<p>A "layer" is a grouping of one or more modules with certain responsibilities. Layers allow you to explicitly define communication between modules and further improve ease of maintenance.</p>
+<div class="admonition info inline end">
+<p class="admonition-title">Application Layers</p>
+<pre class="mermaid"><code>graph TD
+    UI[User-Interface Layer] --&gt;|depends on| Domain
+    Domain[Domain Layer] --&gt;|depends on| Data[Data Layer]</code></pre>
+</div>
+<p>At a high level, we talk about <em>application layers</em>, separating data from its manipulation and presentation.</p>
+<p>Each layer isolates a responsibility in the application. At its simplest, each layer could be exactly one module. (While layers could be just conceptual grouping of code/resources that are all in a single module, using at least one module per layer gives us the ability to restrict what's exposed between layers.)</p>
+<p>Layers could contain multiple modules, which I recommend as the application grows in size.</p>
+<p>The <strong>Data Layer</strong> manages data acquisition and update. You can use it to persist data locally in a database, file or in memory. Or maybe your application connects to a server for its data; you can use the <strong>Data Layer</strong> to connect to a server to grab data and push changes. </p>
+<p>By keeping your data access code inside the <strong>Data Layer</strong>, you can abstract and hide the <em>how</em> data is accessed from the rest of the application. If your data management code changes over time, the rest of the application may require fewer changes to adapt. </p>
+<p>Operations in the <strong>Data Layer</strong> are sometimes called <em>Primitive Operations</em>, as they're the core, often simplest, operations you define on your data. Many primitive operations are simply property changes to objects and CRUD operations (Create/Read/Update/Delete) against your data store. You may also define more complex operations that are always needed for any user of the data. </p>
+<p>The <strong>Data Layer</strong> doesn't depend upon other <em>architectural</em> layers, but may depend upon other modules/libraries such as database storage or network communication.</p>
+<p>The <strong>Domain Layer</strong> is an optional layer that increases in value as the size of your application grows. Often you'll find that several parts of your application need to perform the same sequences of primitive operations. For example, a game might have several places that put an item in the player's inventory. It would be a great idea to create a function to contain the repeated code, but where do we put that function?</p>
+<p>In a smaller application, you could add a function in the <strong>User-Interface Layer</strong>, and you've successfully factored out that common functionality.</p>
+<p>As the application grows, the user interface might be broken down into multiple modules. Which UI module should host that functionality?</p>
+<p>Or if you want to use the same "put item in inventory" for an Android application, desktop application, and web application, you no longer have a common user interface to host it.</p>
+<p>A <strong>Domain Layer</strong> hosts this type of common functionality and gives you access from any user interface components, within the same application or across multiple applications.</p>
+<p>These types of operations are generally called "macro operations". They build upon primitive operations by combining primitives to create more complex processing of the data.</p>
+<p>In recent architectures, these types of operations are called <em>Use Cases</em> or <em>Interactors</em>.</p>
+<p>The <strong>Domain Layer</strong> only depends upon the architectural <strong>Data Layer</strong> for access to its data. It can also depend upon other modules/libraries that provide frameworks, algorithms or support functions to work with the data.</p>
+<p>Finally, we use our <strong>User-Interface Layer</strong> to present data to the user and interpret their actions. This layer can present the data using many different approaches: graphically, textually, as a service, or using assistive technologies for example.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>I've called out "as a service" as a type of User-Interface implementation. Think about what it means to be a "user". The "outsider" that's interacting with your application is its user. That could be a person, or it could be other applications. When we think of a service (such as a web service) as a "user interface", we're talking about a layer that prepares data for presentation (creating a JSON output, for example) and interprets user interaction (receives the service call, figures out what it means, and calls the appropriate functionality in the <strong>Domain</strong> (if present) or <strong>Data</strong> layers.)</p>
+</div>
+<p>The <strong>User-Interface Layer</strong> only depends on the <strong>Domain Layer</strong> (if present) <em>or</em> the <strong>Data Layer</strong>. This is somewhat controversial; some want to allow the <strong>User-Interface Layer</strong> to use the <strong>Domain Layer</strong> for complex operations, and skip past it directly access the <strong>Data Layer</strong> for simpler operations. The problem here is that it's possible to miss added value in the <strong>Domain Layer</strong> with this approach.</p>
+<p>Suppose you have a <strong>Domain Layer</strong> that exposes macro operations to the <strong>User-Interface Layer</strong>, and also passes-through primitive operations from the <strong>Data Layer</strong>. If we allow the <strong>User-Interface Layer</strong> a choice of which layer it wants to work with, it may miss changes that the <strong>Domain Layer</strong> makes. For example, later on, as part of the simpler pass-throughs, if the <strong>Domain Layer</strong> adds some logging and verification (that the <strong>Data Layer</strong> doesn't have), it will be missed if the <strong>User-Interface Layer</strong> skipped around the <strong>Domain Layer</strong> to directly communicate with the <strong>Data Layer</strong>. </p>
+<p>When using a <strong>Domain Layer</strong>, all <strong>User-Interface Layer</strong> modules must only depend on modules in the <strong>Domain Layer</strong>.</p>
+<h2 id="data-layer">Data Layer</h2>
+<p>Let's dive a little deeper into the <strong>Data Layer</strong>.</p>
+<p>The most basic part of the <strong>Data Layer</strong> is a <em>Data Source</em>. This is where you access your data. It could be a local or remote database, a web service, a file or another place to store your data. The data in this layer is usually persisted so it can be accessed across runs of the application.</p>
+<p>Sometimes your application may use more than one data source. For example, if your application managed contacts, they might be stored in a server for access across devices. To reduce the user's network use, you may also have a local database that stores any contacts that have been previously accessed. </p>
+<p>So how do you decide which data source to use? </p>
+<p>Add a <em>repository</em> module. A repository can act as a switch between data sources. If the repository is asked for a contact, it checks to see if it's in the local-database data source. If so, it just returns it; no network communication needed! If not, it grabs the contact from the network, stores it in the local database, then returns it. (We're ignoring data that's been changed on the server in this example, but there are other technologies that make that easy to manage.)</p>
+<pre class="mermaid"><code>flowchart LR
+    other[User Interface/Domain Layer] --&gt; repo
+    ds1 --&gt; db[(Database)]
+    ds2 --&gt; file(((File)))
+    ds3 --&gt; ws(((Web Service)))
+    subgraph Data Layer
+    direction LR
+    repo[Repository] --&gt; ds1[Data Source 1]
+    repo[Repository] --&gt; ds2[Data Source 2]
+    repo[Repository] --&gt; ds3[Data Source 3]
+    end</code></pre>
+<p>(Arrows represent dependencies)</p>
+<p>The repository can also perform another useful function - convert data that's used directly by a data source to data that can be returned to other layers. This conversion can</p>
+<ul>
+<li>limit which data is available to other layers (hiding data that you don't want to expose)</li>
+<li>add new data that's derived from a data source or pulled in from other sources</li>
+<li>change the accessibility of data, commonly making it <em>immutable</em></li>
+<li>return objects that implement interfaces required by other layers</li>
+</ul>
+<p>One of the most important things we'll learn about our <strong>User-Interface Layer</strong> is that <em>immutable</em> data makes everything more reliable and can help frameworks like Jetpack Compose optimize what needs to be refreshed. Immutable data stops its users for directly modifying it; they must use other functions to make changes, functions that will then <em>know</em> that changes are being made. This allows for easy enforcement of <strong>Unidirectional Data Flow</strong>, which we'll talk about later.</p>
+<p>The repository copies the data from the actual data objects (often known as "entities") and creates <strong>Data Transfer Objects</strong> (DTOs) to carry that data. DTOs are often <em>immutable</em>, and can also restrict which data is visible or enhance the data with derived properties. DTOs may be a simple wrapper (an "Adapter" in design-pattern parlance), or an entirely-separate object that holds a copy of the data.</p>
+<p>Using a repository helps abstract the way the data is accessed outside the <strong>Data Layer</strong>. Depending on your level of abstraction, this may result in better isolation between the layers. Changes to <em>how</em> you store data become less likely to force changes outside the <strong>Data Layer</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>"Less likely" depends on the amount of abstraction used when exposing data from the data layer, and this is a tradeoff. Higher abstraction requires more types (interfaces and/or classes) to be defined and maintained and reduces required external changes. Lower abstraction (such as directly passing data that's managed by your database) is less to develop and maintain, but requires more to change outside the layer when data-later internals change.</p>
+<p>Think about how likely change is in your application. Is it likely you'll switch data sources? Is it likely the app will <em>only</em> be an Android application, or might you want to use parts of it in a desktop or web application? (Eventually, I think that Kotlin Multiplatform [KMP] will also allow easy reuse of much of your code on iOS as well.)</p>
+</div>
+<h2 id="domain-layer">Domain Layer</h2>
+<p>The <strong>Domain Layer</strong> is optional, and we won't be using it in this class. It's overkill for small applications. As your applications grow, it becomes a much more useful.</p>
+<pre class="mermaid"><code>flowchart LR
+    ui[User Interface Layer]
+    ui --&gt; uc1
+    ui --&gt; uc2
+    ui --&gt; uc3
+    ui --&gt; data
+    data --&gt; repo
+    uc1 --&gt; repo
+    uc2 --&gt; repo
+    uc3 --&gt; repo
+    ds1 --&gt; db[(Database)]
+    ds2 --&gt; file(((File)))
+    ds3 --&gt; ws(((Web Service)))
+    subgraph Domain Layer
+    direction LR
+    data[Data]
+    uc1[Use Case 1]
+    uc2[Use Case 2]
+    uc3[Use Case 3]
+    end
+    subgraph Data Layer
+    direction LR
+    repo[Repository] --&gt; ds1[Data Source 1]
+    repo[Repository] --&gt; ds2[Data Source 2]
+    repo[Repository] --&gt; ds3[Data Source 3]
+    end</code></pre>
+<p>(Arrows represent dependencies)</p>
+<p>The gist of this layer is that is exposes data from the <strong>Data Layer</strong> along with <em>Use Cases</em> for common data modifications.</p>
+<p>For more detail on the <strong>Domain Layer</strong>, please see <a href="https://developer.android.com/topic/architecture/domain-layer">https://developer.android.com/topic/architecture/domain-layer</a>.</p>
+<p>You may also be interested in learning about "Clean Architecture", which explains the use of a <strong>Domain Layer</strong>. Be careful though - adding a <strong>Domain Layer</strong> can increase the complexity of a smaller app and make its maintenance burdensome - you'll have to find that line, and much of depends on how many developers will be working on the same application. If only a few, it's best to keep it simple. If many developers on a larger application, the extra separation and explicit use cases can be a great help.</p>
+<h2 id="user-interface-layer">User-Interface Layer</h2>
+<p>The <strong>User Interface Layer</strong> is likely where most of your changes will happen, and will usually involve much more detailed code.</p>
+<p>There are two major concepts in this layer:</p>
+<ul>
+<li>State - the data used to present the user interface</li>
+<li>User Interface - the means of allowing the user to consume and interact with the data</li>
+</ul>
+<h3 id="state">State</h3>
+<p>State includes data from other layers as well as data that's only used for controlling the user interface. If you have an application that's displaying contact information, the contact data comes from the other layers and is the "what" that you want to display. But you'll also need other information such as </p>
+<ul>
+<li>What screen is user seeing?</li>
+<li>Which position in a list is at the top?</li>
+<li>What field currently has focus?</li>
+</ul>
+<p>Some data <em>only</em> makes sense for a specific user interface. It's easiest to determine which data this is if you ask yourself "would I need this data for a graphical user interface, a command-line interface, <em><strong>and</strong></em> a web service?" If so, the data likely belongs in the <strong>Data Layer</strong>. Otherwise, the data only exists in the <strong>User-Interface Layer</strong>.</p>
+<p>Our goals in the <strong>User-Interface Layer</strong> are to</p>
+<ul>
+<li><em>Observe</em> state changes</li>
+<li><em>Prepare</em> our state for presentation to the user</li>
+<li><em>Interpret</em> user interaction</li>
+<li><em>Update</em> the state as needed (which will trigger our observers)</li>
+</ul>
+<p>We'll be using <em>Jetpack Compose</em> as our user interface in this class.Compose has great state-management support, often making the state observation invisible, but sometimes it can be tricky to set up. We'll work through several types of state use in this class, but be aware that best practices for state are still being developed and may change from what I present. Keep an eye on <a href="https://developer.android.com/">https://developer.android.com/</a> site and the <a href="https://android-developers.googleblog.com/">https://android-developers.googleblog.com/</a> blog for emerging details.</p>
+<p>As part of the <strong>User-Interface Layer</strong> responsibilities, we need to <em>prepare</em> and <em>update</em> state. This function is usually managed by a <em>View Model</em>.</p>
+<h3 id="view-models">View Models</h3>
+<p>The concept of a <em>View Model</em> is simple - it's a place to manage state preparation and updates. </p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Without Domain Layer</label><label for="__tabbed_1_2">With Domain Layer</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<pre class="mermaid"><code>flowchart LR
+    subgraph User Interface Layer
+    ui[User Interface] --&gt; vm[View Model]
+    end
+    vm --&gt; repo
+    ds1 --&gt; db[(Database)]
+    ds2 --&gt; file(((File)))
+    ds3 --&gt; ws(((Web Service)))
+    subgraph Data Layer
+    direction LR
+    repo[Repository] --&gt; ds1[Data Source 1]
+    repo[Repository] --&gt; ds2[Data Source 2]
+    repo[Repository] --&gt; ds3[Data Source 3]
+    end</code></pre>
+</div>
+<div class="tabbed-block">
+<pre class="mermaid"><code>flowchart LR
+    subgraph User Interface Layer
+    ui[User Interface] --&gt; vm[View Model]
+    end
+    vm --&gt; uc1
+    vm --&gt; uc2
+    vm --&gt; uc3
+    vm --&gt; data
+    uc1 --&gt; repo
+    uc2 --&gt; repo
+    uc3 --&gt; repo
+    data --&gt; repo
+    ds1 --&gt; db[(Database)]
+    ds2 --&gt; file(((File)))
+    ds3 --&gt; ws(((Web Service)))
+    subgraph Domain Layer
+    direction LR
+    data[Data]
+    uc1[Use Case 1]
+    uc2[Use Case 2]
+    uc3[Use Case 3]
+    end
+    subgraph Data Layer
+    direction LR
+    repo[Repository] --&gt; ds1[Data Source 1]
+    repo[Repository] --&gt; ds2[Data Source 2]
+    repo[Repository] --&gt; ds3[Data Source 3]
+    end</code></pre>
+</div>
+</div>
+</div>
+<p>(Arrows represent dependencies)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You may have multiple view models. Some developers prefer one view model per screen, others prefer by types of data, and others prefer a single view model. The decision often depends on the size of the application as well.</p>
+</div>
+<p>A view model creates state to be used by the user interface. In some cases, it may just pass the state along. In other cases, it may modify or combine state from underlying layers.</p>
+<p>View model functions allow the user interface to tell it what the user wants to do, such as adding/deleting a contact or switching to a different screen. These functions will interact with the <strong>Domain Layer</strong> (if present) or <strong>Data Layer</strong> to update the data.</p>
+<p>The view model needs to expose the state in a way that the user interface can observe it. Depending on the UI framework being used, the state might be exposed using the Observer pattern, using Android <code>LiveData</code>, Jetpack Compose <code>State</code> objects, Kotlin <code>Flow</code>s or other approaches. </p>
+<p>For our work, we'll be using Kotlin <code>Flow</code>s and Compose <code>State</code>s. We'll talk about what those are in later modules.</p>
+<h3 id="composable-functions">Composable Functions</h3>
+<p>For our user interfaces, we'll use <em>Jetpack Compose</em> to <em>declare</em> our user interface.</p>
+<p>In a nutshell, you'll create <strong>Composable functions</strong> in Kotlin. These functions will <em>emit</em> descriptions of parts of the user interface to a tree. The <em>Compose UI</em> framework will look at this tree and create a user interface.</p>
+<p>The cool thing is that Compose can watch the parameters passed to a Composable function. If the values change from one call to the next, it will <em>recompose</em>, emitting a replacement for the part of the tree that it previously emitted. The <em>Compose UI</em> will then detect changes and refresh only the parts of the UI that need to be refreshed.</p>
+<h2 id="data-objects">Data Objects</h2>
+<p>Different types of data flow between different parts of the application. Your application may use</p>
+<ul>
+<li>Raw data - data obtained in its raw form from a database, file, service, etcetera. The data source formats it into an object to be passed back to the repository</li>
+<li>Entities - data obtained from data sources</li>
+<li>Data Transfer Objects (DTOs) - data abstracted/restricted before being passed out of the <strong>Data Layer</strong></li>
+<li>State - data prepared for use in the user interface</li>
+</ul>
+<p>A typical flow of data might look like</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Without Domain Layer</label><label for="__tabbed_2_2">With Domain Layer</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<pre class="mermaid"><code>flowchart RL
+    subgraph User Interface Layer
+    vm[View Model] --&gt;|State| ui[User Interface]
+    end
+    repo --&gt;|DTO| vm
+    db[(Database)] --&gt;|raw| ds
+    subgraph Data Layer
+    ds[Data Source] --&gt;|Entity| repo[Repository]
+    end</code></pre>
+</div>
+<div class="tabbed-block">
+<pre class="mermaid"><code>flowchart RL
+    subgraph User Interface Layer
+    vm[View Model] --&gt;|State| ui[User Interface]
+    end
+    Data
+    data --&gt;|DTO| vm
+    repo --&gt;|DTO| data
+    db[(Database)] --&gt;|raw| ds
+    subgraph Domain Layer
+    direction TB
+    data[Data]
+    uc[Use Case]
+    end
+    subgraph Data Layer
+    ds[Data Source] --&gt;|Entity| repo[Repository]
+    end</code></pre>
+</div>
+</div>
+</div>
+<h2 id="events">Events</h2>
+<p>So how do we make changes? That's where <em>events</em> come in.</p>
+<p>The user interface receives user interactions, such as key and button presses, and interprets their meaning. It then calls Event functions to trigger state changes.</p>
+<p>When using <em>Jetpack Compose</em>, these event functions are typically Kotlin lambdas passed into the functions we use to create the user interface. Most of these lambdas will call functions in the view model; others may update some local state in the user interface itself.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Without Domain Layer</label><label for="__tabbed_3_2">With Domain Layer</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<pre class="mermaid"><code>flowchart LR
+    subgraph User Interface Layer
+    ui[User Interface] --&gt;|"event()"| vm[View Model]
+    end
+    vm --&gt;|"update()"| repo
+    ds --&gt;|query| db[(Database)]
+    subgraph Data Layer
+    repo[Repository] --&gt;|"update()"| ds[Data Source]
+    end</code></pre>
+</div>
+<div class="tabbed-block">
+<pre class="mermaid"><code>flowchart LR
+    subgraph User Interface Layer
+    ui[User Interface] --&gt;|"event()"| vm[View Model]
+    end
+    vm --&gt;|"update()"| uc
+    uc --&gt;|"update()"| repo
+    ds --&gt;|query| db[(Database)]
+    subgraph Domain Layer
+    direction TB
+    data[Data]
+    uc[Use Case]
+    end
+    subgraph Data Layer
+    repo[Repository] --&gt;|"update()"| ds[Data Source]
+    end</code></pre>
+</div>
+</div>
+</div>
+<p>We'll see how this works when we start coding our user interface.</p>
+<h2 id="concurrency">Concurrency</h2>
+<p>User interfaces are typically updated via a single thread. That thread is responsible for drawing any needed changes and responding to user interactions. The UI should respond immediately to interactions such as pressing a button, scrolling the screen, or drawing pictures with their finger. </p>
+<p>Many user actions result in performing data updates, which can be expensive. If we perform these actions on the same thread that detected the user interaction, all screen updates are blocked until that update has completed. At best, this can result in "jank", an interface that doesn't immediately respond and jumps between drawn frames. At worst, an update might take long enough that the user interface freezes.</p>
+<p>The easiest fix for this is to run data updates on a different thread so the user interface can keep responding immediately. We'll do this using Kotlin Coroutines, but it could also be done using threads and executors.</p>
+<p>While the UI is now responsive, we can run into data synchronization, race and deadlock issues. Fortunately there are several patterns we can follow to more reliably work with concurrent processing.</p>
+<p>One of the most effective ways to help is to use a <strong>Unidirectional Data Flow</strong>, or UDF.</p>
+<h2 id="unidirectional-data-flow">Unidirectional Data Flow</h2>
+<p>By passing data <em>into</em> functions, and receiving event calls <em>out</em>, we remove the possibility of data changing while it's being read.</p>
+<p>Jetpack Compose's <code>Composable</code> functions take parameters for data and events. For example, we might define a "submit button" function:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@Composable</span>
+<span class="kd">fun</span><span class="w"> </span><span class="nf">Submit</span><span class="p">(</span>
+<span class="w">    </span><span class="n">buttonText</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span>
+<span class="w">    </span><span class="n">onButtonPress</span><span class="p">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">,</span>
+<span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The convention for Composable functions that emit ui nodes to the tree is that they are named using <code>UpperCamelCase()</code>. This feels a bit weird, but the idea is that we're treating these functions as <em>declarations</em> of what the ui looks like, not imperative code to build a UI. Declarations feel more like class or interface definitions, hence the case.</p>
+</div>
+<p>The <code>buttonText</code> is data coming in; the <code>Submit()</code> function will emit a button to the tree that displays that text. <code>Submit()</code> will also attach a "click listener" to the button. When the button is pressed, it will call <code>onButtonPress()</code> to tell the caller of <code>Submit()</code> that the button was pressed.</p>
+<p>Data comes in; events go out. That's <strong>Unidirectional Data Flow</strong>.</p>
+<p>Somewhere up at the top of the call chain, a lambda is passed in to be used as that <code>onButtonPress</code> parameter, and it contains the code to perform the update.</p>
+<p>That lambda should immediately switch to a different thread to perform its work. We'll do this by launching a coroutine to perform the work. At the end of the coroutine, new data will be set for the state and passed in.</p>
+<p>For this example, if the new state contains the <code>buttonText</code> that's passed into <code>SubmitButton()</code>, the UI will be updated.</p>
+<p>We'll dig into this when we start talking about <em>Jetpack Compose</em>. For now, all you need to know is we'll be pushing data and event functions into the Composable functions, and call the event functions to indicate that something has changed. </p>
+  
+</div>
+  
+</div>
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="" >
+      
+        
+        <a href="../kotlin-primer/index.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kotlin Primer" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Kotlin Primer
+            </div>
+          </div>
+        </a>
+      
+      <div class="md-footer-meta md-typeset">
+        <div class="md-footer-meta__inner md-grid">
+          <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023. Scott Stanchfield
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+          
+        </div>
+      </div>    
+      
+        
+        <a href="../android-studio/index.html" class="md-footer__link md-footer__link--next" aria-label="Next: Android Studio" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Android Studio
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.sections", "search.suggest", "search.highlight", "navigation.instant", "content.tabs.link", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>
