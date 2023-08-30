@@ -622,35 +622,59 @@ your assignment submissions.</p>
 </thead>
 <tbody>
 <tr>
-<td>Android Studio<br/>https://developer.android.com/studio#android-studio-downloads</td>
+<td>Android Studio<br/>Install via <a href="https://www.jetbrains.com/toolbox-app/">Jetbrains Toolbox</a></td>
 <td>Hedgehog Beta 1</td>
 </tr>
 <tr>
-<td>Kotlin<br/>(kotlin_version in root build.gradle)</td>
+<td>Gradle<br/><code>agp</code> in <code>gradle/wrapper/gradle-wrapper.properties</code></td>
+<td>8.2.0-beta1</td>
+</tr>
+<tr>
+<td>Android Gradle Plugin<br/>in <code>distributionUrl</code> in <code>gradle/libs.versions.toml</code></td>
+<td>8.2</td>
+</tr>
+<tr>
+<td>Kotlin<br/><code>kotlin</code> in <code>gradle/libs.versions.toml</code></td>
 <td>1.8.10</td>
 </tr>
 <tr>
-<td>Jetpack Compose Bill of Materials<br/>(compose_bom_version in root build.gradle)</td>
+<td>Jetpack Compose Bill of Materials<br/><code>compose_bom</code> in <code>gradle/libs.versions.toml</code></td>
 <td>2023.08.00</td>
 </tr>
 <tr>
-<td>Jetpack Compose Compiler<br/>(compose_compiler_version in root build.gradle)</td>
+<td>Jetpack Compose Compiler<br/><code>kotlinCompilerExtensionVersion</code> in <code>app/build.gradle</code></td>
 <td>1.4.3</td>
 </tr>
 <tr>
-<td>Android minimum API<br/>(minSdk in app/build.gradle)</td>
+<td>JDK Toolchain<br/>Add <code>kotlin { jvmToolchain(17) }</code> in <code>app/build.gradle</code></td>
+<td>17</td>
+</tr>
+<tr>
+<td>Android minimum API<br/>minSdk in <code>app/build.gradle</code></td>
 <td>24</td>
 </tr>
 <tr>
-<td>Android target API<br/>(targetSdk in app/build.gradle)</td>
+<td>Android target API<br/>targetSdk in <code>app/build.gradle</code></td>
 <td>34</td>
 </tr>
 <tr>
-<td>Android compile API<br/>(compileSdk in app/build.gradle)</td>
+<td>Android compile API<br/>compileSdk in <code>app/build.gradle</code></td>
 <td>34</td>
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In <code>app/build.gradle/kts</code>, be sure to delete</p>
+<div class="highlight"><pre><span></span><code><span class="n">compileOptions</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">sourceCompatibility</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">JavaVersion</span><span class="p">.</span><span class="na">VERSION_1_8</span>
+<span class="w">    </span><span class="n">targetCompatibility</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">JavaVersion</span><span class="p">.</span><span class="na">VERSION_1_8</span>
+<span class="p">}</span>
+<span class="n">kotlinOptions</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">jvmTarget</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;1.8&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
 <h2 id="sample-code">Sample Code</h2>
 <p>See the "Sample Code" module for download and usage instructions</p>
 <p>If you see any problems in the sample code, please let me know and I'll update it.</p>
