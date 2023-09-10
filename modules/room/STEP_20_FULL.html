@@ -1162,6 +1162,9 @@
 <span class="w">    </span><span class="nd">@Update</span>
 <span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">people</span><span class="p">:</span><span class="w"> </span><span class="n">Person</span><span class="p">)</span>
 
+<span class="w">    </span><span class="nd">@Upsert</span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">upsert</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">people</span><span class="p">:</span><span class="w"> </span><span class="n">Person</span><span class="p">)</span>
+
 <span class="w">    </span><span class="nd">@Delete</span>
 <span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="k">vararg</span><span class="w"> </span><span class="n">people</span><span class="p">:</span><span class="w"> </span><span class="n">Person</span><span class="p">)</span>
 
@@ -1179,6 +1182,7 @@
 <li><code>getPerson(id)</code> - Returns a single person with the specified id. The <code>:id</code> syntax is replaced with the <code>id</code> parameter passed to the function.</li>
 <li><code>insert(people)</code> - inserts the passed <code>Person</code> instances into the database. By default, this will throw an exception if a passed <code>Person</code> has an <code>id</code> that's already in the table.</li>
 <li><code>update(people)</code> - updates the <code>Person</code> table with the values for each passed <code>Person</code>. Will throw an exception if any passed <code>Person</code> doesn't exist.</li>
+<li><code>upsert(people)</code> - updates or inserts to the <code>Person</code> table with the values for each passed <code>Person</code>. If the <code>Person</code> already exists, it will update; otherwise it will insert.</li>
 <li><code>delete(people)</code> - deletes the specified people from the table.</li>
 <li><code>delete(ids)</code> - deletes the people with the specified ids from the table. Note that we're using the <code>@Query</code> annotation here to tailor the deletion.</li>
 </ul>
