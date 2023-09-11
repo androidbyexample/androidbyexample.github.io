@@ -1,0 +1,1633 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://androidbyexample.com/modules/movie-db/STEP_050_REPO.html">
+      
+      
+        <link rel="prev" href="STEP_040_REPO.html">
+      
+      
+        <link rel="next" href="STEP_060_REPO.html">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>Entities, DAO and Database - Android By Example</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
+      
+      
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 64C0 28.7 28.7 0 64 0h160v128c0 17.7 14.3 32 32 32h128v288c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0l128 128z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 64C0 28.7 28.7 0 64 0h160v128c0 17.7 14.3 32 32 32h128v288c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0l128 128z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 64C0 28.7 28.7 0 64 0h160v128c0 17.7 14.3 32 32 32h128v288c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0l128 128z"/></svg>');}</style>
+
+
+    
+    
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<!--<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">-->
+
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#naming" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Android By Example" class="md-header__button md-logo" aria-label="Android By Example" data-md-component="logo">
+      
+  <img src="../../android.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Android By Example
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Entities, DAO and Database
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+<!--    <div class="md-sidebar md-sidebar&#45;&#45;primary" data-md-component="sidebar" data-md-type="navigation">-->
+<div class="md-sidebar md-sidebar--primary" data-md-type="navigation">
+    <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner">
+            
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Android By Example" class="md-nav__button md-logo" aria-label="Android By Example" data-md-component="logo">
+      
+  <img src="../../android.png" alt="logo">
+
+    </a>
+    Android By Example
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          Introduction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_01_FULL.html" class="md-nav__link">
+        About This Site
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_02_FULL.html" class="md-nav__link">
+        About Your Instructor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_04_FULL.html" class="md-nav__link">
+        Content License
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_05_FULL.html" class="md-nav__link">
+        Source Code License
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_09_FULL.html" class="md-nav__link">
+        Welcome!
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_10_FULL.html" class="md-nav__link">
+        Course Hardware and Software
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_20_FULL.html" class="md-nav__link">
+        Assignments
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_30_FULL.html" class="md-nav__link">
+        Grading
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_40_FULL.html" class="md-nav__link">
+        Using Third-Party and Course Sample Code
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Week 1 (8/31-9/6)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Week 1 (8/31-9/6)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../kotlin-primer/index.html">Kotlin Primer</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Kotlin Primer
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../architecture/index.html">Architecture</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Architecture
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../android-studio/index.html">Android Studio</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Android Studio
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Week 2 (9/7-9/13)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Week 2 (9/7-9/13)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../compose-concepts/index.html">Jetpack Compose Concepts</a>
+          
+            <label for="__nav_3_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Jetpack Compose Concepts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compose-concepts/STEP_020_FULL.html" class="md-nav__link">
+        Composable Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compose-concepts/STEP_030_FULL.html" class="md-nav__link">
+        String literals
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compose-concepts/STEP_040_FULL.html" class="md-nav__link">
+        State
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compose-concepts/STEP_050_FULL.html" class="md-nav__link">
+        Compose Optimizations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compose-concepts/STEP_060_FULL.html" class="md-nav__link">
+        Where do you store state?
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compose-concepts/STEP_070_FULL.html" class="md-nav__link">
+        Density
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../movie-ui-1/index.html">Initial Movies UI</a>
+          
+            <label for="__nav_3_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Initial Movies UI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-1/STEP_020_REPO.html" class="md-nav__link">
+        Update versions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-1/STEP_030_REPO.html" class="md-nav__link">
+        Create data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-1/STEP_040_REPO.html" class="md-nav__link">
+        Create initial screens
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-1/STEP_050_REPO.html" class="md-nav__link">
+        Flesh out the screens
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Week 3 (9/14-9/20)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Week 3 (9/14-9/20)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../room/index.html">Room</a>
+          
+            <label for="__nav_4_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Room
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../room/STEP_10_FULL.html" class="md-nav__link">
+        Relationships
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../room/STEP_20_FULL.html" class="md-nav__link">
+        Room Basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../room/STEP_25_FULL.html" class="md-nav__link">
+        Room Relations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../room/STEP_30_FULL.html" class="md-nav__link">
+        Suspending Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../room/STEP_40_FULL.html" class="md-nav__link">
+        The Repository
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="index.html">Movies Database</a>
+          
+            <label for="__nav_4_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Movies Database
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_020_REPO.html" class="md-nav__link">
+        Add new modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_030_REPO.html" class="md-nav__link">
+        Add Room dependencies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_040_REPO.html" class="md-nav__link">
+        Module Dependencies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Entities, DAO and Database
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="STEP_050_REPO.html" class="md-nav__link md-nav__link--active">
+        Entities, DAO and Database
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#naming" class="md-nav__link">
+    Naming
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ratingentity" class="md-nav__link">
+    RatingEntity
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actorentity" class="md-nav__link">
+    ActorEntity
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#movieentity" class="md-nav__link">
+    MovieEntity
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roleentity" class="md-nav__link">
+    RoleEntity
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moviedao" class="md-nav__link">
+    MovieDao
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moviedatabase" class="md-nav__link">
+    MovieDatabase
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#databasebuilderkt" class="md-nav__link">
+    DatabaseBuilder.kt
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_060_REPO.html" class="md-nav__link">
+        Repository Types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_070_REPO.html" class="md-nav__link">
+        Modifying the view model to use real data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_080_REPO.html" class="md-nav__link">
+        Fix movie list
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_090_REPO.html" class="md-nav__link">
+        Fetch data for movie display
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_100_FULL.html" class="md-nav__link">
+        Wrap-Up
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+        </div>
+    </div>
+</div>
+
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+<div class="sas1-text-column">
+
+<h1>Movies Database</h1>
+
+<h2>Entities, DAO and Database</h2>
+    
+<p>Let's define the Entities, DAO and Database using Room.</p>
+<p>Here's our schema</p>
+<pre class="mermaid"><code>erDiagram
+    RATING ||--o{ MOVIE: movies
+    MOVIE ||--o{ ROLE : cast
+    ROLE }o--|| ACTOR : appearance</code></pre>
+<p>What does this mean?</p>
+<ul>
+<li>
+<p>RATING &lt;-&gt; MOVIE is a one-to-many relationship</p>
+<ul>
+<li>A RATING can be associated with zero or more MOVIEs</li>
+<li>A MOVIE has exactly one RATING</li>
+</ul>
+</li>
+<li>
+<p>MOVIE &lt;-&gt; ACTOR is a many-to-many relationship</p>
+<ul>
+<li>An ACTOR can appear in zero or more MOVIEs</li>
+<li>A MOVIE can cast zero or more ACTORs</li>
+<li>To implement this, we introduce an associative entity ROLE with a one-to-many relationship on each side<ul>
+<li>A MOVIE can cast zero or more ROLEs</li>
+<li>An ACTOR can appear in zero or more ROLEs</li>
+<li>A ROLE can appear in exactly one MOVIE</li>
+<li>A ROLE is played by exactly one ACTOR</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Let's look at the attributes of each entity. All entities are represented as Kotlin data classes.</p>
+<h2 id="naming">Naming</h2>
+<p>There will be a different types of classes used in this application:</p>
+<ul>
+<li><strong>Database entities</strong>: the objects that represent rows in a database. We'll use the suffix "Entity" for these.</li>
+<li><strong>Data-layer Plain-Old-Kotlin-Objects (POKOs)</strong>: helper objects for retrieving data (or partial data) from entities. For example, a POKO may retrieve a Rating with a list of all Movies taggged with that Rating. We won't use a suffix for these.  </li>
+<li><strong>Data transfer objects</strong>: representations of the data from the <code>data</code> module exposed by the <code>repository</code> module. This hides the fact that the data is coming from a database, as the repository could be returning it from anywhere.  We're creating a abstraction that doesn't leak the underlying implementation details to the user-interface layer. We'll use the suffix "Dto" for these.</li>
+</ul>
+<h2 id="ratingentity">RatingEntity</h2>
+<p>Represents an MPAA rating (G, PG, PG-13, R, NR)</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>PK</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>We define <a class="find-button" href="#050-rating-entity"><code>RatingEntity</code></a> and a <a class="find-button" href="#050-rating-to-movie">POKO</a> to gather a rating and all of its movies at the same time. Note that this POKO represents a ONE-TO-MANY relation. </p>
+<h2 id="actorentity">ActorEntity</h2>
+<p>An actor that can appear in movies</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Key</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>PK</td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>We define <a class="find-button" href="#050-actor-entity"><code>ActorEntity</code></a> and two <a class="find-button" href="#050-actor-with-filmography">POKOs</a> to gather an actor and all associated movies at the same time. Note that these POKOs represent a MANY-TO-MANY relation, gathering the association data in the <code>RoleEntity</code> by treating it as a ONE-TO-MANY relation <strong>and</strong> a MANY-TO-ONE relation. The <code>RoleEntity</code> is the MANY part in the middle.</p>
+<h2 id="movieentity">MovieEntity</h2>
+<p>A movie</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>PK</td>
+</tr>
+<tr>
+<td>title</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>ratingId</td>
+<td>String</td>
+<td>FK</td>
+</tr>
+</tbody>
+</table>
+<p>We define <a class="find-button" href="#050-movie-entity"><code>MovieEntity</code></a> and two <a class="find-button" href="#050-movie-with-cast">POKOs</a> to gather a movie and all associated actors at the same time. Note that these POKOs represent a MANY-TO-MANY relation, gathering the association data in the <code>RoleEntity</code> by treating it as a ONE-TO-MANY relation <strong>and</strong> a MANY-TO-ONE relation. The <code>RoleEntity</code> is the MANY part in the middle.</p>
+<h2 id="roleentity">RoleEntity</h2>
+<p>Association entity that casts actors into movies</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>movieId</td>
+<td>String</td>
+<td>FK</td>
+</tr>
+<tr>
+<td>actorId</td>
+<td>String</td>
+<td>FK</td>
+</tr>
+<tr>
+<td>character</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>orderInCredits</td>
+<td>int</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>We define <a class="find-button" href="#050-role-entity"><code>RoleEntity</code></a> to hold the MANY-TO-MANY relation data between <code>MovieEntity</code> and <code>ActorEntity</code>. It holds additional <strong>association data</strong> describing how the movies and actors are related. Gathering the many-to-many data would be simpler if we weren't interested in the association data. However, to access the association data we'll have to use it at the center to two MANY-TO-ONE relations. See <code>MovieEntity</code> and <code>ActorEntity</code> above for how this works.</p>
+<h2 id="moviedao">MovieDao</h2>
+<p>We start with a <a class="find-button" href="#050-movie-dao">DAO</a> that has basic create and read operations. We'll make it an abstract class so we can define a concrete implementation for <code>resetDatabase()</code>.</p>
+<p>All basic query functions immediately return a <code>Flow</code> that we'll collect inside a coroutine. When the data is fetched, it will emit the result to the <code>Flow</code>. If the data changes, the queries will re-execute and emit the new data to the previously-returned <code>Flow</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Functions <a class="find-button" href="#050-grwm"><code>getRatingWithMovies()</code></a>,
+<a class="find-button" href="#050-gawf"><code>getActorWithFilmography()</code></a>,
+and <a class="find-button" href="#050-gmwc"><code>getMovieWithCast()</code></a> are declared as one-shot functions. For now, this is fine, but it will become an issue later when we allow data updates from the UI.</p>
+<p>The problem is that because we're not fetching these data using a <code>Flow</code>, there's no way for the database to send us updated data when the data behind the scenes changes. This will lead to stale data on the screen. For example, if we display a movie with its cast, and delete a cast entry, the entry will be removed from the database, but still be visible on the screen unless we do something manual (ewwwww) to update it. Later we'll switch to using <code>Flow</code>s for these queries, but for now, I want to demonstrate how you can use a controlled-side effect inside a composable function to fetch data (and demonstrate why this can lead to stale data).</p>
+<p>Functions like these that return POKOs that use <code>@Relation</code> will run multiple queries and must be annotated with <code>@Transaction</code>.</p>
+</div>
+<p>Later we'll add update and delete functionality. For now, the only updating we'll do is insert initial data.</p>
+<h2 id="moviedatabase">MovieDatabase</h2>
+<p>A very typical <a class="find-button" href="#050-database">Room database</a> declaration. The database will contain Movie, Actor, Role and Rating entities and expose a MovieDao.</p>
+<h2 id="databasebuilderkt">DatabaseBuilder.kt</h2>
+<p>This Kotlin file hosts a <a class="find-button" href="#050-db-builder">single function</a> that we'll use to create an instance of the database. Defining this function here, in the <code>data</code> module, avoids the need to make the <code>repository</code> module depend on Room just to create the database instance.</p>
+<p>Note that if you want to see the SQL queries that are being run, you can uncomment the <code>setQueryCallback</code> call and look at the <strong>Logcat</strong> view at the bottom of Android Studio.</p>
+  
+</div>
+  
+<div class="sas1-code-column">
+  
+<h2>Code Changes</h2>
+  
+<details class="success" open>
+<summary>ADDED: /data/src/main/java/com/androidbyexample/movie/data/ActorEntity.kt</summary>
+<div class="sas1-code-file" style="--sas1-file-name: '/data/src/main/java/com/androidbyexample/movie/data/ActorEntity.kt';">
+<div class='sas1-code-block'>
+<pre><ins>package com.androidbyexample.movie.data</ins><ins></ins><ins>import androidx.room.Embedded</ins><ins>import androidx.room.Entity</ins><ins>import androidx.room.PrimaryKey</ins><ins>import androidx.room.Relation</ins><ins>import java.util.UUID</ins><ins></ins><div id="050-actor-entity"><ins>@Entity</ins><ins>data class ActorEntity(</ins><ins>    @PrimaryKey var id: String = UUID.randomUUID().toString(),</ins><ins>    var name: String,</ins><ins>)</ins></div><ins></ins><div id="050-actor-with-filmography"><ins>// POKO that groups an Actor with the movies they appear in, and the</ins><ins>//   role played in each movie. This is a ONE-TO-MANY relation from the</ins><ins>//   ActorEntity to the RoleEntity, where we resolve the RoleEntity's movieId</ins><ins>//   to fetch the actual movie (a MANY-TO-ONE relation). The end result is turning</ins><ins>//   a MANY-TO-MANY relation into two ONE-TO-MANY relationships, where the MANY part</ins><ins>//   is the RoleEntity.</ins><ins></ins><ins>data class ActorWithFilmography(</ins><ins>    @Embedded</ins><ins>    val actor: ActorEntity,</ins><ins></ins><ins>    @Relation(</ins><ins>        entity = RoleEntity::class,</ins><ins>        parentColumn = &quot;id&quot;,</ins><ins>        entityColumn = &quot;actorId&quot;,</ins><ins>    )</ins><ins>    val rolesWithMovies: List&lt;RoleWithMovie&gt;,</ins><ins>)</ins><ins></ins><ins>data class RoleWithMovie(</ins><ins>    @Embedded</ins><ins>    val role: RoleEntity,</ins><ins></ins><ins>    @Relation(</ins><ins>        parentColumn = &quot;movieId&quot;,</ins><ins>        entityColumn = &quot;id&quot;</ins><ins>    )</ins><ins>    val movie: MovieEntity,</ins><ins>)</ins></div></pre>
+</div>
+</div>
+</details>
+<details class="success" open>
+<summary>ADDED: /data/src/main/java/com/androidbyexample/movie/data/DatabaseBuilder.kt</summary>
+<div class="sas1-code-file" style="--sas1-file-name: '/data/src/main/java/com/androidbyexample/movie/data/DatabaseBuilder.kt';">
+<div class='sas1-code-block'>
+<pre><ins>package com.androidbyexample.movie.data</ins><ins></ins><ins>import android.content.Context</ins><ins>import androidx.room.Room</ins><ins></ins><div id="050-db-builder"><ins>fun createDao(context: Context) =</ins><ins>    Room.databaseBuilder(</ins><ins>        context,</ins><ins>        MovieDatabase::class.java,</ins><ins>        &quot;MOVIES&quot;</ins><ins>    )</ins><ins>// uncomment the following to see the SQL queries that are run</ins><ins>//        .setQueryCallback(</ins><ins>//            { sqlQuery, bindArgs -&gt;</ins><ins>//                Log.d(&quot;!!!SQL&quot;, &quot;SQL Query: $sqlQuery SQL Args: $bindArgs&quot;)</ins><ins>//            }, Executors.newSingleThreadExecutor()</ins><ins>//        )</ins><ins>        .build()</ins><ins>        .dao</ins><ins></ins></div></pre>
+</div>
+</div>
+</details>
+<details class="success" open>
+<summary>ADDED: /data/src/main/java/com/androidbyexample/movie/data/MovieDao.kt</summary>
+<div class="sas1-code-file" style="--sas1-file-name: '/data/src/main/java/com/androidbyexample/movie/data/MovieDao.kt';">
+<div class='sas1-code-block'>
+<pre><ins>package com.androidbyexample.movie.data</ins><ins></ins><ins>import androidx.room.Dao</ins><ins>import androidx.room.Insert</ins><ins>import androidx.room.Query</ins><ins>import androidx.room.Transaction</ins><ins>import kotlinx.coroutines.flow.Flow</ins><ins></ins><div id="050-movie-dao"><ins>@Dao</ins><ins>abstract class MovieDao {</ins><ins>    @Query(&quot;SELECT * FROM RatingEntity&quot;)</ins><ins>    abstract fun getRatingsFlow(): Flow&lt;List&lt;RatingEntity&gt;&gt;</ins><ins></ins><ins>    @Query(&quot;SELECT * FROM MovieEntity&quot;)</ins><ins>    abstract fun getMoviesFlow(): Flow&lt;List&lt;MovieEntity&gt;&gt;</ins><ins></ins><ins>    @Query(&quot;SELECT * FROM ActorEntity&quot;)</ins><ins>    abstract fun getActorsFlow(): Flow&lt;List&lt;ActorEntity&gt;&gt;</ins><ins></ins><div id="050-grwm"><ins>    @Transaction</ins><ins>    @Query(&quot;SELECT * FROM RatingEntity WHERE id = :id&quot;)</ins><ins>    abstract suspend fun getRatingWithMovies(id: String): RatingWithMovies</ins></div><ins></ins><div id="050-gawf"><ins>    @Transaction</ins><ins>    @Query(&quot;SELECT * FROM ActorEntity WHERE id = :id&quot;)</ins><ins>    abstract suspend fun getActorWithFilmography(id: String): ActorWithFilmography</ins></div><ins></ins><div id="050-gmwc"><ins>    @Transaction</ins><ins>    @Query(&quot;SELECT * FROM MovieEntity WHERE id = :id&quot;)</ins><ins>    abstract suspend fun getMovieWithCast(id: String): MovieWithCast</ins></div><ins></ins><ins>    @Insert</ins><ins>    abstract suspend fun insert(vararg ratings: RatingEntity)</ins><ins>    @Insert</ins><ins>    abstract suspend fun insert(vararg movies: MovieEntity)</ins><ins>    @Insert</ins><ins>    abstract suspend fun insert(vararg actors: ActorEntity)</ins><ins>    @Insert</ins><ins>    abstract suspend fun insert(vararg roles: RoleEntity)</ins><ins></ins><ins>    @Query(&quot;DELETE FROM MovieEntity&quot;)</ins><ins>    abstract suspend fun clearMovies()</ins><ins>    @Query(&quot;DELETE FROM ActorEntity&quot;)</ins><ins>    abstract suspend fun clearActors()</ins><ins>    @Query(&quot;DELETE FROM RatingEntity&quot;)</ins><ins>    abstract suspend fun clearRatings()</ins><ins>    @Query(&quot;DELETE FROM RoleEntity&quot;)</ins><ins>    abstract suspend fun clearRoles()</ins><ins></ins><ins>    @Transaction</ins><ins>    open suspend fun resetDatabase() {</ins><ins>        clearMovies()</ins><ins>        clearActors()</ins><ins>        clearRoles()</ins><ins>        clearRatings()</ins><ins></ins><ins>        insert(</ins><ins>            RatingEntity(id = &quot;r0&quot;, name = &quot;Not Rated&quot;, description = &quot;Not yet rated&quot;),</ins><ins>            RatingEntity(id = &quot;r1&quot;, name = &quot;G&quot;, description = &quot;General Audiences&quot;),</ins><ins>            RatingEntity(id = &quot;r2&quot;, name = &quot;PG&quot;, description = &quot;Parental Guidance Suggested&quot;),</ins><ins>            RatingEntity(id = &quot;r3&quot;, name = &quot;PG-13&quot;, description = &quot;Unsuitable for those under 13&quot;),</ins><ins>            RatingEntity(id = &quot;r4&quot;, name = &quot;R&quot;, description = &quot;Restricted - 17 and older&quot;),</ins><ins>        )</ins><ins></ins><ins>        insert(</ins><ins>            MovieEntity(&quot;m1&quot;, &quot;The Transporter&quot;, &quot;Jason Statham kicks a guy in the face&quot;, &quot;r3&quot;),</ins><ins>            MovieEntity(&quot;m2&quot;, &quot;Transporter 2&quot;, &quot;Jason Statham kicks a bunch of guys in the face&quot;, &quot;r4&quot;),</ins><ins>            MovieEntity(&quot;m3&quot;, &quot;Hobbs and Shaw&quot;, &quot;Cars, Explosions and Stuff&quot;, &quot;r3&quot;),</ins><ins>            MovieEntity(&quot;m4&quot;, &quot;Jumanji - Welcome to the Jungle&quot;, &quot;The Rock smolders&quot;, &quot;r3&quot;),</ins><ins>        )</ins><ins>        insert(</ins><ins>            ActorEntity(&quot;a1&quot;, &quot;Jason Statham&quot;),</ins><ins>            ActorEntity(&quot;a2&quot;, &quot;The Rock&quot;),</ins><ins>            ActorEntity(&quot;a3&quot;, &quot;Shu Qi&quot;),</ins><ins>            ActorEntity(&quot;a4&quot;, &quot;Amber Valletta&quot;),</ins><ins>            ActorEntity(&quot;a5&quot;, &quot;Kevin Hart&quot;),</ins><ins>        )</ins><ins>        insert(</ins><ins>            RoleEntity(&quot;m1&quot;, &quot;a1&quot;, &quot;Frank Martin&quot;, 1),</ins><ins>            RoleEntity(&quot;m1&quot;, &quot;a3&quot;, &quot;Lai&quot;, 2),</ins><ins>            RoleEntity(&quot;m2&quot;, &quot;a1&quot;, &quot;Frank Martin&quot;, 1),</ins><ins>            RoleEntity(&quot;m2&quot;, &quot;a4&quot;, &quot;Audrey Billings&quot;, 2),</ins><ins>            RoleEntity(&quot;m3&quot;, &quot;a2&quot;, &quot;Hobbs&quot;, 1),</ins><ins>            RoleEntity(&quot;m3&quot;, &quot;a1&quot;, &quot;Shaw&quot;, 2),</ins><ins>            RoleEntity(&quot;m4&quot;, &quot;a2&quot;, &quot;Spencer&quot;, 1),</ins><ins>            RoleEntity(&quot;m4&quot;, &quot;a5&quot;, &quot;Fridge&quot;, 2),</ins><ins>        )</ins><ins>    }</ins><ins>}</ins></div></pre>
+</div>
+</div>
+</details>
+<details class="success" open>
+<summary>ADDED: /data/src/main/java/com/androidbyexample/movie/data/MovieDatabase.kt</summary>
+<div class="sas1-code-file" style="--sas1-file-name: '/data/src/main/java/com/androidbyexample/movie/data/MovieDatabase.kt';">
+<div class='sas1-code-block'>
+<pre><ins>package com.androidbyexample.movie.data</ins><ins></ins><ins>import androidx.room.Database</ins><ins>import androidx.room.RoomDatabase</ins><ins></ins><div id="050-database"><ins>@Database(</ins><ins>    version = 1,</ins><ins>    entities = [</ins><ins>        MovieEntity::class,</ins><ins>        ActorEntity::class,</ins><ins>        RoleEntity::class,</ins><ins>        RatingEntity::class,</ins><ins>    ],</ins><ins>    exportSchema = false</ins><ins>)</ins><ins>abstract class MovieDatabase: RoomDatabase() {</ins><ins>    abstract val dao: MovieDao</ins><ins>}</ins></div></pre>
+</div>
+</div>
+</details>
+<details class="success" open>
+<summary>ADDED: /data/src/main/java/com/androidbyexample/movie/data/MovieEntity.kt</summary>
+<div class="sas1-code-file" style="--sas1-file-name: '/data/src/main/java/com/androidbyexample/movie/data/MovieEntity.kt';">
+<div class='sas1-code-block'>
+<pre><ins>package com.androidbyexample.movie.data</ins><ins></ins><ins>import androidx.room.Embedded</ins><ins>import androidx.room.Entity</ins><ins>import androidx.room.ForeignKey</ins><ins>import androidx.room.Index</ins><ins>import androidx.room.PrimaryKey</ins><ins>import androidx.room.Relation</ins><ins>import java.util.UUID</ins><ins></ins><div id="050-actor-entity"><ins>// Movie Entity - note that we set up a foreign key relationship with RatingEntity,</ins><ins>//   which is considered the owner of movies with that rating. (Probably not the best</ins><ins>//   way to represent this relationship, but I wanted to demonstrate a one-to-many</ins><ins>//   relationship with cascading deletion.</ins><ins>//   If we delete a Rating, we delete all associated movies. If we update the</ins><ins>//   Rating key, we update that key in all associated movies.</ins><ins>@Entity(</ins><ins>    indices = [</ins><ins>        Index(value = [&quot;ratingId&quot;])</ins><ins>    ],</ins><ins>    foreignKeys = [</ins><ins>        ForeignKey(</ins><ins>            entity = RatingEntity::class,</ins><ins>            parentColumns = [&quot;id&quot;],</ins><ins>            childColumns = [&quot;ratingId&quot;],</ins><ins>            onUpdate = ForeignKey.CASCADE,</ins><ins>            onDelete = ForeignKey.CASCADE,</ins><ins>        )</ins><ins>    ]</ins><ins>)</ins><ins>data class MovieEntity(</ins><ins>    @PrimaryKey var id: String = UUID.randomUUID().toString(),</ins><ins>    var title: String,</ins><ins>    var description: String,</ins><ins>    var ratingId: String,</ins><ins>)</ins></div><ins></ins><div id="050-movie-with-cast"><ins>// POKO that groups a Movie with the actors that appear in it, and the</ins><ins>//   role played in the movie. This is a ONE-TO-MANY relation from the</ins><ins>//   MovieEntity to the RoleEntity, where we resolve the RoleEntity's actorId</ins><ins>//   to fetch the actual actor (a MANY-TO-ONE relation). The end result is turning</ins><ins>//   a MANY-TO-MANY relation into two ONE-TO-MANY relationships, where the MANY part</ins><ins>//   is the RoleEntity.</ins><ins></ins><ins>data class MovieWithCast(</ins><ins>    @Embedded</ins><ins>    val movie: MovieEntity,</ins><ins></ins><ins>    @Relation(</ins><ins>        entity = RoleEntity::class,</ins><ins>        parentColumn = &quot;id&quot;,</ins><ins>        entityColumn = &quot;movieId&quot;,</ins><ins>    )</ins><ins>    val rolesWithActors: List&lt;RoleWithActor&gt;,</ins><ins>)</ins><ins></ins><ins>data class RoleWithActor(</ins><ins>    @Embedded</ins><ins>    val role: RoleEntity,</ins><ins></ins><ins>    @Relation(</ins><ins>        parentColumn = &quot;actorId&quot;,</ins><ins>        entityColumn = &quot;id&quot;</ins><ins>    )</ins><ins>    val actor: ActorEntity,</ins><ins>)</ins></div></pre>
+</div>
+</div>
+</details>
+<details class="success" open>
+<summary>ADDED: /data/src/main/java/com/androidbyexample/movie/data/RatingEntity.kt</summary>
+<div class="sas1-code-file" style="--sas1-file-name: '/data/src/main/java/com/androidbyexample/movie/data/RatingEntity.kt';">
+<div class='sas1-code-block'>
+<pre><ins>package com.androidbyexample.movie.data</ins><ins></ins><ins>import androidx.room.Embedded</ins><ins>import androidx.room.Entity</ins><ins>import androidx.room.PrimaryKey</ins><ins>import androidx.room.Relation</ins><ins>import java.util.UUID</ins><ins></ins><div id="050-rating-entity"><ins>@Entity</ins><ins>data class RatingEntity(</ins><ins>    @PrimaryKey var id: String = UUID.randomUUID().toString(),</ins><ins>    var name: String,</ins><ins>    var description: String,</ins><ins>)</ins></div><ins></ins><div id="050-rating-to-movie"><ins>// ONE-TO-MANY relationship (Rating -&gt; Movies)</ins><ins>// NOTE: THIS IS NOT AN ENTITY!</ins><ins>data class RatingWithMovies(</ins><ins>    @Embedded</ins><ins>    val rating: RatingEntity,</ins><ins></ins><ins>    @Relation(</ins><ins>        parentColumn = &quot;id&quot;,</ins><ins>        entityColumn = &quot;ratingId&quot;,</ins><ins>    )</ins><ins>    val movies: List&lt;MovieEntity&gt;</ins><ins>)</ins></div></pre>
+</div>
+</div>
+</details>
+<details class="success" open>
+<summary>ADDED: /data/src/main/java/com/androidbyexample/movie/data/RoleEntity.kt</summary>
+<div class="sas1-code-file" style="--sas1-file-name: '/data/src/main/java/com/androidbyexample/movie/data/RoleEntity.kt';">
+<div class='sas1-code-block'>
+<pre><ins>package com.androidbyexample.movie.data</ins><ins></ins><ins>import androidx.room.Entity</ins><ins>import androidx.room.ForeignKey</ins><ins>import androidx.room.Index</ins><ins></ins><div id="050-role-entity"><ins>// RoleEntity - note that it's considered a child of both MovieEntity and</ins><ins>//    ActorEntity. When either parent is deleted, we delete this entity. If</ins><ins>//    either parent's key is updated, we update this entity.</ins><ins>@Entity(</ins><ins>    primaryKeys = [&quot;actorId&quot;, &quot;movieId&quot;],</ins><ins>    indices = [</ins><ins>        Index(&quot;movieId&quot;),</ins><ins>        Index(&quot;actorId&quot;)</ins><ins>    ],</ins><ins>    foreignKeys = [</ins><ins>        ForeignKey(</ins><ins>            entity = MovieEntity::class,</ins><ins>            parentColumns = [&quot;id&quot;],</ins><ins>            childColumns = [&quot;movieId&quot;],</ins><ins>            onUpdate = ForeignKey.CASCADE,</ins><ins>            onDelete = ForeignKey.CASCADE,</ins><ins>        ),</ins><ins>        ForeignKey(</ins><ins>            entity = ActorEntity::class,</ins><ins>            parentColumns = [&quot;id&quot;],</ins><ins>            childColumns = [&quot;actorId&quot;],</ins><ins>            onUpdate = ForeignKey.CASCADE,</ins><ins>            onDelete = ForeignKey.CASCADE,</ins><ins>        )</ins><ins>    ]</ins><ins>)</ins><ins>data class RoleEntity(</ins><ins>    var movieId: String,</ins><ins>    var actorId: String,</ins><ins>    var character: String,</ins><ins>    var orderInCredits: Int,</ins><ins>)</ins></div></pre>
+</div>
+</div>
+</details>
+  
+</div>
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="" >
+      
+        
+        <a href="STEP_040_REPO.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Module Dependencies" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Module Dependencies
+            </div>
+          </div>
+        </a>
+      
+      <div class="md-footer-meta md-typeset">
+        <div class="md-footer-meta__inner md-grid">
+          <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023. Scott Stanchfield
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+          
+        </div>
+      </div>    
+      
+        
+        <a href="STEP_060_REPO.html" class="md-footer__link md-footer__link--next" aria-label="Next: Repository Types" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Repository Types
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.sections", "search.suggest", "search.highlight", "navigation.instant", "content.tabs.link", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>
