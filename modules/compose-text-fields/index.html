@@ -1912,16 +1912,18 @@
 <span class="w">        </span><span class="n">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="o">?.</span><span class="na">let</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">fetchPerson</span><span class="p">(</span><span class="nb">it</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="p">...</span>
-<span class="w">    </span><span class="n">OutlinedTextField</span><span class="p">(</span>
-<span class="w">       </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fetchedPerson</span><span class="p">.</span><span class="na">name</span><span class="p">,</span>
-<span class="w">       </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="s">&quot;Name&quot;</span><span class="p">)},</span>
-<span class="w">       </span><span class="n">onValueChange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="kd">val</span><span class="w"> </span><span class="nv">newPerson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fetchedPerson</span><span class="p">.</span><span class="na">copy</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">it</span><span class="p">)</span>
-<span class="w">          </span><span class="n">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newPerson</span>
-<span class="w">          </span><span class="n">onPersonChange</span><span class="p">(</span><span class="n">newPerson</span><span class="p">)</span>
-<span class="w">       </span><span class="p">},</span>
-<span class="w">    </span><span class="p">)</span>
+<span class="w">    </span><span class="n">person</span><span class="o">?.</span><span class="na">let</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">fetchedPerson</span><span class="w"> </span><span class="o">-&gt;</span>
+<span class="w">        </span><span class="p">...</span>
+<span class="w">        </span><span class="n">OutlinedTextField</span><span class="p">(</span>
+<span class="w">        </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fetchedPerson</span><span class="p">.</span><span class="na">name</span><span class="p">,</span>
+<span class="w">        </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="s">&quot;Name&quot;</span><span class="p">)},</span>
+<span class="w">        </span><span class="n">onValueChange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="kd">val</span><span class="w"> </span><span class="nv">newPerson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fetchedPerson</span><span class="p">.</span><span class="na">copy</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">it</span><span class="p">)</span>
+<span class="w">            </span><span class="n">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newPerson</span>
+<span class="w">            </span><span class="n">onPersonChange</span><span class="p">(</span><span class="n">newPerson</span><span class="p">)</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>This looks like</p>
