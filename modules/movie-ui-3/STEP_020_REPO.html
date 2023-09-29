@@ -1,0 +1,2475 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://androidbyexample.com/modules/movie-ui-3/STEP_020_REPO.html">
+      
+      
+        <link rel="prev" href="index.html">
+      
+      
+        <link rel="next" href="STEP_030_REPO.html">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>Display-screen list cleanup - Android By Example</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
+      
+      
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 64C0 28.7 28.7 0 64 0h160v128c0 17.7 14.3 32 32 32h128v288c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0l128 128z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 64C0 28.7 28.7 0 64 0h160v128c0 17.7 14.3 32 32 32h128v288c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0l128 128z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 64C0 28.7 28.7 0 64 0h160v128c0 17.7 14.3 32 32 32h128v288c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0l128 128z"/></svg>');}</style>
+
+
+    
+    
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<!--<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">-->
+
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Android By Example" class="md-header__button md-logo" aria-label="Android By Example" data-md-component="logo">
+      
+  <img src="../../android.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Android By Example
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Display-screen list cleanup
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+<!--    <div class="md-sidebar md-sidebar&#45;&#45;primary" data-md-component="sidebar" data-md-type="navigation">-->
+<div class="md-sidebar md-sidebar--primary" data-md-type="navigation">
+    <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner">
+            
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Android By Example" class="md-nav__button md-logo" aria-label="Android By Example" data-md-component="logo">
+      
+  <img src="../../android.png" alt="logo">
+
+    </a>
+    Android By Example
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          Introduction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_01_FULL.html" class="md-nav__link">
+        About This Site
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_02_FULL.html" class="md-nav__link">
+        About Your Instructor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_04_FULL.html" class="md-nav__link">
+        Content License
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_05_FULL.html" class="md-nav__link">
+        Source Code License
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_09_FULL.html" class="md-nav__link">
+        Welcome!
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_10_FULL.html" class="md-nav__link">
+        Course Hardware and Software
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_20_FULL.html" class="md-nav__link">
+        Assignments
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_30_FULL.html" class="md-nav__link">
+        Grading
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_40_FULL.html" class="md-nav__link">
+        Using Third-Party and Course Sample Code
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Week 1 (8/31-9/6)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Week 1 (8/31-9/6)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../kotlin-primer/index.html">Kotlin Primer</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Kotlin Primer
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../architecture/index.html">Architecture</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Architecture
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../android-studio/index.html">Android Studio</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Android Studio
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Week 2 (9/7-9/13)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Week 2 (9/7-9/13)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../compose-concepts/index.html">Jetpack Compose Concepts</a>
+          
+            <label for="__nav_3_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Jetpack Compose Concepts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compose-concepts/STEP_020_FULL.html" class="md-nav__link">
+        Composable Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compose-concepts/STEP_030_FULL.html" class="md-nav__link">
+        String literals
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compose-concepts/STEP_040_FULL.html" class="md-nav__link">
+        State
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compose-concepts/STEP_050_FULL.html" class="md-nav__link">
+        Compose Optimizations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compose-concepts/STEP_060_FULL.html" class="md-nav__link">
+        Where do you store state?
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compose-concepts/STEP_070_FULL.html" class="md-nav__link">
+        Density
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../movie-ui-1/index.html">Initial Movies UI</a>
+          
+            <label for="__nav_3_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Initial Movies UI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-1/STEP_020_REPO.html" class="md-nav__link">
+        Update versions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-1/STEP_030_REPO.html" class="md-nav__link">
+        Create data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-1/STEP_040_REPO.html" class="md-nav__link">
+        Create initial screens
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-1/STEP_050_REPO.html" class="md-nav__link">
+        Flesh out the screens
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Week 3 (9/14-9/20)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Week 3 (9/14-9/20)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../room/index.html">Room</a>
+          
+            <label for="__nav_4_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Room
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../room/STEP_10_FULL.html" class="md-nav__link">
+        Relationships
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../room/STEP_20_FULL.html" class="md-nav__link">
+        Room Basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../room/STEP_25_FULL.html" class="md-nav__link">
+        Room Relations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../room/STEP_30_FULL.html" class="md-nav__link">
+        Suspending Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../room/STEP_40_FULL.html" class="md-nav__link">
+        The Repository
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../movie-db/index.html">Movies Database</a>
+          
+            <label for="__nav_4_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Movies Database
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-db/STEP_020_REPO.html" class="md-nav__link">
+        Add new modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-db/STEP_030_REPO.html" class="md-nav__link">
+        Add Room dependencies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-db/STEP_040_REPO.html" class="md-nav__link">
+        Module Dependencies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-db/STEP_050_REPO.html" class="md-nav__link">
+        Entities, DAO and Database
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-db/STEP_060_REPO.html" class="md-nav__link">
+        Repository Types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-db/STEP_070_REPO.html" class="md-nav__link">
+        Modifying the view model to use real data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-db/STEP_080_REPO.html" class="md-nav__link">
+        Fix movie list
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-db/STEP_090_REPO.html" class="md-nav__link">
+        Fetch data for movie display
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-db/STEP_100_FULL.html" class="md-nav__link">
+        Viewing the Database
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Week 4 (9/21-9/27)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Week 4 (9/21-9/27)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../compose-lists/index.html">Compose Lists</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          Compose Lists
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../movie-ui-2/index.html">Movies UI - Lists</a>
+          
+            <label for="__nav_5_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Movies UI - Lists
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-2/STEP_020_REPO.html" class="md-nav__link">
+        Convert to LazyColumn
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-2/STEP_030_REPO.html" class="md-nav__link">
+        Selection Tracking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-2/STEP_040_REPO.html" class="md-nav__link">
+        Selections in the UI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-2/STEP_050_REPO.html" class="md-nav__link">
+        Contextual Top Bar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-2/STEP_060_REPO.html" class="md-nav__link">
+        Refactor time!
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-2/STEP_070_REPO.html" class="md-nav__link">
+        Add Actors and Ratings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-2/STEP_080_REPO.html" class="md-nav__link">
+        Better Movie Icon
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-2/STEP_090_FULL.html" class="md-nav__link">
+        Wrapup
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Week 5 (9/28-10/4)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Week 5 (9/28-10/4)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_1" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../compose-text-fields/index.html">Compose Text Fields</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6_1">
+          <span class="md-nav__icon md-icon"></span>
+          Compose Text Fields
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" checked>
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="index.html">Movies UI - Updates</a>
+          
+            <label for="__nav_6_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          Movies UI - Updates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="STEP_020_REPO.html" class="md-nav__link md-nav__link--active">
+        Display-screen list cleanup
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_030_REPO.html" class="md-nav__link">
+        Deleting from the display screens
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_040_REPO.html" class="md-nav__link">
+        Editing a movie
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+        </div>
+    </div>
+</div>
+
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+<div class="sas1-text-column">
+
+<h1>Movies UI - Updates</h1>
+
+<h2>Display-screen list cleanup</h2>
+    
+<p>In our previous example, you could not delete items from display screens. For example, the
+Rating display screen shows a list of movies with that rating, but you cannot delete the
+movies from that screen.</p>
+<p>We'd like to reuse as much as possible, but our <code>ListScaffold</code> isn't as flexible as we need.
+It manages the entire body content as a <code>List</code>. For our display screens, we have other content
+above the list of children.</p>
+<p>But let's not ignore a big issue: When we rotate the screen, there's very
+little room for the list. If there were more fields at the top, or the user increases
+the font size, we may lose some field and the list completely!</p>
+<p><img alt="Not enough room for the list!" src="screenshots/too-small.gif" width="200" /></p>
+<p>So we need to take advantage of adding individual items to the <code>LazyColumn</code>, as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="n">LazyColumn</span><span class="p">(...)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">item</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// fixed part of UI - could be multiple separate item {...} blocks </span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">items</span><span class="p">(</span><span class="n">list</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// dynamic part</span>
+<span class="w">        </span><span class="c1">// card for each item in the list</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>We do this as follows:</p>
+<ul>
+<li>Add a <code>topContent</code> <a class="find-button" href="#020-top-content-param-in-list">parameter in <code>List</code></a></li>
+<li>Add a <code>topContent</code> <a class="find-button" href="#020-top-content-param-in-list-scaffold">parameter in <code>ListScaffold</code></a></li>
+<li><a class="find-button" href="#020-top-content-pass-to-list">Pass <code>topContent</code></a> from <code>ListScaffold</code> to <code>List</code></li>
+<li><a class="find-button" href="#020-add-top-content-if-exists">Add <code>topContent</code></a> (if it exists) to <code>LazyColumn</code>
+  when setting up the <code>List</code>. We'll only pass <code>topContent</code> in the display screens. The list screens
+  only display the dynamic lists</li>
+<li>Because the display screens now have selectable lists, we need to
+  <a class="find-button" href="#020-add-selection-to-rating-display">add selection parameters</a> to them</li>
+<li><a class="find-button" href="#020-pass-selection">Pass the selection</a> and other top-bar parameters to the
+  display screen</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>I'm only linking buttons in this text to the rating display changes. The Actor and Movie
+display screens all require similar changes.</p>
+</div>
+<p>After making these changes, the entire display screen scrolls. We have reasonable space
+to look at the list items.</p>
+<p><img alt="Space is a little better" src="screenshots/better-space.gif" width="200" /></p>
+<p>But those list-selection tabs at the bottom are taking up a huge amount of space.
+It would be nice to hide it when we scroll or when the top-bar is contextual
+(and we're focusing on selecting items.)</p>
+<p>We can do this by explicitly passing in a
+<a class="find-button" href="#020-add-state-to-list"><code>LazyListState</code> to <code>List</code></a>.
+This state 
+<a class="find-button" href="#020-use-state-in-list">tracks</a>
+the scrolling position of our <code>LazyColumn</code>, which we can use to determine whether the bottom bar
+should be displayed.</p>
+<p>We <a class="find-button" href="#020-reusable-lazy-list-state">create an instance</a> of <code>LazyListState</code> and
+<a class="find-button" href="#020-pass-state-to-list">pass it</a> to the <code>List</code>. We use <code>remember</code> to keep the same
+instance of <code>LazyListState</code> as long as <code>ListScaffold</code> remains in the UI tree.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Things get a little "interesting" here, so hold on tight...</p>
+</div>
+<p>We want to compute whether we should display the bottom bar based on the position in the
+<code>LazyListState</code>. This computation only matters when position == 0 (show the bottom bar) or
+position != 0 (hide the bottom bar). There are <em>many</em> other possible values, but we only
+care about zero or not zero.</p>
+<p>If we write code like</p>
+<div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">showBottomBar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">remember</span><span class="p">(</span><span class="n">lazyListState</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">lazyListState</span><span class="p">.</span><span class="na">firstVisibleItemScrollOffset</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>whenever <code>lazyListState</code> changes at all, we'll completely recompose <code>ListScaffold</code> to
+trigger that <code>remember</code> to recompute its value. That will cause a <em>lot</em> of unneeded recompositions
+of the top bar as the user scrolls through the list; we really only need the <code>LazyColumn</code>
+(inside <code>List</code> which is inside <code>ListScaffold</code>) to recompose for the scrolling),
+and the bottom bar to recompose when we change from zero to non-zero position.</p>
+<p>That key on the <code>remember</code> is a great thing to reduce computations, but here it's triggering
+way too many. What we really need is some way to only recompose the bottom bar on that
+zero to non-zero transition.</p>
+<p>We can ask the snapshot manager to inform us of such a change by using <code>derivedStateOf</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">showBottomBar</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">remember</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">derivedStateOf</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">lazyListState</span><span class="p">.</span><span class="na">firstVisibleItemScrollOffset</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This creates a new state (the result of <code>derivedStateOf</code>) for the <em>snapshot manager</em> to manage,
+and a lambda that the snapshot manager uses to recompute the value of that state
+whenever any state in that lambda changes.</p>
+<p>Whenever <code>lazyListState</code> changes, the <em>snapshot manager</em> evaluates
+<code>{ lazyListState.firstVisibleItemScrollOffset == 0 }</code>, setting that as the value for
+<code>showBottomBar</code>, which will only trigger recomposition if its value changes. It's important to note
+that the computation is done by the snapshot manager here. Normally we recompute things like this
+inside a <code>remember</code> block triggered by its key changing during a recomposition.</p>
+<p>We don't need to evaluate the <code>remember</code> to do this evaluation,
+so no recomposition is required just to compute.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>There's a great article at
+<a href="https://medium.com/androiddevelopers/jetpack-compose-when-should-i-use-derivedstateof-63ce7954c11b">Jetpack Compose — When should I use derivedStateOf?</a>
+that describes this in much more detail.</p>
+</div>
+<p>Using <code>showBottomBar</code> in an <code>if</code> that surrounds the <code>NavigationBar</code> we can conrtol its visibility.
+The result is, when scrolling, is:</p>
+<p><img alt="Bottom bar hiding on scroll" src="screenshots/hide-bottom-bar.gif" width="200" /></p>
+<p>But it's a bit abrupt. We can clean this up by adding an
+<a class="find-button" href="#020-conditional-bottom-bar-animated"><code>AnimatedVisibility</code> composable</a>, which results
+in a nicer experience:</p>
+<p><img alt="Bottom bar hiding when scrolling with animation" src="screenshots/hide-bottom-on-scroll.gif" width="200" /></p>
+<p>However - we also want to hide the bottom bar when there are selections. This is another
+zero or non-zero type situation, so <code>derivedStateOf</code> is also a great place to do this.</p>
+<p>So we modify <code>showBottomBar</code> to also check <code>selectedIds</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">showBottomBar</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">remember</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">derivedStateOf</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">lazyListState</span><span class="p">.</span><span class="na">firstVisibleItemScrollOffset</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">selectedIds</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>But this doesn't work! Selecting items doesn't cause the bottom bar to hide.</p>
+<p>Let's think about how things work here...</p>
+<p>Whenever compose state is read, the snapshot manager makes a note of where that read
+occurred, so it will know where to trigger recomposition (or in this case, recalculation of the
+derived value).</p>
+<p>The scroll position is tracked using compose <code>State</code> values inside <code>LazyListState</code>.
+Because the scroll position is read inside the <code>derivedStateOf</code> lambda, the snapshot manager
+knows it needs to recompute the value when the scroll position changes.</p>
+<p>But where is the compose state for <code>selectedIds</code> read? Inside the <code>derivedStateOf</code>, we're reading
+<code>selectedIds</code>, which is just a <code>Set&lt;String&gt;</code>. No <code>State</code> is read, so the snapshot manager has
+nothing on which to base an update.</p>
+<p>We could change the way we pass around <code>selectedIds</code> - when we collect it, we could change</p>
+<div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">selectedIds</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">viewModel</span><span class="p">.</span><span class="na">selectedIdsFlow</span><span class="p">.</span><span class="na">collectAsStateWithLifecycle</span><span class="p">(</span><span class="n">initialValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">emptySet</span><span class="p">())</span>
+</code></pre></div>
+<p>to </p>
+<div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">selectedIds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">viewModel</span><span class="p">.</span><span class="na">selectedIdsFlow</span><span class="p">.</span><span class="na">collectAsStateWithLifecycle</span><span class="p">(</span><span class="n">initialValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">emptySet</span><span class="p">())</span>
+</code></pre></div>
+<p>Recall that using <code>by</code> causes all gets/sets of <code>selectedIds</code> to delegate to the object after the
+<code>by</code>. When we pass <code>selectedIds</code> into a composable function, the read happens immediately
+before the function call to get the parameter value. The value is then passed into the composable
+function. The state is only read in the <em>caller</em> to that function. </p>
+<p>Changing the <code>by</code> to <code>=</code> changes the type of <code>selectedIds</code> from <code>Set&lt;String&gt;</code> to <code>State&lt;Set&lt;String&gt;&gt;</code>.
+If we pass that into a composable function, the state hasn't yet been read. We could then use it
+inside the <code>derivedStateOf</code> and we'd get the expected behavior.</p>
+<p>In general, I don't like passing <code>State</code> to composable functions; I prefer passing the value.
+This makes the composable functions easier to test, as you don't need to set up <code>State</code> to pass in
+and then change the values of that <code>State</code>. You simply pass values to the function.
+(We're stuck with state holders like <code>LazyListState</code>...) If we observe a performance issue because
+of the value passing, we can switch to the <code>State</code> and use it inside
+<code>derivedStateOf</code> and so forth.</p>
+<p>In this instance, think about what is happening. When we scroll, we'll get a huge number of changes
+very quickly, and the extra recompositions could cause some jank. But item selection is a rather
+slow process with the user clicking to select. They could rapidly click items, but that's not
+typical behavior.</p>
+<p>So, instead of using the <code>State</code> read to trigger recomputation of the <code>derivedStateOf</code> based on
+selections, we'll fall back to the <code>remember</code> key to do so.
+Our <a class="find-button" href="#020-derive-show-bottom-bar"><code>showBottomBar</code></a> now looks like:</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kd">val</span><span class="w"> </span><span class="nv">showBottomBar</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">remember</span><span class="p">(</span><span class="n">selectedIds</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">derivedStateOf</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="n">lazyListState</span><span class="p">.</span><span class="na">firstVisibleItemScrollOffset</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">selectedIds</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+</code></pre></div>
+<p>and now behaves as expected:</p>
+<p><img alt="Bottom bar hiding on selection" src="screenshots/hide-bottom-on-selection.gif" width="200" /></p>
+  
+</div>
+  
+<div class="sas1-code-column">
+  
+<h2>Code Changes</h2>
+  
+<details class="example" open>
+<summary>CHANGED: /app/src/main/java/com/androidbyexample/movie/screens/ActorDisplayUi.kt</summary>
+<div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/java/com/androidbyexample/movie/screens/ActorDisplayUi.kt';">
+<div class='sas1-code-block'>
+<pre>package com.androidbyexample.movie.screens
+
+<del>//import androidx.compose.foundation.layout.Column</del><del>//import androidx.compose.foundation.layout.padding</del><del>//import androidx.compose.material3.ExperimentalMaterial3Api</del><del>//import androidx.compose.material3.Scaffold</del><del>//import androidx.compose.material3.Text</del><del>//import androidx.compose.material3.TopAppBar</del>import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+<del>//import androidx.compose.ui.Modifier</del>import androidx.compose.ui.res.stringResource
+import com.androidbyexample.movie.R
+import com.androidbyexample.movie.components.Display
+import com.androidbyexample.movie.components.Label
+import com.androidbyexample.movie.repository.ActorWithFilmographyDto
+import com.androidbyexample.movie.repository.MovieDto
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+
+<del>//@OptIn(ExperimentalMaterial3Api::class)</del>@Composable
+fun ActorDisplayUi(
+    id: String,
+    fetchActor: suspend (String) -&gt; ActorWithFilmographyDto,
+    onMovieClicked: (MovieDto) -&gt; Unit,
+<ins></ins><ins>    selectedIds: Set&lt;String&gt;,</ins><ins>    onSelectionToggle: (id: String) -&gt; Unit,</ins><ins>    onClearSelections: () -&gt; Unit,</ins><ins>    onDeleteSelectedMovies: () -&gt; Unit,</ins><ins></ins><ins>    currentScreen: Screen,</ins><ins>    onSelectListScreen: (Screen) -&gt; Unit,</ins><ins>    onResetDatabase: () -&gt; Unit,</ins>) {
+    var actorWithFilmography by remember { mutableStateOf&lt;ActorWithFilmographyDto?&gt;(null) }
+    LaunchedEffect(key1 = id) {
+        withContext(Dispatchers.IO) {
+            actorWithFilmography = fetchActor(id)
+        }
+    }
+<del>//  Scaffold(</del><del>//      topBar = {</del><del>//          TopAppBar(</del><del>//              title = {</del><del>//                  Text(text = actorWithFilmography?.actor?.name ?: stringResource(R.string.loading))</del><del>//              }</del><del>//          )</del><del>//      }</del><del>//  ) { paddingValues -&gt;</del><del>//      actorWithFilmography?.let { actorWithFilmography -&gt;</del><del>//          Column(</del><del>//              modifier = Modifier</del><del>//                  .padding(paddingValues)</del><del>//          ) {</del><ins>    ListScaffold(</ins><ins>        titleId = R.string.rating,</ins><ins>        items = actorWithFilmography?.filmography?.sortedBy { it.movie.title } ?: emptyList(),</ins><ins>        onItemClicked = { onMovieClicked(it.movie) },</ins><ins>        selectedIds = selectedIds,</ins><ins>        onSelectionToggle = onSelectionToggle,</ins><ins>        onClearSelections = onClearSelections,</ins><ins>        onDeleteSelectedItems = onDeleteSelectedMovies,</ins><ins>        currentScreen = currentScreen,</ins><ins>        onSelectListScreen = onSelectListScreen,</ins><ins>        onResetDatabase = onResetDatabase,</ins><ins>        itemContent = { role -&gt;</ins><ins>            Display(text = role.movie.title)</ins><ins>        },</ins><ins>        topContent = {</ins>            Label(textId = R.string.name)
+<del>//              Display(text = actorWithFilmography.actor.name)</del><ins>            Display(text = actorWithFilmography?.actor?.name ?: &quot;&quot;)</ins>            Label(
+                text = stringResource(
+                    id = R.string.movies_starring,
+<del>//                      actorWithFilmography.actor.name</del><ins>                    actorWithFilmography?.actor?.name ?: &quot;&quot;</ins>                )
+            )
+<del>//              List(</del><del>//                  items = actorWithFilmography.filmography.sortedBy { it.movie.title },</del><del>//                  onItemClicked = { onMovieClicked(it.movie) },</del><del>//                  selectedIds = emptySet(),</del><del>//                  onSelectionToggle = {},</del><del>//                  onClearSelections = {},</del><del>//                  modifier = Modifier.weight(1f)</del><del>//              ) { role -&gt;</del><del>//                  Display(text = role.movie.title)</del><del>//              }</del><del>//          }</del><del>//      }</del>        }
+<ins>    )</ins>}
+</pre>
+</div>
+</div>
+</details>
+<details class="example" open>
+<summary>CHANGED: /app/src/main/java/com/androidbyexample/movie/screens/ActorListUi.kt</summary>
+<div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/java/com/androidbyexample/movie/screens/ActorListUi.kt';">
+<div class='sas1-code-block'>
+<pre>package com.androidbyexample.movie.screens
+
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Person
+<del>//import androidx.compose.material.icons.filled.Star</del>import androidx.compose.material3.Icon
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
+import com.androidbyexample.movie.R
+import com.androidbyexample.movie.components.Display
+import com.androidbyexample.movie.repository.ActorDto
+
+@Composable
+fun ActorListUi(
+    actors: List&lt;ActorDto&gt;,
+    onActorClicked: (ActorDto) -&gt; Unit,
+
+    selectedIds: Set&lt;String&gt;,
+    onSelectionToggle: (id: String) -&gt; Unit,
+    onClearSelections: () -&gt; Unit,
+    onDeleteSelectedActors: () -&gt; Unit,
+
+    currentScreen: Screen,
+    onSelectListScreen: (Screen) -&gt; Unit,
+
+    onResetDatabase: () -&gt; Unit,
+) {
+    ListScaffold(
+        titleId = R.string.actors,
+        items = actors,
+        onItemClicked = onActorClicked,
+        selectedIds = selectedIds,
+        onSelectionToggle = onSelectionToggle,
+        onClearSelections = onClearSelections,
+        onDeleteSelectedItems = onDeleteSelectedActors,
+        currentScreen = currentScreen,
+        onSelectListScreen = onSelectListScreen,
+        onResetDatabase = onResetDatabase
+    ) { actor -&gt;
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.padding(8.dp)
+        ) {
+            Icon(
+                imageVector = Icons.Default.Person,
+                contentDescription = stringResource(id = R.string.actor),
+                modifier = Modifier.clickable {
+                    onSelectionToggle(actor.id)
+                }
+            )
+            Display(text = actor.name)
+        }
+    }
+}
+</pre>
+</div>
+</div>
+</details>
+<details class="example" open>
+<summary>CHANGED: /app/src/main/java/com/androidbyexample/movie/screens/List.kt</summary>
+<div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/java/com/androidbyexample/movie/screens/List.kt';">
+<div class='sas1-code-block'>
+<pre>package com.androidbyexample.movie.screens
+
+import androidx.activity.compose.BackHandler
+import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.combinedClickable
+import androidx.compose.foundation.layout.ColumnScope
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+<ins>import androidx.compose.foundation.lazy.LazyListState</ins>import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.contentColorFor
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import com.androidbyexample.movie.repository.HasId
+
+@OptIn(ExperimentalFoundationApi::class)
+@Composable
+fun &lt;T: HasId&gt; List(
+<div id="020-add-state-to-list"><ins>    state: LazyListState,</ins></div>    items: List&lt;T&gt;,
+    onItemClicked: (T) -&gt; Unit,
+
+    selectedIds: Set&lt;String&gt;,
+    onSelectionToggle: (id: String) -&gt; Unit,
+    onClearSelections: () -&gt; Unit,
+
+    modifier: Modifier = Modifier,
+<div id="020-top-content-param-in-list"><ins>    topContent: (@Composable () -&gt; Unit)? = null,</ins></div>    itemContent: @Composable ColumnScope.(T) -&gt; Unit,
+) {
+    LazyColumn(
+<div id="020-use-state-in-list"><ins>        state = state,</ins></div>        modifier = modifier
+    ) {
+<div id="020-add-top-content-if-exists"><ins>        topContent?.let {</ins><ins>            item {</ins><ins>                topContent()</ins><ins>            }</ins><ins>        }</ins></div><ins></ins>        items(
+            items = items,
+            key = { it.id },
+        ) { item -&gt;
+            val containerColor =
+                if (item.id in selectedIds) {
+                    MaterialTheme.colorScheme.secondary
+                } else {
+                    MaterialTheme.colorScheme.surface
+                }
+            val contentColor = MaterialTheme.colorScheme.contentColorFor(containerColor)
+
+            if (selectedIds.isNotEmpty()) {
+                BackHandler {
+                    onClearSelections()
+                }
+            }
+
+            Card(
+                elevation = CardDefaults.cardElevation(
+                    defaultElevation = 8.dp,
+                ),
+                colors = CardDefaults.cardColors(
+                    containerColor = containerColor,
+                    contentColor = contentColor,
+                ),
+                modifier = Modifier
+                    .padding(8.dp)
+                    .combinedClickable(
+                        onClick = {
+                            if (selectedIds.isEmpty()) {
+                                onItemClicked(item)
+                            } else {
+                                onSelectionToggle(item.id)
+                            }
+                        },
+                        onLongClick = {
+                            onSelectionToggle(item.id)
+                        },
+                    )
+            ) {
+                itemContent(item)
+            }
+        }
+    }
+}
+</pre>
+</div>
+</div>
+</details>
+<details class="example" open>
+<summary>CHANGED: /app/src/main/java/com/androidbyexample/movie/screens/ListScaffold.kt</summary>
+<div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/java/com/androidbyexample/movie/screens/ListScaffold.kt';">
+<div class='sas1-code-block'>
+<pre>package com.androidbyexample.movie.screens
+
+import androidx.annotation.StringRes
+<ins>import androidx.compose.animation.AnimatedVisibility</ins><ins>import androidx.compose.animation.expandVertically</ins><ins>import androidx.compose.animation.fadeIn</ins><ins>import androidx.compose.animation.fadeOut</ins><ins>import androidx.compose.animation.shrinkVertically</ins>import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.ColumnScope
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+<ins>import androidx.compose.foundation.lazy.LazyListState</ins>import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.Movie
+import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.Refresh
+import androidx.compose.material.icons.filled.Star
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.NavigationBar
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.runtime.Composable
+<ins>import androidx.compose.runtime.derivedStateOf</ins><ins>import androidx.compose.runtime.getValue</ins><ins>import androidx.compose.runtime.remember</ins>import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
+import com.androidbyexample.movie.R
+import com.androidbyexample.movie.components.ScreenSelectButton
+import com.androidbyexample.movie.repository.HasId
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun &lt;T: HasId&gt; ListScaffold(
+    @StringRes titleId: Int,
+    items: List&lt;T&gt;,
+    onItemClicked: (T) -&gt; Unit,
+
+    selectedIds: Set&lt;String&gt;,
+    onSelectionToggle: (id: String) -&gt; Unit,
+    onClearSelections: () -&gt; Unit,
+    onDeleteSelectedItems: () -&gt; Unit,
+
+    currentScreen: Screen,
+    onSelectListScreen: (Screen) -&gt; Unit,
+
+    onResetDatabase: () -&gt; Unit,
+<div id="020-top-content-param-in-list-scaffold"><ins>    topContent: (@Composable () -&gt; Unit)? = null,</ins></div>    itemContent: @Composable ColumnScope.(T) -&gt; Unit,
+) {
+<div id="020-reusable-lazy-list-state"><ins>    val lazyListState = remember { LazyListState() }</ins></div><div id="020-derive-show-bottom-bar"><ins>    val showBottomBar by remember(selectedIds) {</ins><ins>        derivedStateOf {</ins><ins>            lazyListState.firstVisibleItemScrollOffset == 0 &amp;&amp; selectedIds.isEmpty()</ins><ins>        }</ins><ins>    }</ins></div><ins></ins>    Scaffold(
+        topBar = {
+            if (selectedIds.isEmpty()) {
+                TopAppBar(
+                    title = { Text(text = stringResource(titleId)) },
+                    actions = {
+                        IconButton(onClick = onResetDatabase) {
+                            Icon(
+                                imageVector = Icons.Default.Refresh,
+                                contentDescription = stringResource(R.string.reset_database)
+                            )
+                        }
+                    }
+                )
+            } else {
+                TopAppBar(
+                    navigationIcon = {
+                        Icon(
+                            imageVector = Icons.Default.ArrowBack,
+                            contentDescription = stringResource(R.string.clear_selections),
+                            modifier = Modifier.clickable(onClick = onClearSelections),
+                        )
+                    },
+                    title = { Text(text = selectedIds.size.toString(), modifier = Modifier.padding(8.dp)) },
+                    actions = {
+                        IconButton(onClick = onDeleteSelectedItems) {
+                            Icon(
+                                imageVector = Icons.Default.Delete,
+                                contentDescription = stringResource(R.string.delete_selected_items)
+                            )
+                        }
+                    },
+                )
+            }
+        },
+        bottomBar = {
+<div id="020-conditional-bottom-bar-animated"><ins>            AnimatedVisibility(</ins><ins>                visible = showBottomBar,</ins><ins>                enter = expandVertically() + fadeIn(),</ins><ins>                exit = shrinkVertically() + fadeOut(),</ins><ins>            ) {</ins></div>                NavigationBar {
+                    ScreenSelectButton(
+                        targetScreen = RatingList,
+                        imageVector = Icons.Default.Star,
+                        labelId = R.string.ratings,
+                        currentScreen = currentScreen,
+                        onSelectListScreen = onSelectListScreen
+                    )
+                    ScreenSelectButton(
+                        targetScreen = MovieList,
+                        imageVector = Icons.Default.Movie,
+                        labelId = R.string.movies,
+                        currentScreen = currentScreen,
+                        onSelectListScreen = onSelectListScreen
+                    )
+                    ScreenSelectButton(
+                        targetScreen = ActorList,
+                        imageVector = Icons.Default.Person,
+                        labelId = R.string.actors,
+                        currentScreen = currentScreen,
+                        onSelectListScreen = onSelectListScreen
+                    )
+                }
+<ins>            }</ins>        },
+        modifier = Modifier.fillMaxSize()
+    ) { paddingValues -&gt;
+        List(
+<div id="020-pass-state-to-list"><ins>            state = lazyListState,</ins></div>            items = items,
+            onItemClicked = onItemClicked,
+            selectedIds = selectedIds,
+            onSelectionToggle = onSelectionToggle,
+            onClearSelections = onClearSelections,
+<div id="020-top-content-pass-to-list"><ins>            topContent = topContent,</ins></div>            modifier = Modifier
+                .padding(paddingValues)
+                .fillMaxSize(),
+            itemContent = itemContent,
+        )
+    }
+}
+</pre>
+</div>
+</div>
+</details>
+<details class="example" open>
+<summary>CHANGED: /app/src/main/java/com/androidbyexample/movie/screens/MovieDisplayUi.kt</summary>
+<div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/java/com/androidbyexample/movie/screens/MovieDisplayUi.kt';">
+<div class='sas1-code-block'>
+<pre>package com.androidbyexample.movie.screens
+
+<del>//import androidx.compose.foundation.layout.Column</del><del>//import androidx.compose.foundation.layout.fillMaxSize</del><del>//import androidx.compose.foundation.layout.padding</del><del>//import androidx.compose.foundation.rememberScrollState</del><del>//import androidx.compose.foundation.verticalScroll</del><del>//import androidx.compose.material3.ExperimentalMaterial3Api</del><del>//import androidx.compose.material3.Scaffold</del><del>//import androidx.compose.material3.Text</del><del>//import androidx.compose.material3.TopAppBar</del>import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+<del>//import androidx.compose.ui.Modifier</del>import androidx.compose.ui.res.stringResource
+import com.androidbyexample.movie.R
+import com.androidbyexample.movie.components.Display
+import com.androidbyexample.movie.components.Label
+import com.androidbyexample.movie.repository.MovieWithCastDto
+import com.androidbyexample.movie.repository.RoleWithActorDto
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+
+<del>//@OptIn(ExperimentalMaterial3Api::class)</del>@Composable
+fun MovieDisplayUi(
+    id: String,
+    fetchMovie: suspend (String) -&gt; MovieWithCastDto,
+    onActorClicked: (RoleWithActorDto) -&gt; Unit,
+<ins></ins><ins>    selectedIds: Set&lt;String&gt;,</ins><ins>    onSelectionToggle: (id: String) -&gt; Unit,</ins><ins>    onClearSelections: () -&gt; Unit,</ins><ins>    onDeleteSelectedMovies: () -&gt; Unit,</ins><ins></ins><ins>    currentScreen: Screen,</ins><ins>    onSelectListScreen: (Screen) -&gt; Unit,</ins><ins>    onResetDatabase: () -&gt; Unit,</ins>) {
+    var movieWithCast by remember { mutableStateOf&lt;MovieWithCastDto?&gt;(null) }
+    LaunchedEffect(key1 = id) {
+        withContext(Dispatchers.IO) {
+            movieWithCast = fetchMovie(id)
+        }
+    }
+<del>//  Scaffold(</del><del>//      topBar = {</del><del>//          TopAppBar(</del><del>//              title = {</del><del>//                  Text(text = movieWithCast?.movie?.title ?: stringResource(R.string.loading))</del><del>//              }</del><del>//          )</del><del>//      }</del><del>//  ) { paddingValues -&gt;</del><del>//      movieWithCast?.let { movieWithCast -&gt;</del><del>//          Column(</del><del>//              modifier = Modifier</del><del>//                  .padding(paddingValues)</del><del>//          ) {</del><del>//              Label(textId = R.string.title)</del><del>//              Display(text = movieWithCast.movie.title)</del><del>//              Label(textId = R.string.description)</del><del>//              Display(text = movieWithCast.movie.description)</del><del>//              Label(textId = R.string.cast)</del><del>//              List(</del><del>//                  items = movieWithCast.cast.sortedBy { it.orderInCredits },</del><ins>    ListScaffold(</ins><ins>        titleId = R.string.rating,</ins><ins>        items = movieWithCast?.cast?.sortedBy { it.orderInCredits } ?: emptyList(),</ins>        onItemClicked = onActorClicked,
+<del>//                  selectedIds = emptySet(),</del><del>//                  onSelectionToggle = {},</del><del>//                  onClearSelections = {},</del><del>//                  modifier = Modifier.weight(1f)</del><del>//              ) { role -&gt;</del><ins>        selectedIds = selectedIds,</ins><ins>        onSelectionToggle = onSelectionToggle,</ins><ins>        onClearSelections = onClearSelections,</ins><ins>        onDeleteSelectedItems = onDeleteSelectedMovies,</ins><ins>        currentScreen = currentScreen,</ins><ins>        onSelectListScreen = onSelectListScreen,</ins><ins>        onResetDatabase = onResetDatabase,</ins><ins>        itemContent = { role -&gt;</ins>            Display(
+                text = stringResource(
+                    R.string.cast_entry,
+                    role.character,
+                    role.actor.name,
+                )
+            )
+<ins>        },</ins><ins>        topContent = {</ins><ins>            Label(textId = R.string.title)</ins><ins>            Display(text = movieWithCast?.movie?.title ?: &quot;&quot;)</ins><ins>            Label(textId = R.string.description)</ins><ins>            Display(text = movieWithCast?.movie?.description ?: &quot;&quot;)</ins><ins>            Label(textId = R.string.cast)</ins>        }
+<del>//          }</del><del>//      }</del><del>//  }</del><ins>    )</ins>}
+</pre>
+</div>
+</div>
+</details>
+<details class="example" open>
+<summary>CHANGED: /app/src/main/java/com/androidbyexample/movie/screens/RatingDisplayUi.kt</summary>
+<div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/java/com/androidbyexample/movie/screens/RatingDisplayUi.kt';">
+<div class='sas1-code-block'>
+<pre>package com.androidbyexample.movie.screens
+
+<del>//import androidx.compose.foundation.layout.Column</del><del>//import androidx.compose.foundation.layout.padding</del><del>//import androidx.compose.material3.ExperimentalMaterial3Api</del><del>//import androidx.compose.material3.Scaffold</del><del>//import androidx.compose.material3.Text</del><del>//import androidx.compose.material3.TopAppBar</del>import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+<del>//import androidx.compose.ui.Modifier</del>import androidx.compose.ui.res.stringResource
+import com.androidbyexample.movie.R
+import com.androidbyexample.movie.components.Display
+import com.androidbyexample.movie.components.Label
+import com.androidbyexample.movie.repository.MovieDto
+import com.androidbyexample.movie.repository.RatingWithMoviesDto
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+
+<del>//@OptIn(ExperimentalMaterial3Api::class)</del>@Composable
+fun RatingDisplayUi(
+    id: String,
+    fetchRating: suspend (String) -&gt; RatingWithMoviesDto,
+    onMovieClicked: (MovieDto) -&gt; Unit,
+<ins></ins><div id="020-add-selection-to-rating-display"><ins>    selectedIds: Set&lt;String&gt;,</ins><ins>    onSelectionToggle: (id: String) -&gt; Unit,</ins><ins>    onClearSelections: () -&gt; Unit,</ins><ins>    onDeleteSelectedMovies: () -&gt; Unit,</ins></div><ins></ins><div id="020-add-scaffold-data-to-rating-display"><ins>    currentScreen: Screen,</ins><ins>    onSelectListScreen: (Screen) -&gt; Unit,</ins><ins>    onResetDatabase: () -&gt; Unit,</ins></div>) {
+    var ratingWithMovies by remember { mutableStateOf&lt;RatingWithMoviesDto?&gt;(null) }
+    LaunchedEffect(key1 = id) {
+        withContext(Dispatchers.IO) {
+            ratingWithMovies = fetchRating(id)
+        }
+    }
+<del>//  Scaffold(</del><del>//      topBar = {</del><del>//          TopAppBar(</del><del>//              title = {</del><del>//                  Text(text = ratingWithMovies?.rating?.name ?: stringResource(R.string.loading))</del><del>//              }</del><ins>    ListScaffold(</ins><ins>        titleId = R.string.rating,</ins><ins>        items = ratingWithMovies?.movies?.sortedBy { it.title } ?: emptyList(),</ins><ins>        onItemClicked = onMovieClicked,</ins><ins>        selectedIds = selectedIds,</ins><ins>        onSelectionToggle = onSelectionToggle,</ins><ins>        onClearSelections = onClearSelections,</ins><ins>        onDeleteSelectedItems = onDeleteSelectedMovies,</ins><ins>        currentScreen = currentScreen,</ins><ins>        onSelectListScreen = onSelectListScreen,</ins><ins>        onResetDatabase = onResetDatabase,</ins><ins>        itemContent = { movie -&gt;</ins><ins>            Display(</ins><ins>                text = movie.title</ins>            )
+<del>//      }</del><del>//  ) { paddingValues -&gt;</del><ins>        },</ins><ins>        topContent = {</ins>            ratingWithMovies?.let { ratingWithMovies -&gt;
+<del>//          Column(</del><del>//              modifier = Modifier</del><del>//                  .padding(paddingValues)</del><del>//          ) {</del>                Label(textId = R.string.name)
+                Display(text = ratingWithMovies.rating.name)
+                Label(textId = R.string.description)
+                Display(text = ratingWithMovies.rating.description)
+                Label(
+                    text = stringResource(
+                        id = R.string.movies_rated,
+                        ratingWithMovies.rating.name
+                    )
+                )
+<del>//              List(</del><del>//                  items = ratingWithMovies.movies.sortedBy { it.title },</del><del>//                  onItemClicked = onMovieClicked,</del><del>//                  selectedIds = emptySet(),</del><del>//                  onSelectionToggle = {},</del><del>//                  onClearSelections = {},</del><del>//                  modifier = Modifier.weight(1f)</del><del>//              ) { movie -&gt;</del><del>//                  Display(</del><del>//                      text = movie.title</del><ins>            }</ins><ins>        }</ins>    )
+<del>//              }</del><del>//          }</del><del>//      }</del><del>//  }</del>}
+</pre>
+</div>
+</div>
+</details>
+<details class="example" open>
+<summary>CHANGED: /app/src/main/java/com/androidbyexample/movie/screens/Ui.kt</summary>
+<div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/java/com/androidbyexample/movie/screens/Ui.kt';">
+<div class='sas1-code-block'>
+<pre>package com.androidbyexample.movie.screens
+
+import androidx.activity.compose.BackHandler
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.androidbyexample.movie.MovieViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+
+@Composable
+fun Ui(
+    viewModel: MovieViewModel,
+    onExit: () -&gt; Unit,
+) {
+    BackHandler {
+        viewModel.popScreen()
+    }
+
+    val scope = rememberCoroutineScope()
+
+    when (val screen = viewModel.currentScreen) {
+        null -&gt; onExit()
+        is MovieDisplay -&gt; {
+<ins>            val selectedIds by viewModel.selectedIdsFlow.collectAsStateWithLifecycle(initialValue = emptySet())</ins>            MovieDisplayUi(
+                id = screen.id,
+                fetchMovie = viewModel::getMovieWithCast,
+<del>//              onActorClicked = { viewModel.pushScreen(ActorDisplay(it.actor.id)) }</del><ins>                onActorClicked = { viewModel.pushScreen(ActorDisplay(it.actor.id)) },</ins><ins></ins><ins>                selectedIds = selectedIds,</ins><ins>                onClearSelections = viewModel::clearSelectedIds,</ins><ins>                onSelectionToggle = viewModel::toggleSelection,</ins><ins>                onDeleteSelectedMovies = viewModel::deleteSelectedMovies,</ins><ins>                currentScreen = screen,</ins><ins>                onSelectListScreen = viewModel::setScreen,</ins><ins>                onResetDatabase = {</ins><ins>                    scope.launch(Dispatchers.IO) {</ins><ins>                        viewModel.resetDatabase()</ins><ins>                    }</ins><ins>                }</ins>            )
+        }
+        is ActorDisplay -&gt; {
+<ins>            val selectedIds by viewModel.selectedIdsFlow.collectAsStateWithLifecycle(initialValue = emptySet())</ins>            ActorDisplayUi(
+                id = screen.id,
+                fetchActor = viewModel::getActorWithFilmography,
+<del>//              onMovieClicked = { viewModel.pushScreen(MovieDisplay(it.id)) }</del><ins>                onMovieClicked = { viewModel.pushScreen(MovieDisplay(it.id)) },</ins><ins></ins><ins>                selectedIds = selectedIds,</ins><ins>                onClearSelections = viewModel::clearSelectedIds,</ins><ins>                onSelectionToggle = viewModel::toggleSelection,</ins><ins>                onDeleteSelectedMovies = viewModel::deleteSelectedMovies,</ins><ins>                currentScreen = screen,</ins><ins>                onSelectListScreen = viewModel::setScreen,</ins><ins>                onResetDatabase = {</ins><ins>                    scope.launch(Dispatchers.IO) {</ins><ins>                        viewModel.resetDatabase()</ins><ins>                    }</ins><ins>                }</ins>            )
+        }
+        is RatingDisplay -&gt; {
+<ins>            val selectedIds by viewModel.selectedIdsFlow.collectAsStateWithLifecycle(initialValue = emptySet())</ins>            RatingDisplayUi(
+                id = screen.id,
+                fetchRating = viewModel::getRatingWithMovies,
+<del>//              onMovieClicked = { viewModel.pushScreen(MovieDisplay(it.id)) }</del><ins>                onMovieClicked = { viewModel.pushScreen(MovieDisplay(it.id)) },</ins><div id="020-pass-selection"><ins>                selectedIds = selectedIds,</ins><ins>                onClearSelections = viewModel::clearSelectedIds,</ins><ins>                onSelectionToggle = viewModel::toggleSelection,</ins><ins>                onDeleteSelectedMovies = viewModel::deleteSelectedMovies,</ins><ins>                currentScreen = screen,</ins><ins>                onSelectListScreen = viewModel::setScreen,</ins><ins>                onResetDatabase = {</ins><ins>                    scope.launch(Dispatchers.IO) {</ins><ins>                        viewModel.resetDatabase()</ins><ins>                    }</ins><ins>                }</ins></div>            )
+        }
+        MovieList -&gt; {
+            val movies by viewModel.moviesFlow.collectAsStateWithLifecycle(initialValue = emptyList())
+            val selectedIds by viewModel.selectedIdsFlow.collectAsStateWithLifecycle(initialValue = emptySet())
+            MovieListUi(
+                movies = movies,
+                onMovieClicked = { movie -&gt;
+                    viewModel.pushScreen(MovieDisplay(movie.id))
+                },
+                selectedIds = selectedIds,
+                onClearSelections = viewModel::clearSelectedIds,
+                onSelectionToggle = viewModel::toggleSelection,
+                onDeleteSelectedMovies = viewModel::deleteSelectedMovies,
+                currentScreen = screen,
+                onSelectListScreen = viewModel::setScreen,
+                onResetDatabase = {
+                    scope.launch(Dispatchers.IO) {
+                        viewModel.resetDatabase()
+                    }
+                }
+            )
+        }
+        ActorList -&gt; {
+            val actors by viewModel.actorsFlow.collectAsStateWithLifecycle(initialValue = emptyList())
+            val selectedIds by viewModel.selectedIdsFlow.collectAsStateWithLifecycle(initialValue = emptySet())
+            ActorListUi(
+                actors = actors,
+                onActorClicked = { actor -&gt;
+                    viewModel.pushScreen(ActorDisplay(actor.id))
+                },
+                selectedIds = selectedIds,
+                onClearSelections = viewModel::clearSelectedIds,
+                onSelectionToggle = viewModel::toggleSelection,
+                onDeleteSelectedActors = viewModel::deleteSelectedActors,
+                currentScreen = screen,
+                onSelectListScreen = viewModel::setScreen,
+                onResetDatabase = {
+                    scope.launch(Dispatchers.IO) {
+                        viewModel.resetDatabase()
+                    }
+                }
+            )
+        }
+        RatingList -&gt; {
+            val ratings by viewModel.ratingsFlow.collectAsStateWithLifecycle(initialValue = emptyList())
+            val selectedIds by viewModel.selectedIdsFlow.collectAsStateWithLifecycle(initialValue = emptySet())
+            RatingListUi(
+                ratings = ratings,
+                onRatingClicked = { rating -&gt;
+                    viewModel.pushScreen(RatingDisplay(rating.id))
+                },
+                selectedIds = selectedIds,
+                onClearSelections = viewModel::clearSelectedIds,
+                onSelectionToggle = viewModel::toggleSelection,
+                onDeleteSelectedRatings = viewModel::deleteSelectedRatings,
+                currentScreen = screen,
+                onSelectListScreen = viewModel::setScreen,
+                onResetDatabase = {
+                    scope.launch(Dispatchers.IO) {
+                        viewModel.resetDatabase()
+                    }
+                }
+            )
+        }
+    }
+}
+</pre>
+</div>
+</div>
+</details>
+  
+</div>
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="" >
+      
+        
+        <a href="index.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Movie UI - Updates" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Movie UI - Updates
+            </div>
+          </div>
+        </a>
+      
+      <div class="md-footer-meta md-typeset">
+        <div class="md-footer-meta__inner md-grid">
+          <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023. Scott Stanchfield
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+          
+        </div>
+      </div>    
+      
+        
+        <a href="STEP_030_REPO.html" class="md-footer__link md-footer__link--next" aria-label="Next: Deleting from the display screens" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Deleting from the display screens
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.sections", "search.suggest", "search.highlight", "navigation.instant", "content.tabs.link", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>
