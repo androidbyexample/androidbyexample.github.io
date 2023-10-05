@@ -1,0 +1,2333 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://androidbyexample.com/modules/movie-widget/STEP_030_REPO.html">
+      
+      
+        <link rel="prev" href="STEP_020_REPO.html">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>Widget UI and Data - Android By Example</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
+      
+      
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 64C0 28.7 28.7 0 64 0h160v128c0 17.7 14.3 32 32 32h128v288c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0l128 128z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 64C0 28.7 28.7 0 64 0h160v128c0 17.7 14.3 32 32 32h128v288c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0l128 128z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 64C0 28.7 28.7 0 64 0h160v128c0 17.7 14.3 32 32 32h128v288c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0l128 128z"/></svg>');}</style>
+
+
+    
+    
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<!--<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">-->
+
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Android By Example" class="md-header__button md-logo" aria-label="Android By Example" data-md-component="logo">
+      
+  <img src="../../android.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Android By Example
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Widget UI and Data
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+<!--    <div class="md-sidebar md-sidebar&#45;&#45;primary" data-md-component="sidebar" data-md-type="navigation">-->
+<div class="md-sidebar md-sidebar--primary" data-md-type="navigation">
+    <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner">
+            
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Android By Example" class="md-nav__button md-logo" aria-label="Android By Example" data-md-component="logo">
+      
+  <img src="../../android.png" alt="logo">
+
+    </a>
+    Android By Example
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          Introduction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_01_FULL.html" class="md-nav__link">
+        About This Site
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_02_FULL.html" class="md-nav__link">
+        About Your Instructor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_04_FULL.html" class="md-nav__link">
+        Content License
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_05_FULL.html" class="md-nav__link">
+        Source Code License
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_09_FULL.html" class="md-nav__link">
+        Welcome!
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_10_FULL.html" class="md-nav__link">
+        Course Hardware and Software
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_20_FULL.html" class="md-nav__link">
+        Assignments
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_30_FULL.html" class="md-nav__link">
+        Grading
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_40_FULL.html" class="md-nav__link">
+        Using Third-Party and Course Sample Code
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Week 1 (8/31-9/6)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Week 1 (8/31-9/6)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../kotlin-primer/index.html">Kotlin Primer</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Kotlin Primer
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../architecture/index.html">Architecture</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Architecture
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../android-studio/index.html">Android Studio</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Android Studio
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Week 2 (9/7-9/13)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Week 2 (9/7-9/13)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../compose-concepts/index.html">Jetpack Compose Concepts</a>
+          
+            <label for="__nav_3_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Jetpack Compose Concepts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compose-concepts/STEP_020_FULL.html" class="md-nav__link">
+        Composable Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compose-concepts/STEP_030_FULL.html" class="md-nav__link">
+        String literals
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compose-concepts/STEP_040_FULL.html" class="md-nav__link">
+        State
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compose-concepts/STEP_050_FULL.html" class="md-nav__link">
+        Compose Optimizations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compose-concepts/STEP_060_FULL.html" class="md-nav__link">
+        Where do you store state?
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compose-concepts/STEP_070_FULL.html" class="md-nav__link">
+        Density
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../movie-ui-1/index.html">Initial Movies UI</a>
+          
+            <label for="__nav_3_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Initial Movies UI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-1/STEP_020_REPO.html" class="md-nav__link">
+        Update versions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-1/STEP_030_REPO.html" class="md-nav__link">
+        Create data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-1/STEP_040_REPO.html" class="md-nav__link">
+        Create initial screens
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-1/STEP_050_REPO.html" class="md-nav__link">
+        Flesh out the screens
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Week 3 (9/14-9/20)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Week 3 (9/14-9/20)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../room/index.html">Room</a>
+          
+            <label for="__nav_4_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Room
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../room/STEP_10_FULL.html" class="md-nav__link">
+        Relationships
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../room/STEP_20_FULL.html" class="md-nav__link">
+        Room Basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../room/STEP_25_FULL.html" class="md-nav__link">
+        Room Relations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../room/STEP_30_FULL.html" class="md-nav__link">
+        Suspending Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../room/STEP_40_FULL.html" class="md-nav__link">
+        The Repository
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../movie-db/index.html">Movies Database</a>
+          
+            <label for="__nav_4_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Movies Database
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-db/STEP_020_REPO.html" class="md-nav__link">
+        Add new modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-db/STEP_030_REPO.html" class="md-nav__link">
+        Add Room dependencies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-db/STEP_040_REPO.html" class="md-nav__link">
+        Module Dependencies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-db/STEP_050_REPO.html" class="md-nav__link">
+        Entities, DAO and Database
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-db/STEP_060_REPO.html" class="md-nav__link">
+        Repository Types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-db/STEP_070_REPO.html" class="md-nav__link">
+        Modifying the view model to use real data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-db/STEP_080_REPO.html" class="md-nav__link">
+        Fix movie list
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-db/STEP_090_REPO.html" class="md-nav__link">
+        Fetch data for movie display
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-db/STEP_100_FULL.html" class="md-nav__link">
+        Viewing the Database
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Week 4 (9/21-9/27)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Week 4 (9/21-9/27)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../compose-lists/index.html">Compose Lists</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          Compose Lists
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../movie-ui-2/index.html">Movies UI - Lists</a>
+          
+            <label for="__nav_5_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Movies UI - Lists
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-2/STEP_020_REPO.html" class="md-nav__link">
+        Convert to LazyColumn
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-2/STEP_030_REPO.html" class="md-nav__link">
+        Selection Tracking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-2/STEP_040_REPO.html" class="md-nav__link">
+        Selections in the UI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-2/STEP_050_REPO.html" class="md-nav__link">
+        Contextual Top Bar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-2/STEP_060_REPO.html" class="md-nav__link">
+        Refactor time!
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-2/STEP_070_REPO.html" class="md-nav__link">
+        Add Actors and Ratings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-2/STEP_080_REPO.html" class="md-nav__link">
+        Better Movie Icon
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-2/STEP_090_FULL.html" class="md-nav__link">
+        Wrapup
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Week 5 (9/28-10/4)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Week 5 (9/28-10/4)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_1" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../compose-text-fields/index.html">Compose Text Fields</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6_1">
+          <span class="md-nav__icon md-icon"></span>
+          Compose Text Fields
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../movie-ui-3/index.html">Movies UI - Updates</a>
+          
+            <label for="__nav_6_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          Movies UI - Updates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-3/STEP_020_REPO.html" class="md-nav__link">
+        Display-screen list cleanup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-3/STEP_030_REPO.html" class="md-nav__link">
+        Deleting from the display screens
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-3/STEP_040_REPO.html" class="md-nav__link">
+        Editing a movie
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          Week 6 (10/5-10/11)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Week 6 (10/5-10/11)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" checked>
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="index.html">Movies Widget</a>
+          
+            <label for="__nav_7_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_7_1">
+          <span class="md-nav__icon md-icon"></span>
+          Movies Widget
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_020_REPO.html" class="md-nav__link">
+        Widget Declaration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="STEP_030_REPO.html" class="md-nav__link md-nav__link--active">
+        Widget UI and Data
+      </a>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+        </div>
+    </div>
+</div>
+
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+<div class="sas1-text-column">
+
+<h1>Movies Widget</h1>
+
+<h2>Widget UI and Data</h2>
+    
+<p>Let's make this widget actually do something. We'll fetch the list of movies from the database
+and display it on the widget. When the user selects a movie, they'll be taken to its display
+page in the app.</p>
+<p>First, a Room issue that'll bite us if we're not careful.</p>
+<p>When we ask for a <code>Flow</code> from a DAO function, database updates will trigger a re-query
+and emission of the new results to that <code>Flow</code>. This is a fantastic feature, but it has a
+problem - those updates are only sent to the instance of the <code>MovieDatabase</code> that performed
+the update.</p>
+<p>If we create an instance of <code>MovieDatabaseRepo</code> for the widget, and a separate instance for
+the application, the widget won't be notified when the app makes changes such as deleting
+movies or changing a movie title.</p>
+<p>We must make sure the same instance of the <code>MovieDatabaseRepo</code> (or at least the same instance
+of the Room database it contains) is used for the widget <em>and</em> the application.</p>
+<p>We can do this in our <a class="find-button" href="#030-cache-instance"><code>companion object</code></a> for <code>MovieDatabaseRepo</code>
+by adding a <code>repo</code> cache variable, and modifying <code>create()</code> to either return the cached repo
+(if it exists) or create one and hold onto it. Note the <code>synchronized</code> block that only allows
+one access/call at a time, locking the <code>companion object</code>, to prevent concurrent races.</p>
+<p>This allows us to <a class="find-button" href="#030-get-data">get the data</a> in the widget and in the application
+such that the widget will see the updates.</p>
+<p>Before moving forward, let's update the <a class="find-button" href="#030-update-widget-info">widget metadata</a>.</p>
+<ul>
+<li><code>description</code> adds descriptive text when choosing the widget to place on a home screen.
+  This requires adding the text to strings.xml</li>
+<li><code>minWidth</code> and <code>minHeight</code> limits how small the user can size the widget</li>
+<li><code>resizeMode</code> specifies which directions the user can resize the widget</li>
+<li><code>targetCellWidth</code> and <code>targetCellHeight</code> gives sizing when initially placing the widget. These are
+   multiples of the cell size defined by the home application.</li>
+<li><code>widgetCategory</code> specifies if the widget can appear on the home or lock screen (called "keyguard" here)</li>
+</ul>
+<p>The <a class="find-button" href="#030-ui">UI</a> for our <code>MovieAppWidget</code> uses a <code>LazyColumn</code> to display our list of
+movies. When a movie title is <a class="find-button" href="#030-click">clicked</a>, we start our <code>MainActivity</code> and
+pass the movie id as a parameter.</p>
+<p>Note that <code>actionStartActivity</code> creates a lambda for us, so we pass it in parentheses to <code>clickable</code>
+rather than put it in a lambda. If we had instead written</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="na">clickable</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">actionStartActivity</span><span class="o">&lt;</span><span class="n">MainActivity</span><span class="o">&gt;</span><span class="p">(</span>
+<span class="w">        </span><span class="n">actionParametersOf</span><span class="p">(</span><span class="n">movieIdKey</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">movie</span><span class="p">.</span><span class="na">id</span><span class="p">)</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>we'd be telling it to call <code>actionStartActivity</code> to <em>create</em> the lambda when the button is clicked.
+We need to create that lambda and use it as the function called when the button is clicked.</p>
+<p>The created lambda creates an explicit <code>Intent</code> targeting our activity, and uses the 
+<code>actionParametersOf</code> function to add key and value pairs to the <code>extras</code> map of that intent.</p>
+<p>The name specified in the <a class="find-button" href="#030-key"><code>movieIdKey</code></a> must match the name we use
+to retrieve the data from the intent in <code>MainActivity</code>. We define the
+<a class="find-button" href="#030-key-name">key name</a> as a constant in <code>MainActivity</code> to ensure the name is
+consistent.</p>
+<p>The fun part is now dealing with that intent coming into the activity. The activity may or may not
+already be running. If you were running the application and went to the home screen, the system
+may keep the activity instance around until it needs to reclaim its memory. However, it could kill
+it at any time when it's not the current foreground application. This leads to two ways we must deal
+with the intent:</p>
+<ul>
+<li>if the activity is <em>not</em> running, a new instance will be created and the intent passed to <code>onCreate</code></li>
+<li>if the activity <em>is</em> running, the intent will be passed to the <code>onNewIntent()</code> function of the existing activity instance</li>
+</ul>
+<p>We need to handle the intent in both places, so we create a
+<a class="find-button" href="#030-handle-movie-id">helper function</a> that tries to pull the movie id out of an
+intent. If it's not present, we reset the stack to be just <code>MovieList</code>. If it is present, we set
+the stack to be <code>MovieList</code> followed by <code>MovieDisplay</code> for that movie. This presents the movie to
+the user and allows them to press back to get to the movie list.</p>
+<p>We call <code>handleMovieId()</code> from
+<a class="find-button" href="#030-on-create"><code>onCreate</code></a> and
+<a class="find-button" href="#030-on-new-intent"><code>onNewIntent</code></a>.
+Note that <code>onNewIntent</code> is passed an <code>Intent</code> as a parameter, while <code>onCreate</code> uses the property
+<code>intent</code> defined by the activity as the <code>Intent</code> that launched it.</p>
+<p>If we run the application now, we'll get some interesting results if we</p>
+<ol>
+<li>Click on a movie in the widget (and see the movie displayed)</li>
+<li>Go back to home</li>
+<li>Click on a different movie in the widget (and see it displayed)</li>
+<li>Press back repeatedly</li>
+</ol>
+<p><img alt="Bad stack!" src="screenshots/need-launch-mode.gif" width="300" /></p>
+<p>The problem is that each time we start the activity from the widget, a new instance is pushed
+on the stack for the application process. We now have a stack of activities, managed by the
+system, each of which contains a stack of screens. Originally, Android applications used an
+<code>Actitity</code> for each screen, calling <code>startActvitity</code> to push new instances on the system-managed
+stacks. Over time we evolved to using a single <code>Activity</code> approach.</p>
+<p>To fix this, we set the <a class="find-button" href="#030-launch-mode">launch mode</a> for our <code>MainActivity</code>
+to <code>singleInstance</code>, which ensures we only ever have one instance of the activity.</p>
+  
+</div>
+  
+<div class="sas1-code-column">
+  
+<h2>Code Changes</h2>
+  
+<details class="example" open>
+<summary>CHANGED: /app/src/main/AndroidManifest.xml</summary>
+<div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/AndroidManifest.xml';">
+<div class='sas1-code-block'>
+<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;&gt;
+<ins>&lt;!--             android:launchMode=&quot;singleInstance&quot; --&gt;</ins>
+    &lt;application
+        android:allowBackup=&quot;true&quot;
+        android:dataExtractionRules=&quot;@xml/data_extraction_rules&quot;
+        android:fullBackupContent=&quot;@xml/backup_rules&quot;
+        android:icon=&quot;@mipmap/ic_launcher&quot;
+        android:label=&quot;@string/app_name&quot;
+        android:roundIcon=&quot;@mipmap/ic_launcher_round&quot;
+        android:supportsRtl=&quot;true&quot;
+        android:theme=&quot;@style/Theme.MovieUi1&quot;
+        tools:targetApi=&quot;31&quot;&gt;
+<div id="030-launch-mode">        &lt;activity
+            android:name=&quot;.MainActivity&quot;
+            android:exported=&quot;true&quot;
+<ins>            android:launchMode=&quot;singleInstance&quot;</ins>            android:theme=&quot;@style/Theme.MovieUi1&quot;&gt;
+</div>            &lt;intent-filter&gt;
+                &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;
+
+                &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
+            &lt;/intent-filter&gt;
+            &lt;intent-filter&gt;
+                &lt;action android:name=&quot;android.intent.action.VIEW&quot; /&gt;
+                &lt;data android:scheme=&quot;https&quot; /&gt;
+                &lt;data android:scheme=&quot;http&quot; /&gt;
+                &lt;category android:name=&quot;android.intent.category.BROWSABLE&quot; /&gt;
+                &lt;category android:name=&quot;android.intent.category.DEFAULT&quot; /&gt;
+            &lt;/intent-filter&gt;
+        &lt;/activity&gt;
+
+<div id="020-register-in-manifest">        &lt;receiver android:name=&quot;.glance.MovieAppWidgetReceiver&quot;
+            android:exported=&quot;true&quot;&gt;
+            &lt;intent-filter&gt;
+                &lt;action android:name=&quot;android.appwidget.action.APPWIDGET_UPDATE&quot; /&gt;
+            &lt;/intent-filter&gt;
+            &lt;meta-data
+                android:name=&quot;android.appwidget.provider&quot;
+                android:resource=&quot;@xml/movie_app_widget_info&quot; /&gt;
+        &lt;/receiver&gt;
+</div>    &lt;/application&gt;
+
+&lt;/manifest&gt;
+</pre>
+</div>
+</div>
+</details>
+<details class="example" open>
+<summary>CHANGED: /app/src/main/java/com/androidbyexample/movie/MainActivity.kt</summary>
+<div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/java/com/androidbyexample/movie/MainActivity.kt';">
+<div class='sas1-code-block'>
+<pre>package com.androidbyexample.movie
+
+<ins>import android.content.Intent</ins>import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.activity.viewModels
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.ui.Modifier
+<ins>import com.androidbyexample.movie.screens.MovieDisplay</ins><ins>import com.androidbyexample.movie.screens.MovieList</ins>import com.androidbyexample.movie.screens.Ui
+import com.androidbyexample.movie.ui.theme.MovieUi1Theme
+
+<div id="030-key-name"><ins>const val MOVIE_ID_EXTRA = &quot;movieId&quot;</ins></div><ins></ins>class MainActivity : ComponentActivity() {
+    private val viewModel by viewModels&lt;MovieViewModel&gt; { MovieViewModel.Factory }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+<div id="030-on-create"><ins>        intent?.handleMovieId()</ins></div>        setContent {
+            MovieUi1Theme {
+                // A surface container using the 'background' color from the theme
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
+                    Ui(viewModel) {
+                        finish()
+                    }
+                }
+            }
+        }
+    }
+<ins></ins><div id="030-on-new-intent"><ins>    override fun onNewIntent(intent: Intent?) {</ins><ins>        super.onNewIntent(intent)</ins><ins>        intent?.handleMovieId()</ins><ins>    }</ins></div><ins></ins><div id="030-handle-movie-id"><ins>    private fun Intent.handleMovieId() {</ins><ins>        val movieId = extras?.getString(MOVIE_ID_EXTRA)</ins><ins>        if (movieId != null) {</ins><ins>            viewModel.setScreens(MovieList, MovieDisplay(movieId))</ins><ins>        }</ins><ins>    }</ins></div>}
+</pre>
+</div>
+</div>
+</details>
+<details class="example" open>
+<summary>CHANGED: /app/src/main/java/com/androidbyexample/movie/MovieViewModel.kt</summary>
+<div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/java/com/androidbyexample/movie/MovieViewModel.kt';">
+<div class='sas1-code-block'>
+<pre>package com.androidbyexample.movie
+
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.viewmodel.CreationExtras
+import com.androidbyexample.movie.repository.ActorDto
+import com.androidbyexample.movie.repository.MovieDatabaseRepository
+import com.androidbyexample.movie.repository.MovieDto
+import com.androidbyexample.movie.repository.MovieRepository
+import com.androidbyexample.movie.repository.RatingDto
+import com.androidbyexample.movie.screens.MovieList
+import com.androidbyexample.movie.screens.Screen
+import kotlinx.coroutines.FlowPreview
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.debounce
+import kotlinx.coroutines.launch
+
+@OptIn(FlowPreview::class)
+class MovieViewModel(
+    private val repository: MovieRepository,
+): ViewModel(), MovieRepository by repository {
+    private val _selectedIdsFlow = MutableStateFlow&lt;Set&lt;String&gt;&gt;(emptySet())
+    val selectedIdsFlow: Flow&lt;Set&lt;String&gt;&gt; = _selectedIdsFlow.asStateFlow()
+
+    fun clearSelectedIds() {
+        _selectedIdsFlow.value = emptySet()
+    }
+    fun toggleSelection(id: String) {
+        if (id in _selectedIdsFlow.value) {
+            _selectedIdsFlow.value -= id
+        } else {
+            _selectedIdsFlow.value += id
+        }
+    }
+
+    private var screenStack = listOf&lt;Screen&gt;(MovieList)
+        set(value) {
+            field = value
+            clearSelectedIds()
+            currentScreen = value.lastOrNull()
+        }
+
+    // NOTE: We're keep this as a Compose State for comparison.
+    //       You can use Compose state to expose anything from the view model,
+    //       but our example will be using Flow from now on to demonstrate how
+    //       the view model can be used without Compose, perhaps for other
+    //       platforms such as iOS, desktop, web or command line
+    var currentScreen by mutableStateOf&lt;Screen?&gt;(MovieList)
+        private set
+
+    fun pushScreen(screen: Screen) {
+        screenStack = screenStack + screen
+    }
+    fun popScreen() {
+        screenStack = screenStack.dropLast(1)
+    }
+
+    fun setScreen(screen: Screen) {
+        screenStack = listOf(screen)
+    }
+
+<div id="030-set-screens"><ins>    fun setScreens(vararg screens: Screen) {</ins><ins>        screenStack = screens.toList()</ins><ins>    }</ins></div><ins></ins>    fun update(movie: MovieDto) {
+        movieUpdateFlow.value = movie
+    }
+    fun update(actor: ActorDto) {
+        actorUpdateFlow.value = actor
+    }
+    fun update(rating: RatingDto) {
+        ratingUpdateFlow.value = rating
+    }
+
+    // using a debounced flow as a person-update queue
+    private val movieUpdateFlow = MutableStateFlow&lt;MovieDto?&gt;(null)
+    private val actorUpdateFlow = MutableStateFlow&lt;ActorDto?&gt;(null)
+    private val ratingUpdateFlow = MutableStateFlow&lt;RatingDto?&gt;(null)
+    init {
+        viewModelScope.launch {
+            movieUpdateFlow.debounce(500).collect { movie -&gt;
+                movie?.let { repository.upsert(it) }
+            }
+        }
+        viewModelScope.launch {
+            actorUpdateFlow.debounce(500).collect { actor -&gt;
+                actor?.let { repository.upsert(it) }
+            }
+        }
+        viewModelScope.launch {
+            ratingUpdateFlow.debounce(500).collect { rating -&gt;
+                rating?.let { repository.upsert(it) }
+            }
+        }
+    }
+
+    fun deleteSelectedMovies() {
+        viewModelScope.launch {
+            deleteMoviesById(_selectedIdsFlow.value)
+            _selectedIdsFlow.value = emptySet()
+        }
+    }
+    fun deleteSelectedActors() {
+        viewModelScope.launch {
+            deleteActorsById(_selectedIdsFlow.value)
+            _selectedIdsFlow.value = emptySet()
+        }
+    }
+    fun deleteSelectedRatings() {
+        viewModelScope.launch {
+            deleteRatingsById(_selectedIdsFlow.value)
+            _selectedIdsFlow.value = emptySet()
+        }
+    }
+
+    companion object {
+        val Factory: ViewModelProvider.Factory = object: ViewModelProvider.Factory {
+            @Suppress(&quot;UNCHECKED_CAST&quot;)
+            override fun &lt;T : ViewModel&gt; create(
+                modelClass: Class&lt;T&gt;,
+                extras: CreationExtras
+            ): T {
+                // Get the Application object from extras
+                val application = checkNotNull(extras[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY])
+                return MovieViewModel(
+                    MovieDatabaseRepository.create(application)
+                ) as T
+            }
+        }
+    }
+}
+</pre>
+</div>
+</div>
+</details>
+<details class="example" open>
+<summary>CHANGED: /app/src/main/java/com/androidbyexample/movie/glance/MovieAppWidget.kt</summary>
+<div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/java/com/androidbyexample/movie/glance/MovieAppWidget.kt';">
+<div class='sas1-code-block'>
+<pre>package com.androidbyexample.movie.glance
+
+import android.content.Context
+<ins>import androidx.compose.runtime.collectAsState</ins><ins>import androidx.compose.runtime.getValue</ins><ins>import androidx.compose.runtime.remember</ins><ins>import androidx.compose.ui.unit.dp</ins><ins>import androidx.compose.ui.unit.sp</ins>import androidx.glance.GlanceId
+<ins>import androidx.glance.GlanceModifier</ins><ins>import androidx.glance.GlanceTheme</ins><ins>import androidx.glance.action.ActionParameters</ins><ins>import androidx.glance.action.actionParametersOf</ins><ins>import androidx.glance.action.actionStartActivity</ins><ins>import androidx.glance.action.clickable</ins>import androidx.glance.appwidget.GlanceAppWidget
+<ins>import androidx.glance.appwidget.appWidgetBackground</ins><ins>import androidx.glance.appwidget.lazy.LazyColumn</ins><ins>import androidx.glance.appwidget.lazy.items</ins>import androidx.glance.appwidget.provideContent
+<ins>import androidx.glance.background</ins><ins>import androidx.glance.layout.fillMaxSize</ins><ins>import androidx.glance.layout.fillMaxWidth</ins><ins>import androidx.glance.layout.padding</ins><ins>import androidx.glance.text.FontWeight</ins>import androidx.glance.text.Text
+<ins>import androidx.glance.text.TextStyle</ins><ins>import com.androidbyexample.movie.MOVIE_ID_EXTRA</ins><ins>import com.androidbyexample.movie.MainActivity</ins><ins>import com.androidbyexample.movie.repository.MovieDatabaseRepository</ins><ins></ins><div id="030-key"><ins>private val movieIdKey = ActionParameters.Key&lt;String&gt;(MOVIE_ID_EXTRA)</ins></div>
+<div id="020-create-appwidget">class MovieAppWidget : GlanceAppWidget() {
+    override suspend fun provideGlance(context: Context, id: GlanceId) {
+<ins>        // NOTE: We must use the same instance of the MovieDatabaseRepository</ins><ins>        //       (which in turn uses the same instance of the MovieDatabase)</ins><ins>        //       to get proper updates in the widget when movies are changed</ins><ins>        //       in the app. We needed to change the MovieDatabaseRepository.create</ins><ins>        //       function to cache the value.</ins><ins></ins>        provideContent {
+<div id="030-get-data"><del>//          Text(text = &quot;Widget!&quot;)</del><ins>            val repo = remember { MovieDatabaseRepository.create(context.applicationContext) }</ins><ins>            val movies by repo.moviesFlow.collectAsState(initial = emptyList())</ins></div><ins></ins><div id="030-ui"><ins>            GlanceTheme {</ins><ins>                LazyColumn(</ins><ins>                    modifier = GlanceModifier</ins><ins>                        .fillMaxSize()</ins><ins>                        .padding(4.dp)</ins><ins>                        .appWidgetBackground()</ins><ins>                        .background(GlanceTheme.colors.background),</ins><ins>                ) {</ins><ins>                    items(items = movies) { movie -&gt;</ins><ins>                        Text(</ins><ins>                            text = movie.title,</ins><ins>                            modifier = GlanceModifier</ins><ins>                                .padding(4.dp)</ins><ins>                                .fillMaxWidth()</ins><div id="030-click"><ins>                                .clickable(</ins><ins>                                    actionStartActivity&lt;MainActivity&gt;(</ins><ins>                                        actionParametersOf(movieIdKey to movie.id)</ins><ins>                                    )</ins><ins>                                )</ins></div><ins>                            ,</ins><ins>                            style = TextStyle(</ins><ins>                                fontWeight = FontWeight.Normal,</ins><ins>                                fontSize = 18.sp,</ins><ins>                            ),</ins><ins>                        )</ins><ins>                    }</ins><ins>                }</ins><ins>            }</ins></div>        }
+    }
+}
+</div></pre>
+</div>
+</div>
+</details>
+<details class="example" open>
+<summary>CHANGED: /app/src/main/res/values/strings.xml</summary>
+<div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/res/values/strings.xml';">
+<div class='sas1-code-block'>
+<pre>&lt;resources&gt;
+    &lt;string name=&quot;app_name&quot;&gt;MovieWidget&lt;/string&gt;
+    &lt;string name=&quot;movies&quot;&gt;Movies&lt;/string&gt;
+    &lt;string name=&quot;movie&quot;&gt;Movie&lt;/string&gt;
+    &lt;string name=&quot;title&quot;&gt;Title&lt;/string&gt;
+    &lt;string name=&quot;description&quot;&gt;Description&lt;/string&gt;
+    &lt;string name=&quot;reset_database&quot;&gt;Reset Database&lt;/string&gt;
+    &lt;string name=&quot;edit&quot;&gt;Edit&lt;/string&gt;
+    &lt;string name=&quot;loading&quot;&gt;(loading)&lt;/string&gt;
+    &lt;string name=&quot;cast&quot;&gt;Cast&lt;/string&gt;
+    &lt;string name=&quot;cast_entry&quot;&gt;%1$s: %2$s&lt;/string&gt;
+    &lt;string name=&quot;clear_selections&quot;&gt;Clear Selections&lt;/string&gt;
+    &lt;string name=&quot;delete_selected_items&quot;&gt;Delete selected items&lt;/string&gt;
+    &lt;string name=&quot;ratings&quot;&gt;Ratings&lt;/string&gt;
+    &lt;string name=&quot;rating&quot;&gt;Rating&lt;/string&gt;
+    &lt;string name=&quot;actors&quot;&gt;Actors&lt;/string&gt;
+    &lt;string name=&quot;actor&quot;&gt;Actor&lt;/string&gt;
+    &lt;string name=&quot;name&quot;&gt;Name&lt;/string&gt;
+    &lt;string name=&quot;movies_rated&quot;&gt;Movies rated %1$s&lt;/string&gt;
+    &lt;string name=&quot;movies_starring&quot;&gt;Movies starring %1$s&lt;/string&gt;
+<ins>    &lt;string name=&quot;movie_list&quot;&gt;Movie List&lt;/string&gt;</ins>&lt;/resources&gt;
+</pre>
+</div>
+</div>
+</details>
+<details class="example" open>
+<summary>CHANGED: /app/src/main/res/xml/movie_app_widget_info.xml</summary>
+<div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/res/xml/movie_app_widget_info.xml';">
+<div class='sas1-code-block'>
+<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+<div id="020-create-widget-info"><div id="030-update-widget-info">&lt;appwidget-provider
+    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+<del>//  android:initialLayout=&quot;@layout/glance_default_loading_layout&quot; /&gt;</del><ins>    android:initialLayout=&quot;@layout/glance_default_loading_layout&quot;</ins><ins>    android:description=&quot;@string/movie_list&quot;</ins><ins>    android:minWidth=&quot;46dp&quot;</ins><ins>    android:minHeight=&quot;46dp&quot;</ins><ins>    android:resizeMode=&quot;horizontal|vertical&quot;</ins><ins>    android:targetCellWidth=&quot;2&quot;</ins><ins>    android:targetCellHeight=&quot;2&quot;</ins><ins>    android:widgetCategory=&quot;home_screen&quot; /&gt;</ins></div></div><ins></ins></pre>
+</div>
+</div>
+</details>
+<details class="example" open>
+<summary>CHANGED: /repository/src/main/java/com/androidbyexample/movie/repository/MovieDatabaseRepository.kt</summary>
+<div class="sas1-code-file" style="--sas1-file-name: '/repository/src/main/java/com/androidbyexample/movie/repository/MovieDatabaseRepository.kt';">
+<div class='sas1-code-block'>
+<pre>package com.androidbyexample.movie.repository
+
+import android.content.Context
+import com.androidbyexample.movie.data.MovieDao
+import com.androidbyexample.movie.data.createDao
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
+
+class MovieDatabaseRepository(
+    private val dao: MovieDao
+): MovieRepository {
+    override val ratingsFlow =
+        dao.getRatingsFlow()
+            .map { ratings -&gt;// for each List&lt;RatingEntity&gt; that's emitted
+                // create a list of RatingDto
+                ratings.map { rating -&gt; rating.toDto() } // map each entity to Dto
+            }
+    override val moviesFlow =
+        dao.getMoviesFlow()
+            .map { movies -&gt;
+                movies.map { it.toDto() }
+            }
+    override val actorsFlow =
+        dao.getActorsFlow()
+            .map { actors -&gt;
+                actors.map { it.toDto() }
+            }
+
+    override fun getRatingWithMoviesFlow(id: String): Flow&lt;RatingWithMoviesDto&gt; =
+        dao.getRatingWithMoviesFlow(id)
+            .map { it.toDto() }
+
+    override suspend fun getMovie(id: String): MovieDto =
+        dao.getMovie(id).toDto()
+    override suspend fun getRatingWithMovies(id: String): RatingWithMoviesDto =
+        dao.getRatingWithMovies(id).toDto()
+
+    override suspend fun getMovieWithCast(id: String): MovieWithCastDto =
+        dao.getMovieWithCast(id).toDto()
+
+    override suspend fun getActorWithFilmography(id: String): ActorWithFilmographyDto =
+        dao.getActorWithFilmography(id).toDto()
+
+
+    override suspend fun upsert(movie: MovieDto) = dao.upsert(movie.toEntity())
+    override suspend fun upsert(actor: ActorDto) = dao.upsert(actor.toEntity())
+    override suspend fun upsert(rating: RatingDto) = dao.upsert(rating.toEntity())
+
+    override suspend fun insert(movie: MovieDto) = dao.insert(movie.toEntity())
+    override suspend fun insert(actor: ActorDto) = dao.insert(actor.toEntity())
+    override suspend fun insert(rating: RatingDto) = dao.insert(rating.toEntity())
+
+    override suspend fun deleteMoviesById(ids: Set&lt;String&gt;) = dao.deleteMoviesById(ids)
+    override suspend fun deleteActorsById(ids: Set&lt;String&gt;) = dao.deleteActorsById(ids)
+    override suspend fun deleteRatingsById(ids: Set&lt;String&gt;) = dao.deleteRatingsById(ids)
+
+    override suspend fun resetDatabase() = dao.resetDatabase()
+
+    companion object {
+<div id="030-cache-instance"><ins>        private var repo: MovieDatabaseRepository? = null</ins>        fun create(context: Context) =
+<del>//          MovieDatabaseRepository(createDao(context))</del><ins>            synchronized(this) {</ins><ins>                repo ?: MovieDatabaseRepository(createDao(context)).apply { repo = this }</ins><ins>            }</ins></div>    }
+}
+</pre>
+</div>
+</div>
+</details>
+</pre>
+</div>
+</details>
+  
+</div>
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="" >
+      
+        
+        <a href="STEP_020_REPO.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Widget Declaration" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Widget Declaration
+            </div>
+          </div>
+        </a>
+      
+      <div class="md-footer-meta md-typeset">
+        <div class="md-footer-meta__inner md-grid">
+          <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023. Scott Stanchfield
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+          
+        </div>
+      </div>    
+      
+    </nav>
+  
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.sections", "search.suggest", "search.highlight", "navigation.instant", "content.tabs.link", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>
