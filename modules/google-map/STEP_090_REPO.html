@@ -1,0 +1,2601 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://androidbyexample.com/modules/google-map/STEP_090_REPO.html">
+      
+      
+        <link rel="prev" href="STEP_080_REPO.html">
+      
+      
+        <link rel="next" href="STEP_100_REPO.html">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>Jump to Current Location - Android By Example</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
+      
+      
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 64C0 28.7 28.7 0 64 0h160v128c0 17.7 14.3 32 32 32h128v288c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0l128 128z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 64C0 28.7 28.7 0 64 0h160v128c0 17.7 14.3 32 32 32h128v288c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0l128 128z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 64C0 28.7 28.7 0 64 0h160v128c0 17.7 14.3 32 32 32h128v288c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0l128 128z"/></svg>');}</style>
+
+
+    
+    
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<!--<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">-->
+
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Android By Example" class="md-header__button md-logo" aria-label="Android By Example" data-md-component="logo">
+      
+  <img src="../../android.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Android By Example
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Jump to Current Location
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+<!--    <div class="md-sidebar md-sidebar&#45;&#45;primary" data-md-component="sidebar" data-md-type="navigation">-->
+<div class="md-sidebar md-sidebar--primary" data-md-type="navigation">
+    <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner">
+            
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Android By Example" class="md-nav__button md-logo" aria-label="Android By Example" data-md-component="logo">
+      
+  <img src="../../android.png" alt="logo">
+
+    </a>
+    Android By Example
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          Introduction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_01_FULL.html" class="md-nav__link">
+        About This Site
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_02_FULL.html" class="md-nav__link">
+        About Your Instructor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_04_FULL.html" class="md-nav__link">
+        Content License
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_05_FULL.html" class="md-nav__link">
+        Source Code License
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_09_FULL.html" class="md-nav__link">
+        Welcome!
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_10_FULL.html" class="md-nav__link">
+        Course Hardware and Software
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_20_FULL.html" class="md-nav__link">
+        Assignments
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_30_FULL.html" class="md-nav__link">
+        Grading
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/STEP_40_FULL.html" class="md-nav__link">
+        Using Third-Party and Course Sample Code
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Week 1 (8/31-9/6)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Week 1 (8/31-9/6)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../kotlin-primer/index.html">Kotlin Primer</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Kotlin Primer
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../architecture/index.html">Architecture</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Architecture
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../android-studio/index.html">Android Studio</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Android Studio
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Week 2 (9/7-9/13)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Week 2 (9/7-9/13)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../compose-concepts/index.html">Jetpack Compose Concepts</a>
+          
+            <label for="__nav_3_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Jetpack Compose Concepts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compose-concepts/STEP_020_FULL.html" class="md-nav__link">
+        Composable Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compose-concepts/STEP_030_FULL.html" class="md-nav__link">
+        String literals
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compose-concepts/STEP_040_FULL.html" class="md-nav__link">
+        State
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compose-concepts/STEP_050_FULL.html" class="md-nav__link">
+        Compose Optimizations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compose-concepts/STEP_060_FULL.html" class="md-nav__link">
+        Where do you store state?
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compose-concepts/STEP_070_FULL.html" class="md-nav__link">
+        Density
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../movie-ui-1/index.html">Initial Movies UI</a>
+          
+            <label for="__nav_3_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Initial Movies UI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-1/STEP_020_REPO.html" class="md-nav__link">
+        Update versions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-1/STEP_030_REPO.html" class="md-nav__link">
+        Create data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-1/STEP_040_REPO.html" class="md-nav__link">
+        Create initial screens
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-1/STEP_050_REPO.html" class="md-nav__link">
+        Flesh out the screens
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Week 3 (9/14-9/20)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Week 3 (9/14-9/20)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../room/index.html">Room</a>
+          
+            <label for="__nav_4_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Room
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../room/STEP_10_FULL.html" class="md-nav__link">
+        Relationships
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../room/STEP_20_FULL.html" class="md-nav__link">
+        Room Basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../room/STEP_25_FULL.html" class="md-nav__link">
+        Room Relations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../room/STEP_30_FULL.html" class="md-nav__link">
+        Suspending Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../room/STEP_40_FULL.html" class="md-nav__link">
+        The Repository
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../movie-db/index.html">Movies Database</a>
+          
+            <label for="__nav_4_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Movies Database
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-db/STEP_020_REPO.html" class="md-nav__link">
+        Add new modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-db/STEP_030_REPO.html" class="md-nav__link">
+        Add Room dependencies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-db/STEP_040_REPO.html" class="md-nav__link">
+        Module Dependencies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-db/STEP_050_REPO.html" class="md-nav__link">
+        Entities, DAO and Database
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-db/STEP_060_REPO.html" class="md-nav__link">
+        Repository Types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-db/STEP_070_REPO.html" class="md-nav__link">
+        Modifying the view model to use real data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-db/STEP_080_REPO.html" class="md-nav__link">
+        Fix movie list
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-db/STEP_090_REPO.html" class="md-nav__link">
+        Fetch data for movie display
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-db/STEP_100_FULL.html" class="md-nav__link">
+        Viewing the Database
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Week 4 (9/21-9/27)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Week 4 (9/21-9/27)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../compose-lists/index.html">Compose Lists</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          Compose Lists
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../movie-ui-2/index.html">Movies UI - Lists</a>
+          
+            <label for="__nav_5_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Movies UI - Lists
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-2/STEP_020_REPO.html" class="md-nav__link">
+        Convert to LazyColumn
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-2/STEP_030_REPO.html" class="md-nav__link">
+        Selection Tracking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-2/STEP_040_REPO.html" class="md-nav__link">
+        Selections in the UI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-2/STEP_050_REPO.html" class="md-nav__link">
+        Contextual Top Bar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-2/STEP_060_REPO.html" class="md-nav__link">
+        Refactor time!
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-2/STEP_070_REPO.html" class="md-nav__link">
+        Add Actors and Ratings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-2/STEP_080_REPO.html" class="md-nav__link">
+        Better Movie Icon
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-2/STEP_090_FULL.html" class="md-nav__link">
+        Wrapup
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Week 5 (9/28-10/4)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Week 5 (9/28-10/4)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_1" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../compose-text-fields/index.html">Compose Text Fields</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6_1">
+          <span class="md-nav__icon md-icon"></span>
+          Compose Text Fields
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../movie-ui-3/index.html">Movies UI - Updates</a>
+          
+            <label for="__nav_6_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          Movies UI - Updates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-3/STEP_020_REPO.html" class="md-nav__link">
+        Display-screen list cleanup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-3/STEP_030_REPO.html" class="md-nav__link">
+        Deleting from the display screens
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-ui-3/STEP_040_REPO.html" class="md-nav__link">
+        Editing a movie
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          Week 6 (10/5-10/11)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Week 6 (10/5-10/11)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_1" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../movie-widget/index.html">Movies Widget</a>
+          
+            <label for="__nav_7_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_1">
+          <span class="md-nav__icon md-icon"></span>
+          Movies Widget
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-widget/STEP_020_REPO.html" class="md-nav__link">
+        Widget Declaration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../movie-widget/STEP_030_REPO.html" class="md-nav__link">
+        Widget UI and Data
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../speech/index.html">Speech</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          Speech
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          Week 7 (10/12-10/18)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Week 7 (10/12-10/18)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" checked>
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="index.html">Google Map</a>
+          
+            <label for="__nav_8_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_8_1">
+          <span class="md-nav__icon md-icon"></span>
+          Google Map
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_022_FULL.html" class="md-nav__link">
+        Find Your Fingerprint
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_025_FULL.html" class="md-nav__link">
+        Google Console Project
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_030_REPO.html" class="md-nav__link">
+        Set up a map
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_040_REPO.html" class="md-nav__link">
+        Add a Marker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_050_REPO.html" class="md-nav__link">
+        Initial Position
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_060_REPO.html" class="md-nav__link">
+        Loading Spinner
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_070_REPO.html" class="md-nav__link">
+        Map Types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_080_REPO.html" class="md-nav__link">
+        Current Location
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="STEP_090_REPO.html" class="md-nav__link md-nav__link--active">
+        Jump to Current Location
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_100_REPO.html" class="md-nav__link">
+        Add Top Bar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_110_REPO.html" class="md-nav__link">
+        Copy Icons
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_120_REPO.html" class="md-nav__link">
+        Manage Car Location
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_130_REPO.html" class="md-nav__link">
+        Dragging a Marker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_140_REPO.html" class="md-nav__link">
+        Navigating
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="STEP_150_REPO.html" class="md-nav__link">
+        Lat/Lon Bounds
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+        </div>
+    </div>
+</div>
+
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+<div class="sas1-text-column">
+
+<h1>Google Map</h1>
+
+<h2>Jump to Current Location</h2>
+    
+<p>Let's jump to the current location when it's first available and use a custom icon instead of the default marker.</p>
+<p>First, our custom icon. We need to get a <code>BitmapDescriptor</code>. There's no way to do that yet from Compose, so we'll define a drawable vector image resource for this.</p>
+<p>You can create these using File-&gt;New-&gt;Vector Asset, and select an icon or pull in an SVG. This <a class="find-button" href="#090-icon-resource">icon</a> is just a blue circle with a white border. This icon uses a <a class="find-button" href="#090-custom-color">custom color</a>, which must be defined in a resource file, rather than through Compose for now.</p>
+<p>We then set up <a class="find-button" href="#090-icon-state">state for the icon</a> and <a class="find-button" href="#090-load-icon">load the icon</a> in a coroutine once the map has loaded. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The factory for the <code>BitmapDescriptor</code> sometimes isn't available until the map has loaded. It's best to wait until the map is successfully loaded before trying to load the icons.</p>
+</div>
+<p>Finally, we <a class="find-button" href="#090-icon-offset">set the icon</a> on the <code>Marker</code>. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code>anchor</code> parameter defines how the location matches up with the icon. Using an <code>Offset(0.5, 0.5)</code> means the center of the icon is pinned to the location. For the default icons, the bottom center (the pointy tip) marks the location, so we'd use <code>Offset(0.5, 1.0)</code>. </p>
+<p>Mea culpa: I noticed that I accidentally copied the <code>Offset(0.5, 0.5)</code> when I first created the location marker in a previous step. It was using the default marker, so it should have used <code>Offset(0.5, 1.0)</code>.</p>
+</div>
+<p>Running the application now shows</p>
+<p><img alt="Custom Location Icon" src="screenshots/custom-icon.png" width="400" /></p>
+<p><a class="find-button" href="#090-jump-to-location">Jumping</a> to the current location on startup is done with a <code>LaunchedEffect</code> keyed off the <code>currentLocation</code>. The first time this <code>LaunchedEffect</code> is run, the <code>currentLocation</code> is null, and it doesn't do anything. When <code>currentLocation</code> changes, the <code>LaunchedEffect</code> is restarted, and, seeing a non-null <code>currentLocation</code>, asks the <code>cameraPositionState</code> to change via a <code>CameraUpdate</code> command. We set <code>initialBoundsSet</code> to <code>true</code> so we won't move again.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>I'm using the name <code>initialBoundsSet</code> because later we'll be setting a bounding box based on the current location and set car location.</p>
+</div>
+  
+</div>
+  
+<div class="sas1-code-column">
+  
+<h2>Code Changes</h2>
+  
+<details class="success" open>
+<summary>ADDED: /app/src/main/java/com/androidbyexample/googlemap/DrawableHelpers.kt</summary>
+<div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/java/com/androidbyexample/googlemap/DrawableHelpers.kt';">
+<div class='sas1-code-block'>
+<pre><ins>package com.androidbyexample.googlemap</ins><ins></ins><ins>// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</ins><ins>// you may not use this file except in compliance with the License.</ins><ins>// You may obtain a copy of the License at</ins><ins>//</ins><ins>//     https://www.apache.org/licenses/LICENSE-2.0</ins><ins>//</ins><ins>// Unless required by applicable law or agreed to in writing, software</ins><ins>// distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</ins><ins>// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</ins><ins>// See the License for the specific language governing permissions and</ins><ins>// limitations under the License.</ins><ins></ins><ins>import android.content.Context</ins><ins>import android.content.res.Resources</ins><ins>import android.graphics.Bitmap</ins><ins>import android.graphics.Canvas</ins><ins>import android.graphics.drawable.BitmapDrawable</ins><ins>import android.graphics.drawable.Drawable</ins><ins>import androidx.annotation.DrawableRes</ins><ins>import androidx.core.content.ContextCompat</ins><ins>import com.google.android.gms.maps.model.BitmapDescriptor</ins><ins>import com.google.android.gms.maps.model.BitmapDescriptorFactory</ins><ins></ins><ins>// NOTE: I wanted to show an example of a set of extensions nicely-documented</ins><ins>// for KDoc generation using the Dokka tool. There's an example of the setup</ins><ins>// in the build scripts. Note that Dokka is still pretty young and doesn't</ins><ins>// generate the prettiest documentation... But you can use it to generate</ins><ins>// markdown and use another tool to generate something prettier...</ins><ins></ins><ins>/**</ins><ins> * Returns a [Bitmap] for the intrinsic size of any [Drawable]. If the</ins><ins> * drawable is a [BitmapDrawable], we just return it. Otherwise, we create a</ins><ins> * new [Bitmap] of the intrinsic size of the [Drawable], draw the [Drawable]</ins><ins> * to it, and return the [Bitmap].</ins><ins> *</ins><ins> * @sample loadBitmap</ins><ins> * @receiver Any [Drawable]</ins><ins> * @return a [Bitmap] representation of the [Drawable]</ins><ins> */</ins><ins>fun Drawable.toBitmap(): Bitmap =</ins><ins>    when {</ins><ins>        // if it's already a bitmap; just return it</ins><ins>        this is BitmapDrawable -&gt; bitmap</ins><ins></ins><ins>        // otherwise, create a bitmap and draw the drawable to it</ins><ins>        intrinsicWidth == 0 || intrinsicHeight == 0 -&gt;</ins><ins>            throw IllegalArgumentException(</ins><ins>                &quot;Drawable cannot be converted to a Bitmap; it must have &quot; +</ins><ins>                        &quot;non-zero intrinsic width and height&quot;)</ins><ins></ins><ins>        else -&gt;</ins><ins>            Bitmap.createBitmap(</ins><ins>                intrinsicWidth,</ins><ins>                intrinsicHeight,</ins><ins>                Bitmap.Config.ARGB_8888</ins><ins>            ).apply {</ins><ins>                val canvas = Canvas(this)</ins><ins>                setBounds(0, 0, canvas.width, canvas.height)</ins><ins>                draw(canvas)</ins><ins>            }</ins><ins>    }</ins><ins></ins><ins>/**</ins><ins> * Loads a [Bitmap] by the resource id of a [Drawable].</ins><ins> *</ins><ins> * @sample loadBitmapDescriptor</ins><ins> * @receiver [Context] to load the [Drawable]</ins><ins> * @param id [Int] the resource id of the [Drawable]</ins><ins> * @return a [Bitmap] representation of the [Drawable]</ins><ins> */</ins><ins>fun Context.loadBitmap(@DrawableRes id: Int): Bitmap =</ins><ins>    ContextCompat.getDrawable(this, id)?.toBitmap()</ins><ins>        ?: throw Resources.NotFoundException(resources.getResourceName(id))</ins><ins></ins><ins></ins><ins>/**</ins><ins> * Loads a [BitmapDescriptor] by the resource id of a [Drawable].</ins><ins> *</ins><ins> * @sample com.javadude.maps.samples.SampleActivity.onCreate</ins><ins> * @receiver [Context] to load the [Drawable]</ins><ins> * @param id [Int] the resource id of the [Drawable]</ins><ins> * @return a [Bitmap] representation of the [Drawable]</ins><ins> */</ins><ins>@Suppress(&quot;KDocUnresolvedReference&quot;)</ins><ins>// they actually are resolved by dokka 'samples' config</ins><ins>fun Context.loadBitmapDescriptor(@DrawableRes id: Int): BitmapDescriptor =</ins><ins>    loadBitmap(id).toBitmapDescriptor()</ins><ins></ins><ins></ins><ins>/**</ins><ins> * Converts a [Bitmap] to a [BitmapDescriptor]</ins><ins> *</ins><ins> * @sample loadBitmapDescriptor</ins><ins> */</ins><ins>fun Bitmap.toBitmapDescriptor(): BitmapDescriptor =</ins><ins>    BitmapDescriptorFactory.fromBitmap(this)</ins></pre>
+</div>
+</div>
+</details>
+<details class="example" open>
+<summary>CHANGED: /app/src/main/java/com/androidbyexample/googlemap/MainActivity.kt</summary>
+<div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/java/com/androidbyexample/googlemap/MainActivity.kt';">
+<div class='sas1-code-block'>
+<pre>package com.androidbyexample.googlemap
+
+import android.Manifest
+import android.annotation.SuppressLint
+import android.app.AlertDialog
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.location.Location
+import android.net.Uri
+import android.os.Bundle
+import android.os.Looper
+import android.provider.Settings
+import android.widget.Toast
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.viewModels
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.EnterTransition
+import androidx.compose.animation.fadeOut
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.runtime.Composable
+<ins>import androidx.compose.runtime.LaunchedEffect</ins>import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+<ins>import androidx.compose.runtime.rememberCoroutineScope</ins>import androidx.compose.runtime.setValue
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Offset
+<ins>import androidx.compose.ui.platform.LocalContext</ins>import androidx.compose.ui.res.stringResource
+import androidx.core.app.ActivityCompat
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.androidbyexample.googlemap.ui.theme.GoogleMapTheme
+import com.google.android.gms.common.GoogleApiAvailability
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationCallback
+import com.google.android.gms.location.LocationRequest
+import com.google.android.gms.location.LocationResult
+import com.google.android.gms.location.LocationServices
+import com.google.android.gms.location.Priority
+<ins>import com.google.android.gms.maps.CameraUpdateFactory</ins><ins>import com.google.android.gms.maps.model.BitmapDescriptor</ins>import com.google.android.gms.maps.model.CameraPosition
+import com.google.android.gms.maps.model.LatLng
+import com.google.maps.android.compose.CameraPositionState
+import com.google.maps.android.compose.GoogleMap
+import com.google.maps.android.compose.MapProperties
+import com.google.maps.android.compose.MapType
+import com.google.maps.android.compose.MarkerInfoWindowContent
+import com.google.maps.android.compose.MarkerState
+import com.google.maps.android.compose.rememberCameraPositionState
+<del>//private val googleHQ = LatLng(37.42423291057923, -122.08811454627153)</del><del>//private val defaultCameraPosition = CameraPosition.fromLatLngZoom(googleHQ, 11f)</del><ins>import kotlinx.coroutines.Dispatchers</ins><ins>import kotlinx.coroutines.launch</ins>
+class MainActivity : ComponentActivity() {
+    private val viewModel: CarViewModel by viewModels()
+
+<div id="080-location-client-and-callback">    private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
+
+    private val locationCallback = object : LocationCallback() {
+        override fun onLocationResult(locationResult: LocationResult) {
+            viewModel.updateLocation(locationResult.lastLocation)
+        }
+    }
+</div>
+<div id="080-permission-launcher">    private val getLocationPermission =
+        registerForActivityResult(
+            ActivityResultContracts.RequestMultiplePermissions()
+        ) { isGranted -&gt;
+            if (isGranted.values.any { it }) {
+                startLocationAndMap()
+            } else {
+                // if the user denied permissions, tell them they
+                //   cannot use the app without them. In general,
+                //   you should try to just reduce function and let the
+                //   user continue, but location is a key part of this
+                //   application.
+                //   (Note that a real version of this application
+                //   might allow the user to manually click on the map
+                //   to set their current location, and we wouldn't
+                //   show this dialog, or perhaps only show it once)
+                // NOTE: This is a normal Android-View-based dialog, not a compose one!
+                AlertDialog.Builder(this)
+                    .setTitle(&quot;Permissions Needed&quot;)
+                    .setMessage(
+                        &quot;We need coarse-location or fine-location permission &quot; +
+                                &quot;to locate a car (fine location is highly &quot; +
+                                &quot;recommended for accurate car locating). &quot; +
+                                &quot;Please allow these permissions via App Info &quot; +
+                                &quot;settings&quot;)
+                    .setCancelable(false)
+                    .setNegativeButton(&quot;Quit&quot;) { _, _ -&gt; finish() }
+                    .setPositiveButton(&quot;App Info&quot;) { _, _ -&gt;
+                        startActivity(
+                            Intent(
+                                Settings.ACTION_APPLICATION_DETAILS_SETTINGS
+                            ).apply {
+                                data = Uri.parse(&quot;package:$packageName&quot;)
+                            }
+                        )
+                        finish()
+                    }
+                    .show()
+            }
+        }
+</div>
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+<div id="080-check-play-services">        GoogleApiAvailability.getInstance()
+            .makeGooglePlayServicesAvailable(this)
+            .addOnSuccessListener {
+<div id="080-have-permission">                if (ActivityCompat.checkSelfPermission(
+                        this,
+                        Manifest.permission.ACCESS_FINE_LOCATION
+                    ) != PackageManager.PERMISSION_GRANTED &amp;&amp;
+                    ActivityCompat.checkSelfPermission(
+                        this,
+                        Manifest.permission.ACCESS_COARSE_LOCATION
+                    ) != PackageManager.PERMISSION_GRANTED
+                ) {
+                    getLocationPermission.launch(
+                        arrayOf(
+                            Manifest.permission.ACCESS_FINE_LOCATION,
+                            Manifest.permission.ACCESS_COARSE_LOCATION
+                        )
+                    )
+                } else {
+                    startLocationAndMap()
+                }
+</div>            }.addOnFailureListener(this) {
+                Toast.makeText(
+                    this,
+                    &quot;Google Play services required (or upgrade required)&quot;,
+                    Toast.LENGTH_SHORT
+                ).show()
+                finish()
+            }
+</div>    }
+
+    @SuppressLint(&quot;MissingPermission&quot;)
+    fun startLocationAndMap() {
+<div id="080-request-location-updates">        val locationRequest =
+            LocationRequest.Builder(Priority.PRIORITY_HIGH_ACCURACY, 5000)
+                .setWaitForAccurateLocation(false)
+                .setMinUpdateIntervalMillis(0)
+                .setMaxUpdateDelayMillis(5000)
+                .build()
+
+        fusedLocationProviderClient =
+            LocationServices.getFusedLocationProviderClient(this)
+        fusedLocationProviderClient.requestLocationUpdates(
+            locationRequest,
+            locationCallback,
+            Looper.getMainLooper()
+        )
+</div>
+        setContent {
+            GoogleMapTheme {
+                // A surface container using the 'background' color from the theme
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
+<div id="050-camera-position-state"><del>//                  val cameraPositionState = rememberCameraPositionState {</del><del>//                      position = defaultCameraPosition</del><del>//                  }</del><ins>                    val cameraPositionState = rememberCameraPositionState()</ins></div>
+<div id="080-collect-location-state">                    val currentLocation by viewModel.currentLocation.collectAsStateWithLifecycle(
+                        initialValue = null
+                    )
+</div>
+<div id="040-factor-map">                    GoogleMapDisplay(
+                        currentLocation = currentLocation,
+<del>//                      place = googleHQ,</del><del>//                      placeDescription = &quot;Google HQ&quot;,</del>                        cameraPositionState = cameraPositionState,
+                        modifier = Modifier.fillMaxSize(),
+                    )
+</div>                }
+            }
+        }
+    }
+}
+
+
+<div id="040-new-map-composable">@Composable
+fun GoogleMapDisplay(
+    currentLocation: Location?,
+<del>//  place: LatLng,</del><del>//  placeDescription: String,</del>    cameraPositionState: CameraPositionState,
+    modifier: Modifier,
+) {
+<div id="060-marker-state-holder">    var mapLoaded by remember { mutableStateOf(false) }
+</div>
+<div id="070-current-map-type">    var currentMapType by remember { mutableStateOf(MapType.NORMAL) }
+
+    var mapProperties by remember {
+        mutableStateOf(MapProperties(mapType = MapType.NORMAL))
+    }
+</div>
+<div id="080-current-location-state">    val currentLocationState = remember(currentLocation) {
+        currentLocation?.let {
+            MarkerState(
+                LatLng(
+                    it.latitude,
+                    it.longitude
+                )
+            )
+        }
+    }
+</div>
+<div id="090-icon-state"><ins>    val context = LocalContext.current</ins><ins>    var currentLocationIcon by</ins><ins>    remember { mutableStateOf&lt;BitmapDescriptor?&gt;(null) }</ins><ins>    val scope = rememberCoroutineScope()</ins></div><ins></ins><div id="090-jump-to-location"><ins>    var initialBoundsSet by remember { mutableStateOf(false) }</ins><ins></ins><ins>    LaunchedEffect(key1 = currentLocation) {</ins><ins>        if (currentLocation != null) {</ins><ins>            if (!initialBoundsSet) {</ins><ins>                initialBoundsSet = true</ins><ins>                val current =</ins><ins>                    LatLng(currentLocation.latitude, currentLocation.longitude)</ins><ins>                cameraPositionState.animate(</ins><ins>                    CameraUpdateFactory.newLatLngZoom(</ins><ins>                        current,</ins><ins>                        16f</ins><ins>                    ), 1000</ins><ins>                )</ins><ins>            }</ins><ins>        }</ins><ins>    }</ins></div><ins></ins>    Box(
+<div id="060-top-level-modifier">        modifier = modifier,
+</div>    ) {
+<div id="070-column">        Column(
+            modifier = Modifier.fillMaxSize()
+        ) {
+            MapTypeSelector(
+                currentValue = currentMapType,
+                modifier = Modifier.fillMaxWidth(),
+            ) {
+                mapProperties = mapProperties.copy(mapType = it)
+                currentMapType = it
+            }
+</div>            GoogleMap(
+<div id="050-use-camera-position-state">                cameraPositionState = cameraPositionState,
+</div><div id="060-set-mapLoaded">                onMapLoaded = {
+                    mapLoaded = true
+<div id="090-load-icon"><ins>                    scope.launch(Dispatchers.IO) {</ins><ins>                        currentLocationIcon =</ins><ins>                            context.loadBitmapDescriptor(</ins><ins>                                R.drawable.ic_current_location</ins><ins>                            )</ins><ins>                    }</ins></div>                },
+</div><div id="070-pass-properties">                properties = mapProperties,
+</div><div id="040-map-modifier"><div id="060-map-modifier-change"><div id="070-map-weight">                modifier = Modifier
+                    .fillMaxWidth()
+                    .weight(1f),
+</div></div></div>            ) {
+<div id="080-marker">                currentLocationState?.let {
+                    MarkerInfoWindowContent(
+                        state = it,
+<div id="090-icon-offset"><ins>                        icon = currentLocationIcon,</ins>                        anchor = Offset(0.5f, 0.5f),
+</div>                        title = stringResource(
+                            id = R.string.current_location
+                        ),
+                    )
+                }
+</div>            }
+        }
+    }
+<div id="060-progress-spinner">    if (!mapLoaded) {
+        AnimatedVisibility(
+            visible = true,
+            modifier = Modifier.fillMaxSize(),
+            enter = EnterTransition.None,
+            exit = fadeOut()
+        ) {
+            CircularProgressIndicator(
+                modifier = Modifier
+                    .background(MaterialTheme.colorScheme.background)
+                    .wrapContentSize()
+            )
+        }
+    }
+</div>}
+</div></pre>
+</div>
+</div>
+</details>
+<details class="success" open>
+<summary>ADDED: /app/src/main/res/drawable/ic_current_location.xml</summary>
+<div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/res/drawable/ic_current_location.xml';">
+<div class='sas1-code-block'>
+<pre><ins>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</ins><div id="090-icon-resource"><ins>&lt;shape android:shape=&quot;oval&quot;</ins><ins>    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;</ins><ins>    &lt;size android:height=&quot;24dp&quot; android:width=&quot;24dp&quot; /&gt;</ins><ins>    &lt;stroke android:color=&quot;@android:color/white&quot; android:width=&quot;3dp&quot;/&gt;</ins><ins>    &lt;solid android:color=&quot;@color/my_location&quot; /&gt;</ins><ins>&lt;/shape&gt;</ins></div></pre>
+</div>
+</div>
+</details>
+<details class="example" open>
+<summary>CHANGED: /app/src/main/res/values/colors.xml</summary>
+<div class="sas1-code-file" style="--sas1-file-name: '/app/src/main/res/values/colors.xml';">
+<div class='sas1-code-block'>
+<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;resources&gt;
+<div id="090-custom-color"><ins>    &lt;color name=&quot;my_location&quot;&gt;#FF0000FF&lt;/color&gt;</ins></div>    &lt;color name=&quot;purple_200&quot;&gt;#FFBB86FC&lt;/color&gt;
+    &lt;color name=&quot;purple_500&quot;&gt;#FF6200EE&lt;/color&gt;
+    &lt;color name=&quot;purple_700&quot;&gt;#FF3700B3&lt;/color&gt;
+    &lt;color name=&quot;teal_200&quot;&gt;#FF03DAC5&lt;/color&gt;
+    &lt;color name=&quot;teal_700&quot;&gt;#FF018786&lt;/color&gt;
+    &lt;color name=&quot;black&quot;&gt;#FF000000&lt;/color&gt;
+    &lt;color name=&quot;white&quot;&gt;#FFFFFFFF&lt;/color&gt;
+&lt;/resources&gt;
+</pre>
+</div>
+</div>
+</details>
+  
+</div>
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="" >
+      
+        
+        <a href="STEP_080_REPO.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Current Location" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Current Location
+            </div>
+          </div>
+        </a>
+      
+      <div class="md-footer-meta md-typeset">
+        <div class="md-footer-meta__inner md-grid">
+          <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023. Scott Stanchfield
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+          
+        </div>
+      </div>    
+      
+        
+        <a href="STEP_100_REPO.html" class="md-footer__link md-footer__link--next" aria-label="Next: Add Top Bar" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Add Top Bar
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.sections", "search.suggest", "search.highlight", "navigation.instant", "content.tabs.link", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>
