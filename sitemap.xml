@@ -201,6 +201,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://androidbyexample.com/modules/legacy-views/index.html</loc>
+         <lastmod>2023-11-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://androidbyexample.com/modules/movie-db/index.html</loc>
          <lastmod>2023-11-01</lastmod>
          <changefreq>daily</changefreq>
