@@ -8,20 +8,18 @@
       
       
       
-        <link rel="canonical" href="https://androidbyexample.com/modules/compose-concepts/STEP_060_FULL.html">
+        <link rel="canonical" href="https://androidbyexample.com/modules/testing/index.html">
       
       
-        <link rel="prev" href="STEP_050_FULL.html">
+        <link rel="prev" href="../compose-layouts/index.html">
       
-      
-        <link rel="next" href="STEP_070_FULL.html">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
     
     
       
-        <title>Where do you store state? - Android By Example</title>
+        <title>Testing - Android By Example</title>
       
     
     
@@ -82,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#state-defined-outside-of-composable-functions" class="md-skip">
+        <a href="#introduction" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Where do you store state?
+              Testing
             
           </span>
         </div>
@@ -535,18 +533,18 @@
 
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
       
       
         
@@ -561,7 +559,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Week 2 (9/7-9/13)
@@ -572,16 +570,16 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1" >
       
       
         
@@ -606,7 +604,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="index.html">Jetpack Compose Concepts</a>
+          <a href="../compose-concepts/index.html">Jetpack Compose Concepts</a>
           
             <label for="__nav_3_1">
               <span class="md-nav__icon md-icon"></span>
@@ -614,7 +612,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3_1">
           <span class="md-nav__icon md-icon"></span>
           Jetpack Compose Concepts
@@ -629,7 +627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="STEP_020_FULL.html" class="md-nav__link">
+      <a href="../compose-concepts/STEP_020_FULL.html" class="md-nav__link">
         Composable Functions
       </a>
     </li>
@@ -643,7 +641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="STEP_030_FULL.html" class="md-nav__link">
+      <a href="../compose-concepts/STEP_030_FULL.html" class="md-nav__link">
         String literals
       </a>
     </li>
@@ -657,7 +655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="STEP_040_FULL.html" class="md-nav__link">
+      <a href="../compose-concepts/STEP_040_FULL.html" class="md-nav__link">
         State
       </a>
     </li>
@@ -671,7 +669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="STEP_050_FULL.html" class="md-nav__link">
+      <a href="../compose-concepts/STEP_050_FULL.html" class="md-nav__link">
         Compose Optimizations
       </a>
     </li>
@@ -683,62 +681,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Where do you store state?
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="STEP_060_FULL.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../compose-concepts/STEP_060_FULL.html" class="md-nav__link">
         Where do you store state?
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#state-defined-outside-of-composable-functions" class="md-nav__link">
-    State defined outside of composable functions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#viewmodels" class="md-nav__link">
-    ViewModels
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#state-inside-composable-functions" class="md-nav__link">
-    State inside composable functions
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -750,7 +697,7 @@
   
   
     <li class="md-nav__item">
-      <a href="STEP_070_FULL.html" class="md-nav__link">
+      <a href="../compose-concepts/STEP_070_FULL.html" class="md-nav__link">
         Density
       </a>
     </li>
@@ -2648,18 +2595,18 @@
 
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
       
       
-        
-      
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" checked>
       
       
         
@@ -2672,7 +2619,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_13">
           <span class="md-nav__icon md-icon"></span>
           Week 12 (11/16-11/29)
@@ -2683,16 +2630,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-        
-      
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13_1" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_1" checked>
       
       
         
@@ -2704,12 +2651,12 @@
       
         
         
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../testing/index.html">Testing</a>
+        <div class="md-nav__link md-nav__link--index md-nav__link--active">
+          <a href="index.html">Testing</a>
           
         </div>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_1_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_1_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_13_1">
           <span class="md-nav__icon md-icon"></span>
           Testing
@@ -2745,155 +2692,30 @@
 
 <div class="sas1-text-area">
             
-<h1>Jetpack Compose Concepts</h1>
+<h1>Testing</h1>
 
-<h2>Where do you store state?</h2>
+<h2>Testing</h2>
   
-<p>There are a few things you need to consider when deciding where to define your state:</p>
-<ul>
-<li>Where does the data come from?</li>
-<li>Does it need to persist across runs of the application?</li>
-<li>Does it need to persist if the device configuration changes (such as the user changing its orientation)?</li>
-<li>Is the data only used inside a composable function (perhaps it's a scrollbar position that's not needed outside)?</li>
-</ul>
-<h3 id="state-defined-outside-of-composable-functions">State defined outside of composable functions</h3>
-<p>Let's start by looking at a very simple <code>Activity</code> that displays a person's name. An <code>Activity</code> manages the user interface for your application. Whatever you call in <code>setContent</code> will declare your Compose UI. <code>setContent</code> creates the root Compose context; composable functions can only be called from it or from other composable functions.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nc">MainActivity</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ComponentActivity</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">person</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">mutableStateOf</span><span class="p">(</span><span class="n">Person</span><span class="p">(</span><span class="s">&quot;Scott&quot;</span><span class="p">))</span>
+<h2 id="introduction">Introduction</h2>
+<p>Automated tests can greatly improve the quality of your projects. You can run quick unit tests to check out non platform code, such as view models and algorithms, and instrumented tests that run on an emulator to test platform interaction such as user interfaces and databases.</p>
+<p>In this module we'll add some tests to a simplified movies application.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Due to out-of-town trips and a bout of COVID, I decided to edit a recording of a live lecture that I gave Summer 2021. There are a few rough spots near the end of the first part of the example (live coding works well for me most of the time, but when it goes south, it does so spectacularly), but they're worked out in the second part of the example.</p>
+</div>
+<h2 id="videos">Videos</h2>
+<p>Total video time for this module: 2:19:06</p>
+<h3 id="testing-lecture-summer-2021-2031">Testing: Lecture (Summer 2021) (20:31)</h3>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/6MdN6GSjcSc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span><span class="w"> </span><span class="n">Bundle?)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
-<span class="w">        </span><span class="n">setContent</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="n">Text</span><span class="p">(</span><span class="n">person</span><span class="p">.</span><span class="na">name</span><span class="p">)</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>Here we define <code>person</code> inside the <code>Activity</code> class, but outside of <code>setContent</code>; it's not inside a composable function.</p>
-<p>This works until the device configuration changes. A "configuration change" occurs when, among many other things, the user changes settings (such as language) on the device, folds/unfolds the screen of a foldable device, connects a device to Android Auto, or simply rotates the device from portrait to landscape.</p>
-<p>The most common configuration change is device rotation (when "auto rotate" is set), so we'll use that as an example.</p>
-<p>When an <code>Activity</code> is created, it uses the device configuration to resolve any resources such as strings and images (and if you're using the old "views" based UIs, layouts, menus, themes and so on). To make this easy on the developer, by default, Android will destroy and recreate the <code>Activity</code> instance so the developer doesn't need to worry about potentially stale resources.</p>
-<p>The problem is, when the <code>Activity</code> is destroyed and recreated, any properties it defines are also destroyed and recreated.</p>
-<p>This includes <code>person</code> in the above example. If <code>person</code> had been changed, and the user rotates the device, poof! <code>person</code> is reset to <code>Person("Scott")</code>.</p>
-<p>To deal with this, we could persist the person in a database, but if the data doesn't need to be retained across runs of the application, this is overkill.</p>
-<h2 id="viewmodels">ViewModels</h2>
-<p>This is where <code>ViewModel</code>s come in. A <code>ViewModel</code>, in Android terms, is a class that prepares/fetches/holds data for an <code>Activity</code> as long as that <code>Activity</code> is being used. This includes across configuration changes, so it's a great place to store state while the application is running.</p>
-<p>We can create a view model like</p>
-<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nc">MyViewModel</span><span class="p">:</span><span class="w"> </span><span class="n">ViewModel</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">person</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">mutableStateOf</span><span class="p">(</span><span class="n">Person</span><span class="p">(</span><span class="s">&quot;Scott&quot;</span><span class="p">))</span>
-<span class="p">}</span>
-</code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>When adding <code>by mutableStateOf(...)</code> to a file for the first time, you'll see some error underlines. If you float over the error, you see a message indicating that <code>MutableState</code> has no method <code>getValue(...)</code> and it can't be used as a property delegate. The basic <code>MutableState</code> type itself isn't directly usable as a property delegate.
-We can import</p>
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.getValue</span>
-<span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.setValue</span>
-</code></pre></div>
-<p>which are <strong>extension functions</strong> that adapt <code>MutableState</code> for use as a property delegate.</p>
-<p>You can import these by hitting alt-enter when your cursor is on the red squiggly underline, or clicking the lightbulb to the left of the line.</p>
-</div>
-<p>Back in our <code>Activity</code>, we can use the </p>
-<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nc">MainActivity</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ComponentActivity</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">viewModel</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">viewModels</span><span class="o">&lt;</span><span class="n">MyViewModel</span><span class="o">&gt;</span><span class="p">()</span>
-<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span><span class="w"> </span><span class="n">Bundle?)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
-<span class="w">        </span><span class="n">setContent</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="n">PersonScreen</span><span class="p">(</span><span class="n">viewModel</span><span class="p">.</span><span class="na">person</span><span class="p">)</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>The property delegate created by <code>viewModels&lt;MyViewModel&gt;()</code> will create a new instance of <code>MyViewModel</code> when it doesn't yet exist for use with <code>MainActivity</code>, and reuse an existing <code>MyViewModel</code> if it had already been created for <code>MainActivity</code>. Note that if you use <code>viewModels&lt;MyViewModel&gt;</code> in an different <code>Activity</code> class you'll get a different instance. That shouldn't be an issue, as you should usually only be creating a single <code>Activity</code> for your application.</p>
-<p>Now if we changed <code>person</code> and rotated the screen, the same <code>person</code> value will be available in the new instance of <code>MainActivity</code>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>While you <em>can</em> create a <code>MutableState</code> in your view model, many don't feel comfortable with bringing a Compose detail into a view model. If you were thinking of sharing your view model across different types of UIs, such as a web UI, command line, or desktop in addition to Compose, you might want to consider using a Kotlin <code>Flow</code> to store the data and collect it inside the UI. We'll use this <code>Flow</code> approach in our examples once we start working with database data. For now, we'll use <code>MutableState</code>.</p>
-<p>For the record, I'm on the fence here. If you're only using a Compose UI, directly using <code>MutableState</code> inside your view model is simpler all around. You'll likely end up with a mix of <code>Flow</code> and <code>MutableState</code> in your view model, though, as the data frameworks you likely use (like Room) can produce <code>Flow</code>s but not <code>MutableState</code>. The other side of my fence is that desire to keep the view model "clean" of UI specifics.</p>
-<p>However - state is part of Compose <strong>runtime</strong>, which is separate from Compose <strong>UI</strong>. Unfortunately at the moment there are some inter-dependencies between the two. I hope that someday the runtime can be used separately from the ui, and then we could use runtime as an independent state manager with cool tree-building support.</p>
-</div>
-<h2 id="state-inside-composable-functions">State inside composable functions</h2>
-<p>Sometimes the right place to store data is inside a composable function. For example, you can define state that controls the scroll position of a list of items, and may not need it outside of that composable function. </p>
-<div class="highlight"><pre><span></span><code><span class="nd">@Composable</span>
-<span class="kd">fun</span><span class="w"> </span><span class="nf">LongScreen</span><span class="p">(...)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">Column</span><span class="p">(</span>
-<span class="w">        </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">verticalScroll</span><span class="p">(</span><span class="n">ScrollState</span><span class="p">(</span><span class="m">0</span><span class="p">))</span>
-<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>In this definition, we're defining an instance of <code>ScrollState</code> and passing it into a modifier for <code>Column</code> that controls scrolling.</p>
-<p>Unfortunately this won't work - every time we recompose <code>LongScreen</code>, we create a new instance of <code>ScrollState</code> at position 0; the page will never appear to scroll.</p>
-<p>We need to create an instance of the <code>ScrollState</code> and reuse it across recompositions. We do this using <code>remember</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="nd">@Composable</span>
-<span class="kd">fun</span><span class="w"> </span><span class="nf">LongScreen</span><span class="p">(...)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">scrollState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">remember</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">ScrollState</span><span class="p">(</span><span class="n">initial</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">)</span>
-<span class="w">    </span><span class="p">}</span>
+<h3 id="testing-example-part-1-summer-2021-10204">Testing: Example, Part 1 (Summer 2021) (1:02:04)</h3>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/k4aAgzQ4IyE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<span class="w">    </span><span class="n">Column</span><span class="p">(</span>
-<span class="w">        </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">verticalScroll</span><span class="p">(</span><span class="n">scrollState</span><span class="p">)</span>
-<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<p><code>remember</code> creates a spot in the subtree being declared by a composable function. Its lambda defines the value to store inside that spot. The lambda is only run on initial composition (but we can specify key data that forces it to reevaluate - more on that later).</p>
-<p>In this case, we carve out a spot to store a <code>ScrollState</code> inside the tree being declared. The value in that spot will be reused in recomposition, until this subtree no longer exists in the composition. (For example, if you switch to show a different screen in your application).</p>
-<p>This works great until a configuration change occurs. Because the <code>Activity</code> is destroyed and recreated, so is the UI. The existing tree is disposed and a new tree is created. This is one of the reasons it's so important that composable functions are idempotent - a tree representing the same data can be recreated.</p>
-<p>If we want the data to survive a configuration change, we can use <code>rememberSaveable</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">scrollstate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rememberSaveable</span><span class="p">(</span><span class="n">saver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ScrollState</span><span class="p">.</span><span class="na">Saver</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">ScrollState</span><span class="p">(</span><span class="n">initial</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>Note that <code>rememberSaveable</code> requires a <code>saver</code> to be passed in - this describes how the data is saved across configuration changes. In this case, we have</p>
-<div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">Saver</span><span class="p">:</span><span class="w"> </span><span class="n">Saver</span><span class="o">&lt;</span><span class="n">ScrollState</span><span class="p">,</span><span class="w"> </span><span class="o">*&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Saver</span><span class="p">(</span>
-<span class="w">    </span><span class="n">save</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nb">it</span><span class="p">.</span><span class="na">value</span><span class="w"> </span><span class="p">},</span>
-<span class="w">    </span><span class="n">restore</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">ScrollState</span><span class="p">(</span><span class="nb">it</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
-<span class="p">)</span>
-</code></pre></div>
-<p>This <code>saver</code> just returns the value of the <code>ScrollState</code> (its position) to be stored and creates a new <code>ScrollState</code> when being restored.</p>
-<p>State objects like <code>ScrollState</code> will often provide a shorthand for the <code>remember</code> block. In this case, we can use</p>
-<div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">scrollState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rememberScrollState</span><span class="p">()</span>
-<span class="n">Column</span><span class="p">(</span>
-<span class="w">    </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">verticalScroll</span><span class="p">(</span><span class="n">scrollState</span><span class="p">)</span>
-<span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
-</code></pre></div>
-<p>or, if you don't need to look at/modify the scroll state:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Column</span><span class="p">(</span>
-<span class="w">    </span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">verticalScroll</span><span class="p">(</span><span class="n">rememberScrollState</span><span class="p">())</span>
-<span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
-</code></pre></div>
-<p>As a more interesting example, we can look at <code>TextField</code> for letting the user edit a value:</p>
-<div class="highlight"><pre><span></span><code><span class="nd">@Composable</span>
-<span class="kd">fun</span><span class="w"> </span><span class="nf">MyTextField</span><span class="p">(</span>
-<span class="w">    </span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w">                          </span><span class="c1">// AAA</span>
-<span class="w">    </span><span class="n">onValueChange</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">,</span><span class="w">        </span><span class="c1">// BBB</span>
-<span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">displayedText</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">remember</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// CCC</span>
-<span class="w">        </span><span class="n">mutableStateOf</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="w">               </span><span class="c1">// DDD</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="n">TextField</span><span class="p">(</span>
-<span class="w">        </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">displayedText</span><span class="p">,</span><span class="w">              </span><span class="c1">// EEE</span>
-<span class="w">        </span><span class="n">onValueChange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="n">displayedText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">it</span><span class="w">              </span><span class="c1">// FFF</span>
-<span class="w">            </span><span class="n">onValueChange</span><span class="p">(</span><span class="nb">it</span><span class="p">)</span><span class="w">               </span><span class="c1">// GGG</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>The basic operation of <code>MyTextField</code> is to pass in a <code>value</code> (line AAA) to edit and an event function <code>onValueChange</code> (line BBB) that informs the caller when the value has changed. In an ideal world, as the user types to change the field, the new value is sent to the caller who updates the value, triggering recomposition. The user would see the new value.</p>
-<p>Unfortunately, we have no idea what the caller will be doing with the value and how long it will take to come back. Meanwhile the user keeps typing and more <code>onValueChange</code> calls are made. This can result in race conditions and some "interesting" looking text if the user types quickly.</p>
-<p>To respond as quickly as possible for the user while they're typing, we create an internal bucket to hold the displayed value:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nv">displayedText</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">remember</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// CCC</span>
-<span class="w">    </span><span class="n">mutableStateOf</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="w">               </span><span class="c1">// DDD</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>On line CCC, we carve out a spot in the tree being declared by <code>MyTextField</code> to hold our bucket. This spot is initialized via its lambda, creating the bucket on line DDD. The <code>value</code> in <code>remember(value)</code> is a <em>key</em>. Whenever that value changes, the lambda is re-executed, creating a new bucket with the new value from the outside.</p>
-<p>On line EEE, we pass the value from the bucket to be displayed in the <code>TextField</code>, and whenever the user makes a change, line FFF updates the bucket value, triggering recomposition of the <code>TextField</code>.</p>
-<p>Line GGG informs the caller of the change. When we implement this later, we'll <em>debounce</em> the update to limit how often we update the caller.</p>
-<p>In this example we're using <code>remember</code> and not <code>rememberSaveable</code>. The source of truth for the value is coming from the outside, and will be passed in again after a configuration change, and the <code>remember</code> will recreate the bucket based on that data.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><code>remember</code> is a composable function, but it returns a value! Any composable function that returns a value must not call composable functions that emit nodes to the tree! Any composable function that emits nodes to the tree must not return a value. Compose makes these assumptions and can perform some optimizations that won't work properly if you don't adhere to these conventions.</p>
-</div>
+<h3 id="testing-example-part-2-summer-2021-5631">Testing: Example, Part 2 (Summer 2021) (56:31)</h3>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/Pd5W-YQoDrA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h2 id="example-source">Example Source</h2>
+<p>See: <a href="https://gitlab.com/605-686/fall-2023-refresh/modules/testing">https://gitlab.com/605-686/fall-2023-refresh/modules/testing</a></p>
   
 </div>
   
@@ -2915,7 +2737,7 @@ We can import</p>
     <nav class="md-footer__inner md-grid" aria-label="" >
       
         
-        <a href="STEP_050_FULL.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Compose Optimizations" rel="prev">
+        <a href="../compose-layouts/index.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Compose Layouts" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -2924,7 +2746,7 @@ We can import</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Compose Optimizations
+              Compose Layouts
             </div>
           </div>
         </a>
@@ -2947,21 +2769,6 @@ We can import</p>
           
         </div>
       </div>    
-      
-        
-        <a href="STEP_070_FULL.html" class="md-footer__link md-footer__link--next" aria-label="Next: Density" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Density
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
       
     </nav>
   
