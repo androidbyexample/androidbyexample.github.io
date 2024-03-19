@@ -254,7 +254,7 @@ a.find-button {
     transition: padding 0.3s linear;
 }
 
-*:target::after {
+.sas1-code-block *:target::after {
     content: 'File: ' var(--sas1-file-name) '\A';
     background-color: var(--md-primary-bg-color);
     position: relative;
