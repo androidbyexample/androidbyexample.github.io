@@ -96,6 +96,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://androidbyexample.com/modules/compose-graphics-2/index.html</loc>
+         <lastmod>2025-03-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://androidbyexample.com/modules/compose-graphics-2/repo.html</loc>
+         <lastmod>2025-03-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://androidbyexample.com/modules/compose-layouts/index.html</loc>
          <lastmod>2025-03-13</lastmod>
          <changefreq>daily</changefreq>
