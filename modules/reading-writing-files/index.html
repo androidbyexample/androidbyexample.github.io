@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://androidbyexample.com/modules/architecture/STEP_070_FULL.html">
+        <link rel="canonical" href="https://androidbyexample.com/modules/reading-writing-files/index.html">
       
       
-        <link rel="prev" href="STEP_060_FULL.html">
+        <link rel="prev" href="repo.html">
       
       
-        <link rel="next" href="STEP_080_FULL.html">
+        <link rel="next" href="../tbd/STEP_010_FULL.html">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Concurrency - Android By Example</title>
+        <title>Reading/Writing Files - Android By Example</title>
       
     
     
@@ -91,6 +91,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#introduction" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -122,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Concurrency
+              Reading/Writing Files
             
           </span>
         </div>
@@ -479,8 +484,6 @@
       
   
   
-    
-  
   
   
     
@@ -492,11 +495,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -510,7 +515,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Week 1 (1/23-1/29)
@@ -610,8 +615,6 @@
                 
   
   
-    
-  
   
   
     
@@ -620,11 +623,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -638,7 +643,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Architecture
@@ -652,7 +657,7 @@
   
   
     <li class="md-nav__item">
-      <a href="index.html" class="md-nav__link">
+      <a href="../architecture/index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -673,7 +678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="STEP_020_FULL.html" class="md-nav__link">
+      <a href="../architecture/STEP_020_FULL.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -694,7 +699,7 @@
   
   
     <li class="md-nav__item">
-      <a href="STEP_030_FULL.html" class="md-nav__link">
+      <a href="../architecture/STEP_030_FULL.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -715,7 +720,7 @@
   
   
     <li class="md-nav__item">
-      <a href="STEP_040_FULL.html" class="md-nav__link">
+      <a href="../architecture/STEP_040_FULL.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -736,7 +741,7 @@
   
   
     <li class="md-nav__item">
-      <a href="STEP_050_FULL.html" class="md-nav__link">
+      <a href="../architecture/STEP_050_FULL.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -757,7 +762,7 @@
   
   
     <li class="md-nav__item">
-      <a href="STEP_060_FULL.html" class="md-nav__link">
+      <a href="../architecture/STEP_060_FULL.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -775,17 +780,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="STEP_070_FULL.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../architecture/STEP_070_FULL.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -794,7 +792,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -807,7 +804,7 @@
   
   
     <li class="md-nav__item">
-      <a href="STEP_080_FULL.html" class="md-nav__link">
+      <a href="../architecture/STEP_080_FULL.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4220,8 +4217,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -4231,13 +4230,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_14" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" checked>
         
           
           <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="">
@@ -4251,7 +4248,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_14">
             <span class="md-nav__icon md-icon"></span>
             Week 13 (4/24-4/30) - TBD
@@ -4262,6 +4259,8 @@
                 
   
   
+    
+  
   
   
     
@@ -4270,13 +4269,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_14_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_1" checked>
         
           
           <label class="md-nav__link" for="__nav_14_1" id="__nav_14_1_label" tabindex="0">
@@ -4290,7 +4287,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_14_1">
             <span class="md-nav__icon md-icon"></span>
             Files
@@ -4304,7 +4301,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reading-writing-files/repo.html" class="md-nav__link">
+      <a href="repo.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4322,10 +4319,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../reading-writing-files/index.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Reading/Writing Files
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="index.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -4334,6 +4349,84 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Videos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Videos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#files-lecture-summer-2021-2729" class="md-nav__link">
+    <span class="md-ellipsis">
+      Files: Lecture (Summer 2021) (27:29)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#files-example-1-private-files-summer-2021-3504" class="md-nav__link">
+    <span class="md-ellipsis">
+      Files: Example 1 - Private Files (Summer 2021) (35:04)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#files-example-2-sd-card-private-files-and-mediastore-summer-2021-3552" class="md-nav__link">
+    <span class="md-ellipsis">
+      Files: Example 2 - SD Card Private Files and MediaStore (Summer 2021) (35:52)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#files-example-3-storage-access-framework-summer-2021-2132" class="md-nav__link">
+    <span class="md-ellipsis">
+      Files: Example 3 - Storage Access Framework (Summer 2021) (21:32)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4483,15 +4576,28 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-<h4>Architecture</h4>
+<h4>Files</h4>
 
-<h1>Concurrency</h1>
+<h1>Reading/Writing Files</h1>
 
-<p>User interfaces are typically updated via a single thread. That thread is responsible for drawing any needed changes and responding to user interactions. The UI should respond immediately to interactions such as pressing a button, scrolling the screen, or drawing pictures with their finger. </p>
-<p>Many user actions result in performing data updates, which can be expensive. If we perform these actions on the same thread that detected the user interaction, all screen updates are blocked until that update has completed. At best, this can result in "jank", an interface that doesn't immediately respond and jumps between drawn frames. At worst, an update might take long enough that the user interface freezes.</p>
-<p>The easiest fix for this is to run data updates on a different thread so the user interface can keep responding immediately. We'll do this using Kotlin Coroutines, but it could also be done using threads and executors.</p>
-<p>While the UI is now responsive, we can run into data synchronization, race and deadlock issues. Fortunately there are several patterns we can follow to more reliably work with concurrent processing.</p>
-<p>One of the most effective ways to help is to use a <strong>Unidirectional Data Flow</strong>, or UDF.</p>
+<h2 id="introduction">Introduction</h2>
+<p>Many programs need to save or load data to/from files. Android file I/O is similar to Java I/O (using the same APIs), but depending on where you want to save/load files, you may need to jump through a few hoops in the name of user privacy and protection.</p>
+<p>In this module, we'll look at simple file I/O in private directories on a device or SD card, and more complex Storage-Access Framework file I/O.</p>
+<h2 id="videos">Videos</h2>
+<p>Total video time for this module: 1:59:57</p>
+<h3 id="files-lecture-summer-2021-2729">Files: Lecture (Summer 2021) (27:29)</h3>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/8mR8lqTETtE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<pre><code>
+</code></pre>
+<h3 id="files-example-1-private-files-summer-2021-3504">Files: Example 1 - Private Files (Summer 2021) (35:04)</h3>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/4g3ScXm31tg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h3 id="files-example-2-sd-card-private-files-and-mediastore-summer-2021-3552">Files: Example 2 - SD Card Private Files and MediaStore (Summer 2021) (35:52)</h3>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/EAJPl4xdAxY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h3 id="files-example-3-storage-access-framework-summer-2021-2132">Files: Example 3 - Storage Access Framework (Summer 2021) (21:32)</h3>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/Fr_XW94jPIQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
               </article>
