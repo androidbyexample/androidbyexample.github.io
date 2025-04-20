@@ -566,6 +566,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://androidbyexample.com/modules/sensors/index.html</loc>
+         <lastmod>2025-04-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://androidbyexample.com/modules/sensors/repo.html</loc>
+         <lastmod>2025-04-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://androidbyexample.com/modules/speech/index.html</loc>
          <lastmod>2025-04-20</lastmod>
          <changefreq>daily</changefreq>
