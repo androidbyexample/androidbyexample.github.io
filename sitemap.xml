@@ -526,6 +526,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://androidbyexample.com/modules/nfc/index.html</loc>
+         <lastmod>2025-04-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://androidbyexample.com/modules/nfc/repo.html</loc>
+         <lastmod>2025-04-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://androidbyexample.com/modules/publishing/index.html</loc>
          <lastmod>2025-04-21</lastmod>
          <changefreq>daily</changefreq>
@@ -597,11 +607,6 @@
     </url>
     <url>
          <loc>https://androidbyexample.com/modules/speech/repo.html</loc>
-         <lastmod>2025-04-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://androidbyexample.com/modules/tbd/STEP_010_FULL.html</loc>
          <lastmod>2025-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>

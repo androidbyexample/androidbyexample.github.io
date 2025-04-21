@@ -8,10 +8,10 @@
       
       
       
-        <link rel="canonical" href="https://androidbyexample.com/modules/tbd/STEP_010_FULL.html">
+        <link rel="canonical" href="https://androidbyexample.com/modules/nfc/index.html">
       
       
-        <link rel="prev" href="../sensors/index.html">
+        <link rel="prev" href="repo.html">
       
       
         <link rel="next" href="../services/repo.html">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Under development - Android By Example</title>
+        <title>NFC - Android By Example</title>
       
     
     
@@ -91,6 +91,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#introduction" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -122,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Under development
+              NFC
             
           </span>
         </div>
@@ -4502,7 +4507,7 @@
             
   
   <span class="md-ellipsis">
-    Under development
+    NFC
   </span>
   
 
@@ -4512,9 +4517,30 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_15_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_15_1">
             <span class="md-nav__icon md-icon"></span>
-            Under development
+            NFC
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="repo.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sample Repository
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -4530,15 +4556,94 @@
       
       
       
-      <a href="STEP_010_FULL.html" class="md-nav__link md-nav__link--active">
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    NFC
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="index.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Under development
+    NFC
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Videos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Videos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#near-field-communication-lecture-spring-2016-1911" class="md-nav__link">
+    <span class="md-ellipsis">
+      Near-Field Communication: Lecture (Spring 2016) (19:11)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#near-field-communication-reading-example-spring-2016-1616" class="md-nav__link">
+    <span class="md-ellipsis">
+      Near-Field Communication: Reading Example (Spring 2016) (16:16)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#near-field-communication-writing-example-spring-2016-1526" class="md-nav__link">
+    <span class="md-ellipsis">
+      Near-Field Communication: Writing Example (Spring 2016) (15:26)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -4729,11 +4834,30 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-<h4>Under development</h4>
+<h4>NFC</h4>
 
-<h1>Under development</h1>
+<h1>NFC</h1>
 
-<p>The content for this week is currently being updated for this term.</p>
+<h2 id="introduction">Introduction</h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that these videos are from 2016 and were based in Java using Android Views for the UI. I have updated the example to Kotlin using Jetpack Compose for the UI.
+The concepts in the lecture and example videos still apply. (It also might be interesting to watch these older videos to see how Android development looks in Java compared to Kotlin).</p>
+<p>Also note that these examples will not run on the emulator; you can only use NFC on a device that supports it. I would have loved to include an assignment on NFC, but not all students
+will have Android devices, or Android devices with NFC.</p>
+</div>
+<p>Near-Field Communication (NFC) allows your application to read and write hardware tags with a small chunk of data. This data can be plain text, a URI, contact information, or any other data format you would like.
+This can be useful, for example, to read data from a poster or business card or write data to a bag describing its contents.</p>
+<h2 id="videos">Videos</h2>
+<p>Total video time for this module: 50:53</p>
+<h3 id="near-field-communication-lecture-spring-2016-1911">Near-Field Communication: Lecture (Spring 2016) (19:11)</h3>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/wXEjjljdNWI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h3 id="near-field-communication-reading-example-spring-2016-1616">Near-Field Communication: Reading Example (Spring 2016) (16:16)</h3>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/QzphwRdJ7r0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h3 id="near-field-communication-writing-example-spring-2016-1526">Near-Field Communication: Writing Example (Spring 2016) (15:26)</h3>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/mUVdV9EmIQs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
               </article>
